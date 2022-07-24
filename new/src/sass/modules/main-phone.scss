@@ -1,0 +1,22 @@
+.main-phone {
+    flex-shrink: 0;
+    white-space: nowrap;
+    &__num {
+        color: $black500;
+        font-weight: 700;
+        margin-left: 1rem;
+        white-space: nowrap;
+        vertical-align: middle;
+    }
+    .icon-phone {
+        fill: $black800;
+        width: 2.4rem;
+        min-width: 2.4rem;
+        vertical-align: middle;
+    }
+    @include max-screen($small_tablet) {
+        &__num {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+mixin submenuNavLi(name, badge, on, isFirst) 
+    +e.LI.item(class=(on?'is-active':''))
+        +e.A.link(href="#")
+            +e.SPAN.name #{name}&nbsp;
+            //- +e.SPAN.separator &middot;&nbsp;
+            +e.SPAN.quantity=badge || 1
+            if (badge)
+                +badgeNotify('1')
+            if (isFirst)
+                +e.dropdown
+                    +icon('dropdown')
+                    
+mixin submenu(options = {})
+    +b.submenu.header-submenu
+        +e.wrap.wrap
+            +e.inner.header-submenu__inner
+                +b.submenu-nav
+                    +e.inner
+                        +e.UL.list
+                            block submenuNav
+                if options['share']
+                    +e.select-requests.j-open-share-need-menu
+                        +icon('newspaper')

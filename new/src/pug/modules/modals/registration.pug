@@ -1,0 +1,150 @@
++b.modal.registration-modal._simple._success
+    +e.container
+        +e.inner
+            //- +e.content( 1)
+            //-     +e.head
+            //-         +e.close(data-close="close")
+            //-             +icon('cross')
+            //-         +e.head-text Вход и Регистрация
+            //-     +e.body
+            //-         +e.advantages 
+            //-             +e.P.advantages-p Быстро
+            //-             +e.P.advantages-p Эффективно
+            //-             +e.P.advantages-p удобно
+            //-             +e.P.advantages-p бесплатно
+            //-         +e.FORM.form.form.registration-form
+            //-             +form-input('Телефон или E-mail', '', 'registration-form__email', 'email')
+                            .form-group
+                                input.input(type="password" placeholder="Пароль" class="registration-form__pass" name="pass")
+            //-             +e.A.get-pass.mark.j-reg-next Получить пароль
+            //-             +e.BUTTON.btn.btn._blue._m(data-btn="submit") Войти
+            //-             +e.agreement При входе вы подтверждаете согласие с политикой конфиденциальности и пользовательским соглашением
+            //- +e.content( 2)
+            //-     +e.head
+            //-         +e.close(data-close="close")
+            //-             +icon('cross')
+            //-         +e.head-text Получение пароля
+            //-     +e.body
+            //-         +e.advantages 
+            //-             +e.P.advantages-p Быстро
+            //-             +e.P.advantages-p Эффективно
+            //-             +e.P.advantages-p удобно
+            //-             +e.P.advantages-p бесплатно
+            //-         +e.FORM.form.form.reg-get-pass-form
+            //-             .form-group
+            //-                 input.input.reg-get-pass-form__contact(type="text" placeholder="Телефон или E-mail" name="phone_email")
+            //-             +e.captcha( style="display:none") Капча
+            //-             +e.BUTTON.btn.btn._blue._m(data-btn="submit") Получить код
+            //- +e.content( 3)
+            //-     +e.head
+            //-         +e.close(data-close="close")
+            //-             +icon('cross')
+            //-         +e.head-text Подтверждение номера
+            //-     +e.body
+            //-         +e.advantages 
+            //-             +e.P.advantages-p Быстро
+            //-             +e.P.advantages-p Эффективно
+            //-             +e.P.advantages-p удобно
+            //-             +e.P.advantages-p бесплатно
+            //-         +e.FORM.form.form.reg-confirmation-form
+            //-             .form-group
+            //-                 input.input.reg-confirmation-form__code(type="text" placeholder="Код подтверждения" name="phone_email_code")
+            //-             +e.info В течении 2х минут вы получите смс #[br] с кодом подтверждения на номер 
+            //-                 b.reg-confirmation-form__contact 89171111111
+            //-             .reg-confirmation-form__timer-block.mark Получить новый код #[br] можно через 
+            //-                 span.reg-confirmation-form__timer 
+            //-             +e.BUTTON.btn.btn._blue._m(data-btn="submit") Отправить
+            //- +e.content( 4)
+            //-     +e.head
+            //-         +e.close(data-close="close")
+            //-             +icon('cross')
+            //-         +e.head-text Создание нового пароля
+            //-     +e.body
+            //-         +e.advantages 
+            //-             +e.P.advantages-p Быстро
+            //-             +e.P.advantages-p Эффективно
+            //-             +e.P.advantages-p удобно
+            //-             +e.P.advantages-p бесплатно
+            //-         +e.FORM.form.form.reg-new-pass-form
+            //-             .form-group
+            //-                 input.input.reg-new-pass-form__pass(type="password" placeholder="Новый пароль" name="new_pass")
+            //-             +e.BUTTON.btn.btn._blue._m(data-btn="submit") Сохранить
+            //- +e.content( 5)
+            //-     +e.head
+            //-         +e.close(data-close="close")
+            //-             +icon('cross')
+            //-         +e.head-text Регистрация компании
+            //-     +e.body
+            //-         +e.FORM.form.form.registration-company-form
+            //-             +form-select(['Правовая форма', 'Вариант 1', 'Вариант 2'], '', true)
+            //-             +form-input('Наименование', '', true)
+            //-             +form-select(['Категория', 'Вариант 1', 'Вариант 2'])
+            //-             +form-select(['Система налогообложения', 'Вариант 1', 'Вариант 2'], '', true)
+            //-             +form-input('Адрес', '', true)
+            //-             +form-select(['Продавец или Покупатель', 'Вариант 1', 'Вариант 2'], '', true)
+            //-             +form-input('Должность', '', true)
+            //-             +b.LABEL.checkbox.form-group
+            //-                 +e.INPUT.input(type="checkbox" name="")
+            //-                 +e.SPAN.control
+            //-                     +e.SPAN.icon
+            //-                         +icon('check')
+            //-                 +e.SPAN.text Продолжить, как компания
+            //-             +e.bottom
+            //-                 +e.btn.btn_gray-bd._m.j-reg-next Пропустить
+            //-                 +e.btn.btn._blue._m.j-reg-next Сохранить
+            //- +e.content( 6)
+            //-     +e.head
+            //-         +e.close(data-close="close")
+            //-             +icon('cross')
+            //-         +e.head-text Подписка на навыки
+            //-     +e.body
+            //-         +e.advantages 
+            //-             +e.P.advantages-p Ещё Быстре
+            //-             +e.P.advantages-p Ещё Эффективнее
+            //-             +e.P.advantages-p Ещё удобнее
+            //-             +e.P.advantages-p платно
+            //-         +e.tariffs
+            //-             +e.tariffs-item(data-reg-tariff="1")
+            //-                 +e.tariffs-head
+            //-                     .btn-double-switch-group
+            //-                         +e.btn.btn._blue._m.modal__tariffs-head-btn Pro
+            //-                         +b.btn-double.btn.modal__tariffs-head-btn-double 
+            //-                             +e.item.btn_blue.j-reg-next(data-pay-method="card") Картой
+            //-                             +e.item.btn_blue.j-reg-next(data-pay-method="invoice") По счёту
+            //-                     +icon('questionInRound', 'modal__tariffs-question')
+            //-                 +e.tariffs-descr Стоимость подписки Pro в первые три месяца составляет #[b 399] рублей в месяц, далее #[b 3990] рублей в месяц, и будет списываться с вашего баланса каждый календарный месяц.#[br] #[b Отменить подписку можно в любой момент] в разделе Баланс. Оплатив, вы подтверждаете, что ознакомились и безоговорочно соглашаетесь с настоящими условиями.
+            //-             +e.tariffs-item(data-reg-tariff="2")
+            //-                 +e.tariffs-head
+            //-                     .btn-double-switch-group
+            //-                         +e.btn.btn._blue._m.modal__tariffs-head-btn Vip
+            //-                         +b.btn-double.btn.modal__tariffs-head-btn-double 
+            //-                             +e.item.btn_blue.j-reg-next(data-pay-method="card") Картой
+            //-                             +e.item.btn_blue.j-reg-next(data-pay-method="invoice") По счёту
+            //-                     +icon('questionInRound', 'modal__tariffs-question')
+            //-                 +e.tariffs-descr Стоимость подписки Vip составляет #[b 51000] рублей в месяц, и будет списываться с вашего баланса каждый календарный месяц.#[br] #[b Отменить подписку можно в любой момент] в разделе Баланс. Нажимая “Картой” или "По счету", вы подтверждаете, что ознакомились и безоговорочно соглашаетесь с настоящими условиями.
+            //-         +e.btn-skip.btn_gray-bd._m.m-a.j-reg-next Пропустить
+            //- +e.content( 7)
+            //-     +e.head
+            //-         +e.close(data-close="close")
+            //-             +icon('cross')
+            //-         +e.head-text Формирование счета на оплату
+            //-     +e.body
+            //-         +e.FORM.form.form.invoice-generation-form
+            //-             +form-input('Введите ваш ИНН')
+            //-             +form-input('КПП')
+            //-             +form-input('Наименование компании')
+            //-             +form-input('Юридический адрес')
+            //-             +form-input('Расчетный счет')
+            //-             +form-input('Кор. счет')
+            //-             +form-input('Бик')
+            //-             +e.bottom
+            //-                 +e.btn.btn._blue._m.j-reg-next Скачать счёт
+            //- +e.content(style="display:nonex" 8)
+            //-     +e.head
+            //-         +e.close(data-close="close")
+            //-             +icon('cross')
+            //-         +e.head-text Платеж получен
+            //-     +e.body
+            //-         +e.P.p Ура! Теперь Вы можете подкючать Навыки и экономить время и деньги
+            //-         +e.btn.btn_blue._m.m-a.j-reg-next Старт
+            

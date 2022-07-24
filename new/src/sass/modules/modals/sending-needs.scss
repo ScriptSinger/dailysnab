@@ -1,0 +1,53 @@
+.sending-needs-modal {
+    .form {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -1.5rem;
+        margin-bottom: -1.5rem;
+        .form-group {
+            flex: 1 0 23rem;
+            height: 3rem;
+            margin-right: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+    .modal {
+        &__footer {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            margin-right: -1rem;
+            margin-bottom: -1rem;
+        }
+        &__btn {
+            padding: 0.5rem 3rem;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            &:first-child {
+            }
+        }
+    }
+    .ui-menu {
+        background: $white;
+        li {
+            padding: 5px;
+        }
+    }
+    .create-supplier {
+
+    }
+    @include min-screen($small_tablet) {
+        .modal {
+            &__inner {
+                width: 77rem;
+            }
+        }
+    }
+    @include max-screen($large_mobile) {
+        .modal {
+            &__btn {
+                width: 100%;
+            }
+        }
+    }
+}

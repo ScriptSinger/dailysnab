@@ -1,0 +1,112 @@
+extends ../layouts/base
+
+append vars
+	- title = 'Страница товара';
+
+block content
+	+b.product.section
+		+e.wrap.wrap
+			+e.inner
+				+e.aside
+					+e.aside-inner
+						+e.price 4 490 000 ₽ 
+						+e.show-phone.btn._m._blue(data-btn="show-phone") Показать телефон
+						+e.id №456876234
+						+e.user 
+							span АБС-АВТО BMW Сочи
+						+e.city Сочи
+						+e.FORM.form.form
+							.form-group
+								+e.TEXTAREA.note.textarea(placeholder="Заметка")
+							.form-group
+								+e.save.btn._blue-light._m Сохранить
+							+e.buy-group.form-group
+								+e.INPUT.how-match.input(placeholder="шт")
+								+e.buy.btn._blue._m Купить
+				+e.bg
+				+e.H1.name BMW X5
+				+e.quantiity 2 шт.
+				+e.slider
+					+e.slider-main
+						mixin slider-main-item(name)
+							+e.A.slider-main-item(href="#")
+								+e.img-wrapper
+									+e.IMG.img(src="/img/"+name+".jpg" alt="")
+						+slider-main-item("car4")
+						+slider-main-item("car2")
+						+slider-main-item("car3")
+						+slider-main-item("car4")
+						+slider-main-item("car")
+						+slider-main-item("car2")
+						+slider-main-item("car3")
+					+e.slider-thumbnails
+						mixin slider-thumbnails-item(name)
+							+e.A.slider-thumbnails-item(href="/app/img/"+name+".jpg" data-fancybox="product-imgs")
+								+e.img-wrapper
+									+e.IMG.img(src="/img/"+name+".jpg" alt="")
+						+slider-thumbnails-item("car4")
+						+slider-thumbnails-item("car2")
+						+slider-thumbnails-item("car3")
+						+slider-thumbnails-item("car4")
+						+slider-thumbnails-item("car")
+						+slider-thumbnails-item("car2")
+						+slider-thumbnails-item("car3")
+				+e.UL.params
+					mixin product-params-item(dt,dd)
+						+e.LI.params-item
+							+e.params-item-dt=dt
+							+e.params-item-dd=dd
+					+product-params-item("Год выпуска", "2018")
+					+product-params-item("Пробег", "5 985 км")
+					+product-params-item("Кузов", "Хэтчбек")
+					+product-params-item("Цвет", "Серый")
+					+product-params-item("Двигатель", "20 л / 245пс / Бензин")
+					+product-params-item("Коробка", "Автоматическая")
+					+product-params-item("Привод", "Передний")
+					+product-params-item("Руль", "Левый")
+					+product-params-item("Состояние", "Не требуется реонта")
+					+product-params-item("Владельцы", "1 владелец")
+					+product-params-item("ПТС", "Оригинал")
+					+product-params-item("Владение", "1 год 3 месяца")
+					+product-params-item("Таможня", "Растаможен")
+					+product-params-item("Гарантия", "до августа 2021")
+					+product-params-item("VIN", "WDD23844*1F*****4")
+					+e.LI.params-item._adds.j-show-more-dd-btn 
+						+e.show-more-text Дополнительные параметры
+						+icon('dropdown', 'show-more-dropdown__icon')
+					+product-params-item("Владение", "1 год 3 месяца")
+					+product-params-item("Таможня", "Растаможен")
+					+product-params-item("Гарантия", "до августа 2021")
+					+product-params-item("VIN", "WDD23844*1F*****4")
+				+e.comment
+					+e.comment-title Комментарий продавца
+					+e.comment-desc.content
+						p Прекрасное состояние.
+						p Автомобиль внутреннего парка Мерседес Бенц.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

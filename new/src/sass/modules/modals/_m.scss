@@ -1,0 +1,15 @@
+.modal_m {
+    .modal {
+        &__head {
+            padding: 1.5rem 0;
+        }
+        &__close {
+            @include square(1.4rem);
+            top: 1.3rem;
+            right: 1.3rem;
+        }
+        &__head-text {
+            font-weight: 400;
+        }
+    }
+}

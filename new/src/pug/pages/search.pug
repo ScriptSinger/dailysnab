@@ -1,0 +1,24 @@
+extends ../layouts/base
+
+append vars
+    - title = 'Поиск результатов';
+
+block header
+    include ../modules/header-not-login
+block sidebar
+block content
+    +b.hints.header-submenu
+        +e.wrap.wrap
+            +e.inner.header-submenu__inner
+                +b.btn._green._cross._m 1. Чтоб получить лучшее предложение, подпишитесь на поставщиков
+                    +icon('cross')
+                +b.btn._green._cross._m 2. Чтоб получить лучшее предложение, разместите заявку
+                    +icon('cross')
+    +b.search.section
+        +e.wrap.wrap
+            +e.inner
+                //- +e.left
+                +e.P.p По запросу #[b Toyota Corolla] ничего не найдено #[br] Разместите заявку на покупку и её увидят до #[b 400] поставщиков
+                //- +e.right
+                    include ../modules/place-need
+

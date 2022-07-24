@@ -1,0 +1,47 @@
+mixin sidebarNavList(name, icon, q, on, full) 
+    +e.LI.item(class=(on?'is-active':''))
+        +e.A.link(href="#")
+            +e.SPAN.icon
+                +icon(icon)
+                if (q)
+                    +badgeNotify('2')
+            +e.DIV.name-wrapper
+                +e.name 
+                    if (full)
+                        +e.SPAN.name-full Мои&nbsp;
+                    span #{name}
+//- +b.ASIDE.sidebar.is-active
++b.ASIDE.sidebar
+    +e.header
+        +b.ham
+            +icon('hamburger')
+        +e.content
+            +e.INPUT.input-add-menu(type="checkbox" id="sidebarAddMenuCheckbox")
+            +e.LABEL.toggle-add-menu(for="sidebarAddMenuCheckbox") 
+                +icon('dropdown')
+            +e.content-data
+                +e.username ООО БашАльянсСтрой
+                +e.UL.add-menu
+                    +e.LI.add-menu-item
+                        +e.A.add-menu-link(href="#")
+                            +e.SPAN.add-menu-icon
+                                +icon('turn')
+                            +e.SPAN.add-menu-name Смена аккаунта
+                    +e.LI.add-menu-item
+                        +e.A.add-menu-link(href="#")
+                            +e.SPAN.add-menu-icon
+                                +icon('pencil')
+                            +e.SPAN.add-menu-name Профиль
+                    +e.LI.add-menu-item
+                        +e.A.add-menu-link(href="#")
+                            +e.SPAN.add-menu-icon
+                                +icon('power')
+                            +e.SPAN.add-menu-name Выйти
+    +b.NAV.nav-sidebar
+        +e.UL.list
+            +sidebarNavList('Заявки', 'requests', 2,'on', 1)
+            +sidebarNavList('Объявления', 'announcement', 36, '', 1)
+            +sidebarNavList('Подписки', 'subscriptions')
+            +sidebarNavList('Навыки', 'skills')
+            +sidebarNavList('Помощь', 'help')
+            +sidebarNavList('Номенклатура', 'sheetWithCheckMark')

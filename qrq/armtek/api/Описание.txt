@@ -1,0 +1,17 @@
+Информация
+http://ws.armtek.ru/
+
+
+
+http://dailysnab.beget.tech/qrq/armtek/res/ws_ping/index.php
+
+http://dailysnab.beget.tech/qrq/armtek/res/ws_search/search.php
+
+http://dailysnab.beget.tech/qrq/armtek/res/ws_assortment_search/assortment_search_new.php
+
+http://dailysnab.beget.tech/qrq/armtek/res/ws_order/test_order.php
+
+
+http://dailysnab.beget.tech/qrq/armtek/res/ws_user/getUserInfo.php
+
+

@@ -1,0 +1,117 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // width: 100%;
+    // height: 100%;
+    font: inherit;
+    text-align: center;
+    border-radius: $brL;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: $transition;
+    user-select: none;
+    &_blue {
+        background: $blue800;
+        color: $white;
+        &:hover {
+        }
+    }
+    &_blue-light {
+        background: $blue700;
+        color: $white;
+    }
+    &_white-bd {
+        background: $white;
+        color: $blue800;
+        border: 1px solid $blue800;
+    }
+    &_gray {
+        background: $black40;
+        // color: $black500;
+        &-bd {
+            border: 1px solid $black100;
+            color: $black300;
+        }
+    }
+    &_green {
+        background: $green;
+        color: $white;
+    }
+    &_m {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        height: 3rem;
+    }
+    &_dropdown {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 2rem;
+        .icon {
+            position: absolute;
+            right: 1.1rem;
+            height: 100%;
+            fill: $white;
+        }
+    }
+    &_cross {
+        display: grid;
+        grid-template-columns: 1fr 2rem;
+        grid-gap: 1rem;
+        padding-left: 1.5rem;
+        padding-right: 0.5rem;
+        .icon {
+            width: 1.6rem;
+            height: 100%;
+            fill: $white;
+            stroke-width: 0.7px;
+            stroke: $white;
+        }
+    }
+    &_arrow {
+        &:after {
+            content: "";
+            display: inline-block;
+            @include square(2rem);
+            background: url("/img/arrow-right-btn.svg") center/cover no-repeat;
+            transition: $transition;
+            margin-left: 0.7rem;
+        }
+        &:hover {
+            &:after {
+                transform: translateX(1.3rem);
+            }
+        }
+    }
+    &-double {
+        display: flex;
+        &__item {
+            @extend .btn, .btn_m;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            &:first-child {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+            &:last-child {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+        &_white-blue {
+            & > :nth-child(1) {
+                background: $white;
+                border: 1px solid #dddfe6;
+                fill: $blue800;
+                color: $blue800;
+                border-right: unset;
+            }
+            & > :nth-child(2) {
+                background: $blue800;
+                fill: $white;
+                color: $white;
+            }
+        }
+    }
+}

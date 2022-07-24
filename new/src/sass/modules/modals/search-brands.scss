@@ -1,0 +1,35 @@
+.search-brands-modal {
+    .modal__inner {
+        max-width: fit-content;
+    }
+    max-width: fit-content;
+    .modal__inner .modal-close-wrap {
+        display: none;
+    }
+    [type="checkbox"] {
+        display: inherit;
+        appearance: auto;
+    }
+    td {
+        border-top: 1px solid #dddfe6;
+        border-bottom: 1px solid #dddfe6;
+        padding: 0.75rem;
+        &:nth-child(2) {
+            border-left: 1px solid #dddfe6;
+            border-right: 1px solid #dddfe6;
+        }
+    }
+    button {
+        @extend .btn, .btn_m;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        display: inline-block;
+        margin-top: 2rem;
+        &.no_search_brend_etp {
+            @extend .btn_gray;
+        }
+        &.search_brend_etp {
+            @extend .btn_blue;
+        }
+    }
+}

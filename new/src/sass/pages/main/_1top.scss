@@ -1,0 +1,97 @@
+.main-top {
+    padding-top: 15rem;
+    padding-bottom: 20rem;
+    background: url('/img/main_top_bg.svg') right -3.5rem/110rem no-repeat;
+    %mini-text {
+        font-size: 1.9rem;
+        line-height: 1.9rem;
+    }
+    &__title {
+        text-transform: capitalize;
+        margin-bottom: 5.5rem;
+        &-text {
+            @extend %mini-text;
+            text-transform: uppercase;
+            font-weight: 300;
+            letter-spacing: -1px;
+            position: relative;
+            top: -1rem;
+            left: 1rem;
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 1.2rem;
+                height: 1.2rem;
+                // background-color: ;
+                border-radius: 100%;
+                margin-right: .7rem;
+            }
+        }
+    }
+    .btn-section {
+        margin-bottom: 5.5rem;
+    }
+    &__subtitle {
+        @extend %mini-text;
+        letter-spacing: 0.25px;
+        margin-bottom: 6.5rem;
+    }
+    &__button {
+    }
+    @include max-screen($small_desktop) {
+        background: url('/img/main_top_bg.svg') right -3.5rem/95rem no-repeat;
+        padding-bottom: 15rem;
+    }
+    @include max-screen($large_tablet) {
+        padding: 6rem 0;
+        background: url('/img/main_top_bg.svg') 52vw -0.4vw/44vw no-repeat;
+        .btn-section {
+            max-width: 58rem;
+        }
+    }
+    @include max-screen($small_tablet) {
+        background: url('/img/main_top_bg.svg') 102% -1.4rem/63vw no-repeat;
+        .btn-section {
+            max-width: 49rem;
+            &__item {
+                &-mob {
+                    display: none;
+                }
+            }
+        }
+    }
+    @include max-screen($large_mobile) {
+        background: url('/img/main_top_bg_mob.svg') top/contain no-repeat;
+        padding-top: 1.7rem;
+        padding-bottom: 2.4rem;
+        %mini-text {
+            font-size: 1.3rem;
+            line-height: 1.9rem;
+        }
+        &__title {
+            margin-bottom: 78.5%;
+            font-weight: 400;
+            text-transform: uppercase;
+            &-text {
+                // color: 
+                letter-spacing: 0;
+                top: 0.3rem;
+                left: 1.5rem;
+                &::before {
+                    width: .7rem;
+                    height: .7rem;
+                    margin-right: 0.4rem;
+                }
+            }
+        }
+        .btn-section {
+            margin-bottom: .2rem;
+        }
+        &__subtitle {
+            margin-bottom: 2.4rem;
+            letter-spacing: -0.02em;
+        }
+        &__button {
+        }
+    }
+}

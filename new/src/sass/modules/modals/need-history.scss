@@ -1,0 +1,51 @@
+.need-history-modal {
+    .modal__content {
+    }
+    .history-list {
+        &__item {
+            display: flex;
+            padding: 0.5rem 1.5rem;
+            margin: 0 -1.5rem;
+            border-radius: $brS;
+            transition: $transition;
+            &:hover {
+                background: $blue500;
+                .history-list__info {
+                    opacity: 1;
+                }
+            }
+        }
+        &__info {
+            width: 11rem;
+            margin-right: 1.5rem;
+            padding: 0.8rem 0;
+            opacity: 0;
+            transition: $transition;
+            &-top {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            &-name,
+            &-company {
+                @extend .nowrap;
+                color: $blue900;
+            }
+            &-name {
+                max-width: 70%;
+            }
+            &-time {
+                @extend .h5;
+                overflow: hidden;
+                max-width: 30%;
+                color: $black300;
+            }
+            &-company {
+            }
+        }
+        &__descr {
+            &-text {
+            }
+        }
+    }
+}

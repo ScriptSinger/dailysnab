@@ -1,0 +1,158 @@
+extends ../layouts/main
+
+append vars
+	- title = 'Главная';
+	- body.classList = 'home-page-body'
+block content
+	//- include ../layouts/main
+	+b.home-page
+		+e.header
+			+e.A.logo.logo(href='/')
+				+icon('logo')
+			+e.enter-wrap
+				+e.enter.btn._m.j-login
+					+icon('enter')
+					+e.enter-text Войти
+		+e.content
+			+e.content-inner
+				+b.what-search
+					+e.inner
+						+b.FORM.search-all-form.ac-group
+							+e.LABEL.magnifier(for="what-search")
+								+icon('magnifier')
+							+e.INPUT.input.ac-group__input(type="text" id="what-search" name="what-search" placeholder="Что ищете?")
+							+icon('dropdown', 'ac-group__icon-dropdown search-all-form__icon-dropdown')
+						//- +e.more
+							+e.close
+								+icon('cross')
+							+e.UL.more-list
+								+e.LI.more-item._applications(data-ws-tab-id="1")
+									+e.SPAN.more-icon
+										+icon('requests', '', '0 0 20 20')
+									+e.more-select-group
+										+e.SELECT.more-select
+											option Заявки
+											option Объявления
+										+icon('dropdown')
+								+e.LI.more-item(data-ws-tab-id="2")
+									+e.SPAN.more-icon
+										+icon('nineSquares')
+									+e.SPAN.more-text Категория
+									+e.more-item-close
+										+icon('cross')
+								+e.LI.more-item(data-ws-tab-id="3")
+									+e.SPAN.more-icon
+										+icon('location')
+									+e.SPAN.more-text Место
+									+e.more-item-close
+										+icon('cross')
+							+e.location.__more-section(data-ws-content-id="3")
+								+b.FORM.location-form.ac-group
+									+e.INPUT.input.ac-group__input(type="text" id="what-search-location" name="what-search-location" placeholder="Введите город")
+									+icon('dropdown', 'ac-group__icon-dropdown search-all-form__icon-dropdown')
+							+e.category.__more-section(data-ws-content-id="2")
+								+e.category-wrap
+									mixin what-search-category-name(name)
+										each i in name
+											+e.category-item(selected)
+												+e.category-name=i
+									+e.category-list.__category-list_1(data-ws-cat-section="1")
+										+e.category-headline 
+											+e.category-headline-inner Выберите категорию
+											+icon('dropdown')
+										+e.category-content
+											+e.category-item
+												+e.category-logo
+													+icon('bricks')
+												+e.category-name Строительство и ремонт
+											+e.category-item
+												+e.category-logo
+													+icon('technic')
+												+e.category-name Транспорт
+											+e.category-item
+												+e.category-logo
+													+icon('equipment')
+												+e.category-name Оборудование
+									+e.category-list.__category-list_2.hidden(data-ws-cat-section="2")
+										+e.category-headline 
+											+e.category-headline-inner Выберите категорию
+											+icon('dropdown')
+										+e.category-content
+											+what-search-category-name(['Стройматериалы','Металл','ЖБИ','Дерево','Отделка','Мебель','Сад','Аодоснабжение','Электротовары',])
+									+e.category-list.__category-list_3.hidden(data-ws-cat-section="3")
+										+e.category-headline 
+											+e.category-headline-inner Выберите категорию
+											+icon('dropdown')
+										+e.category-content
+											+what-search-category-name(['Инструменты', 'Конструкции и детали', 'Фундаменты стаканного типа и  башмаки', 'Плиты фундаментов', 'Детали росверков', 'Сваи', 'Ригели и прогоны', 'Фермы', 'Элементы рам',])
+									+e.category-list.__category-list_4.hidden(data-ws-cat-section="4")
+										+e.category-headline 
+											+e.category-headline-inner Выберите категорию
+											+icon('dropdown')
+										+e.category-content
+											+what-search-category-name(['Перемычки', 'Панели стеновые наружные', 'Фундаменты стаканного типа и башмаки', 'Перегородки', 'Длоки стеновые', 'Плиты перекрытий', 'Плиты дорожные', 'Трубы наопрные', 'Трубы безнапорные',])
+											//- +what-search-category-name(['Элементы лестниц', 'Блоки коммуникаций', 'Архитектурно-строительные элементы зданий и сооружений', 'Элементы входов иприямков зданий', 'Детали лифтовых ивентиляционнных шахт', 'Санитарно-технические кабины', 'Элементы лоджий ибалконов', 'Элементы оград',])
+							+e.suggested.__more-section(data-ws-content-id="4")
+								mixin suggested-item(name, sec, relevant)
+									+e.suggested-item(class=relevant?'relevant':'')
+										+e.SPAN.suggested-inner
+											+e.SPAN.suggested-name=name
+											if sec
+												each i in sec
+													+e.SPAN.suggested-sec=i
+								+suggested-item('Штукатурка', ['Категория', 'Стройматериалы',], 1)
+								+suggested-item('Гипсовая штукатурка', ['Тип', 'Штукатурка', 'Стройматериалы',])
+								+suggested-item('Декоративная штукатурка', ['Тип', 'Штукатурка', 'Стройматериалы',])
+								+suggested-item('Сетки для штукатурки', ['Тип', 'Кладочные и штукатурные сетки', 'Стройматериалы',])
+								+suggested-item('Штукатурный фасад', ['Тип', 'Теплоизоляция', 'Стройматериалы',])
+								+suggested-item('Терки  для штукатурки', ['Категория', 'Инструменты',])
+								+suggested-item('Другая категория')
+								+e.suggested-item
+									+e.SPAN.suggested-inner.j-open-category-section
+										+e.SPAN.suggested-name Другая категория
+							+e.features.__more-section(data-ws-content-id="5")
+								+e.FORM.features-form
+									+e.features-all
+										+form-input-select('Количество', ['шт', 'кг'])
+										+form-input-select('Вес', ['кг', 'шт' ])
+										+form-select(['Бренд', 'var1', 'var2'])
+										+form-select(['Назначение', 'var1', 'var2'])
+										+form-select(['Тип применения', 'var1', 'var2'])
+										+form-select(['Поверхность', 'var1', 'var2'])
+										+form-select(['Основной', 'var1', 'var2'])
+										+form-select(['Размер до', 'var1', 'var2'])
+										+form-from-to('Диаметр', 'см')
+										+form-from-to('Диаметр', 'см', ['см', 'мм'])
+										+form-from-to('Давление', 'бар')
+										+form-from-to('Температура', '℃')
+									+e.features-main
+										+form-select(['Назначение', 'var1', 'var2'], '', 'require')
+										+e.features-main-l
+											+form-input('Комментарий')
+										+form-input('Имя заказа')
+										+e.features-main-l
+											+form-input('Ответственный')
+											+e.features-clear-form Очистить все
+				+place-need('place-need_static')
+		+e.footer
+			+e.footer-inner
+				+b.manage-block
+					+e.inner
+						+e.item._chat
+							+icon('chat')
+						+e.item._warning
+							+icon('warning')
+						+e.item._lamp
+							+icon('lamp')
+				+e.UL.footer-list
+					+e.LI.footer-item
+						+b.A.main-phone.home-page__footer-link(href="tel:8 (800) 250 26 10") 
+							+icon('phone')
+							+e.SPAN.num 8 (800) 250 26 10
+					+e.LI.footer-item
+						+e.A.footer-link(href="#") О&nbsp;Quest Request
+					+e.LI.footer-item
+						+e.A.footer-link(href="#") Условия использования
+					+e.LI.footer-item
+						+e.A.footer-link(href="#") Помощь
+

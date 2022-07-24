@@ -1,0 +1,151 @@
+.header {
+    position: relative;
+    background: $white;
+    box-shadow: 0px 0px 10px rgba(75, 78, 103, 0.15);
+    z-index: 7;
+    &__wrap {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+    }
+    .logo {
+        position: relative;
+        margin-right: 5rem;
+        width: 15.3rem;
+        flex-shrink: 0;
+        .badge-notify {
+            position: absolute;
+            right: -2.2rem;
+            bottom: -3px;
+        }
+    }
+    .what-search {
+        margin-right: 2rem;
+        &.is-active {
+            .what-search {
+                &__inner {
+                    padding: 2rem 3rem 2.5rem 1.5rem;
+                }
+                &__close {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .place-need {
+        margin-right: 2.3rem;
+    }
+    .main-phone {
+        margin-left: auto;
+        &__num {
+            @extend .h2;
+        }
+    }
+    &__enter {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        margin-left: auto;
+        cursor: pointer;
+        &-text {
+            color: $black500;
+            margin-left: 1rem;
+        }
+        .icon {
+            width: 2rem;
+            fill: $green;
+            flex-shrink: 0;
+        }
+    }
+    &_not-login {
+        .logo {
+            margin-left: 0 !important;
+        }
+    }
+
+    @include max-screen(1115px) {
+        .place-need {
+            width: auto;
+            &__text {
+                display: none;
+            }
+        }
+    }
+    @include max-screen($large_tablet) {
+        .logo {
+            margin-left: 6.2rem;
+            margin-right: 4rem;
+        }
+        .place-need.is-on + &__phone{
+            .main-phone__num {
+                display: none;
+            }
+        }
+
+    }
+    @include max-screen($small_tablet) {
+        &__wrap {
+            padding: 1.3rem 2.5rem;
+            height: 6rem;
+        }
+        .logo {
+            width: 10rem;
+            margin-left: 4.3rem;
+        }
+        .what-search {
+            position: static;
+            width: auto;
+            flex: unset;
+            min-width: auto;
+            margin-left: auto;
+            margin-right: 2.6rem;
+            &__inner {
+                position: static;
+                transform: unset;
+            }
+            &__form {
+                border: none;
+            }
+            &__more {
+                display: none;
+            }
+            input,
+            .icon-dropdown {
+                display: none;
+            }
+            .icon-magnifier {
+                width: 3.6rem;
+            }
+        }
+        .main-phone,
+        &__enter {
+            margin-left: unset;
+        }
+        .icon-phone {
+            width: 3rem;
+        }
+        &__enter-text {
+            display: none;
+        }
+        .btn {
+            // margin-right: 2rem;
+        }
+    }
+    @include max-screen($middle_mobile) {
+        &__wrap {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+        .logo {
+            width: 8.5rem;
+            margin-left: 4.3rem;
+        }
+        .place-need,
+        .what-search {
+            margin-right: 1rem;
+        }
+    }
+}

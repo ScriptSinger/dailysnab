@@ -1,0 +1,1115 @@
+[
+	{
+		"DocID": "9751c72b-0ad3-11ea-83ee-bbc7402485c6",
+		"OrgID": "e25bb015-2a1c-11e9-8e50-0050568b35ac",
+		"TotalSum": 10,
+		"NazPlatezha": "",
+		"Date": "2019-11-19T16:50:49",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "f5c3f8da-ce38-11e4-869d-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 10620,
+		"NazPlatezha": "",
+		"Date": "2016-10-09T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "bd9f3d16-cf00-11e4-869d-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 300000,
+		"NazPlatezha": "",
+		"Date": "2016-10-15T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "d733a674-cf11-11e4-869d-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 5000000,
+		"NazPlatezha": "",
+		"Date": "2016-10-20T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "01e613e4-d216-11e4-869d-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 20000,
+		"NazPlatezha": "",
+		"Date": "2016-11-06T12:00:01",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "aa56c202-d21f-11e4-869d-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 2000000,
+		"NazPlatezha": "",
+		"Date": "2016-11-06T12:00:02",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "593b7143-d2c8-11e4-869d-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 200000,
+		"NazPlatezha": "",
+		"Date": "2016-11-17T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "1f619b62-d304-11e4-869d-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 850000,
+		"NazPlatezha": "",
+		"Date": "2016-12-04T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "f7aefd52-d304-11e4-869d-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 882522,
+		"NazPlatezha": "",
+		"Date": "2016-12-05T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "de8ac1b2-d38b-11e4-869d-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 12875,
+		"NazPlatezha": "",
+		"Date": "2016-12-19T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "aff3aaa2-d391-11e4-869d-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 164000,
+		"NazPlatezha": "",
+		"Date": "2016-12-22T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "7eccadd7-d468-11e4-869d-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 821400,
+		"NazPlatezha": "",
+		"Date": "2016-12-26T12:00:03",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "a8b7e03a-d782-11e4-869d-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 800,
+		"NazPlatezha": "",
+		"Date": "2016-12-31T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "ed65a7df-d78c-11e4-869d-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 44655.39,
+		"NazPlatezha": "",
+		"Date": "2016-12-31T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "2af953c0-d7a0-11e4-869d-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 35400,
+		"NazPlatezha": "",
+		"Date": "2016-12-31T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "9914ab5b-d7a0-11e4-869d-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 212400,
+		"NazPlatezha": "",
+		"Date": "2016-12-31T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "923a7d73-d914-11e4-869d-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 182700,
+		"NazPlatezha": "",
+		"Date": "2016-11-10T12:00:02",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "e97529d9-d925-11e4-869d-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 27300,
+		"NazPlatezha": "",
+		"Date": "2016-11-10T12:00:03",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "e5a3abc2-6dd0-11e6-8caa-0050568b35ac",
+		"OrgID": "51ed67a4-7220-11df-b336-0011955cba6b",
+		"TotalSum": 170285,
+		"NazPlatezha": "",
+		"Date": "2017-04-21T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "4dfb6761-6dd1-11e6-8caa-0050568b35ac",
+		"OrgID": "51ed67a4-7220-11df-b336-0011955cba6b",
+		"TotalSum": 21837.6,
+		"NazPlatezha": "",
+		"Date": "2017-05-30T17:12:22",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "4ed8d830-d509-11e7-8e50-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 1000000,
+		"NazPlatezha": "",
+		"Date": "2017-04-04T13:12:25",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "6112f1a2-d509-11e7-8e50-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 2000000,
+		"NazPlatezha": "",
+		"Date": "2017-04-04T13:12:26",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "181c3fe4-d5e9-11e7-8e50-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 64900,
+		"NazPlatezha": "",
+		"Date": "2016-11-05T12:00:06",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "29522746-0b4a-11e8-8e50-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 11008,
+		"NazPlatezha": "",
+		"Date": "2017-05-16T12:00:04",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "d19854da-0b4a-11e8-8e50-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 100,
+		"NazPlatezha": "",
+		"Date": "2017-05-15T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "0c803c08-0b4b-11e8-8e50-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 35260,
+		"NazPlatezha": "",
+		"Date": "2017-05-01T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "d92f4ebc-10da-11e8-8e50-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 2230,
+		"NazPlatezha": "Оплата по накладной №54 от 15.05.2017 2230-00 USD.\nБез налога (НДС)",
+		"Date": "2017-07-15T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "52279c82-125a-11e8-8e50-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 22891.95,
+		"NazPlatezha": "",
+		"Date": "2017-06-22T12:00:01",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "3a1bf277-9599-11e8-8e50-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 115315.08,
+		"NazPlatezha": "",
+		"Date": "2017-05-24T00:00:02",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "df194ee3-9626-11e8-8e50-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 9680,
+		"NazPlatezha": "",
+		"Date": "2017-05-08T12:00:01",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "2660a8c2-9627-11e8-8e50-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 57245.93,
+		"NazPlatezha": "",
+		"Date": "2017-06-20T00:00:02",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "ef0300a3-9627-11e8-8e50-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 11440,
+		"NazPlatezha": "",
+		"Date": "2017-09-30T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "64f0e6f8-a5d8-11e8-8e50-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 58532,
+		"NazPlatezha": "",
+		"Date": "2018-08-22T10:55:46",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "45de61ba-dc12-11e8-8e50-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 500000,
+		"NazPlatezha": "",
+		"Date": "2018-10-30T11:06:07",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "45de61bb-dc12-11e8-8e50-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 1500000,
+		"NazPlatezha": "Оплата по ПР Договор поставки комплектующих 1000000-00 , ПР Договор выполнения подрядных работ 500000-00 .\nВ т.ч. НДС (18%) 228813-56",
+		"Date": "2018-10-30T11:06:15",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "4d6278f6-dc12-11e8-8e50-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 1000,
+		"NazPlatezha": "",
+		"Date": "2018-10-30T11:06:20",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "441826e6-e67c-11e8-8e50-0050568b35ac",
+		"OrgID": "4c095da9-fac3-11e7-8e50-0050568b35ac",
+		"TotalSum": 10000,
+		"NazPlatezha": "",
+		"Date": "2018-10-30T11:06:21",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "4e844762-e67d-11e8-8e50-0050568b35ac",
+		"OrgID": "4c095da9-fac3-11e7-8e50-0050568b35ac",
+		"TotalSum": 500000,
+		"NazPlatezha": "",
+		"Date": "2018-10-01T00:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "67daf854-2ac6-11e9-8e50-0050568b35ac",
+		"OrgID": "e25bb015-2a1c-11e9-8e50-0050568b35ac",
+		"TotalSum": 2000000,
+		"NazPlatezha": "",
+		"Date": "2019-01-10T12:00:01",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "c64cab8d-6271-11e9-8e50-0050568b35ac",
+		"OrgID": "4c095da9-fac3-11e7-8e50-0050568b35ac",
+		"TotalSum": 8000,
+		"NazPlatezha": "",
+		"Date": "2018-10-15T00:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "1b092847-d943-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 6090,
+		"NazPlatezha": "",
+		"Date": "2016-11-10T12:00:04",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "67bf8778-d945-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 46200,
+		"NazPlatezha": "",
+		"Date": "2016-11-10T12:00:05",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "e60cb80c-d947-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 10710,
+		"NazPlatezha": "",
+		"Date": "2016-11-10T12:00:06",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "b5a7cf55-d94f-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 420,
+		"NazPlatezha": "",
+		"Date": "2016-11-10T12:00:07",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "2ecefb07-d9da-11e4-92f1-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 848.68,
+		"NazPlatezha": "",
+		"Date": "2017-03-07T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "835939ea-d9dd-11e4-92f1-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 100000,
+		"NazPlatezha": "Оплата услуг брокеру по таможенному оформлению",
+		"Date": "2017-03-08T17:39:43",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "1674ee62-d9e7-11e4-92f1-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 166300,
+		"NazPlatezha": "",
+		"Date": "2017-03-02T18:02:38",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "844c853e-d9e7-11e4-92f1-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 1849768,
+		"NazPlatezha": "",
+		"Date": "2017-03-04T13:07:46",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "5c286862-dc60-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 13000,
+		"NazPlatezha": "",
+		"Date": "2016-10-03T12:00:02",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "a1f0b2ff-dc74-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 182700,
+		"NazPlatezha": "",
+		"Date": "2016-12-10T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "f6754771-dcf8-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 27300,
+		"NazPlatezha": "",
+		"Date": "2016-12-10T12:00:01",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "0c3d28d6-dcf9-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 6090,
+		"NazPlatezha": "",
+		"Date": "2016-12-10T12:00:02",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "4ae68c82-dcfa-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 46200,
+		"NazPlatezha": "",
+		"Date": "2016-12-10T12:00:03",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "640b3a11-dcfa-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 10710,
+		"NazPlatezha": "",
+		"Date": "2016-12-10T12:00:04",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "76e5b48d-dcfa-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 420,
+		"NazPlatezha": "",
+		"Date": "2016-12-10T12:00:05",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "bb0b26e3-dd1f-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 2574.33,
+		"NazPlatezha": "",
+		"Date": "2016-11-30T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "7ca0b6c6-e440-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 59000,
+		"NazPlatezha": "",
+		"Date": "2016-10-06T12:00:01",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "c7b0a925-e75f-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 31860,
+		"NazPlatezha": "",
+		"Date": "2016-11-14T12:00:03",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "6d89936a-e774-11e4-92f1-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 36910,
+		"NazPlatezha": "",
+		"Date": "2017-04-05T12:19:47",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "52b0242f-e775-11e4-92f1-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 985000,
+		"NazPlatezha": "",
+		"Date": "2017-04-20T19:53:02",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "8e8c1802-e8c9-11e4-92f1-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 110000,
+		"NazPlatezha": " Оплата по накладной №78 от 08.04.2015 110000-00 руб.\nВ т.ч. НДС (18%) 16779-66 руб.",
+		"Date": "2017-04-22T12:28:31",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "9ca59988-e8e2-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 26150,
+		"NazPlatezha": "",
+		"Date": "2016-12-08T12:00:02",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "52a7f5d1-ecaf-11e4-92f1-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 20000,
+		"NazPlatezha": "",
+		"Date": "2017-04-12T12:00:01",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "4d3bd812-ecb9-11e4-92f1-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 25600,
+		"NazPlatezha": "",
+		"Date": "2017-04-27T12:42:14",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "0e08571c-ecd1-11e4-92f1-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 50000,
+		"NazPlatezha": "",
+		"Date": "2017-04-15T14:30:11",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "d1711dbe-f578-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 500,
+		"NazPlatezha": "",
+		"Date": "2017-01-15T00:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "ce4144ad-f89d-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 118000,
+		"NazPlatezha": "",
+		"Date": "2017-01-16T12:00:01",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "3513e545-f8c2-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 236000,
+		"NazPlatezha": "",
+		"Date": "2017-01-27T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "951e77cf-f8c6-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 106200,
+		"NazPlatezha": "",
+		"Date": "2017-02-27T12:00:01",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "ae67c4e7-f8c6-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 106200,
+		"NazPlatezha": "",
+		"Date": "2017-03-27T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "c050fe0b-f8c6-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 106200,
+		"NazPlatezha": "",
+		"Date": "2017-04-27T16:15:27",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "d45a11e5-f8c6-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 106200,
+		"NazPlatezha": "",
+		"Date": "2017-05-27T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "eab4716f-f8c6-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 106200,
+		"NazPlatezha": "",
+		"Date": "2017-06-27T12:00:01",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "12fbb3aa-f8c7-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 106200,
+		"NazPlatezha": "",
+		"Date": "2017-07-27T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "3cafd1ad-f8c7-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 106200,
+		"NazPlatezha": "",
+		"Date": "2017-08-27T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "60ade877-f8c7-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 106200,
+		"NazPlatezha": "",
+		"Date": "2017-09-27T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "975a11e7-f8c7-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 106200,
+		"NazPlatezha": "",
+		"Date": "2017-10-27T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "ab19988e-f8c7-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 106200,
+		"NazPlatezha": "",
+		"Date": "2017-11-27T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "e45c7c22-f8c7-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 146320,
+		"NazPlatezha": "",
+		"Date": "2017-11-27T12:00:01",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "bea47a8b-f8cd-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 118000,
+		"NazPlatezha": "",
+		"Date": "2017-03-27T12:00:01",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "dca65856-f8cd-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 118000,
+		"NazPlatezha": "",
+		"Date": "2017-04-28T19:59:51",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "ece4c16a-f8cd-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 118000,
+		"NazPlatezha": "",
+		"Date": "2017-05-28T12:00:01",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "ffcf68c2-f8cd-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 118000,
+		"NazPlatezha": "",
+		"Date": "2017-06-28T12:00:01",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "0e64af7c-f8ce-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 118000,
+		"NazPlatezha": "",
+		"Date": "2017-07-28T12:00:02",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "21f0f062-f8ce-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 118000,
+		"NazPlatezha": "",
+		"Date": "2017-08-28T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "0866c260-f8cf-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 354000,
+		"NazPlatezha": "",
+		"Date": "2017-08-28T12:00:02",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "01bba580-fa44-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 1180000,
+		"NazPlatezha": "",
+		"Date": "2017-01-15T12:00:05",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "2f933df7-fa44-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 127440,
+		"NazPlatezha": "",
+		"Date": "2017-01-15T12:00:06",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "52d8b06d-fa44-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 59000,
+		"NazPlatezha": "",
+		"Date": "2017-01-15T12:00:07",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "671e31ea-fa44-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 118000,
+		"NazPlatezha": "",
+		"Date": "2017-01-15T12:00:08",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "15ed4a2d-fa45-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 401200,
+		"NazPlatezha": "",
+		"Date": "2017-01-30T12:00:02",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "70b6d2ac-fa45-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 11800,
+		"NazPlatezha": "",
+		"Date": "2017-01-30T12:00:04",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "9b286a49-fa47-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 59000,
+		"NazPlatezha": "",
+		"Date": "2017-02-20T12:00:01",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "ae9ed8ee-fa47-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 118000,
+		"NazPlatezha": "",
+		"Date": "2017-02-27T12:00:06",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "c35ebc55-fa47-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 11800,
+		"NazPlatezha": "",
+		"Date": "2017-02-27T12:00:07",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "d33ed767-fa47-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 534540,
+		"NazPlatezha": "",
+		"Date": "2017-02-27T12:00:08",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "1ea140c4-fa49-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 1000000,
+		"NazPlatezha": "",
+		"Date": "2017-01-30T12:00:05",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "7186dd60-fa49-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 1000000,
+		"NazPlatezha": "",
+		"Date": "2017-02-27T12:00:10",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "8deb58ce-fa49-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 1000000,
+		"NazPlatezha": "",
+		"Date": "2017-03-31T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "a089dad9-fa49-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 1000000,
+		"NazPlatezha": "",
+		"Date": "2017-04-30T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "b3e064f7-fa49-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 1000000,
+		"NazPlatezha": "",
+		"Date": "2017-05-31T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "0eec93a9-fb1b-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 625400,
+		"NazPlatezha": "",
+		"Date": "2017-03-04T13:07:49",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "0a79b926-fb1c-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 23600,
+		"NazPlatezha": "",
+		"Date": "2017-03-04T13:07:50",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "b44133bc-fd62-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 118000,
+		"NazPlatezha": "",
+		"Date": "2017-03-27T12:00:01",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "d4d3d825-fd62-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 11800,
+		"NazPlatezha": "",
+		"Date": "2017-03-27T12:00:02",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "adf40da2-fd64-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 3000000,
+		"NazPlatezha": "",
+		"Date": "2017-03-20T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "deebb67f-fd64-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 3000000,
+		"NazPlatezha": "",
+		"Date": "2017-04-20T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "0c02e254-fd65-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 3000000,
+		"NazPlatezha": "",
+		"Date": "2017-05-18T17:51:57",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "354c07f6-fd65-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 500000,
+		"NazPlatezha": "",
+		"Date": "2017-06-20T00:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "523406ca-fd66-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 129800,
+		"NazPlatezha": "",
+		"Date": "2017-03-27T12:00:03",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "7d8fe792-fd66-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 129800,
+		"NazPlatezha": "",
+		"Date": "2017-04-27T16:15:31",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "c02f7424-fd6d-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 2950000,
+		"NazPlatezha": "",
+		"Date": "2017-03-27T12:00:04",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "85029ac6-fd72-11e4-92f1-0050568b35ac",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 118000,
+		"NazPlatezha": "",
+		"Date": "2017-03-31T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "22dc2011-02dc-11e5-92f1-0050568b35ac",
+		"OrgID": "51ed67a3-7220-11df-b336-0011955cba6b",
+		"TotalSum": 155205.46,
+		"NazPlatezha": "",
+		"Date": "2017-05-15T17:28:38",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "a5a20549-ec3c-11e6-a22c-bcaec56cc144",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 10620,
+		"NazPlatezha": "",
+		"Date": "2017-01-24T10:45:32",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "491dbb78-fdc0-11e6-b139-0050568b35ac",
+		"OrgID": "587a0e6f-fd9f-11e6-b139-0050568b35ac",
+		"TotalSum": 59000,
+		"NazPlatezha": "",
+		"Date": "2016-10-04T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "e5328d40-fdcc-11e6-b139-0050568b35ac",
+		"OrgID": "587a0e6f-fd9f-11e6-b139-0050568b35ac",
+		"TotalSum": 89385,
+		"NazPlatezha": "",
+		"Date": "2016-10-05T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "1f1fddbd-fdce-11e6-b139-0050568b35ac",
+		"OrgID": "587a0e6f-fd9f-11e6-b139-0050568b35ac",
+		"TotalSum": 208565,
+		"NazPlatezha": "",
+		"Date": "2016-10-07T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "f990c06f-1df3-11e7-b139-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 20000,
+		"NazPlatezha": "",
+		"Date": "2017-04-01T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "4ce6106e-1df4-11e7-b139-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 2000,
+		"NazPlatezha": "",
+		"Date": "2017-04-01T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "1832358a-1df5-11e7-b139-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 50000,
+		"NazPlatezha": "",
+		"Date": "2017-04-02T12:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "cff8083f-2046-11e7-b139-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 9440,
+		"NazPlatezha": "",
+		"Date": "2017-04-11T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "ee02bfcb-2046-11e7-b139-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 1770,
+		"NazPlatezha": "",
+		"Date": "2017-04-11T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "077bd027-2047-11e7-b139-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 1180,
+		"NazPlatezha": "",
+		"Date": "2017-04-11T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "5c4994d9-2047-11e7-b139-0050568b35ac",
+		"OrgID": "c58c98b1-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 4720,
+		"NazPlatezha": "",
+		"Date": "2017-04-11T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "4b452b98-ef5d-11e6-b234-bcaec56cc144",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 91450,
+		"NazPlatezha": "",
+		"Date": "2017-01-18T12:00:02",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "4b452ba0-ef5d-11e6-b234-bcaec56cc144",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 60652,
+		"NazPlatezha": "",
+		"Date": "2017-01-30T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "b2210e8c-fda9-11e6-b589-bcaec56cc144",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 25000,
+		"NazPlatezha": "",
+		"Date": "2017-01-25T12:00:01",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "b2210e8f-fda9-11e6-b589-bcaec56cc144",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 25000,
+		"NazPlatezha": "",
+		"Date": "2017-02-20T12:00:07",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "b2210e96-fda9-11e6-b589-bcaec56cc144",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 120360,
+		"NazPlatezha": "",
+		"Date": "2017-01-31T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "b2210e99-fda9-11e6-b589-bcaec56cc144",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 20360,
+		"NazPlatezha": "Оплата (п.5.4) за Электрическая энергия (п.1.3) 275-ФЗ {2 Контракт №525642-2017 от 17012017; Акт вып. услуг №1963 от 27022017; Докум. №34 от 10022016} В т.ч. НДС (18%) 18360-00 руб.",
+		"Date": "2017-02-28T16:34:09",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "b2210e9a-fda9-11e6-b589-bcaec56cc144",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 100000,
+		"NazPlatezha": "Оплата (п.5.4) за Электрическая энергия (п.1.3) 275-ФЗ {2 Контракт №525642-2017 от 17012017; Акт вып. услуг №1963 от 27022017; Докум. №34 от 10022016} В т.ч. НДС (18%) 18360-00 руб.",
+		"Date": "2017-02-27T00:00:00",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "b2210ea4-fda9-11e6-b589-bcaec56cc144",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 40000,
+		"NazPlatezha": "Оплата (п.5.1.) за Услуги ж/д перевозки грузов (п.1.1.) 275-ФЗ {2 Контракт №8596451256-2017 от 09012017; Акт вып. услуг №53 от 23012017} В т.ч. НДС (18%) 15254-24 руб.",
+		"Date": "2017-01-30T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "b2210ea5-fda9-11e6-b589-bcaec56cc144",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 40000,
+		"NazPlatezha": "Оплата (п.5.1.) за Услуги ж/д перевозки грузов (п.1.1.) 275-ФЗ {2 Контракт №8596451256-2017 от 09012017; Акт вып. услуг №53 от 23012017} В т.ч. НДС (18%) 15254-24 руб.",
+		"Date": "2017-01-30T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "b2210ea6-fda9-11e6-b589-bcaec56cc144",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 20000,
+		"NazPlatezha": "Оплата (п.5.1.) за Услуги ж/д перевозки грузов (п.1.1.) 275-ФЗ {2 Контракт №8596451256-2017 от 09012017; Акт вып. услуг №53 от 23012017} В т.ч. НДС (18%) 15254-24 руб.",
+		"Date": "2017-01-30T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "b2210eae-fda9-11e6-b589-bcaec56cc144",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 539640,
+		"NazPlatezha": "Оплата (п.4.2.) за материалы (п.1.3.) 275-ФЗ {99 Контракт №250/1 от 01102016; Акт пер. товаров №1869 от 22112016} В т.ч. НДС (18%) 82317-97 руб.",
+		"Date": "2017-01-26T23:59:59",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "40455e41-fdc4-11e6-b58b-bcaec56cc144",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 1000000,
+		"NazPlatezha": "",
+		"Date": "2017-02-27T12:00:17",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "40455e44-fdc4-11e6-b58b-bcaec56cc144",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 320000,
+		"NazPlatezha": "",
+		"Date": "2017-02-27T12:00:20",
+		"DocNumber": 0
+	},
+	{
+		"DocID": "40455e4a-fdc4-11e6-b58b-bcaec56cc144",
+		"OrgID": "c58c98af-c3e6-11e4-946e-bcaec56cc144",
+		"TotalSum": 1000000,
+		"NazPlatezha": "Авансовый платеж (п.4.2.) за покупные комплектующие (п.1.2.) 275-ФЗ {99 Контракт №400/1 от 01082016; Акт пер. товаров №489 от 28012017} В т.ч. НДС (18%) 152542-37 руб.",
+		"Date": "2017-01-31T23:59:59",
+		"DocNumber": 0
+	}
+]
+}

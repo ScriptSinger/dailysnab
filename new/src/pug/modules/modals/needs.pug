@@ -1,0 +1,20 @@
++b.needs-modal.modal
+    .modal__container
+        .modal__inner
+            .modal__content
+                .modal__close(data-close="close")
+                    +icon('cross')
+                .modal__body
+                    +e.header
+                        +e.photos
+                            +icon('cameraSharp')
+                        +e.need-name-input.form-group
+                            input.input.require(type="text" placeholder='Название')
+                    +e.needs
+                    +e.bottom
+                        +e.save
+                            +icon('floppyDisk')
+                        +e.next.btn._blue._m(data-next="1") Продолжить
+                        //- +e.publish.btn._blue._dropdown._m Опубликовать
+                        //-     +icon('dropdown', 'cards-info__action-btn-icon')
+                        

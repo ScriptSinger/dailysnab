@@ -1,0 +1,13 @@
+
+// Файл offers.php отображает предложения
+// artname - артикул или название
+http://dailysnab.beget.tech/qrq/autopiter/parse/offers.php
+
+
+
+
+
+
+
+
+

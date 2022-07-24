@@ -1,0 +1,32 @@
+.cards_solid {
+    .cards {
+        &__item {
+            box-shadow: unset;
+            border-top: 1px solid $black100;
+            border-radius: unset;
+            margin-bottom: 0;
+            &:first-child {
+                border-top: unset;
+            }
+        }
+        &-offers {
+            margin: 0 -1.5rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+        @include max-screen($large_tablet) {
+            &-info__status-name .badge-notify {
+                top: 0px;
+                left: 0px;
+            }
+        }
+        @include max-screen($small_tablet) {
+            &-cost {
+                display: flex;
+                &__old {
+                    margin-left: 1rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.nomenclature {
+    &-page {
+        .header-submenu {
+            background: unset;
+            border: unset;
+            &__inner {
+                padding-top: 1.5rem;
+                padding-bottom: 0;
+            }
+            &__btn {
+                @extend .h6;
+                padding-left: 2rem;
+                padding-right: 2rem;
+                margin-left: auto;
+            }
+        }
+    }
+    .cards {
+        &__item {
+        }
+    }
+}

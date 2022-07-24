@@ -1,0 +1,36 @@
++b.subscription-emex-modal.modal._m
+    .modal__container
+        .modal__inner
+            .modal__content
+                .modal__head
+                    .modal__close(data-close="close")
+                        +icon('cross')
+                    .modal__head-text Подписка на Emex
+                .modal__body
+                    +e.FORM.form.form.subscription-emex-form
+                        +e.groups 
+                            +e.form-group.form-group
+                                input.input.require(type="text" placeholder="Логин" name="login")
+                            +e.form-group.form-group
+                                input.input.require(type="password" placeholder="Пароль" name="pass")
+                            +e.form-group.form-group
+                                .select-box.require
+                                    select
+                                        option Выберите
+                                        option Вариант 1
+                                        option Вариант 2
+                                    +icon('dropdown')
+                        +e.info
+                            +e.info-inner
+                                +e.info-btn
+                                    +icon('infoSign')
+                                +e.info-tip
+                                    |Свяжитесь с поставщиком и запросите Логин и Пароль
+                                    br
+                                    br
+                                    |Телефон:
+                                    br
+                                    |+7 968 851-38-45 +7 916 845-99-65
+                        +e.bottom
+                            +e.btn.btn_gray-bd._m(data-close="close") Без авторизации
+                            +e.btn.btn._blue._m(data-close="close") Добавить

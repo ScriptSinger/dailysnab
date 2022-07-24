@@ -1,0 +1,78 @@
+extends ../layouts/base
+
+append vars
+	- title = 'Чужие заявки';
+
+block content
+	+b.hints.header-submenu
+		+e.wrap.wrap
+			+e.inner.header-submenu__inner
+				+b.btn._green._cross._m Выберите свои интересы
+					+icon('cross')
+	.section
+		.wrap
+			+b.cards 
+				+e.item.offers-on
+					+e.content
+						+cards-top('Прокладка впускного коллектора (1374340) SCANIA D/DS2', '20 шт', '1', '', ['3 500', 'НДС'], ['3 600', 'НДС'], ['2360-2910210', 'Scania', 'Сталь 20', '5 брендов', '4 листа'], '', 'http://link1/')
+						+cards-bottom('оплата до 20 ноября', ['not-urgently', 'Не срочно'], 'Уфа', 'Лично для ВП', ['Тимур'], 1, 'Запчасти') 
+						+cards-info(['', ], '20 минут назад', ['Дать предложение', '', '', ''], '19', '21', [ 'msg', 'warning'])
+					+b.FORM.cards-write-offers.j-show-more-dd
+						.form-group
+							input.input.require(type="text" placeholder="Поставщик")
+						+form-input('Город')
+						.form-group
+							input.input.require(type="text" placeholder="Наличие")
+						+form-input-select('Цена', ['₽', '$'])
+						+form-select(['с НДС', 'без НДС'])
+						+form-input-select('Название поля', ['шт','л','гр',])
+						+form-input-select('Название поля', ['л','шт','гр',])
+						+form-select(['Тип', 'Бренд', 'Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4', 'Вариант 5',])
+						+form-select(['Назначение', 'Бренд', 'Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4', 'Вариант 5',])
+						+form-select(['Тип применения', 'Бренд', 'Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4', 'Вариант 5',])
+						+form-select(['Поверхность', 'Бренд', 'Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4', 'Вариант 5',])
+						+form-input('Комментарий')
+						+form-input('Поставщик')
+						+form-input('Город')
+						+form-input('Наличие')
+						+form-input-select('Цена', ['₽', '$'], 1)
+						+form-select(['с НДС', 'без НДС'], 1)
+						+form-input-select('Название поля', ['шт','л','гр',], 1)
+						+e.manage
+							+e.photos
+								+icon('cameraSharp', 'cards-write-offers__photos-icon')
+							+e.SPAN.show-more.j-show-more-dd-btn 
+								+e.show-more-text Еще
+								+icon('dropdown', 'show-more-dropdown__icon')
+							+e.SPAN.list
+								+icon('list', 'cards-write-offers__list-icon')
+							+e.write.btn.btn._blue Предложить
+					+b.cards-offers.cards__content
+						+cards-top('Прокладка впускного коллектора (1374340) SCANIA D/DS2', '', '', '', ['3 500', 'НДС'], '', ['2360-2910210', 'Scania', 'Сталь 20', '5 брендов', '4 листа'])
+						+cards-bottom('оплата до 20 ноября', '', 'Уфа', '', ['Тимур'], 0, 'Запчасти', '9 дней') 
+						+cards-info(['Предложение', '1'], '20 минут назад', '', '', '', ['edit', 'msg'])
+					+b.cards-offers.cards__content
+						+cards-gallery
+						+cards-top('Прокладка впускного коллектора (1374340) SCANIA D/DS2', '20 шт', '1', [2,2], ['3 500', 'НДС'], '', ['2360-2910210', 'Scania', 'Сталь 20', '5 брендов', '4 листа'])
+						+cards-bottom('оплата до 20 ноября', '', 'Уфа', '', ['Тимур'], 0, 'Запчасти', '9 дней') 
+						+cards-info(['Предложение', ' '], '20 минут назад', '', '', '', ['edit', 'msg'])
+				+e.item
+					+e.content
+						+cards-gallery
+						+cards-top('Прокладка впускного коллектора (1374340) SCANIA D/DS2', '20 шт', '', '', '', '', ['2360-2910210', 'Scania', 'Сталь 20', '5 брендов', '4 листа'])
+						+cards-bottom('оплата до 20 ноября', ['two-week', '2 недели'], 'Уфа', 'Лично для ВП', ['Фаниль'], 0, 'Запчасти') 
+						+cards-info([''], '20 минут назад', ['Дать предложение'], '1', '27', [ 'msg', 'warning'])
+
+				+e.item
+					+e.content
+						+cards-gallery
+						+cards-top('Прокладка впускного коллектора (1374340) SCANIA D/DS2', '20 шт', '', '', '', '', ['2360-2910210', 'Scania', 'Сталь 20', '5 брендов', '4 листа'])
+						+cards-bottom('оплата до 20 ноября', ['two-week', '2 недели'], 'Уфа', 'Лично для ВП', ['Фаниль'], 0, 'Запчасти') 
+						+cards-info([''], '20 минут назад', ['Дать предложение'], '1', '27', [ 'msg', 'warning'])
+
+				+e.item
+					+e.content
+						+cards-gallery
+						+cards-top('Прокладка впускного коллектора (1374340) SCANIA D/DS2', '20 шт', '', '', '', '', ['2360-2910210', 'Scania', 'Сталь 20', '5 брендов', '4 листа'])
+						+cards-bottom('оплата до 20 ноября', ['two-week', '2 недели'], 'Уфа', 'Лично для ВП', ['Фаниль'], 0, 'Запчасти') 
+						+cards-info([''], '20 минут назад', ['Дать предложение'], '1', '27', [ 'msg', 'warning'])

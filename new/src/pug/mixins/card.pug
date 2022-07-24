@@ -1,0 +1,186 @@
+mixin cards-gallery(gallery) 
+    +b.cards-gallery 
+        +e.inner
+            if (gallery)
+                +e.A.item(href="/app/img/car.jpg" data-fancybox="card-imgs")
+                    +e.img-wrapper
+                        +e.IMG.img(src="/img/car.jpg" alt="")
+                    +e.line
+                +e.A.item(href="/app/img/car2.jpg" data-fancybox="card-imgs")
+                    +e.img-wrapper
+                        +e.IMG.img(src="/img/car2.jpg" alt="")
+                    +e.line
+                +e.A.item(href="/app/img/car3.jpg" data-fancybox="card-imgs")
+                    +e.img-wrapper
+                        +e.IMG.img(src="/img/car3.jpg" alt="")
+                    +e.line
+                +e.A.item(href="/app/img/car.jpg" data-fancybox="card-imgs")
+                    +e.DIV.img-wrapper
+                        +e.IMG.img(src="/img/car.jpg" alt="")
+                        +e.more
+                            +e.more-icon
+                                +icon('camera', 'cards-gallery__more-icon')
+                            +e.more-text Еще 7 фото
+                    +e.DIV.line
+            else 
+                +e.A.item(href="/app/img/car.jpg" )
+                    +e.img-wrapper
+                        +e.IMG.img(src="/img/car.jpg" alt="")
+                    +e.line
+//- +cards-top('Прокладка впускного коллектора (1374340) SCANIA D/DS', '20 шт', 1, ['2', '2'], ['44 800', 'withNDS', 'red', 'truck'], ['3 600', 'icon'])
+mixin cards-top(name, qLeft, qPurch, minLot, costMain, costOld, prop, photos, checkbox, ctx = {}) 
+    +b.cards-top
+        if (name)
+            +e.SPAN.item-name 
+                +e.item-name-inner
+                    if (ctx.userOnline)
+                        +e.SPAN.user-online.user-online
+                    if (checkbox)
+                        +b.LABEL.checkbox.cards-top__checkbox
+                            +e.INPUT.input.j-cb-share-need(type="checkbox" name="share-need")
+                            +e.SPAN.control
+                                +e.SPAN.icon
+                                    +icon('check')
+                    if (checkbox)
+                        +e.A.item-name-text(href="#"+checkbox)=name
+                    else
+                        +e.A.item-name-text(href="#")=name
+        if (qLeft || minLot || photos)
+            +e.quantity 
+                if (qLeft)
+                    +e.quantity-left=qLeft
+                        if (qPurch)
+                            +e.SPAN.quantity-purchased &nbsp;(#{qPurch})
+                if (minLot)
+                    +e.min-lot 
+                        +e.SPAN.min-lot-left=minLot[0]
+                        +e.SPAN.min-lot-separator /
+                        +e.SPAN.min-lot-multiplicity=minLot[1]
+                if (photos)
+                    +e.photos
+                        +icon('cameraSharp', 'cards-top__photos-icon')
+    if (costMain || costOld)
+        +b.cards-cost
+            if (costMain)
+                +e.main
+                    +e.SPAN.price(class=(costMain[2] == 'red' ? "cards-cost__price_red" : ''))=costMain[0]
+                        +e.SPAN.symbol &nbsp;₽
+                    if (costMain[1]=='icon')
+                        +e.SPAN.payment 
+                            +icon('money')
+                    else if (costMain[1])
+                        +e.SPAN.payment=costMain[1]
+                    if (costMain[3]=='truck')
+                        +e.SPAN.truck 
+                            +icon('truck', 'cards-cost__truck-icon')
+            if (costOld)
+                +e.old
+                    +e.SPAN.price._cross-out(class=(costOld[2] == 'red' ? "cards-cost__price_red" : ''))=costOld[0]
+                        +e.SPAN.symbol &nbsp;₽
+                    if (costOld[1]=='icon')
+                        +e.SPAN.payment 
+                            +icon('money')
+                    else if (costOld[1])
+                        +e.SPAN.payment=costOld[1]
+    if (prop)
+        +b.cards-properties
+            each val in prop
+                +e.properties-item=val
+//- +cards-bottom('Цену только указывайте с доставкой', ['not-urgently', 'Не срочно'], 'Уфа', 'На апрель', ['Тимур', 1], 1, 'Запчасти', '9 дней') 
+mixin cards-bottom(comment, urgent, city, badge, user, share, category, days, ctx = {}) 
+    +b.cards-bottom
+        if (comment)
+            +e.comment
+                +e.SPAN.comment-text=comment
+                if (ctx.categories)
+                    +e.SPAN.comment-categories=ctx.categories
+        if (urgent)
+            +e.urgency(class="cards-bottom__urgency_"+urgent[0])=urgent[1]
+        if (city)
+            +e.city=city 
+        if (days)
+            +e.days=days 
+        if (badge || ctx.badge || user || share || category)
+            +e.right
+                if (badge)
+                    +e.badge=badge
+                if (ctx.badge)
+                    if (ctx.badge.isLink)
+                        +e.A.badge(href="#")
+                            span=ctx.badge.text
+                    else
+                        +e.badge
+                            span=ctx.badge.text
+                if (user)
+                    +e.user
+                        +e.SPAN.user-name(class=user[1]?'user-online':'')=user[0]
+                        +e.SPAN.user-avatar
+                            +icon('noAvatar', 'cards-bottom__user-avatar-icon')
+                if (share)
+                    +e.A.share(href="#")
+                        +icon('clip', 'cards-bottom__share-icon')
+                if (category)
+                    +e.category
+                        +e.category-text=category
+//- +cards-info('Не опубликовано', '20 минут назад', ['Активировать'], '25', '27', ['edit', 'open', 'msg', 'refresh'])
+mixin cards-info(name, published, btn, days, views, manage, active, ctx = {})
+    +b.cards-info
+        if (days || views) 
+            +e.nums
+                +e.nums-inner
+                    if (days)
+                        +e.nums-days 
+                            +e.SPAN.nums-days-text 
+                                span.j-cards-nums-days=days 
+                                | &nbsp;дней
+                            +e.nums-days-scale
+                                +e.SPAN.nums-days-scale-thumb
+                    if (views)
+                        +e.nums-views
+                            +e.nums-views-img
+                                +icon('eye', 'cards-info__nums-views-icon')
+                            +e.SPAN.nums-views-text=views 
+        if (btn)
+            +e.action
+                if (btn[0])
+                    +e.action-btn.btn._blue(class=(btn[1]?'btn_dropdown':'')+ ' ' + (btn[3] || '') data-btn=ctx.btn?ctx.btn.data:'')
+                        span=btn[0]
+                        if (btn[1])
+                            +icon('dropdown', 'cards-info__action-btn-icon')
+                //- +e.action-btn.btn._white-bd
+                //-     span Свернуть
+                if (btn[2])
+                    +badgeNotify('1')
+        if (name || published)
+            +e.status 
+                if (name)
+                    +e.status-name
+                        if (name[0])
+                            +e.SPAN.status-name-text=name[0]
+                        if (name[1])
+                            +badgeNotify(name[1])
+                if (published)
+                    +e.status-published
+                        +e.SPAN.status-published-text=published
+        if (manage)
+            +e.manage
+                +e.manage-inner
+                    each val in manage
+                        if (val == 'edit')
+                            +e.manage-item.__manage-edit
+                                +icon('pencil', 'cards-info__manage-item-icon')
+                        if (val == 'open')
+                            +e.manage-item.__manage-open.j-open-offers(class=active?'is-active':'')
+                                +icon('pencilWrite', 'cards-info__manage-item-icon')
+                        if (val == 'msg')
+                            +e.manage-item.__manage-message
+                                +icon('mail', 'cards-info__manage-item-icon')
+                        if (val == 'refresh')
+                            +e.manage-item.__manage-refresh
+                                +icon('rotateArrow', 'cards-info__manage-item-icon')
+                        if (val == 'warning')
+                            +e.manage-item.__manage-warning
+                                +icon('warning', 'cards-info__manage-item-icon')
+        +e.menu
+            +icon('threeDot', 'cards-info__menu-icon')
+

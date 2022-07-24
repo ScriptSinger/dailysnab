@@ -1,0 +1,37 @@
+extends ../layouts/base
+
+append vars
+    - title = 'Номенклатура';
+    - body.classList = 'nomenclature-page'
+
+block content
+    +b.header-submenu
+        +e.wrap.wrap
+            +e.inner.header-submenu__inner
+                +e.btn.btn._green._m.j-brand-gr-btn Группы брендов
+    +b.nomenclature.section
+        +e.wrap.wrap
+            +e.inner
+                +b.cards._simple._solid.rounded-white-bg
+                    +e.item
+                        +e.content
+                            +cards-top('Гайка башмака 4610302107', '', '', '', '', '', '', '', '', {
+                            })
+                            +cards-bottom('', '', 'Запчасти', '', '', '', '', '', {
+                                badge: {
+                                    text: '2461898754001 Гайка Башмака',
+                                }
+                            })
+                            +cards-info([''], '', '', '', '', ['edit'], '', {
+                            })
+                    +e.item
+                        +e.content
+                            +cards-top('Гайка башмака 4610302107', '', '', '', '', '', '', '', '', {
+                            })
+                            +cards-bottom('', '', 'Запчасти', '', '', '', '', '', {
+                                badge: {
+                                    text: '2461898754001 Гайка Башмака',
+                                }
+                            })
+                            +cards-info([''], '', '', '', '', ['edit'], '', {
+                            })

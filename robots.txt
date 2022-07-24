@@ -1,0 +1,22 @@
+﻿User-agent: *                  # Создаем секцию правил для роботов. * значит для всех
+							   # роботов. Чтобы указать секцию правил для отдельного
+							   # робота, вместо * укажите его имя: GoogleBot, Yandex.
+Disallow: /cgi-bin             # Стандартная папка на хостинге.
+Disallow: /.git/           	   # Закрываем git.
+Disallow: /component/          # Закрываем component
+Disallow: /protected/          # Закрываем protected
+Disallow: /qrq/          	   # Закрываем qrq
+Disallow: /?                   # Все параметры запроса на главной.
+Disallow: *?value=             # Поиск по значению
+Disallow: *&categories_id=     # Фильтр по категории
+Disallow: *&cities_id=         # Фильтр по городам
+Disallow: *&flag=              # Фильтр по флагам
+Disallow: *&interests=     	   # Фильтр по интересам
+Disallow: /*index.php$		   	
+
+Disallow: *utm*=               # Ссылки с utm-метками
+Disallow: *openstat=           # Ссылки с метками openstat
+
+# Карта сайта (файл Sitemap). 
+Sitemap: questrequest.ru/sitemap
+

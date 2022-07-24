@@ -1,0 +1,17 @@
+.header-submenu {
+    background: $white;
+    border-bottom: 1px solid $blue200;
+    z-index: 5;
+    &__inner {
+        display: flex;
+        align-items: center;
+        min-height: 4.6rem;
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+
+    }
+    & + .header-submenu {
+        background: unset;
+        border: unset;
+    }
+}

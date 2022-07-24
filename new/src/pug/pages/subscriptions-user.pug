@@ -1,0 +1,43 @@
+extends ../layouts/base
+
+append vars
+    - title = 'Подписки - пользователь';
+
+block content
+    +b.subs-user.section
+        +e.wrap.wrap
+            +e.inner
+                +e.profile
+                    +b.cards._subscriptions 
+                        +e.item
+                            +e.content
+                                +cards-gallery()
+                                +cards-top('ООО Даилком', '', '', '', '', '', '', '', '', {
+                                    userOnline: true,
+                                })
+                                +cards-bottom('Запчасти Scania', '', 'Уфа', '', '', '', '', '', {
+                                    categories:'+35 категорий'
+                                }) 
+                    +e.profile-manage
+                        +e.show-phone.btn._m._blue(data-btn="show-phone") Показать телефон
+                        +e.subscribe.btn._m._blue(data-btn="subscribe") Подписаться
+                        +form-input('1С')
+                    +e.P.profile-desc Запчасти Scania Запчасти ScaniaЗапчасти ScaniaЗапчасти ScaniaЗапчасти ScaniaЗапчасти ScaniaЗапчасти ScaniaЗапчасти ScaniaЗапчасти ScaniaЗапчасти ScaniaЗапчасти ScaniaЗапчасти ScaniaЗапчасти ScaniaЗапчасти ScaniaЗапчасти ScaniaЗапчасти ScaniaЗапчасти ScaniaЗапчасти ScaniaЗапчасти ScaniaЗапчасти Scania
+                +e.needs
+                    +submenu
+                        block submenuNav
+                            +submenuNavLi('Заявки', '', 1) 
+                            +submenuNavLi('Объявления', '12') 
+                    .section
+                        +b.cards._solid(data-cards="cus-size") 
+                            +e.item
+                                +e.content
+                                    +cards-gallery(1)
+                                    +cards-top('Прокладка впускного коллектора (1374340) SCANIA D/DS2', '20 шт', '', '', '', '', ['2360-2910210', 'Scania', 'Сталь 20', '5 брендов', '4 листа'], '', 'http://link1/')
+                                    +cards-bottom('Цену только указывайте с доставкой', ['not-urgently', 'Не срочно'], 'Уфа', 'Лично для ВП', ['Тимур', 1], 0, 'Запчасти') 
+                                    +cards-info(['Не опубликовано'], '20 минут назад', ['Активировать', 1], '19', '21', ['edit', 'open', 'msg', 'refresh'])
+                            +e.item
+                                +e.content
+                                    +cards-top('Прокладка впускного коллектора (1374340) SCANIA D/DS2', '20 шт', '1', '', '', '', ['2360-2910210', 'Scania', 'Сталь 20', '5 брендов', '4 листа'], '', 'http://link2/')
+                                    +cards-bottom('Цену только указывайте с доставкой', ['month', 'Месяц'], 'Уфа', 'Лично для ВП', ['Тимур', 1], 0, 'Запчасти') 
+                                    +cards-info(['Опубликованна'], '20 минут назад', ['в Неопубликованные', 1], '25', '27', ['edit', 'open', 'msg', 'refresh'])

@@ -1,0 +1,10 @@
+mixin place-need(classes)
+    +b.place-need(class=classes)
+        +e.main
+            +icon('plus')
+            +e.SPAN.text Разместить потребность
+        +b.btn-double._white-blue.place-need__double
+            +e.item.cards-info__action-btn-buy.place-need__double-item
+                +e.SPAN.text.place-need__double-text Заявки
+            +e.item.cards-info__action-btn-sell.place-need__double-item
+                +e.SPAN.text.place-need__double-text Объявления

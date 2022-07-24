@@ -1,0 +1,33 @@
++b.brand-groups-modal.modal._m
+    .modal__container
+        .modal__inner
+            .modal__content
+                .modal__head
+                    .modal__close(data-close="close")
+                        +icon('cross')
+                    .modal__head-text Группы брендов
+                .modal__body
+                    +e.FORM.form.form.brand-groups-form
+                        +e.form-group-row.form-group-row
+                            +e.form-group.form-group
+                                input.input(type="text" placeholder="Название" name="login")
+                            +e.form-group.form-group
+                                .select-box
+                                    select
+                                        option Бренды
+                                        option Вариант 1Вариант 1Вариант 1
+                                        option Вариант 2
+                                    +icon('dropdown')
+                            +e.remove Удалить
+                        +e.form-group-row.form-group-row
+                            +e.form-group.form-group
+                                input.input(type="text" placeholder="Название" name="login")
+                            +e.form-group.form-group
+                                .select-box
+                                    select
+                                        option Бренды
+                                        option Вариант 1
+                                        option Вариант 2
+                                    +icon('dropdown')
+                            +e.remove Удалить
+                        +e.add.btn_gray-bd._m(data-close="close") Добавить

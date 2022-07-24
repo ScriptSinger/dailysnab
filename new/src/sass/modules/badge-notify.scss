@@ -1,0 +1,16 @@
+.badge-notify {
+    @extend .h6;
+    @include align-center;
+    display: inline-flex;
+    @include square(1.8rem);
+    background: $green;
+    border-radius: 100%;
+    color: $white;
+	flex-shrink: 0;
+    line-height: 1.7rem;
+    pointer-events: none;
+    span {
+        @extend .nowrap;
+        max-width: 1.8rem;
+    }
+}

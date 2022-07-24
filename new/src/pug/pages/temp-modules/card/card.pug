@@ -1,0 +1,108 @@
+//- $cardArray = [
+//-     'id' => '123',
+//-     'imgs' => [
+//-         [
+//-             'url' => '/app/img/car.jpg',
+//-         ],
+//-         [
+//-             'url' => '/app/img/car1.jpg',
+//-         ],
+//-     ],
+//-     'name' => 'Прокладка впускного коллектора',
+//-     'userOnline' => true,
+//-     'checkbox' => true,
+//-     'quantityLeft' => 2,
+//-     'quantityPurchased' => 5,
+//-     'minLot' => [3, 5],
+//-     'photos' => [
+//-         [
+//-             'url' => '/app/img/photo.jpg',
+//-         ],
+//-         [
+//-             'url' => '/app/img/photo1.jpg',
+//-         ],
+//-     ],
+//-     'costMain' => [
+//-         'price' => '23 000',
+//-         'highlight' => true,
+//-         'payment' => true, // значения: любой текст (обычно НДС и Без НДС), либо 'icon' - выводит иконку купюры
+//-         'truck' => true,
+//-     ],
+//-     'costOld' => [
+//-         'price' => '23 000',
+//-         'highlight' => true,
+//-         'payment' => true, // значения: любой текст (обычно НДС и Без НДС), либо 'icon' - выводит иконку купюры
+//-     ],
+//-     'properties' => ['2360-2910210', 'Scania', 'Сталь 20', '5 брендов', '4 листа'],
+//-     'comment' => 'оплата до 20 ноября',
+//-     'categories' => 'Scania, Shantu', // категории в подписках
+//-     'urgent' => [
+//-         'name' => 'week', // значения: urgent,week,two-week,month,not-urgently
+//-         'value' => 'Неделя',
+//-     ],
+//-     'city' => 'Уфа',
+//-     'days' => 12,
+//-     'badge' => [
+//-         'link' => 'https://www.google.ru/', // ссылка на текущую карточку
+//-         'text' => 'Лично для ВП',
+//-     ],
+//-     'user' => [
+//-         'name' => 'https://www.google.ru/', // ссылка на текущую карточку
+//-         'online' => 'Лично для ВП',
+//-         'avatar' => 'https://www.google.ru/', // ссылка на аватар
+//-     ],
+//-     'category' => 'Запчасти',
+//-     'daysLeft' => 12,
+//-     'views' => 212,
+//-     'btn' => [
+//-         'name' => 'Активировать',
+//-         'data' => '', // позднее это опишу подробнее
+//-         'offersNotify' => 2,
+//-     ],
+//-     'status' => [
+//-         'name' => 'Активировать',
+//-         'notify' => 2,
+//-     ],
+//-     'publicationDate' => '20 минут назад',
+//-     'manage' => ['edit', 'refresh'], // значения: 'edit', 'open', 'msg', 'refresh'
+//- ]
+
+include ../../../mixins/mixin-loader.pug
+
++b.cards 
+    +e.item
+        include item
+        +b.FORM.cards-write-offers.j-show-more-dd
+            .form-group
+                input.input.require(type="text" placeholder="Поставщик")
+            +form-input('Город')
+            .form-group
+                input.input.require(type="text" placeholder="Наличие")
+            +form-input-select('Цена', ['₽', '$'])
+            +form-select(['с НДС', 'без НДС'])
+            +form-input-select('Название поля', ['шт','л','гр',])
+            +form-input-select('Название поля', ['л','шт','гр',])
+            +form-select(['Тип', 'Бренд', 'Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4', 'Вариант 5',])
+            +form-select(['Назначение', 'Бренд', 'Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4', 'Вариант 5',])
+            +form-select(['Тип применения', 'Бренд', 'Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4', 'Вариант 5',])
+            +form-select(['Поверхность', 'Бренд', 'Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4', 'Вариант 5',])
+            +form-input('Комментарий')
+            +form-input('Поставщик')
+            +form-input('Город')
+            +form-input('Наличие')
+            +form-input-select('Цена', ['₽', '$'], 1)
+            +form-select(['с НДС', 'без НДС'], 1)
+            +form-input-select('Название поля', ['шт','л','гр',], 1)
+            +e.manage
+                +e.photos
+                    +icon('cameraSharp', 'cards-write-offers__photos-icon')
+                +e.SPAN.show-more.j-show-more-dd-btn 
+                    +e.show-more-text Еще
+                    +icon('dropdown', 'show-more-dropdown__icon')
+                +e.SPAN.list
+                    +icon('list', 'cards-write-offers__list-icon')
+                +e.write.btn.btn._blue Предложить
+        +b.cards-offers.cards__content
+            +cards-top('Прокладка впускного коллектора (1374340) SCANIA D/DS2', '', '', '', ['3 500', 'НДС'], '', ['2360-2910210', 'Scania', 'Сталь 20', '5 брендов', '4 листа'])
+            +cards-bottom('оплата до 20 ноября', '', 'Уфа', '', ['Тимур'], 0, 'Запчасти', '9 дней') 
+            +cards-info(['Предложение', '1'], '20 минут назад', '', '', '', ['edit', 'msg'])

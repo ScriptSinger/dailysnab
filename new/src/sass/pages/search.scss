@@ -1,0 +1,29 @@
+.search {
+    margin-top: 3.5rem;
+    &__p {
+        color: $black300;
+        line-height: 2.4rem;
+        margin-right: 3rem;
+    }
+    // &__right {
+    //     margin-left: 3rem;
+    // }
+    @include min-screen($large_tablet) {
+        &__inner {
+            display: grid;
+            grid-template: auto/1fr 1fr;
+            justify-items: right;
+        }
+    }
+
+    // @include max-screen($small_tablet) {
+    //     &__inner {
+    //         display: flex;
+    //         flex-direction: column;
+    //     }
+    
+    //     // &__right {
+    //     //     margin: 1.5rem 0 0;
+    //     // }
+    // }
+}

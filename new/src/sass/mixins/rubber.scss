@@ -1,0 +1,3 @@
+@mixin rubber($selector, $minWidth, $maxWidth, $minSize, $maxSize) {
+    #{$selector}: calc( (100vw - #{$minWidth}px)/(#{$maxWidth} - #{$minWidth}) * (#{$maxSize} - #{$minSize}) + #{$minSize}px)
+}

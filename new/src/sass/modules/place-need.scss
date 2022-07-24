@@ -1,0 +1,101 @@
+.place-need {
+    height: 3rem;
+    flex-shrink: 0;
+    transition: $transition;
+        width: 21.4rem;
+        &__main {
+        @extend .btn, .btn_blue;
+        justify-content: flex-start;
+        overflow: hidden;
+    }
+    &__text {
+        opacity: 1;
+        margin-right: 1.5rem;
+        transition: $transition;
+    }
+    &__double {
+        display: none;
+        width: 100%;
+        &-item {
+            padding: 0 1rem;
+            &_buy {
+            }
+            &_sell {
+            }
+            .icon {
+                width: 1.7rem;
+                flex-shrink: 0;
+            }
+        }
+        &-text {
+            margin-left: 0.5rem;
+        }
+    }
+    .icon-plus {
+        fill: $white;
+        margin: 0.7rem;
+        width: 1.6rem;
+        min-width: 1.6rem;
+    }
+    &.collapse {
+        width: 3rem;
+        .place-need {
+            &__main {
+            }
+            &__text {
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+            }
+        }
+    }
+    &.is-on {
+        .place-need {
+            &__double {
+                display: flex;
+            }
+            &__main {
+                display: none;
+                // opacity: 0;
+                // visibility: hidden;
+                // pointer-events: none;
+            }
+        }
+    }
+    &_static {
+        &.is-on {
+            width: 29rem;
+        }
+    }
+    @include max-screen($large_tablet) {
+        &.is-on:not(.is-active) {
+            .place-need {
+                &__double-item {
+                    .icon {
+                        display: none;
+                    }
+                }
+                &__double-text {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    @include max-screen($small_tablet) {
+        &.is-on:not(.is-active) {
+            position: absolute;
+            right: 0;
+            z-index: 1;
+            .place-need {
+                &__double-item {
+                    .icon {
+                        display: none;
+                    }
+                }
+                &__double-text {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}

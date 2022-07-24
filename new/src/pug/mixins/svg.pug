@@ -1,0 +1,6 @@
+mixin icon(name, addName, view)
+	- mod = mod || ''
+	- view = view || ''
+	- addName = addName || ''
+	svg(class="icon icon-" + name + ' ' + addName, viewBox=view)
+		use(xlink:href="/app/icons/sprite.svg#" + name)

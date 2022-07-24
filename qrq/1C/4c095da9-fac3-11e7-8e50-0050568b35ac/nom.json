@@ -1,0 +1,2865 @@
+[
+	{
+		"NomID": "f1afe968-c547-11e7-8e50-0050568b35ac",
+		"Article": "",
+		"Name": "Цилиндр огнетушителя ОП-10",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "938ff0aa-c549-11e7-8e50-0050568b35ac",
+		"Article": "",
+		"Name": "Клапан в сборе огнетушителя ОП-10",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "d5ab5ce6-c549-11e7-8e50-0050568b35ac",
+		"Article": "",
+		"Name": "Патрубок огнетушителя ОП-10",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "f178c63e-c549-11e7-8e50-0050568b35ac",
+		"Article": "",
+		"Name": "Инструкция огнетушителя ОП-10",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "0442eccc-c54a-11e7-8e50-0050568b35ac",
+		"Article": "",
+		"Name": "Крепление огнетушителя ОП-10",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "b66c3dd1-c541-11e8-8e50-0050568b35ac",
+		"Article": "",
+		"Name": "Товар с драг.метталами",
+		"MeasureID": 796,
+		"TypeNomID": "862549ec-c541-11e8-8e50-0050568b35ac"
+	},
+	{
+		"NomID": "e9cbe8a5-ef29-11e8-8e50-0050568b35ac",
+		"Article": "",
+		"Name": "Окраска металлических конструкций",
+		"MeasureID": 6,
+		"TypeNomID": "fad620be-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "2d75b84f-2ad1-11e9-8e50-0050568b35ac",
+		"Article": "",
+		"Name": "Станок деревообрабатывающий",
+		"MeasureID": 796,
+		"TypeNomID": "fad620bb-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "9cf07cf3-1036-11ea-83ee-bbc7402485c6",
+		"Article": "",
+		"Name": "GPS Module HL6528RD-G",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "899f6671-1053-11ea-83ee-bbc7402485c6",
+		"Article": "",
+		"Name": "IPad",
+		"MeasureID": 796,
+		"TypeNomID": "08170e76-73a3-11df-b338-0011955cba6b"
+	},
+	{
+		"NomID": "f93e112a-c83a-11e2-8026-0015e9b8c48d",
+		"Article": "",
+		"Name": "Бутылка ",
+		"MeasureID": 796,
+		"TypeNomID": "f93e1126-c83a-11e2-8026-0015e9b8c48d"
+	},
+	{
+		"NomID": "f93e112c-c83a-11e2-8026-0015e9b8c48d",
+		"Article": "",
+		"Name": "Ящик ",
+		"MeasureID": 796,
+		"TypeNomID": "f93e1126-c83a-11e2-8026-0015e9b8c48d"
+	},
+	{
+		"NomID": "f93e112f-c83a-11e2-8026-0015e9b8c48d",
+		"Article": "",
+		"Name": "Поддон (металл)",
+		"MeasureID": 796,
+		"TypeNomID": "f93e1126-c83a-11e2-8026-0015e9b8c48d"
+	},
+	{
+		"NomID": "f93e113e-c83a-11e2-8026-0015e9b8c48d",
+		"Article": "Л-90",
+		"Name": "Лимонад",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fa7-55bc-11d9-848a-00112f43529a",
+		"Article": "С-140001",
+		"Name": "Женские сапоги с натуральным мехом",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "dee6e178-55bc-11d9-848a-00112f43529a",
+		"Article": "Т-140006",
+		"Name": "Женские модельные туфли",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "bd72d910-55bc-11d9-848a-00112f43529a",
+		"Article": "Б-130001",
+		"Name": "Женские ботфорты",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fa9-55bc-11d9-848a-00112f43529a",
+		"Article": "С-130004",
+		"Name": "Сапоги жен. низкие",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "dee6e17b-55bc-11d9-848a-00112f43529a",
+		"Article": "С-140002",
+		"Name": "Женские сапоги с искусственным мехом",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "bd72d916-55bc-11d9-848a-00112f43529a",
+		"Article": "Б-130006",
+		"Name": "Ботинки женские натуральная кожа",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "bd72d913-55bc-11d9-848a-00112f43529a",
+		"Article": "Б- 130005",
+		"Name": "Ботинки женские демисезонные",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71faf-55bc-11d9-848a-00112f43529a",
+		"Article": "С-130003",
+		"Name": "Сапоги жен высокие",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "bd72d91b-55bc-11d9-848a-00112f43529a",
+		"Article": "Б-140003",
+		"Name": "Женские босоножки",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fb3-55bc-11d9-848a-00112f43529a",
+		"Article": "Т-140004",
+		"Name": "Женские туфли",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71f9a-55bc-11d9-848a-00112f43529a",
+		"Article": "Т-140005",
+		"Name": "Женские туфли-мокасины",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fb7-55bc-11d9-848a-00112f43529a",
+		"Article": "П-130002",
+		"Name": "Полусапожки на шнурках",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "cbcf498f-55bc-11d9-848a-00112f43529a",
+		"Article": "М-77",
+		"Name": "Комбайн MOULINEX  A77 4C",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "bd72d927-55bc-11d9-848a-00112f43529a",
+		"Article": "КВ- 900",
+		"Name": "Комбайн кухонный BINATONE FP 67",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "bd72d935-55bc-11d9-848a-00112f43529a",
+		"Article": "М-678",
+		"Name": "Миксер BINATONE HM 212,6 скор. 150вт",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fe4-55bc-11d9-848a-00112f43529a",
+		"Article": "Ч-890",
+		"Name": "Чайник BINATONE  EWK-3000,  2л",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fe8-55bc-11d9-848a-00112f43529a",
+		"Article": "Ч-980",
+		"Name": "Чайник BINATONE  AEJ-1001,  2,2л",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fec-55bc-11d9-848a-00112f43529a",
+		"Article": "М-15",
+		"Name": "Мясорубка MOULINEX  A 15",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fee-55bc-11d9-848a-00112f43529a",
+		"Article": "СО-77777",
+		"Name": "Соковыжималка  BINATONE JE 102",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71ff0-55bc-11d9-848a-00112f43529a",
+		"Article": "Ч-8889",
+		"Name": "Чайник MOULINEX L 1,3",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "cbcf4994-55bc-11d9-848a-00112f43529a",
+		"Article": "М-545",
+		"Name": "Миксер SOLAC мод.545",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "bd72d92c-55bc-11d9-848a-00112f43529a",
+		"Article": "К-7778",
+		"Name": "Кофеварка BRAUN KF22R",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "bd72d930-55bc-11d9-848a-00112f43529a",
+		"Article": "КА-879",
+		"Name": "Кофеварка JACOBS (Австрия)",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "cbcf4999-55bc-11d9-848a-00112f43529a",
+		"Article": "М-3",
+		"Name": "Мясорубка ЭКМ-3",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71ffa-55bc-11d9-848a-00112f43529a",
+		"Article": "Со-8888",
+		"Name": "Соковыжималка  SOLAC  Мод.541",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71ffc-55bc-11d9-848a-00112f43529a",
+		"Article": "СО-980",
+		"Name": "Соковыжималка \"МАПО\"",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "8e9db25a-e873-11e2-802c-0015e9b8c48d",
+		"Article": "",
+		"Name": "Пылесос Мобиль (Автомат) ",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "8e9db25c-e873-11e2-802c-0015e9b8c48d",
+		"Article": "",
+		"Name": "Кофе-машина \"Универсал\"",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "86815c92-9ac6-11e3-805d-0015e9b8c48d",
+		"Article": "М-545",
+		"Name": "Миксер SOLAC мод.545, Не годен",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "41eaf277-4d58-11e4-bc58-000d884fd00d",
+		"Article": "М-678",
+		"Name": "Миксер BINATONE HM 212,6 скор. 150вт, Не годен",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "cbcf4931-55bc-11d9-848a-00112f43529a",
+		"Article": "Х-78668",
+		"Name": "Х-78668 Атлант Холодильный комбинат",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d55-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "cbcf4937-55bc-11d9-848a-00112f43529a",
+		"Article": "Х-67890",
+		"Name": "Х-67890 Стинол Завод бытовой техники",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d55-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "cbcf492a-55bc-11d9-848a-00112f43529a",
+		"Article": "Х-1234",
+		"Name": "Х-1234 BOSCH Завод бытовой техники",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d55-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "cbcf492e-55bc-11d9-848a-00112f43529a",
+		"Article": "Х-980",
+		"Name": "Х-980 Атлант Холодильный комбинат",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d55-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "cbcf4934-55bc-11d9-848a-00112f43529a",
+		"Article": "Х-77890",
+		"Name": "Х-77890 Стинол Завод бытовой техники",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d55-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "b9c33de6-1fec-11e0-aee7-0015e9b8c48d",
+		"Article": "Х-8000",
+		"Name": "Х-8000 Атлант Холодильный комбинат",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d55-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "b9c33de7-1fec-11e0-aee7-0015e9b8c48d",
+		"Article": "Х-67891",
+		"Name": "Х-67891 Стинол 205 Завод бытовой техники",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d55-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "53a5ebb5-314d-11e1-afd6-0015e9b8c48d",
+		"Article": "Х-890",
+		"Name": "Х-890 Самсунг-Х Холодильный комбинат",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d55-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "53a5ebb7-314d-11e1-afd6-0015e9b8c48d",
+		"Article": "Х-890",
+		"Name": "Х-890 Сименс Завод бытовой техники",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d55-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "4e5f8b1f-47ed-11e1-afde-0015e9b8c48d",
+		"Article": "SH-10",
+		"Name": "SH-10 BOSCH Завод бытовой техники",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d55-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "bce2512c-c904-11e2-8026-0015e9b8c48d",
+		"Article": "Х-67891",
+		"Name": "Х-67891 Стинол Завод бытовой техники",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d55-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "7b7230cf-9257-11e3-8058-0015e9b8c48d",
+		"Article": "Х-67898",
+		"Name": "Х-67898 Стинол Завод бытовой техники",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d55-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "7b7230d2-9257-11e3-8058-0015e9b8c48d",
+		"Article": "Х-9000",
+		"Name": "Х-9000 Атлант Холодильный комбинат",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d55-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "d9b995db-af31-11e3-806e-0015e9b8c48d",
+		"Article": "С-90",
+		"Name": "С-90 Самсунг Завод бытовой техники",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d55-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "dee6e1a4-55bc-11d9-848a-00112f43529a",
+		"Article": "К-9881",
+		"Name": "Кондиционер ELEKTA",
+		"MeasureID": 796,
+		"TypeNomID": "08170e7d-73a3-11df-b338-0011955cba6b"
+	},
+	{
+		"NomID": "cbcf493f-55bc-11d9-848a-00112f43529a",
+		"Article": "В-789",
+		"Name": "Вентилятор BINATONE ALPINE 160вт, напольный, оконный",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "dee6e16b-55bc-11d9-848a-00112f43529a",
+		"Article": "ВО-890",
+		"Name": "Вентилятор оконный",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "dee6e16d-55bc-11d9-848a-00112f43529a",
+		"Article": "СТ-910",
+		"Name": "Вентилятор ОРБИТА,STERLING,ЯП.",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "dee6e1ae-55bc-11d9-848a-00112f43529a",
+		"Article": "Э-999",
+		"Name": "Пылесос \"Энергия-SANYO\"",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "dee6e1a6-55bc-11d9-848a-00112f43529a",
+		"Article": "К-980",
+		"Name": "Кондиционер FIRMSTAR 12М",
+		"MeasureID": 796,
+		"TypeNomID": "08170e7d-73a3-11df-b338-0011955cba6b"
+	},
+	{
+		"NomID": "dee6e1a8-55bc-11d9-848a-00112f43529a",
+		"Article": "К-2300",
+		"Name": "Кондиционер БК-2300",
+		"MeasureID": 796,
+		"TypeNomID": "08170e7d-73a3-11df-b338-0011955cba6b"
+	},
+	{
+		"NomID": "cbcf4945-55bc-11d9-848a-00112f43529a",
+		"Article": "В-987",
+		"Name": "Вентилятор JIPONIC (Тайв.), напольный",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "dee6e1aa-55bc-11d9-848a-00112f43529a",
+		"Article": "П-890",
+		"Name": "Пылесос \"Омега\" 1250вт",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "dee6e1ac-55bc-11d9-848a-00112f43529a",
+		"Article": "Э-789",
+		"Name": "Пылесос \"Электросила\"",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "cbcf4957-55bc-11d9-848a-00112f43529a",
+		"Article": "ВН-900",
+		"Name": "Вентилятор настольный",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "b9c33dea-1fec-11e0-aee7-0015e9b8c48d",
+		"Article": "ВН-901",
+		"Name": "Вентилятор настольный, Модель 901",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "b9c33deb-1fec-11e0-aee7-0015e9b8c48d",
+		"Article": "ВО-900",
+		"Name": "Вентилятор оконный, модель 900",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "7b7230d4-9257-11e3-8058-0015e9b8c48d",
+		"Article": "ВН-901",
+		"Name": "Вентилятор настольный, Модель 902",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "7b7230d6-9257-11e3-8058-0015e9b8c48d",
+		"Article": "ВО-900",
+		"Name": "Вентилятор оконный, модель 902",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "cbcf4982-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-999999",
+		"Name": "Грильяж (конфеты)",
+		"MeasureID": 166,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "cbcf4980-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-6666888",
+		"Name": "Белочка (конфеты)",
+		"MeasureID": 166,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "cbcf4984-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-6666",
+		"Name": "Мишка (конфеты)",
+		"MeasureID": 166,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "cbcf4968-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-7777",
+		"Name": "Барбарис (конфеты)",
+		"MeasureID": 166,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fa2-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-999001",
+		"Name": "Фруктовые (конфеты)",
+		"MeasureID": 166,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "cbcf496c-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-1234567",
+		"Name": "Причуда (вафли)",
+		"MeasureID": 778,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fbd-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-4444",
+		"Name": "Юбилейное (печенье)",
+		"MeasureID": 778,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "cbcf496f-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-88888",
+		"Name": "Принц (печенье)",
+		"MeasureID": 778,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "cbcf4972-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-33344555",
+		"Name": "Ассорти (конфеты)",
+		"MeasureID": 778,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "cbcf4975-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-888888",
+		"Name": "Сердечко (печенье)",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "cbcf4978-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-777888",
+		"Name": "Фруктовые (вафли)",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "d897eeb3-1fce-11e1-afc7-0015e9b8c48d",
+		"Article": "Арт-900001",
+		"Name": "Птичка (конфеты)",
+		"MeasureID": 996,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "dee6e187-55bc-11d9-848a-00112f43529a",
+		"Article": "М-150005",
+		"Name": "Мужские мокасины",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fab-55bc-11d9-848a-00112f43529a",
+		"Article": "М-150001",
+		"Name": "Мужские сапоги с натуральным мехом",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "dee6e18a-55bc-11d9-848a-00112f43529a",
+		"Article": "М-150004",
+		"Name": "Мужские ботинки демисезонные",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fad-55bc-11d9-848a-00112f43529a",
+		"Article": "М-150006",
+		"Name": "Мужские туфли нубук",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fb1-55bc-11d9-848a-00112f43529a",
+		"Article": "М-150002",
+		"Name": "Мужские сапоги с искуственным мехом",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fb5-55bc-11d9-848a-00112f43529a",
+		"Article": "М-150003",
+		"Name": "Ботинки мужские",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "dcb868fb-ecdf-11e4-92f1-0050568b35ac",
+		"Article": "Т-789000",
+		"Name": "Рубин - 340",
+		"MeasureID": 796,
+		"TypeNomID": "08170e76-73a3-11df-b338-0011955cba6b"
+	},
+	{
+		"NomID": "dee6e19a-55bc-11d9-848a-00112f43529a",
+		"Article": "Т-123456",
+		"Name": "Телевизор \"JVC\"",
+		"MeasureID": 796,
+		"TypeNomID": "08170e76-73a3-11df-b338-0011955cba6b"
+	},
+	{
+		"NomID": "e8a71ff6-55bc-11d9-848a-00112f43529a",
+		"Article": "Т-123456",
+		"Name": "Телевизор \"SHARP\"",
+		"MeasureID": 796,
+		"TypeNomID": "08170e76-73a3-11df-b338-0011955cba6b"
+	},
+	{
+		"NomID": "dee6e1d0-55bc-11d9-848a-00112f43529a",
+		"Article": "К-120003",
+		"Name": "Кроссовки \"ADIDAS\"",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "dee6e1d9-55bc-11d9-848a-00112f43529a",
+		"Article": "К-120001",
+		"Name": "Кроссовки мужские, кожа",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "dee6e1d3-55bc-11d9-848a-00112f43529a",
+		"Article": "К-120004",
+		"Name": "Кроссовки \"REEBOK\"",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "dee6e1d6-55bc-11d9-848a-00112f43529a",
+		"Article": "К-120002",
+		"Name": "Кроссовки высокие нат. кожа",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fa5-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-56789",
+		"Name": "Крупа \"Геркулес\"",
+		"MeasureID": 166,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fbb-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-88888",
+		"Name": "Сахарный песок в пачках",
+		"MeasureID": 778,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fbf-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-89999",
+		"Name": "Крупа манная",
+		"MeasureID": 778,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fc1-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-89000",
+		"Name": "Крупа гречневая (упак)",
+		"MeasureID": 778,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "0cb96220-0903-11dc-a418-00055d80a2d1",
+		"Article": "Арт-89000",
+		"Name": "Крупа гречневая (весовая)",
+		"MeasureID": 166,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "f01bb2c4-427a-11dd-ac9e-0015e9b8c48d",
+		"Article": "",
+		"Name": "Сахарный песок (в упаковках)",
+		"MeasureID": 778,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "f01bb2c2-427a-11dd-ac9e-0015e9b8c48d",
+		"Article": "",
+		"Name": "Сахарный песок (весовой)",
+		"MeasureID": 166,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "ad595ed0-082a-11e0-aeda-0015e9b8c48d",
+		"Article": "М67899",
+		"Name": "Мука пшеничная",
+		"MeasureID": 778,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "416c7023-cf34-11e2-8029-0015e9b8c48d",
+		"Article": "М-87",
+		"Name": "Мука ржаная",
+		"MeasureID": 778,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "08e35dc1-89a2-11e3-8055-0015e9b8c48d",
+		"Article": "М-809",
+		"Name": "Мука блинная",
+		"MeasureID": 778,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fc7-55bc-11d9-848a-00112f43529a",
+		"Article": "",
+		"Name": "Расходы на рекламу",
+		"MeasureID": 796,
+		"TypeNomID": "f524ba15-f57a-11db-b754-00112f43529a"
+	},
+	{
+		"NomID": "e8a71fc9-55bc-11d9-848a-00112f43529a",
+		"Article": "",
+		"Name": "Расходы на ремонт",
+		"MeasureID": 796,
+		"TypeNomID": "f524ba15-f57a-11db-b754-00112f43529a"
+	},
+	{
+		"NomID": "e8a71fd8-55bc-11d9-848a-00112f43529a",
+		"Article": "",
+		"Name": "Расходы на энергию (топливо, газ, электроэнергию)",
+		"MeasureID": 796,
+		"TypeNomID": "f524ba15-f57a-11db-b754-00112f43529a"
+	},
+	{
+		"NomID": "e8a71fdc-55bc-11d9-848a-00112f43529a",
+		"Article": "",
+		"Name": "Транспортные расходы",
+		"MeasureID": 796,
+		"TypeNomID": "f524ba15-f57a-11db-b754-00112f43529a"
+	},
+	{
+		"NomID": "e8a71ff4-55bc-11d9-848a-00112f43529a",
+		"Article": "",
+		"Name": "Расходы на хранение",
+		"MeasureID": 796,
+		"TypeNomID": "f524ba15-f57a-11db-b754-00112f43529a"
+	},
+	{
+		"NomID": "5ca073eb-8661-11da-9aea-000d884f5d77",
+		"Article": "",
+		"Name": "Аренда офиса",
+		"MeasureID": 796,
+		"TypeNomID": "f524ba15-f57a-11db-b754-00112f43529a"
+	},
+	{
+		"NomID": "f9666da6-8729-11da-9aea-000d884f5d77",
+		"Article": "",
+		"Name": "Междугородные переговоры",
+		"MeasureID": 796,
+		"TypeNomID": "f524ba15-f57a-11db-b754-00112f43529a"
+	},
+	{
+		"NomID": "30280e40-87fd-11da-9aea-000d884f5d77",
+		"Article": "",
+		"Name": "Штрафные санкции",
+		"MeasureID": 744,
+		"TypeNomID": "f524ba15-f57a-11db-b754-00112f43529a"
+	},
+	{
+		"NomID": "090b7aa9-0526-11dc-a415-00055d80a2d1",
+		"Article": "",
+		"Name": "Доставка товара",
+		"MeasureID": 0,
+		"TypeNomID": "f524ba15-f57a-11db-b754-00112f43529a"
+	},
+	{
+		"NomID": "ea02152a-34e5-11e0-aefb-0015e9b8c48d",
+		"Article": "",
+		"Name": "Комиссионное вознаграждение",
+		"MeasureID": 796,
+		"TypeNomID": "f524ba15-f57a-11db-b754-00112f43529a"
+	},
+	{
+		"NomID": "7a774730-538d-11e0-af17-0015e9b8c48d",
+		"Article": "",
+		"Name": "Таможенные пошлины",
+		"MeasureID": 0,
+		"TypeNomID": "f524ba15-f57a-11db-b754-00112f43529a"
+	},
+	{
+		"NomID": "7a774731-538d-11e0-af17-0015e9b8c48d",
+		"Article": "",
+		"Name": "Таможенные сборы",
+		"MeasureID": 0,
+		"TypeNomID": "f524ba15-f57a-11db-b754-00112f43529a"
+	},
+	{
+		"NomID": "ec4beaf9-ea84-11e0-a4ac-e0cb4ed5f5df",
+		"Article": "",
+		"Name": "Монтаж оборудования",
+		"MeasureID": 356,
+		"TypeNomID": "ec4beaf7-ea84-11e0-a4ac-e0cb4ed5f5df"
+	},
+	{
+		"NomID": "d1f2feac-47db-11e4-bd91-000d884fd00d",
+		"Article": "",
+		"Name": "Услуга по доставке (Вега-Транс)",
+		"MeasureID": 796,
+		"TypeNomID": "d1f2feab-47db-11e4-bd91-000d884fd00d"
+	},
+	{
+		"NomID": "576d1baf-ee70-11e4-92f1-0050568b35ac",
+		"Article": "Арт-800000",
+		"Name": "Масло вологодское, Не годен",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "da7b3b1e-ee73-11e4-92f1-0050568b35ac",
+		"Article": "Арт-879000",
+		"Name": "Молоко \"Останкинское\" 1.5%, Не годен",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fcc-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-879000",
+		"Name": "Молоко \"Останкинское\" 1.5%",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fce-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-777788",
+		"Name": "Молоко \"Домик в деревне\" 1.5%",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fd0-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-980000",
+		"Name": "Молоко \"Домик в деревне\" 3.2%",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fd4-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-89000",
+		"Name": "Молоко \"Домик в деревне\" 4.5%",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fd6-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-879000",
+		"Name": "Молоко \"Останкинское\" 3.2%",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fda-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-789000",
+		"Name": "Масло деревенское",
+		"MeasureID": 997,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71fea-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-7890000",
+		"Name": "Масло \"Кремлевское\"",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "e8a71ff2-55bc-11d9-848a-00112f43529a",
+		"Article": "Арт-800000",
+		"Name": "Масло вологодское",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "f01bb2c7-427a-11dd-ac9e-0015e9b8c48d",
+		"Article": "",
+		"Name": "Детский праздничный набор",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "5de28ace-c46a-11e7-8e50-0050568b35ac",
+		"Article": "",
+		"Name": "Огнетушитель порошковый ОП-10",
+		"MeasureID": 796,
+		"TypeNomID": "974e3312-c469-11e7-8e50-0050568b35ac"
+	},
+	{
+		"NomID": "24c4e8bf-c463-11e7-8e50-0050568b35ac",
+		"Article": "",
+		"Name": "Каркас винтовой лестницы Spiral Staircase II",
+		"MeasureID": 796,
+		"TypeNomID": "a1abc643-c460-11e7-8e50-0050568b35ac"
+	},
+	{
+		"NomID": "b22901e0-c468-11e7-8e50-0050568b35ac",
+		"Article": "",
+		"Name": "Каркас двери парника GH-1",
+		"MeasureID": 796,
+		"TypeNomID": "24815626-c468-11e7-8e50-0050568b35ac"
+	},
+	{
+		"NomID": "7ff48e4a-cc99-11e4-869d-0050568b35ac",
+		"Article": "",
+		"Name": "Электроэнергия (услуга)",
+		"MeasureID": 245,
+		"TypeNomID": "fad620c1-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "55db583a-cc9c-11e4-869d-0050568b35ac",
+		"Article": "",
+		"Name": "Аренда офиса (услуга)",
+		"MeasureID": 0,
+		"TypeNomID": "fad620c1-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "6601272e-d47f-11e4-869d-0050568b35ac",
+		"Article": "",
+		"Name": "Комиссионное вознаграждение (пр)",
+		"MeasureID": 1024,
+		"TypeNomID": "fad620c1-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "fc8d7cb6-f96b-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Техобслуживание оборудования ",
+		"MeasureID": 796,
+		"TypeNomID": "c216f6a1-f96b-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "8d30f4ed-05c9-11e5-987e-bcaec56cc144",
+		"Article": "",
+		"Name": "Переработка давальческих материалов",
+		"MeasureID": 796,
+		"TypeNomID": "fad620be-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "d51a8b62-d3a9-11e4-869d-0050568b35ac",
+		"Article": "",
+		"Name": "Материалы ГТД",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "f164cfd3-c466-11e7-8e50-0050568b35ac",
+		"Article": "",
+		"Name": "Лист 6 09Г2С-20",
+		"MeasureID": 166,
+		"TypeNomID": "a1abc643-c460-11e7-8e50-0050568b35ac"
+	},
+	{
+		"NomID": "263c5976-c467-11e7-8e50-0050568b35ac",
+		"Article": "",
+		"Name": "Эмаль Antirust",
+		"MeasureID": 166,
+		"TypeNomID": "a1abc643-c460-11e7-8e50-0050568b35ac"
+	},
+	{
+		"NomID": "2bd9e987-c469-11e7-8e50-0050568b35ac",
+		"Article": "",
+		"Name": "Труба профильная прямоугольная 40х20х2,5",
+		"MeasureID": 166,
+		"TypeNomID": "24815626-c468-11e7-8e50-0050568b35ac"
+	},
+	{
+		"NomID": "91d2220b-c46a-11e7-8e50-0050568b35ac",
+		"Article": "",
+		"Name": "Смесь - ингибитор пламени для огнетушителя порошкового ОП-10",
+		"MeasureID": 166,
+		"TypeNomID": "974e3312-c469-11e7-8e50-0050568b35ac"
+	},
+	{
+		"NomID": "f8750f34-c46d-11e7-8e50-0050568b35ac",
+		"Article": "",
+		"Name": "Труба мелаллическая D15см",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "c87d0dea-c477-11e7-8e50-0050568b35ac",
+		"Article": "",
+		"Name": "Клей Titebond II",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "55b1d2f0-f4be-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Литол-24 - МЛи 4/12-3 ",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "2afb7033-f4c1-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Масло моторное \"Лукойл Авангард\" SAE 15W-40",
+		"MeasureID": 625,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "e9e24fc3-f4c2-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Масло трансмиссионное ТСп-15К",
+		"MeasureID": 625,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "09c50289-f4c3-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Смазка УСсА СК2/6-г3 ",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "5dd2c965-f4c4-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Топливо дизельное Евро сорт С (летнее)",
+		"MeasureID": 625,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "ab98fbad-f4c4-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Жидкость охлаждающая \"Тосол-Э40\" (до минус 40 °С)",
+		"MeasureID": 625,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "e4c39bf6-f4c4-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Топливо дизельное Евро сорт Е (зимнее)",
+		"MeasureID": 625,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "01da7a10-f4c5-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Масло моторное \"Лукойл Супер\" SAE 5W-30",
+		"MeasureID": 625,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "03d8d818-f585-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Ящик пластмассовый 80х50 ",
+		"MeasureID": 796,
+		"TypeNomID": "f93e1126-c83a-11e2-8026-0015e9b8c48d"
+	},
+	{
+		"NomID": "6d91fd6a-fe4a-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Инструкция эксплуатационная СИ1000 ",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "823f69fc-fe4a-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Комплект упаковочный СИ1000",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "83a9057b-cc9c-11e4-869d-0050568b35ac",
+		"Article": "",
+		"Name": "Ведро пластиковое 7 литров",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "a34f238e-cc9c-11e4-869d-0050568b35ac",
+		"Article": "",
+		"Name": "Тумбочка (офисная мебель)",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "9db52373-cc9e-11e4-869d-0050568b35ac",
+		"Article": "",
+		"Name": "Стеллаж СДС-66 стационарный",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "0bb8720d-f58d-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Калькулятор CITIZEN SDC-888TII",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "467062c0-cca4-11e4-869d-0050568b35ac",
+		"Article": "",
+		"Name": "Ноутбук ASUS K551LN-XX522H",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "58507f25-f4d6-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Навесное оборудование к автопогрузчику АМКОДОР 211",
+		"MeasureID": 839,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "28d4ceeb-fd70-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "МФУ Konica Minolta bizhub C25; цветной; А4 ",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "690edcad-f58a-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Проволока электродная СВ-08Г2С 1,0 мм ",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "3e5b7e98-ff9d-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Припой 2022",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "5f390fca-ff9d-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Канифоль очищенная ОК-5 ТУ 19113-84",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "b44ff644-00a2-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Абразивная крошка №4",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "cee8aba6-00a2-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Раствор для протирки литформ",
+		"MeasureID": 625,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "e736a521-00a2-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Масло И-Т-Д-32",
+		"MeasureID": 625,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "fec7db88-00a2-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Раствор химического травления",
+		"MeasureID": 625,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "123e984e-00a3-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Электрод для электрохимического цинкования",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "c261d36a-0383-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "СОЖ Автокат Ф-40 концентрат ТУ 27.833.685-02-94",
+		"MeasureID": 625,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "e435afc4-0389-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Лента ПВХ электроизоляционная  ГОСТ 16214-70",
+		"MeasureID": 6,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "0ed396f8-039c-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Олово ГОСТ 860-75",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "d766c0eb-03a5-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Абразивная крошка №5",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "63240e78-03a9-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Абразивная крошка №3",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "51072e05-7320-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Бумага наждачная, шлифовальная №4",
+		"MeasureID": 6,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "9a417f2c-7321-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Вставка плавкая ВВЗБ-1-10 250В",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "c4b21222-7321-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Бензин авиационный Б-91/115",
+		"MeasureID": 625,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "de534484-7321-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Солидол жировой УС-2",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "602b9f0d-cbb2-11e4-869d-0050568b35ac",
+		"Article": "254136",
+		"Name": "Дрель ударная HITACHI DV16 VSS",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "21424bee-cbb7-11e4-869d-0050568b35ac",
+		"Article": "256497",
+		"Name": "Фен МАKITA HG5012K",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "1cbf03e5-cbbc-11e4-869d-0050568b35ac",
+		"Article": "254547",
+		"Name": "Краскопульт ЗУБР электрический",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "0d6e1f6a-cbbf-11e4-869d-0050568b35ac",
+		"Article": "269432",
+		"Name": "Нож ЗУБР серия \"ПРЕМИУМ\" ",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "377a22b7-cbbf-11e4-869d-0050568b35ac",
+		"Article": "246832",
+		"Name": "Болторез ЭНКОР 610 мм рез ф 10 мм",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "5b965d20-cbc2-11e4-869d-0050568b35ac",
+		"Article": "215446",
+		"Name": "Ножницы по металлу Erdi правые 250 мм",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "7d8c674e-cbc2-11e4-869d-0050568b35ac",
+		"Article": "215496",
+		"Name": "Ножницы по металлу Erdi прямые 250 мм",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "99d8032e-cbc2-11e4-869d-0050568b35ac",
+		"Article": "215432",
+		"Name": "Ножницы по металлу NWS Pelikan 350 мм",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "b0c72ad5-cbc2-11e4-869d-0050568b35ac",
+		"Article": "215412",
+		"Name": "Ножницы по металлу NWS для фигурной резки левосторонний рез, 250 мм",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "cdaf7e31-cbc2-11e4-869d-0050568b35ac",
+		"Article": "215478",
+		"Name": "Ножницы по металлу NWS для фигурной резки правосторонний рез, 250 мм",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "0461f719-cc78-11e4-869d-0050568b35ac",
+		"Article": "267816",
+		"Name": "Трещотка USP с удлинителем для клуппов",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "296d1504-cc78-11e4-869d-0050568b35ac",
+		"Article": "286341",
+		"Name": "Бур SDS-plus ЗУБР серия \"МАСТЕР\" 16х210",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "c012ed9a-cc7a-11e4-869d-0050568b35ac",
+		"Article": "241569",
+		"Name": "Рулетка Stanley Powerlock 10м х 25мм",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "dc93cb12-cc7a-11e4-869d-0050568b35ac",
+		"Article": "256487",
+		"Name": "Набор отверток Stanley Basic из 10 шт",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "dfb42334-cc7b-11e4-869d-0050568b35ac",
+		"Article": "212347",
+		"Name": "Набор ключей рожковых Matrix 6 х 17 мм, 6 шт полированный, хромированный",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "f877eaa8-cc7b-11e4-869d-0050568b35ac",
+		"Article": "212497",
+		"Name": "Набор ключей накидных Matrix 6–22 мм 8 шт полированный хром",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "09d24f34-cc7c-11e4-869d-0050568b35ac",
+		"Article": "212589",
+		"Name": "Набор ключей комбинированных с трещоткой Matrix 8-19 мм 7 шт реверсивные",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "b51337cc-cc80-11e4-869d-0050568b35ac",
+		"Article": "286231",
+		"Name": "Бур SDS-plus ЗУБР серия \"МАСТЕР\" 10х110",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "9ba2facb-cc81-11e4-869d-0050568b35ac",
+		"Article": "241678",
+		"Name": "Рулетка Matrix Double fixation 10 м х 25 мм, обрезиненный корпус",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "8001774d-cc83-11e4-869d-0050568b35ac",
+		"Article": "251379",
+		"Name": "Насос дренажный ДИОЛД НД-0,3 В",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "017d51b2-cc88-11e4-869d-0050568b35ac",
+		"Article": "204589",
+		"Name": "Домкрат ЗУБР серия \"МАСТЕР\" гидравлический подкатной, 2,1 т, 135-385 мм",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "be23700d-cc9f-11e4-869d-0050568b35ac",
+		"Article": "293164",
+		"Name": "Аккумуляторный шуруповерт MAKITA 6261DWPE",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "d27dd968-cc9f-11e4-869d-0050568b35ac",
+		"Article": "264387",
+		"Name": "Перфоратор 800 PSE QuiXS Set",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "34c7128e-cefe-11e4-869d-0050568b35ac",
+		"Article": "286289",
+		"Name": "Бур SDS-plus ЗУБР серия \"ЭКСПЕРТ\" d = 10 - 110/50 мм",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "7beaed12-d2ef-11e4-869d-0050568b35ac",
+		"Article": "286963",
+		"Name": "Бур по бетону MAKITA SDS+ D8х110 мм",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "ba36453e-e508-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Ржаной хлеб",
+		"MeasureID": 796,
+		"TypeNomID": "7df9e593-e503-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "dfbcfd98-e508-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Батон нарезной",
+		"MeasureID": 796,
+		"TypeNomID": "7df9e593-e503-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "05b84b67-e509-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Хлеб дарницкий",
+		"MeasureID": 796,
+		"TypeNomID": "7df9e593-e503-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "1f9faf90-e509-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Хлеб бородинский",
+		"MeasureID": 796,
+		"TypeNomID": "7df9e593-e503-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "3e987419-e509-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Плюшка московская",
+		"MeasureID": 796,
+		"TypeNomID": "7df9e593-e503-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "5207ddc3-e509-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Булочка с маком",
+		"MeasureID": 796,
+		"TypeNomID": "7df9e593-e503-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "0fc8aee8-e505-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Сок виноградный 1,5 л",
+		"MeasureID": 778,
+		"TypeNomID": "b2836143-e500-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "2e68c46e-e506-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Сок виноградный 0,5 л",
+		"MeasureID": 778,
+		"TypeNomID": "b2836143-e500-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "5cef1604-e506-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Сок виноградный 1 л",
+		"MeasureID": 778,
+		"TypeNomID": "b2836143-e500-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "a30d54d9-e506-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Сок виноградный 2 л",
+		"MeasureID": 778,
+		"TypeNomID": "b2836143-e500-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "d56e2ff0-e506-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Сок апельсиновый 0,5 л",
+		"MeasureID": 778,
+		"TypeNomID": "b2836143-e500-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "e948b90c-e506-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Сок апельсиновый 1 л",
+		"MeasureID": 778,
+		"TypeNomID": "b2836143-e500-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "1015b1cd-e507-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Сок апельсиновый 1,5 л",
+		"MeasureID": 778,
+		"TypeNomID": "b2836143-e500-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "27c286ec-e507-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Сок апельсиновый 2 л",
+		"MeasureID": 778,
+		"TypeNomID": "b2836143-e500-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "670489ba-e507-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Сок сливовый 0,5 л",
+		"MeasureID": 778,
+		"TypeNomID": "b2836143-e500-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "7e6b7b33-e507-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Сок сливовый 1 л",
+		"MeasureID": 778,
+		"TypeNomID": "b2836143-e500-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "962a03d4-e507-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Сок сливовый 1,5 л",
+		"MeasureID": 778,
+		"TypeNomID": "b2836143-e500-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "c9b0eca9-e507-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Сок сливовый 2 л",
+		"MeasureID": 778,
+		"TypeNomID": "b2836143-e500-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "f94297a9-e507-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Сок томатный 2 л",
+		"MeasureID": 778,
+		"TypeNomID": "b2836143-e500-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "0bb463bc-e508-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Сок томатный 1,5 л",
+		"MeasureID": 778,
+		"TypeNomID": "b2836143-e500-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "1d1c841b-e508-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Сок томатный 1 л",
+		"MeasureID": 778,
+		"TypeNomID": "b2836143-e500-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "31cc1396-e508-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Сок томатный 0,5 л",
+		"MeasureID": 778,
+		"TypeNomID": "b2836143-e500-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "5ba630b7-e508-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Сок яблочный 0,5 л",
+		"MeasureID": 778,
+		"TypeNomID": "b2836143-e500-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "6c87b9fe-e508-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Сок яблочный 1 л",
+		"MeasureID": 778,
+		"TypeNomID": "b2836143-e500-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "7f5ae15e-e508-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Сок яблочный 1,5 л",
+		"MeasureID": 778,
+		"TypeNomID": "b2836143-e500-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "937f6cdf-e508-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Сок яблочный 2 л",
+		"MeasureID": 778,
+		"TypeNomID": "b2836143-e500-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "cced7f7f-f4c1-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "ФМ 009-1012005 Фильтр очистки масла",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "31480dea-f4c2-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "539047001 Фильтроэлемент",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "472a0761-f4c2-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "ФЭГ 3-10 Фильтроэлемент",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "573f640b-f4c2-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "GB-75 Элемент фильтрующий",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "676c67bd-f4c2-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "В4226 Элемент фильтрующий",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "785a4d42-f4c2-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "3110-1109013-11 Элемент фильтрующий",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "51aae8aa-f4c3-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "ФТ 020-1117010 Фильтр тонкой очистки топлива",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "983541d7-f590-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Резак плазменный РП-41 черт. 336.1.406.041.00 ",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "1316b668-7320-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "АЖБ7.755.001 Перемычка ",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "3ab5c8e6-7321-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "АЖБ7.732.004 Контакт ",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "4c8e870c-7321-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "АЖБ7.750.004 Наконечник",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "5eae133b-7321-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "АЖБ7.732.012 Контакт ",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "6e416cbe-7321-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Диод Д245А",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "3091a2ba-f588-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Лист 6 Ст3пс5",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "5ae7815b-f588-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Лист 3 Ст3пс5",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "88bf40e2-f588-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Лист 6 Ст3сп5",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "95e8e459-f588-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Лист 8 Ст3пс5",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "56733bd5-0386-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Лист 0,8 Ст3пс5",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "10721591-0388-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Лист 0,6 63С2А",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "4433779a-03ca-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Лист 8 Ст3сп5",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "e303b8ef-f588-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Труба квадратная 50х50х4 Ст3пс",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "034bbeb0-f589-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Труба квадратная 25х25х2 Ст3пс",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "2386a63e-0384-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Круг 12 Ст3пс5",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "abbc4971-f579-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Доска сосновая",
+		"MeasureID": 113,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "d62ed83e-f579-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Лак древесный",
+		"MeasureID": 625,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "aacb602e-f98e-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Комплект крепежа С-1",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "b9ea996d-f98e-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Комплект крепежа У-2",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "42b96c2d-fe4d-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Фанера берёзовая ФК 21 мм сорт 4/4 ",
+		"MeasureID": 113,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "3ae74ae6-e911-11e6-b7b5-bcaec56cc144",
+		"Article": "",
+		"Name": "Стружка древесная",
+		"MeasureID": 113,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "d97f5ed8-ff0a-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Полиэтилен высокого давления ПВД-158",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "473cb692-ff0b-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Защелка для ящика Т15",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "6ed20b52-ff0b-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Вкладка в инструментальный ящик Т15",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "9024801a-ff0b-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Шарнир Т15",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "03ce736e-ff0e-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Полипропилен вторичный (регранулят)",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "a35af8ce-038b-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Полистирол УПС-0803Э ГОСТ 28250-89",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "9ccc706d-c530-11e7-8e50-0050568b35ac",
+		"Article": "",
+		"Name": "Поликарбонат сотовый 10 мм 600х150",
+		"MeasureID": 0,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "463d02db-fd39-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Эмаль ПФ-115 (эмаль) ГОСТ Р 51691",
+		"MeasureID": 166,
+		"TypeNomID": "fad620b2-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "9c45f819-fd3c-11e4-92f1-0050568b35ac",
+		"Article": "896968",
+		"Name": "Эмаль Полимерон",
+		"MeasureID": 166,
+		"TypeNomID": "5b703004-fd3c-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "c45e042e-fe4b-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Сольвент ГОСТ 10214-78",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "66d2cf6d-038a-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Клей ВИЛАД-11к-3 ОСТ 4Г0.029.204",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "4b452b7f-ef5d-11e6-b234-bcaec56cc144",
+		"Article": "722323",
+		"Name": "Лист 6 09Г2С-12",
+		"MeasureID": 166,
+		"TypeNomID": "5b703004-fd3c-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "08bdc39a-fe4c-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Винт М12х100.56 ZN DIN7991",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "188f8696-fe4c-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Гайка М12.8 ZN DIN6927",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "ff668b7b-ff9c-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Гайка М3 ГОСТ 15526-70",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "0e3d48fa-ff9d-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Винт М3х30 ГОСТ 17475-80",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "0cf4df45-ff9e-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Винт М5х10 ГОСТ 17475-80",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "d2761532-03a3-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Винт М1х3 ГОСТ 17475-80",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "39b49985-c531-11e7-8e50-0050568b35ac",
+		"Article": "",
+		"Name": "Саморезы с прессшайбой 4,2х25",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "4a0c0b5e-febc-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "СИ1000.001.000 Основание",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "e1f0831f-febe-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "СИ1000.002.000 Столешница верхняя",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "fd5d547c-febe-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "СИ1000.003.000 Столешница нижняя",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "9a33f122-febf-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "СИ1000.001.001 Ребро верхнее",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "b05a2089-febf-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "СИ1000.001.002 Ребро нижнее",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "c4c48fb0-febf-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "СИ1000.001.003 Ребро верхнее",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "d2b381da-febf-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "СИ1000.001.004 Ребро нижнее",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "2ad09838-fec2-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "У.002.001 Опора",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "3b6cb30b-fec2-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "У.002.002 Пятка",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "4fc93f4e-fec2-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "У.000.001 Боковина",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "60ad87bf-fec2-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "У.001.001 Ребро",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "758400bb-fec2-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "У.001.002 Стенка",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "c3d44633-fec3-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "ТМ500.001.001 Стойка",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "d33173bb-fec3-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "ТМ500.001.002 Ребро",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "e32fecae-fec3-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "ТМ500.002.000 Столешница",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "f3e02c0d-fec3-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "ТМ500.003.000 Дно",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "07dfa2d3-fec4-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "ТМ500.004.000 Полка",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "1771007e-fec4-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "ТМ500.005.000 Стенка",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "28c28b49-fec4-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "ТМ500.006.000 Ребро",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "1fd858d6-c95f-11e4-987f-bcaec56cc144",
+		"Article": "",
+		"Name": "Окраска стола",
+		"MeasureID": 796,
+		"TypeNomID": "fad620be-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "ec9fa7a5-f585-11e4-92f1-0050568b35ac",
+		"Article": "8800003",
+		"Name": "Стол инструментальный СИ1000",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "f73067aa-f586-11e4-92f1-0050568b35ac",
+		"Article": "8800002",
+		"Name": "Верстак ТМ500",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "4fd5cfa3-f587-11e4-92f1-0050568b35ac",
+		"Article": "5400004",
+		"Name": "Пролет лестничный 3 м",
+		"MeasureID": 796,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "9cfde5e6-fd3a-11e4-92f1-0050568b35ac",
+		"Article": "5400005",
+		"Name": "Пролет лестничный 3 м окрашенный",
+		"MeasureID": 796,
+		"TypeNomID": "fad620b5-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "a6a42581-ed0e-11e6-b588-bcaec56cc144",
+		"Article": "002306",
+		"Name": "Устройство ТМ-30-1001-090",
+		"MeasureID": 796,
+		"TypeNomID": "13d0e7c7-fef5-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "812b9959-c466-11e7-8e50-0050568b35ac",
+		"Article": "",
+		"Name": "Лестница винтовая Spiral Staircase II",
+		"MeasureID": 796,
+		"TypeNomID": "a1abc643-c460-11e7-8e50-0050568b35ac"
+	},
+	{
+		"NomID": "fb84c49b-c468-11e7-8e50-0050568b35ac",
+		"Article": "",
+		"Name": "Парник GH-1 3x6",
+		"MeasureID": 796,
+		"TypeNomID": "24815626-c468-11e7-8e50-0050568b35ac"
+	},
+	{
+		"NomID": "d4e71d82-fa51-11e4-92f1-0050568b35ac",
+		"Article": "330520",
+		"Name": "Стеллаж (стандартный)",
+		"MeasureID": 796,
+		"TypeNomID": "b3d8b79c-fa51-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "ec92930c-fa51-11e4-92f1-0050568b35ac",
+		"Article": "330521",
+		"Name": "Стеллаж (угловой)",
+		"MeasureID": 796,
+		"TypeNomID": "b3d8b79c-fa51-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "48334888-fb21-11e4-92f1-0050568b35ac",
+		"Article": "250603",
+		"Name": "Комплект для упаковки",
+		"MeasureID": 796,
+		"TypeNomID": "b3d8b79c-fa51-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "894d3581-e6ec-11e6-9414-bcaec56cc144",
+		"Article": "130139",
+		"Name": "Полка в прихожую",
+		"MeasureID": 796,
+		"TypeNomID": "b3d8b79c-fa51-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "894d3582-e6ec-11e6-9414-bcaec56cc144",
+		"Article": "130138",
+		"Name": "Вешалка для одежды",
+		"MeasureID": 796,
+		"TypeNomID": "b3d8b79c-fa51-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "894d3583-e6ec-11e6-9414-bcaec56cc144",
+		"Article": "330525",
+		"Name": "Стол простой деревянный",
+		"MeasureID": 796,
+		"TypeNomID": "b3d8b79c-fa51-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "894d3584-e6ec-11e6-9414-bcaec56cc144",
+		"Article": "130140",
+		"Name": "Тумбочка под обувь",
+		"MeasureID": 796,
+		"TypeNomID": "b3d8b79c-fa51-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "3ae74b08-e911-11e6-b7b5-bcaec56cc144",
+		"Article": "355011",
+		"Name": "Комплект шкафов К-10",
+		"MeasureID": 839,
+		"TypeNomID": "13d0e7c7-fef5-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "3ae74b09-e911-11e6-b7b5-bcaec56cc144",
+		"Article": "355015",
+		"Name": "Прихожая \"Мини\"",
+		"MeasureID": 839,
+		"TypeNomID": "13d0e7c7-fef5-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "3ae74b0a-e911-11e6-b7b5-bcaec56cc144",
+		"Article": "355002",
+		"Name": "Комплект мебели Б-3",
+		"MeasureID": 839,
+		"TypeNomID": "13d0e7c7-fef5-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "3ae74b21-e911-11e6-b7b5-bcaec56cc144",
+		"Article": "355004",
+		"Name": "Диван малый",
+		"MeasureID": 796,
+		"TypeNomID": "13d0e7c7-fef5-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "3ae74b22-e911-11e6-b7b5-bcaec56cc144",
+		"Article": "355006",
+		"Name": "Пуфик",
+		"MeasureID": 796,
+		"TypeNomID": "13d0e7c7-fef5-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "3ae74b23-e911-11e6-b7b5-bcaec56cc144",
+		"Article": "355008",
+		"Name": "Шкаф с зеркалом",
+		"MeasureID": 796,
+		"TypeNomID": "13d0e7c7-fef5-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "2d2335af-fef5-11e4-92f1-0050568b35ac",
+		"Article": "115004",
+		"Name": "Ящик для инструментов Tayg №15",
+		"MeasureID": 796,
+		"TypeNomID": "13d0e7c7-fef5-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "a8527463-ff0a-11e4-92f1-0050568b35ac",
+		"Article": "115010",
+		"Name": "Ящик полимерный М12",
+		"MeasureID": 796,
+		"TypeNomID": "13d0e7c7-fef5-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "c3a1472c-fef5-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Корпус пластиковый Tayg №15",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "d6ccc907-fef5-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Крышка пластиковая Tayg №15",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "314bf63a-ff0a-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Ручка пластиковая Tayg №15",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "2f908de1-ff9b-11e4-92f1-0050568b35ac",
+		"Article": "220125",
+		"Name": "РБТ.100.00 Реле РБТ",
+		"MeasureID": 796,
+		"TypeNomID": "13d0e7c7-fef5-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "e71a3fb6-ff9c-11e4-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.100.01 Корпус",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "918f8ad2-004e-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.100.02 Кронштейн",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "a8764dea-004e-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.100.03 Якорь",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "c3fa9f40-004e-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.100.04 Пластина прижимная",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "048ef092-004f-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.100.05 Пружина",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "2263a334-004f-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.110.00 Катушка",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "373428aa-004f-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.120.00 Блок контактов",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "4bec1cb3-004f-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.130.00 Язычок в сборе",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "6b91c594-004f-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.140.00 Колодка с контактами",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "5ad4975e-0389-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.110.02 Кольцо",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "6a77817b-0389-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.110.01 Валик",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "ae0f883d-038e-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.120.01 Колодка",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "c1864502-038e-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.121.00 Пластина с контактом",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "c979735f-038e-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.120.02 Колодка",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "d15e49a6-038e-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.122.00 Пластина с контактом",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "e778e7e0-0399-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.121.01 Пластина",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "fd8f5f9b-0399-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.121.02 Контакт",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "74ab88f5-039a-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.122.01 Пластина",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "7e52af44-039a-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.122.02 Контакт",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "6f2afef0-03a3-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.130.03 Толкатель",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "7f230f2c-03a3-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.130.02 Опора",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "8e8d5c45-03a3-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.130.01 Язычок",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "2c3dc7c4-03a8-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.140.01 Колодка",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "39894b9a-03a8-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "РБТ.140.02 Контакт",
+		"MeasureID": 796,
+		"TypeNomID": "7b85e4db-febb-11e4-92f1-0050568b35ac"
+	},
+	{
+		"NomID": "c0053d9d-0389-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Проволока ПВЭ 0,1 ГОСТ 16348-70",
+		"MeasureID": 6,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "d46611b5-039b-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Медь М2 Лента ДПРХ  0,75",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "bcebabd2-039e-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Проволока  MM - 1,9 ТУ 16.К71-087-90",
+		"MeasureID": 6,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "bacdf4af-03a4-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Проволока 1 ГОСТ 5663-79",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "460281d5-03a9-11e5-92f1-0050568b35ac",
+		"Article": "",
+		"Name": "Медь М2 Лента ДПРХ  0,4",
+		"MeasureID": 166,
+		"TypeNomID": "fad620ae-c719-11e4-8ec3-bcaec56cc144"
+	},
+	{
+		"NomID": "05e26d70-01e4-11dc-a411-00055d80a2d1",
+		"Article": "СО-90",
+		"Name": "Стол обеденный ",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d65-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "05e26d77-01e4-11dc-a411-00055d80a2d1",
+		"Article": "СТ-90",
+		"Name": "Стулья ",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d65-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "1418c677-7307-11df-b338-0011955cba6b",
+		"Article": "М-1789",
+		"Name": "Спальный гарнитур \"Стелла\"",
+		"MeasureID": 839,
+		"TypeNomID": "9c556d65-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "f06588ab-7924-11df-b33a-0011955cba6b",
+		"Article": "К-90",
+		"Name": "Кровать",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d65-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "dff7f6f9-7a0b-11df-b33a-0011955cba6b",
+		"Article": "",
+		"Name": "Корпус кровати",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d65-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "dff7f6fa-7a0b-11df-b33a-0011955cba6b",
+		"Article": "",
+		"Name": "Спинка кровати",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d65-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "1643ef2b-5091-11e0-af15-0015e9b8c48d",
+		"Article": "Д-900",
+		"Name": "Набор кухонной мебели \"Диана\"",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d65-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "1643ef2e-5091-11e0-af15-0015e9b8c48d",
+		"Article": "С-789",
+		"Name": "Мойка С-789",
+		"MeasureID": 839,
+		"TypeNomID": "1643ef2a-5091-11e0-af15-0015e9b8c48d"
+	},
+	{
+		"NomID": "1643ef32-5091-11e0-af15-0015e9b8c48d",
+		"Article": "ШК -908",
+		"Name": "Шкаф кухонный",
+		"MeasureID": 839,
+		"TypeNomID": "1643ef2a-5091-11e0-af15-0015e9b8c48d"
+	},
+	{
+		"NomID": "91dbe5a1-514d-11e0-af16-0015e9b8c48d",
+		"Article": "С-345",
+		"Name": "Шкаф 3-дверный",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d65-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "91dbe5a2-514d-11e0-af16-0015e9b8c48d",
+		"Article": "Т-908",
+		"Name": "Тумбочка прикроватная",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d65-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "91dbe5a4-514d-11e0-af16-0015e9b8c48d",
+		"Article": "Т-90",
+		"Name": "Туалетный столик",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d65-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "b0d58352-3fe9-11e4-ab12-000d884fd00d",
+		"Article": "А-90",
+		"Name": "Мебельный гарнитур \"Артон\"",
+		"MeasureID": 839,
+		"TypeNomID": "b0d58351-3fe9-11e4-ab12-000d884fd00d"
+	},
+	{
+		"NomID": "0c6013da-ea5e-11e0-a7cd-e0cb4ed5f6e4",
+		"Article": "NYM 1х4",
+		"Name": "Кабель NYM (Севкабель) 1х4",
+		"MeasureID": 6,
+		"TypeNomID": "0c6013c6-ea5e-11e0-a7cd-e0cb4ed5f6e4"
+	},
+	{
+		"NomID": "0c6013db-ea5e-11e0-a7cd-e0cb4ed5f6e4",
+		"Article": "NYM 1х6",
+		"Name": "Кабель NYM (Севкабель) 1х6",
+		"MeasureID": 6,
+		"TypeNomID": "0c6013c6-ea5e-11e0-a7cd-e0cb4ed5f6e4"
+	},
+	{
+		"NomID": "0c6013dc-ea5e-11e0-a7cd-e0cb4ed5f6e4",
+		"Article": "NYM 3х1,5",
+		"Name": "Кабель NYM (Севкабель) 3х1,5",
+		"MeasureID": 6,
+		"TypeNomID": "0c6013c6-ea5e-11e0-a7cd-e0cb4ed5f6e4"
+	},
+	{
+		"NomID": "0c6013dd-ea5e-11e0-a7cd-e0cb4ed5f6e4",
+		"Article": "NYM 5х35",
+		"Name": "Кабель NYM (Севкабель) 5х35",
+		"MeasureID": 6,
+		"TypeNomID": "0c6013c6-ea5e-11e0-a7cd-e0cb4ed5f6e4"
+	},
+	{
+		"NomID": "0c6013de-ea5e-11e0-a7cd-e0cb4ed5f6e4",
+		"Article": " NYM 5х1,5",
+		"Name": "Кабель NYM (Севкабель) 5х1,5",
+		"MeasureID": 6,
+		"TypeNomID": "0c6013c6-ea5e-11e0-a7cd-e0cb4ed5f6e4"
+	},
+	{
+		"NomID": "baf54db7-7029-11e6-accf-0050568b35ac",
+		"Article": "99302/75",
+		"Name": " Куртка мех. женская \"ВЕРОНА 16Q\", овчин",
+		"MeasureID": 796,
+		"TypeNomID": "0385e7d2-7026-11e6-accf-0050568b35ac"
+	},
+	{
+		"NomID": "2c79a6a9-702a-11e6-accf-0050568b35ac",
+		"Article": "99300",
+		"Name": "Куртка мех. женская \"ХИТ тL160К\", овчина, песец",
+		"MeasureID": 796,
+		"TypeNomID": "0385e7d2-7026-11e6-accf-0050568b35ac"
+	},
+	{
+		"NomID": "65e4fa65-702a-11e6-accf-0050568b35ac",
+		"Article": "9971/85",
+		"Name": "Полупальто мех. женское \"ТРОЙКА т168Н\", овчина, песец",
+		"MeasureID": 796,
+		"TypeNomID": "0385e7d2-7026-11e6-accf-0050568b35ac"
+	},
+	{
+		"NomID": "7c2f2046-702c-11e6-accf-0050568b35ac",
+		"Article": "",
+		"Name": "Женское пальто из меха норки",
+		"MeasureID": 796,
+		"TypeNomID": "121d5173-7026-11e6-accf-0050568b35ac"
+	},
+	{
+		"NomID": "bc2a8abc-702c-11e6-accf-0050568b35ac",
+		"Article": "",
+		"Name": "Женское полупальто из меха норки с металлической молнией",
+		"MeasureID": 796,
+		"TypeNomID": "121d5173-7026-11e6-accf-0050568b35ac"
+	},
+	{
+		"NomID": "edb3a04a-702c-11e6-accf-0050568b35ac",
+		"Article": "",
+		"Name": "Куртка из меха норки",
+		"MeasureID": 796,
+		"TypeNomID": "121d5173-7026-11e6-accf-0050568b35ac"
+	},
+	{
+		"NomID": "1fdd3df2-702d-11e6-accf-0050568b35ac",
+		"Article": "",
+		"Name": "Куртка из меха норки с капюшоном",
+		"MeasureID": 796,
+		"TypeNomID": "121d5173-7026-11e6-accf-0050568b35ac"
+	},
+	{
+		"NomID": "4d54175e-702d-11e6-accf-0050568b35ac",
+		"Article": "",
+		"Name": "Куртка из меха норки с поясом",
+		"MeasureID": 796,
+		"TypeNomID": "121d5173-7026-11e6-accf-0050568b35ac"
+	},
+	{
+		"NomID": "7fd74806-702d-11e6-accf-0050568b35ac",
+		"Article": "",
+		"Name": "Полупальто из меха норки",
+		"MeasureID": 796,
+		"TypeNomID": "121d5173-7026-11e6-accf-0050568b35ac"
+	},
+	{
+		"NomID": "391e9547-702e-11e6-accf-0050568b35ac",
+		"Article": "",
+		"Name": "КИЗ (шубы из норки)",
+		"MeasureID": 796,
+		"TypeNomID": "b3ebcc44-7027-11e6-accf-0050568b35ac"
+	},
+	{
+		"NomID": "2364b772-702f-11e6-accf-0050568b35ac",
+		"Article": "",
+		"Name": "КИЗ (неперсонифицированный)",
+		"MeasureID": 796,
+		"TypeNomID": "947e7246-7027-11e6-accf-0050568b35ac"
+	},
+	{
+		"NomID": "e21f3a32-ef1f-11e0-af98-0015e9b8c48d",
+		"Article": "4601546046390",
+		"Name": "1С:Налогоплательщик 8",
+		"MeasureID": 796,
+		"TypeNomID": "f524ba14-f57a-11db-b754-00112f43529a"
+	},
+	{
+		"NomID": "e21f3a33-ef1f-11e0-af98-0015e9b8c48d",
+		"Article": "4601546044433",
+		"Name": "1С:Зарплата и Управление Персоналом 8. Базовая версия",
+		"MeasureID": 796,
+		"TypeNomID": "f524ba14-f57a-11db-b754-00112f43529a"
+	},
+	{
+		"NomID": "e21f3a34-ef1f-11e0-af98-0015e9b8c48d",
+		"Article": "4601546041661",
+		"Name": "1С:Бухгалтерия 8. Базовая версия",
+		"MeasureID": 796,
+		"TypeNomID": "f524ba14-f57a-11db-b754-00112f43529a"
+	},
+	{
+		"NomID": "e21f3a35-ef1f-11e0-af98-0015e9b8c48d",
+		"Article": "4601546048264",
+		"Name": "1С:Упрощенка 8",
+		"MeasureID": 796,
+		"TypeNomID": "f524ba14-f57a-11db-b754-00112f43529a"
+	},
+	{
+		"NomID": "e21f3a36-ef1f-11e0-af98-0015e9b8c48d",
+		"Article": "4601546043726",
+		"Name": "1С:Платежные документы 8",
+		"MeasureID": 796,
+		"TypeNomID": "f524ba14-f57a-11db-b754-00112f43529a"
+	},
+	{
+		"NomID": "ce29582a-0ada-11e1-afb4-0015e9b8c48d",
+		"Article": "РОБ-1",
+		"Name": "Рабочая одежда продавца",
+		"MeasureID": 796,
+		"TypeNomID": "ce295829-0ada-11e1-afb4-0015e9b8c48d"
+	},
+	{
+		"NomID": "5c7303c5-11a8-11e0-aee0-0015e9b8c48d",
+		"Article": "Б- 130005",
+		"Name": "Ботинки женские демисезонные, не годен ",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "88ec00d1-1d65-11e0-aee4-0015e9b8c48d",
+		"Article": "Б- 130005",
+		"Name": "Ботинки женские демисезонные, ограниченно годен ",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "7ef4ae68-1e22-11e0-aee5-0015e9b8c48d",
+		"Article": "",
+		"Name": "Сахарный песок (в упаковках), Ограниченно годен",
+		"MeasureID": 778,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "b9c33de0-1fec-11e0-aee7-0015e9b8c48d",
+		"Article": "Арт-33344555",
+		"Name": "Ассорти (конфеты), Не годен",
+		"MeasureID": 778,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "974c663a-29f5-11e0-aef1-0015e9b8c48d",
+		"Article": "Б- 130005",
+		"Name": "Ботинки женские демисезонные, ограниченно годен",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "974c663c-29f5-11e0-aef1-0015e9b8c48d",
+		"Article": "К-120003",
+		"Name": "Кроссовки \"ADIDAS\", ограниченно годен",
+		"MeasureID": 715,
+		"TypeNomID": "9c556d50-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "46156d4c-3e84-11e0-af04-0015e9b8c48d",
+		"Article": "Арт-7777",
+		"Name": "Барбарис (конфеты), Не годен",
+		"MeasureID": 166,
+		"TypeNomID": "9c556d57-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "fa1a68ee-431b-11e0-af07-0015e9b8c48d",
+		"Article": "Х-77891",
+		"Name": "СТИНОЛ 101, Ограниченно годен",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d55-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "fa1a68f1-431b-11e0-af07-0015e9b8c48d",
+		"Article": "Х-67890",
+		"Name": "СТИНОЛ 205, Не годен",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d55-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "7eddcdd6-43d9-11e0-af0a-0015e9b8c48d",
+		"Article": "В-987",
+		"Name": "Вентилятор JIPONIC (Тайв.),, Ограниченно годен",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "7eddcdd8-43d9-11e0-af0a-0015e9b8c48d",
+		"Article": "К-7778",
+		"Name": "Кофеварка BRAUN KF22R, Ограниченно годен",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "7eddcddd-43d9-11e0-af0a-0015e9b8c48d",
+		"Article": "М-3",
+		"Name": "Мясорубка ЭКМ-3, Не годен",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "7eddcddf-43d9-11e0-af0a-0015e9b8c48d",
+		"Article": "КА-879",
+		"Name": "Кофеварка JACOBS (Австрия), Не годен",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "80d231c5-4b16-11e0-af10-0015e9b8c48d",
+		"Article": "ВН-900",
+		"Name": "Вентилятор настольный, Не годен",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "80d231c7-4b16-11e0-af10-0015e9b8c48d",
+		"Article": "К-7778",
+		"Name": "Кофеварка BRAUN KF22R, Не годен",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "c00ff522-2baf-11e1-afd1-0015e9b8c48d",
+		"Article": "В-789",
+		"Name": "Вентилятор BINATONE ALPINE, Не годен",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	},
+	{
+		"NomID": "12c9482f-32bb-11e1-afd8-0015e9b8c48d",
+		"Article": "КВ- 900",
+		"Name": "Комбайн кухонный BINATONE FP 67, Не годен",
+		"MeasureID": 796,
+		"TypeNomID": "9c556d52-720f-11df-b436-0015e92f2802"
+	}
+]

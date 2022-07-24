@@ -1,0 +1,24 @@
+extends ../layouts/base
+
+append vars
+	- title = 'Страница не найдена';
+
+block content
+	+b.not-found.section
+		+e.wrap.wrap
+			+e.inner
+				+e.left
+					+e.H1.h1 404
+					+e.P.p Кто-то ошибся с адресом. Кликай по рабочим адресам. #[br] Если это наша вина, то нам хотелось бы это знать.
+					+b.A.logo.not-found__logo(href='/')
+						+icon('logo')
+					+e.P.p Пишите - support@gmail.com
+				+e.right
+					+e.UL.ul
+						+e.LI.li 
+							+e.A.nav-link(href="#") Главная
+						+e.LI.li 
+							+e.A.nav-link(href="#") О Quest Request
+						+e.LI.li 
+							+e.A.nav-link(href="#") Помощь
+

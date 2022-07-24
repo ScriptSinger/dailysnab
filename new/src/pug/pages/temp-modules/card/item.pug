@@ -1,0 +1,73 @@
+//- $cardArray = [
+//-     'id' => '123',
+//-     'imgs' => [
+//-         [
+//-             'url' => '/app/img/car.jpg',
+//-         ],
+//-         [
+//-             'url' => '/app/img/car1.jpg',
+//-         ],
+//-     ],
+//-     'name' => 'Прокладка впускного коллектора',
+//-     'userOnline' => true,
+//-     'checkbox' => true,
+//-     'quantityLeft' => 2,
+//-     'quantityPurchased' => 5,
+//-     'minLot' => [3, 5],
+//-     'photos' => [
+//-         [
+//-             'url' => '/app/img/photo.jpg',
+//-         ],
+//-         [
+//-             'url' => '/app/img/photo1.jpg',
+//-         ],
+//-     ],
+//-     'costMain' => [
+//-         'price' => '23 000',
+//-         'highlight' => true,
+//-         'payment' => true, // значения: любой текст (обычно НДС и Без НДС), либо 'icon' - выводит иконку купюры
+//-         'truck' => true,
+//-     ],
+//-     'costOld' => [
+//-         'price' => '23 000',
+//-         'highlight' => true,
+//-         'payment' => true, // значения: любой текст (обычно НДС и Без НДС), либо 'icon' - выводит иконку купюры
+//-     ],
+//-     'properties' => ['2360-2910210', 'Scania', 'Сталь 20', '5 брендов', '4 листа'],
+//-     'comment' => 'оплата до 20 ноября',
+//-     'categories' => 'Scania, Shantu', // категории в подписках
+//-     'urgent' => [
+//-         'name' => 'week', // значения: urgent,week,two-week,month,not-urgently
+//-         'value' => 'Неделя',
+//-     ],
+//-     'city' => 'Уфа',
+//-     'days' => 12,
+//-     'badge' => [
+//-         'link' => 'https://www.google.ru/', // ссылка на текущую карточку
+//-         'text' => 'Лично для ВП',
+//-     ],
+//-     'user' => [
+//-         'name' => 'https://www.google.ru/', // ссылка на текущую карточку
+//-         'online' => 'Лично для ВП',
+//-         'avatar' => 'https://www.google.ru/', // ссылка на аватар
+//-     ],
+//-     'category' => 'Запчасти',
+//-     'daysLeft' => 12,
+//-     'views' => 212,
+//-     'btn' => [
+//-         'name' => 'Активировать',
+//-         'data' => '', // позднее это опишу подробнее
+//-         'offersNotify' => 2,
+//-     ],
+//-     'status' => [
+//-         'name' => 'Активировать',
+//-         'notify' => 2,
+//-     ],
+//-     'publicationDate' => '20 минут назад',
+//-     'manage' => ['edit', 'refresh'], // значения: 'edit', 'open', 'msg', 'refresh'
+//- ]
+
+include ../../../mixins/mixin-loader.pug
+
++e.item
+    include content

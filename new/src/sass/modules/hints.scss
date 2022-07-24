@@ -1,0 +1,21 @@
+.hints {
+    &__inner {
+        flex-wrap: wrap;
+        margin-right: -1rem;
+        margin-bottom: -1rem;
+    }
+    .btn {
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+    }
+    @include max-screen($small_tablet) {
+        .btn {
+            white-space: normal;
+            text-align: left;
+            line-height: 1.2rem;
+            font-size: 1.2rem;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+}

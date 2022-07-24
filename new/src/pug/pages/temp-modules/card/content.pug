@@ -1,0 +1,241 @@
+include ../../../mixins/mixin-loader.pug
+
++e.content
+    <?php if ($cardArray['imgs']): ?>
+    +b.cards-gallery 
+        +e.inner
+            <?php foreach ($cardArray['imgs'] as $key => $value): ?>
+            +e.A.item(href!="<?php if $value['url']: ?>" data-fancybox!="<?php if ($cardArray['id']): ?>")
+                +e.DIV.img-wrapper
+                    +e.IMG.img(src!="<?php if $value['url']: ?>" alt="")
+                    <?php if $key == 3: ?>
+                    +e.more
+                        +e.more-icon
+                            +icon('camera', 'cards-gallery__more-icon')
+                        +e.more-text Еще 7 фото
+                    <?php endif; ?>
+                +e.DIV.line
+            <?php endforeach; ?>
+    <?php endif; ?>
+    +b.cards-top
+        <?php if ($cardArray['name']): ?>
+            +e.SPAN.item-name 
+                +e.item-name-inner
+                    <?php if ($cardArray['userOnline']): ?>
+                        +e.SPAN.user-online.user-online
+                    <?php endif; ?>
+                    <?php if ($cardArray['checkbox']): ?>
+                        +b.LABEL.checkbox.cards-top__checkbox
+                            +e.INPUT.input.j-cb-share-need(type="checkbox" name="share-need")
+                            +e.SPAN.control
+                                +e.SPAN.icon
+                                    +icon('check')
+                    <?php endif; ?>
+                        +e.A.item-name-text(href!="<?=$cardArray['url']; ?>")
+                            |<?=$cardArray['name']; ?>
+        <?php endif; ?>
+        <?php if ($cardArray['quantityLeft'] || $cardArray['minLot'] || $cardArray['photos']): ?>
+            +e.quantity 
+                <?php if ($cardArray['quantityLeft']): ?>
+                    +e.quantity-left
+                        |<?=$cardArray['quantityLeft']; ?>
+                        <?php if ($cardArray['quantityPurchased']): ?>
+                            +e.SPAN.quantity-purchased
+                                |&nbsp;(<?=$cardArray['quantityPurchased']; ?>)
+                        <?php endif; ?>
+                <?php endif; ?>
+                <?php if ($cardArray['minLot']): ?>
+                    +e.min-lot 
+                        +e.SPAN.min-lot-left
+                            |<?=$cardArray['minLot'][0]; ?>
+                        +e.SPAN.min-lot-separator /
+                        +e.SPAN.min-lot-multiplicity
+                            |<?=$cardArray['minLot'][1]; ?>
+                <?php endif; ?>
+                <?php if ($cardArray['photos']): ?>
+                    +e.photos
+                        +icon('cameraSharp', 'cards-top__photos-icon')
+                <?php endif; ?>
+        <?php endif; ?>
+    <?php if ($cardArray['costMain'] || $cardArray['costOld']): ?>
+    +b.cards-cost
+        <?php if ($cardArray['costMain']): ?>
+            +e.main
+                +e.SPAN.price(class!="<?php if ($cardArray['costMain']['highlight']) echo 'cards-cost__price_red '?>")
+                    |<?=$cardArray['costMain']['price']; ?>
+                    +e.SPAN.symbol &nbsp;₽
+                <?php if ($cardArray['costMain']['payment']): ?>
+                    +e.SPAN.payment 
+                        <?php if ($cardArray['costMain']['payment'] == 'icon'): ?>
+                            +icon('money')
+                        <?php else; ?>
+                            |<?=$cardArray['costMain']['payment']; ?>
+                        <?php endif; ?>
+                <?php endif; ?>
+                <?php if ($cardArray['costMain']['truck']): ?>
+                    +e.SPAN.truck 
+                        +icon('truck', 'cards-cost__truck-icon')
+                <?php endif; ?>
+        <?php endif; ?>
+        <?php if ($cardArray['costOld']): ?>
+            +e.old
+                +e.SPAN.price._cross-out(class!="<?php if ($cardArray['costOld']['highlight']) echo 'cards-cost__price_red '?>")
+                    |<?=$cardArray['costOld']['price']; ?>
+                    +e.SPAN.symbol &nbsp;₽
+                <?php if ($cardArray['costOld']['payment']): ?>
+                    +e.SPAN.payment 
+                        <?php if ($cardArray['costOld']['payment'] == 'icon'): ?>
+                            +icon('money')
+                        <?php else; ?>
+                            |<?=$cardArray['costOld']['payment']; ?>
+                        <?php endif; ?>
+                <?php endif; ?>
+        <?php endif; ?>
+    <?php endif; ?>
+    <?php if ($cardArray['properties']): ?>
+    +b.cards-properties
+        <?php foreach ($cardArray['properties'] as $value): ?>
+            +e.properties-item
+                |<?=$value; ?>
+        <?php endforeach; ?>
+    <?php endif; ?>
+    +b.cards-bottom
+        <?php if ($cardArray['comment'] || $cardArray['categories']): ?>
+            +e.comment
+                +e.SPAN.comment-text
+                    |<?=$cardArray['comment']; ?>
+                <?php if ($cardArray['categories']): ?>
+                    +e.SPAN.comment-categories
+                        |<?=$cardArray['categories']; ?>
+                <?php endif; ?>
+        <?php endif; ?>
+        <?php if ($cardArray['urgent']): ?>
+            +e.urgency(class!="cards-bottom__urgency_<?=$cardArray['urgent']['name']; ?>")
+                |<?=$cardArray['urgent']['value']; ?>
+        <?php endif; ?>
+        <?php if ($cardArray['city']): ?>
+            +e.city
+                |<?=$cardArray['city']; ?>
+        <?php endif; ?>
+        <?php if ($cardArray['days']): ?>
+            +e.days
+                |<?=$cardArray['days']; ?>
+        <?php endif; ?>
+        <?php if ($cardArray['badge'] || $cardArray['user'] || $cardArray['category']): ?>
+            +e.right
+                <?php if ($cardArray['badge']): ?>
+                    <?php if ($cardArray['badge']['link']): ?>
+                        +e.A.badge(href!="<?=$cardArray['badge']['link']; ?>")
+                            span
+                                |<?=$cardArray['badge']['text']; ?>
+                    <?php else: ?>
+                        +e.badge
+                            span
+                                |<?=$cardArray['badge']['text']; ?>
+                    <?php endif; ?>
+                <?php endif; ?>
+                <?php if ($cardArray['user']): ?>
+                    +e.user
+                        +e.SPAN.user-name(class!="<?php if ($cardArray['user']['online']){ echo 'user-online' } ?>")
+                            |<?=$cardArray['user']['name']; ?>
+                        +e.SPAN.user-avatar
+                            <?php if ($cardArray['avatar']): ?>
+                                img(src!="<?=$cardArray['user']['avatar']; ?>")
+                            <?php else: ?>
+                                +icon('noAvatar', 'cards-bottom__user-avatar-icon')
+                            <?php endif; ?>
+                <?php endif; ?>
+                //- if (share) // это вроде будущий функционал
+                //-     +e.A.share(href="#")
+                //-         +icon('clip', 'cards-bottom__share-icon')
+                <?php if ($cardArray['category']): ?>
+                    +e.category
+                        +e.category-text
+                            |<?=$cardArray['category']; ?>
+                <?php endif; ?>
+        <?php endif; ?>
+    +b.cards-info
+        <?php if ($cardArray['daysLeft'] || $cardArray['views']): ?>
+            +e.nums
+                +e.nums-inner
+                    <?php if ($cardArray['daysLeft']): ?>
+                        +e.nums-days 
+                            +e.SPAN.nums-days-text 
+                                span.j-cards-nums-days
+                                |<?=$cardArray['daysLeft']; ?>
+                                | &nbsp;дней
+                            +e.nums-days-scale
+                                +e.SPAN.nums-days-scale-thumb
+                    <?php endif; ?>
+                    <?php if ($cardArray['views']): ?>
+                        +e.nums-views
+                            +e.nums-views-img
+                                +icon('eye', 'cards-info__nums-views-icon')
+                            +e.SPAN.nums-views-text
+                                |<?=$cardArray['views']; ?>
+                    <?php endif; ?>
+        <?php endif; ?>
+        <?php if ($cardArray['btn']): ?> 
+            //- !+!+! доработать вывод btn
+            +e.action 
+                <?php if ($cardArray['btn']['name']): ?>
+                    <?php if ($cardArray['btn']['isDropdown']): ?>
+                    +e.action-btn.btn._blue(class="btn_dropdown" data-btn="<?=$cardArray['btn']['data']; ?>")
+                        span
+                            |<?=$cardArray['btn']['name']; ?>
+                        +icon('dropdown', 'cards-info__action-btn-icon')
+                    <?php else: ?>
+                    +e.action-btn.btn._blue(data-btn="<?=$cardArray['btn']['data']; ?>")
+                        span
+                            |<?=$cardArray['btn']['name']; ?>
+                    <?php endif; ?>
+                <?php endif; ?>
+                <?php if ($cardArray['btn']['offersNotify']): ?>
+                    +badgeNotify('1')
+                <?php endif; ?>
+        <?php endif; ?>
+        <?php if ($cardArray['status'] || $cardArray['publicationDate']): ?> 
+            +e.status 
+                <?php if ($cardArray['status']): ?>
+                    +e.status-name
+                        <?php if ($cardArray['status']['name']): ?>
+                            +e.SPAN.status-name-text
+                                |<?=$cardArray['status']['name']; ?>
+                        <?php endif; ?>
+                        <?php if ($cardArray['status']['notify']): ?>
+                            +badgeNotify("<?=$cardArray['btn']['data']; ?>")
+                        <?php endif; ?>
+                <?php endif; ?>
+                <?php if ($cardArray['publicationDate']): ?>
+                    +e.status-published
+                        +e.SPAN.status-published-text
+                            |<?=$cardArray['publicationDate']; ?>
+                <?php endif; ?>
+        <?php endif; ?>
+        <?php if ($cardArray['manage']): ?>
+            +e.manage
+                +e.manage-inner
+                    <?php foreach ($cardArray['manage'] as $val): ?>
+                        <?php if ($val == 'edit'): ?>
+                            +e.manage-item.__manage-edit
+                                +icon('pencil', 'cards-info__manage-item-icon')
+                        <?php endif; ?>
+                        <?php if ($val == 'open'): ?>
+                            +e.manage-item.__manage-open.j-open-offers
+                                +icon('pencilWrite', 'cards-info__manage-item-icon')
+                        <?php endif; ?>
+                        <?php if ($val == 'msg'): ?>
+                            +e.manage-item.__manage-message
+                                +icon('mail', 'cards-info__manage-item-icon')
+                        <?php endif; ?>
+                        <?php if ($val == 'refresh'): ?>
+                            +e.manage-item.__manage-refresh
+                                +icon('rotateArrow', 'cards-info__manage-item-icon')
+                        <?php endif; ?>
+                        <?php if ($val == 'warning'): ?>
+                            +e.manage-item.__manage-warning
+                                +icon('warning', 'cards-info__manage-item-icon')
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+        +e.menu
+            +icon('threeDot', 'cards-info__menu-icon')

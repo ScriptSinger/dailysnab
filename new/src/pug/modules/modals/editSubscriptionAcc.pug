@@ -1,0 +1,43 @@
++b.modal._edit-card.edit-subs-user-modal
+    +e.container
+        +e.inner
+            +e.content
+                +e.head
+                    +e.close(data-close="close")
+                        +icon('cross')
+                    +e.head-text Редактирование аккаунта
+                +e.body
+                    +b.FORM.form.edit-subs-user-form
+                        +e.logo
+                            input.input(type="file" id="logo" disabled)
+                            +e.LABEL.logo-wrap(for="logo") 
+                                +e.logo-img
+                                    img(src="/img/car.jpg")
+                        +e.groups 
+                            +e.groups-top
+                                +e.legal-form.form-group
+                                    .select-box
+                                        select
+                                            option(disabled selected) Правовая форма
+                                            option(value="fl") Физ лицо
+                                            option OOO
+                                        +icon('dropdown')
+                                +e.calculations.form-group
+                                    .select-box
+                                        select
+                                            option Расчеты
+                                            option Вариант 1
+                                            option Вариант 2
+                                        +icon('dropdown')
+                            .form-group
+                                input.input(type="text" placeholder="Наименование")
+                            +form-input('Адрес')
+                            +form-select(['Продавец', 'Вариант 1', 'Вариант 2'])
+                            .form-group
+                                input.input(type="text" placeholder="Электронная почта")
+                            .form-group
+                                input.input(type="text" placeholder="Телефон")
+                            +form-select(['Интересы', 'Вариант 1', 'Вариант 2'])
+                        +e.bottom
+                            +form-input('Комментарий')
+                            +e.btn.btn._blue._m Сохранить

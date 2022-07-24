@@ -1,0 +1,29 @@
+.brand-groups-modal {
+    .modal {
+        &__inner {
+            max-width: 54.5rem;
+        }
+    }
+    &__form {
+    }
+    &__form-group {
+        flex-basis: 21.2rem;
+        select, input {
+            padding-right: 2.3rem;
+            text-overflow: ellipsis;
+        }
+        &-row {
+            column-gap: 1.2rem;
+            margin-bottom: 1rem;
+        }
+    }
+    &__remove {
+        padding: 0.5rem;
+        color: rgba(255, 0, 0, 0.3);
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    &__add {
+        width: 21.2rem;
+    }
+}

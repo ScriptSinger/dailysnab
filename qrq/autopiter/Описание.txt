@@ -1,0 +1,45 @@
+����������
+http://service.autopiter.ru/v2/price
+
+�����:
+// api - ����� api
+// parse - ������� ������
+// parselogin - ������ ����� ���� �� ����
+
+
+
+// ���� offers.php ���������� �����������
+// artname - ������� ��� ��������
+// userid - �����
+// password - ������
+
+http://dailysnab.beget.tech/qrq/autopiter/api/offers.php?artname=p550428&userid=409052&password=A0277920880
+
+
+// ���� result.php ���������� ���������
+// artid - ��� ���� ArticleId �� offers.php
+// userid - �����
+// password - ������
+
+http://dailysnab.beget.tech/qrq/autopiter/api/result.php?artid=1497746&userid=409052&password=A0277920880
+
+
+
+
+
+
+
+
+
+// ������ ������ �� �����
+// ���� exampleoffers.php ���������� �����������
+// artname - ������� ��� ��������
+http://dailysnab.beget.tech/qrq/autopiter/api/exampleoffers.php?artname=1234&userid=409052&password=A0277920880
+
+
+
+// ������ ������ �� �����
+// ���� exampleresult.php ���������� ���������
+// artid - ��� ���� ArticleId �� offers.php
+http://dailysnab.beget.tech/qrq/autopiter/api/exampleresult.php?artid=23473234&userid=409052&password=A0277920880
+

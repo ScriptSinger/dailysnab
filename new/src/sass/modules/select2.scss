@@ -1,0 +1,12 @@
+.select2 {
+    &-container {
+        width: 100% !important;
+        &--default {
+            background: unset;
+            border: unset;
+            border-radius: unset;
+            height: 100%;
+
+        }
+    }
+}

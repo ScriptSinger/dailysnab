@@ -1,0 +1,33 @@
+.share-need {
+    display: none;
+    width: 100%;
+    background: $white;
+    border-bottom: 1px solid $blue200;
+    &__wrap {
+        height: 4.6rem;
+    }
+    &__inner {
+        padding: 0.8rem 0 0.8rem 2rem;
+    }
+    &__checkbox {
+        margin-right: 2rem;
+    }
+    &__btn {
+    }
+    &__btn-cancel {
+        flex: 0 1 11rem;
+        margin-left: auto;
+        margin-right: 1.2rem;
+    }
+    &__btn-select {
+        flex: 0 1 21.5rem;
+    }
+    @include max-screen($middle_mobile) {
+        &__checkbox {
+            margin-right: 1rem;
+        }
+        &__btn-cancel {
+            margin-right: 1rem;
+        }
+    }
+}

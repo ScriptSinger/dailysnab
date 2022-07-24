@@ -1,0 +1,283 @@
+/*AMO*/
+#basket_body div{color:#000;}
+#modal_amo{z-index: 2050 !important;}
+/*AMO end*/
+
+#modal_logo {z-index: 1049 !important;}
+
+/*удаление надо!*/
+.delete_html_teg{display:none !important;}
+/**/
+
+.php-error {
+  position: fixed;
+  background: #eee;
+  left: 0%;
+  top: 0%;
+  z-index: 10000000000;
+  padding: 20px;
+  border: 2px solid;
+  height: 500px;
+  overflow-y: auto;
+}
+#php-error2{z-index: 10000000000}
+.alert-dismissible .close{background:transparent}
+
+#close_vecho {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+#loading {
+  position: fixed;
+  top: 45%;
+  margin: 0 auto;
+  left: 50%;
+  margin-left: -32px;
+  display: none;
+  z-index: 100000;
+}
+
+#back_top {
+  z-index: 1000;
+  position: fixed;
+  bottom: 140px;
+  left: 10%;
+  display: block;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+  background: #ccc;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.div_offer_dopol_attribute {
+  visibility: hidden;
+  height: 0px;
+}
+
+.span_view_phone {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 18px;
+  box-shadow: 0px 0px 1px;
+}
+
+.ui-datepicker {
+  z-index: 1152 !important;
+}
+
+.ui-autocomplete {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 2147483647 !important;
+}
+
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+.table_offerbybuyell {
+  border: 1px dotted #ccc;
+}
+
+.table_buysell_111214 td {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+/*
+ * Sidebar begin
+ */
+
+.sidebar {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  /* Behind the navbar */
+  padding: 0px 0 0;
+  /* Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Scrollable contents if viewport is shorter than content. */
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #999;
+}
+
+.sidebar .nav-link.active {
+  color: #007bff;
+}
+
+.sidebar .nav-link:hover .feather, .sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+/*
+ * Sidebar end
+ */
+
+/* для работы glyphicon  begin */
+
+.has-feedback {
+  position: relative;
+}
+
+.has-feedback .form-control {
+  padding-right: 42.5px;
+}
+
+.form-control-feedback {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.input-lg+.form-control-feedback, .input-group-lg+.form-control-feedback, .form-group-lg .form-control+.form-control-feedback {
+  width: 46px;
+  height: 46px;
+  line-height: 46px;
+}
+
+.input-sm+.form-control-feedback, .input-group-sm+.form-control-feedback, .form-group-sm .form-control+.form-control-feedback {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.has-success .help-block, .has-success .control-label, .has-success .radio, .has-success .checkbox, .has-success .radio-inline, .has-success .checkbox-inline, .has-success.radio label, .has-success.checkbox label, .has-success.radio-inline label, .has-success.checkbox-inline label {
+  color: #3c763d;
+}
+
+
+
+
+
+/* .has-success .form-control {
+  border-color: #3c763d;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.has-success .form-control:focus {
+  border-color: #2b542c;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+} */
+
+.has-success .input-group-addon {
+  color: #3c763d;
+  border-color: #3c763d;
+  background-color: #dff0d8;
+}
+
+/* .has-success .form-control-feedback {
+  color: #3c763d;
+} */
+
+.has-warning .help-block, .has-warning .control-label, .has-warning .radio, .has-warning .checkbox, .has-warning .radio-inline, .has-warning .checkbox-inline, .has-warning.radio label, .has-warning.checkbox label, .has-warning.radio-inline label, .has-warning.checkbox-inline label {
+  color: #8a6d3b;
+}
+
+.has-warning .form-control {
+  border-color: #8a6d3b;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.has-warning .form-control:focus {
+  border-color: #66512c;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+}
+
+.has-warning .input-group-addon {
+  color: #8a6d3b;
+  border-color: #8a6d3b;
+  background-color: #fcf8e3;
+}
+
+.has-warning .form-control-feedback {
+  color: #8a6d3b;
+}
+
+.has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
+  color: #a94442;
+}
+
+.has-error .form-control, .form-control[required], select.form-control[required]+.select2 .select2-selection {
+  border: 1px solid #eea320;
+}
+
+.has-error .form-control:focus {
+  /* border-color: #843534; */
+}
+
+.has-error .input-group-addon {
+  color: #a94442;
+  border: 1px solid #eea320;
+  background-color: #f2dede;
+}
+
+.has-error .form-control-feedback {
+  color: #a94442;
+}
+
+.has-feedback label~.form-control-feedback {
+  top: 25px;
+}
+
+.has-feedback label.sr-only~.form-control-feedback {
+  top: 0;
+}
+
+.has-success .form-control, .has-success .form-control[required], .has-success select.form-control[required]+.select2 .select2-selection, .has-success .require-input {
+  border: 1px solid #c0c0c0 !important;
+}
+
+/* для работы glyphicon  end */

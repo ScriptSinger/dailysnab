@@ -1,0 +1,22 @@
+@import "../../node_modules/sass-mediaqueries/_media-queries";
+@import "../../node_modules/slick-carousel/slick/slick.scss";
+@import "../../node_modules/select2/src/scss/core.scss";
+@import "../../node_modules/@fancyapps/ui/src/fancybox/fancybox.scss";
+@import "../../node_modules/tippy.js/dist/tippy";
+// @import "../../node_modules/magnific-popup/src/css/main";
+// @import "../../node_modules/aos/src/sass/aos";
+// @import "../../node_modules/locomotive-scroll/src/locomotive-scroll";
+// @import "../../node_modules/owl.carousel/src/scss/owl.carousel";
+
+@mixin max-screen($max) {
+  @include mq($max-width: $max - 1) {
+    @content;
+  }
+}
+@mixin screen($min, $max) {
+  @include mq($media-type: "all", $min-width: $min, $max-width: $max) {
+    @content;
+  }
+}
+
+

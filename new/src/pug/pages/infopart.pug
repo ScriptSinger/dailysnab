@@ -1,0 +1,89 @@
+extends ../layouts/base
+
+append vars
+    - title = 'Инфо';
+    - body.classList = 'infopart-body';
+
+block header
+    +b.HEADER.header._not-login
+        +e.wrap.wrap
+            +b.A.logo(href='/')
+                +icon('logo')
+            +b.A.main-phone.header__phone(href="tel:8 (800) 250 26 10") 
+                +icon('phone')
+                +e.SPAN.num 8 (800) 250 26 10
+            +e.enter.j-login
+                +icon('enterSolid')
+                +e.enter-text Войти
+block sidebar
+block content
+    +b.infopart
+        +e.bg-imgs
+            +e.bg-imgs-item._wheel
+                img(src="/img/wheel.png")
+            +e.bg-imgs-item._oil
+                img(src="/img/oil.png")
+            +e.bg-imgs-item._engine
+                img(src="/img/engine.png")
+            +e.bg-imgs-item._engine1
+                img(src="/img/engine1.png")
+        +e.wrap
+            +e.inner
+                +e.top 
+                    +e.title 
+                        +e.SPAN.title-l Cэкономьте тысячи рублей и десятки часов 
+                        br
+                        |на закупке запчастей, масел и шин
+                    +b.what-search.infopart__what-search
+                        +e.inner
+                            +b.FORM.search-all-form.ac-group
+                                +e.LABEL.magnifier(for="what-search")
+                                    +icon('magnifier')
+                                +e.INPUT.input.ac-group__input(type="text" id="what-search" name="what-search" placeholder="Введите артикул")
+                +e.advantages
+                    +e.advantages-item
+                        +e.advantages-head
+                            +e.advantages-img-wrap
+                                +e.IMG.advantages-img(src="/img/warehouse.png")
+                            +e.advantages-title Более 500#[br] поставщиков:
+                        +e.UL.advantages-ul
+                            +e.LI.advantages-li Exist
+                            +e.LI.advantages-li Автодок
+                            +e.LI.advantages-li Армтек
+                            +e.LI.advantages-li Автопитер
+                            +e.LI.advantages-li Омега
+                            +e.LI.advantages-li Корона-Авто
+                            +e.LI.advantages-li Тракмоторс
+                            +e.LI.advantages-li и др.
+                    +e.advantages-item
+                        +e.advantages-head
+                            +e.advantages-img-wrap
+                                +e.IMG.advantages-img(src="/img/listSheet.png")
+                            +e.advantages-title Более 5000#[br] заявок в месяц
+                        +e.UL.advantages-ul
+                            +e.LI.advantages-li Легковые
+                            +e.LI.advantages-li Грузовые
+                            +e.LI.advantages-li Спецтехника
+                            +e.LI.advantages-li и др.
+                    +e.advantages-item
+                        +e.advantages-head
+                            +e.advantages-img-wrap
+                                +e.IMG.advantages-img(src="/img/binoculars.png")
+                            +e.advantages-title О платформе#[br] за 1 минуту
+                        +e.advantages-more
+                            +e.advantages-video
+                                img(src="/img/platform-video.png")
+                                +icon('play')
+                            +e.advantages-arrow
+                                +e.advantages-arrow-info
+                                    +e.advantages-arrow-text Сделать также
+                                    +e.advantages-arrow-btn.btn._m
+                                        +icon('fire')
+                                        span Бесплатно навсегда
+                                .header__enter.j-login
+                                    +icon('enterSolid')
+                                    .header__enter-text Войти
+                                +icon('dropdown')
+                            .j-v-play
+
+

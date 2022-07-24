@@ -1,0 +1,92 @@
++b.HEADER.header
+	+e.wrap.wrap
+		+b.A.logo(href='/')
+			+icon('logo')
+			+badgeNotify('24')
+		+b.what-search
+			+e.inner
+				+b.FORM.search-all-form.ac-group
+					+e.LABEL.magnifier(for="what-search")
+						+icon('magnifier')
+					+e.INPUT.input.ac-group__input(type="text" id="what-search" name="what-search" placeholder="Что ищете?")
+					+icon('dropdown', 'ac-group__icon-dropdown search-all-form__icon-dropdown')
+				+e.more
+					+e.close
+						+icon('cross')
+					+e.UL.more-list
+						+e.LI.more-item._applications(data-ws-tab-id="1")
+							+e.SPAN.more-icon
+								+icon('requests', '', '0 0 20 20')
+							+e.more-select-group
+								+e.SELECT.more-select
+									option Заявки
+									option Объявления
+								+icon('dropdown')
+						+e.LI.more-item(data-ws-tab-id="2")
+							+e.SPAN.more-icon
+								+icon('nineSquares')
+							+e.SPAN.more-text Категория
+							+e.more-item-close
+								+icon('cross')
+						+e.LI.more-item(data-ws-tab-id="3")
+							+e.SPAN.more-icon
+								+icon('location')
+							+e.SPAN.more-text Место
+							+e.more-item-close
+								+icon('cross')
+						+e.LI.more-item
+							+e.SPAN.more-icon
+								+icon('sort')
+							+e.SPAN.more-text По дате
+							+icon('dropdown')
+						+e.LI.more-item
+							+e.SPAN.more-icon
+								+icon('divisionByThree')
+							+e.SPAN.more-text По активу
+							+icon('dropdown')
+					+e.location.__more-section(data-ws-content-id="3")
+						+b.FORM.location-form.ac-group
+							+e.INPUT.input.ac-group__input(type="text" id="what-search-location" name="what-search-location" placeholder="Введите город")
+							+icon('dropdown', 'ac-group__icon-dropdown search-all-form__icon-dropdown')
+					+e.category.__more-section(data-ws-content-id="2")
+						+e.category-wrap
+							mixin what-search-category-name(name)
+								each i in name
+									+e.category-item(selected)
+										+e.category-name=i
+							+e.category-list.__category-list_1
+								+e.category-headline
+								+e.category-content
+									+e.category-item
+										+e.category-logo
+											+icon('bricks')
+										+e.category-name Строительство и ремонт
+									+e.category-item
+										+e.category-logo
+											+icon('technic')
+										+e.category-name Транспорт
+									+e.category-item
+										+e.category-logo
+											+icon('equipment')
+										+e.category-name Оборудование
+							+e.category-list.__category-list_2.hidden
+								+e.category-headline
+								+e.category-content
+									+what-search-category-name(['Стройматериалы','Металл','ЖБИ','Дерево','Отделка','Мебель','Сад','Аодоснабжение','Электротовары',])
+							+e.category-list.__category-list_3.hidden
+								+e.category-headline
+								+e.category-content
+									+what-search-category-name(['Инструменты', 'Конструкции и детали', 'Фундаменты стаканного типа и  башмаки', 'Плиты фундаментов', 'Детали росверков', 'Сваи', 'Ригели и прогоны', 'Фермы', 'Элементы рам',])
+							+e.category-list.__category-list_4.hidden
+								+e.category-headline
+								+e.category-content
+									+what-search-category-name(['Перемычки', 'Панели стеновые наружные', 'Фундаменты стаканного типа и башмаки', 'Перегородки', 'Длоки стеновые', 'Плиты перекрытий', 'Плиты дорожные', 'Трубы наопрные', 'Трубы безнапорные',])
+									//- +what-search-category-name(['Перемычки', 'Панели стеновые наружные', 'Фундаменты стаканного типа и башмаки', 'Перегородки', 'Длоки стеновые', 'Плиты перекрытий', 'Плиты дорожные', 'Трубы наопрные', 'Трубы безнапорные',])
+		+place-need
+		+b.A.main-phone.header__phone(href="tel:8 (800) 250 26 10") 
+			+icon('phone')
+			+e.SPAN.num 8 (800) 250 26 10
+
+
+
+

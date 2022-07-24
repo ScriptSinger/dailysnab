@@ -1,0 +1,21 @@
++b.modal.sending-needs-modal
+    +e.container
+        +e.inner
+            +e.content
+                +e.head
+                    +e.close(data-close="close")
+                        +icon('cross')
+                    +e.head-text Отправка потребностей
+                +e.body
+                    form.form.sending-needs-form
+                        //- .form-group
+                        //-     .select-box
+                        //-         select.j-needs-name
+                        //-         +icon('dropdown')
+                        .form-group
+                            input.input.j-needs-name(type="text" placeholder="Название")
+                        +form-input('E-mail')
+                        +form-input('Примечание')
+                    +e.footer
+                        +e.btn.btn._blue.j-send-need-mail Отправить e-mail
+                        +e.btn.btn._gray.j-copy-need-link Копировать ссылку

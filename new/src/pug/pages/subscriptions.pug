@@ -1,0 +1,59 @@
+extends ../layouts/base
+
+append vars
+    - title = 'Подписки';
+
+block content
+    +submenu()
+        block submenuNav
+            +submenuNavLi('Все пользователи', '', true)
+            +submenuNavLi('Все продавцы')
+            +submenuNavLi('Все покупатели')
+            +submenuNavLi('Подписчики')
+            +submenuNavLi('Подписчики')
+    +b.hints.header-submenu
+        +e.wrap.wrap
+            +e.inner.header-submenu__inner
+                +b.btn._green._cross._m Выберите категорию в которой торгует продавец
+                    +icon('cross')
+    +b.subscriptions.section
+        +e.wrap.wrap
+            +e.inner
+                +b.cards._subscriptions 
+                    +e.item
+                        +e.content
+                            +cards-top('Ахмадулина', '', '', '', '', '', '', '', '', {
+                                userOnline: true,
+                            })
+                            +cards-bottom('Шины', '', 'Уфа', '', '', '', '', '', {
+                                badge: {
+                                    text: '2461898754001 ИП Ахмадуллина А З.',
+                                    isLink: true
+                                }
+                            })
+                            +cards-info([''], '', ['Подписаться'], '', '', ['edit'], '', {
+                                btn: {data: 'subscribe'}
+                            })
+                    +e.item
+                        +e.content
+                            +cards-gallery()
+                            +cards-top('ООО ГорСтрой')
+                            +cards-bottom('Scania, Shantui', '', 'Уфа', '', '', '', '', '', {
+                                categories:'+35 категорий',
+                                badge: {
+                                    text: '2461898754001 ИП Ахмадуллина А З.',
+                                    isLink: true
+                                }
+                            }) 
+                            +cards-info([''], '', ['Подписаться'], '', '', ['msg'], '', {
+                                btn: {data: 'subscribe'}
+                            })
+                    +e.item
+                        +e.content
+                            +cards-top('Ахмадулина')
+                            +cards-bottom('Scania, Shantui', '', 'Уфа', '', '', '', '', '', {
+                                categories:'+35 категорий'
+                            }) 
+                            +cards-info([''], '', ['Подписаться'], '', '', ['edit'], '', {
+                                btn: {data: 'subscribe'}
+                            })

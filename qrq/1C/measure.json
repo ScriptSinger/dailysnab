@@ -1,0 +1,123 @@
+{
+    "Measure": {
+	{
+		"Name": "м",
+		"MeasureID": 6
+	},
+	{
+		"Name": "км/1000 м",
+		"MeasureID": 8
+	},
+	{
+		"Name": "м2",
+		"MeasureID": 55
+	},
+	{
+		"Name": "руб",
+		"MeasureID": 1024
+	},
+	{
+		"Name": "л (дм3)",
+		"MeasureID": 112
+	},
+	{
+		"Name": "м3",
+		"MeasureID": 113
+	},
+	{
+		"Name": "кар",
+		"MeasureID": 162
+	},
+	{
+		"Name": "г",
+		"MeasureID": 163
+	},
+	{
+		"Name": "кг",
+		"MeasureID": 166
+	},
+	{
+		"Name": "т",
+		"MeasureID": 168
+	},
+	{
+		"Name": "кВт.ч",
+		"MeasureID": 245
+	},
+	{
+		"Name": "ч",
+		"MeasureID": 356
+	},
+	{
+		"Name": "1000 руб",
+		"MeasureID": 384
+	},
+	{
+		"Name": "л.",
+		"MeasureID": 625
+	},
+	{
+		"Name": "дюжина",
+		"MeasureID": 641
+	},
+	{
+		"Name": "изд",
+		"MeasureID": 657
+	},
+	{
+		"Name": "набор",
+		"MeasureID": 704
+	},
+	{
+		"Name": "пар",
+		"MeasureID": 715
+	},
+	{
+		"Name": "%",
+		"MeasureID": 744
+	},
+	{
+		"Name": "упак",
+		"MeasureID": 778
+	},
+	{
+		"Name": "шт",
+		"MeasureID": 796
+	},
+	{
+		"Name": "100 шт",
+		"MeasureID": 797
+	},
+	{
+		"Name": "ящ",
+		"MeasureID": 812
+	},
+	{
+		"Name": "компл",
+		"MeasureID": 839
+	},
+	{
+		"Name": "кор",
+		"MeasureID": 996
+	},
+	{
+		"Name": "пач",
+		"MeasureID": 997
+	},
+	{
+		"Name": "пак",
+		"MeasureID": 998
+	},
+	{
+		"Name": "пал",
+		"MeasureID": 999
+	},
+	{
+		"Name": "м2",
+		"MeasureID": 0
+	},
+	{
+		"Name": "мл.",
+		"MeasureID": 0
+	}
+}}

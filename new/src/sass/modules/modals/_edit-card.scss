@@ -1,0 +1,113 @@
+.modal_edit-card {
+    .form {
+        display: grid;
+        grid-template: auto / auto 1fr;
+        grid-gap: 1rem;
+        &__calculations {
+            display: none;
+        }
+        &__logo {
+            grid-column: 1;
+            &-wrap {
+                @include square(9.6rem);
+                position: relative;
+                display: block;
+                border-radius: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                overflow: hidden;
+                cursor: pointer;
+            }
+            &-text {
+                @include align-center;
+                width: 100%;
+                height: 100%;
+                border: 1px solid $black300;
+                border-radius: 100%;
+            }
+            &-img {
+                img {
+                    @extend .object-fit;
+                }
+            }
+        }
+        &__groups {
+            grid-column: 2;
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -1rem;
+            margin-bottom: -1rem;
+            &-top {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                margin-right: -1rem;
+                // margin-bottom: -1rem;
+                & > *:last-child {
+                    display: none;
+                }
+            }
+        }
+        &__bottom {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            grid-gap: 1rem;
+            grid-row: 2;
+            grid-column: 1/3;
+            .form-group {
+                margin: 0;
+                max-width: unset;
+            }
+        }
+        &__btn {
+            width: 16.5rem;
+        }
+        &-group {
+            flex: 1 0 22rem;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            min-width: 18rem;
+            max-width: calc((100% - 1 * 3rem) / 3);
+        }
+    }
+    @include min-screen($small_tablet) {
+        .modal {
+            &__inner {
+                width: 82rem;
+            }
+        }
+    }
+    @include max-screen($small_tablet) {
+        .form-group {
+            max-width: calc((100% - 1 * 2rem) / 2);
+        }
+    }
+    @include max-screen($large_mobile) {
+        .form {
+            &__logo {
+                grid-column: 1;
+                &-img {
+                    margin: 0 auto;
+                }
+            }
+            &__groups {
+                grid-column: 1;
+            }
+            &__bottom {
+                grid-column: 1;
+                grid-row: unset;
+                grid-template-columns: 1fr;
+            }
+            &__btn {
+                width: 100%;
+            }
+            &-group {
+                // flex: 1 0 22rem;
+                max-width: unset;
+            }
+        }
+        // .form-group {
+        //     max-width: calc((100% - 1 * 2rem)/2);
+        // }
+    }
+}

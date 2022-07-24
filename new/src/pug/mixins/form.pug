@@ -1,0 +1,37 @@
+mixin form-input(placeholder, more, classes, name)
+    .form-group(class=more ? 'cards-write-offers__more':'')
+        input.input(type="text" placeholder=placeholder class=classes name=name)
+mixin form-select(options, more, classes, name)
+    .form-group(class=more ? 'cards-write-offers__more':'')
+        .select-box(class=classes)
+            select(name=name)
+                each val in options
+                    option=val
+            +icon('dropdown')
+mixin form-input-select(placeholder, options, more, classes)
+    .form-group(class=more ? 'cards-write-offers__more':'')
+        .input-select-box(class=classes)
+            input(type="text" placeholder=placeholder)
+            .select-box
+                select
+                    each val in options
+                        option=val
+                +icon('dropdown')
+mixin form-from-to(placeholder, scale, selectOptions, classes)
+    .form-group
+        if (selectOptions)
+            .input-fromto-box.input-fromto-box_select(class=classes)
+                span.input-fromto-box__name=placeholder
+                input.input-fromto-box__from(type="text" placeholder="от")
+                input.input-fromto-box__to(type="text" placeholder="до")
+                .input-fromto-box__scale.select-box
+                    select
+                        each val in selectOptions
+                            option=val
+                    +icon('dropdown')
+        else
+            .input-fromto-box(class=classes)
+                span.input-fromto-box__name=placeholder
+                input.input-fromto-box__from(type="text" placeholder="от")
+                input.input-fromto-box__to(type="text" placeholder="до")
+                span.input-fromto-box__scale=scale

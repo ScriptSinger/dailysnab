@@ -1,0 +1,93 @@
+.what-search__more {
+    &-list {
+        display: flex;
+        justify-content: center;
+    }
+    &-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        color: $black400;
+        fill: $black400;
+        transition: $transition;
+        overflow: hidden;
+        cursor: pointer;
+        &-close {
+            display: none;
+            text-align: center;
+            width: 1.6rem;
+            .icon {
+                @include square(1rem);
+                stroke: $black400;
+                stroke-width: 1px;
+            }
+        }
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+        &.selected {
+            color: $blue800;
+            fill: $blue800;
+        }
+        &.filled {
+            .what-search__more-item-close {
+                display: block;
+            }
+        }
+        &_applications {
+            color: $blue800;
+            fill: $blue800;
+            flex-shrink: 0;
+            overflow: visible;
+        }
+        .select2-container--open + .icon-dropdown {
+            transform: rotate(180deg);
+        }
+        .select2 {
+            width: auto !important;
+            &-selection {
+                border: inherit !important;
+                height: inherit !important;
+                &__rendered {
+                    color: inherit !important;
+                    line-height: inherit !important;
+                    padding: inherit !important;
+                }
+            }
+        }
+    }
+    &-icon {
+        @include align-center;
+        width: 2rem;
+        margin-right: 0.5rem;
+        flex-shrink: 0;
+    }
+    &-text {
+        @extend .nowrap;
+    }
+    .icon {
+        transition: transform $transition;
+        &-requests {
+            width: 1.7rem;
+        }
+        &-dropdown {
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+    }
+    &-section {
+        display: none;
+        position: relative;
+        padding-top: 3rem;
+        &::before {
+            content: "";
+            display: block;
+            width: calc(100% + 3rem);
+            border-top: 1px solid $black100;
+            position: absolute;
+            top: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}

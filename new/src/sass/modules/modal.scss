@@ -1,0 +1,112 @@
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    z-index: 100;
+    &__container {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 901;
+        text-align: center;
+        overflow: hidden;
+        overflow-y: scroll;
+        white-space: nowrap;
+        padding-left: 0.7rem;
+        padding-right: 1.3rem;
+        &:before {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+    }
+    &__inner {
+        position: relative;
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // width: 100%;
+        // max-height: 80%;
+        max-width: calc(100vw - 4rem);
+        // transform: translate(-50%, -50%);
+        background-color: #fff;
+        border-radius: $brXS;
+        // overflow-x: hidden;
+        // overflow-y: auto;
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 6px 16px rgba(56, 59, 83, 0.15);
+        display: inline-block;
+        vertical-align: middle;
+        text-align: initial;
+        margin: 10rem 0;
+        width: 100%;
+        white-space: normal;
+        &_s {
+            max-width: 63rem;
+        }
+    }
+    &__close {
+        @include square(2.5rem);
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        font-size: 50px;
+        font-weight: 300;
+        cursor: pointer;
+        user-select: none;
+    }
+    &__content {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        p {
+            color: $black300;
+        }
+    }
+    &__head {
+        padding: 1.7rem 0;
+        width: 100%;
+        border-bottom: 1px solid $black100;
+        &-text {
+            font-weight: 700;
+        }
+    }
+    &__body {
+        padding: 1.7rem 0;
+    }
+    &__footer {
+        margin-top: 1.5rem;
+        &_ok {
+            .btn {
+                width: 12rem;
+                margin-left: auto;
+            }
+        }
+    }
+    
+    @include max-screen($large_tablet) {
+        &__inner {
+            // left: calc(50% + 5rem);
+            max-width: calc(100vw - 2rem);
+            // max-width: 100vw;
+            margin: 0;
+            &._s {
+            }
+        }
+    }
+
+    @include max-screen($small_tablet) {
+        &__inner {
+            // width: 100%;
+            // height: 100%;
+            max-height: unset;
+            // max-width: unset;
+            // border-radius: unset;
+        }
+    }
+}
