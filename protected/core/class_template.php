@@ -5297,7 +5297,9 @@ class HtmlTemplate extends HtmlServive
 				//vecho(implode("",$arr_companies));
 				$comp2 = implode("",$arr_companies); //второй собеседник (string)
 				$rc2 = reqCompany(array('id'=>$comp2));
+
 				$ava_sobesednika = $rc2["avatar"];
+
 			}
 			//$b_comp = (!empty($rc['company'])) ? ', '.$rc['company'] : ''; //второй собеседник 
 			
@@ -5337,8 +5339,8 @@ class HtmlTemplate extends HtmlServive
 				}
 				else	
 				{
-//                    var_dump($rcm[0]);
-					$theme = $rcm[0]["company"];
+                   
+					$theme = $rc2['legal_entity'] . ' ' . $rc2["company"];
 					$edit_theme = '';
 				}
 

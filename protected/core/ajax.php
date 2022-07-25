@@ -5429,7 +5429,7 @@ elseif($_GET['route'] == 'qrq_html'){
         $rcf = reqChatFolders(array('not_status'=>2));
 
         $rm_1 = search($rcf, 'folder_name', $in['id']);
-        
+
         if( empty($rm_1) ) { //проверка на наличие не архивной темы с id такой сущности
 
             if(!empty($companies_id)){ //проврека на наличие собеседников, хотя один собеседник должен быть
