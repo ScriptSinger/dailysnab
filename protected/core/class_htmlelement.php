@@ -703,20 +703,22 @@ class HtmlElement {
 		$in = fieldIn($p, array('ids,company_id'));
 		$code = $opt = $sel = '';
 		
-		//var_dump($p['ids']);
-		
+
+        $arr_cc = '';
 		//$arr_cc = ($p['id'])? explode(',',$p['ids']) : '';
 		if(!empty($p['ids'])){
 			$arr_cc = $p['ids'];
 		}
-		
+
+
 		$p['pole'] 	= 'company';
 		$p['where']	= 'company';
-		$row_company = reqCompany();		
-		
-		foreach($row_company as $k=>$m){
+		$row_company = reqCompany();
+
+		foreach( $row_company as $k=>$m){
 			if(!empty($p['ids'])){
 				$sel = (in_array($m['id'], $arr_cc))? ' selected' : '';
+
 			}
 			$opt .= '<option value="'.$m['id'].'" '.$sel.'>'.$m[ $p['pole'] ].'</option>';
 

@@ -87,8 +87,8 @@ foreach($member as $key => $v){
 	-->
 
 	<script src="/js/jquery.validate.min.js"></script>
-	<script src="/js/ui.js?<?=date('dmy')?>"></script>
-	<script src="/js/custom.js?<?=date('dmyd')?>"></script>	
+	<script src="/js/ui.js?<?=time()?>"></script>
+	<script src="/js/custom.js?<?=time()?>"></script>
 	
 	<!--bootstrap-->
 	<script src="/component/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -5838,7 +5838,7 @@ elseif($_GET['route'] == 'qrq_html'){
     // Модальное окно Написать сообщение из сущностей
     elseif($_GET['route'] == 'modal_write_message_from_potrb'){
 
-        $arr = $f->FormWriteMessageFromPotrb(array('id'=>$in['id'],'url'=>$in['url'],'need'=>$in['potrbs']));
+        $arr = $f->FormWriteMessageFromPotrb(array('id'=>$in['id'],'url'=>$in['url'],'need'=>$in['potrbs'], 'company' => $in['company']));
 
         $code = $t->getModal(
             array('class_dialog' => 'edittheme', 'top' => $arr['top'], 'content' => $arr['content'], 'bottom' => $arr['bottom']),
