@@ -5945,6 +5945,29 @@
 
 		return $row;
 	}
+	
+	// пришли ли новые предложения от Etp
+	function reqBuySell_PageSell_EtpNew($p=array()) {
+
+		$in = fieldIn($p, array('id'));
+
+		$sql = "	SELECT COUNT(be.buy_sell_id) kol
+				FROM buy_sell_etp_sell be
+				WHERE be.cookie_session='".COOKIE_SESSION."' AND be.company_id=".COMPANY_ID." 
+						AND be.buy_sell_id>".$in['id']."
+						/*исключаем сгруппированные*/
+						AND NOT be.buy_sell_id IN (	SELECT t.buy_sell_id
+													FROM view_grouping_id_val_page_sell t
+													WHERE NOT t.buy_sell_id IN (SELECT tt.buy_sell_id FROM view_grouping_id_kol_page_sell tt) )
+						
+						/**/
+				 ";
+
+		$row = PreExecSQL_one($sql,array());
+		
+		return $row;
+	}
+	
 
 	// Баланс компании
 	function reqBalance($p=array()) {

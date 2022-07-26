@@ -6942,7 +6942,7 @@ elseif($_GET['route'] == 'save_admin_etp_errors'){
 
 	if(!$in['id']){// СОЗДАНИЕ
 
-		$STH = PreExecSQL(" INSERT INTO amo_name_error_etp ( name_error, name_error_qrq, name_error_etp, next_etp) VALUES (?,?,?,?,?); " ,
+		$STH = PreExecSQL(" INSERT INTO amo_name_error_etp ( name_error, name_error_qrq, name_error_etp, next_etp) VALUES (?,?,?,?); " ,
 			array( $in['name_error'],$in['name_error_qrq'],$in['name_error_etp'],$in['next_etp'] ));
 		if($STH){
 			$ok		= true;

@@ -1188,6 +1188,7 @@ class HtmlBuySell extends HtmlServive
 						self::ChangeStatusBuy(array('buy_sell_id'=>$row_bs['parent_id'],'status'=>11));
 						
 					// Оповещение
+					
 						$cn->StartNotification(array(	'flag'				=> 'buy_sell',
 														'tid'				=> $arr2['buy_sell_id'],
 														'status_buy_sell_id'=> 11,
