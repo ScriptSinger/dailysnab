@@ -74,7 +74,7 @@ class HtmlElement {
 	 */
 	function Input( $param=array() ){
 		$html = $label = $data_str = '';
-
+        $number = "this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');";
 		$param = $this->ParamArray($param);
 
 			//подписываем lebal'ом если передали
@@ -104,10 +104,16 @@ class HtmlElement {
 					}else{
 						$name = $param['id'];
 					}
-					
-					$html = 	'
-								<input type="'.$param['type'].'" class="'.$param['class'].'" id="'.$param['id'].'" name="'.$name.'" placeholder="'.$param['placeholder'].'" value="'.$param['value'].'" '.$data_str.' '.$param['dopol'].' '.$param['disabled'].' title="'.$param['title'].'" />
+
+                if($param['onlyNumber']) {
+                    $html = '
+								<input type="' . $param['type'] . '" class="' . $param['class'] . '" id="' . $param['id'] . '" name="' . $name . '" placeholder="' . $param['placeholder'] . '" value="' . $param['value'] . '" ' . $data_str . ' ' . $param['dopol'] . ' ' . $param['disabled'] . ' title="' . $param['title'] . '" oninput="' . $number . '""/>
 							';
+                }else{
+                    $html = '
+								<input type="' . $param['type'] . '" class="' . $param['class'] . '" id="' . $param['id'] . '" name="' . $name . '" placeholder="' . $param['placeholder'] . '" value="' . $param['value'] . '" ' . $data_str . ' ' . $param['dopol'] . ' ' . $param['disabled'] . ' title="' . $param['title'] . '" />
+							';
+                }
 			}
 			/*
 			$div_begin=$div_end='';

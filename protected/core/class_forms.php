@@ -3438,11 +3438,12 @@ class HtmlForms extends HtmlTemplate
 			<div class="modal-body__content">
 				<br />
 				<div class="form-group">
-							'.$this->Input(	array(	'type'			=> 'number',
+							'.$this->Input(	array(	'type'			=> 'text',
 													'id'			=> 'balance',
 													'class'			=> 'form-control',
 													'value'			=> '',
-													'placeholder'	=> 'Сумма'
+													'placeholder'	=> 'Сумма',
+                                                    'onlyNumber'       => true
 												)
 										).'
 				</div>					
