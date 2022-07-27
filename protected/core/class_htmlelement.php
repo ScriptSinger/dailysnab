@@ -105,7 +105,7 @@ class HtmlElement {
 						$name = $param['id'];
 					}
 
-                if($param['onlyNumber']) {
+                if(!empty($param['onlyNumber'])) {
                     $html = '
 								<input type="' . $param['type'] . '" class="' . $param['class'] . '" id="' . $param['id'] . '" name="' . $name . '" placeholder="' . $param['placeholder'] . '" value="' . $param['value'] . '" ' . $data_str . ' ' . $param['dopol'] . ' ' . $param['disabled'] . ' title="' . $param['title'] . '" oninput="' . $number . '""/>
 							';
