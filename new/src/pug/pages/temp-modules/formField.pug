@@ -1,0 +1,34 @@
+//- $fieldArray = [
+//-     'type' => 'input', // имеет значения: 'input', 'select', 'input-select',
+//-     'name' => ['available'],
+//-     'placeholder' => 'Наличие',
+//-     'classes' => 'require red', // можно добавить любые классы через пробел. основные классы: 'require',
+//-     'options' => ['Название поля', 'Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4', 'Вариант 5',]
+//- ]
+
+<?php if ($fieldArray): ?>
+    .form-group
+        <?php if ($fieldArray['type'] == 'input'): ?>
+            input.input(type="text" class!="<?=$fieldArray['classes']; ?>" placeholder!="<?=$fieldArray['placeholder']; ?>"  name!="<?=$fieldArray['name'][0]; ?>")
+        <?php endif; ?>
+        <?php if ($fieldArray['type'] == 'select'): ?>
+            .select-box(class!="<?=$fieldArray['classes']; ?>")
+                select(name!="<?=$fieldArray['name'][0]; ?>")
+                    <?php foreach ($fieldArray['options'] as $value): ?>
+                        option
+                            |<?=$value; ?>
+                    <?php endforeach; ?>
+                +icon('dropdown')
+        <?php endif; ?>
+        <?php if ($fieldArray['type'] == 'input-select'): ?>
+            .input-select-box(class!="<?=$fieldArray['classes']; ?>")
+                input(type="text" placeholder!="<?=$fieldArray['placeholder']; ?>" name!="<?=$fieldArray['name'][0]; ?>")
+                .select-box
+                    select(name!="<?=$fieldArray['name'][1]; ?>")
+                        <?php foreach ($fieldArray['options'] as $value): ?>
+                            option
+                                |<?=$value; ?>
+                        <?php endforeach; ?>
+                    +icon('dropdown')
+        <?php endif; ?>
+<?php endif; ?>

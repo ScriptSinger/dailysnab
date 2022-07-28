@@ -1051,7 +1051,7 @@ class ClassQrq extends HtmlServive
 		$in = fieldIn($p, array('errors_message','buy_sell_id','amount','where'));
 	
 		$rez	= $next_etp = false;
-		$button_next_etp = '';
+		$button_next_etp = $errors_message = '';
 	
 		$r = reqAmoNameErrorEtp();
 		

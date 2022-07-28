@@ -5,9 +5,9 @@ include ../../../mixins/mixin-loader.pug
     +b.cards-gallery 
         +e.inner
             <?php foreach ($cardArray['imgs'] as $key => $value): ?>
-            +e.A.item(href!="<?php if $value['url']: ?>" data-fancybox!="<?php if ($cardArray['id']): ?>")
+            +e.A.item(href!="<?php if $value['url']{echo $value['url']}; ?>" data-fancybox!="<?php if ($cardArray['id']){ echo $cardArray['id']}; ?>")
                 +e.DIV.img-wrapper
-                    +e.IMG.img(src!="<?php if $value['url']: ?>" alt="")
+                    +e.IMG.img(src!="<?php if $value['url']{echo $value['url']}; ?>" alt="")
                     <?php if $key == 3: ?>
                     +e.more
                         +e.more-icon
@@ -61,7 +61,7 @@ include ../../../mixins/mixin-loader.pug
     +b.cards-cost
         <?php if ($cardArray['costMain']): ?>
             +e.main
-                +e.SPAN.price(class!="<?php if ($cardArray['costMain']['highlight']) echo 'cards-cost__price_red '?>")
+                +e.SPAN.price(class!="<?php if ($cardArray['costMain']['highlight']){ echo 'cards-cost__price_red '}; ?>")
                     |<?=$cardArray['costMain']['price']; ?>
                     +e.SPAN.symbol &nbsp;₽
                 <?php if ($cardArray['costMain']['payment']): ?>

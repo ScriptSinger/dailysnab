@@ -3004,7 +3004,9 @@ if(LOGIN_ID){
                     $ok = true;
                     $modal_errors_message = $t->getModal(array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['code']),
                         array('id'=>'next_etp-form','class'=>'') );
-                }
+                }else{
+					$code = $errors_message;
+				}
                 ///
 
 
