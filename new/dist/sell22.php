@@ -7,13 +7,28 @@
 			$button_buy = '';
 			if( (PRAVA_2||PRAVA_3) && ($m['flag_subscriptions_company_in']||$m['flag_subscriptions_company_out']) ){
 			//if(COMPANY_ID&&COMPANY_ID<>$m['company_id']){
-			
-					$button_buy = $this->Input(	array(	'type'			=> 'button',
-													'class'			=> 'pull-right btn btn-pfimary btn-sm get_form_buy_amount',
-													'value'			=> 'купить',
-													'data'			=> array('id'=>$m['id'],'where'=>'page_sell')
-												)
-										);
+					if($m['qrq_id']>0){
+						$flag_view_button = true;// по умолчанию показываем
+						// проверяем , если про аккаунт ЭТП и нет своей авторизации , то кнопку "купить" не показываем
+						$r = reqProverkaEtpPromoAccountsBySell(array('qrq_id'=>$m['qrq_id']));
+						if($r['promo']==1){
+							$flag_view_button = false;
+						}
+						if($r['flag_autorize']){
+							$flag_view_button = true;
+						}
+					}
+					
+					if($flag_view_button){
+					
+						$button_buy = $this->Input(	array(	'type'			=> 'button',
+														'class'			=> 'pull-right btn btn-pfimary btn-sm get_form_buy_amount',
+														'value'			=> 'купить',
+														'data'			=> array('id'=>$m['id'],'where'=>'page_sell')
+													)
+											);
+											
+					}
 			}
 
 			// Срочность

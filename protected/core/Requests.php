@@ -7230,7 +7230,26 @@
 
 		return $row;
 	}
+	
+	
+	// проверяем , если про аккаунт ЭТП и нет своей авторизации , то кнопку "купить" не показываем
+	function reqProverkaEtpPromoAccountsBySell($p=array()) {
+		
+		$sql = "	SELECT (
+						SELECT sq.promo
+						FROM slov_qrq sq
+						WHERE sq.id=".$p['qrq_id']." AND sq.promo=1
+						) promo,
+						(
+						SELECT ae.id
+						FROM amo_accounts_etp ae
+						WHERE ae.qrq_id=".$p['qrq_id']." AND ae.company_id=".COMPANY_ID." AND ae.flag_autorize=2
+						) flag_autorize  ";
 
+		$row = PreExecSQL_one($sql,array());
+
+		return $row;
+	}
 
 
 	/*  VIEWS
