@@ -5031,6 +5031,18 @@ elseif($_GET['route'] == 'qrq_html'){
 
         $jsd['code'] = $code;
     }
+
+    elseif($_GET['route'] == 'skip_registration_company'){
+        $STH = PreExecSQL(" UPDATE company SET skip=1 WHERE id=?; " ,
+            array(COMPANY_ID));
+
+        if($STH){
+            $ok = true;
+            $code = 'сохранено';
+            $jsd['ok'] 	= $ok;
+        }
+    }
+
     // Подключить/Отключить Pro режим
     elseif($_GET['route'] == 'user_pro_mode'){
 
