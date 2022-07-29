@@ -5737,7 +5737,7 @@ elseif($_GET['route'] == 'qrq_html'){
                             if (count($comp_ids)> count($comp_ids_input)) {
 
                                 //удаление клиента
-                                $messagetext = $client.' вышел из чата';
+                                $messagetext = 'Из темы удален ' . $client;
                                 $action_text = $client.' remove from '.$folder_id;
 
                                 $STH2 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
