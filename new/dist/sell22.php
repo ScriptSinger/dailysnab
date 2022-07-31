@@ -5,8 +5,9 @@
 			
 			// кнопка купить на кого подписан
 			$button_buy = '';
-			if( (PRAVA_2||PRAVA_3) && ($m['flag_subscriptions_company_in']||$m['flag_subscriptions_company_out']) ){
+			if( !$button_grouping && (PRAVA_2||PRAVA_3) && ($m['flag_subscriptions_company_in']||$m['flag_subscriptions_company_out']) ){
 			//if(COMPANY_ID&&COMPANY_ID<>$m['company_id']){
+					$flag_view_button = false;
 					if($m['qrq_id']>0){
 						$flag_view_button = true;// по умолчанию показываем
 						// проверяем , если про аккаунт ЭТП и нет своей авторизации , то кнопку "купить" не показываем
@@ -29,6 +30,10 @@
 											);
 											
 					}
+			}elseif( !$button_grouping && !$m['flag_subscriptions_company_in'] && !$m['flag_subscriptions_company_out'] ){
+					$button_buy = '<div id="div_phone'.$m['id'].'" class="product-phone">
+									<p class="view_phone" data-id="'.$m['id'].'" data-amount="">Показать телефон</p>
+								</div>';
 			}
 
 			// Срочность

@@ -17,7 +17,7 @@
 					
 					$title = $row['name'];
 					
-					if( $row['parent_id']==0 &&( $row['flag_subscriptions_company_in']||$row['status_buy_sell_id']==3||$row['company_id']==COMPANY_ID) ){
+					if( $row['parent_id']==0 &&( $row['flag_subscriptions_company_in']||$row['status_buy_sell_id']==3||$row['company_id']==COMPANY_ID) || $row['qrq_id']>0 ){
 						$ok 			= true;
 					}elseif($row['parent_id']){// Предложение - проверяем доступность, могут смотреть от кого заявка или кто дал предложение
 						$r = reqBuySell_buysellone(array('id'=>$row['parent_id']));

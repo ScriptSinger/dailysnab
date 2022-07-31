@@ -2541,7 +2541,17 @@ elseif($_GET['route'] == 'get_html_sell_by_infopart'){
     $jsd['code']	= $tr;
     $jsd['id']	= $last_etp_id;
 }
+// показать телефон Объявление/Предложение
+elseif($_GET['route'] == 'view_phone'){
 
+	$arr = $t->ViewPhoneByBuySell(array('buy_sell_id'=>$in['id'],'amount'=>$in['amount']));
+
+	$jsd['ok'] 		= $arr['ok'];
+	$jsd['code'] 	= $arr['code'];
+	$jsd['phone'] 	= $arr['phone'];
+	$jsd['note'] 	= $arr['note'];
+	$jsd['buy_offer'] = $arr['buy_offer'];
+}
 
 
 
@@ -2827,17 +2837,6 @@ if(LOGIN_ID){
 
             $jsd['code'] = $code;
         }
-    }
-// показать телефон Объявление/Предложение
-    elseif($_GET['route'] == 'view_phone'){
-
-        $arr = $t->ViewPhoneByBuySell(array('buy_sell_id'=>$in['id'],'amount'=>$in['amount']));
-
-        $jsd['ok'] 		= $arr['ok'];
-        $jsd['code'] 	= $arr['code'];
-        $jsd['phone'] 	= $arr['phone'];
-        $jsd['note'] 	= $arr['note'];
-        $jsd['buy_offer'] = $arr['buy_offer'];
     }
 // сохранить Заметки - Объявление/Предложение/Заявки
     elseif($_GET['route'] == 'save_note_buy_sell'){
@@ -5031,18 +5030,6 @@ elseif($_GET['route'] == 'qrq_html'){
 
         $jsd['code'] = $code;
     }
-
-    elseif($_GET['route'] == 'skip_registration_company'){
-        $STH = PreExecSQL(" UPDATE company SET skip=1 WHERE id=?; " ,
-            array(COMPANY_ID));
-
-        if($STH){
-            $ok = true;
-            $code = 'сохранено';
-            $jsd['ok'] 	= $ok;
-        }
-    }
-
     // Подключить/Отключить Pro режим
     elseif($_GET['route'] == 'user_pro_mode'){
 
@@ -5737,7 +5724,7 @@ elseif($_GET['route'] == 'qrq_html'){
                             if (count($comp_ids)> count($comp_ids_input)) {
 
                                 //удаление клиента
-                                $messagetext = 'Из темы удален ' . $client;
+                                $messagetext = $client.' вышел из чата';
                                 $action_text = $client.' remove from '.$folder_id;
 
                                 $STH2 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,

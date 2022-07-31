@@ -1658,7 +1658,7 @@
 
 		$sql = "	SELECT bs.id, bs.parent_id, bs.company_id, bs.company_id2, bs.name, bs.flag_buy_sell, bs.status_buy_sell_id,
 							bs.categories_id, bs.comments, bs.amount, bs.cost,
-							bs.url,
+							bs.url, bs.qrq_id,
 							sc.url_categories, cities.url_cities,
 							sunit.unit,
 							cities.name cities_name, 
@@ -2843,7 +2843,7 @@
 
 		$sql = " SELECT bs.id, bs.login_id, bs.company_id, bs.name, bs.url, bs.categories_id, bs.cost, bs.multiplicity, bs.min_party,
 						bs.amount, bs.comments,  bs.urgency_id, bs.form_payment_id,
-						bs.availability,
+						bs.availability, bs.qrq_id,
 						sfp.form_payment, 
 						c.company,
 						cities.name cities_name, cities.url_cities, 

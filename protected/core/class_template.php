@@ -3072,7 +3072,7 @@ class HtmlTemplate extends HtmlServive
 		$tr = '';
 		foreach($row as $i => $m){
 	
-				$tr .= self::TrPageSell(array('row'=>$m,'view_grouping'=>true));
+				$tr .= self::TrPageSell22(array('row'=>$m,'view_grouping'=>true));
 				
 		}
 			

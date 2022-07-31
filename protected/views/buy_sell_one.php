@@ -33,7 +33,7 @@
 	
 	$phone = '';
 	//if($row['flag_buy_sell']==2||$flag_offer){
-		$phone = '	<div id="div_phone" class="product-phone">
+		$phone = '	<div id="div_phone'.$row['id'].'" class="product-phone">
 						<p class="view_phone" data-id="'.$row['id'].'" data-amount="'.$amount_recom.'">Показать телефон</p>
 					</div>';
 	//}
@@ -93,7 +93,7 @@
 								<p class="product-location">'.$row['cities_name'].'</p>
 							</div>
 						  
-							<div id="div_note">'.$note.'</div>
+							<div id="div_note'.$row['id'].'">'.$note.'</div>
 							
 							'.$sum_cost.'
 							

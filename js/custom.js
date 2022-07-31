@@ -760,9 +760,9 @@ $(function(){
 			$.post("/view_phone", { id:d.id , amount:d.amount }, 
 				function(data){
 					if (data.ok) {
-						$('#div_phone').addClass('phone-show').html(data.phone);
+						$('#div_phone'+d.id+'').addClass('phone-show').html(data.phone);
 						if(data.note){
-								$('#div_note').html(data.note);
+								$('#div_note'+d.id+'').html(data.note);
 						}
 						if(data.buy_offer){
 								$('#div_buy_offer').html(data.buy_offer);
