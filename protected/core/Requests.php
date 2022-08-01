@@ -6242,7 +6242,7 @@
 						FROM tickets_folder tf
 						".$sql_inner_join."
 						WHERE 1=1 ".$sql."
-						ORDER BY tf.data_insert DESC LIMIT ".$start_limit." , 25
+						ORDER BY tf.id DESC LIMIT ".$start_limit." , 25
 					";
 		//
 //	vecho($sql);

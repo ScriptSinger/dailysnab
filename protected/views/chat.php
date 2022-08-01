@@ -16,8 +16,16 @@
 				}
 			echo '</pre>'; 
 			
-		*/	 	
-			
+		*/
+$last_message = [];
+        foreach ($row as $i => $m){
+            $rcm = reqChatMessages(array('folder_id' => $m['id']));
+            $row[$i]['timeMessage'] = end($rcm)['data_insert'];
+        }
+
+        $time = array_column($row, 'timeMessage');
+        array_multisort($time, SORT_DESC, $row);
+
 	foreach($row as $i => $m){
 		if(in_array($comp, json_decode($m['companies_id']))){ //проверка прав на отображение папок
 			$tr .= $t->TrPageMessagesFolders(array('m' => $m, 'views' => $views));
