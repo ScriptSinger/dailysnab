@@ -5557,15 +5557,16 @@ elseif($_GET['route'] == 'qrq_html'){
             $companies = implode(',',json_decode($companies_id,true));  // формирвем список компаний
 
 
-
             $rce = reqCompanyEmails(array('ids'=>$companies));
 
             foreach($rce as $i => $c){ //сбор ящиков для отправки оповещений
-                if(!empty($c['email'])){ //только у тех у кого указаны ящики
-                    $rce_email[] = $c['email'];
+                if($c['id'] != COMPANY_ID) {
+                    if (!empty($c['email'])) { //только у тех у кого указаны ящики
+                        $rce_email[] = $c['email'];
+                    }
                 }
             }
-
+            
 
 
             if(!empty($mid)){
