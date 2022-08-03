@@ -5215,7 +5215,8 @@ class HtmlTemplate extends HtmlServive
 			$b_comp = (!empty($rc['company'])) ? ', '.$rc['company'] : ''; //второй собеседник 
 			
 			$rcm = reqChatMessages(array('folder_id' => $m['folder_id']));
-			
+
+
 			$last_message = end($rcm); //информация о последнем сообщении	
 			//$last_message = $rcm[count($rcm) - 1]; 
 			
@@ -5356,25 +5357,30 @@ class HtmlTemplate extends HtmlServive
 					$edit_theme = '';
 				}
 
-				
-				
+            $buttonArchive = ($m['status'] != 2) ? '<button type="button" class="button-blue pull-right close_theme" data-fid="'.$m["id"].'">в Архив</button>' : '<button type="button" class="button-blue pull-right open_theme" data-fid="'.$m["id"].'">Открыть тему</button>';
+
 			$tr = '	<div class="subs-item row">
 						<div class="subs-icon col-1">
 							'.$avatar.'							
 						</div>
 						<div class="subs-info col-11 row">
 							'.$kol_notification.' 
-							<div class="subs-cat col-7">
+							<div class="subs-cat col-6">
 								<a href="/chat/messages/'.$m["id"].'">'.$theme.'</a><br />
 								<span>'.$last_am.'</span> 
 							</div>
-							<div class="subs-place col-3">
+							<div class="subs-place col-2">
 								'.$status_on_off.'
 							</div>
+							<div class="subs-place col-2">
+								'. $buttonArchive . '
+							</div>
+							
 							<div class="subs-place col-2">
 								'.$edit_theme.'
 							
 								  <!-- <span class="badge '.$status_badge.' badge-pill">&nbsp;</span>  -->
+								  
 								<small class="_status-bar__time">'.$last_message["t_date_full"].'</small>
 							</div>							
 						</div>

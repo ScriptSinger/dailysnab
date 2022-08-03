@@ -23,9 +23,10 @@
 							
 									// Поиск
 
-								 	$row  = $this->rowChatMessages(array( 	'views' 			=> $views,																			
+								 	$row  = $this->rowChatMessages(array( 	'views' 			=> $views,
+
 																			'value' 			=> $value)); 									
-									
+
 										
 									$rown = reqChatMessages(array( 	'views' 	=> $views,
 																	'folder_id'	=> $mid																				

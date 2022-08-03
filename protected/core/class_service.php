@@ -878,7 +878,8 @@ class HtmlServive extends HtmlElement
 	
 		// страница - Все сообщения
 		if($in['views']=='messages'){
-				$row = reqChatFolders(array(	'start_limit' 	=> $in['start_limit']													
+				$row = reqChatFolders(array(	'start_limit' 	=> $in['start_limit'],
+                                                'archive'       => 'false'
 												));
 
 		}

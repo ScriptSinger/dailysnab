@@ -81,7 +81,7 @@ $last_message = [];
 				
 				//$rcm = reqChatMessages(array('company_id' => COMPANY_ID)); 
 				//$company_name = $rcm[0]["name_rcmc"];
-				
+
 				//надо будет условие поставить еще на проверку ранних сообщеницй и на заблокировать пользователя	
 				if ($rown[0]['company_id'] == COMPANY_ID) //вывод выхода из темы для клиентов 
 					{
@@ -89,7 +89,7 @@ $last_message = [];
 					} 
  				else if(in_array_r( $comp, $rowf_comp ) && !in_array( $comp, end($rowf_comp) )) //кнопка для тех кто уже вышел из чата
 					{ 
-						$out_of_theme = '<button type="button" class="button-blue pull-right block_of_theme" data-fid="'.$fid.'">Заблокировать пользователя</button>'; // уже после выхода из чата
+						$out_of_theme = '<button type="button" class="button-blue pull-right block_of_theme" data-fid="'.$rown[1].'">Заблокировать пользователя</button>'; // уже после выхода из чата
 					} 				
 				else
 					{
@@ -134,7 +134,7 @@ $last_message = [];
 			if( in_array( $mid, $rowf_id )   ){ //проверка на то, что чат существет и клиент имеет право там писать  || in_array( $comp, $rowf_comp )
 				
 		
-				if ($m['status'] != 2 && in_array( $comp, $rowf_comp[$mid] )) {	//если чат не в архиве, то даем возможность ответить 
+
 			
 					$replyMessage = '<div class="row">
 									<div class="col-md-1">
@@ -166,7 +166,7 @@ $last_message = [];
 											
 								
 								</div>';
-				}
+
 			
 				$code .= '
 

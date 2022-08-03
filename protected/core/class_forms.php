@@ -62,7 +62,7 @@ class HtmlForms extends HtmlTemplate
 						<div class="restore-form-block__subtitle">Введите адрес электронной почты, который был указан при регистрации.</div>
 						<form id="restore-form" class="" role="form">
 							<div class="form-group">
-								'.$this->Input(	array(	
+								'.$this->Input(	array(
 														'type'			=> 'text',
 														'id'			=> 'email',
 														'class'			=> 'form-control',
@@ -71,7 +71,7 @@ class HtmlForms extends HtmlTemplate
 											).'
 							</div>
 							<div class="form-group">
-								'.$this->Input(	array(	
+								'.$this->Input(	array(
 														'type'			=> 'submit',
 														'class'			=> 'login-form-button',
 														'value'			=> 'Сбросить пароль'
@@ -85,8 +85,8 @@ class HtmlForms extends HtmlTemplate
 
 		return $code;
 	}
-	
-	
+
+
 	// Администрирование Категории
 	function FormSlovCategories( $p=array() ){
 		$dop_top = $code_add_attribute = '';
@@ -114,10 +114,10 @@ class HtmlForms extends HtmlTemplate
 																).'
 												</div>' : '';
 		}
-		
-		
+
+
 		$code = ($p['id'])? $this->AdminRowCategoriesAttribute(array('categories_id'=>$p['id'])) : '';
-		
+
 		$content ='
 				<div class="container">
                     <div class="amc-row">
@@ -343,7 +343,7 @@ class HtmlForms extends HtmlTemplate
                 </div>
 
 				';
-		
+
 /*
 		$content ='
 					<div class="row">
@@ -376,7 +376,7 @@ class HtmlForms extends HtmlTemplate
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="form-group">
@@ -403,7 +403,7 @@ class HtmlForms extends HtmlTemplate
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="form-group">
 							<label for="active" class="">Активна</label>
 							<label class="switch">
@@ -417,11 +417,11 @@ class HtmlForms extends HtmlTemplate
 								<span class="slider round"></span>
 							</label>
 					</div>
-					
+
 					'.$code.'
-		
+
 					'.$code_add_attribute.'
-					
+
 			';
 
 		$bottom = $this->Input(	array(		'type'			=> 'hidden',
@@ -444,10 +444,10 @@ class HtmlForms extends HtmlTemplate
 											'value'			=> 'Сохранить'
 										)
 								);
-*/			
+*/
 		return array('top'=>$top,'content'=>$content/*,'bottom'=>$bottom*/);
 	}
-	
+
 
 	// Администрирование Администрирование Изменить родителя у Категории
 	function FormChangeLevelCategories( $p=array() ){
@@ -556,7 +556,7 @@ class HtmlForms extends HtmlTemplate
 
 	// Регистрация
 	function FormRegistration( $p=array() ){
-		
+
 		$in = fieldIn($p, array('email','name','phone'));
 
 		$content =' 
@@ -606,7 +606,7 @@ class HtmlForms extends HtmlTemplate
 
 	// Получение пароля
 	function _GetPasswordForm( $p=array() ){
-		
+
 		$in = fieldIn($p, array('email_phone','email','phone'));
 
 		$content =' 
@@ -715,7 +715,7 @@ class HtmlForms extends HtmlTemplate
 	function FormMyCompany( $p=array() ){
 		$in = fieldIn($p, array('id'));
 		if(!$in['id']){
-			$r 			= array('id'=>0,'legal_entity_id'=>'','company'=>'','tax_system_id'=>'','position'=>'','cities_id'=>'','who1'=>'','who2'=>'');
+			$r 			= array('id'=>0,'legal_entity_id'=>'','company'=>'','tax_system_id'=>'','position'=>'','cities_id'=>'','who1'=>'','who2'=>'', 'active' => '');
 			$top 		= ' <div class="modal-body__head">
 								<div class="modal__title">Добро пожаловать</div>
 								<img src="/image/quest-request-logo.svg" alt="Логотип">				
@@ -808,6 +808,21 @@ class HtmlForms extends HtmlTemplate
 										).'
 						</div>
 					</div>
+					<div class="col-sm-6">
+						<div class="form-group">
+							<label for="active" class="">Продолжить как компания</label>
+							<label class="switch">
+								'.$this->Input(	array(	'type'		=> 'checkbox',
+                                                        'id'		=> 'active',
+                                                        'class'		=> 'primary',
+                                                        'value'		=> ($r['active']==1)? 'check' 		: '',
+                                                        'dopol'		=> ($r['active']==1)? 'checked' 	: ''
+                                                    )
+                                                ).'
+								<span class="slider round"></span>
+							</label>
+						</div>
+					</div>
 				</div>
 		</div>
 			';
@@ -843,7 +858,7 @@ class HtmlForms extends HtmlTemplate
 
 		$code_categories_buy_sell = $code_cost = $code_categories = $file_list = $st_prava = $button23 = $comments_company = $responsible = $code_assets = '';
 		$st_dn = $save_button = $count_status_buysell = $availability = $select_categories = $span_clear_form = $st_span_select_categories = $required_name = $required_file = $code_company_id3 = '';
-		
+
 		// скрываем по правам
 			if(PRAVA_4||PRAVA_5){
 				$st_prava = 'display:none;';
@@ -865,15 +880,15 @@ class HtmlForms extends HtmlTemplate
 		$nstatus1	= 'в Активные';
 		$status2	= 2;// по умолчанию, выбор размещения
 		$nstatus2	= 'Опубликовать';
-		
-		
+
+
 		$select_categories = 'Категории';
 		$class_categories = '';
 		$assets_id = '';
-		
+
 
 		if( !$in['id'] ){
-			
+
 								// выбераем последнюю срочность, если создавалась заявка в течении 15 минут
 								//$ru = reqBuySellUrgency15min();
 								//$t_urgency_id = ($ru['urgency_id'])? $ru['urgency_id'] : 5;// по умолчанию "не срочно"
@@ -887,22 +902,22 @@ class HtmlForms extends HtmlTemplate
 				$rb 		= reqBuySell_LastId(array('flag_buy_sell'=>$in['flag_buy_sell']));
 				$rbs 	= ($rb['id'])? reqBuySell_FormBuyAmount(array('id' => $rb['id'])) : '';
 				$r['delivery_id'] 	= (!empty($rbs))? $rbs['delivery_id'] : '';
-				
+
 				// заявка, склад, обьявление только при включенном ("Опытный снабженец" или "Юный продавец" в навыках)
 				$rv		= reqCompanyVipFunction(array('company_id'=>COMPANY_ID,'vip_function_id'=>'7,8'));
 				$r['flag_vip_function_stock'] = !empty($rv)? true : false;
 			}
 
 			if( ($in['flag_buy_sell']==2) && PRO_MODE && ($in['flag']<>'clear_form') ){// предзаполненные поля, Значения, которые предзаполняются, берутся из предыдущей заявки.
-				
 
-				
+
+
 				if(!empty($rbs)){
-				
+
 					// Очистить
 					$span_clear_form = '<span id="span_clear_form" class="modal_buy_sell change-btn change-btn_red" data-flag_buy_sell="2" data-flag="clear_form">Очистить</span>';
 
-					
+
 					//$st_span_select_categories = 'display:none;';// скрыть выбор категории
 					//$select_categories 	= '<span style="font-weight:bold;color: #1cb6ff !important;">'.$rbs['categories'].'</span>';
 					$select_categories 	= $rbs['categories'];
@@ -915,7 +930,7 @@ class HtmlForms extends HtmlTemplate
 																		'categories_id'	=> $rbs['categories_id'],
 																		'flag'			=> 'last_form'	));
 					$code_categories_buy_sell = $arr['code'];
-					
+
 					$r['categories_id'] 	= $rbs['categories_id'];
 					$r['cities_id'] 		= $rbs['cities_id'];
 					$r['cities_name'] 	= $rbs['cities_name'];
@@ -924,7 +939,7 @@ class HtmlForms extends HtmlTemplate
 					$r['comments_company'] 	= $rbs['comments_company'];
 					$r['responsible_id'] 	= $rbs['responsible_id'];
 					$r['responsible'] 		= $rbs['responsible'];
-					
+
 					// параметры категории
 					$categories = reqSlovCategories(array('id'=>$rbs['categories_id']));
 					if($categories['no_empty_name']){
@@ -934,21 +949,21 @@ class HtmlForms extends HtmlTemplate
 						$required_file = 'required="required"';
 					}
 					///
-					
+
 				}else{
 					$arr_cities = $this->CitiesIdByCompanyOrIp();
 					$r['cities_id']		= $arr_cities['cities_id'];
 					$r['cities_name']	= $arr_cities['cities_name'];
 				}
-				
+
 			}else{
 				$arr_cities = $this->CitiesIdByCompanyOrIp();
 				$r['cities_id']		= $arr_cities['cities_id'];
-				$r['cities_name']	= $arr_cities['cities_name'];	
-			
+				$r['cities_name']	= $arr_cities['cities_name'];
+
 			}
-			
-			
+
+
 			$class_name = 'autocomplete_search_buy_sell';
 
 
@@ -961,7 +976,7 @@ class HtmlForms extends HtmlTemplate
 			}
 
 		}else{//редактировать
-			
+
 			$st_span_select_categories = 'display:none;';// скрыть выбор категории
 			$r 			= reqBuySell_FormBuyAmount(array('id' => $in['id']));
 			$assets_id = $r['assets_id'];
@@ -971,7 +986,7 @@ class HtmlForms extends HtmlTemplate
 			}else{
 				$availability = 'в наличии';
 			}
-			
+
 
 			$class_name = (!$r['nomenclature_id'])? 'autocomplete_search_buy_sell' : '';
 
@@ -1010,10 +1025,10 @@ class HtmlForms extends HtmlTemplate
 
 
 		}
-		
+
 
 		if(PRO_MODE){
-			
+
 			$currency = '	<div class="col-sm-2">
 							<div class="form-group bttip-wrap">
 								'.$this->Select(	array(	'id'		=> 'currency_id',
@@ -1040,7 +1055,7 @@ class HtmlForms extends HtmlTemplate
 
 
 		if($in['flag_buy_sell']==1 || $in['flag_buy_sell']==4 || $in['flag_buy_sell']==5){// продажа, актив, склад
-		
+
 			$availability_required = (COMPANY_ID)? 'required' : '';
 			$code_availability = ($in['flag_buy_sell']==1)? '	<div class="col-sm-2">
 															<div class="form-group bttip-wrap">
@@ -1062,7 +1077,7 @@ class HtmlForms extends HtmlTemplate
 																<span class="bttip" style="display: none;">Наличие</span>
 															</div>
 														</div>' : '';
-		
+
 			$r['cost1'] = ($r['cost1']>0)? $r['cost1'] : $r['cost'];
 			$cost_required = (COMPANY_ID)? 'required' : '';
 			$code_cost = '<div class="row">
@@ -1099,7 +1114,7 @@ class HtmlForms extends HtmlTemplate
 							</div>
 							'.$code_availability.'
 						</div>';
-			
+
 		}
 
 		// Кнопка "Опубликовать/Активировать" и "Имя заказа"
@@ -1137,7 +1152,7 @@ class HtmlForms extends HtmlTemplate
 												<span class="bttip" style="display: none;">Ответственный</span>
 											</div>
 										</div>';
-										
+
 				// Заказчик (для кого заведена заявка), проверяем включен ли функционал в навыках
 				$rv	= reqCompanyVipFunction(array('company_id'=>COMPANY_ID,'vip_function_id'=>'8'));
 				if(!empty($rv)){
@@ -1156,9 +1171,9 @@ class HtmlForms extends HtmlTemplate
 																).'
 										</div>';
 				}
-										
+
 			}
-									
+
 		}
 
 
@@ -1193,7 +1208,7 @@ class HtmlForms extends HtmlTemplate
 								</div>
 							</div>
 						</div>';
-			
+
 		}
 
 
@@ -1227,8 +1242,8 @@ class HtmlForms extends HtmlTemplate
 			}
 		}
 		///
-		
-		
+
+
 		$code_delivery = '';
 		if($in['flag_buy_sell']==1||$in['flag_buy_sell']==2){
 			$required_delivery = ($in['flag_buy_sell']==1&&COMPANY_ID)? 'required="required"' : '';
@@ -1319,15 +1334,15 @@ class HtmlForms extends HtmlTemplate
 			}
 		}
 
-		
-		
+
+
 		if( $in['flag_buy_sell']==2 ){
 			$assets = '';
 			if( $in['id'] && $assets_id ){// редактируем
 				$ra = reqAutocompleteAssets(array('buy_sell_id'=>$assets_id));
 				$assets = $ra['attribute_value'];
 			}
-			
+
 			$code_assets = '<div class="row">
 								<div class="col-sm-3">
 									<div class="form-group">
@@ -1505,8 +1520,8 @@ class HtmlForms extends HtmlTemplate
 
 		//if(COMPANY_ID&&COMPANY_ID<>$row['company_id']){
 		if( $row['flag_subscriptions_company_in']||$row['login_id_bs']==LOGIN_ID||$row['flag_subscriptions_company_out']||$row['qrq_id'] ){
-				
-				
+
+
 				if($row['unit_group_id']){
 					$placeholder 	= $row['unit1'];
 					$opt_datalist	= $row['amount1'];
@@ -1897,9 +1912,9 @@ class HtmlForms extends HtmlTemplate
 			$submit_value 	= 'Сохранить';
 			$st_dn		= 'display:none;';
 		}
-		
 
-		
+
+
 
 
 		$content = '	'.$str.'
@@ -2002,9 +2017,9 @@ class HtmlForms extends HtmlTemplate
 
 		}else{
 			$flag = 'update';
-			
+
 			$r 	= reqNomenclature(array('id' => $in['id']));
-		
+
 			$arr = $this->CategoriesAttributeBuySell(array('nomenclature_id'	=> $r['id'],
 														'flag_buy_sell'		=> 2,
 														'nomenclature'		=> true,
@@ -2012,13 +2027,13 @@ class HtmlForms extends HtmlTemplate
 			$code_categories_buy_sell = $arr['code'];
 
 			$select_categories = '<span style="font-weight:bold;color: #1cb6ff !important;">'.$r['categories'].'</span>';
-			
+
 			if($r['1c_nomenclature_id']>0){
 				$ra = req1cNomenclature(array('id'=>$r['1c_nomenclature_id']));
 				$_1cnomenclature = $ra['name_article'];
 			}
 		}
-		
+
 
 
 
@@ -2093,8 +2108,8 @@ class HtmlForms extends HtmlTemplate
 
 		return array('content'=>$content);
 	}
-	
-	
+
+
 	// Поисковый запрос
 	function FormSearchCategories( $p=array() ){
 		$in = fieldIn($p, array('id'));
@@ -2112,7 +2127,7 @@ class HtmlForms extends HtmlTemplate
 
 		}else{
 			$flag = 'update';
-			
+
 			$r 	= reqSearchCategories(array('id' => $in['id']));
 
 			$arr = $this->CategoriesAttributeBuySell(array('search_categories_id'	=> $r['id'],
@@ -2123,7 +2138,7 @@ class HtmlForms extends HtmlTemplate
 
 			$select_categories = '<span style="font-weight:bold;color: #1cb6ff !important;">'.$r['categories'].'</span>';
 		}
-		
+
 
 
 
@@ -2182,23 +2197,23 @@ class HtmlForms extends HtmlTemplate
 	}
 
 
-	// Склад (добавить/редактировать) 
+	// Склад (добавить/редактировать)
 	function FormStock( $p=array() ){
 		$in = fieldIn($p, array('id'));
 		$str = $form_interest_invite = '';
 		$row_interests	= array();
 
 		if(!$in['id']){// создаем
-		
+
 			$r = array('id'=>0,'stock'=>'','address'=>'');
-			
+
 		}else{// редактируем
-					
+
 			$r = reqStock(array('id'=>$in['id']));
 
 		}
-		
-		
+
+
 		$content = '
 					
 					<div class="row">
@@ -2252,9 +2267,9 @@ class HtmlForms extends HtmlTemplate
 
 	// Продано (актив)
 	function FormAssetsSell( $p=array() ){
-		
+
 		$in = fieldIn($p, array('buy_sell_id','company_id'));
-		
+
 		//if($in['company_id']){
 		//	$r = reqCompany(array('id' => $in['company_id']));
 		//}else{
@@ -2350,9 +2365,9 @@ class HtmlForms extends HtmlTemplate
 
 	// Выдать (актив)
 	function FormAssetsIssue( $p=array() ){
-		
+
 		$in = fieldIn($p, array('buy_sell_id'));
-		
+
 
 		$content = '
 					<h4>Выдача актива</h4>
@@ -2412,9 +2427,9 @@ class HtmlForms extends HtmlTemplate
 
 	// Сдать (актив)
 	function FormAssetsHandover( $p=array() ){
-		
+
 		$in = fieldIn($p, array('buy_sell_id'));
-		
+
 
 		$content = '
 					<h4>Сдача актива</h4>
@@ -2458,11 +2473,11 @@ class HtmlForms extends HtmlTemplate
 
 		return array('content'=>$content);
 	}
-	
+
 
 	// Продано (Склад)
 	function FormStockSell( $p=array() ){
-		
+
 		$in = fieldIn($p, array('buy_sell_id'));
 
 
@@ -2563,11 +2578,11 @@ class HtmlForms extends HtmlTemplate
 
 		return array('content'=>$content);
 	}
-	
-	
+
+
 	// Резерв (Склад)
 	function FormStockReserve( $p=array() ){
-		
+
 		$in = fieldIn($p, array('buy_sell_id'));
 
 
@@ -2616,13 +2631,13 @@ class HtmlForms extends HtmlTemplate
 
 		return array('content'=>$content);
 	}
-	
-	
+
+
 	// Выдать (актив)
 	function FormStockIssue( $p=array() ){
-		
+
 		$in = fieldIn($p, array('buy_sell_id'));
-		
+
 
 		$content = '
 					<h4>Выдача товара</h4>
@@ -2698,11 +2713,11 @@ class HtmlForms extends HtmlTemplate
 
 		return array('content'=>$content);
 	}
-	
+
 
 	// Поставщики AMO
 	function FormSlovQrq( $p=array() ){
-		
+
 		$in = fieldIn($p, array('id'));
 
 		if(!$p['id']){
@@ -2760,12 +2775,12 @@ class HtmlForms extends HtmlTemplate
 
 		return array('top'=>$top,'content'=>$content);
 	}
-	
+
 	// Авторизации на стороних ресурсах ЭТП (AMO)
 	function FormAmoAccountsEtp( $p=array() ){
-		
+
 		$in = fieldIn($p, array('company_id'));
-		
+
 		$company = reqCompany(array('id'=>$in['company_id']));
 
 		$content = '
@@ -2828,7 +2843,7 @@ class HtmlForms extends HtmlTemplate
 
 		return array('content'=>$content);
 	}
-	
+
 
 
 /*----------------------------------------------*/
@@ -3012,7 +3027,7 @@ class HtmlForms extends HtmlTemplate
 
 
 		return array('top'=>$top,'content'=>$content,'bottom'=>$bottom);
-	}	
+	}
 	// Форма Авторизации 2
 	function FormAutorize2( $p=array() ){
 
@@ -3052,7 +3067,7 @@ class HtmlForms extends HtmlTemplate
 						<div class="restore-form-block__subtitle">Введите адрес электронной почты, который был указан при регистрации.</div>
 						<form id="restore-form" class="" role="form">
 							<div class="form-group">
-								'.$this->Input(	array(	
+								'.$this->Input(	array(
 														'type'			=> 'text',
 														'id'			=> 'email',
 														'class'			=> 'form-control',
@@ -3061,7 +3076,7 @@ class HtmlForms extends HtmlTemplate
 											).'
 							</div>
 							<div class="form-group">
-								'.$this->Input(	array(	
+								'.$this->Input(	array(
 														'type'			=> 'submit',
 														'class'			=> 'login-form-button',
 														'value'			=> 'Сбросить пароль'
@@ -3077,7 +3092,7 @@ class HtmlForms extends HtmlTemplate
 	}
 	// Получение пароля
 	function GetPasswordForm( $p=array() ){
-		
+
 		$in = fieldIn($p, array('phone_email'));
 
 		$content =' 
@@ -3104,16 +3119,16 @@ class HtmlForms extends HtmlTemplate
 	}
 	// Получение кода подтверждения
 	function GetCodeForm( $p=array() ){
-		
+
 		$in = fieldIn($p, array('id','phone_email_code','phone_email','flag'));  //, code_type
-		
+
 		$flag = $in['flag'];
 
 
         $from_type1 = "";
         $from_type2 = "";
 
-		
+
 		switch ($flag) {
 			case 1:
 				$from_type1 = "почты";
@@ -3123,7 +3138,7 @@ class HtmlForms extends HtmlTemplate
 				$from_type1 = "номера";
 				$from_type2 = "номер";
 				break;
-		}		
+		}
 
 		$content ='			
 		<script>
@@ -3157,7 +3172,7 @@ class HtmlForms extends HtmlTemplate
 	function SetNewPasswordForm( $p=array() ){
 		$in = fieldIn($p, array('id','flag','active_md5'));
 		//$in = fieldIn($p, array('id','new_pass','new_pass_again'));
-		
+
 		$top = $code_route = '';
 
 
@@ -3210,10 +3225,10 @@ class HtmlForms extends HtmlTemplate
 									);
 
 		return array('top'=>$top,'content'=>$content,'bottom'=>$bottom);
-	}	
+	}
 	// Получение кода подтверждения old
 	function SetNewPasswordForm2( $p=array() ){
-		
+
 		$in = fieldIn($p, array('id','new_pass','new_pass_again'));  //, code_type
 
 		$content ='<p class="form-title">Создание нового пароля</p>
@@ -3236,7 +3251,7 @@ class HtmlForms extends HtmlTemplate
 				';
 
 		return array('content'=>$content);
-	}	
+	}
 	// Забыли пароль / Сменить пароль
 	function FormChangePass( $p=array() ){
 		$in = fieldIn($p, array('flag','active_md5'));
@@ -3308,11 +3323,11 @@ class HtmlForms extends HtmlTemplate
 	// Подписка Отмена
 	function FormCancelPodpiska( $p=array() ){
 		$in = fieldIn($p, array('id'));
-		
+
 		$top 	= '<div class="form-wrapper2">
 				<div class="modal-body__head">
 					<div class="modal__title"><h3>Подписка оформлена</h3></div>							
-				</div>';		
+				</div>';
 
 		$content = '<div class="modal-body__content">
 					<p>Отменить подписку?</p>
@@ -3323,43 +3338,43 @@ class HtmlForms extends HtmlTemplate
 			</div>';
 
 		return array('top'=>$top,'content'=>$content,'bottom'=>$bottom);
-	}	
-	// Подписка 
+	}
+	// Подписка
 	function FormPodpiska( $p=array() ){
 		$in = fieldIn($p, array('id','type_skills')); //type_skills - тип выбранного плана (Pro/Vip)
 
-		$rbp = reqBalancePRO90();		
+		$rbp = reqBalancePRO90();
 		$count3 = ($rbp) ? (int) $rbp[0]['count3'] : 0;
-		$skidka = ($count3 < 3) ? '(скидка 90%)' : ''; 
-		
+		$skidka = ($count3 < 3) ? '(скидка 90%)' : '';
+
 		$type_skills = $in['type_skills'];
 		if($type_skills == 1){
 			$name_servies = 'Pro '.$skidka;
 			$total = ($count3 < 3) ? 399 : PRICE_PRO; //скидка 90% до 3-х раз включительно
-		} elseif($type_skills == 2) {			
-			$name_servies = 'Vip';	
+		} elseif($type_skills == 2) {
+			$name_servies = 'Vip';
 			$total = PRICE_VIP;
-		}	
-		
+		}
+
 		$rb = reqBalance();
 		$balance = (!empty($rb[0]['total'])) ? $rb[0]['total'] : 0; // текущий баланс компании
-		$sum_to_pay = $total - $balance; //к оплате с учетом баланса		
-		
-		if ($sum_to_pay>0){			
+		$sum_to_pay = $total - $balance; //к оплате с учетом баланса
+
+		if ($sum_to_pay>0){
 
 				/* формирование ссылки для оплаты картой - yookassa */
-				
+
 				if(!empty($_SESSION["paymentId"]))
 					{
 						unset($_SESSION["paymentId"]); //если сессия paymentId не пуста, читим его
-					}		
-				
+					}
+
 				require_once './protected/source/yookassa-sdk/lib/autoload.php';
-				$client = new \YooKassa\Client();		
+				$client = new \YooKassa\Client();
 				$client->setAuth(YOOKASSA_SHOPID, YOOKASSA_API);
-									
+
 				$idempotenceKey = gen_uuid();
-		
+
 				$response = $client->createPayment(
 								array(
 									'amount' => array(
@@ -3378,40 +3393,40 @@ class HtmlForms extends HtmlTemplate
 								),
 					$idempotenceKey
 				);
-				
+
 
 				$paymentId = $response['id'];
-				$_SESSION['paymentId'] = $paymentId; 
+				$_SESSION['paymentId'] = $paymentId;
 				//get confirmation url
-				$confirmationUrl = $response->getConfirmation()->getConfirmationUrl();								
-		
+				$confirmationUrl = $response->getConfirmation()->getConfirmationUrl();
+
 				/* -------- */
-		
+
 				$s_pay = 'Для подписки Вам не хватает <span class="pay_sum">'.$sum_to_pay.'</span> рублей.<br />Пополнить Баланс можно следующими способами:<br />';
 				$pay_buttons = '<div class="form-group">
 						<a class="btn button-blue pay_selector" id="card_pay" data-type="card" target="_blank" href="'.$confirmationUrl.'">По карте</a>			
 						<a class="btn button-blue pay_selector" id="invoice_pay" data-type="invoice" href="/pro/invoice/?type='.$type_skills.'">По счету</a>
 					</div>';
-				$submit_button = '';		
-				
-		
+				$submit_button = '';
+
+
 				//Добавление информации об оплате
 				$STH = PreExecSQL(" INSERT INTO pro_invoices (company_id,summ,type_s,paymentId) VALUES (?,?,?,?); " ,
 										array( COMPANY_ID,$sum_to_pay,$type_skills,$paymentId));
-		
 
-	
+
+
 			} else {
 				$s_pay = '';
 				$pay_buttons = '';
 				$submit_button = '<span class="btn button-blue action_podpiska" data-id="'.$in['id'].'" data-type_skills="'.$type_skills.'">Подписаться?</span>';
-			
+
 			}
-		
+
 		$top 	= '<div class="form-wrapper2">
 				<div class="modal-body__head">
 					<div class="modal__title"><h3>Подписка</h3></div>							
-				</div>';		
+				</div>';
 
 		$content = '<div class="modal-body__content">					
 					<div>'.$s_pay.'</div>
@@ -3423,11 +3438,11 @@ class HtmlForms extends HtmlTemplate
 			</div>';
 
 		return array('top'=>$top,'content'=>$content,'bottom'=>$bottom);
-	}	
+	}
 	// Пополнить Баланс
 	function FormAddBalance( $p=array() ){
 		$in = fieldIn($p, array('balance'));
-	
+
 		$top 	= '';
 
 		$content = '
@@ -3476,12 +3491,12 @@ class HtmlForms extends HtmlTemplate
 		</script>
 		';
 
-		return array('top'=>$top,'content'=>$content,'bottom'=>$bottom);		
+		return array('top'=>$top,'content'=>$content,'bottom'=>$bottom);
 	}
 	// Написать сообщение
 	function FormWriteMessage( $p=array() ){
 		$in = fieldIn($p, array('id'));
-	
+
 		$top 	= '
 		<script>
 			$(document).ready(function() {
@@ -3584,19 +3599,19 @@ class HtmlForms extends HtmlTemplate
 			';
 		$bottom = '';
 
-		return array('top'=>$top,'content'=>$content,'bottom'=>$bottom);		
-	}	
+		return array('top'=>$top,'content'=>$content,'bottom'=>$bottom);
+	}
 	// Редактировать тему
 	function FormEditTheme( $p=array() ){
 		$in = fieldIn($p, array('id'));
-		
+
 		$rcf = reqChatFolders(array('id' => $in['id']));
 
 		$comp_ids = json_decode($rcf[0]["companies_id"], true);
 		$need_ids = json_decode($rcf[0]["needs_id"], true);
 		$theme 	  = $rcf[0]["folder_name"];
 		$avatar   = $rcf[0]["avatar"];
-		
+
 		$top 	= '
 		<script>
 			$(document).ready(function() {
@@ -3686,7 +3701,7 @@ class HtmlForms extends HtmlTemplate
 		</script>
 		';
 
-		return array('top'=>$top,'content'=>$content,'bottom'=>$bottom);		
+		return array('top'=>$top,'content'=>$content,'bottom'=>$bottom);
 	}
 	// Написать сообщение из сущностей
 	function FormWriteMessageFromPotrb( $p=array() ){
@@ -3719,7 +3734,7 @@ class HtmlForms extends HtmlTemplate
 				});
 			});		
 		</script>		
-		';		
+		';
 
 		$content = '
 			<div class="modal-body__head">
@@ -3803,13 +3818,13 @@ class HtmlForms extends HtmlTemplate
 		</script>
 		';
 
-		return array('top'=>$top,'content'=>$content,'bottom'=>$bottom);		
-	}	
+		return array('top'=>$top,'content'=>$content,'bottom'=>$bottom);
+	}
 
 	// Написать тикет
 	function FormWriteTicket( $p=array() ){
 		$in = fieldIn($p, array('id'));
-	
+
 		$top 	= '';
 
 		$content = '
@@ -3908,29 +3923,29 @@ class HtmlForms extends HtmlTemplate
 		</script>
 		';
 
-		return array('top'=>$top,'content'=>$content,'bottom'=>$bottom);		
-	}	
-	
-	
-	// Форма ЕТП (промо) 
+		return array('top'=>$top,'content'=>$content,'bottom'=>$bottom);
+	}
+
+
+	// Форма ЕТП (промо)
 	function FormEtpAccount( $p=array() ){
-		
+
 		$qrq		= new ClassQrq();
-		
+
 		$in = fieldIn($p, array('id'));
-		
+
 		$code_tr_vendorid = '';
 
 		if(!$in['id']){
 			$company = array('id'=>0,'avatar'=>'/image/profile-logo.png','legal_entity_id'=>'','phone'=>'','comments'=>'',
 							'cities_id'=>'','company'=>'','tax_system_id'=>'','who1'=>'','who2'=>'','email'=>'');
 			$row_lp		= array('login'=>'','pass'=>'');
-			
+
 			$code_tr_vendorid = 'Создайте аккаунт, после чего сможете привязать различные vendorid';
 
 		}else{
 			$company = reqCompany(array('id' => $in['id']));
-			
+
 			$row_lp = reqCompanyQrq(array('company_id' => $in['id']));
 
 			$code_tr_vendorid = '	<div id="div_etp_account'.$in['id'].'">
@@ -3938,7 +3953,7 @@ class HtmlForms extends HtmlTemplate
 								</div>';
 
 		}
-		
+
 
 		$content = '
 					<h4>Настройка ЭТП</h4>
@@ -4090,18 +4105,18 @@ class HtmlForms extends HtmlTemplate
                         </div>
 						
 					';
-							
+
 
 
 		return array('content'=>$content);
 	}
-	
-	
-	// Форма ЕТП (Ошибки) 
+
+
+	// Форма ЕТП (Ошибки)
 	function FormEtpErrors( $p=array() ){
-		
+
 		$qrq		= new ClassQrq();
-		
+
 		$in = fieldIn($p, array('id'));
 
 		if($in['id']){
@@ -4179,18 +4194,18 @@ class HtmlForms extends HtmlTemplate
 									
 						
 					';
-							
+
 
 
 		return array('content'=>$content);
 	}
-	
-	
+
+
 	// Форма Администрирования компании
 	function FormAdminCompany( $p=array() ){
-		
+
 		$qrq		= new ClassQrq();
-		
+
 		$in = fieldIn($p, array('id'));
 
 		$row = reqCompany(array('id'=>$in['id']));
@@ -4245,18 +4260,18 @@ class HtmlForms extends HtmlTemplate
 									
 						
 					';
-							
+
 
 
 		return array('content'=>$content);
 	}
-	
-	
+
+
 	// Форма Администрирования города Етп (связка с нашими)
 	function FormAdminEtpCities( $p=array() ){
-		
+
 		$qrq		= new ClassQrq();
-		
+
 		$in = fieldIn($p, array('id'));
 
 		if(!$in['id']){
@@ -4264,7 +4279,7 @@ class HtmlForms extends HtmlTemplate
 		}else{
 			$row = reqAmoCitiesCitiesId(array('id'=>$in['id']));
 		}
-		
+
 		$content = '
 		
 				<div style="padding:10px 30px;">
@@ -4305,12 +4320,12 @@ class HtmlForms extends HtmlTemplate
 									
 						
 					';
-							
+
 
 
 		return array('content'=>$content);
 	}
-	
+
 
 
 }
