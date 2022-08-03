@@ -134,16 +134,17 @@ class ClassNotification extends HtmlTemplateEmailSms
 											}
 									
 											//$m['email'] = 'vdo81@yandex.ru';
-											
-											$this->LetterSendNotification(array(	'notification_id'			=> $notification_id,
-																				'tid'						=> $in['tid'],
-																				'email'						=> $m['email'],
-																				'login_id'					=> $m['login_id'],
-																				'company_id'				=> $m['company_id'],
-																				'name'						=> $m['name_account'],
-																				'flag_buy_sell'				=> $in['flag_buy_sell'],
-																				'old_status_buy_sell_id'	=> $in['old_status_buy_sell_id'] ));
-											
+											$validate_email = (filter_var($mm['email'], FILTER_VALIDATE_EMAIL));
+											if($validate_email){
+												$this->LetterSendNotification(array(	'notification_id'			=> $notification_id,
+																					'tid'						=> $in['tid'],
+																					'email'						=> $m['email'],
+																					'login_id'					=> $m['login_id'],
+																					'company_id'				=> $m['company_id'],
+																					'name'						=> $m['name_account'],
+																					'flag_buy_sell'				=> $in['flag_buy_sell'],
+																					'old_status_buy_sell_id'	=> $in['old_status_buy_sell_id'] ));
+											}
 									}
 									
 								}

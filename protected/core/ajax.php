@@ -1124,11 +1124,11 @@ elseif($_GET['route'] == 'save_buy_sell'){
                 // Оповещение
                 if($in['status']<>1&&COMPANY_ID){
                     $cn->StartNotification(array(	'flag'				=> 'buy_sell',
-                        'tid'				=> $buy_sell_id,
-                        'parent_id'			=> $in['parent_id'],
-                        'status_buy_sell_id'=> $in['status'],
-                        'company_id2'		=> $company_id2,
-                        'flag_sam'			=> $flag_sam	));
+													'tid'				=> $buy_sell_id,
+													'parent_id'			=> $in['parent_id'],
+													'status_buy_sell_id'=> $in['status'],
+													'company_id2'		=> $company_id2,
+													'flag_sam'			=> $flag_sam	));
                 }
 
                 // Создаем Номенклатуру при новой заявке (если заявка не привязана к номенклатуре) // создает только авторизованный
@@ -5557,16 +5557,15 @@ elseif($_GET['route'] == 'qrq_html'){
             $companies = implode(',',json_decode($companies_id,true));  // формирвем список компаний
 
 
+
             $rce = reqCompanyEmails(array('ids'=>$companies));
 
             foreach($rce as $i => $c){ //сбор ящиков для отправки оповещений
-                if($c['id'] != COMPANY_ID) {
-                    if (!empty($c['email'])) { //только у тех у кого указаны ящики
-                        $rce_email[] = $c['email'];
-                    }
+                if(!empty($c['email'])){ //только у тех у кого указаны ящики
+                    $rce_email[] = $c['email'];
                 }
             }
-            
+
 
 
             if(!empty($mid)){

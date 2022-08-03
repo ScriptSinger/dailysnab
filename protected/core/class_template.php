@@ -1375,12 +1375,24 @@ class HtmlTemplate extends HtmlServive
 				// кнопка купить на кого подписан
 				$button_buy = '';
 				if( $m['flag_subscriptions_company_in']||$m['login_id']==LOGIN_ID||$m['flag_subscriptions_company_out']||$m['qrq_id'] ){
-						$button_buy = $this->Input(	array(	'type'			=> 'button',
-														'class'			=> 'pull-right btn btn-pfimary btn-sm get_form_buy_amount',
-														'value'			=> 'купить',
-														'data'			=> array('id'=>$m['id'],'where'=>'modal_offer11','amount_recom'=>$amount_recom)
-													)
-											);
+						$flag_view_button = false;
+						if($m['qrq_id']>0){
+							$flag_view_button = true;// по умолчанию показываем
+							// проверяем , если про аккаунт ЭТП и нет своей авторизации , то кнопку "купить" не показываем
+							$re = reqProverkaEtpPromoAccountsBySell(array('qrq_id'=>$m['qrq_id']));
+							if($re['promo']==1){
+								$flag_view_button = false;
+							}
+						}
+						
+						if($flag_view_button){
+								$button_buy = $this->Input(	array(	'type'			=> 'button',
+																'class'			=> 'pull-right btn btn-pfimary btn-sm get_form_buy_amount',
+																'value'			=> 'купить',
+																'data'			=> array('id'=>$m['id'],'where'=>'modal_offer11','amount_recom'=>$amount_recom)
+															)
+													);
+						}
 				}
 				
 				

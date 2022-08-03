@@ -26,6 +26,14 @@
 					WHERE c.id=pvs.company_id AND pvs.page_id=1 
 							AND c.id<>".$m['company_id']."
 							AND c.active=1
+							AND c.flag_account=1
+							AND (SELECT email FROM login l WHERE l.id=pvs.login_id) LIKE '%@%'
+							AND ( 
+								(TIMESTAMPDIFF(SECOND,pvs.data_last_send_email,NOW())) IS NULL
+								OR
+								(TIMESTAMPDIFF(SECOND,pvs.data_last_send_email,NOW())>86400)
+							
+							)
 							/*
 							AND pvs.data_visited<'".$m['data_status_buy_sell_23']."'
 							*/  
@@ -66,10 +74,12 @@
 									$arr['rez'] = '';
 									
 									sleep(2);
-									
-									$arr = $tes->LetterSendNotification(array('notification_id'			=> $notification_id,
-																			'email'						=> $mm['email'],
-																			'name'						=> $mm['company'] ));
+									$validate_email = (filter_var($mm['email'], FILTER_VALIDATE_EMAIL));
+									if($validate_email){
+										$arr = $tes->LetterSendNotification(array('notification_id'			=> $notification_id,
+																				'email'						=> $mm['email'],
+																				'name'						=> $mm['company'] ));
+									}
 									
 									if($arr['rez']){
 											// обновляем дату последней отправки (она очищается при посещении пользователем страници "заявки")
