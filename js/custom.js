@@ -2687,25 +2687,64 @@ $(function(){
 						
 					}
 				); 		
-	});	
+	});
 	// Закрыть тему
 	$("body").on("click", ".close_theme", function(){
-		var d = $(this).data();	
-	
-  				$.post("/close_theme", {id:d.fid}, 
-					function(data){
-						if(data.ok){
-							console.log(data);	
-							webix.message(data.code);
-							onReload('/chat/messages/');
-						}else{
-							console.log(data);
-							//webix.message({type:"error", text:data.code});
-						}
-						
-					}
-				);  	
-	});		
+		var d = $(this).data();
+
+		$.post("/close_theme", {id:d.fid},
+			function(data){
+				if(data.ok){
+					console.log(data);
+					webix.message(data.code);
+					onReload('/chat/messages/');
+				}else{
+					console.log(data);
+					//webix.message({type:"error", text:data.code});
+				}
+
+			}
+		);
+	});
+
+	// Открыть тему
+	$("body").on("click", ".open_theme", function(){
+		var d = $(this).data();
+
+		$.post("/open_theme", {id:d.fid},
+			function(data){
+				if(data.ok){
+					console.log(data);
+					webix.message(data.code);
+					onReload('/chat/messages/');
+				}else{
+					console.log(data);
+					//webix.message({type:"error", text:data.code});
+				}
+
+			}
+		);
+	});
+
+	// Открыть тему
+	$("body").on("click", ".open_theme", function(){
+		var d = $(this).data();
+
+		$.post("/open_theme", {id:d.fid},
+			function(data){
+				if(data.ok){
+					console.log(data);
+					webix.message(data.code);
+					onReload('/chat/messages/');
+				}else{
+					console.log(data);
+					//webix.message({type:"error", text:data.code});
+				}
+
+			}
+		);
+	});
+
 	// модальное окно Создать новое сообщение из сущностей
 	$("body").on("click", ".write_message_need", function(){
 		var d = $(this).data();
@@ -3695,13 +3734,22 @@ function SaveMyCompany() {
 		}).on('success.form.bv', function(e) {
 			e.preventDefault();
 			var $form = $(e.target);
+			var unindexed_array = $form.serializeArray();
+			var indexed_array = {};
+
+			$.map(unindexed_array, function(n, i){
+				indexed_array[n['name']] = n['value'];
+			});
+
+
 			var bv = $form.data('bootstrapValidator');
 				$.post("/save_my_company", $form.serialize(),
 					function(data){
 							if(data.ok){
 								//onReload('/profile');
 								webix.message("Сохранено");
-								$.post('/change_account_company', {id:data.id}, function(data){
+								if(typeof(indexed_array['active']) != "undefined" && indexed_array['active'] !== null) {
+									$.post('/change_account_company', {id:data.id}, function(data){
 											if(data.ok){
 												//onReload('');
 												ModalSelectSkills(); //след окно для выбора навыков
@@ -3709,7 +3757,11 @@ function SaveMyCompany() {
 												webix.message({type:"error", text:data.code});
 											}
 										}
-								);
+									);
+								}else{
+									ModalSelectSkills(); //след окно для выбора навыков
+								}
+
 							}else{
 								webix.message({type:"error", text:data.code});
 							}
