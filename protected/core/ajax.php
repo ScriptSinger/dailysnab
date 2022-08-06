@@ -3601,2509 +3601,2520 @@ elseif($_GET['route'] == 'modal_qrq_buy_sell'){
 }
 */
 // сохранить крон , для результата от вопроса сторонних серверов
-    elseif($_GET['route'] == 'cron_amo_search'){
+elseif($_GET['route'] == 'cron_amo_search'){
 
-        $ok = $STH = false;
-        $code = 'Нельзя выполнить';
+	$ok = $STH = false;
+	$code = 'Нельзя выполнить';
 
-        $_POST['values'] = isset($_POST['values'])? $_POST['values'] : array();
+	$_POST['values'] = isset($_POST['values'])? $_POST['values'] : array();
 
-        $row_bs = reqBuySell_Amo(array('id'=>$in['buy_sell_id']));
+	$row_bs = reqBuySell_Amo(array('id'=>$in['buy_sell_id']));
 
-        // удаляем ранее привязанные бренды к номенклатуре
-        $STH = PreExecSQL(" DELETE FROM nomenclature_amo_searchbrend WHERE nomenclature_id=?; " ,
-            array( $row_bs['nomenclature_id'] ));
+	// удаляем ранее привязанные бренды к номенклатуре
+	$STH = PreExecSQL(" DELETE FROM nomenclature_amo_searchbrend WHERE nomenclature_id=?; " ,
+		array( $row_bs['nomenclature_id'] ));
+
+	// получаем accountsid для пользователя (с учетом промо)
+	$r = reqAmoAccountsEtp_AccountsidByCompanyid2();
+	$accountid = $r['accounts_ids'];
+
+	foreach($_POST['values'] as $k=>$m){
+		
+		// получаем searchid для дальнейшего сохранения в крон
+		$arr = $qrq->getSearchidBySearch(array(	'token'				=> $in['token'],
+												'brand'				=> $m['brand'],
+												'searchtext'		=> $in['value'],
+												'accountid'			=> $accountid	));
+		if($arr['searchid']){
+			$STH = reqInsertCronAmoBuysellSearchUpdate(array(	'buy_sell_id'		=> $in['buy_sell_id'],
+																'token'				=> $in['token'],
+																'searchid'			=> $arr['searchid']	));
+		}
+														
+		// добавляем бренды к номенклатуре
+		$STH = PreExecSQL(" INSERT INTO nomenclature_amo_searchbrend (nomenclature_id,brand) VALUES (?,?); " ,
+			array( $row_bs['nomenclature_id'],$m['brand'] ));
+	}
+
+	if($STH){
+		$code = 'Выполнено';
+		$STH = PreExecSQL(" DELETE FROM amo_html_searchbrend WHERE buy_sell_id=?; " ,
+			array( $in['buy_sell_id'] ));
+		if($STH){
+			$ok = true;
+			$code = 'Выполнено';
+		}
+	}
 
 
-        foreach($_POST['values'] as $k=>$m){
-            $STH = reqInsertCronAmoBuysellSearch(array(	'buy_sell_id'		=> $in['buy_sell_id'],
-                'token'				=> $in['token'],
-                'brand'				=> $m['brand'],
-                'searchtext'		=> $in['value']	));
-            // добавляем бренды к номенклатуре
-            $STH = PreExecSQL(" INSERT INTO nomenclature_amo_searchbrend (nomenclature_id,brand) VALUES (?,?); " ,
-                array( $row_bs['nomenclature_id'],$m['brand'] ));
-        }
-
-        if($STH){
-            $code = 'Выполнено';
-            $STH = PreExecSQL(" DELETE FROM amo_html_searchbrend WHERE buy_sell_id=?; " ,
-                array( $in['buy_sell_id'] ));
-            if($STH){
-                $ok = true;
-                $code = 'Выполнено';
-            }
-        }
-
-
-        $jsd['code'] = $code;
-    }
+	$jsd['code'] = $code;
+}
 // удалить бренды-вопрос от стороннего сервиса
-    elseif($_GET['route'] == 'delete_amo_html_searchbrend'){
+elseif($_GET['route'] == 'delete_amo_html_searchbrend'){
 
-        $ok = $STH = false;
-        $code = 'Нельзя выполнить';
+	$ok = $STH = false;
+	$code = 'Нельзя выполнить';
 
-        $STH = PreExecSQL(" DELETE FROM amo_html_searchbrend WHERE buy_sell_id=?; " ,
-            array( $in['buy_sell_id'] ));
-        if($STH){
-            $ok = true;
-            $code = 'Выполнено';
-        }
+	$STH = PreExecSQL(" DELETE FROM amo_html_searchbrend WHERE buy_sell_id=?; " ,
+		array( $in['buy_sell_id'] ));
+	if($STH){
+		$ok = true;
+		$code = 'Выполнено';
+	}
 
-        $jsd['code'] = $code;
-    }
+	$jsd['code'] = $code;
+}
 // модальное окно Номенклатура
-    elseif($_GET['route'] == 'modal_nomenclature'){
+elseif($_GET['route'] == 'modal_nomenclature'){
 
-        $arr = $f->FormNomenclature(array('id'=>$in['id']));
+	$arr = $f->FormNomenclature(array('id'=>$in['id']));
 
-        $code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
-            array('id'=>'nomenclature-form','class'=>'') );
+	$code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
+		array('id'=>'nomenclature-form','class'=>'') );
 
-        $jsd['code'] = $code;
-    }
+	$jsd['code'] = $code;
+}
 // Сохранить - Номенклатура
-    elseif($_GET['route'] == 'save_nomenclature'){
+elseif($_GET['route'] == 'save_nomenclature'){
 
-        if($in['flag']=='insert'){
-            $nomenclature_id = 0;
-        }elseif($in['flag']=='update'){
-            if($in['buy_sell_id']){
-                $row_bs 	= reqBuySell_SaveBuySell(array('id'=>$in['buy_sell_id']));
-                $nomenclature_id = $row_bs['nomenclature_id'];
-            }elseif($in['id']){
-                $nomenclature_id = $in['id'];
-            }
-        }
+	if($in['flag']=='insert'){
+		$nomenclature_id = 0;
+	}elseif($in['flag']=='update'){
+		if($in['buy_sell_id']){
+			$row_bs 	= reqBuySell_SaveBuySell(array('id'=>$in['buy_sell_id']));
+			$nomenclature_id = $row_bs['nomenclature_id'];
+		}elseif($in['id']){
+			$nomenclature_id = $in['id'];
+		}
+	}
 
 
-        $arr = $bs->NomenclatureInsertUpdate(array( 	'id'				=> $nomenclature_id,
-            'name'				=> $in['name'],
-            'categories_id'		=> $in['categories_id'],
-            '1c_nomenclature_id'=> $in['1c_nomenclature_id'],
-            'post'				=> $_POST	));
+	$arr = $bs->NomenclatureInsertUpdate(array( 	'id'				=> $nomenclature_id,
+		'name'				=> $in['name'],
+		'categories_id'		=> $in['categories_id'],
+		'1c_nomenclature_id'=> $in['1c_nomenclature_id'],
+		'post'				=> $_POST	));
 
-        $jsd['ok'] 			= $arr['ok'];
-        $jsd['code'] 		= $arr['code'];
-        $jsd['flag_1c'] 		= $arr['flag_1c'];
-        $jsd['id'] 			= $arr['nomenclature_id'];
-    }
+	$jsd['ok'] 			= $arr['ok'];
+	$jsd['code'] 		= $arr['code'];
+	$jsd['flag_1c'] 		= $arr['flag_1c'];
+	$jsd['id'] 			= $arr['nomenclature_id'];
+}
 // модальное окно - вопрос со сторонних серверов
-    elseif($_GET['route'] == 'modal_qrq_search'){
+elseif($_GET['route'] == 'modal_qrq_search'){
 
-        $arr = $qrq->QrqSearch();
+	$arr = $qrq->QrqSearch();
 
-        $code = ($arr['content'])? $t->getModal(	array('class_dialog'=>'invite-workers','content'=>$arr['content']),
-            array('id'=>'','class'=>'') ) : '';
+	$code = ($arr['content'])? $t->getModal(	array('class_dialog'=>'invite-workers','content'=>$arr['content']),
+		array('id'=>'','class'=>'') ) : '';
 
-        $jsd['code'] = $code;
-    }
+	$jsd['code'] = $code;
+}
 //
-    elseif($_GET['route'] == 'delete_nomenclature'){
+elseif($_GET['route'] == 'delete_nomenclature'){
 
-        $ok = $STH = false;
-        $code = 'Нельзя выполнить';
+	$ok = $STH = false;
+	$code = 'Нельзя выполнить';
 
-        $rn = reqNomenclature(array('id'=>$in['id']));
+	$rn = reqNomenclature(array('id'=>$in['id']));
 
-        if(!$rn['flag_nomenclature_bs']){
-            $STH = PreExecSQL(" DELETE FROM nomenclature WHERE id=? AND company_id=?; " ,
-                array( $in['id'],COMPANY_ID ));
-            if($STH){
-                $ok = true;
-                $code = 'Выполнено';
-            }
-        }
+	if(!$rn['flag_nomenclature_bs']){
+		$STH = PreExecSQL(" DELETE FROM nomenclature WHERE id=? AND company_id=?; " ,
+			array( $in['id'],COMPANY_ID ));
+		if($STH){
+			$ok = true;
+			$code = 'Выполнено';
+		}
+	}
 
-        $jsd['ok'] 	= $ok;
-        $jsd['code'] = $code;
-    }
-    /* переделано в modal_logo_notification
+	$jsd['ok'] 	= $ok;
+	$jsd['code'] = $code;
+}
+/* переделано в modal_logo_notification
 // модальное окно - вопрос со сторонних серверов ПО setTimeout
 elseif($_GET['route'] == 'qrq_html'){
 
-	$r = reqFlagSetTimeoutQrqHtmlQuestion();
+$r = reqFlagSetTimeoutQrqHtmlQuestion();
 
-	$ok = (isset($r['id'])&&!empty($r['id']))? true : false;
+$ok = (isset($r['id'])&&!empty($r['id']))? true : false;
 
-	$jsd['ok'] = $ok;
+$jsd['ok'] = $ok;
 }
 */
 // подгрузка статистики по номенклатуре (при создании заявки)
-    elseif($_GET['route'] == 'countstatusbuysellbynomenclature'){
+elseif($_GET['route'] == 'countstatusbuysellbynomenclature'){
 
-        $code = $t->CountStatusBuySellByNomenclature(array('nomenclature_id'=>$in['nomenclature_id']));
+	$code = $t->CountStatusBuySellByNomenclature(array('nomenclature_id'=>$in['nomenclature_id']));
 
-        $jsd['code'] = $code;
-    }
+	$jsd['code'] = $code;
+}
 // обновить данные из этп к заявке (сторонние сервисы)
-    elseif($_GET['route'] == 'qrq_update_in_buy_sell'){
+elseif($_GET['route'] == 'qrq_update_in_buy_sell'){
 
-        $code = 'Нельзя выполнить';
+	$code = 'Нельзя выполнить';
 
-        // запрос на сторонии ресурсы
-        $ok = $qrq->InsertCronAmoBuySell(array('buy_sell_id'=>$in['id']));
+	// запрос на сторонии ресурсы
+	$ok = $qrq->InsertCronAmoBuySell(array('buy_sell_id'=>$in['id']));
 
-        if($ok){
-            $code = 'Выполнено';
-        }
+	if($ok){
+		$code = 'Выполнено';
+	}
 
-        $jsd['ok'] 	= $ok;
-        $jsd['code']	= $code;
-    }
+	$jsd['ok'] 	= $ok;
+	$jsd['code']	= $code;
+}
 // модальное окно - Склад (добавить/редактировать)
-    elseif($_GET['route'] == 'modal_stock'){
+elseif($_GET['route'] == 'modal_stock'){
 
-        $arr = $f->FormStock(array('id'=>$in['id']));
+	$arr = $f->FormStock(array('id'=>$in['id']));
 
-        $code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
-            array('id'=>'stock-form','class'=>'') );
+	$code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
+		array('id'=>'stock-form','class'=>'') );
 
-        $jsd['code'] = $code;
-    }
+	$jsd['code'] = $code;
+}
 // сохранение Склад (добавить/редактировать)
-    elseif($_GET['route'] == 'save_stock'){
-        $ok = false;
-        $code = 'Нельзя сохранить';
+elseif($_GET['route'] == 'save_stock'){
+	$ok = false;
+	$code = 'Нельзя сохранить';
 
-        if(!$in['id']){// СОЗДАНИЕ
-            $STH = PreExecSQL(" INSERT INTO stock (company_id, stock, address) VALUES (?,?,?); " ,
-                array( COMPANY_ID,$in['stock'],$in['address'] ));
-            if($STH){
-                $id = $db->lastInsertId();
-            }
-        }else{// РЕДАКТИРОВАНИЕ
-            $STH = PreExecSQL(" UPDATE stock SET stock=?, address=? WHERE id=? AND company_id=?; " ,
-                array( $in['stock'],$in['address'],$in['id'],COMPANY_ID ));
-            if($STH){
-                $id = $in['id'];
-            }
-        }
+	if(!$in['id']){// СОЗДАНИЕ
+		$STH = PreExecSQL(" INSERT INTO stock (company_id, stock, address) VALUES (?,?,?); " ,
+			array( COMPANY_ID,$in['stock'],$in['address'] ));
+		if($STH){
+			$id = $db->lastInsertId();
+		}
+	}else{// РЕДАКТИРОВАНИЕ
+		$STH = PreExecSQL(" UPDATE stock SET stock=?, address=? WHERE id=? AND company_id=?; " ,
+			array( $in['stock'],$in['address'],$in['id'],COMPANY_ID ));
+		if($STH){
+			$id = $in['id'];
+		}
+	}
 
-        if($STH){
-            $ok = true;;
-        }
+	if($STH){
+		$ok = true;;
+	}
 
-        $jsd['ok'] 	= $ok;
-        $jsd['code']	= $code;
-    }
+	$jsd['ok'] 	= $ok;
+	$jsd['code']	= $code;
+}
 // модальное окно Продано (актив)
-    elseif($_GET['route'] == 'modal_assets_sell'){
+elseif($_GET['route'] == 'modal_assets_sell'){
 
-        $arr = $f->FormAssetsSell(array( 'buy_sell_id'=>$in['id'] ));
+	$arr = $f->FormAssetsSell(array( 'buy_sell_id'=>$in['id'] ));
 
-        $code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
-            array('id'=>'assets_sell-form','class'=>'') );
+	$code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
+		array('id'=>'assets_sell-form','class'=>'') );
 
-        $jsd['code'] = $code;
-    }
+	$jsd['code'] = $code;
+}
 // сохранение - Продано (актив)
-    elseif($_GET['route'] == 'save_assets_sell'){
+elseif($_GET['route'] == 'save_assets_sell'){
 
-        $code 	= 'Нельзя сохранить';
-        $ok 		= false;
+	$code 	= 'Нельзя сохранить';
+	$ok 		= false;
 
-        $row_bs 	= reqBuySell_buysellone(array('id'=>$in['buy_sell_id'],'company_id'=>COMPANY_ID));
+	$row_bs 	= reqBuySell_buysellone(array('id'=>$in['buy_sell_id'],'company_id'=>COMPANY_ID));
 
-        if( $row_bs['id'] && v_int($in['company_id']) ){
+	if( $row_bs['id'] && v_int($in['company_id']) ){
 
-            $company = reqCompany(array('id'=>$in['company_id']));
-
-
-            // создаем "Покупку", с параметрами от "Актива", со ссылкой на Актив
-            $arr2 = $bs->CopyRowBuySell(array(	'buy_sell_id'	=> $in['buy_sell_id'],
-                'parent_id'		=> $in['buy_sell_id'],
-                'copy_id'		=> 0,
-                'login_id'		=> $company['login_id'],
-                'company_id'	=> $in['company_id'],
-                'company_id2'	=> COMPANY_ID,
-                'flag_buy_sell'	=> 2,
-                'status'		=> 11,
-                'cost'			=> $in['cost'],
-                'currency_id'	=> $in['currency_id'],
-                'form_payment_id' => $in['form_payment_id'],
-                'glav_flag_buy_sell'		=> 4
-            ));
-
-            if($arr2['buy_sell_id']){
-                $ok 		= true;
-                // сохраняем Файлы (привязываем к новой записи)
-                $bs->CopyFileBuySell(array('buy_sell_id'=>$in['buy_sell_id'],'id'=>$arr2['buy_sell_id']));
+		$company = reqCompany(array('id'=>$in['company_id']));
 
 
-                //  формируем и сохраняем html представление "строки" "Мои заявки/объявление"
-                $bs->SaveCacheBuySell(array('buy_sell_id'=>$arr2['buy_sell_id'],'flag_buy_sell'=>2,'flag_cache'=>'assets'));
-                ///
+		// создаем "Покупку", с параметрами от "Актива", со ссылкой на Актив
+		$arr2 = $bs->CopyRowBuySell(array(	'buy_sell_id'	=> $in['buy_sell_id'],
+			'parent_id'		=> $in['buy_sell_id'],
+			'copy_id'		=> 0,
+			'login_id'		=> $company['login_id'],
+			'company_id'	=> $in['company_id'],
+			'company_id2'	=> COMPANY_ID,
+			'flag_buy_sell'	=> 2,
+			'status'		=> 11,
+			'cost'			=> $in['cost'],
+			'currency_id'	=> $in['currency_id'],
+			'form_payment_id' => $in['form_payment_id'],
+			'glav_flag_buy_sell'		=> 4
+		));
 
-                // меняем статус у Актива на "Продано"
-                /*$bs->ChangeStatusBuy(array('buy_sell_id'=>$row_bs['parent_id'],'status'=>11));*/
-                // Оповещение
-                /*	$cn->StartNotification(array(	'flag'				=> 'buy_sell',
-														'tid'				=> $arr2['buy_sell_id'],
-														'status_buy_sell_id'=> 11,
-														'company_id2'		=> $in['company_id'] ));
-					*/
-            }
-
-        }
+		if($arr2['buy_sell_id']){
+			$ok 		= true;
+			// сохраняем Файлы (привязываем к новой записи)
+			$bs->CopyFileBuySell(array('buy_sell_id'=>$in['buy_sell_id'],'id'=>$arr2['buy_sell_id']));
 
 
-        $jsd['code']	= $code;
-        $jsd['ok'] 	= $ok;
-    }
+			//  формируем и сохраняем html представление "строки" "Мои заявки/объявление"
+			$bs->SaveCacheBuySell(array('buy_sell_id'=>$arr2['buy_sell_id'],'flag_buy_sell'=>2,'flag_cache'=>'assets'));
+			///
+
+			// меняем статус у Актива на "Продано"
+			/*$bs->ChangeStatusBuy(array('buy_sell_id'=>$row_bs['parent_id'],'status'=>11));*/
+			// Оповещение
+			/*	$cn->StartNotification(array(	'flag'				=> 'buy_sell',
+													'tid'				=> $arr2['buy_sell_id'],
+													'status_buy_sell_id'=> 11,
+													'company_id2'		=> $in['company_id'] ));
+				*/
+		}
+
+	}
+
+
+	$jsd['code']	= $code;
+	$jsd['ok'] 	= $ok;
+}
 // модальное окно Выдать (Актив)
-    elseif($_GET['route'] == 'modal_assets_issue'){
+elseif($_GET['route'] == 'modal_assets_issue'){
 
-        $arr = $f->FormAssetsIssue(array( 'buy_sell_id'=>$in['id'] ));
+	$arr = $f->FormAssetsIssue(array( 'buy_sell_id'=>$in['id'] ));
 
-        $code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
-            array('id'=>'assets_issue-form','class'=>'') );
+	$code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
+		array('id'=>'assets_issue-form','class'=>'') );
 
-        $jsd['code'] = $code;
-    }
+	$jsd['code'] = $code;
+}
 // сохранение Выдать (Актив)
-    elseif($_GET['route'] == 'save_assets_issue'){
-        $ok = $arr_ok = false;
-        $code = 'Нельзя выдать';
-        $arr_error = array();
+elseif($_GET['route'] == 'save_assets_issue'){
+	$ok = $arr_ok = false;
+	$code = 'Нельзя выдать';
+	$arr_error = array();
 
-        if(!$in['responsible_id']){
-            $arr_error[] = 'Ответственного';
-        }
-        if(!$in['comments_company']){
-            $arr_error[] = 'Участок';
-        }
+	if(!$in['responsible_id']){
+		$arr_error[] = 'Ответственного';
+	}
+	if(!$in['comments_company']){
+		$arr_error[] = 'Участок';
+	}
 
-        if(empty($arr_error)){
-            $arr_ok = true;
-        }
+	if(empty($arr_error)){
+		$arr_ok = true;
+	}
 
-        if($arr_ok){
-            $STH = PreExecSQL(" UPDATE buy_sell SET responsible_id=?, comments_company=?, status_buy_sell_id=22 WHERE id=? AND company_id=?; " ,
-                array( $in['responsible_id'],$in['comments_company'],$in['buy_sell_id'],COMPANY_ID ));
+	if($arr_ok){
+		$STH = PreExecSQL(" UPDATE buy_sell SET responsible_id=?, comments_company=?, status_buy_sell_id=22 WHERE id=? AND company_id=?; " ,
+			array( $in['responsible_id'],$in['comments_company'],$in['buy_sell_id'],COMPANY_ID ));
 
-            if($STH){
-                $ok = true;;
-            }
-        }else{
-            $code = 'Выберите  '.implode(', ',$arr_error);
-        }
+		if($STH){
+			$ok = true;;
+		}
+	}else{
+		$code = 'Выберите  '.implode(', ',$arr_error);
+	}
 
-        $jsd['ok'] 	= $ok;
-        $jsd['code']	= $code;
-    }
+	$jsd['ok'] 	= $ok;
+	$jsd['code']	= $code;
+}
 // модальное окно Сдать (Актив)
-    elseif($_GET['route'] == 'modal_assets_handover'){
+elseif($_GET['route'] == 'modal_assets_handover'){
 
-        $arr = $f->FormAssetsHandover(array( 'buy_sell_id'=>$in['id'] ));
+	$arr = $f->FormAssetsHandover(array( 'buy_sell_id'=>$in['id'] ));
 
-        $code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
-            array('id'=>'assets_handover-form','class'=>'') );
+	$code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
+		array('id'=>'assets_handover-form','class'=>'') );
 
-        $jsd['code'] = $code;
-    }
+	$jsd['code'] = $code;
+}
 // сохранение Сдать (Актив)
-    elseif($_GET['route'] == 'save_assets_handover'){
-        $ok = false;
-        $code = 'Нельзя выдать';
+elseif($_GET['route'] == 'save_assets_handover'){
+	$ok = false;
+	$code = 'Нельзя выдать';
 
-        $STH = PreExecSQL(" UPDATE buy_sell SET stock_id=?, status_buy_sell_id=23 WHERE id=? AND company_id=?; " ,
-            array( $in['stock_id'],$in['buy_sell_id'],COMPANY_ID ));
-        if($STH){
-            $id = $in['id'];
-        }
+	$STH = PreExecSQL(" UPDATE buy_sell SET stock_id=?, status_buy_sell_id=23 WHERE id=? AND company_id=?; " ,
+		array( $in['stock_id'],$in['buy_sell_id'],COMPANY_ID ));
+	if($STH){
+		$id = $in['id'];
+	}
 
 
-        if($STH){
-            $ok = true;;
-        }
+	if($STH){
+		$ok = true;;
+	}
 
-        $jsd['ok'] 	= $ok;
-        $jsd['code']	= $code;
-    }
+	$jsd['ok'] 	= $ok;
+	$jsd['code']	= $code;
+}
 // сохранение Сдать (Актив)
-    elseif($_GET['route'] == 'save_stock_move'){
-        $ok = false;
-        $code = 'Нельзя выдать';
+elseif($_GET['route'] == 'save_stock_move'){
+	$ok = false;
+	$code = 'Нельзя выдать';
 
-        $STH = PreExecSQL(" UPDATE buy_sell SET stock_id=? WHERE id=? AND company_id=?; " ,
-            array( $in['stock_id'],$in['buy_sell_id'],COMPANY_ID ));
-        if($STH){
-            $id = $in['id'];
-        }
+	$STH = PreExecSQL(" UPDATE buy_sell SET stock_id=? WHERE id=? AND company_id=?; " ,
+		array( $in['stock_id'],$in['buy_sell_id'],COMPANY_ID ));
+	if($STH){
+		$id = $in['id'];
+	}
 
 
-        if($STH){
-            $ok = true;;
-        }
+	if($STH){
+		$ok = true;;
+	}
 
-        $jsd['ok'] 	= $ok;
-        $jsd['code']	= $code;
-    }
+	$jsd['ok'] 	= $ok;
+	$jsd['code']	= $code;
+}
 // подгрузка Товары на складе закрепленные за номенклатурой
-    elseif($_GET['route'] == 'action_stock_nomenclature'){
+elseif($_GET['route'] == 'action_stock_nomenclature'){
 
-        $code = $t->TableStock(array('nomenclature_id'=>$in['nomenclature_id']));
+	$code = $t->TableStock(array('nomenclature_id'=>$in['nomenclature_id']));
 
-        $jsd['code'] = $code;
+	$jsd['code'] = $code;
 
-    }
+}
 // модальное окно Продано (Склад)
-    elseif($_GET['route'] == 'modal_stock_sell'){
+elseif($_GET['route'] == 'modal_stock_sell'){
 
-        $arr = $f->FormStockSell(array( 'buy_sell_id'=>$in['id'] ));
+	$arr = $f->FormStockSell(array( 'buy_sell_id'=>$in['id'] ));
 
-        $code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
-            array('id'=>'stock_sell-form','class'=>'') );
+	$code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
+		array('id'=>'stock_sell-form','class'=>'') );
 
-        $jsd['code'] = $code;
-    }
+	$jsd['code'] = $code;
+}
 // сохранение - Продано (Склад)
-    elseif($_GET['route'] == 'save_stock_sell'){
+elseif($_GET['route'] == 'save_stock_sell'){
 
-        $code 	= 'Нельзя сохранить';
-        $ok 		= false;
+	$code 	= 'Нельзя сохранить';
+	$ok 		= false;
 
-        $row_bs 	= reqMyStockBuySell(array('id'=>$in['buy_sell_id'],'company_id'=>COMPANY_ID));
+	$row_bs 	= reqMyStockBuySell(array('id'=>$in['buy_sell_id'],'company_id'=>COMPANY_ID));
 
-        if( $row_bs['id'] && v_int($in['company_id']) ){
+	if( $row_bs['id'] && v_int($in['company_id']) ){
 
-            $ostatok = $row_bs['amount']-$row_bs['amount_reserve'];
+		$ostatok = $row_bs['amount']-$row_bs['amount_reserve'];
 
-            if( ($in['amount']>0) && ($ostatok>=$in['amount']) ){
+		if( ($in['amount']>0) && ($ostatok>=$in['amount']) ){
 
-                $company = reqCompany(array('id'=>$in['company_id']));
+			$company = reqCompany(array('id'=>$in['company_id']));
 
-                if($company['login_id']){
-
-
-
-                    // создаем "Покупку", с параметрами от "Актива", со ссылкой на Актив
-                    $arr2 = $bs->CopyRowBuySell(array(	'buy_sell_id'	=> $in['buy_sell_id'],
-                        'parent_id'		=> $in['buy_sell_id'],
-                        'copy_id'		=> 0,
-                        'login_id'		=> $company['login_id'],
-                        'company_id'	=> $in['company_id'],
-                        'company_id2'	=> COMPANY_ID,
-                        'flag_buy_sell'	=> 2,
-                        'status'		=> 11,
-                        'cost'			=> $in['cost'],
-                        'amount'		=> $in['amount'],
-                        'currency_id'	=> $in['currency_id'],
-                        'form_payment_id' => $in['form_payment_id'],
-                        'glav_flag_buy_sell'		=> 5
-                    ));
-
-                    if($arr2['buy_sell_id']){
-                        $ok 		= true;
-
-                        // Уменьшаем количество товара на  количество покупки
-                        $STH = PreExecSQL(" UPDATE buy_sell SET amount=? WHERE id=? AND company_id=?; " ,
-                            array( ($row_bs['amount']-$in['amount']) ,$in['buy_sell_id'],COMPANY_ID ));
+			if($company['login_id']){
 
 
-                        // сохраняем Файлы (привязываем к новой записи)
-                        $bs->CopyFileBuySell(array('buy_sell_id'=>$in['buy_sell_id'],'id'=>$arr2['buy_sell_id']));
+
+				// создаем "Покупку", с параметрами от "Актива", со ссылкой на Актив
+				$arr2 = $bs->CopyRowBuySell(array(	'buy_sell_id'	=> $in['buy_sell_id'],
+					'parent_id'		=> $in['buy_sell_id'],
+					'copy_id'		=> 0,
+					'login_id'		=> $company['login_id'],
+					'company_id'	=> $in['company_id'],
+					'company_id2'	=> COMPANY_ID,
+					'flag_buy_sell'	=> 2,
+					'status'		=> 11,
+					'cost'			=> $in['cost'],
+					'amount'		=> $in['amount'],
+					'currency_id'	=> $in['currency_id'],
+					'form_payment_id' => $in['form_payment_id'],
+					'glav_flag_buy_sell'		=> 5
+				));
+
+				if($arr2['buy_sell_id']){
+					$ok 		= true;
+
+					// Уменьшаем количество товара на  количество покупки
+					$STH = PreExecSQL(" UPDATE buy_sell SET amount=? WHERE id=? AND company_id=?; " ,
+						array( ($row_bs['amount']-$in['amount']) ,$in['buy_sell_id'],COMPANY_ID ));
 
 
-                        //  формируем и сохраняем html представление "строки" "Мои заявки/объявление"
-                        $bs->SaveCacheBuySell(array('buy_sell_id'=>$arr2['buy_sell_id'],'flag_buy_sell'=>2,'flag_cache'=>'assets'));
-                        ///
-
-                        // меняем статус у Актива на "Продано"
-                        /*$bs->ChangeStatusBuy(array('buy_sell_id'=>$row_bs['parent_id'],'status'=>11));*/
-                        // Оповещение
-                        /*	$cn->StartNotification(array(	'flag'				=> 'buy_sell',
-																'tid'				=> $arr2['buy_sell_id'],
-																'status_buy_sell_id'=> 11,
-																'company_id2'		=> $in['company_id'] ));
-							*/
-                    }
-
-                }
-
-            }else{
-                $code = 'Не верно указано количество';
-            }
-
-        }
+					// сохраняем Файлы (привязываем к новой записи)
+					$bs->CopyFileBuySell(array('buy_sell_id'=>$in['buy_sell_id'],'id'=>$arr2['buy_sell_id']));
 
 
-        $jsd['code']	= $code;
-        $jsd['ok'] 	= $ok;
-    }
+					//  формируем и сохраняем html представление "строки" "Мои заявки/объявление"
+					$bs->SaveCacheBuySell(array('buy_sell_id'=>$arr2['buy_sell_id'],'flag_buy_sell'=>2,'flag_cache'=>'assets'));
+					///
+
+					// меняем статус у Актива на "Продано"
+					/*$bs->ChangeStatusBuy(array('buy_sell_id'=>$row_bs['parent_id'],'status'=>11));*/
+					// Оповещение
+					/*	$cn->StartNotification(array(	'flag'				=> 'buy_sell',
+															'tid'				=> $arr2['buy_sell_id'],
+															'status_buy_sell_id'=> 11,
+															'company_id2'		=> $in['company_id'] ));
+						*/
+				}
+
+			}
+
+		}else{
+			$code = 'Не верно указано количество';
+		}
+
+	}
+
+
+	$jsd['code']	= $code;
+	$jsd['ok'] 	= $ok;
+}
 // модальное окно Резерв (Склад)
-    elseif($_GET['route'] == 'modal_stock_reserve'){
+elseif($_GET['route'] == 'modal_stock_reserve'){
 
-        $arr = $f->FormStockReserve(array( 'buy_sell_id'=>$in['id'] ));
+	$arr = $f->FormStockReserve(array( 'buy_sell_id'=>$in['id'] ));
 
-        $code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
-            array('id'=>'stock_reserve-form','class'=>'') );
+	$code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
+		array('id'=>'stock_reserve-form','class'=>'') );
 
-        $jsd['code'] = $code;
-    }
+	$jsd['code'] = $code;
+}
 // сохранение - Резерв (Склад)
-    elseif($_GET['route'] == 'save_stock_reserve'){
+elseif($_GET['route'] == 'save_stock_reserve'){
 
-        $code 	= 'Нельзя сохранить';
-        $ok 		= false;
+	$code 	= 'Нельзя сохранить';
+	$ok 		= false;
 
-        $row_bs 	= reqBuySell_buysellone(array('id'=>$in['buy_sell_id'],'company_id'=>COMPANY_ID));
+	$row_bs 	= reqBuySell_buysellone(array('id'=>$in['buy_sell_id'],'company_id'=>COMPANY_ID));
 
-        if( $row_bs['id'] ){
+	if( $row_bs['id'] ){
 
-            // Проверяем доступность количества для Резерва
-            $ok = true;
-            if($ok){
+		// Проверяем доступность количества для Резерва
+		$ok = true;
+		if($ok){
 
-                // создаем "резерв", с параметрами от "Товара", со ссылкой на Товар на складе
-                $arr2 = $bs->CopyRowBuySell(array(	'buy_sell_id'	=> $in['buy_sell_id'],
-                    'parent_id'		=> $in['buy_sell_id'],
-                    'flag_buy_sell'	=> 5,
-                    'status'		=> 32,
-                    'amount'		=> $in['amount'],
-                    'glav_flag_buy_sell'		=> 5
-                ));
+			// создаем "резерв", с параметрами от "Товара", со ссылкой на Товар на складе
+			$arr2 = $bs->CopyRowBuySell(array(	'buy_sell_id'	=> $in['buy_sell_id'],
+				'parent_id'		=> $in['buy_sell_id'],
+				'flag_buy_sell'	=> 5,
+				'status'		=> 32,
+				'amount'		=> $in['amount'],
+				'glav_flag_buy_sell'		=> 5
+			));
 
-                if($arr2['buy_sell_id']){
-                    $ok 		= true;
-                    // сохраняем Файлы (привязываем к новой записи)
-                    $bs->CopyFileBuySell(array('buy_sell_id'=>$in['buy_sell_id'],'id'=>$arr2['buy_sell_id']));
-
-
-                    //  формируем и сохраняем html представление "строки" "Мои заявки/объявление"
-                    //$bs->SaveCacheBuySell(array('buy_sell_id'=>$arr2['buy_sell_id'],'flag_buy_sell'=>2,'flag_cache'=>'assets'));
-                    ///
-
-                }else{
-                    $code 	= 'Нельзя поставить в резерв';
-                }
-
-            }else{
-                $code 	= 'Недоступно количество';
-            }
-
-        }
+			if($arr2['buy_sell_id']){
+				$ok 		= true;
+				// сохраняем Файлы (привязываем к новой записи)
+				$bs->CopyFileBuySell(array('buy_sell_id'=>$in['buy_sell_id'],'id'=>$arr2['buy_sell_id']));
 
 
-        $jsd['code']	= $code;
-        $jsd['ok'] 	= $ok;
-    }
+				//  формируем и сохраняем html представление "строки" "Мои заявки/объявление"
+				//$bs->SaveCacheBuySell(array('buy_sell_id'=>$arr2['buy_sell_id'],'flag_buy_sell'=>2,'flag_cache'=>'assets'));
+				///
+
+			}else{
+				$code 	= 'Нельзя поставить в резерв';
+			}
+
+		}else{
+			$code 	= 'Недоступно количество';
+		}
+
+	}
+
+
+	$jsd['code']	= $code;
+	$jsd['ok'] 	= $ok;
+}
 // модальное окно Выдача (Склад)
-    elseif($_GET['route'] == 'modal_stock_issue'){
+elseif($_GET['route'] == 'modal_stock_issue'){
 
-        $arr = $f->FormStockIssue(array( 'buy_sell_id'=>$in['id'] ));
+	$arr = $f->FormStockIssue(array( 'buy_sell_id'=>$in['id'] ));
 
-        $code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
-            array('id'=>'stock_issue-form','class'=>'') );
+	$code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
+		array('id'=>'stock_issue-form','class'=>'') );
 
-        $jsd['code'] = $code;
-    }
+	$jsd['code'] = $code;
+}
 // сохранение - Выдача (Склад)
-    elseif($_GET['route'] == 'save_stock_issue'){
+elseif($_GET['route'] == 'save_stock_issue'){
 
-        $code 	= 'Нельзя сохранить';
-        $ok = $arr_ok = false;
-        $arr_error = array();
+	$code 	= 'Нельзя сохранить';
+	$ok = $arr_ok = false;
+	$arr_error = array();
 
-        if(!$in['assets_id']){
-            $arr_error[] = 'Актив';
-        }
-        if(!$in['responsible_id']){
-            $arr_error[] = 'Ответственного';
-        }
+	if(!$in['assets_id']){
+		$arr_error[] = 'Актив';
+	}
+	if(!$in['responsible_id']){
+		$arr_error[] = 'Ответственного';
+	}
 
-        if(empty($arr_error)){
-            $arr_ok = true;
-        }
+	if(empty($arr_error)){
+		$arr_ok = true;
+	}
 
-        if($arr_ok){
+	if($arr_ok){
 
-            $row_bs 	= reqMyStockBuySell(array('id'=>$in['buy_sell_id'],'company_id'=>COMPANY_ID));
+		$row_bs 	= reqMyStockBuySell(array('id'=>$in['buy_sell_id'],'company_id'=>COMPANY_ID));
 
-            if( $row_bs['id'] && v_int($in['assets_id']) ){
+		if( $row_bs['id'] && v_int($in['assets_id']) ){
 
-                // Проверяем доступность количества для Выдачи
+			// Проверяем доступность количества для Выдачи
 
-                $ostatok = $row_bs['amount']-$row_bs['amount_reserve'];
+			$ostatok = $row_bs['amount']-$row_bs['amount_reserve'];
 
-                if( ($in['amount']>0) && ($ostatok>=$in['amount']) ){
+			if( ($in['amount']>0) && ($ostatok>=$in['amount']) ){
 
-                    // создаем "Выдано", с параметрами от "Товара", со ссылкой на Товар на складе
-                    $arr2 = $bs->CopyRowBuySell(array(	'buy_sell_id'	=> $in['buy_sell_id'],
-                        'parent_id'		=> $in['buy_sell_id'],
-                        'flag_buy_sell'	=> 5,
-                        'status'		=> 33,
-                        'amount'		=> $in['amount'],
-                        'responsible_id'=> $in['responsible_id'],
-                        'assets_id'		=> $in['assets_id'],
-                        'glav_flag_buy_sell'		=> 5
-                    ));
+				// создаем "Выдано", с параметрами от "Товара", со ссылкой на Товар на складе
+				$arr2 = $bs->CopyRowBuySell(array(	'buy_sell_id'	=> $in['buy_sell_id'],
+					'parent_id'		=> $in['buy_sell_id'],
+					'flag_buy_sell'	=> 5,
+					'status'		=> 33,
+					'amount'		=> $in['amount'],
+					'responsible_id'=> $in['responsible_id'],
+					'assets_id'		=> $in['assets_id'],
+					'glav_flag_buy_sell'		=> 5
+				));
 
-                    if($arr2['buy_sell_id']){
-                        $ok 		= true;
+				if($arr2['buy_sell_id']){
+					$ok 		= true;
 
-                        // Уменьшаем количество товара на  количество Выдачи
-                        $STH = PreExecSQL(" UPDATE buy_sell SET amount=? WHERE id=? AND company_id=?; " ,
-                            array( ($row_bs['amount']-$in['amount']) ,$in['buy_sell_id'],COMPANY_ID ));
-
-
-                        // сохраняем Файлы (привязываем к новой записи)
-                        $bs->CopyFileBuySell(array('buy_sell_id'=>$in['buy_sell_id'],'id'=>$arr2['buy_sell_id']));
+					// Уменьшаем количество товара на  количество Выдачи
+					$STH = PreExecSQL(" UPDATE buy_sell SET amount=? WHERE id=? AND company_id=?; " ,
+						array( ($row_bs['amount']-$in['amount']) ,$in['buy_sell_id'],COMPANY_ID ));
 
 
-                        //  формируем и сохраняем html представление "строки" "Мои заявки/объявление"
-                        //$bs->SaveCacheBuySell(array('buy_sell_id'=>$arr2['buy_sell_id'],'flag_buy_sell'=>2,'flag_cache'=>'assets'));
-                        ///
-
-                    }else{
-                        $code 	= 'Нельзя выдать';
-                    }
-
-                }else{
-                    $code 	= 'Недоступно количество';
-                }
-
-            }
-
-        }else{
-            $code = 'Выберите  '.implode(', ',$arr_error);
-        }
+					// сохраняем Файлы (привязываем к новой записи)
+					$bs->CopyFileBuySell(array('buy_sell_id'=>$in['buy_sell_id'],'id'=>$arr2['buy_sell_id']));
 
 
+					//  формируем и сохраняем html представление "строки" "Мои заявки/объявление"
+					//$bs->SaveCacheBuySell(array('buy_sell_id'=>$arr2['buy_sell_id'],'flag_buy_sell'=>2,'flag_cache'=>'assets'));
+					///
 
-        $jsd['code']	= $code;
-        $jsd['ok'] 	= $ok;
-    }
+				}else{
+					$code 	= 'Нельзя выдать';
+				}
+
+			}else{
+				$code 	= 'Недоступно количество';
+			}
+
+		}
+
+	}else{
+		$code = 'Выберите  '.implode(', ',$arr_error);
+	}
+
+
+
+	$jsd['code']	= $code;
+	$jsd['ok'] 	= $ok;
+}
 // модальное окно Возврат товара (Склад отмена выдачи)
-    elseif($_GET['route'] == 'modal_stock_issue_cancel'){
+elseif($_GET['route'] == 'modal_stock_issue_cancel'){
 
-        $arr = $f->FormStockIssueCancel(array( 'buy_sell_id'=>$in['id'] ));
+	$arr = $f->FormStockIssueCancel(array( 'buy_sell_id'=>$in['id'] ));
 
-        $code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
-            array('id'=>'stock_issue_cancel-form','class'=>'') );
+	$code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
+		array('id'=>'stock_issue_cancel-form','class'=>'') );
 
-        $jsd['code'] = $code;
-    }
+	$jsd['code'] = $code;
+}
 // Отмена - Выдача (Склад)
-    elseif($_GET['route'] == 'save_stock_issue_cancel'){
+elseif($_GET['route'] == 'save_stock_issue_cancel'){
 
-        $code 	= 'Нельзя сохранить';
-        $ok 		= false;
+	$code 	= 'Нельзя сохранить';
+	$ok 		= false;
 
-        $row_bs 	= reqMyBuySell(array('id'=>$in['buy_sell_id'],'company_id'=>COMPANY_ID));
+	$row_bs 	= reqMyBuySell(array('id'=>$in['buy_sell_id'],'company_id'=>COMPANY_ID));
 
-        if( $row_bs['id'] ){
+	if( $row_bs['id'] ){
 
-            // Увеличиваем количество товара на количество отмены Выдачи
-            $STH = PreExecSQL(" UPDATE buy_sell SET amount=amount+? WHERE id=? AND company_id=?; " ,
-                array( $row_bs['amount'],$row_bs['parent_id'],COMPANY_ID ));
-            if($STH){
-                // удаляем Отмененную Выдачу
-                $STH = PreExecSQL(" DELETE FROM buy_sell WHERE id=? AND company_id=?; " ,
-                    array( $row_bs['id'],COMPANY_ID ));
-                if($STH){
-                    $ok 		= true;
-                }
-            }
-        }
+		// Увеличиваем количество товара на количество отмены Выдачи
+		$STH = PreExecSQL(" UPDATE buy_sell SET amount=amount+? WHERE id=? AND company_id=?; " ,
+			array( $row_bs['amount'],$row_bs['parent_id'],COMPANY_ID ));
+		if($STH){
+			// удаляем Отмененную Выдачу
+			$STH = PreExecSQL(" DELETE FROM buy_sell WHERE id=? AND company_id=?; " ,
+				array( $row_bs['id'],COMPANY_ID ));
+			if($STH){
+				$ok 		= true;
+			}
+		}
+	}
 
 
-        $jsd['code']	= $code;
-        $jsd['ok'] 	= $ok;
-    }
+	$jsd['code']	= $code;
+	$jsd['ok'] 	= $ok;
+}
 // autocomplete Активы
-    elseif($_GET['route'] == 'autocomplete_assets'){
-        $r	= reqAutocompleteAssets(array('value' => $in['value']));
-        foreach($r as $i => $m){
-            $jsd[] = array( 'id'=>$m['buy_sell_id'] , 	'name' 			=> $m['attribute_value'],
-                'id' 			=> $m['buy_sell_id'],
-                'value' 		=> $m['attribute_value'] );
-        }
+elseif($_GET['route'] == 'autocomplete_assets'){
+	$r	= reqAutocompleteAssets(array('value' => $in['value']));
+	foreach($r as $i => $m){
+		$jsd[] = array( 'id'=>$m['buy_sell_id'] , 	'name' 			=> $m['attribute_value'],
+			'id' 			=> $m['buy_sell_id'],
+			'value' 		=> $m['attribute_value'] );
+	}
 
-        if (empty($jsd)) $jsd[] = array('name' => '<span class="text-muted">не найдено</span>' , 'name2' =>'не найдено' );
+	if (empty($jsd)) $jsd[] = array('name' => '<span class="text-muted">не найдено</span>' , 'name2' =>'не найдено' );
 
-    }
+}
 // Перемещение в активы (Склад)
-    elseif($_GET['route'] == 'action_stock_move_assets'){
+elseif($_GET['route'] == 'action_stock_move_assets'){
 
-        $code 	= 'Нельзя сохранить';
-        $ok 		= false;
+	$code 	= 'Нельзя сохранить';
+	$ok 		= false;
 
-        $jsd['code']	= $code;
-        $jsd['ok'] 	= $ok;
-    }
+	$jsd['code']	= $code;
+	$jsd['ok'] 	= $ok;
+}
 // Перемещение в активы (Склад)
-    elseif($_GET['route'] == 'action_enter_cancel_vip'){
+elseif($_GET['route'] == 'action_enter_cancel_vip'){
 
-        $code 	= 'Нельзя сохранить';
-        $ok 	= false;
-        $active	= false;
-
-
-        $STH = PreExecSQL(" DELETE FROM company_vip_function WHERE vip_function_id=? AND company_id=? ; " ,
-            array( $in['id'],COMPANY_ID ));
-        if(!$in['active']){
-            $STH = PreExecSQL(" INSERT INTO company_vip_function (company_id, vip_function_id) VALUES (?,?); " ,
-                array( COMPANY_ID,$in['id'] ));
-            $active = 1;
-        }
-        if($STH){
-            $ok = true;
-            $code = $e->ButtonEnterCancelVip(array('id'=>$in['id'],'active'=>$active));
-        }
+	$code 	= 'Нельзя сохранить';
+	$ok 	= false;
+	$active	= false;
 
 
-        $jsd['code']	= $code;
-        $jsd['ok'] 		= $ok;
-        $jsd['active'] 	= $active;
-    }
+	$STH = PreExecSQL(" DELETE FROM company_vip_function WHERE vip_function_id=? AND company_id=? ; " ,
+		array( $in['id'],COMPANY_ID ));
+	if(!$in['active']){
+		$STH = PreExecSQL(" INSERT INTO company_vip_function (company_id, vip_function_id) VALUES (?,?); " ,
+			array( COMPANY_ID,$in['id'] ));
+		$active = 1;
+	}
+	if($STH){
+		$ok = true;
+		$code = $e->ButtonEnterCancelVip(array('id'=>$in['id'],'active'=>$active));
+	}
+
+
+	$jsd['code']	= $code;
+	$jsd['ok'] 		= $ok;
+	$jsd['active'] 	= $active;
+}
 // модаль настройки интеграции с 1С
-    elseif($_GET['route'] == 'modal_service_bind1c'){
+elseif($_GET['route'] == 'modal_service_bind1c'){
 
-        $code = $t->SericeBind1c();
+	$code = $t->SericeBind1c();
 
-        $code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$code),
-            array('id'=>'','class'=>'') );
+	$code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$code),
+		array('id'=>'','class'=>'') );
 
-        $jsd['code'] = $code;
-    }
+	$jsd['code'] = $code;
+}
 // сохранение ID_1C Моя Компания
-    elseif($_GET['route'] == 'save_my_company_id_1c'){
-        $ok = $STH = false;
-        $code = 'Нельзя сохранить';
+elseif($_GET['route'] == 'save_my_company_id_1c'){
+	$ok = $STH = false;
+	$code = 'Нельзя сохранить';
 
-        $STH = PreExecSQL(" UPDATE company SET id_1c=? WHERE id=?; " ,
-            array( $in['id_1c'],COMPANY_ID ));
+	$STH = PreExecSQL(" UPDATE company SET id_1c=? WHERE id=?; " ,
+		array( $in['id_1c'],COMPANY_ID ));
 
-        if($STH){
-            $ok = true;
-            $_SESSION['company_id_1c'] 	= $in['id_1c'];
-        }
+	if($STH){
+		$ok = true;
+		$_SESSION['company_id_1c'] 	= $in['id_1c'];
+	}
 
-        $jsd['ok'] 	= $ok;
-        $jsd['code']	= $code;
-    }
+	$jsd['ok'] 	= $ok;
+	$jsd['code']	= $code;
+}
 // Привязать единицы измерения
-    elseif($_GET['route'] == 'bind_unit_1c'){
-        $ok = $STH = false;
-        $code = 'Нельзя привязать';
+elseif($_GET['route'] == 'bind_unit_1c'){
+	$ok = $STH = false;
+	$code = 'Нельзя привязать';
 
-        if(COMPANY_ID_1C){
+	if(COMPANY_ID_1C){
 
-            $arr		= $api->BindUnit1c(array('flag'=>'hands'));
-            $ok 		= true;
-            $code 	= $arr['code'];
+		$arr		= $api->BindUnit1c(array('flag'=>'hands'));
+		$ok 		= true;
+		$code 	= $arr['code'];
 
-        }else{
+	}else{
 
-            $code = 'Не привязан идентификатор компании';
+		$code = 'Не привязан идентификатор компании';
 
-        }
+	}
 
-        $jsd['ok'] 	= $ok;
-        $jsd['code']	= $code;
+	$jsd['ok'] 	= $ok;
+	$jsd['code']	= $code;
 
-    }
+}
 // Привязать вид номенклатуры
-    elseif($_GET['route'] == 'bind_1c_typenom'){
-        $ok = $STH = false;
-        $code = 'Нельзя привязать';
+elseif($_GET['route'] == 'bind_1c_typenom'){
+	$ok = $STH = false;
+	$code = 'Нельзя привязать';
 
-        if(COMPANY_ID_1C){
+	if(COMPANY_ID_1C){
 
-            $ok		= $api->BindTypeNom1c();
-            $code 	= 'Номенклатура из 1С добавлена';
+		$ok		= $api->BindTypeNom1c();
+		$code 	= 'Номенклатура из 1С добавлена';
 
-        }else{
+	}else{
 
-            $code = 'Не привязан идентификатор компании';
+		$code = 'Не привязан идентификатор компании';
 
-        }
+	}
 
-        $jsd['ok'] 	= $ok;
-        $jsd['code']	= $code;
+	$jsd['ok'] 	= $ok;
+	$jsd['code']	= $code;
 
-    }
+}
 // Форма привязать вид номенклатуры
-    elseif($_GET['route'] == 'get_form_bind_1c_typenom'){
-        $ok = $STH = false;
-        $code = 'Нельзя привязать';
+elseif($_GET['route'] == 'get_form_bind_1c_typenom'){
+	$ok = $STH = false;
+	$code = 'Нельзя привязать';
 
-        if(COMPANY_ID_1C){
+	if(COMPANY_ID_1C){
 
-            if($in['where']=='logo_notification'){
-                $code		= $api->TrOneBindTypeNom1c(array('id'			=> 999999999999999999,
-                    '1c_typenom_id'	=> 0,
-                    'categories_id'	=> 0 ));
-            }else{
-                $code		= $api->TrBindTypeNom1c();
-            }
+		if($in['where']=='logo_notification'){
+			$code		= $api->TrOneBindTypeNom1c(array('id'			=> 999999999999999999,
+				'1c_typenom_id'	=> 0,
+				'categories_id'	=> 0 ));
+		}else{
+			$code		= $api->TrBindTypeNom1c();
+		}
 
-            $ok	= true;
+		$ok	= true;
 
-        }else{
+	}else{
 
-            $code = 'Не привязан идентификатор компании';
+		$code = 'Не привязан идентификатор компании';
 
-        }
+	}
 
-        $jsd['ok'] 	= $ok;
-        $jsd['code']	= $code;
+	$jsd['ok'] 	= $ok;
+	$jsd['code']	= $code;
 
-    }
+}
 // сохранить - Привязать вид номенклатуры и Категории
-    elseif($_GET['route'] == 'save_1c_typenom_categoies'){
-        $ok = $arr_ok = false;
-        $arr_error = array();
-        $code = 'Нельзя сохранить';
+elseif($_GET['route'] == 'save_1c_typenom_categoies'){
+	$ok = $arr_ok = false;
+	$arr_error = array();
+	$code = 'Нельзя сохранить';
 
-        if(!$in['value']){
-            $arr_error[] = '1C';
-        }
-        if(!$in['categories_id']){
-            $arr_error[] = 'QRQ';
-        }
+	if(!$in['value']){
+		$arr_error[] = '1C';
+	}
+	if(!$in['categories_id']){
+		$arr_error[] = 'QRQ';
+	}
 
-        if(empty($arr_error)){
-            $arr_ok = true;
-        }
+	if(empty($arr_error)){
+		$arr_ok = true;
+	}
 
 
-        if($arr_ok){
+	if($arr_ok){
 
-            if(!$in['id']){// СОЗДАНИЕ
-                $STH = PreExecSQL(" INSERT INTO 1c_typenom_categoies (company_id, 1c_typenom_id, categories_id) VALUES (?,?,?); " ,
-                    array( COMPANY_ID,$in['value'],$in['categories_id'] ));
-                if($STH){
-                    $id = $db->lastInsertId();
-                }
-            }else{// РЕДАКТИРОВАНИЕ
-                $STH = PreExecSQL(" UPDATE 1c_typenom_categoies SET 1c_typenom_id=?, categories_id=? WHERE id=? AND company_id=?; " ,
-                    array( $in['value'],$in['categories_id'],$in['id'],COMPANY_ID ));
-                if($STH){
-                    $id = $in['id'];
-                }
-            }
+		if(!$in['id']){// СОЗДАНИЕ
+			$STH = PreExecSQL(" INSERT INTO 1c_typenom_categoies (company_id, 1c_typenom_id, categories_id) VALUES (?,?,?); " ,
+				array( COMPANY_ID,$in['value'],$in['categories_id'] ));
+			if($STH){
+				$id = $db->lastInsertId();
+			}
+		}else{// РЕДАКТИРОВАНИЕ
+			$STH = PreExecSQL(" UPDATE 1c_typenom_categoies SET 1c_typenom_id=?, categories_id=? WHERE id=? AND company_id=?; " ,
+				array( $in['value'],$in['categories_id'],$in['id'],COMPANY_ID ));
+			if($STH){
+				$id = $in['id'];
+			}
+		}
 
-            if($STH){
-                $ok 		= true;
-                $code	= $api->TrBindTypeNom1c();
-            }
+		if($STH){
+			$ok 		= true;
+			$code	= $api->TrBindTypeNom1c();
+		}
 
-        }else{
-            $code = 'Выберите  '.implode(', ',$arr_error);
-        }
+	}else{
+		$code = 'Выберите  '.implode(', ',$arr_error);
+	}
 
-        $jsd['ok'] 	= $ok;
-        $jsd['code']	= $code;
-    }
+	$jsd['ok'] 	= $ok;
+	$jsd['code']	= $code;
+}
 // Привязать склады
-    elseif($_GET['route'] == 'bind_1c_stock'){
-        $ok = $STH = false;
-        $code = 'Нельзя привязать';
+elseif($_GET['route'] == 'bind_1c_stock'){
+	$ok = $STH = false;
+	$code = 'Нельзя привязать';
 
-        if(COMPANY_ID_1C){
+	if(COMPANY_ID_1C){
 
-            $ok		= $api->BindStock1c();
-            $code 	= 'Склады из 1С добавлены';
+		$ok		= $api->BindStock1c();
+		$code 	= 'Склады из 1С добавлены';
 
-        }else{
+	}else{
 
-            $code = 'Не привязан идентификатор компании';
+		$code = 'Не привязан идентификатор компании';
 
-        }
+	}
 
-        $jsd['ok'] 	= $ok;
-        $jsd['code']	= $code;
-    }
+	$jsd['ok'] 	= $ok;
+	$jsd['code']	= $code;
+}
 // Форма Привязать Склад 1С и наш Склад
-    elseif($_GET['route'] == 'get_form_bind_1c_stock'){
-        $ok = $STH = false;
-        $code = 'Нельзя привязать';
+elseif($_GET['route'] == 'get_form_bind_1c_stock'){
+	$ok = $STH = false;
+	$code = 'Нельзя привязать';
 
-        if(COMPANY_ID_1C){
+	if(COMPANY_ID_1C){
 
-            $code		= $api->TrBindStock1c();
-            $ok	= true;
+		$code		= $api->TrBindStock1c();
+		$ok	= true;
 
-        }else{
+	}else{
 
-            $code = 'Не привязан идентификатор компании';
+		$code = 'Не привязан идентификатор компании';
 
-        }
+	}
 
-        $jsd['ok'] 	= $ok;
-        $jsd['code']	= $code;
+	$jsd['ok'] 	= $ok;
+	$jsd['code']	= $code;
 
-    }
+}
 // сохранить - Привязать Склад 1С и наш Склад
-    elseif($_GET['route'] == 'save_1c_stock_stock'){
-        $ok = $arr_ok = false;
-        $arr_error = array();
-        $code = 'Нельзя сохранить';
+elseif($_GET['route'] == 'save_1c_stock_stock'){
+	$ok = $arr_ok = false;
+	$arr_error = array();
+	$code = 'Нельзя сохранить';
 
-        if(!$in['value']){
-            $arr_error[] = '1C';
-        }
-        if(!$in['stock_id']){
-            $arr_error[] = 'QRQ';
-        }
+	if(!$in['value']){
+		$arr_error[] = '1C';
+	}
+	if(!$in['stock_id']){
+		$arr_error[] = 'QRQ';
+	}
 
-        if(empty($arr_error)){
-            $arr_ok = true;
-        }
+	if(empty($arr_error)){
+		$arr_ok = true;
+	}
 
 
-        if($arr_ok){
+	if($arr_ok){
 
-            $STH = PreExecSQL(" UPDATE stock SET 1c_stock_id=? WHERE id=? AND company_id=?; " ,
-                array( $in['value'],$in['stock_id'],COMPANY_ID ));
+		$STH = PreExecSQL(" UPDATE stock SET 1c_stock_id=? WHERE id=? AND company_id=?; " ,
+			array( $in['value'],$in['stock_id'],COMPANY_ID ));
 
-            if($STH){
-                $ok 		= true;
-                $code	= $api->TrBindStock1c();
-            }
+		if($STH){
+			$ok 		= true;
+			$code	= $api->TrBindStock1c();
+		}
 
-        }else{
-            $code = 'Выберите  '.implode(', ',$arr_error);
-        }
+	}else{
+		$code = 'Выберите  '.implode(', ',$arr_error);
+	}
 
-        $jsd['ok'] 	= $ok;
-        $jsd['code']	= $code;
-    }
+	$jsd['ok'] 	= $ok;
+	$jsd['code']	= $code;
+}
 // Привязать компании
-    elseif($_GET['route'] == 'bind_1c_company'){
-        $ok = $STH = false;
-        $code = 'Нельзя привязать';
+elseif($_GET['route'] == 'bind_1c_company'){
+	$ok = $STH = false;
+	$code = 'Нельзя привязать';
 
-        if(COMPANY_ID_1C){
+	if(COMPANY_ID_1C){
 
-            $ok		= $api->BindCompany1c();
-            $code 	= 'Компании из 1С добавлены';
+		$ok		= $api->BindCompany1c();
+		$code 	= 'Компании из 1С добавлены';
 
-        }else{
+	}else{
 
-            $code = 'Не привязан идентификатор компании';
+		$code = 'Не привязан идентификатор компании';
 
-        }
+	}
 
-        $jsd['ok'] 	= $ok;
-        $jsd['code']	= $code;
-    }
+	$jsd['ok'] 	= $ok;
+	$jsd['code']	= $code;
+}
 // Привязать Компанию 1С к Компании "нашей"
-    elseif($_GET['route'] == 'save_1c_company_company'){
-        $ok = $STH = false;
-        $code = 'Нельзя привязать';
+elseif($_GET['route'] == 'save_1c_company_company'){
+	$ok = $STH = false;
+	$code = 'Нельзя привязать';
 
-        $STH = PreExecSQL(" DELETE FROM 1c_company_company WHERE company_id=? AND company_id_to=?; " ,
-            array( COMPANY_ID , $in['company_id'] ));
-        if($STH){
+	$STH = PreExecSQL(" DELETE FROM 1c_company_company WHERE company_id=? AND company_id_to=?; " ,
+		array( COMPANY_ID , $in['company_id'] ));
+	if($STH){
 
-            $STH = PreExecSQL(" INSERT INTO 1c_company_company (company_id, 1c_company_id, company_id_to) VALUES (?,?,?); " ,
-                array( COMPANY_ID,$in['value'],$in['company_id'] ));
-            if($STH){
-                //$id = $db->lastInsertId();
-                $ok = true;
-                $code = $e->Select1cCompanyCompany(array('1c_company_id'=>$in['value'],'company_id_to'=>$in['company_id']));
+		$STH = PreExecSQL(" INSERT INTO 1c_company_company (company_id, 1c_company_id, company_id_to) VALUES (?,?,?); " ,
+			array( COMPANY_ID,$in['value'],$in['company_id'] ));
+		if($STH){
+			//$id = $db->lastInsertId();
+			$ok = true;
+			$code = $e->Select1cCompanyCompany(array('1c_company_id'=>$in['value'],'company_id_to'=>$in['company_id']));
 
-            }
-        }
-
-
-        if($STH){
-            $ok 		= true;
-        }
+		}
+	}
 
 
-        $jsd['ok'] 	= $ok;
-        $jsd['code']	= $code;
-    }
+	if($STH){
+		$ok 		= true;
+	}
+
+
+	$jsd['ok'] 	= $ok;
+	$jsd['code']	= $code;
+}
 // Привязать номенклатуру
-    elseif($_GET['route'] == 'bind_1c_nomenclature'){
-        $ok = $STH = false;
-        $code = 'Нельзя привязать';
+elseif($_GET['route'] == 'bind_1c_nomenclature'){
+	$ok = $STH = false;
+	$code = 'Нельзя привязать';
 
-        if(COMPANY_ID_1C){
+	if(COMPANY_ID_1C){
 
-            $ok		= $api->BindNomenclature1c();
-            $code 	= 'Номенклатуры из 1С добавлены';
+		$ok		= $api->BindNomenclature1c();
+		$code 	= 'Номенклатуры из 1С добавлены';
 
-        }else{
+	}else{
 
-            $code = 'Не привязан идентификатор компании';
+		$code = 'Не привязан идентификатор компании';
 
-        }
+	}
 
-        $jsd['ok'] 	= $ok;
-        $jsd['code']	= $code;
-    }
+	$jsd['ok'] 	= $ok;
+	$jsd['code']	= $code;
+}
 // amo - Поставщики сторонних ресурсов (Получить список)
-    elseif($_GET['route'] == 'modal_amo_vendors'){
+elseif($_GET['route'] == 'modal_amo_vendors'){
 
-        $arr = $qrq->AmoVendors();
+	$arr = $qrq->AmoVendors();
 
-        $code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog admin-modal-categories','top'=>$arr['top'],'content'=>$arr['code']),
-            array('id'=>'','class'=>'') );
+	$code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog admin-modal-categories','top'=>$arr['top'],'content'=>$arr['code']),
+		array('id'=>'','class'=>'') );
 
-        $jsd['code'] = $code;
-    }
+	$jsd['code'] = $code;
+}
 // amo - сохранить - Добавить аккаунт поставщика
-    elseif($_GET['route'] == 'save_accountsadd'){
-        $ok = false;
-        $code = 'Нельзя сохранить';
+elseif($_GET['route'] == 'save_accountsadd'){
+	$ok = false;
+	$code = 'Нельзя сохранить';
 
-        // добавляем Аккаунт на Amo
+	// добавляем Аккаунт на Amo
 
-        $arr = $qrq->AmoAccountsadd(array('vendorid'=>$in['value'],'login'=>$in['login'],'password'=>$in['pass'],'parent_id'=>$in['parent_id']));
+	$arr = $qrq->AmoAccountsadd(array('vendorid'=>$in['value'],'login'=>$in['login'],'password'=>$in['pass'],'parent_id'=>$in['parent_id']));
 
-        ///
-        //vecho($arr);
+	///
+	//vecho($arr);
 
-        // Добавляем Аккаунт к нам в базу
-        if($arr['id']){
+	// Добавляем Аккаунт к нам в базу
+	if($arr['id']){
 
-            if(!$in['id']){// СОЗДАНИЕ
-                $STH = PreExecSQL(" INSERT INTO amo_accounts (company_id, vendorid, login, password, accounts_id, accounts_title, parent_id) VALUES (?,?,?,?,?,?,?); " ,
-                    array( COMPANY_ID,$in['value'],$in['login'],$in['pass'],$arr['id'],$arr['title'],$in['parent_id'] ));
-                if($STH){
-                    $id = $db->lastInsertId();
-                    $code 	= 'Аккаунт поставщика добавлен';
-                }
-            }else{// РЕДАКТИРОВАНИЕ
-                $STH = PreExecSQL(" UPDATE amo_accounts SET login=?, password=?, accounts_id=?, accounts_title=?, parent_id=?, data_update=NOW() WHERE id=? AND company_id=?; " ,
-                    array( $in['login'],$in['pass'],$arr['id'],$arr['title'],$in['parent_id'],$in['id'],COMPANY_ID ));
-                if($STH){
-                    $id = $in['id'];
-                    $code 	= 'Аккаунт поставщика обновлен';
-                }
-            }
+		if(!$in['id']){// СОЗДАНИЕ
+			$STH = PreExecSQL(" INSERT INTO amo_accounts (company_id, vendorid, login, password, accounts_id, accounts_title, parent_id) VALUES (?,?,?,?,?,?,?); " ,
+				array( COMPANY_ID,$in['value'],$in['login'],$in['pass'],$arr['id'],$arr['title'],$in['parent_id'] ));
+			if($STH){
+				$id = $db->lastInsertId();
+				$code 	= 'Аккаунт поставщика добавлен';
+			}
+		}else{// РЕДАКТИРОВАНИЕ
+			$STH = PreExecSQL(" UPDATE amo_accounts SET login=?, password=?, accounts_id=?, accounts_title=?, parent_id=?, data_update=NOW() WHERE id=? AND company_id=?; " ,
+				array( $in['login'],$in['pass'],$arr['id'],$arr['title'],$in['parent_id'],$in['id'],COMPANY_ID ));
+			if($STH){
+				$id = $in['id'];
+				$code 	= 'Аккаунт поставщика обновлен';
+			}
+		}
 
-            if($STH){
-                $ok		= true;
+		if($STH){
+			$ok		= true;
 
-            }
-        }else{
-            $code = $arr['errors_message'];
-        }
+		}
+	}else{
+		$code = $arr['errors_message'];
+	}
 
 
-        $jsd['ok'] 	= $ok;
-        $jsd['code']	= $code;
-    }
+	$jsd['ok'] 	= $ok;
+	$jsd['code']	= $code;
+}
 // amo - сохранить - Удалить аккаунт поставщика
-    elseif($_GET['route'] == 'delete_amo_accounts'){
-        $ok = $rez = $ok2 = false;
-        $code = 'Нельзя удалить';
+elseif($_GET['route'] == 'delete_amo_accounts'){
+	$ok = $rez = $ok2 = false;
+	$code = 'Нельзя удалить';
 
-        $company_id = (PRAVA_1&&$in['company_id'])? $in['company_id'] : COMPANY_ID;
+	$company_id = (PRAVA_1&&$in['company_id'])? $in['company_id'] : COMPANY_ID;
 
-        $r = reqAmoAccounts(array('company_id'=>$company_id,'id'=>$in['id']));
+	$r = reqAmoAccounts(array('company_id'=>$company_id,'id'=>$in['id']));
 
-        if(!empty($r)){
+	if(!empty($r)){
 
-            $arr = $qrq->AmoAccountsDelete(array('accounts_id'=>$r['accounts_id']));// удаляем Аккаунт на Amo
+		$arr = $qrq->AmoAccountsDelete(array('accounts_id'=>$r['accounts_id']));// удаляем Аккаунт на Amo
 
 
 
-            $STH = PreExecSQL(" DELETE FROM amo_accounts WHERE id=? AND company_id=?; " ,
-                array( $in['id'],$company_id ));
-            if($STH){
-                $ok		= true;
-                $code 	= 'Аккаунт удален в QRQ';
-            }
+		$STH = PreExecSQL(" DELETE FROM amo_accounts WHERE id=? AND company_id=?; " ,
+			array( $in['id'],$company_id ));
+		if($STH){
+			$ok		= true;
+			$code 	= 'Аккаунт удален в QRQ';
+		}
 
-            if($arr['rez']){
-                $ok2	   = true;
-                $code .= '<br/><br/>В QWEP Аккаунт удален';
-            }else{
-                $code .= '<br/><br/>В QWEP Аккаунт НЕ удален<br/><br/>'.$arr['errors_message'];
-            }
-        }
+		if($arr['rez']){
+			$ok2	   = true;
+			$code .= '<br/><br/>В QWEP Аккаунт удален';
+		}else{
+			$code .= '<br/><br/>В QWEP Аккаунт НЕ удален<br/><br/>'.$arr['errors_message'];
+		}
+	}
 
-        $jsd['ok'] 	= $ok;
-        $jsd['code']	= $code;
-        $jsd['ok2'] 	= $ok2;
-    }
+	$jsd['ok'] 	= $ok;
+	$jsd['code']	= $code;
+	$jsd['ok2'] 	= $ok2;
+}
 // модальное окно - авторизации на стороних ресурсах AMO
-    elseif($_GET['route'] == 'modal_amo_accounts_etp'){
+elseif($_GET['route'] == 'modal_amo_accounts_etp'){
 
-        // Проверяем есть ли поставщик в ЭТП
-        $cq 	= reqCompanyQrq(array('company_id'=>$in['company_id']));
+	// Проверяем есть ли поставщик в ЭТП
+	$cq 	= reqCompanyQrq(array('company_id'=>$in['company_id']));
 
-        if(!empty($cq)){
+	if(!empty($cq)){
 
-            $arr = $f->FormAmoAccountsEtp(array('company_id'=>$in['company_id']));
-            //vecho($arr);
-            $code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
-                array('id'=>'connect_users_etp-form','class'=>'') );
-        }
+		$arr = $f->FormAmoAccountsEtp(array('company_id'=>$in['company_id']));
+		//vecho($arr);
+		$code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
+			array('id'=>'connect_users_etp-form','class'=>'') );
+	}
 
-        $jsd['code'] = $code;
-    }
+	$jsd['code'] = $code;
+}
 // сохранить признак авторизации ЕТП на стороних ресурсах AMO после подписки на пользователя ЕТП
-    elseif($_GET['route'] == 'connect_users_etp'){
-        $ok = false;
-        $code = 'Нельзя сохранить';
+elseif($_GET['route'] == 'connect_users_etp'){
+	$ok = false;
+	$code = 'Нельзя сохранить';
 
-        if($in['company_id']&&$in['qrq_id']){
-
-
-            if($in['flag']=='no_autorize'){
-                // flag_autorize = 1  -  означает без авторизации (авторизация к этп берется из админки этой qrq_id и flag_autorize=3)
-                $STH = PreExecSQL(" INSERT INTO amo_accounts_etp (company_id, qrq_id, flag_autorize, login, pass, accounts_id, account_title) VALUES (?,?,?,?,?,?,?); " ,
-                    array( COMPANY_ID,$in['qrq_id'],1,'','',0,'' ));
-                if($STH){
-                    $ok		= true;
-                    $code 	= 'Сохранено';
-                }
-
-            }elseif($in['flag']=='add'){
-
-                if( $in['login']&&$in['pass'] ){
-                    // получаем vendorid
-                    $r = reqSlovQrq(array('id'=>$in['qrq_id']));
-                    $arr_v 		= explode('*',$r['vendorid']);
-                    $vendorid 	= isset($arr_v[0])? $arr_v[0] : '';
-                    $parent_id 	= isset($arr_v[1])? $arr_v[1] : 0;
-
-                    // добавляем Аккаунт на Amo
-
-                    $arr_a = $qrq->AmoAccountsadd(array('vendorid'=>$vendorid,'login'=>$in['login'],'password'=>$in['pass'],'parent_id'=>$parent_id));
-
-                    ///
-
-                    // Добавляем Аккаунт к нам в базу
-                    if($arr_a['id']){
-                        // flag_autorize = 2  -  означает авторизации самого пользователя
-                        if(!$in['id']){// СОЗДАНИЕ
-                            $STH = PreExecSQL(" INSERT INTO amo_accounts_etp (company_id, qrq_id, flag_autorize, login, pass, accounts_id, account_title) VALUES (?,?,?,?,?,?,?); " ,
-                                array( COMPANY_ID,$in['qrq_id'],2,$in['login'],$in['pass'],$arr_a['id'],$arr_a['title'] ));
-                            if($STH){
-                                $ok		= true;
-                                $code 	= 'Аккаунт поставщика добавлен';
-                            }
-                        }
-
-                    }else{
-                        $code = $arr_a['errors_message'];
-                    }
-                }else{
-                    $code = 'Введите логин/пароль';
-                }
-
-            }
-
-        }else{
-            $code = 'Выберите ЭТП';
-        }
-
-        if($ok){
+	if($in['company_id']&&$in['qrq_id']){
 
 
-        }
+		if($in['flag']=='no_autorize'){
+			// flag_autorize = 1  -  означает без авторизации (авторизация к этп берется из админки этой qrq_id и flag_autorize=3)
+			$STH = PreExecSQL(" INSERT INTO amo_accounts_etp (company_id, qrq_id, flag_autorize, login, pass, accounts_id, account_title) VALUES (?,?,?,?,?,?,?); " ,
+				array( COMPANY_ID,$in['qrq_id'],1,'','',0,'' ));
+			if($STH){
+				$ok		= true;
+				$code 	= 'Сохранено';
+			}
+
+		}elseif($in['flag']=='add'){
+
+			if( $in['login']&&$in['pass'] ){
+				// получаем vendorid
+				$r = reqSlovQrq(array('id'=>$in['qrq_id']));
+				$arr_v 		= explode('*',$r['vendorid']);
+				$vendorid 	= isset($arr_v[0])? $arr_v[0] : '';
+				$parent_id 	= isset($arr_v[1])? $arr_v[1] : 0;
+
+				// добавляем Аккаунт на Amo
+
+				$arr_a = $qrq->AmoAccountsadd(array('vendorid'=>$vendorid,'login'=>$in['login'],'password'=>$in['pass'],'parent_id'=>$parent_id));
+
+				///
+
+				// Добавляем Аккаунт к нам в базу
+				if($arr_a['id']){
+					// flag_autorize = 2  -  означает авторизации самого пользователя
+					if(!$in['id']){// СОЗДАНИЕ
+						$STH = PreExecSQL(" INSERT INTO amo_accounts_etp (company_id, qrq_id, flag_autorize, login, pass, accounts_id, account_title) VALUES (?,?,?,?,?,?,?); " ,
+							array( COMPANY_ID,$in['qrq_id'],2,$in['login'],$in['pass'],$arr_a['id'],$arr_a['title'] ));
+						if($STH){
+							$ok		= true;
+							$code 	= 'Аккаунт поставщика добавлен';
+						}
+					}
+
+				}else{
+					$code = $arr_a['errors_message'];
+				}
+			}else{
+				$code = 'Введите логин/пароль';
+			}
+
+		}
+
+	}else{
+		$code = 'Выберите ЭТП';
+	}
+
+	if($ok){
 
 
-        $jsd['ok'] 	= $ok;
-        $jsd['code']	= $code;
-    }
+	}
+
+
+	$jsd['ok'] 	= $ok;
+	$jsd['code']	= $code;
+}
 // проверка кнопки "Без входа" при подписке Этп
-    elseif($_GET['route'] == 'proverka_button_etp_no_autorize'){
+elseif($_GET['route'] == 'proverka_button_etp_no_autorize'){
 
-        $cq 	= ($in['id'])? reqSlovQrq(array('id'=>$in['id'])) : array('flag_autorize'=>0);;
+	$cq 	= ($in['id'])? reqSlovQrq(array('id'=>$in['id'])) : array('flag_autorize'=>0);;
 
-        if($cq['flag_autorize']){
-            $ok = true;
-        }else{
-            $ok = false;
-        }
+	if($cq['flag_autorize']){
+		$ok = true;
+	}else{
+		$ok = false;
+	}
 
-        $jsd['ok'] = $ok;
-    }
+	$jsd['ok'] = $ok;
+}
 
 
 // Генерация счета PDF
-    elseif($_GET['route'] == 'pdf_generation'){
-        $ok = $STH = false;
-        $code = '';
-        $current_date = date('d.m.Y', time());
-        $current_date_file = date('d_m_Y', time());;
-        //var_dump($in);
+elseif($_GET['route'] == 'pdf_generation'){
+	$ok = $STH = false;
+	$code = '';
+	$current_date = date('d.m.Y', time());
+	$current_date_file = date('d_m_Y', time());;
+	//var_dump($in);
 
-        $i = 0;
-        $total = $nds = 0;
-        $name_servies = '';
-        $number_schet = 0;
+	$i = 0;
+	$total = $nds = 0;
+	$name_servies = '';
+	$number_schet = 0;
 
-        $rbp = reqBalancePRO90();
-        $count3 = ($rbp) ? (int) $rbp[0]['count3'] : 0; //скидка 90% до 3-х раз включительно;
-        $skidka = ($count3 < 3) ? '(скидка 90%)' : '';
-        $price_pro = ($count3 < 3) ? 399 : PRICE_PRO;
+	$rbp = reqBalancePRO90();
+	$count3 = ($rbp) ? (int) $rbp[0]['count3'] : 0; //скидка 90% до 3-х раз включительно;
+	$skidka = ($count3 < 3) ? '(скидка 90%)' : '';
+	$price_pro = ($count3 < 3) ? 399 : PRICE_PRO;
 
-        $rb = reqBalance();
-        $balance = (!empty($rb[0]['total'])) ? $rb[0]['total'] : 0; // текущий баланс компании
+	$rb = reqBalance();
+	$balance = (!empty($rb[0]['total'])) ? $rb[0]['total'] : 0; // текущий баланс компании
 
-        if ($in['type_skills'] == 1){ //pro
+	if ($in['type_skills'] == 1){ //pro
 
-            $name_servies = 'Услуга “Пакет Pro. Для упрощения закупок и снижения цен на товары” '.$skidka;
-            $sum_to_pay = $price_pro - $balance; //к оплате с учетом баланса
+		$name_servies = 'Услуга “Пакет Pro. Для упрощения закупок и снижения цен на товары” '.$skidka;
+		$sum_to_pay = $price_pro - $balance; //к оплате с учетом баланса
 
-        } elseif ($in['type_skills'] == 2){ //vip
+	} elseif ($in['type_skills'] == 2){ //vip
 
-            $name_servies = 'Услуга “Пакет Vip. Для упрощения закупок и снижения цен на товары”';
-            $sum_to_pay = PRICE_VIP - $balance; //к оплате с учетом баланса
+		$name_servies = 'Услуга “Пакет Vip. Для упрощения закупок и снижения цен на товары”';
+		$sum_to_pay = PRICE_VIP - $balance; //к оплате с учетом баланса
 
-        } elseif ($in['type_skills'] == 0){ //Пополнение
+	} elseif ($in['type_skills'] == 0){ //Пополнение
 
-            $name_servies = '“Пополнение счета”';
-            $sum_to_pay = (int)$in['total'];
-        }
-
-
-        //Добавление деталей счета
-        $STH = PreExecSQL(" INSERT INTO company_details (company_id,name,inn,kpp,rschet,bik,korr_schet,ur_adr,type_skills) VALUES (?,?,?,?,?,?,?,?,?); " ,
-            array( COMPANY_ID,$in['company'],$in['inn'],$in['kpp'],$in['rschet'],$in['bik'],$in['korr_schet'],$in['ur_adr'],$in['type_skills']));
-        //Добавление информации об оплате
-        $STH = PreExecSQL(" INSERT INTO pro_invoices (company_id,summ,type_s) VALUES (?,?,?); " ,
-            array( COMPANY_ID,$sum_to_pay,$in['type_skills']));
-        $last_id = $db->lastInsertId();
-
-        /**/
-
-        //Организация по ИНН
-        // https://github.com/hflabs/dadata-php
+		$name_servies = '“Пополнение счета”';
+		$sum_to_pay = (int)$in['total'];
+	}
 
 
-        //require_once './protected/source/dadata/dadata.php';
+	//Добавление деталей счета
+	$STH = PreExecSQL(" INSERT INTO company_details (company_id,name,inn,kpp,rschet,bik,korr_schet,ur_adr,type_skills) VALUES (?,?,?,?,?,?,?,?,?); " ,
+		array( COMPANY_ID,$in['company'],$in['inn'],$in['kpp'],$in['rschet'],$in['bik'],$in['korr_schet'],$in['ur_adr'],$in['type_skills']));
+	//Добавление информации об оплате
+	$STH = PreExecSQL(" INSERT INTO pro_invoices (company_id,summ,type_s) VALUES (?,?,?); " ,
+		array( COMPANY_ID,$sum_to_pay,$in['type_skills']));
+	$last_id = $db->lastInsertId();
 
-        //$token = "acec744f6fa4b4c472e3b5d8131556a8e603f5ec";
-        //$secret = "dcacf215ea017d430361b28a31165c8845056988";
+	/**/
+
+	//Организация по ИНН
+	// https://github.com/hflabs/dadata-php
 
 
-        //$dadata = new \Dadata\DadataClient($token, null);
-        //$dadata = new \Dadata\DadataClient($token, $secret);
+	//require_once './protected/source/dadata/dadata.php';
 
-        //$result = $dadata->findById("party", "026814791764", 1);
-        //var_dump($result);
+	//$token = "acec744f6fa4b4c472e3b5d8131556a8e603f5ec";
+	//$secret = "dcacf215ea017d430361b28a31165c8845056988";
 
-        require_once  './protected/source/makePDF/vendor/autoload.php';
-        $mpdf = new \Mpdf\Mpdf([
-            'mode' => 'utf-8', // кодировка (по умолчанию UTF-8)
-            'format' => 'A4', // - формат документа
-            //'orientation' => 'L' // - альбомная ориентация
-        ]);
 
-        $kpp = ($in['kpp']) ? ", КПП ". $in['kpp']: "";
-        $company_name = ($in['company']) ? $in['company']: "";
-        $inn = ($in['inn']) ? ", ИНН ". $in['inn']: "";
-        $ur_adr = ($in['ur_adr']) ? ", ". $in['ur_adr']: "";
+	//$dadata = new \Dadata\DadataClient($token, null);
+	//$dadata = new \Dadata\DadataClient($token, $secret);
 
-        $number_schet = sprintf("%06d", $last_id);
+	//$result = $dadata->findById("party", "026814791764", 1);
+	//var_dump($result);
 
-        $html = '
+	require_once  './protected/source/makePDF/vendor/autoload.php';
+	$mpdf = new \Mpdf\Mpdf([
+		'mode' => 'utf-8', // кодировка (по умолчанию UTF-8)
+		'format' => 'A4', // - формат документа
+		//'orientation' => 'L' // - альбомная ориентация
+	]);
+
+	$kpp = ($in['kpp']) ? ", КПП ". $in['kpp']: "";
+	$company_name = ($in['company']) ? $in['company']: "";
+	$inn = ($in['inn']) ? ", ИНН ". $in['inn']: "";
+	$ur_adr = ($in['ur_adr']) ? ", ". $in['ur_adr']: "";
+
+	$number_schet = sprintf("%06d", $last_id);
+
+	$html = '
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<style type="text/css">
+	* {font-family:arial;font-size:14px;line-height:14px;}
+	table {margin: 0 0 15px 0;width: 100%;border-collapse: collapse;border-spacing:0;}		
+	table td {padding: 5px;}	
+	table th {padding: 5px;font-weight: bold;} 
+	.header {margin: 0 0 0 0;padding: 0 0 15px 0;font-size: 12px;line-height: 12px;text-align: center;}		
+	/* Реквизиты банка */
+	.details td {padding: 3px 2px;border: 1px solid #000000;font-size: 12px;line-height: 12px;vertical-align: top;}
+	h1 {margin: 0 0 10px 0;padding: 10px 0 10px 0;border-bottom: 2px solid #000;font-weight: bold;font-size: 20px;} 
+	/* Поставщик/Покупатель */
+	.contract th {padding: 3px 0;vertical-align: top;text-align: left;font-size: 13px;line-height: 15px;}	
+	.contract td {padding: 3px 0;}		
+
+	/* Наименование товара, работ, услуг */
+	.list thead, .list tbody  {border: 2px solid #000;}
+	.list thead th {padding: 4px 0;border: 1px solid #000;vertical-align: middle;text-align: center;}	
+	.list tbody td {padding: 0 2px;border: 1px solid #000;vertical-align: middle;font-size: 11px;line-height: 13px;}	
+	.list tfoot th {padding: 3px 2px;border: none;text-align: right;}	 
+	/* Сумма */
+	.total {margin: 0 0 20px 0;padding: 0 0 10px 0;border-bottom: 2px solid #000;}	
+	.total p {margin: 0;padding: 0;}
 	
-	<style type="text/css">
-		* {font-family:arial;font-size:14px;line-height:14px;}
-		table {margin: 0 0 15px 0;width: 100%;border-collapse: collapse;border-spacing:0;}		
-		table td {padding: 5px;}	
-		table th {padding: 5px;font-weight: bold;} 
-		.header {margin: 0 0 0 0;padding: 0 0 15px 0;font-size: 12px;line-height: 12px;text-align: center;}		
-		/* Реквизиты банка */
-		.details td {padding: 3px 2px;border: 1px solid #000000;font-size: 12px;line-height: 12px;vertical-align: top;}
- 		h1 {margin: 0 0 10px 0;padding: 10px 0 10px 0;border-bottom: 2px solid #000;font-weight: bold;font-size: 20px;} 
-		/* Поставщик/Покупатель */
-		.contract th {padding: 3px 0;vertical-align: top;text-align: left;font-size: 13px;line-height: 15px;}	
-		.contract td {padding: 3px 0;}		
- 
-		/* Наименование товара, работ, услуг */
-		.list thead, .list tbody  {border: 2px solid #000;}
-		.list thead th {padding: 4px 0;border: 1px solid #000;vertical-align: middle;text-align: center;}	
-		.list tbody td {padding: 0 2px;border: 1px solid #000;vertical-align: middle;font-size: 11px;line-height: 13px;}	
-		.list tfoot th {padding: 3px 2px;border: none;text-align: right;}	 
-		/* Сумма */
-		.total {margin: 0 0 20px 0;padding: 0 0 10px 0;border-bottom: 2px solid #000;}	
-		.total p {margin: 0;padding: 0;}
-		
-		/* Руководитель, бухгалтер */
-		.sign {position: relative;}
-		.sign table {width: 60%;}
-		.sign th {padding: 40px 0 0 0;text-align: left;}
-		.sign td {padding: 40px 0 0 0;border-bottom: 1px solid #000;text-align: right;font-size: 12px;}		
-		.sign-1 {position: absolute;left: 250px;top: 150px;}	
-		.sign-2 {position: absolute;left: 250px;top: 220px;}	
-		.printing {position: absolute;left: 520px;top: 350px;}
-	</style>
+	/* Руководитель, бухгалтер */
+	.sign {position: relative;}
+	.sign table {width: 60%;}
+	.sign th {padding: 40px 0 0 0;text-align: left;}
+	.sign td {padding: 40px 0 0 0;border-bottom: 1px solid #000;text-align: right;font-size: 12px;}		
+	.sign-1 {position: absolute;left: 250px;top: 150px;}	
+	.sign-2 {position: absolute;left: 250px;top: 220px;}	
+	.printing {position: absolute;left: 520px;top: 350px;}
+</style>
 </head>
 <body>
-	<p class="header">
-		Внимание! Оплата данного счета означает согласие с условиями оплаты опубликованными на сайте QRQ.ru.		
-	</p>
- 
-	<table class="details">
-		<tbody>
-			<tr>
-				<td colspan="2" style="border-bottom: none;">Отделение «Зеленая роща» банка ОАО «УРАЛСИБ» г. Уфа</td>
-				<td>БИК</td>
-				<td style="border-bottom: none;">048073770</td>
-			</tr>
-			<tr>
-				<td colspan="2" style="border-top: none; font-size: 10px;">Банк получателя</td>
-				<td>Сч. №</td>
-				<td style="border-top: none;">30101810600000000770</td>
-			</tr>
-			<tr>
-				<td width="25%">ИНН 026814791764</td>
-				<td width="30%">КПП 000000000</td>
-				<td width="10%" rowspan="3">Сч. №</td>
-				<td width="35%" rowspan="3">40802810200550000443</td>
-			</tr>
-			<tr>
-				<td colspan="2" style="border-bottom: none;">ИП Султанов Денис Фанилевич</td>
-			</tr>
-			<tr>
-				<td colspan="2" style="border-top: none; font-size: 10px;">Получатель</td>
-			</tr>
-		</tbody>
-	</table>
- 
-	<h1>Счет на оплату № '.$number_schet.' от '.$current_date.'г.</h1>
- 
-	<table class="contract">
-		<tbody>
-			<tr>
-				<td width="15%">Поставщик:</td>
-				<th width="85%">
-					ИП Султанов Денис Фанилевич, ИНН 026814791764, 450074, г. Уфа, ул. Софьи Перовской, д.36 кв. 45
-				</th>
-			</tr>
-			<tr>
-				<td>Покупатель:</td>
-				<th>
-					'.$company_name.$inn.$kpp.$ur_adr.'
-				</th>
-			</tr>
-		</tbody>
-	</table>
- 
-	<table class="list">
-		<thead>
-			<tr>
-				<th width="5%">№</th>
-				<th width="53%">Наименование услуг</th>
-				<th width="8%">Коли-<br>чество</th>
-				<th width="6%">Ед.<br>изм.</th>
-				<th width="14%">Цена</th>
-				<th width="14%">Сумма</th>
-			</tr>
-		</thead>
-		<tbody>
-		
-			<tr>
-				<td align="center">1</td>
-				<td align="left">' .$name_servies. '</td>
-				<td align="right">1</td>
-				<td align="left">шт.</td>
-				<td align="right">' . format_price($sum_to_pay) . '</td>
-				<td align="right">' . format_price($sum_to_pay) . '</td>
-			</tr>		
-		
-		';
+<p class="header">
+	Внимание! Оплата данного счета означает согласие с условиями оплаты опубликованными на сайте QRQ.ru.		
+</p>
 
+<table class="details">
+	<tbody>
+		<tr>
+			<td colspan="2" style="border-bottom: none;">Отделение «Зеленая роща» банка ОАО «УРАЛСИБ» г. Уфа</td>
+			<td>БИК</td>
+			<td style="border-bottom: none;">048073770</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="border-top: none; font-size: 10px;">Банк получателя</td>
+			<td>Сч. №</td>
+			<td style="border-top: none;">30101810600000000770</td>
+		</tr>
+		<tr>
+			<td width="25%">ИНН 026814791764</td>
+			<td width="30%">КПП 000000000</td>
+			<td width="10%" rowspan="3">Сч. №</td>
+			<td width="35%" rowspan="3">40802810200550000443</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="border-bottom: none;">ИП Султанов Денис Фанилевич</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="border-top: none; font-size: 10px;">Получатель</td>
+		</tr>
+	</tbody>
+</table>
 
+<h1>Счет на оплату № '.$number_schet.' от '.$current_date.'г.</h1>
 
-        $html .= '
-		</tbody>
-		<tfoot>
-			<tr>
-				<th colspan="5">Итого:</th>
-				<th>' . format_price($sum_to_pay) . '</th>
-			</tr>
-			<tr>
-				<th colspan="5">Всего к оплате:</th>
-				<th>' . format_price($sum_to_pay) . '</th>
-			</tr>
-			<tr>
-				<th colspan="5">Сумма НДС:</th>
-				<th>Без НДС</th>
-			</tr>			
-			
-		</tfoot>
-	</table>
+<table class="contract">
+	<tbody>
+		<tr>
+			<td width="15%">Поставщик:</td>
+			<th width="85%">
+				ИП Султанов Денис Фанилевич, ИНН 026814791764, 450074, г. Уфа, ул. Софьи Перовской, д.36 кв. 45
+			</th>
+		</tr>
+		<tr>
+			<td>Покупатель:</td>
+			<th>
+				'.$company_name.$inn.$kpp.$ur_adr.'
+			</th>
+		</tr>
+	</tbody>
+</table>
+
+<table class="list">
+	<thead>
+		<tr>
+			<th width="5%">№</th>
+			<th width="53%">Наименование услуг</th>
+			<th width="8%">Коли-<br>чество</th>
+			<th width="6%">Ед.<br>изм.</th>
+			<th width="14%">Цена</th>
+			<th width="14%">Сумма</th>
+		</tr>
+	</thead>
+	<tbody>
 	
-	<div class="total">
-		<p>Всего наименований 1, на сумму '. format_price($sum_to_pay) .' руб.</p>
-		<p>Сумма: <strong>' . str_price($sum_to_pay) . '</strong></p>
-	</div>
+		<tr>
+			<td align="center">1</td>
+			<td align="left">' .$name_servies. '</td>
+			<td align="right">1</td>
+			<td align="left">шт.</td>
+			<td align="right">' . format_price($sum_to_pay) . '</td>
+			<td align="right">' . format_price($sum_to_pay) . '</td>
+		</tr>		
 	
-	<div class="sign">
-		<!--
-		<img class="sign-1" src="/image/invoice/sign-1.png">
-		<img class="sign-2" src="/image/invoice/sign-1.png">
-		<img class="printing" src="/image/invoice/printing.png">
-		-->
-		<table>
-			<tbody>
-				<tr>
-					<th width="30%">Руководитель</th>
-					<td width="70%">Султанов Д.Ф.</td>
-				</tr>
-				<tr>
-					<th>Бухгалтер</th>
-					<td>Султанов Д.Ф.</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+	';
+
+
+
+	$html .= '
+	</tbody>
+	<tfoot>
+		<tr>
+			<th colspan="5">Итого:</th>
+			<th>' . format_price($sum_to_pay) . '</th>
+		</tr>
+		<tr>
+			<th colspan="5">Всего к оплате:</th>
+			<th>' . format_price($sum_to_pay) . '</th>
+		</tr>
+		<tr>
+			<th colspan="5">Сумма НДС:</th>
+			<th>Без НДС</th>
+		</tr>			
+		
+	</tfoot>
+</table>
+
+<div class="total">
+	<p>Всего наименований 1, на сумму '. format_price($sum_to_pay) .' руб.</p>
+	<p>Сумма: <strong>' . str_price($sum_to_pay) . '</strong></p>
+</div>
+
+<div class="sign">
+	<!--
+	<img class="sign-1" src="/image/invoice/sign-1.png">
+	<img class="sign-2" src="/image/invoice/sign-1.png">
+	<img class="printing" src="/image/invoice/printing.png">
+	-->
+	<table>
+		<tbody>
+			<tr>
+				<th width="30%">Руководитель</th>
+				<td width="70%">Султанов Д.Ф.</td>
+			</tr>
+			<tr>
+				<th>Бухгалтер</th>
+				<td>Султанов Д.Ф.</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 </body>
 </html>';
 
 
-        $mpdf->SetTitle('QRQ.ru счет на оплату'); // Заголовок PDF
-        $mpdf->SetAuthor('QRQ.ru');		// Автор
-        $mpdf->WriteHTML($html);
+	$mpdf->SetTitle('QRQ.ru счет на оплату'); // Заголовок PDF
+	$mpdf->SetAuthor('QRQ.ru');		// Автор
+	$mpdf->WriteHTML($html);
 
 
 
-        // устанавливаем номер страницы если нужно
-        //$mpdf->setFooter('{PAGENO}');
-        // подключаем стили
-        // подключаем файл стилей
-        //$stylesheet = file_get_contents('style.css');
-        //$mpdf->WriteHTML($stylesheet,1);
-        // генерируем сам PDF
-        //$mpdf->WriteHTML($html,2);
-        // выводим PDF  в браузер
-        //$mpdf->Output();
-        // или сохраняем PDF в файл
+	// устанавливаем номер страницы если нужно
+	//$mpdf->setFooter('{PAGENO}');
+	// подключаем стили
+	// подключаем файл стилей
+	//$stylesheet = file_get_contents('style.css');
+	//$mpdf->WriteHTML($stylesheet,1);
+	// генерируем сам PDF
+	//$mpdf->WriteHTML($html,2);
+	// выводим PDF  в браузер
+	//$mpdf->Output();
+	// или сохраняем PDF в файл
 
 
-        $path_to_pdf = $_SERVER["DOCUMENT_ROOT"].'/files/invoices/'.COMPANY_ID.'/';
-        $path_to_pdf_domen = DOMEN.'/files/invoices/'.COMPANY_ID.'/';
-        if (!file_exists($path_to_pdf)) {
-            mkdir($path_to_pdf, 0777, true);
-        }
+	$path_to_pdf = $_SERVER["DOCUMENT_ROOT"].'/files/invoices/'.COMPANY_ID.'/';
+	$path_to_pdf_domen = DOMEN.'/files/invoices/'.COMPANY_ID.'/';
+	if (!file_exists($path_to_pdf)) {
+		mkdir($path_to_pdf, 0777, true);
+	}
 
-        $mpdf->Output($path_to_pdf."invoices_".$in['inn']."_".$current_date_file.".pdf",'F');
-        $filename = $path_to_pdf_domen."invoices_".$in['inn']."_".$current_date_file.".pdf";
+	$mpdf->Output($path_to_pdf."invoices_".$in['inn']."_".$current_date_file.".pdf",'F');
+	$filename = $path_to_pdf_domen."invoices_".$in['inn']."_".$current_date_file.".pdf";
 
-        //header("Content-Disposition: attachment; filename=".basename($filename).";" );
-        //header("location:invoices_".$in['inn']."_".$current_date_file.".pdf");
+	//header("Content-Disposition: attachment; filename=".basename($filename).";" );
+	//header("location:invoices_".$in['inn']."_".$current_date_file.".pdf");
 
-        /**/
+	/**/
 
-        if($STH){
-            $ok 		= true;
-            $code 	= 'Ура, счет скачивается. Оплатите его. Вы можете с нами связаться и мы подключим навыки до посупления денежных средств. <br />
-					8 (800) 250 26 10';
-        }
-
-
-        $jsd['ok'] 	= $ok;
-        $jsd['code'] = $code;
-        $jsd['file'] = $filename;
-    }
-    // Модальное окно Подписаться
-    elseif($_GET['route'] == 'modal_podpiska_in'){
-
-        $arr = $f->FormPodpiska(array('id'=>$in['id'],'type_skills'=>$in['type_skills']));
-
-        $code = $t->getModal(
-            array('class_dialog' => 'podpiska', 'top' => $arr['top'], 'content' => $arr['content'], 'bottom' => $arr['bottom']),
-            array('id' => 'Podpiska-form', 'class' => '')
-        );
-
-        $jsd['code'] = $code;
-    }
-    // Модальное окно Отписаться
-    elseif($_GET['route'] == 'modal_podpiska_out'){
-
-        $arr = $f->FormCancelPodpiska(array('id'=>$in['id']));
-
-        $code = $t->getModal(
-            array('class_dialog' => 'podpiska', 'top' => $arr['top'], 'content' => $arr['content'], 'bottom' => $arr['bottom']),
-            array('id' => 'cancelPodpiska-form', 'class' => '')
-        );
-
-        $jsd['code'] = $code;
-    }
-    // Подключить/Отключить Pro режим
-    elseif($_GET['route'] == 'user_pro_mode'){
-
-        $ok = false;
-        $code = $alert = '';
-
-        $rc = reqCompany(array('id'=>$in['id']));
-
-        $rbp = reqBalancePRO90();
-        $count3 = ($rbp) ? (int) $rbp[0]['count3'] : 0;
-        $price_pro = ($count3 < 3) ? 399 : PRICE_PRO;	//скидка 90% до 3-х раз включительно
-
-        if ($in['type_skills'] == 1){ //pro
-            $total = 0 - $price_pro;
-        } elseif ($in['type_skills'] == 2){ //vip
-            $total = 0 - PRICE_VIP;
-        }
-        //var_dump($rc['pro_mode']);
-        //echo $rc['pro_mode'];
-
-        $pro_mode = ($rc['pro_mode']>0)? 0 : 1;
-        $pro_mode_text = ($rc['pro_mode']>0)? 'Подписка снята' : 'Подписка оформлена';
-
-        if ($pro_mode>0){	//вычитаем сумму только когда офомляем подписку
-            $STH = PreExecSQL(" INSERT INTO company_balance (company_id,total,type) VALUES (?,?,?); " ,
-                array( COMPANY_ID,$total,$in['type_skills']));
-        }
-
-        $STH = PreExecSQL(" UPDATE company SET pro_mode=? WHERE id=?; " ,
-            array( $pro_mode, $in['id'] ));
-
-        if($STH){
-            $ok = true;
-            $code = $pro_mode_text;
-        }
-
-        $jsd['ok'] 		= $ok;
-        $jsd['code']	= $code;
+	if($STH){
+		$ok 		= true;
+		$code 	= 'Ура, счет скачивается. Оплатите его. Вы можете с нами связаться и мы подключим навыки до посупления денежных средств. <br />
+				8 (800) 250 26 10';
+	}
 
 
-    }
+	$jsd['ok'] 	= $ok;
+	$jsd['code'] = $code;
+	$jsd['file'] = $filename;
+}
+// Модальное окно Подписаться
+elseif($_GET['route'] == 'modal_podpiska_in'){
+
+	$arr = $f->FormPodpiska(array('id'=>$in['id'],'type_skills'=>$in['type_skills']));
+
+	$code = $t->getModal(
+		array('class_dialog' => 'podpiska', 'top' => $arr['top'], 'content' => $arr['content'], 'bottom' => $arr['bottom']),
+		array('id' => 'Podpiska-form', 'class' => '')
+	);
+
+	$jsd['code'] = $code;
+}
+// Модальное окно Отписаться
+elseif($_GET['route'] == 'modal_podpiska_out'){
+
+	$arr = $f->FormCancelPodpiska(array('id'=>$in['id']));
+
+	$code = $t->getModal(
+		array('class_dialog' => 'podpiska', 'top' => $arr['top'], 'content' => $arr['content'], 'bottom' => $arr['bottom']),
+		array('id' => 'cancelPodpiska-form', 'class' => '')
+	);
+
+	$jsd['code'] = $code;
+}
+// Подключить/Отключить Pro режим
+elseif($_GET['route'] == 'user_pro_mode'){
+
+	$ok = false;
+	$code = $alert = '';
+
+	$rc = reqCompany(array('id'=>$in['id']));
+
+	$rbp = reqBalancePRO90();
+	$count3 = ($rbp) ? (int) $rbp[0]['count3'] : 0;
+	$price_pro = ($count3 < 3) ? 399 : PRICE_PRO;	//скидка 90% до 3-х раз включительно
+
+	if ($in['type_skills'] == 1){ //pro
+		$total = 0 - $price_pro;
+	} elseif ($in['type_skills'] == 2){ //vip
+		$total = 0 - PRICE_VIP;
+	}
+	//var_dump($rc['pro_mode']);
+	//echo $rc['pro_mode'];
+
+	$pro_mode = ($rc['pro_mode']>0)? 0 : 1;
+	$pro_mode_text = ($rc['pro_mode']>0)? 'Подписка снята' : 'Подписка оформлена';
+
+	if ($pro_mode>0){	//вычитаем сумму только когда офомляем подписку
+		$STH = PreExecSQL(" INSERT INTO company_balance (company_id,total,type) VALUES (?,?,?); " ,
+			array( COMPANY_ID,$total,$in['type_skills']));
+	}
+
+	$STH = PreExecSQL(" UPDATE company SET pro_mode=? WHERE id=?; " ,
+		array( $pro_mode, $in['id'] ));
+
+	if($STH){
+		$ok = true;
+		$code = $pro_mode_text;
+	}
+
+	$jsd['ok'] 		= $ok;
+	$jsd['code']	= $code;
+
+
+}
 // Изменение типов пакетов (PRO/VIP)
-    elseif($_GET['route'] == 'change_pro_mode'){
+elseif($_GET['route'] == 'change_pro_mode'){
 
-        $ok = false;
-        $code = '';
-        //$in['total']  $in['type_skills']  $in['balance']
+	$ok = false;
+	$code = '';
+	//$in['total']  $in['type_skills']  $in['balance']
 
-        //reqBalance(array('company_id'=>LOGIN_ID));
-        //$type = 1; //по умолчанию идет режим PRO
+	//reqBalance(array('company_id'=>LOGIN_ID));
+	//$type = 1; //по умолчанию идет режим PRO
 
-        $rbp = reqBalancePRO90();
-        $count3 = ($rbp) ? (int) $rbp[0]['count3'] : 0;
-        $price_pro = ($count3 < 3) ? 399 : PRICE_PRO;
+	$rbp = reqBalancePRO90();
+	$count3 = ($rbp) ? (int) $rbp[0]['count3'] : 0;
+	$price_pro = ($count3 < 3) ? 399 : PRICE_PRO;
 
-        if( $in['type_skills'] == 1){
-            $total = $price_pro-$in['balance'];
+	if( $in['type_skills'] == 1){
+		$total = $price_pro-$in['balance'];
 
-        } else {
-            $total = PRICE_VIP-$in['balance'];
+	} else {
+		$total = PRICE_VIP-$in['balance'];
 
-        }
+	}
 
-        $code = $total;
-
-
-        $ok = true;
-
-        $jsd['ok'] 		= $ok;
-        $jsd['code']	= $code;
-
-    }
-    // Модальное окно Пополнить баланс
-    elseif($_GET['route'] == 'modal_add_balance'){
-
-        $arr = $f->FormAddBalance(array('balance'=>$in['balance']));
-
-        $code = $t->getModal(
-            array('class_dialog' => 'balance', 'top' => $arr['top'], 'content' => $arr['content'], 'bottom' => $arr['bottom']),
-            array('id' => 'addBalance-form', 'class' => '')
-        );
-
-        $jsd['code'] = $code;
-    }
-    // Пополнить баланс
-    elseif($_GET['route'] == 'add_balance'){
-        $ok = false;
-        $code = '';
-
-        $name_servies = 'Пополнение счета';
-        $sum_to_pay = $in['balance'];
-
-        if ($sum_to_pay>0){
-            /* формирование ссылки для оплаты картой - yookassa */
-            if(!empty($_SESSION["paymentId"]))
-            {
-                unset($_SESSION["paymentId"]); //если сессия paymentId не пуста, читим его
-            }
-
-            require_once './protected/source/yookassa-sdk/lib/autoload.php';
-            //$client = new Client();
-            $client = new \YooKassa\Client();
-            $client->setAuth(YOOKASSA_SHOPID, YOOKASSA_API);
-
-            $idempotenceKey = gen_uuid();
-
-            $response = $client->createPayment(
-                array(
-                    'amount' => array(
-                        'value' => $sum_to_pay,
-                        'currency' => 'RUB',
-                    ),
-                    'confirmation' => array(
-                        'type' => 'redirect',
-                        'return_url' => DOMEN.'/pro/return_payment',
-                    ),
-                    'capture' => true,
-                    'description' => $name_servies,
-                    'metadata' => array(
-                        'order_id' => '0000',
-                    )
-                ),
-                $idempotenceKey
-            );
-
-            $paymentId = $response['id'];
-            $_SESSION['paymentId'] = $paymentId;
-            //get confirmation url
-            $confirmationUrl = $response->getConfirmation()->getConfirmationUrl();
-
-            //Добавление информации об оплате
-            $STH = PreExecSQL(" INSERT INTO pro_invoices (company_id,summ,type_s,paymentId) VALUES (?,?,?,?); " ,
-                array( COMPANY_ID,$sum_to_pay,0,$paymentId));
-
-            $ok = true;
-            $code = $confirmationUrl;
-        }
+	$code = $total;
 
 
+	$ok = true;
 
-        $jsd['ok'] = $ok;
-        $jsd['code'] = $code;
-    }
+	$jsd['ok'] 		= $ok;
+	$jsd['code']	= $code;
+
+}
+// Модальное окно Пополнить баланс
+elseif($_GET['route'] == 'modal_add_balance'){
+
+	$arr = $f->FormAddBalance(array('balance'=>$in['balance']));
+
+	$code = $t->getModal(
+		array('class_dialog' => 'balance', 'top' => $arr['top'], 'content' => $arr['content'], 'bottom' => $arr['bottom']),
+		array('id' => 'addBalance-form', 'class' => '')
+	);
+
+	$jsd['code'] = $code;
+}
+// Пополнить баланс
+elseif($_GET['route'] == 'add_balance'){
+	$ok = false;
+	$code = '';
+
+	$name_servies = 'Пополнение счета';
+	$sum_to_pay = $in['balance'];
+
+	if ($sum_to_pay>0){
+		/* формирование ссылки для оплаты картой - yookassa */
+		if(!empty($_SESSION["paymentId"]))
+		{
+			unset($_SESSION["paymentId"]); //если сессия paymentId не пуста, читим его
+		}
+
+		require_once './protected/source/yookassa-sdk/lib/autoload.php';
+		//$client = new Client();
+		$client = new \YooKassa\Client();
+		$client->setAuth(YOOKASSA_SHOPID, YOOKASSA_API);
+
+		$idempotenceKey = gen_uuid();
+
+		$response = $client->createPayment(
+			array(
+				'amount' => array(
+					'value' => $sum_to_pay,
+					'currency' => 'RUB',
+				),
+				'confirmation' => array(
+					'type' => 'redirect',
+					'return_url' => DOMEN.'/pro/return_payment',
+				),
+				'capture' => true,
+				'description' => $name_servies,
+				'metadata' => array(
+					'order_id' => '0000',
+				)
+			),
+			$idempotenceKey
+		);
+
+		$paymentId = $response['id'];
+		$_SESSION['paymentId'] = $paymentId;
+		//get confirmation url
+		$confirmationUrl = $response->getConfirmation()->getConfirmationUrl();
+
+		//Добавление информации об оплате
+		$STH = PreExecSQL(" INSERT INTO pro_invoices (company_id,summ,type_s,paymentId) VALUES (?,?,?,?); " ,
+			array( COMPANY_ID,$sum_to_pay,0,$paymentId));
+
+		$ok = true;
+		$code = $confirmationUrl;
+	}
+
+
+
+	$jsd['ok'] = $ok;
+	$jsd['code'] = $code;
+}
 // Модальное окно Написать сообщение
-    elseif($_GET['route'] == 'modal_write_message'){
+elseif($_GET['route'] == 'modal_write_message'){
 
-        $arr = $f->FormWriteMessage(array('id'=>$in['id']));
+	$arr = $f->FormWriteMessage(array('id'=>$in['id']));
 
-        $code = $t->getModal(
-            array('class_dialog' => 'writemessage', 'top' => $arr['top'], 'content' => $arr['content'], 'bottom' => $arr['bottom']),
-            array('id' => 'writemessage-form', 'class' => '')
-        );
+	$code = $t->getModal(
+		array('class_dialog' => 'writemessage', 'top' => $arr['top'], 'content' => $arr['content'], 'bottom' => $arr['bottom']),
+		array('id' => 'writemessage-form', 'class' => '')
+	);
 
-        $jsd['code'] = $code;
-    }
-    // Написать новое сообщение
-    elseif($_GET['route'] == 'create_new_message'){
+	$jsd['code'] = $code;
+}
+// Написать новое сообщение
+elseif($_GET['route'] == 'create_new_message'){
 
-        $ok = false;
-        $code = '';
+	$ok = false;
+	$code = '';
 
-        //входящие данные по папке
-        $folder_name = $in['subject'];
-        $folder_status = 1; //1 - открытый, 2 - архивный, 3 - приватный (только для 2-х собеседников)
-        $avatar = $potrbs_hrefs = '';
-        $companies_id = $in['companies'];
-        $rce_email = $rm_href = $rm_href1 = [];
+	//входящие данные по папке
+	$folder_name = $in['subject'];
+	$folder_status = 1; //1 - открытый, 2 - архивный, 3 - приватный (только для 2-х собеседников)
+	$avatar = $potrbs_hrefs = '';
+	$companies_id = $in['companies'];
+	$rce_email = $rm_href = $rm_href1 = [];
 
-        //входящие данные по сообщению
-        $cc = COMPANY_ID.','.$companies_id;
-        $companies_json = json_encode(explode(',',$cc));
-        $potrbs = explode(',',$in['potrbs']);
-        //$potrbs_json = json_encode(explode(',',$in['potrbs']));
-        $messagetext = $in['messagetext'];
-        $ticket_status = 0; //0 - стардартное сообщение, 1 - техничесая информация
-        $attachments = '';
+	//входящие данные по сообщению
+	$cc = COMPANY_ID.','.$companies_id;
+	$companies_json = json_encode(explode(',',$cc));
+	$potrbs = explode(',',$in['potrbs']);
+	//$potrbs_json = json_encode(explode(',',$in['potrbs']));
+	$messagetext = $in['messagetext'];
+	$ticket_status = 0; //0 - стардартное сообщение, 1 - техничесая информация
+	$attachments = '';
 
-        $croped_image = $_POST['avatar'];
+	$croped_image = $_POST['avatar'];
 
-        $rce = reqCompanyEmails(array('ids'=>$companies_id));
+	$rce = reqCompanyEmails(array('ids'=>$companies_id));
 
-        foreach($rce as $i => $c){ //сбор ящиков для отправки оповещений
-            if(!empty($c['email'])){ //только у тех у кого указаны ящики
-                $rce_email[] = $c['email'];
-            }
-        }
+	foreach($rce as $i => $c){ //сбор ящиков для отправки оповещений
+		if(!empty($c['email'])){ //только у тех у кого указаны ящики
+			$rce_email[] = $c['email'];
+		}
+	}
 
 
-        $rm = reqMenu(array('need'=>1));
+	$rm = reqMenu(array('need'=>1));
 
-        if(!empty($rm)){
-            foreach($potrbs as $i => $val){
-                $rm_href[] = search($rm, 'id', $val); //поиск по ключу id в массиве
-            }
+	if(!empty($rm)){
+		foreach($potrbs as $i => $val){
+			$rm_href[] = search($rm, 'id', $val); //поиск по ключу id в массиве
+		}
 
-            if(!empty($rm_href[0])){
+		if(!empty($rm_href[0])){
 
-                foreach($rm_href as $i => $val){
-                    $rm_href1[] = DOMEN.'/'.$val[0]["href"];
-                }
+			foreach($rm_href as $i => $val){
+				$rm_href1[] = DOMEN.'/'.$val[0]["href"];
+			}
 
 
-                $potrbs_hrefs = implode(', ', $rm_href1);
-            }
-        }
+			$potrbs_hrefs = implode(', ', $rm_href1);
+		}
+	}
 
 
-        if(!empty($companies_id)){ //проврека на наличие собеседников, хотя один собеседник должен быть
+	if(!empty($companies_id)){ //проврека на наличие собеседников, хотя один собеседник должен быть
 
 
-            //проврека кол-ва собеседников, если больше одного, то тема обязательна
-            if(count(explode(',',$companies_id))>1 && empty($in['subject'])){
-                $ok = false;
-                $code = 'Тема обязательна для заполнения';
+		//проврека кол-ва собеседников, если больше одного, то тема обязательна
+		if(count(explode(',',$companies_id))>1 && empty($in['subject'])){
+			$ok = false;
+			$code = 'Тема обязательна для заполнения';
 
-            } else {
+		} else {
 
-                if (count(explode(',',$companies_id))==1){ //если один собеседник, то тема не обязательна
-                    $folder_name = !empty($in['subject'])?$in['subject']:'';
-                    $folder_status = 3;
-                }
+			if (count(explode(',',$companies_id))==1){ //если один собеседник, то тема не обязательна
+				$folder_name = !empty($in['subject'])?$in['subject']:'';
+				$folder_status = 3;
+			}
 
 
-                /*--------------- проверка и отправка сообщений в уже действующие чаты (начало) ---------------------*/
+			/*--------------- проверка и отправка сообщений в уже действующие чаты (начало) ---------------------*/
 
 
-                $rcf = reqChatFolders(array('not_status'=>2)); //не архивные чаты
+			$rcf = reqChatFolders(array('not_status'=>2)); //не архивные чаты
 
 
-                //vecho($rcf);
-                //vecho($companies_json);
+			//vecho($rcf);
+			//vecho($companies_json);
 
 
-                //$rm_cat = search($rcf, 'companies_id', $companies_json);
+			//$rm_cat = search($rcf, 'companies_id', $companies_json);
 
-                $arr_diff1 = json_decode($companies_json, true);
-                //$arr_diff2 = json_decode($rm_cat[0]['companies_id'], true);
+			$arr_diff1 = json_decode($companies_json, true);
+			//$arr_diff2 = json_decode($rm_cat[0]['companies_id'], true);
 
-                foreach($rcf as $i => $val){
-                    $arr_diff2 = json_decode($val['companies_id'], true);
-                    if (array_values_equal($arr_diff1, $arr_diff2)){
-                        $fid = $val['id'];
-                    };
-                }
+			foreach($rcf as $i => $val){
+				$arr_diff2 = json_decode($val['companies_id'], true);
+				if (array_values_equal($arr_diff1, $arr_diff2)){
+					$fid = $val['id'];
+				};
+			}
 
 
-                //vecho(json_decode($companies_json, true));
-                //vecho(json_decode($rm_cat[0]['companies_id'], true));
+			//vecho(json_decode($companies_json, true));
+			//vecho(json_decode($rm_cat[0]['companies_id'], true));
 
-                //$result = array_diff($arr_diff1, $arr_diff2);
+			//$result = array_diff($arr_diff1, $arr_diff2);
 
-                //vecho($fid);
-                //die;
+			//vecho($fid);
+			//die;
 
-                if(!empty($fid)){ //проверка на наличие такого же чата (с теми же собеседниками)
+			if(!empty($fid)){ //проверка на наличие такого же чата (с теми же собеседниками)
 
-                    //$fid = $rm_cat[0]['id'];
+				//$fid = $rm_cat[0]['id'];
 
-                    //if(!empty($fid)){
+				//if(!empty($fid)){
 
-                    //Добавление информации о сообщении
-                    $STH2 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-                        array($fid,COMPANY_ID,$companies_json,$messagetext,$ticket_status));
-                    $message_id = $db->lastInsertId();
+				//Добавление информации о сообщении
+				$STH2 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+					array($fid,COMPANY_ID,$companies_json,$messagetext,$ticket_status));
+				$message_id = $db->lastInsertId();
 
-                    if(!empty($in['media'])){
-                        $media 	= explode(',',$in['media']); //прикрепленные медиа файлы
-                        foreach($media as $i => $val){
-                            //Добавление информации о файлах
-                            $STH4 = PreExecSQL(" INSERT INTO tickets_files (name,message_id) VALUES (?,?); " ,
-                                array($val,$message_id));
-                        }
-                    }
+				if(!empty($in['media'])){
+					$media 	= explode(',',$in['media']); //прикрепленные медиа файлы
+					foreach($media as $i => $val){
+						//Добавление информации о файлах
+						$STH4 = PreExecSQL(" INSERT INTO tickets_files (name,message_id) VALUES (?,?); " ,
+							array($val,$message_id));
+					}
+				}
 
-                    if(!empty($rce_email)){
-                        $link = DOMEN.'/chat/messages/'.$fid;
+				if(!empty($rce_email)){
+					$link = DOMEN.'/chat/messages/'.$fid;
 
-                        foreach($rce_email as $i => $email){
-                            // отправляем письмa на почту
-                            $rez = $tes->LetterSendChat(array('email' => $email,
-                                'link' => $link ));
-                        }
-                    }
+					foreach($rce_email as $i => $email){
+						// отправляем письмa на почту
+						$rez = $tes->LetterSendChat(array('email' => $email,
+							'link' => $link ));
+					}
+				}
 
-                    $ok = true;
-                    $code = 'Уже есть такой чат. Перенаправляем...';
-                    $folder_id = $fid;
+				$ok = true;
+				$code = 'Уже есть такой чат. Перенаправляем...';
+				$folder_id = $fid;
 
 
-                    //}
+				//}
 
 
-                } else {
+			} else {
 
 
-                    /*--------------- проверка и отправка сообщений в уже действующие чаты (конец) ---------------------*/
+				/*--------------- проверка и отправка сообщений в уже действующие чаты (конец) ---------------------*/
 
 
-                    //Добавление папки для сообщений
-                    $STH1 = PreExecSQL(" INSERT INTO tickets_folder (folder_name,owner_id,status,companies_id,avatar,need) VALUES (?,?,?,?,?,?); " ,
-                        array($folder_name,COMPANY_ID,$folder_status,$companies_json,$avatar,$potrbs_hrefs));
+				//Добавление папки для сообщений
+				$STH1 = PreExecSQL(" INSERT INTO tickets_folder (folder_name,owner_id,status,companies_id,avatar,need) VALUES (?,?,?,?,?,?); " ,
+					array($folder_name,COMPANY_ID,$folder_status,$companies_json,$avatar,$potrbs_hrefs));
 
 
-                    if($STH1){
-                        $folder_id = $db->lastInsertId();
-                        $uniq = md5($folder_id);
+				if($STH1){
+					$folder_id = $db->lastInsertId();
+					$uniq = md5($folder_id);
 
-                        /* если выбрали аватар, то его тоже сохраняем */
-                        if(!empty($croped_image)){
+					/* если выбрали аватар, то его тоже сохраняем */
+					if(!empty($croped_image)){
 
-                            // создаем папку
-                            //$g->jmkDir(FILES_ROOT_PATH.'avatar');
+						// создаем папку
+						//$g->jmkDir(FILES_ROOT_PATH.'avatar');
 
 
-                            $avatar = 'fpic_'.$folder_id;
+						$avatar = 'fpic_'.$folder_id;
 
-                            list($type, $croped_image) = explode(';', $croped_image);
-                            list(, $croped_image)      = explode(',', $croped_image);
-                            $croped_image = base64_decode($croped_image);
+						list($type, $croped_image) = explode(';', $croped_image);
+						list(, $croped_image)      = explode(',', $croped_image);
+						$croped_image = base64_decode($croped_image);
 
 
-                            $image_name = $avatar.'.png';
-                            if(file_put_contents(FILES_ROOT_PATH.'avatar/'.$image_name, $croped_image)){
-                                $STH = PreExecSQL(" UPDATE tickets_folder SET avatar=? WHERE id=?; " ,
-                                    array( FILES_PATH.'avatar/'.$image_name,$folder_id ));
+						$image_name = $avatar.'.png';
+						if(file_put_contents(FILES_ROOT_PATH.'avatar/'.$image_name, $croped_image)){
+							$STH = PreExecSQL(" UPDATE tickets_folder SET avatar=? WHERE id=?; " ,
+								array( FILES_PATH.'avatar/'.$image_name,$folder_id ));
 
-                            }
-                        }
+						}
+					}
 
-                        //Добавление информации о сообщении
-                        $STH2 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status,attachments) VALUES (?,?,?,?,?,?); " ,
-                            array($folder_id,COMPANY_ID,$companies_json,$messagetext,$ticket_status,$attachments));
-                        $message_id = $db->lastInsertId();
+					//Добавление информации о сообщении
+					$STH2 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status,attachments) VALUES (?,?,?,?,?,?); " ,
+						array($folder_id,COMPANY_ID,$companies_json,$messagetext,$ticket_status,$attachments));
+					$message_id = $db->lastInsertId();
 
-                        $link = DOMEN.'/chat/messages/'.$folder_id;
+					$link = DOMEN.'/chat/messages/'.$folder_id;
 
-                        if(!empty($rce_email)){
-                            foreach($rce_email as $i => $email){
-                                //echo $email;
-                                // отправляем письмa на почту
-                                $rez = $tes->LetterSendChat(array('email' => $email,
-                                    'link' => $link ));
-                            }
-                        }
-                        //if($rez){}
+					if(!empty($rce_email)){
+						foreach($rce_email as $i => $email){
+							//echo $email;
+							// отправляем письмa на почту
+							$rez = $tes->LetterSendChat(array('email' => $email,
+								'link' => $link ));
+						}
+					}
+					//if($rez){}
 
-                        //Логи
-                        $STH3 = PreExecSQL(" INSERT INTO tickets_logs (text,company_id,action,object,object_id) VALUES (?,?,?,?,?); " ,
-                            array('',COMPANY_ID,1,0,$folder_id));
+					//Логи
+					$STH3 = PreExecSQL(" INSERT INTO tickets_logs (text,company_id,action,object,object_id) VALUES (?,?,?,?,?); " ,
+						array('',COMPANY_ID,1,0,$folder_id));
 
 
-                    }
-                    if($STH2){
-                        $ok = true;
-                        //Логи
-                        $STH4 = PreExecSQL(" INSERT INTO tickets_logs (text,company_id,action,object,object_id) VALUES (?,?,?,?,?); " ,
-                            array('',COMPANY_ID,1,1,$message_id));
+				}
+				if($STH2){
+					$ok = true;
+					//Логи
+					$STH4 = PreExecSQL(" INSERT INTO tickets_logs (text,company_id,action,object,object_id) VALUES (?,?,?,?,?); " ,
+						array('',COMPANY_ID,1,1,$message_id));
 
-                    }
+				}
 
 
-                }
-            }
-        }else{
+			}
+		}
+	}else{
 
-            $ok = false;
-            $code = 'Вы не выбрали собеседников';
-        }
+		$ok = false;
+		$code = 'Вы не выбрали собеседников';
+	}
 
-        $jsd['ok'] = $ok;
-        $jsd['code'] = $code;
-        $jsd['folder'] = !empty($folder_id)?$folder_id:'';
-    }
-    // Написать новое сообщение c предзапол
-    elseif($_GET['route'] == 'create_new_message_potrb'){
+	$jsd['ok'] = $ok;
+	$jsd['code'] = $code;
+	$jsd['folder'] = !empty($folder_id)?$folder_id:'';
+}
+// Написать новое сообщение c предзапол
+elseif($_GET['route'] == 'create_new_message_potrb'){
 
-        $ok = false;
-        $code = '';
+	$ok = false;
+	$code = '';
 
-        //входящие данные по папке
-        $folder_name = $in['subject'];
-        $folder_status = 1; //1 - открытый, 2 - архивный, 3 - приватный (только для 2-х собеседников)
-        $avatar = '';
-        $companies_id = $in['companies'];
-        $rce_email = [];
+	//входящие данные по папке
+	$folder_name = $in['subject'];
+	$folder_status = 1; //1 - открытый, 2 - архивный, 3 - приватный (только для 2-х собеседников)
+	$avatar = '';
+	$companies_id = $in['companies'];
+	$rce_email = [];
 
-        //входящие данные по сообщению
-        $cc = COMPANY_ID.','.$companies_id;
-        $companies_json = json_encode(explode(',',$cc));
-        $potrbs = $in['url'];
-        //$potrbs_json = json_encode(explode(',',$in['potrbs']));
-        $messagetext = $in['messagetext'];
-        $ticket_status = 0; //0 - стардартное сообщение, 1 - техничесая информация
-        $attachments = '';
+	//входящие данные по сообщению
+	$cc = COMPANY_ID.','.$companies_id;
+	$companies_json = json_encode(explode(',',$cc));
+	$potrbs = $in['url'];
+	//$potrbs_json = json_encode(explode(',',$in['potrbs']));
+	$messagetext = $in['messagetext'];
+	$ticket_status = 0; //0 - стардартное сообщение, 1 - техничесая информация
+	$attachments = '';
 
-        $croped_image = $_POST['avatar'];
+	$croped_image = $_POST['avatar'];
 
-        $rcf = reqChatFolders(array('not_status'=>2));
+	$rcf = reqChatFolders(array('not_status'=>2));
 
-        $rm_1 = search($rcf, 'folder_name', $in['id']);
+	$rm_1 = search($rcf, 'folder_name', $in['id']);
 
-        if( empty($rm_1) ) { //проверка на наличие не архивной темы с id такой сущности
+	if( empty($rm_1) ) { //проверка на наличие не архивной темы с id такой сущности
 
-            if(!empty($companies_id)){ //проврека на наличие собеседников, хотя один собеседник должен быть
+		if(!empty($companies_id)){ //проврека на наличие собеседников, хотя один собеседник должен быть
 
-                $rce = reqCompanyEmails(array('ids'=>$companies_id));
+			$rce = reqCompanyEmails(array('ids'=>$companies_id));
 
-                foreach($rce as $i => $c){ //сбор ящиков для отправки оповещений
-                    if(!empty($c['email'])){ //только у тех у кого указаны ящики
-                        $rce_email[] = $c['email'];
-                    }
-                }
+			foreach($rce as $i => $c){ //сбор ящиков для отправки оповещений
+				if(!empty($c['email'])){ //только у тех у кого указаны ящики
+					$rce_email[] = $c['email'];
+				}
+			}
 
 
-                //проврека кол-ва собеседников, если больше одного, то тема обязательна
-                if(count(explode(',',$companies_id))>1 && empty($in['subject'])){
-                    $ok = false;
-                    $code = 'Тема обязательна для заполнения';
+			//проврека кол-ва собеседников, если больше одного, то тема обязательна
+			if(count(explode(',',$companies_id))>1 && empty($in['subject'])){
+				$ok = false;
+				$code = 'Тема обязательна для заполнения';
 
-                } else {
+			} else {
 
-                    if (count(explode(',',$companies_id))==1){ //если один собеседник, то тема не обязательна
-                        $folder_name = !empty($in['subject'])?$in['subject']:'';
-                        $folder_status = 3;
-                    }
+				if (count(explode(',',$companies_id))==1){ //если один собеседник, то тема не обязательна
+					$folder_name = !empty($in['subject'])?$in['subject']:'';
+					$folder_status = 3;
+				}
 
 
-                    //Добавление папки для сообщений
-                    $STH1 = PreExecSQL(" INSERT INTO tickets_folder (folder_name,owner_id,status,companies_id,avatar,need) VALUES (?,?,?,?,?,?); " ,
-                        array($folder_name,COMPANY_ID,$folder_status,$companies_json,$avatar,$potrbs));
+				//Добавление папки для сообщений
+				$STH1 = PreExecSQL(" INSERT INTO tickets_folder (folder_name,owner_id,status,companies_id,avatar,need) VALUES (?,?,?,?,?,?); " ,
+					array($folder_name,COMPANY_ID,$folder_status,$companies_json,$avatar,$potrbs));
 
 
-                    if($STH1){
-                        $folder_id = $db->lastInsertId();
-                        $uniq = md5($folder_id);
+				if($STH1){
+					$folder_id = $db->lastInsertId();
+					$uniq = md5($folder_id);
 
-                        /* если выбрали аватар, то его тоже сохраняем */
-                        if(!empty($croped_image)){
+					/* если выбрали аватар, то его тоже сохраняем */
+					if(!empty($croped_image)){
 
-                            // создаем папку
-                            //$g->jmkDir(FILES_ROOT_PATH.'avatar');
+						// создаем папку
+						//$g->jmkDir(FILES_ROOT_PATH.'avatar');
 
 
-                            $avatar = 'fpic_'.$folder_id;
+						$avatar = 'fpic_'.$folder_id;
 
-                            list($type, $croped_image) = explode(';', $croped_image);
-                            list(, $croped_image)      = explode(',', $croped_image);
-                            $croped_image = base64_decode($croped_image);
+						list($type, $croped_image) = explode(';', $croped_image);
+						list(, $croped_image)      = explode(',', $croped_image);
+						$croped_image = base64_decode($croped_image);
 
 
-                            $image_name = $avatar.'.png';
-                            if(file_put_contents(FILES_ROOT_PATH.'avatar/'.$image_name, $croped_image)){
-                                $STH = PreExecSQL(" UPDATE tickets_folder SET avatar=? WHERE id=?; " ,
-                                    array( FILES_PATH.'avatar/'.$image_name,$folder_id ));
+						$image_name = $avatar.'.png';
+						if(file_put_contents(FILES_ROOT_PATH.'avatar/'.$image_name, $croped_image)){
+							$STH = PreExecSQL(" UPDATE tickets_folder SET avatar=? WHERE id=?; " ,
+								array( FILES_PATH.'avatar/'.$image_name,$folder_id ));
 
-                            }
-                        }
+						}
+					}
 
-                        //Добавление информации о сообщении
-                        $STH2 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status,attachments) VALUES (?,?,?,?,?,?); " ,
-                            array($folder_id,COMPANY_ID,$companies_json,$messagetext,$ticket_status,$attachments));
-                        $message_id = $db->lastInsertId();
+					//Добавление информации о сообщении
+					$STH2 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status,attachments) VALUES (?,?,?,?,?,?); " ,
+						array($folder_id,COMPANY_ID,$companies_json,$messagetext,$ticket_status,$attachments));
+					$message_id = $db->lastInsertId();
 
-                        $link = DOMEN.'/chat/messages/'.$folder_id;
+					$link = DOMEN.'/chat/messages/'.$folder_id;
 
-                        if(!empty($rce_email)){
-                            foreach($rce_email as $i => $email){
-                                //echo $email;
-                                // отправляем письмa на почту
-                                $rez = $tes->LetterSendChat(array('email' => $email,
-                                    'link' => $link ));
-                            }
-                        }
-                        //if($rez){}
+					if(!empty($rce_email)){
+						foreach($rce_email as $i => $email){
+							//echo $email;
+							// отправляем письмa на почту
+							$rez = $tes->LetterSendChat(array('email' => $email,
+								'link' => $link ));
+						}
+					}
+					//if($rez){}
 
-                        //Логи
-                        $STH3 = PreExecSQL(" INSERT INTO tickets_logs (text,company_id,action,object,object_id) VALUES (?,?,?,?,?); " ,
-                            array('',COMPANY_ID,1,0,$folder_id));
+					//Логи
+					$STH3 = PreExecSQL(" INSERT INTO tickets_logs (text,company_id,action,object,object_id) VALUES (?,?,?,?,?); " ,
+						array('',COMPANY_ID,1,0,$folder_id));
 
 
-                    }
-                    if($STH2){
-                        $ok = true;
-                        //Логи
-                        $STH4 = PreExecSQL(" INSERT INTO tickets_logs (text,company_id,action,object,object_id) VALUES (?,?,?,?,?); " ,
-                            array('',COMPANY_ID,1,1,$message_id));
+				}
+				if($STH2){
+					$ok = true;
+					//Логи
+					$STH4 = PreExecSQL(" INSERT INTO tickets_logs (text,company_id,action,object,object_id) VALUES (?,?,?,?,?); " ,
+						array('',COMPANY_ID,1,1,$message_id));
 
-                    }
+				}
 
 
-                }
-            }else{
+			}
+		}else{
 
-                $ok = false;
-                $code = 'Вы не выбрали собеседников';
-            }
+			$ok = false;
+			$code = 'Вы не выбрали собеседников';
+		}
 
-        } else{
+	} else{
 
-            $ok = false;
-            $code = 'Вероятно, по этой сущности уже есть чат общения';
-        }
+		$ok = false;
+		$code = 'Вероятно, по этой сущности уже есть чат общения';
+	}
 
-        $jsd['ok'] = $ok;
-        $jsd['code'] = $code;
-        $jsd['folder'] = !empty($folder_id)?$folder_id:'';
-    }
-    // Ответить на сообщение
-    elseif($_GET['route'] == 'reply_message'){
+	$jsd['ok'] = $ok;
+	$jsd['code'] = $code;
+	$jsd['folder'] = !empty($folder_id)?$folder_id:'';
+}
+// Ответить на сообщение
+elseif($_GET['route'] == 'reply_message'){
 
-        $ok = false;
-        $code = '';
+	$ok = false;
+	$code = '';
 
-        if(!empty($in['messagetext']) || !empty($in['media'])) {
+	if(!empty($in['messagetext']) || !empty($in['media'])) {
 
-            $messagetext  	= $in['messagetext']; //текст сообщения
-            $mid 		  	= $in['mid'];	//id сообщения
+		$messagetext  	= $in['messagetext']; //текст сообщения
+		$mid 		  	= $in['mid'];	//id сообщения
 
 
-            $ticket_status 	= 0; //0 - стардартное сообщение, 1 - техничесая информация
+		$ticket_status 	= 0; //0 - стардартное сообщение, 1 - техничесая информация
 
-            $rcf = reqChatFolders(array('id'=>$in['mid']));
-            $companies_id 	= $rcf[0]["companies_id"];
+		$rcf = reqChatFolders(array('id'=>$in['mid']));
+		$companies_id 	= $rcf[0]["companies_id"];
 
-            $companies = implode(',',json_decode($companies_id,true));  // формирвем список компаний
+		$companies = implode(',',json_decode($companies_id,true));  // формирвем список компаний
 
 
 
-            $rce = reqCompanyEmails(array('ids'=>$companies));
+		$rce = reqCompanyEmails(array('ids'=>$companies));
 
-            foreach($rce as $i => $c){ //сбор ящиков для отправки оповещений
-                if(!empty($c['email'])){ //только у тех у кого указаны ящики
-                    $rce_email[] = $c['email'];
-                }
-            }
+		foreach($rce as $i => $c){ //сбор ящиков для отправки оповещений
+			if(!empty($c['email'])){ //только у тех у кого указаны ящики
+				$rce_email[] = $c['email'];
+			}
+		}
 
 
 
-            if(!empty($mid)){
+		if(!empty($mid)){
 
-                //Добавление информации о сообщении
-                $STH2 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-                    array($mid,COMPANY_ID,$companies_id,$messagetext,$ticket_status));
-                $message_id = $db->lastInsertId();
+			//Добавление информации о сообщении
+			$STH2 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+				array($mid,COMPANY_ID,$companies_id,$messagetext,$ticket_status));
+			$message_id = $db->lastInsertId();
 
-                if(!empty($in['media'])){
-                    $media 	= explode(',',$in['media']); //прикрепленные медиа файлы
-                    foreach($media as $i => $val){
-                        //Добавление информации о файлах
-                        $STH4 = PreExecSQL(" INSERT INTO tickets_files (name,message_id) VALUES (?,?); " ,
-                            array($val,$message_id));
-                    }
-                }
+			if(!empty($in['media'])){
+				$media 	= explode(',',$in['media']); //прикрепленные медиа файлы
+				foreach($media as $i => $val){
+					//Добавление информации о файлах
+					$STH4 = PreExecSQL(" INSERT INTO tickets_files (name,message_id) VALUES (?,?); " ,
+						array($val,$message_id));
+				}
+			}
 
-                if(!empty($rce_email)){
-                    $link = DOMEN.'/chat/messages/'.$mid;
+			if(!empty($rce_email)){
+				$link = DOMEN.'/chat/messages/'.$mid;
 
-                    foreach($rce_email as $i => $email){
-                        // отправляем письмa на почту
-                        $rez = $tes->LetterSendChat(array('email' => $email,
-                            'link' => $link ));
-                    }
-                }
+				foreach($rce_email as $i => $email){
+					// отправляем письмa на почту
+					$rez = $tes->LetterSendChat(array('email' => $email,
+						'link' => $link ));
+				}
+			}
 
-            }
+		}
 
-            if($STH2){
-                $ok = true;
-                $code = '';
-                //Логи
-                $STH4 = PreExecSQL(" INSERT INTO tickets_logs (text,company_id,action,object,object_id) VALUES (?,?,?,?,?); " ,
-                    array('',COMPANY_ID,1,1,$message_id));
-            }
+		if($STH2){
+			$ok = true;
+			$code = '';
+			//Логи
+			$STH4 = PreExecSQL(" INSERT INTO tickets_logs (text,company_id,action,object,object_id) VALUES (?,?,?,?,?); " ,
+				array('',COMPANY_ID,1,1,$message_id));
+		}
 
 
-        } else {
-            $ok = false;
-            $code = 'Вы ничего не написали и ничего не прикрепили на отправку';
+	} else {
+		$ok = false;
+		$code = 'Вы ничего не написали и ничего не прикрепили на отправку';
 
-        }
+	}
 
-        $jsd['ok'] = $ok;
-        $jsd['code'] = $code;
+	$jsd['ok'] = $ok;
+	$jsd['code'] = $code;
 
-    }
-    // Модальное окно Редактирование темы
-    elseif($_GET['route'] == 'modal_edit_theme'){
+}
+// Модальное окно Редактирование темы
+elseif($_GET['route'] == 'modal_edit_theme'){
 
-        $arr = $f->FormEditTheme(array('id'=>$in['id']));
+	$arr = $f->FormEditTheme(array('id'=>$in['id']));
 
-        $code = $t->getModal(
-            array('class_dialog' => 'edittheme', 'top' => $arr['top'], 'content' => $arr['content'], 'bottom' => $arr['bottom']),
-            array('id' => 'edittheme-form', 'class' => '')
-        );
+	$code = $t->getModal(
+		array('class_dialog' => 'edittheme', 'top' => $arr['top'], 'content' => $arr['content'], 'bottom' => $arr['bottom']),
+		array('id' => 'edittheme-form', 'class' => '')
+	);
 
-        $jsd['code'] = $code;
-    }
-    // Редактировать тему
-    elseif($_GET['route'] == 'update_theme_info'){
+	$jsd['code'] = $code;
+}
+// Редактировать тему
+elseif($_GET['route'] == 'update_theme_info'){
 
-        $ok 			= false;
-        $code 			= $action_text = '';
-        $action 		= 1;
-        $folder_id 		= $in['id'];
+	$ok 			= false;
+	$code 			= $action_text = '';
+	$action 		= 1;
+	$folder_id 		= $in['id'];
 
-        //входящие данные
-        $folder_name 	= $in['subject'];
-        $folder_status 	= 1; //1 - открытый, 2 - архивный, 3 - приватный (только для 2-х собеседников)
-        $avatar = '';
-        $comp_ids_input = $in['companies'];
+	//входящие данные
+	$folder_name 	= $in['subject'];
+	$folder_status 	= 1; //1 - открытый, 2 - архивный, 3 - приватный (только для 2-х собеседников)
+	$avatar = '';
+	$comp_ids_input = $in['companies'];
 
-        $croped_image = $_POST['avatar'];
+	$croped_image = $_POST['avatar'];
 
-        $rcf = reqChatFolders(array('id' => $folder_id));
-        $comp_ids = json_decode($rcf[0]["companies_id"], true);
-        $theme 	  = $rcf[0]["folder_name"];
+	$rcf = reqChatFolders(array('id' => $folder_id));
+	$comp_ids = json_decode($rcf[0]["companies_id"], true);
+	$theme 	  = $rcf[0]["folder_name"];
 
-        $comp_ids_input = explode(',',$comp_ids_input);
-        $comp_ids_input = array_unique($comp_ids_input, SORT_REGULAR); //удаление дубилкатов
-        $comp_ids		= array_unique($comp_ids, SORT_REGULAR); //удаление дубилкатов
+	$comp_ids_input = explode(',',$comp_ids_input);
+	$comp_ids_input = array_unique($comp_ids_input, SORT_REGULAR); //удаление дубилкатов
+	$comp_ids		= array_unique($comp_ids, SORT_REGULAR); //удаление дубилкатов
 
-        $companies_json = json_encode(explode(',',implode(",",$comp_ids_input)));
+	$companies_json = json_encode(explode(',',implode(",",$comp_ids_input)));
 
-        $count_a = count($comp_ids);
-        $count_b = count($comp_ids_input);
+	$count_a = count($comp_ids);
+	$count_b = count($comp_ids_input);
 
-        if ($count_a>$count_b){
-            $updateProps = array_diff($comp_ids, $comp_ids_input); //различие массивов
-            //$updateProps = array_udiff_assoc($comp_ids, $comp_ids_input, "val_compare_func");
-        } else {
-            $updateProps = array_diff($comp_ids_input,$comp_ids); //различие массивов
-            //$updateProps = array_udiff_assoc($comp_ids, $comp_ids_input, "val_compare_func");
-        }
+	if ($count_a>$count_b){
+		$updateProps = array_diff($comp_ids, $comp_ids_input); //различие массивов
+		//$updateProps = array_udiff_assoc($comp_ids, $comp_ids_input, "val_compare_func");
+	} else {
+		$updateProps = array_diff($comp_ids_input,$comp_ids); //различие массивов
+		//$updateProps = array_udiff_assoc($comp_ids, $comp_ids_input, "val_compare_func");
+	}
 
-        /* если выбрали аватар, то его тоже сохраняем */
-        if(!empty($croped_image)){
+	/* если выбрали аватар, то его тоже сохраняем */
+	if(!empty($croped_image)){
 
-            // создаем папку
-            //$g->jmkDir(FILES_ROOT_PATH.'avatar');
+		// создаем папку
+		//$g->jmkDir(FILES_ROOT_PATH.'avatar');
 
 
-            $avatar = 'fpic_'.$folder_id;
+		$avatar = 'fpic_'.$folder_id;
 
-            list($type, $croped_image) = explode(';', $croped_image);
-            list(, $croped_image)      = explode(',', $croped_image);
-            $croped_image = base64_decode($croped_image);
+		list($type, $croped_image) = explode(';', $croped_image);
+		list(, $croped_image)      = explode(',', $croped_image);
+		$croped_image = base64_decode($croped_image);
 
 
-            $image_name = $avatar.'.png';
-            if(file_put_contents(FILES_ROOT_PATH.'avatar/'.$image_name, $croped_image)){
-                $STH = PreExecSQL(" UPDATE tickets_folder SET avatar=? WHERE id=?; " ,
-                    array( FILES_PATH.'avatar/'.$image_name,$folder_id ));
+		$image_name = $avatar.'.png';
+		if(file_put_contents(FILES_ROOT_PATH.'avatar/'.$image_name, $croped_image)){
+			$STH = PreExecSQL(" UPDATE tickets_folder SET avatar=? WHERE id=?; " ,
+				array( FILES_PATH.'avatar/'.$image_name,$folder_id ));
 
-            }
-        }
+		}
+	}
 
 
-        if(!empty($comp_ids_input)){ //проврека на наличие собеседников, хотя один собеседник должен быть
+	if(!empty($comp_ids_input)){ //проврека на наличие собеседников, хотя один собеседник должен быть
 
-            //проврека кол-ва собеседников, если больше одного, то тема обязательна
-            //if(count(explode(',',$comp_ids_input))>1 && empty($in['subject'])){
-            if(count($comp_ids_input)>1 && empty($in['subject'])){
-                $ok = false;
-                $code = 'Тема обязательна для заполнения';
+		//проврека кол-ва собеседников, если больше одного, то тема обязательна
+		//if(count(explode(',',$comp_ids_input))>1 && empty($in['subject'])){
+		if(count($comp_ids_input)>1 && empty($in['subject'])){
+			$ok = false;
+			$code = 'Тема обязательна для заполнения';
 
-            } else {
+		} else {
 
-                //if (count(explode(',',$comp_ids_input))==1){ //если один собеседник, то тема не обязательна
-                if (count($comp_ids_input)==1){ //если один собеседник, то тема не обязательна
-                    $folder_name = !empty($in['subject'])?$in['subject']:'';
-                    $folder_status = 3;
-                }
+			//if (count(explode(',',$comp_ids_input))==1){ //если один собеседник, то тема не обязательна
+			if (count($comp_ids_input)==1){ //если один собеседник, то тема не обязательна
+				$folder_name = !empty($in['subject'])?$in['subject']:'';
+				$folder_status = 3;
+			}
 
 
-                //Обновление папки для сообщений
-                $STH = PreExecSQL(" UPDATE tickets_folder SET folder_name=?,status=?,companies_id=? WHERE id=?" ,
-                    array($folder_name,$folder_status,$companies_json,$folder_id));
-                if($STH){
-                    $ok = true;
-                    $code = 'Сохранено';
+			//Обновление папки для сообщений
+			$STH = PreExecSQL(" UPDATE tickets_folder SET folder_name=?,status=?,companies_id=? WHERE id=?" ,
+				array($folder_name,$folder_status,$companies_json,$folder_id));
+			if($STH){
+				$ok = true;
+				$code = 'Сохранено';
 
 
-                    //					if (!array_values_equal($comp_ids, $comp_ids_input)) //сравниваем входящие данные и данные из бд - пользователи
-                    //						{
+				//					if (!array_values_equal($comp_ids, $comp_ids_input)) //сравниваем входящие данные и данные из бд - пользователи
+				//						{
 
-                    if (count($updateProps)>0){
+				if (count($updateProps)>0){
 
-                        foreach($updateProps as $key => $client){
+					foreach($updateProps as $key => $client){
 
 
 
-                            if (count($comp_ids)> count($comp_ids_input)) {
+						if (count($comp_ids)> count($comp_ids_input)) {
 
-                                //удаление клиента
-                                $messagetext = $client.' вышел из чата';
-                                $action_text = $client.' remove from '.$folder_id;
+							//удаление клиента
+							$messagetext = $client.' вышел из чата';
+							$action_text = $client.' remove from '.$folder_id;
 
-                                $STH2 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-                                    array($folder_id,COMPANY_ID,$companies_json,$messagetext,1));
-                                //Логи
-                                $STH4 = PreExecSQL(" INSERT INTO tickets_logs (text,company_id,action,object,object_id) VALUES (?,?,?,?,?); " ,
-                                    array($action_text,COMPANY_ID,5,0,$folder_id));
+							$STH2 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+								array($folder_id,COMPANY_ID,$companies_json,$messagetext,1));
+							//Логи
+							$STH4 = PreExecSQL(" INSERT INTO tickets_logs (text,company_id,action,object,object_id) VALUES (?,?,?,?,?); " ,
+								array($action_text,COMPANY_ID,5,0,$folder_id));
 
-                            } elseif (count($comp_ids)< count($comp_ids_input)) {
+						} elseif (count($comp_ids)< count($comp_ids_input)) {
 
-                                //добавление клиента
-                                $messagetext = $client.' добавлен в чат';
-                                $action_text = $client.' add to '.$folder_id;
+							//добавление клиента
+							$messagetext = $client.' добавлен в чат';
+							$action_text = $client.' add to '.$folder_id;
 
-                                $STH2 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-                                    array($folder_id,COMPANY_ID,$companies_json,$messagetext,1));
-                                //Логи
-                                $STH4 = PreExecSQL(" INSERT INTO tickets_logs (text,company_id,action,object,object_id) VALUES (?,?,?,?,?); " ,
-                                    array($action_text,COMPANY_ID,4,0,$folder_id));
-                            }
-                            //} else {
-                            // изменение других данных
+							$STH2 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+								array($folder_id,COMPANY_ID,$companies_json,$messagetext,1));
+							//Логи
+							$STH4 = PreExecSQL(" INSERT INTO tickets_logs (text,company_id,action,object,object_id) VALUES (?,?,?,?,?); " ,
+								array($action_text,COMPANY_ID,4,0,$folder_id));
+						}
+						//} else {
+						// изменение других данных
 
 
-                            //}
+						//}
 
-                        }
-                    }
+					}
+				}
 
-                    if ( ($folder_name !== $theme) ){ //сравниваем входящие данные и данные из бд	- тема
-                        $action = 3;
-                        $action_text = 'edit theme';
-                        //Логи
-                        $STH4 = PreExecSQL(" INSERT INTO tickets_logs (text,company_id,action,object,object_id) VALUES (?,?,?,?,?); " ,
-                            array($action_text,COMPANY_ID,3,0,$folder_id));
-                    }
+				if ( ($folder_name !== $theme) ){ //сравниваем входящие данные и данные из бд	- тема
+					$action = 3;
+					$action_text = 'edit theme';
+					//Логи
+					$STH4 = PreExecSQL(" INSERT INTO tickets_logs (text,company_id,action,object,object_id) VALUES (?,?,?,?,?); " ,
+						array($action_text,COMPANY_ID,3,0,$folder_id));
+				}
 
 
-                    //}
+				//}
 
-                }
+			}
 
 
-            }
+		}
 
-        } else {
+	} else {
 
-            $ok = false;
-            $code = 'Вы не выбрали собеседников';
-        }
+		$ok = false;
+		$code = 'Вы не выбрали собеседников';
+	}
 
-        $jsd['ok'] = $ok;
-        $jsd['code'] = $code;
-    }
-    //Предложение закрыть тему
-    elseif($_GET['route'] == 'close_theme_pr'){
+	$jsd['ok'] = $ok;
+	$jsd['code'] = $code;
+}
+//Предложение закрыть тему
+elseif($_GET['route'] == 'close_theme_pr'){
 
-        $ok = false;
-        //$code = '';
+	$ok = false;
+	//$code = '';
 
-        $folder_id = $in['id'];
+	$folder_id = $in['id'];
 
-        $rcf = reqChatFolders(array('id'=>$folder_id));
-        $companies_id 	= $rcf[0]["companies_id"];
+	$rcf = reqChatFolders(array('id'=>$folder_id));
+	$companies_id 	= $rcf[0]["companies_id"];
 
-        $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-        $company_name = $rcm[0]["name_rcmc"];
+	$rcm = reqChatMessages(array('company_id' => COMPANY_ID));
+	$company_name = $rcm[0]["name_rcmc"];
 
-        $messagetext 	= $company_name. ' предложил закрыть тему.';
+	$messagetext 	= $company_name. ' предложил закрыть тему.';
 
-        $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-            array($folder_id,COMPANY_ID,$companies_id,$messagetext,1));
-        if($STH){
-            $ok = true;
-        }
+	$STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+		array($folder_id,COMPANY_ID,$companies_id,$messagetext,1));
+	if($STH){
+		$ok = true;
+	}
 
-        $jsd['ok'] = $ok;
-        //$jsd['code'] = $code;
+	$jsd['ok'] = $ok;
+	//$jsd['code'] = $code;
 
 
-    }
-    //Закрыть тему
-    elseif($_GET['route'] == 'close_theme'){
+}
+//Закрыть тему
+elseif($_GET['route'] == 'close_theme'){
 
-        $ok = false;
-        $code = '';
+	$ok = false;
+	$code = '';
 
-        $folder_id = $in['id'];
+	$folder_id = $in['id'];
 
-        $rcf = reqChatFolders(array('id'=>$folder_id));
-        $companies_id 	= $rcf[0]["companies_id"];
+	$rcf = reqChatFolders(array('id'=>$folder_id));
+	$companies_id 	= $rcf[0]["companies_id"];
 
-        $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-        $company_name = $rcm[0]["name_rcmc"];
+	$rcm = reqChatMessages(array('company_id' => COMPANY_ID));
+	$company_name = $rcm[0]["name_rcmc"];
 
-        $messagetext 	= $company_name. ' закрыл тему.';
+	$messagetext 	= $company_name. ' закрыл тему.';
 
-        $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-            array($folder_id,COMPANY_ID,$companies_id,$messagetext,1));
-        $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=? WHERE id=?" ,
-            array(2,$folder_id));
-        if($STH && $STH2){
-            $ok = true;
-            $code = 'Тема закрыта';
-        }
+	$STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+		array($folder_id,COMPANY_ID,$companies_id,$messagetext,1));
+	$STH2 = PreExecSQL(" UPDATE tickets_folder SET status=? WHERE id=?" ,
+		array(2,$folder_id));
+	if($STH && $STH2){
+		$ok = true;
+		$code = 'Тема закрыта';
+	}
 
-        $jsd['ok'] = $ok;
-        $jsd['code'] = $code;
+	$jsd['ok'] = $ok;
+	$jsd['code'] = $code;
 
 
-    }
-    // Модальное окно Написать сообщение из сущностей
-    elseif($_GET['route'] == 'modal_write_message_from_potrb'){
+}
+// Модальное окно Написать сообщение из сущностей
+elseif($_GET['route'] == 'modal_write_message_from_potrb'){
 
-        $arr = $f->FormWriteMessageFromPotrb(array('id'=>$in['id'],'url'=>$in['url'],'need'=>$in['potrbs'], 'company' => $in['company']));
+	$arr = $f->FormWriteMessageFromPotrb(array('id'=>$in['id'],'url'=>$in['url'],'need'=>$in['potrbs'], 'company' => $in['company']));
 
-        $code = $t->getModal(
-            array('class_dialog' => 'edittheme', 'top' => $arr['top'], 'content' => $arr['content'], 'bottom' => $arr['bottom']),
-            array('id' => 'edittheme-form', 'class' => '')
-        );
+	$code = $t->getModal(
+		array('class_dialog' => 'edittheme', 'top' => $arr['top'], 'content' => $arr['content'], 'bottom' => $arr['bottom']),
+		array('id' => 'edittheme-form', 'class' => '')
+	);
 
-        $jsd['code'] = $code;
-    }
-    //Выход из темы, не владельцу чата
-    elseif($_GET['route'] == 'out_of_theme'){
+	$jsd['code'] = $code;
+}
+//Выход из темы, не владельцу чата
+elseif($_GET['route'] == 'out_of_theme'){
 
-        $ok = false;
-        //$code = '';
+	$ok = false;
+	//$code = '';
 
-        $folder_id = $in['id'];
+	$folder_id = $in['id'];
 
-        $rcf = reqChatFolders(array('id'=>$folder_id));
-        $companies_id 	= $rcf[0]["companies_id"];
+	$rcf = reqChatFolders(array('id'=>$folder_id));
+	$companies_id 	= $rcf[0]["companies_id"];
 
-        $upd_comp = json_decode($companies_id);
+	$upd_comp = json_decode($companies_id);
 
-        if(($key = array_search(COMPANY_ID, $upd_comp)) !== false){ //удаление элемента по значению
-            unset($upd_comp[$key]);
-        }
+	if(($key = array_search(COMPANY_ID, $upd_comp)) !== false){ //удаление элемента по значению
+		unset($upd_comp[$key]);
+	}
 
-        $upd_companies_json = json_encode(explode(',',implode(",",$upd_comp))); //обновленный массив, передеанный в нужный формат
+	$upd_companies_json = json_encode(explode(',',implode(",",$upd_comp))); //обновленный массив, передеанный в нужный формат
 
 
-        $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-        $company_name = $rcm[0]["name_rcmc"];
+	$rcm = reqChatMessages(array('company_id' => COMPANY_ID));
+	$company_name = $rcm[0]["name_rcmc"];
 
-        $messagetext 	= $company_name. ' вышел из темы.';
+	$messagetext 	= $company_name. ' вышел из темы.';
 
-        $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-            array($folder_id,COMPANY_ID,$upd_companies_json,$messagetext,1));
-        //Обновление папки для сообщений
-        $STH = PreExecSQL(" UPDATE tickets_folder SET companies_id=? WHERE id=?" ,
-            array($upd_companies_json,$folder_id));
+	$STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+		array($folder_id,COMPANY_ID,$upd_companies_json,$messagetext,1));
+	//Обновление папки для сообщений
+	$STH = PreExecSQL(" UPDATE tickets_folder SET companies_id=? WHERE id=?" ,
+		array($upd_companies_json,$folder_id));
 
-        if($STH){
-            $ok = true;
-        }
+	if($STH){
+		$ok = true;
+	}
 
-        $jsd['ok'] = $ok;
-        //$jsd['code'] = $code;
+	$jsd['ok'] = $ok;
+	//$jsd['code'] = $code;
 
 
-    }
-    //Загрузка медиафайлов для сообщений
-    elseif($_GET['route'] == 'upload_files_message'){
+}
+//Загрузка медиафайлов для сообщений
+elseif($_GET['route'] == 'upload_files_message'){
 
-        //$ok = false;
-        $code = '';
-        $mfiles = [];
+	//$ok = false;
+	$code = '';
+	$mfiles = [];
 
-        $folder_id = $in['id'];
+	$folder_id = $in['id'];
 
-        $input_name = 'file';
+	$input_name = 'file';
 
-        if (!isset($_FILES[$input_name])) {
-            exit;
-        }
+	if (!isset($_FILES[$input_name])) {
+		exit;
+	}
 
-        // Разрешенные расширения файлов.
-        $allow = array('jpg', 'jpeg', 'png', 'gif');
+	// Разрешенные расширения файлов.
+	$allow = array('jpg', 'jpeg', 'png', 'gif');
 
-        // URL до временной директории.
-        $url_path = '/files/messages/'.COMPANY_ID.'/';
+	// URL до временной директории.
+	$url_path = '/files/messages/'.COMPANY_ID.'/';
 
-        // Полный путь до временной директории.
-        $tmp_path = $_SERVER['DOCUMENT_ROOT'] . $url_path;
+	// Полный путь до временной директории.
+	$tmp_path = $_SERVER['DOCUMENT_ROOT'] . $url_path;
 
-        if (!is_dir($tmp_path)) {
-            mkdir($tmp_path, 0777, true);
-        }
+	if (!is_dir($tmp_path)) {
+		mkdir($tmp_path, 0777, true);
+	}
 
-        // Преобразуем массив $_FILES в удобный вид для перебора в foreach.
-        $files = array();
-        $diff = count($_FILES[$input_name]) - count($_FILES[$input_name], COUNT_RECURSIVE);
-        if ($diff == 0) {
-            $files = array($_FILES[$input_name]);
-        } else {
-            foreach($_FILES[$input_name] as $k => $l) {
-                foreach($l as $i => $v) {
-                    $files[$i][$k] = $v;
-                }
-            }
-        }
+	// Преобразуем массив $_FILES в удобный вид для перебора в foreach.
+	$files = array();
+	$diff = count($_FILES[$input_name]) - count($_FILES[$input_name], COUNT_RECURSIVE);
+	if ($diff == 0) {
+		$files = array($_FILES[$input_name]);
+	} else {
+		foreach($_FILES[$input_name] as $k => $l) {
+			foreach($l as $i => $v) {
+				$files[$i][$k] = $v;
+			}
+		}
+	}
 
-        $response = array();
-        foreach ($files as $file) {
-            $error = $data  = '';
+	$response = array();
+	foreach ($files as $file) {
+		$error = $data  = '';
 
-            // Проверим на ошибки загрузки.
-            $ext = mb_strtolower(mb_substr(mb_strrchr(@$file['name'], '.'), 1));
-            if (!empty($file['error']) || empty($file['tmp_name']) || $file['tmp_name'] == 'none') {
-                $error = 'Не удалось загрузить файл.';
-            } elseif (empty($file['name']) || !is_uploaded_file($file['tmp_name'])) {
-                $error = 'Не удалось загрузить файл.';
-            } elseif (empty($ext) || !in_array($ext, $allow)) {
-                $error = 'Недопустимый тип файла';
-            } else {
-                $info = @getimagesize($file['tmp_name']);
-                if (empty($info[0]) || empty($info[1]) || !in_array($info[2], array(1, 2, 3))) {
-                    $error = 'Недопустимый тип файла';
-                } else {
-                    // Перемещаем файл в директорию с новым именем.
-                    $name  = time() . '-' . mt_rand(1, 9999999999);
-                    $src   = $tmp_path . $name . '.' . $ext;
-                    $thumb = $tmp_path . $name . '-thumb.' . $ext;
+		// Проверим на ошибки загрузки.
+		$ext = mb_strtolower(mb_substr(mb_strrchr(@$file['name'], '.'), 1));
+		if (!empty($file['error']) || empty($file['tmp_name']) || $file['tmp_name'] == 'none') {
+			$error = 'Не удалось загрузить файл.';
+		} elseif (empty($file['name']) || !is_uploaded_file($file['tmp_name'])) {
+			$error = 'Не удалось загрузить файл.';
+		} elseif (empty($ext) || !in_array($ext, $allow)) {
+			$error = 'Недопустимый тип файла';
+		} else {
+			$info = @getimagesize($file['tmp_name']);
+			if (empty($info[0]) || empty($info[1]) || !in_array($info[2], array(1, 2, 3))) {
+				$error = 'Недопустимый тип файла';
+			} else {
+				// Перемещаем файл в директорию с новым именем.
+				$name  = time() . '-' . mt_rand(1, 9999999999);
+				$src   = $tmp_path . $name . '.' . $ext;
+				$thumb = $tmp_path . $name . '-thumb.' . $ext;
 
-                    if (move_uploaded_file($file['tmp_name'], $src)) {
-                        // Создание миниатюры.
-                        switch ($info[2]) {
-                            case 1:
-                                $im = imageCreateFromGif($src);
-                                imageSaveAlpha($im, true);
-                                break;
-                            case 2:
-                                $im = imageCreateFromJpeg($src);
-                                break;
-                            case 3:
-                                $im = imageCreateFromPng($src);
-                                imageSaveAlpha($im, true);
-                                break;
-                        }
+				if (move_uploaded_file($file['tmp_name'], $src)) {
+					// Создание миниатюры.
+					switch ($info[2]) {
+						case 1:
+							$im = imageCreateFromGif($src);
+							imageSaveAlpha($im, true);
+							break;
+						case 2:
+							$im = imageCreateFromJpeg($src);
+							break;
+						case 3:
+							$im = imageCreateFromPng($src);
+							imageSaveAlpha($im, true);
+							break;
+					}
 
-                        $width  = $info[0];
-                        $height = $info[1];
+					$width  = $info[0];
+					$height = $info[1];
 
-                        // Высота превью 100px, ширина рассчитывается автоматически.
-                        $h = 100;
-                        $w = ($h > $height) ? $width : ceil($h / ($height / $width));
-                        $tw = ceil($h / ($height / $width));
-                        $th = ceil($w / ($width / $height));
+					// Высота превью 100px, ширина рассчитывается автоматически.
+					$h = 100;
+					$w = ($h > $height) ? $width : ceil($h / ($height / $width));
+					$tw = ceil($h / ($height / $width));
+					$th = ceil($w / ($width / $height));
 
-                        $new_im = imageCreateTrueColor($w, $h);
-                        if ($info[2] == 1 || $info[2] == 3) {
-                            imagealphablending($new_im, true);
-                            imageSaveAlpha($new_im, true);
-                            $transparent = imagecolorallocatealpha($new_im, 0, 0, 0, 127);
-                            imagefill($new_im, 0, 0, $transparent);
-                            imagecolortransparent($new_im, $transparent);
-                        }
+					$new_im = imageCreateTrueColor($w, $h);
+					if ($info[2] == 1 || $info[2] == 3) {
+						imagealphablending($new_im, true);
+						imageSaveAlpha($new_im, true);
+						$transparent = imagecolorallocatealpha($new_im, 0, 0, 0, 127);
+						imagefill($new_im, 0, 0, $transparent);
+						imagecolortransparent($new_im, $transparent);
+					}
 
-                        if ($w >= $width && $h >= $height) {
-                            $xy = array(ceil(($w - $width) / 2), ceil(($h - $height) / 2), $width, $height);
-                        } elseif ($w >= $width) {
-                            $xy = array(ceil(($w - $tw) / 2), 0, ceil($h / ($height / $width)), $h);
-                        } elseif ($h >= $height) {
-                            $xy = array(0, ceil(($h - $th) / 2), $w, ceil($w / ($width / $height)));
-                        } elseif ($tw < $w) {
-                            $xy = array(ceil(($w - $tw) / 2), ceil(($h - $h) / 2), $tw, $h);
-                        } else {
-                            $xy = array(0, ceil(($h - $th) / 2), $w, $th);
-                        }
+					if ($w >= $width && $h >= $height) {
+						$xy = array(ceil(($w - $width) / 2), ceil(($h - $height) / 2), $width, $height);
+					} elseif ($w >= $width) {
+						$xy = array(ceil(($w - $tw) / 2), 0, ceil($h / ($height / $width)), $h);
+					} elseif ($h >= $height) {
+						$xy = array(0, ceil(($h - $th) / 2), $w, ceil($w / ($width / $height)));
+					} elseif ($tw < $w) {
+						$xy = array(ceil(($w - $tw) / 2), ceil(($h - $h) / 2), $tw, $h);
+					} else {
+						$xy = array(0, ceil(($h - $th) / 2), $w, $th);
+					}
 
-                        imageCopyResampled($new_im, $im, $xy[0], $xy[1], 0, 0, $xy[2], $xy[3], $width, $height);
+					imageCopyResampled($new_im, $im, $xy[0], $xy[1], 0, 0, $xy[2], $xy[3], $width, $height);
 
-                        // Сохранение.
-                        switch ($info[2]) {
-                            case 1: imageGif($new_im, $thumb); break;
-                            case 2: imageJpeg($new_im, $thumb, 100); break;
-                            case 3: imagePng($new_im, $thumb); break;
-                        }
+					// Сохранение.
+					switch ($info[2]) {
+						case 1: imageGif($new_im, $thumb); break;
+						case 2: imageJpeg($new_im, $thumb, 100); break;
+						case 3: imagePng($new_im, $thumb); break;
+					}
 
-                        imagedestroy($im);
-                        imagedestroy($new_im);
+					imagedestroy($im);
+					imagedestroy($new_im);
 
-                        // Вывод в форму: превью, кнопка для удаления и скрытое поле.
-                        //$ok = true;
-                        $mfiles[] = '
-					<div class="img-item">
-						<img src="' . $url_path . $name . '-thumb.' . $ext . '">
-						<a herf="#" onclick="remove_img(this); return false;"></a>
-						<input type="hidden" name="images[]" value="' . $name . '.' . $ext . '">
-					</div>';
-                    } else {
-                        //$ok = false;
-                        $code = 'Не удалось загрузить файл.';
-                    }
-                }
-            }
+					// Вывод в форму: превью, кнопка для удаления и скрытое поле.
+					//$ok = true;
+					$mfiles[] = '
+				<div class="img-item">
+					<img src="' . $url_path . $name . '-thumb.' . $ext . '">
+					<a herf="#" onclick="remove_img(this); return false;"></a>
+					<input type="hidden" name="images[]" value="' . $name . '.' . $ext . '">
+				</div>';
+				} else {
+					//$ok = false;
+					$code = 'Не удалось загрузить файл.';
+				}
+			}
+		}
 
-            //$response[] = array('error' => $error, 'data'  => $data);
-            $jsd['mfiles'] = $mfiles;
-            $jsd['code'] = $code;
+		//$response[] = array('error' => $error, 'data'  => $data);
+		$jsd['mfiles'] = $mfiles;
+		$jsd['code'] = $code;
 
-        }
+	}
 
-    }
+}
 // модальное окно - авторизации на стороних ресурсах AMO
-    elseif($_GET['route'] == 'modal_logo_notification'){
+elseif($_GET['route'] == 'modal_logo_notification'){
 
-        $code = $cn->ModalLogoNotification();
-        //vecho($arr);
-        $code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$code),
-            array('id'=>'amo_accounts-form','class'=>'') );
+	$code = $cn->ModalLogoNotification();
+	//vecho($arr);
+	$code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$code),
+		array('id'=>'amo_accounts-form','class'=>'') );
 
-        $jsd['code'] = $code;
-    }
+	$jsd['code'] = $code;
+}
 // "пропустить" и больше не уведомлять о не привязанной номенклатуре и компании в 1с
-    elseif($_GET['route'] == 'notification_logo_propustit'){
+elseif($_GET['route'] == 'notification_logo_propustit'){
 
-        $ok = false;
-        $code = 'Нельзя пропустить';
+	$ok = false;
+	$code = 'Нельзя пропустить';
 
-        $STH = PreExecSQL(" INSERT INTO notification_logo_propustit (company_id, flag, tid) VALUES (?,?,?); " ,
-            array( COMPANY_ID ,$in['flag'] ,$in['id'] ));
-        if($STH){
-            $ok = true;
-            $code = 'сохранено';
-        }
+	$STH = PreExecSQL(" INSERT INTO notification_logo_propustit (company_id, flag, tid) VALUES (?,?,?); " ,
+		array( COMPANY_ID ,$in['flag'] ,$in['id'] ));
+	if($STH){
+		$ok = true;
+		$code = 'сохранено';
+	}
 
-        $jsd['ok']	= $ok;
-        $jsd['code'] = $code;
-    }
+	$jsd['ok']	= $ok;
+	$jsd['code'] = $code;
+}
 // обновить все из 1С
-    elseif($_GET['route'] == 'refresh_1c_all'){
+elseif($_GET['route'] == 'refresh_1c_all'){
 
-        $ok = false;
-        $code = 'Нельзя обновить';
+	$ok = false;
+	$code = 'Нельзя обновить';
 
-        if(COMPANY_ID_1C){
+	if(COMPANY_ID_1C){
 
-            $STH = PreExecSQL(" INSERT INTO 1c_refresh_all (company_id) VALUES (?); " ,
-                array( COMPANY_ID ));
-            if($STH){
-                $ok = true;
-                $code = 'система обновляется';
-            }
+		$STH = PreExecSQL(" INSERT INTO 1c_refresh_all (company_id) VALUES (?); " ,
+			array( COMPANY_ID ));
+		if($STH){
+			$ok = true;
+			$code = 'система обновляется';
+		}
 
-        }
+	}
 
-        $jsd['ok']	= $ok;
-        $jsd['code'] = $code;
-    }
+	$jsd['ok']	= $ok;
+	$jsd['code'] = $code;
+}
 // autocomplete Номенклатура из 1С
-    elseif($_GET['route'] == 'autocomplete_1cnomenclature'){
-        $r	= req1cNomenclature(array('value' => $in['value']));
-        foreach($r as $i => $m){
-            $jsd[] = array( 'id'=>$m['id'] , 	'name' 			=> $m['name_article'],
-                'value' 		=> $m['name_article'] );
-        }
+elseif($_GET['route'] == 'autocomplete_1cnomenclature'){
+	$r	= req1cNomenclature(array('value' => $in['value']));
+	foreach($r as $i => $m){
+		$jsd[] = array( 'id'=>$m['id'] , 	'name' 			=> $m['name_article'],
+			'value' 		=> $m['name_article'] );
+	}
 
-        if (empty($jsd)) $jsd[] = array('name' => '<span class="text-muted">не найдено</span>' , 'name2' =>'не найдено' );
+	if (empty($jsd)) $jsd[] = array('name' => '<span class="text-muted">не найдено</span>' , 'name2' =>'не найдено' );
 
-    }
+}
 // создать запрос на добавление номенклатуры в 1С
-    elseif($_GET['route'] == 'create_1c_nomenclature'){
+elseif($_GET['route'] == 'create_1c_nomenclature'){
 
-        $ok = false;
-        $code = 'Нельзя создать';
+	$ok = false;
+	$code = 'Нельзя создать';
 
-        $STH = PreExecSQL(" INSERT INTO 1c_nomenclature_out (nomenclature_id) VALUES (?); " ,
-            array( $in['id'] ));
-        if($STH){
-            $ok = true;
-            $code = 'Запрос на создание в 1С отправлен';
-        }
+	$STH = PreExecSQL(" INSERT INTO 1c_nomenclature_out (nomenclature_id) VALUES (?); " ,
+		array( $in['id'] ));
+	if($STH){
+		$ok = true;
+		$code = 'Запрос на создание в 1С отправлен';
+	}
 
-        $jsd['ok']	= $ok;
-        $jsd['code'] = $code;
-    }
+	$jsd['ok']	= $ok;
+	$jsd['code'] = $code;
+}
 
 
 

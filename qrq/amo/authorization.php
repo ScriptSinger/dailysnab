@@ -1,6 +1,6 @@
 <?php
 
-// https://itel-app.ru/amo/authorization.php
+// https://questrequest.ru/qrq/amo/authorization.php
 
 
 // Тестовый код авторизации

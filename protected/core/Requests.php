@@ -6156,12 +6156,12 @@
 						FROM tickets t, company c, tickets_folder tf, slov_legal_entity sle
 						".$sql_inner_join."
 						WHERE c.id=t.company_id AND sle.id=c.legal_entity_id AND  tf.id=t.folder_id ".$sql."
-						ORDER BY t.id ASC, t_date_full, t_time DESC LIMIT ".$start_limit." , 25
+						ORDER BY t.data_insert DESC LIMIT ".$start_limit." , 25
 					";
 
 	//vecho($sql);
 		$row = ($one)? PreExecSQL_one($sql,$arr) : PreExecSQL_all($sql,$arr);
-//        var_dump($row);
+
 		return $row;
 	}
 
@@ -6209,11 +6209,11 @@
 							CONCAT(sle.legal_entity,' ',c.company) as name_rcmc
 					 FROM tickets t, company c, tickets_folder tf, slov_legal_entity sle
 					 WHERE c.id=t.company_id AND tf.id=t.folder_id AND sle.id=c.legal_entity_id AND LOWER(t.companies) LIKE '%".COMPANY_ID."%'  ".$sql."
-					 ORDER BY t.data_insert ASC
+					 ORDER BY id ASC
 					";
-
+		//vecho($sql);
 		$row = ($one)? PreExecSQL_one($sql,$arr) : PreExecSQL_all($sql,$arr);
-//        vecho($row);
+
 		return $row;
 	}
 
@@ -6234,24 +6234,17 @@
 			$sql .= ' AND tf.id=? ';
 			array_push($arr , $in['id']);
 		}
-        if(!empty($p['folderReq'])){
-            $sql .= ' AND tf.folder_name != "" ';
-        }
-
-        if(!empty($p['archive'])){
-            $sql .= ' AND tf.status != 2 ';
-        }
 
 		$sql = "	SELECT tf.id, tf.folder_name, tf.owner_id, tf.avatar, tf.need as needs_id, tf.status, tf.companies_id			
 						FROM tickets_folder tf
 						".$sql_inner_join."
 						WHERE 1=1 ".$sql."
-						ORDER BY tf.id DESC LIMIT ".$start_limit." , 25
+						ORDER BY tf.data_insert DESC LIMIT ".$start_limit." , 25
 					";
 		//
-//	vecho($sql);
+	//vecho($sql);
 		$row = ($one)? PreExecSQL_one($sql,$arr) : PreExecSQL_all($sql,$arr);
-//        var_dump($row);
+
 		return $row;
 	}
 
@@ -7257,6 +7250,50 @@
 
 		return $row;
 	}
+	
+	
+	// получаем accountsid для рользователя (с учетом промо)
+	function reqAmoAccountsEtp_AccountsidByCompanyid2($p=array()) {
+		
+		$p['company_id'] = isset($p['company_id'])? $p['company_id'] : COMPANY_ID;
+		
+		$sql = "	SELECT GROUP_CONCAT(DISTINCT qw.accounts_id) accounts_ids
+				FROM (
+							SELECT (SELECT t.login_id FROM company t WHERE t.id=ae.company_id LIMIT 1) login_id,
+									ae.company_id, ae.qrq_id, ae.accounts_id
+							FROM slov_qrq sq, amo_accounts_etp ae
+							WHERE sq.company_id=ae.company_id AND ae.qrq_id=sq.id AND ae.accounts_id>0 AND sq.promo=1 
+							UNION ALL 
+							SELECT (SELECT t.login_id FROM company t WHERE t.id=(SELECT t.company_id FROM slov_qrq t WHERE t.id=ae.qrq_id LIMIT 1) LIMIT 1) login_id,
+									(SELECT t.company_id FROM slov_qrq t WHERE t.id=ae.qrq_id LIMIT 1) company_id,
+									ae.qrq_id,
+									CASE WHEN ae.flag_autorize=1 THEN (SELECT t.accounts_id FROM amo_accounts_etp t WHERE t.qrq_id=ae.qrq_id AND t.flag_autorize=3) 
+												ELSE ae.accounts_id END accounts_id
+							FROM amo_accounts_etp ae
+							WHERE ae.company_id=".$p['company_id']."
+						) qw
+				WHERE qw.accounts_id>0  ";
+
+		$row = PreExecSQL_one($sql,array());
+
+		return $row;
+	}
+	
+
+	// Insert - Добавить в cron searchid для дальнейшего использования в cron->cron_amo_buy_sell_searchupdate
+	function reqInsertCronAmoBuysellSearchUpdate($p=array()) {
+
+
+		$STH = PreExecSQL(" INSERT INTO cron_amo_buy_sell_searchupdate (buy_sell_id,token,searchid) VALUES (?,?,?); " ,
+			array( $p['buy_sell_id'],$p['token'],$p['searchid'] ));
+		if($STH){
+			$ok = true;
+		}
+
+		return array('STH'=>$STH);
+	}
+	
+	
 
 
 	/*  VIEWS

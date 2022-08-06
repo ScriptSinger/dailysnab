@@ -1,7 +1,7 @@
 <?php
 
 
-// https://itel-app.ru/amo/search.php?token=3e0c5b1d5b7e09b11512c60b69c118b2ef78813c&searchtext=105310&brand=Lema&accountid=1531261,1531268
+// https://questrequest.ru/qrq/amo/search.php?token=3e0c5b1d5b7e09b11512c60b69c118b2ef78813c&searchtext=105310&brand=Lema&accountid=1531261,1531268
 
 $pToken = '';
 $pSearchText = '';
@@ -86,6 +86,7 @@ $postData = array(
             'timeout'=>'600000',
             'openAllClarifications'=>'true',
             'excludePromo'=>'false',
+            'type'=>'1',
             'accounts'=>$InfoArray
         )
     )

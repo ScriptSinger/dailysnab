@@ -7,7 +7,10 @@
 	
 	удалить как перейдем на AMO из базы таблицы 
 								cron_qrq_buy_sell, cron_qrq_buy_sell_result, 
+								cron_amo_buy_sell_search ,
 								qrq_html_question, qrq_html_question_search
+								
+				убарть из request .php -> reqInsertCronAmoBuysellSearch
 								
 				убарть из ajax.php -> modal_admin_qrq , save_admin_qrq
 								
@@ -454,16 +457,15 @@ class ClassQrq extends HtmlServive
 		return array('content'=>$tr);
 	}
 	
-	// Добавляем в buy_sell предложения
-	function QrqInsertBuySell( $p=array() ){
+	// получить Searchid по бренду и поставщикам
+	function getSearchidBySearch( $p=array() ){
 
 		$result = false;
-		$errors_message = $r_p['company_id'] = $r_p['id'] = '';
+		$errors_message = $searchid = '';
 		//$in = fieldIn($p, array('buy_sell_id','article_id','brand'));
 		
 		
 		$url = DOMEN.'/qrq/amo/search.php';
-		//$url = 'https://itel-app.ru/amo/search.php';
 
 
 		$parameters = [
@@ -479,17 +481,7 @@ class ClassQrq extends HtmlServive
 		// пишем лог
 		$ins_id = reqInsertAmoLogJson(array('url'=>'search','parameters'=>$parameters,'json'=>$json,'token'=>$p['token']));
 	
-		$r_p = reqBuySell_Amo(array('id' => $p['buy_sell_id']));
-		
 
-		// в массив Бренд
-		$arr3 = array();
-		$row = reqAttributeValue(array('categories_id'=>$r_p['categories_id'],'attribute_id'=>3,'flag'=>'buy_sell'));
-		foreach($row as $i => $m){
-			$arr3[ $m['id'] ] = mb_strtolower($m['attribute_value']);
-		}
-		///
-		
 		
 		if($json){
 			
@@ -504,12 +496,91 @@ class ClassQrq extends HtmlServive
 //var_dump($warnings);
 			if( !$errors_message && !$warnings_message ){
 				
-					$result = true;
+					$searchid = $Response->entity->searchId;
+					
+					
+			}else{
+					$errors_message = $errors_message.' '.$warnings_message;
+					
+					// пишем ошибку и привязываем к общему json через parent_id
+					reqInsertAmoLogJson(array('parent_id'=>$ins_id,'url'=>'search','parameters'=>$parameters,'json'=>$json,'token'=>$p['token']));
+
+					
+					vecho($errors_message);
+			}
+			
+		}
+
+
+		return array( 'searchid' => $searchid , 'errors_message'=>$errors_message );
+	}
+	
+	
+	// Добавляем в buy_sell предложения полученные после Searchid
+	function QrqInsertBuySell( $p=array() ){
+
+		$result = false;
+		$flag_finished = 0;
+		$errors_message = $r_p['company_id'] = $r_p['id'] = $finished = '';
+		//$in = fieldIn($p, array('buy_sell_id','article_id','brand'));
+		
+		
+		$url = DOMEN.'/qrq/amo/searchupdate.php';
+		
+
+		$parameters = [
+					'token' 		=> $p['token'],
+					'searchid' 		=> $p['searchid']
+					];
+
+
+		$json = self::getJsonCurl(array('url'=>$url,'parameters'=>$parameters));
+	
+		// пишем лог
+		$ins_id = reqInsertAmoLogJson(array('url'=>'searchupdate','parameters'=>$parameters,'json'=>$json,'token'=>$p['token']));
+	
+		$r_p = reqBuySell_Amo(array('id' => $p['buy_sell_id']));
+		
+
+		// в массив Бренд
+		$arr3 = array();
+		$row = reqAttributeValue(array('categories_id'=>$r_p['categories_id'],'attribute_id'=>3,'flag'=>'buy_sell'));
+		foreach($row as $i => $m){
+			$arr3[ $m['id'] ] = mb_strtolower($m['attribute_value']);
+		}
+		///
+		//vecho($json);
+		
+		if($json){
+			
+			$Response	= $json->Response;
+	
+			$errors = isset($Response->errors)? $Response->errors : '';
+			$errors_message 	= isset($errors[0]->message)?	 	$errors[0]->message 		: '';
+
+			$warnings = isset($Response->warnings)? $Response->warnings : '';//errors
+			$warnings_message = isset($warnings[0]->message)? 	$warnings[0]->message 	: '';
+//var_dump($json);
+//var_dump($warnings);
+			
+			if( !$errors_message && !$warnings_message ){
+				
+				//vecho($Response);
+					
+				if(isset($Response->entity->results)){
 					
 					foreach ($Response->entity->results as $item){
 						
 						$accountId 	= $item->accountId;
 						$items 		= $item->items;
+						
+						$finished = $item->finished;
+						if( $finished && !$flag_finished ){
+							$finished = true;
+						}else{
+							$flag_finished = true;
+							$finished = false;
+						}
 						
 						
 						// получаем qrq_id для привязки заявки к поставщику
@@ -624,11 +695,12 @@ class ClassQrq extends HtmlServive
 						}
 						
 					}
+				}
 			}else{
 					$errors_message = $errors_message.' '.$warnings_message;
 					
 					// пишем ошибку и привязываем к общему json через parent_id
-					reqInsertAmoLogJson(array('parent_id'=>$ins_id,'url'=>'search','parameters'=>$parameters,'json'=>$json,'token'=>$p['token']));
+					reqInsertAmoLogJson(array('parent_id'=>$ins_id,'url'=>'searchupdate','parameters'=>$parameters,'json'=>$json,'token'=>$p['token']));
 
 					
 					vecho($errors_message);
@@ -637,7 +709,7 @@ class ClassQrq extends HtmlServive
 		}
 
 
-		return array('result' => $result , 'errors_message'=>$errors_message , 'company_id'=>$r_p['company_id'] , 'buy_sell_id'=>$r_p['id'] );
+		return array('finished' => $flag_finished , 'errors_message'=>$errors_message , 'company_id'=>$r_p['company_id'] , 'buy_sell_id'=>$r_p['id'] );
 	}
 	
 	
