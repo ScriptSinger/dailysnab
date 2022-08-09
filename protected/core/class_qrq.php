@@ -549,7 +549,6 @@ class ClassQrq extends HtmlServive
 			$arr3[ $m['id'] ] = mb_strtolower($m['attribute_value']);
 		}
 		///
-		//vecho($json);
 		
 		if($json){
 			
@@ -593,7 +592,7 @@ class ClassQrq extends HtmlServive
 						
 						if($qrq_id&&$login_id&&$company_id){
 						
-								$cities_id 	= 33653;// НАДО Фактический...думаем
+								$cities_id 	= 1;// НАДО Фактический...думаем
 								
 								//vecho($items);
 								foreach ($items as $item){
@@ -604,11 +603,17 @@ class ClassQrq extends HtmlServive
 										$brand 		= $item->brand;
 										$article 		= $item->article;
 										$delivery 		= $item->delivery;
+										$city 		= $item->city;
 										
 										$cost		= $item->price->value;
 										$amount		= $item->quantity->value;
 										
 										$delivery = preg_replace('/[^0-9]/', '', $delivery);
+										
+										if($city){// привязываем город
+											$rc = reqAmoCitiesCitiesId(array('amo_cities_id'=>$city));
+											$cities_id = !empty($rc['cities_id'])? $rc['cities_id'] : $cities_id;
+										}
 										
 										vecho($qrq_id.'**'.$item_id.'**'.$title.'**'.$comments.'**'.$cost.'**'.$amount);
 										

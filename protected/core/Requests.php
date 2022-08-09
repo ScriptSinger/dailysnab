@@ -7211,19 +7211,24 @@
 		$sql = '';
 		$arr = array();
 		$one = false;
-		$in = fieldIn($p, array('id'));
+		$in = fieldIn($p, array('id','amo_cities_id'));
 
 		if($in['id']){
 			$sql = 'AND acc.id=?';
 			$arr = array($in['id']);
 			$one = true;
 		}
-
+		if($in['amo_cities_id']){
+			$sql = 'AND acc.amo_cities_id=?';
+			$arr = array($in['amo_cities_id']);
+			$one = true;
+		}
 
 		$sql = "	SELECT acc.id, acc.cities_id, acc.amo_cities_id, 
 						ac.title, c.name cities_name
 				FROM amo_cities_cities_id acc, amo_cities ac, a_cities c
 				WHERE acc.amo_cities_id=ac.id AND acc.cities_id=c.id
+						".$sql."
 				ORDER BY ac.title  ";
 
 		$row = ($one)? PreExecSQL_one($sql,$arr) : PreExecSQL_all($sql,$arr);
