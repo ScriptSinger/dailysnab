@@ -5919,7 +5919,7 @@ elseif($_GET['route'] == 'upload_files_message'){
 
 	// URL до временной директории.
 	$url_path = '/files/messages/'.COMPANY_ID.'/';
-
+    $icon_path = '/image/iconMessages/';
 	// Полный путь до временной директории.
 	$tmp_path = $_SERVER['DOCUMENT_ROOT'] . $url_path;
 
@@ -5946,13 +5946,13 @@ elseif($_GET['route'] == 'upload_files_message'){
 
 		// Проверим на ошибки загрузки.
 		$ext = mb_strtolower(mb_substr(mb_strrchr(@$file['name'], '.'), 1));
+        //vecho(@$file['name']);
+        $nameFiles = explode('.', @$file['name'])[0];
 		if (!empty($file['error']) || empty($file['tmp_name']) || $file['tmp_name'] == 'none') {
 			$error = 'Не удалось загрузить файл.';
 		} elseif (empty($file['name']) || !is_uploaded_file($file['tmp_name'])) {
 			$error = 'Не удалось загрузить файл.';
-		} elseif (empty($ext) || !in_array($ext, $allow)) {
-			$error = 'Недопустимый тип файла';
-		} else {
+		} elseif(in_array($ext, $allow)) {
 			$info = @getimagesize($file['tmp_name']);
 			if (empty($info[0]) || empty($info[1]) || !in_array($info[2], array(1, 2, 3))) {
 				$error = 'Недопустимый тип файла';
@@ -5966,80 +5966,198 @@ elseif($_GET['route'] == 'upload_files_message'){
 					// Создание миниатюры.
 					switch ($info[2]) {
 						case 1:
-							$im = imageCreateFromGif($src);
-							imageSaveAlpha($im, true);
-							break;
-						case 2:
-							$im = imageCreateFromJpeg($src);
-							break;
-						case 3:
-							$im = imageCreateFromPng($src);
-							imageSaveAlpha($im, true);
-							break;
-					}
+                     $im = imageCreateFromGif($src);
+                     imageSaveAlpha($im, true);
+                     break;
+                     case 2:
+                     $im = imageCreateFromJpeg($src);
+                     break;
+                     case 3:
+                     $im = imageCreateFromPng($src);
+                     imageSaveAlpha($im, true);
+                     break;
+                 }
 
-					$width  = $info[0];
-					$height = $info[1];
+                 $width  = $info[0];
+                 $height = $info[1];
 
 					// Высота превью 100px, ширина рассчитывается автоматически.
-					$h = 100;
-					$w = ($h > $height) ? $width : ceil($h / ($height / $width));
-					$tw = ceil($h / ($height / $width));
-					$th = ceil($w / ($width / $height));
+                 $h = 100;
+                 $w = ($h > $height) ? $width : ceil($h / ($height / $width));
+                 $tw = ceil($h / ($height / $width));
+                 $th = ceil($w / ($width / $height));
 
-					$new_im = imageCreateTrueColor($w, $h);
-					if ($info[2] == 1 || $info[2] == 3) {
-						imagealphablending($new_im, true);
-						imageSaveAlpha($new_im, true);
-						$transparent = imagecolorallocatealpha($new_im, 0, 0, 0, 127);
-						imagefill($new_im, 0, 0, $transparent);
-						imagecolortransparent($new_im, $transparent);
-					}
+                 $new_im = imageCreateTrueColor($w, $h);
+                 if ($info[2] == 1 || $info[2] == 3) {
+                  imagealphablending($new_im, true);
+                  imageSaveAlpha($new_im, true);
+                  $transparent = imagecolorallocatealpha($new_im, 0, 0, 0, 127);
+                  imagefill($new_im, 0, 0, $transparent);
+                  imagecolortransparent($new_im, $transparent);
+              }
 
-					if ($w >= $width && $h >= $height) {
-						$xy = array(ceil(($w - $width) / 2), ceil(($h - $height) / 2), $width, $height);
-					} elseif ($w >= $width) {
-						$xy = array(ceil(($w - $tw) / 2), 0, ceil($h / ($height / $width)), $h);
-					} elseif ($h >= $height) {
-						$xy = array(0, ceil(($h - $th) / 2), $w, ceil($w / ($width / $height)));
-					} elseif ($tw < $w) {
-						$xy = array(ceil(($w - $tw) / 2), ceil(($h - $h) / 2), $tw, $h);
-					} else {
-						$xy = array(0, ceil(($h - $th) / 2), $w, $th);
-					}
+              if ($w >= $width && $h >= $height) {
+                  $xy = array(ceil(($w - $width) / 2), ceil(($h - $height) / 2), $width, $height);
+              } elseif ($w >= $width) {
+                  $xy = array(ceil(($w - $tw) / 2), 0, ceil($h / ($height / $width)), $h);
+              } elseif ($h >= $height) {
+                  $xy = array(0, ceil(($h - $th) / 2), $w, ceil($w / ($width / $height)));
+              } elseif ($tw < $w) {
+                  $xy = array(ceil(($w - $tw) / 2), ceil(($h - $h) / 2), $tw, $h);
+              } else {
+                  $xy = array(0, ceil(($h - $th) / 2), $w, $th);
+              }
 
-					imageCopyResampled($new_im, $im, $xy[0], $xy[1], 0, 0, $xy[2], $xy[3], $width, $height);
+              imageCopyResampled($new_im, $im, $xy[0], $xy[1], 0, 0, $xy[2], $xy[3], $width, $height);
 
 					// Сохранение.
-					switch ($info[2]) {
-						case 1: imageGif($new_im, $thumb); break;
-						case 2: imageJpeg($new_im, $thumb, 100); break;
-						case 3: imagePng($new_im, $thumb); break;
-					}
+              switch ($info[2]) {
+                  case 1: imageGif($new_im, $thumb); break;
+                  case 2: imageJpeg($new_im, $thumb, 100); break;
+                  case 3: imagePng($new_im, $thumb); break;
+              }
 
-					imagedestroy($im);
-					imagedestroy($new_im);
+              imagedestroy($im);
+              imagedestroy($new_im);
 
 					// Вывод в форму: превью, кнопка для удаления и скрытое поле.
 					//$ok = true;
-					$mfiles[] = '
-				<div class="img-item">
-					<img src="' . $url_path . $name . '-thumb.' . $ext . '">
-					<a herf="#" onclick="remove_img(this); return false;"></a>
-					<input type="hidden" name="images[]" value="' . $name . '.' . $ext . '">
-				</div>';
-				} else {
+              $mfiles[] = '
+              <div class="img-item">
+              <img src="' . $url_path . $name . '-thumb.' . $ext . '">
+              <a herf="#" onclick="remove_img(this); return false;"></a>
+              <input type="hidden" name="images[]" value="' . $name . '.' . $ext . '">
+              </div>';
+          } else {
 					//$ok = false;
-					$code = 'Не удалось загрузить файл.';
-				}
-			}
-		}
+           $code = 'Не удалось загрузить файл.';
+       }
+   }
+}elseif($ext == 'zip'){
+   
+                $src   = $tmp_path . $nameFiles . '.' . $ext;
+                if (move_uploaded_file($file['tmp_name'], $src)) {
+                    $mfiles[] = '
+              <div class="img-item">
+              <img style="width:100px" src="' . $icon_path . 'zip.png">
+              <a herf="#" onclick="remove_img(this); return false;"></a>
+              <input type="hidden" name="images[]" value="' . $nameFiles . '.' . $ext . '">
+              </div>';
+                 }
+}
+elseif($ext == 'doc' || $ext == 'docx'){
+    
+                $src   = $tmp_path . $nameFiles . '.' . $ext;
+                if (move_uploaded_file($file['tmp_name'], $src)) {
+                    $mfiles[] = '
+              <div class="img-item">
+              <img style="width:100px" src="' . $icon_path . 'word.png">
+              <a herf="#" onclick="remove_img(this); return false;"></a>
+              <input type="hidden" name="images[]" value="' . $nameFiles . '.' . $ext . '">
+              </div>';
+                 }
+}
+elseif($ext == 'xls' || $ext == 'xlsx'){
+   
+                $src   = $tmp_path . $nameFiles . '.' . $ext;
+                if (move_uploaded_file($file['tmp_name'], $src)) {
+                    $mfiles[] = '
+              <div class="img-item">
+              <img style="width:100px" src="' . $icon_path . 'excel.png">
+              <a herf="#" onclick="remove_img(this); return false;"></a>
+              <input type="hidden" name="images[]" value="' . $nameFiles . '.' . $ext . '">
+              </div>';
+                 }
+}
+elseif($ext == 'ppt' || $ext == 'pptx'){
+   
+                $src   = $tmp_path . $nameFiles . '.' . $ext;
+                if (move_uploaded_file($file['tmp_name'], $src)) {
+                    $mfiles[] = '
+              <div class="img-item">
+              <img style="width:100px" src="' . $icon_path . 'pp.png">
+              <a herf="#" onclick="remove_img(this); return false;"></a>
+              <input type="hidden" name="images[]" value="' . $nameFiles . '.' . $ext . '">
+              </div>';
+                 }
+}
+elseif($ext == 'rar'){
+  
+                $src   = $tmp_path . $nameFiles . '.' . $ext;
+                if (move_uploaded_file($file['tmp_name'], $src)) {
+                    $mfiles[] = '
+              <div class="img-item">
+              <img style="width:100px" src="' . $icon_path . 'rar.png">
+              <a herf="#" onclick="remove_img(this); return false;"></a>
+              <input type="hidden" name="images[]" value="' . $nameFiles . '.' . $ext . '">
+              </div>';
+                 }
+}
+elseif($ext == 'exe'){
+  
+                $src   = $tmp_path . $nameFiles . '.' . $ext;
+                if (move_uploaded_file($file['tmp_name'], $src)) {
+                    $mfiles[] = '
+              <div class="img-item">
+              <img style="width:100px" src="' . $icon_path . 'exe.png">
+              <a herf="#" onclick="remove_img(this); return false;"></a>
+              <input type="hidden" name="images[]" value="' . $nameFiles . '.' . $ext . '">
+              </div>';
+                 }
+}
+elseif($ext == 'psd'){
+   
+                $src   = $tmp_path . $nameFiles . '.' . $ext;
+                if (move_uploaded_file($file['tmp_name'], $src)) {
+                    $mfiles[] = '
+              <div class="img-item">
+              <img style="width:100px" src="' . $icon_path . 'psd.png">
+              <a herf="#" onclick="remove_img(this); return false;"></a>
+              <input type="hidden" name="images[]" value="' . $nameFiles . '.' . $ext . '">
+              </div>';
+                 }
+}
+elseif($ext == 'pdf'){
+    
+                $src   = $tmp_path . $nameFiles . '.' . $ext;
+                if (move_uploaded_file($file['tmp_name'], $src)) {
+                    $mfiles[] = '
+              <div class="img-item">
+              <img style="width:100px" src="' . $icon_path . 'pdf.png">
+              <a herf="#" onclick="remove_img(this); return false;"></a>
+              <input type="hidden" name="images[]" value="' . $nameFiles . '.' . $ext . '">
+              </div>';
+                 }
+}
+elseif($ext == 'xml'){
+   
+                $src   = $tmp_path . $nameFiles . '.' . $ext;
+                if (move_uploaded_file($file['tmp_name'], $src)) {
+                    $mfiles[] = '
+              <div class="img-item">
+              <img style="width:100px" src="' . $icon_path . 'xml.png">
+              <a herf="#" onclick="remove_img(this); return false;"></a>
+              <input type="hidden" name="images[]" value="' . $nameFiles . '.' . $ext . '">
+              </div>';
+                 }
+}else{
+   
+                $src   = $tmp_path . $nameFiles . '.' . $ext;
+                if (move_uploaded_file($file['tmp_name'], $src)) {
+                    $mfiles[] = '
+              <div class="img-item">
+              <img style="width:100px" src="' . $icon_path . 'other.png">
+              <a herf="#" onclick="remove_img(this); return false;"></a>
+              <input type="hidden" name="images[]" value="' . $nameFiles . '.' . $ext . '">
+              </div>';
+                 }
+}
 
 		//$response[] = array('error' => $error, 'data'  => $data);
-		$jsd['mfiles'] = $mfiles;
-		$jsd['code'] = $code;
+$jsd['mfiles'] = $mfiles;
+$jsd['code'] = $code;
 
-	}
+}
 
 }
 // модальное окно - авторизации на стороних ресурсах AMO

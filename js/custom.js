@@ -2765,14 +2765,23 @@ $(function(){
 	});		
 	// Загурзка картинок для сообщений	
 	$("#js-file").change(function(){
+		let error = false;
 		if (window.FormData === undefined) {
 			alert('В вашем браузере загрузка файлов не поддерживается');
 		} else {
 			var formData = new FormData();
 			$.each($("#js-file")[0].files, function(key, input){
+				
+				if(input.size > 25165824){
+					
+					webix.message({type:"error", text:'Максимальный размер файла 25 мб'});
+					error = true
+				}else{
 				formData.append('file[]', input);
+				error = false
+			}
 			});
-			
+			if(!error){
 			$.ajax({
 				type: 'POST',
 				url: '/upload_files_message',
@@ -2792,6 +2801,7 @@ $(function(){
 
 				} 
 			});
+	}
 		}
 	});	
 

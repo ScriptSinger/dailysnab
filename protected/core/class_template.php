@@ -5410,33 +5410,48 @@ class HtmlTemplate extends HtmlServive
 	
 	// Следующие строки при прокрутки для "Сообщения"
 	function TrPageMessages( $p=array() ){
-		
-		$views 	= $p['views'];
-		$m 		= $p['m'];		
-		$tr =  $kol_notification = $cl_own = $tr_img = $tr_img_wrapper = '';
-		
 
-	
+			$views 	= $p['views'];
+			$m 		= $p['m'];		
+			$tr =  $kol_notification = $cl_own = $tr_img = $tr_img_wrapper = '';
+			$allowImage = array('jpg', 'jpeg', 'png', 'gif');
+			$allowDoc = array('doc', 'docx', 'xls', 'xlsx', 'pdf', 'ppt', 'pptx', 'txt');
+
+
 		//$status_on_off = ($m["status"] != 2) ? 'В архив': 'Открыть тему';
 
 			$rcmf = reqChatMessagesFiles(array('message_id'=>$m['id']));			
 			
 			if (!empty($rcmf)){
-			
+
 				foreach($rcmf as $i => $val){
-				
-					$tr_img .='<div class="img-item">
-						<a data-fancybox="gallery6" class="img-item-link" href="/files/messages/'.$m['company_id'].'/'.$val['name'].'">
-							<img src="/files/messages/'.$m['company_id'].'/'.pathinfo($val['name'], PATHINFO_FILENAME).'-thumb.png">
+					$ext = explode('.', $val['name'])[1];
+					
+					if(in_array($ext,$allowImage)){
+$tr_img .='<div class="img-item">
+					<a data-fancybox="gallery6" class="img-item-link" href="/files/messages/'.$m['company_id'].'/'.$val['name'].'">
+					<img src="/files/messages/'.$m['company_id'].'/'.pathinfo($val['name'], PATHINFO_FILENAME).'-thumb.png">
+					</a>						
+					</div>';
+					}elseif(in_array($ext, $allowDoc)){
+						$tr_img .='<div class="img-item">
+						<a class="img-item-link" target="_blank" href="https://docs.google.com/viewer?url=https://questrequest.ru/files/messages/'.$m['company_id'].'/'.$val['name'].'">
+							<img style="width:100px" src="/image/iconMessages/' . $ext . '.png">
 						</a>						
 					</div>';
-				
+					}else{
+						$tr_img .='<div class="img-item">
+						<a class="img-item-link" href="/files/messages/'.$m['company_id'].'/'.$val['name'].'">
+							<img style="width:100px" src="/image/iconMessages/' . $ext . '.png">
+						</a>						
+					</div>';
+					}
 				}
 				
-					$tr_img_wrapper .='<div class="img-list col-md-10" id="js-file-listM">
-										'.$tr_img.'
-									</div>';
-			
+				$tr_img_wrapper .='<div class="img-list col-md-10" id="js-file-listM">
+				'.$tr_img.'
+				</div>';
+
 			}
 
 			
@@ -5444,7 +5459,7 @@ class HtmlTemplate extends HtmlServive
 			$cl_status = ($m['ticket_status']==1)? ' tech' : '';
 			
 			$avatar = "<img src='".$m['ava_company']."' class='rounded-circle' height='40'>";	
-			 
+
 /* 			if (empty($m['folder_name'])) {
 					$avatar = "<img src='".$m['ava_company']."' class='rounded-circle' height='40'>";					
 				}
@@ -5452,10 +5467,10 @@ class HtmlTemplate extends HtmlServive
 				{
 					$avatar = "<img src='".$m['ava_folder']."' class='rounded-circle' height='40'>";
 				} */	
-		
-			
 
-			
+
+
+
 			$_24h = 24*60*60; //24 часа			
 			$date_max = strtotime($m['data_insert']) + $_24h;
 			$date_cur = strtotime(date("Y-m-d H:i:s"));
@@ -5464,32 +5479,32 @@ class HtmlTemplate extends HtmlServive
 			$date_message = ($date_cur <= $date_max) ? $m['t_time'] : $m['t_date_full']; 
 			
 			if ($m['ticket_status']==1) {
-			
+
 				$tr = '	<div class="message-item row '.$cl_own.$cl_status.'">
-							<div class="tech-info _col col-md-12 text-center">								
-								<span>'.$m["ticket_exp"].'</span>															
-							</div>
-						</div>
+				<div class="tech-info _col col-md-12 text-center">								
+				<span>'.$m["ticket_exp"].'</span>															
+				</div>
+				</div>
 				';			
-			
+
 			} else {
-			
+
 				$tr = '	<div class="message-item row '.$cl_own.$cl_status.'">
-							<div class="message-info col col-md-10">
-								<span class="user_name">'.$m["name_rcmc"].'</span><br />
-								'.$avatar.'	
-								'.$kol_notification.' 
-								'.$m["ticket_exp"].'
-								<small class="pull-right">'.$date_message.'</small>							
-							</div>						
-							'.$tr_img_wrapper.'	
-						</div>
+				<div class="message-info col col-md-10">
+				<span class="user_name">'.$m["name_rcmc"].'</span><br />
+				'.$avatar.'	
+				'.$kol_notification.' 
+				'.$m["ticket_exp"].'
+				<small class="pull-right">'.$date_message.'</small>							
+				</div>						
+				'.$tr_img_wrapper.'	
+				</div>
 				';
-			
+
 			}
 			//}
-		return $tr;
-	}	
+			return $tr;
+		}	
 		
 	// Меню - Тикеты
 	function NavTabsTicketsFolders( $p=array() ){
