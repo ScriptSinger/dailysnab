@@ -22,22 +22,52 @@
 	
 	
 	$code .= '				
-					
+					<div class="container">
 					<h3 class="text-center">
 							Значения Полей (пользователей, qrq)
 					</h3>
 					
-					
-					<table id="table-admin_users" class="table table-bordered" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
-						<thead>
+				
+
+					<table id="users_attr" class="table table-striped table-bordered" style="width:100%">
+        <thead>
 							<th>Поле</th>
 							<th>Значение</th>
 							<th>Кто внес</th>
 						</thead>
-						<tbody>
-							'.$tr.'
-						</tbody>
-					</table>
+        <tbody>
+           '.$tr.'
+           
+        </tbody>
+        <tfoot>
+           <tr>
+              <th>Поле</th>
+							<th>Значение</th>
+							<th>Кто внес</th>
+            </tr>
+        </tfoot>
+    </table>
+				
+				<script>$(document).ready(function () {
+    $("#users_attr").DataTable( {
+        "language": {
+            "lengthMenu": "Отображать по _MENU_ элементов на странице",
+            "zeroRecords": "Пусто",
+            "info": "Страница _PAGE_ из _PAGES_",
+            "infoEmpty": "Нет записей",
+            "infoFiltered": "(filtered from _MAX_ total records)",
+            "paginate": {
+			        "first":      "Начало",
+			        "last":       "Конец",
+			        "next":       "Дальше",
+			        "previous":   "Назад"
+			    },
+			 "search": "Поиск:"
+        }
+    });
+}); </script>
+
+					</div>
 
 			';
 
