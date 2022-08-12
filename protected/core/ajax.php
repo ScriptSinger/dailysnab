@@ -2737,7 +2737,8 @@ if(LOGIN_ID){
         if($validate_email){
             //логин (email) занят
             $r=reqLogin(array('email'=>$in['email'],'not_id'=>LOGIN_ID));
-            if($r['id']){
+
+            if(!empty($r['id'])){
                 $arr_code[] 	= 'Email занят';
                 $flag[] 	= 'email';
             }
