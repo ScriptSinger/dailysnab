@@ -18,7 +18,10 @@
 	$tr = '';
 	foreach($row as $i => $m){
 		$count_company = '';
-		if($flag=='account'){
+		$phone = (!empty($m['phone'])) ? $m['phone'] : 'Отсутсвует';
+		$email = (!empty($m['email'])) ? $m['email'] : 'Отсутсвует';
+		$text = "Номер телефона: $phone <br> Почта: $email";
+				if($flag=='account'){
 			$str = $g->format_by_count($m['count_company'], 'компания', 'компании', 'компаний');
 			$count_company = '<div>
 								<a href="/admin_users/'.$m['login_id'].'/'.$m['id'].'" class="badge badge-primary">'.$m['count_company'].' '.$str.'</a>
@@ -29,7 +32,8 @@
 		$active = ($m['active']==2)? '<div>
 										<span class="badge badge-danger">НЕ АКТИВНА</span>
 									</div>' : '';
-		
+
+      
 		$tr .= '	<tr>
 					<td>'.$m['dmy_data_insert'].'</td>
 					<td><img src="/images/profile.png" alt="" class="rounded" height="50"/></td>
@@ -40,6 +44,9 @@
 						<button class="modal_admin_company" data-id="'.$m['id'].'">
 							<img src="/image/status-edit.svg" alt="" class="status-request">
 						</button>
+					</td>
+					<td>
+						' . $text . '
 					</td>
 					<td><button class="change-btn admin_pro_mode" data-id="'.$m['id'].'">'.$pro_mode.'</button></td>
 				</tr>
@@ -65,6 +72,7 @@
 							<th>Дата регистрации</th>
 							<th>Аватар</th>
 							<th>Наименование</th>
+							<th>Контакты</th>
 							<th>Pro режим</th>
 						</thead>
 						<tbody>
