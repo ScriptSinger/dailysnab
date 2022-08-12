@@ -17,7 +17,8 @@
 	
 	$tr = '';
 	foreach($row as $i => $m)
-	{
+	{	
+
 		$count_company = '';
 		$phone = (!empty($m['phone'])) ? $m['phone'] : 'Отсутсвует';
 		$email = (!empty($m['email'])) ? $m['email'] : 'Отсутсвует';
@@ -29,15 +30,15 @@
 							</div>';
 		}
 		$pro_mode = ($m['pro_mode'])? 'Отключить' : 'Подключить';
-		
+	
 		$active = ($m['active']==2)? '<div>
 										<span class="badge badge-danger">НЕ АКТИВНА</span>
 									</div>' : '';
 
-      
+      	$avatar = (!empty($m['avatar'])) ? $m['avatar'] : "/image/profile.png";
 		$tr .= '	<tr>
 					<td>'.$m['dmy_data_insert'].'</td>
-					<td><img src="/image/profile.png" alt="" class="rounded" height="50"/></td>
+					<td><img src="' . $avatar . '" alt="" class="rounded" height="50"/></td>
 					<td>
 						'.$m['company'].'
 						'.$active.'

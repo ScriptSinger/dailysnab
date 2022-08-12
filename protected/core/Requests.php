@@ -1078,7 +1078,7 @@
 		}
 
 
-		$sql = "	SELECT c.id, c.login_id, c.flag_account, c.company, c.who1, c.who2, c.pro_mode, c.active, c.email, c.phone,
+		$sql = "	SELECT c.id, c.login_id, c.flag_account, c.company, c.who1, c.who2, c.pro_mode, c.active, c.email, c.phone, c.avatar,
 							c.data_insert, DATE_FORMAT(c.data_insert,'%d-%m-%Y') dmy_data_insert,
 							(SELECT COUNT(t.id) FROM company t WHERE t.login_id=c.login_id AND t.flag_account=2) count_company
 					FROM company c
