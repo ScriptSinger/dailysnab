@@ -67,18 +67,49 @@
 						<a href="/admin_users/company" class="btn '.$cl_btn2.' btn-sm">Компании</a>
 					</div>
 					
-					<table id="table-admin_users" class="table table-bordered" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
-						<thead>
-							<th>Дата регистрации</th>
+					<table id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+               <th>Дата регистрации</th>
 							<th>Аватар</th>
 							<th>Наименование</th>
 							<th>Контакты</th>
 							<th>Pro режим</th>
-						</thead>
-						<tbody>
-							'.$tr.'
-						</tbody>
-					</table>
+            </tr>
+        </thead>
+        <tbody>
+           '.$tr.'
+           
+        </tbody>
+        <tfoot>
+           <tr>
+                <th>Дата регистрации</th>
+							<th>Аватар</th>
+							<th>Наименование</th>
+							<th>Контакты</th>
+							<th>Pro режим</th>
+            </tr>
+        </tfoot>
+    </table>
+				
+				<script>$(document).ready(function () {
+    $("#example").DataTable( {
+        "language": {
+            "lengthMenu": "Отображать по _MENU_ элементов на странице",
+            "zeroRecords": "Пусто",
+            "info": "Страница _PAGE_ из _PAGES_",
+            "infoEmpty": "Нет записей",
+            "infoFiltered": "(filtered from _MAX_ total records)",
+            "paginate": {
+			        "first":      "Начало",
+			        "last":       "Конец",
+			        "next":       "Дальше",
+			        "previous":   "Назад"
+			    },
+			 "search": "Поиск:"
+        }
+    });
+}); </script>
 				</div>
 
 			';
