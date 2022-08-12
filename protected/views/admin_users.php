@@ -17,7 +17,8 @@
 	
 	$tr = '';
 	foreach($row as $i => $m)
-	{
+	{	
+
 		$count_company = '';
 		$phone = (!empty($m['phone'])) ? $m['phone'] : 'Отсутсвует';
 		$email = (!empty($m['email'])) ? $m['email'] : 'Отсутсвует';
@@ -29,15 +30,15 @@
 							</div>';
 		}
 		$pro_mode = ($m['pro_mode'])? 'Отключить' : 'Подключить';
-		
+	
 		$active = ($m['active']==2)? '<div>
 										<span class="badge badge-danger">НЕ АКТИВНА</span>
 									</div>' : '';
 
-      
+      	$avatar = (!empty($m['avatar'])) ? $m['avatar'] : "/image/profile.png";
 		$tr .= '	<tr>
 					<td>'.$m['dmy_data_insert'].'</td>
-					<td><img src="/images/profile.png" alt="" class="rounded" height="50"/></td>
+					<td><img src="' . $avatar . '" alt="" class="rounded" height="50"/></td>
 					<td>
 						'.$m['company'].'
 						'.$active.'
@@ -68,7 +69,7 @@
 						<a href="/admin_users/company" class="btn '.$cl_btn2.' btn-sm">Компании</a>
 					</div>
 					
-					<table id="example" class="table table-striped table-bordered" style="width:100%">
+					<table id="users" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
                <th>Дата регистрации</th>
@@ -94,7 +95,7 @@
     </table>
 				
 				<script>$(document).ready(function () {
-    $("#example").DataTable( {
+    $("#users").DataTable( {
         "language": {
             "lengthMenu": "Отображать по _MENU_ элементов на странице",
             "zeroRecords": "Пусто",
