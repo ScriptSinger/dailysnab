@@ -1,6 +1,7 @@
 #!/bin/bash
 cd ~/questrequest.ru/public_html/; 
-if [ "$git_status" != "" ]
+local git_status=$(git status --porcelain 2>/dev/null)
+if [ "$git_status" == "" ]
    then
        git_modified_color="\[${RED}\]"
    fi
