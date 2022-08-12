@@ -37,7 +37,7 @@
       
 		$tr .= '	<tr>
 					<td>'.$m['dmy_data_insert'].'</td>
-					<td><img src="/images/profile.png" alt="" class="rounded" height="50"/></td>
+					<td><img src="/image/profile.png" alt="" class="rounded" height="50"/></td>
 					<td>
 						'.$m['company'].'
 						'.$active.'
