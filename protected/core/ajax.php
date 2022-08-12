@@ -2815,6 +2815,18 @@ if(LOGIN_ID){
         $jsd['tr'] 			= $tr;
         $jsd['flag_reload'] 	= $flag_reload;
     }
+
+
+    elseif($_GET['route'] == 'skip_registration_company'){
+    $STH = PreExecSQL(" UPDATE company SET skip=1 WHERE id=?; " ,
+        array(COMPANY_ID));
+
+    if($STH){
+        $ok = true;
+        $code = 'сохранено';
+        $jsd['ok']  = $ok;
+    }
+}
 // модальное окно Предложения на Заявки
     elseif($_GET['route'] == 'modal_offer_buy'){
 
