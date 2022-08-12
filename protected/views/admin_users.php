@@ -16,7 +16,8 @@
 	}
 	
 	$tr = '';
-	foreach($row as $i => $m){
+	foreach($row as $i => $m)
+	{
 		$count_company = '';
 		$phone = (!empty($m['phone'])) ? $m['phone'] : 'Отсутсвует';
 		$email = (!empty($m['email'])) ? $m['email'] : 'Отсутсвует';
@@ -43,7 +44,7 @@
 						'.$count_company.'
 						<button class="modal_admin_company" data-id="'.$m['id'].'">
 							<img src="/image/status-edit.svg" alt="" class="status-request">
-						</button>
+						</button> 
 					</td>
 					<td>
 						' . $contacts . '
