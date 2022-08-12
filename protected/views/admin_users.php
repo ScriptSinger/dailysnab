@@ -20,7 +20,7 @@
 		$count_company = '';
 		$phone = (!empty($m['phone'])) ? $m['phone'] : 'Отсутсвует';
 		$email = (!empty($m['email'])) ? $m['email'] : 'Отсутсвует';
-		$text = "Номер телефона: $phone <br> Почта: $email";
+		$contacts = "Номер телефона: $phone <br> Почта: $email";
 				if($flag=='account'){
 			$str = $g->format_by_count($m['count_company'], 'компания', 'компании', 'компаний');
 			$count_company = '<div>
@@ -46,7 +46,7 @@
 						</button>
 					</td>
 					<td>
-						' . $text . '
+						' . $contacts . '
 					</td>
 					<td><button class="change-btn admin_pro_mode" data-id="'.$m['id'].'">'.$pro_mode.'</button></td>
 				</tr>
