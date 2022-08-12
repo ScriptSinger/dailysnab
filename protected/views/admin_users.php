@@ -68,7 +68,7 @@
 						<a href="/admin_users/company" class="btn '.$cl_btn2.' btn-sm">Компании</a>
 					</div>
 					
-					<table id="example" class="table table-striped table-bordered" style="width:100%">
+					<table id="users" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
                <th>Дата регистрации</th>
@@ -94,7 +94,7 @@
     </table>
 				
 				<script>$(document).ready(function () {
-    $("#example").DataTable( {
+    $("#users").DataTable( {
         "language": {
             "lengthMenu": "Отображать по _MENU_ элементов на странице",
             "zeroRecords": "Пусто",
