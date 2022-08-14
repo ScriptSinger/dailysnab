@@ -5440,8 +5440,8 @@ elseif($_GET['route'] == 'create_new_message'){
                 $company_name = $rcm[0]["name_rcmc"];
              $messagetext    = $company_name. ' открыл новую тему: <a href="/chat/messages/' .$last_chat['id'] . '">' . $last_chat['folder_name'] . '</a>'  ;
 
-                $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-                         array($fid,COMPANY_ID,$cId,$messagetext,1));
+                $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status, chatId) VALUES (?,?,?,?,?, ?); " ,
+                         array($fid,COMPANY_ID,$cId,$messagetext,2, $last_chat['id']));
 		}
 	}else{
 
