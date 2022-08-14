@@ -3344,8 +3344,8 @@ class HtmlForms extends HtmlTemplate
 		$content = '<div class="modal-body__content">
 					<p>Ура! Теперь Вы можете<br> подключать Навыки и<br> экономить деньги и время!</p>
 				</div>';
-		$bottom = '<div class="modal-body__footer">
-					<a href="/pro" class="btn button-blue" ">Готово</a>
+		$bottom = '<br><div class="modal-body__footer">
+					<a href="/pro" class="btn button-blue" ">Старт</a>
 				</div>
 			</div>';
 
