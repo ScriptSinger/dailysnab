@@ -3171,7 +3171,7 @@ function getCheckbox(){
 function createModalCompany(){
 	$('#vmodal').removeData();
 	var d = $(this).data();
-	console.log(d.id)
+	console.log(d)
 	$.post("/modal_my_company", {id:d.id},
 		function(data){
 			if(data.code){
@@ -3687,6 +3687,7 @@ function invoice_pdf() {
 // сохранение компании
 function SaveMyCompany() {
 	$('#my_company-form').bootstrapValidator('destroy');
+
 	$('#my_company-form').bootstrapValidator({
 		feedbackIcons: {
 			valid: 'glyphicon glyphicon-ok',
@@ -3751,15 +3752,16 @@ function SaveMyCompany() {
 			indexed_array[n['name']] = n['value'];
 		});
 
-
+				console.log(indexed_array)	
 		var bv = $form.data('bootstrapValidator');
 		$.post("/save_my_company", $form.serialize(),
 			function(data){
 				if(data.ok){
 								//onReload('/profile');
 								webix.message("Сохранено");
-								if(typeof(indexed_array['active']) != "undefined" && indexed_array['active'] !== null) {
+								if(typeof(indexed_array['companyIn']) != "undefined" && indexed_array['companyIn'] !== null) {
 									$.post('/change_account_company', {id:data.id}, function(data){
+										console.log('Супер')
 										if(data.ok){
 												//onReload('');
 												ModalSelectSkills(); //след окно для выбора навыков

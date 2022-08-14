@@ -809,11 +809,16 @@ class HtmlForms extends HtmlTemplate
 						</div>
 					</div>
 					<div class="col-sm-6">
-						<div class="form-group">
-							<div class="form-check">
-					    <input type="checkbox" checked class="form-check-input" id="active">
-					    <label class="form-check-label" for="active">Продолжить как компания</label>
-					  </div>
+						<div class="form-group" style="display: inline-flex;">
+							'.$this->Input(	array(	'type'			=> 'checkbox',
+													'id'			=> 'companyIn',
+													'class'			=> 'form-control',
+													'checked' 		=> true,
+													'placeholder'	=> 'Продолжить как компания'
+												)
+										).'
+							
+						</div>
 						</div>
 					</div>
 				</div>
