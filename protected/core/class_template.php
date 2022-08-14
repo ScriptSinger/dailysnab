@@ -5355,9 +5355,13 @@ class HtmlTemplate extends HtmlServive
 				}
 				else	
 				{
-                   
+                   if(!empty($rc2)){
 					$theme = $rc2['legal_entity'] . ' ' . $rc2["company"];
 					$edit_theme = '';
+				}else{
+					$theme = $last_message["name_rcmc"];
+					$edit_theme = '';
+				}
 				}
 
 				
