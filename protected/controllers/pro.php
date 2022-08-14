@@ -141,6 +141,25 @@
 								
 									$status = 'Поздравляем! Средства успешно пришли и отразились на вашем баллансе.';
 									$code = 'Заказ #'.$paymentId.'<br />'.$status;	
+
+								
+								}	
+									
+									
+							}						
+							
+							$this->title = 'Статус приема платяжей';
+							
+							
+							unset($_SESSION["paymentId"]);								
+						} else {					
+								
+							$this->e404 = '';
+							$this->title = 'Ошибка 404. Страница не найдена';
+						}	
+					}	
+					
+					if($response['status'] == 'succeeded' ){
 													$code .= "<script>
 							$( document ).ready(function() {
 				    var modal_logo = $('#modal_logo');
@@ -164,28 +183,7 @@
 											}
 										}
 										);
-});
-	
-
-				</script>";
-								
-								}	
-									
-									
-							}						
-							
-							$this->title = 'Статус приема платяжей';
-							
-							
-							unset($_SESSION["paymentId"]);								
-						} else {					
-								
-							$this->e404 = '';
-							$this->title = 'Ошибка 404. Страница не найдена';
-						}	
-					}	
-					
-					
+					}
 			
 					$this->pro = array( 	
 								'flag'			=> $flag,
