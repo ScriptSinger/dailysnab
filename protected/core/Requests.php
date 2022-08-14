@@ -6226,10 +6226,10 @@
 
 		$start_limit 	= (isset($p['start_limit'])&&v_int($p['start_limit']))? 	$p['start_limit'] : 0;
 
-		if($in['status']){
-			$sql .= ' AND tf.status=? ';
-			array_push($arr , $in['status']);
-		}
+		// if($in['status']){
+		// 	$sql .= ' AND tf.status=? ';
+		// 	array_push($arr , $in['status']);
+		// }
 		if($in['id']){
 			$sql .= ' AND tf.id=? ';
 			array_push($arr , $in['id']);
