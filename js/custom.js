@@ -2726,24 +2726,7 @@ $("body").on("click", "#again_link", function(){
 			);
 	});
 
-	// Открыть тему
-	$("body").on("click", ".open_theme", function(){
-		var d = $(this).data();
-
-		$.post("/open_theme", {id:d.fid},
-			function(data){
-				if(data.ok){
-					console.log(data);
-					webix.message(data.code);
-					onReload('/chat/messages/');
-				}else{
-					console.log(data);
-					//webix.message({type:"error", text:data.code});
-				}
-
-			}
-			);
-	});
+	
 
 	// модальное окно Создать новое сообщение из сущностей
 	$("body").on("click", ".write_message_need", function(){
