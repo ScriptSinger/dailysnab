@@ -109,6 +109,12 @@ class HtmlElement {
                     $html = '
 								<input type="' . $param['type'] . '" class="' . $param['class'] . '" id="' . $param['id'] . '" name="' . $name . '" placeholder="' . $param['placeholder'] . '" value="' . $param['value'] . '" ' . $data_str . ' ' . $param['dopol'] . ' ' . $param['disabled'] . ' title="' . $param['title'] . '" oninput="' . $number . '""/>
 							';
+                }elseif(!empty($param['checked'])){
+                		$html = '
+								<input checked type="' . $param['type'] . '" class="' . $param['class'] . '" id="' . $param['id'] . '" name="' . $name . '" placeholder="' . $param['placeholder'] . '" value="' . $param['value'] . '" ' . $data_str . ' ' . $param['dopol'] . ' ' . $param['disabled'] . ' title="' . $param['title'] . '" />
+								<label class="form-check-label" for="companyIn">Продолжить как компания</label>
+
+							';
                 }else{
                     $html = '
 								<input type="' . $param['type'] . '" class="' . $param['class'] . '" id="' . $param['id'] . '" name="' . $name . '" placeholder="' . $param['placeholder'] . '" value="' . $param['value'] . '" ' . $data_str . ' ' . $param['dopol'] . ' ' . $param['disabled'] . ' title="' . $param['title'] . '" />
