@@ -102,7 +102,35 @@
 									} catch (\Exception $e) {
 										$response = $e;
 									}
-									
+									if($response['status'] == 'succeeded')	{
+			$code .= "<script>
+			$( document ).ready(function() {
+    var modal_logo = $('#modal_logo');
+	var modal = $('#vmodal');
+	var modal_ar = $('#vmodal_ar');
+	var modal_amo = $('#modal_amo');
+
+						$.post('/checkPaymentModal', {}, 
+					function(data){
+						if(data.code){
+							console.log(data.code);
+							modal.html(data.code);
+							modal.modal();							
+							modal.on('shown.bs.modal',
+								function(e){	
+
+								}	
+								).on('hidden.bs.modal', function (e) {									
+
+								}); 
+							}
+						}
+						);
+});
+	
+
+				</script>";
+			}
 									switch ($response['status'])
 										{
 											case 'pending':
@@ -158,35 +186,7 @@
 						}	
 					}	
 					
-				if($response['status'] == 'succeeded')	{
-			$code .= "<script>
-			$( document ).ready(function() {
-    var modal_logo = $('#modal_logo');
-	var modal = $('#vmodal');
-	var modal_ar = $('#vmodal_ar');
-	var modal_amo = $('#modal_amo');
-
-						$.post('/checkPaymentModal', {}, 
-					function(data){
-						if(data.code){
-							console.log(data.code);
-							modal.html(data.code);
-							modal.modal();							
-							modal.on('shown.bs.modal',
-								function(e){	
-
-								}	
-								).on('hidden.bs.modal', function (e) {									
-
-								}); 
-							}
-						}
-						);
-});
-	
-
-				</script>";
-			}
+				
 					$this->pro = array( 	
 								'flag'			=> $flag,
 								'type'			=> $type,
