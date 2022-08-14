@@ -810,17 +810,10 @@ class HtmlForms extends HtmlTemplate
 					</div>
 					<div class="col-sm-6">
 						<div class="form-group">
-							<label for="active" class="">Продолжить как компания</label>
-							<label class="switch">
-								'.$this->Input(	array(	'type'		=> 'checkbox',
-                                                        'id'		=> 'active',
-                                                        'class'		=> 'primary',
-                                                        'value'		=> ($r['active']==1)? 'check' 		: '',
-                                                        'dopol'		=> ($r['active']==1)? 'checked' 	: ''
-                                                    )
-                                                ).'
-								<span class="slider round"></span>
-							</label>
+							<div class="form-check">
+					    <input type="checkbox" checked class="form-check-input" id="active">
+					    <label class="form-check-label" for="active">Продолжить как компания</label>
+					  </div>
 						</div>
 					</div>
 				</div>
