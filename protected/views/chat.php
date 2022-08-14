@@ -53,6 +53,7 @@ $last_message = [];
 		
 				foreach($rown as $i => $m){
 					//vecho(json_decode($m['companies']));
+					
 					if(in_array($comp, json_decode($m['companies']))){ //проверка прав на чтение сообщения
 						$trM .= $t->TrPageMessages(array('m' => $m, 'views' => $views));
 					}

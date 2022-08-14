@@ -6152,7 +6152,7 @@
 								t.data_insert, DATE_FORMAT(t.data_insert, '%d.%m.%Y %H:%i') as t_date_full, DATE_FORMAT(t.data_insert, '%H:%i') as t_time,
 								c.company, c.avatar as ava_company, c.legal_entity_id,
 								CONCAT(sle.legal_entity,' ',c.company) as name_rcmc,
-								tf.folder_name, tf.status, tf.avatar as ava_folder, tf.need										
+								tf.folder_name, tf.status, tf.avatar as ava_folder, tf.need, t.chatId										
 						FROM tickets t, company c, tickets_folder tf, slov_legal_entity sle
 						".$sql_inner_join."
 						WHERE c.id=t.company_id AND sle.id=c.legal_entity_id AND  tf.id=t.folder_id ".$sql."
@@ -6183,7 +6183,7 @@
 							t.data_insert, DATE_FORMAT(t.data_insert, '%d.%m.%Y %H:%i') as t_date_full, DATE_FORMAT(t.data_insert, '%H:%i') as t_time,	
 							c.avatar as ava_company, c.company, c.legal_entity_id,
 							tf.folder_name, tf.avatar as ava_folder, tf.need, tf.status,
-							CONCAT(sle.legal_entity,' ',c.company) as name_rcmc
+							CONCAT(sle.legal_entity,' ',c.company) as name_rcmc, t.chatId
 					 FROM tickets t, company c, tickets_folder tf, slov_legal_entity sle
 						".$sql_inner_join."
 					 WHERE c.id=t.company_id AND tf.id=t.folder_id AND sle.id=c.legal_entity_id AND LOWER(t.companies) LIKE '%".COMPANY_ID."%'  ".$sql."

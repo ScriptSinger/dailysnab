@@ -5302,12 +5302,14 @@ elseif($_GET['route'] == 'create_new_message'){
 
 			$arr_diff1 = json_decode($companies_json, true);
 			//$arr_diff2 = json_decode($rm_cat[0]['companies_id'], true);
-
+            $cId = '';
 			foreach($rcf as $i => $val){
 				$arr_diff2 = json_decode($val['companies_id'], true);
 				if (array_values_equal($arr_diff1, $arr_diff2)){
 					$fid = $val['id'];
+                    $cId = $val['companies_id'];
 				};
+                
 			}
 
 
@@ -5318,8 +5320,8 @@ elseif($_GET['route'] == 'create_new_message'){
 
 			//vecho($fid);
 			//die;
-
-			if(!empty($fid)){ //проверка на наличие такого же чата (с теми же собеседниками)
+            // vecho($fid);
+			if(empty($fid)){ //проверка на наличие такого же чата (с теми же собеседниками)
 
 				//$fid = $rm_cat[0]['id'];
 
@@ -5361,6 +5363,9 @@ elseif($_GET['route'] == 'create_new_message'){
 
 
 				/*--------------- проверка и отправка сообщений в уже действующие чаты (конец) ---------------------*/
+
+               
+
 
 
 				//Добавление папки для сообщений
@@ -5417,6 +5422,7 @@ elseif($_GET['route'] == 'create_new_message'){
 
 
 				}
+
 				if($STH2){
 					$ok = true;
 					//Логи
@@ -5427,6 +5433,15 @@ elseif($_GET['route'] == 'create_new_message'){
 
 
 			}
+            $sql = "SELECT id, folder_name FROM tickets_folder WHERE companies_id=? ORDER by id DESC";
+             $last_chat = PreExecSQL_one($sql,array($cId));
+            
+             $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
+                $company_name = $rcm[0]["name_rcmc"];
+             $messagetext    = $company_name. ' открыл новую тему: <a href="/chat/messages/' .$last_chat['id'] . '">' . $last_chat['folder_name'] . '</a>'  ;
+
+                $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status, chatId) VALUES (?,?,?,?,?, ?); " ,
+                         array($fid,COMPANY_ID,$cId,$messagetext,2, $last_chat['id']));
 		}
 	}else{
 

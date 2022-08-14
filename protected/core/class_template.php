@@ -5420,6 +5420,7 @@ class HtmlTemplate extends HtmlServive
 
 			$views 	= $p['views'];
 			$m 		= $p['m'];		
+
 			$tr =  $kol_notification = $cl_own = $tr_img = $tr_img_wrapper = '';
 			$allowImage = array('jpg', 'jpeg', 'png', 'gif');
 			$allowDoc = array('doc', 'docx', 'xls', 'xlsx', 'pdf', 'ppt', 'pptx', 'txt');
@@ -5488,12 +5489,31 @@ $tr_img .='<div class="img-item">
 			if ($m['ticket_status']==1) {
 
 				$tr = '	<div class="message-item row '.$cl_own.$cl_status.'">
-				<div class="tech-info _col col-md-12 text-center">								
+				<div class="tech-info _col col-md-12 text-center">	
+
 				<span>'.$m["ticket_exp"].'</span>															
 				</div>
 				</div>
 				';			
 
+			}elseif($m['ticket_status']==2){
+				 $rcm = reqChatMessages(array('folder_id' => $m['chatId']));
+				// // var_dump($m['chatId']);
+				$mes = '';
+				foreach($rcm as $k){
+				 $mes .= self::TrPageMessages(array('m' => $k, 'views' => 'messages'));
+				}
+				// var_dump($mes);
+				$tr = '	<div class="message-item row tech '.$cl_own.$cl_status.'">
+
+			<div class="message-info col col-md-10">
+			<span>'.$m["ticket_exp"].'</span>
+			<div class="tech-info _col col-md-12">	
+				'.$mes.'										
+				</div>		
+				</div>
+				</div>
+				';		
 			} else {
 
 				$tr = '	<div class="message-item row '.$cl_own.$cl_status.'">
