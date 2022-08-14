@@ -5045,14 +5045,25 @@ elseif($_GET['route'] == 'modal_podpiska_in'){
 // Модальное окно Отписаться
 elseif($_GET['route'] == 'modal_podpiska_out'){
 
-	$arr = $f->FormCancelPodpiska(array('id'=>$in['id']));
+    $arr = $f->FormCancelPodpiska(array('id'=>$in['id']));
 
-	$code = $t->getModal(
-		array('class_dialog' => 'podpiska', 'top' => $arr['top'], 'content' => $arr['content'], 'bottom' => $arr['bottom']),
-		array('id' => 'cancelPodpiska-form', 'class' => '')
-	);
+    $code = $t->getModal(
+        array('class_dialog' => 'podpiska', 'top' => $arr['top'], 'content' => $arr['content'], 'bottom' => $arr['bottom']),
+        array('id' => 'cancelPodpiska-form', 'class' => '')
+    );
 
-	$jsd['code'] = $code;
+    $jsd['code'] = $code;
+}
+elseif($_GET['route'] == 'checkPaymentModal'){
+
+    $arr = $f->FormCheckPayment(array('id'=>$in['id']));
+
+    $code = $t->getModal(
+        array('class_dialog' => 'podpiska', 'top' => $arr['top'], 'content' => $arr['content'], 'bottom' => $arr['bottom']),
+        array('id' => 'cancelPodpiska-form', 'class' => '')
+    );
+
+    $jsd['code'] = $code;
 }
 // Подключить/Отключить Pro режим
 elseif($_GET['route'] == 'user_pro_mode'){

@@ -3332,6 +3332,25 @@ class HtmlForms extends HtmlTemplate
 
 		return array('top'=>$top,'content'=>$content,'bottom'=>$bottom);
 	}
+	// Подтверждение платежа
+	function FormCheckPayment( $p=array() ){
+		$in = fieldIn($p, array('id'));
+
+		$top 	= '<div class="form-wrapper2">
+				<div class="modal-body__head">
+					<div class="modal__title"><h3>Платеж получен</h3></div>							
+				</div>';
+
+		$content = '<div class="modal-body__content">
+					<p>Ура! Теперь Вы можете<br> подключать Навыки и<br> экономить деньги и время!</p>
+				</div>';
+		$bottom = '<div class="modal-body__footer">
+					
+				</div>
+			</div>';
+
+		return array('top'=>$top,'content'=>$content,'bottom'=>$bottom);
+	}
 	// Подписка
 	function FormPodpiska( $p=array() ){
 		$in = fieldIn($p, array('id','type_skills')); //type_skills - тип выбранного плана (Pro/Vip)
