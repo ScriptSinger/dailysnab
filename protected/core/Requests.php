@@ -6238,6 +6238,10 @@
 		if(!empty($p['folderReq'])){
             $sql .= ' AND tf.folder_name != "" ';
         }
+        if(!empty($p['archive'])){
+            $sql .= ' AND tf.status != 2 ';
+        }
+
 
 
 		$sql = "	SELECT tf.id, tf.folder_name, tf.owner_id, tf.avatar, tf.need as needs_id, tf.status, tf.companies_id			

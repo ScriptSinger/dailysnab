@@ -5833,30 +5833,60 @@ elseif($_GET['route'] == 'close_theme_pr'){
 //Закрыть тему
 elseif($_GET['route'] == 'close_theme'){
 
-	$ok = false;
-	$code = '';
+    $ok = false;
+    $code = '';
 
-	$folder_id = $in['id'];
+    $folder_id = $in['id'];
 
-	$rcf = reqChatFolders(array('id'=>$folder_id));
-	$companies_id 	= $rcf[0]["companies_id"];
+    $rcf = reqChatFolders(array('id'=>$folder_id));
+    $companies_id   = $rcf[0]["companies_id"];
 
-	$rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-	$company_name = $rcm[0]["name_rcmc"];
+    $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
+    $company_name = $rcm[0]["name_rcmc"];
 
-	$messagetext 	= $company_name. ' закрыл тему.';
+    $messagetext    = $company_name. ' закрыл тему.';
 
-	$STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-		array($folder_id,COMPANY_ID,$companies_id,$messagetext,1));
-	$STH2 = PreExecSQL(" UPDATE tickets_folder SET status=? WHERE id=?" ,
-		array(2,$folder_id));
-	if($STH && $STH2){
-		$ok = true;
-		$code = 'Тема закрыта';
-	}
+    $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+        array($folder_id,COMPANY_ID,$companies_id,$messagetext,1));
+    $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=? WHERE id=?" ,
+        array(2,$folder_id));
+    if($STH && $STH2){
+        $ok = true;
+        $code = 'Тема закрыта';
+    }
 
-	$jsd['ok'] = $ok;
-	$jsd['code'] = $code;
+    $jsd['ok'] = $ok;
+    $jsd['code'] = $code;
+
+
+}
+//Открыть тему
+elseif($_GET['route'] == 'open_theme'){
+
+    $ok = false;
+    $code = '';
+
+    $folder_id = $in['id'];
+
+    $rcf = reqChatFolders(array('id'=>$folder_id));
+    $companies_id   = $rcf[0]["companies_id"];
+
+    $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
+    $company_name = $rcm[0]["name_rcmc"];
+
+    $messagetext    = $company_name. ' открыл тему.';
+
+    $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+        array($folder_id,COMPANY_ID,$companies_id,$messagetext,1));
+    $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=? WHERE id=?" ,
+        array(0,$folder_id));
+    if($STH && $STH2){
+        $ok = true;
+        $code = 'Тема открыта';
+    }
+
+    $jsd['ok'] = $ok;
+    $jsd['code'] = $code;
 
 
 }
