@@ -6156,7 +6156,7 @@
 						FROM tickets t, company c, tickets_folder tf, slov_legal_entity sle
 						".$sql_inner_join."
 						WHERE c.id=t.company_id AND sle.id=c.legal_entity_id AND  tf.id=t.folder_id ".$sql."
-						ORDER BY t.data_insert DESC LIMIT ".$start_limit." , 25
+						ORDER BY t.id ASC, t_date_full, t_time DESC LIMIT ".$start_limit." , 25
 					";
 
 	//vecho($sql);
@@ -6209,7 +6209,7 @@
 							CONCAT(sle.legal_entity,' ',c.company) as name_rcmc
 					 FROM tickets t, company c, tickets_folder tf, slov_legal_entity sle
 					 WHERE c.id=t.company_id AND tf.id=t.folder_id AND sle.id=c.legal_entity_id AND LOWER(t.companies) LIKE '%".COMPANY_ID."%'  ".$sql."
-					 ORDER BY id ASC
+					 ORDER BY t.data_insert ASC
 					";
 		//vecho($sql);
 		$row = ($one)? PreExecSQL_one($sql,$arr) : PreExecSQL_all($sql,$arr);
@@ -6234,6 +6234,11 @@
 			$sql .= ' AND tf.id=? ';
 			array_push($arr , $in['id']);
 		}
+
+		if(!empty($p['folderReq'])){
+            $sql .= ' AND tf.folder_name != "" ';
+        }
+
 
 		$sql = "	SELECT tf.id, tf.folder_name, tf.owner_id, tf.avatar, tf.need as needs_id, tf.status, tf.companies_id			
 						FROM tickets_folder tf
