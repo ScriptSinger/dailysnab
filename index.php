@@ -57,7 +57,7 @@ if(getArgs(0)=='cron'){// задания крон
 		else require './protected/views/index.php';
 
 }
-		
+	/*fdgdfgfdg*/	
 
 disConnect();
 
