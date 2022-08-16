@@ -47,7 +47,7 @@ foreach($member as $key => $v){
 	$page_content	= implode('', $content);
 	
 ?><!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
   
     <meta charset="utf-8">
@@ -121,8 +121,9 @@ foreach($member as $key => $v){
 	<script src="/component/jquery-ui/jquery-ui.min.js"></script>	
 
 	<!--webix-->
-	<link rel="stylesheet" href="/component/webix4014/webix.css" type="text/css" charset="utf-8">
-	<script src="/component/webix4014/webix.js"  type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="http://cdn.webix.com/edge/webix.css" type="text/css">
+    <script src="http://cdn.webix.com/edge/webix.js" type="text/javascript"></script> 
+	<!-- <script src="/component/webix4014/webix.js"  type="text/javascript" charset="utf-8"></script> -->
 
 	<link rel="stylesheet" href="/css/styles.css?<?=date('dmy')?>">
 	<link rel="stylesheet" href="/css/main.css?1">

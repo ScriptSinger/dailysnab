@@ -66,7 +66,8 @@
 									
 									<div class="for-search">
 									  <div class="btn search-main">
-										<input type="text" placeholder="Поиск по сообщениям" class="header-nav-search-input autocomplete_messages" autocomplete="off" value="'.$value_search.'" required maxlength="100">
+										<input type="text" placeholder="Поиск по сообщениям" class="header-nav-search-input searchInMessages" autocomplete="off" value="'.$value_search.'" required maxlength="100">
+										
 									  </div>
 									  </div>
 									<div class="header-nav-post btn write_message _search-post">

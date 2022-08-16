@@ -160,6 +160,41 @@ $(function(){
 		}
 
 
+		$(".searchInMessages").on("keyup change blur", function() {
+			if ($('.searchInMessages').val().length > 2) {
+				$.post('/searchOnMessages', {
+						text: $('.searchInMessages').val()
+					},
+					function(data) {
+
+						let o1 = (data.code[0].length > 0) ? data.code[0] : "<h5>Ничего не найдено</h5>"
+						let o2 = (data.code[1].length > 0) ? data.code[1] : "<h5>Ничего не найдено</h5>"
+						let o3 = (data.code[2].length > 0) ? data.code[2] : "<h5>Ничего не найдено</h5>"
+						$('.message-wrapper').html(
+							"<h1>Пользователи</h1>" + o1 +
+							"<h1>Сообщения</h1>" + o2 +
+							"<h1>Темы</h1>" + o3);
+
+					}
+				);
+			}
+			if ($('.searchInMessages').val().length == 0) {
+				$.post('/searchOnMessages', {
+						"flag": "chat",
+						"start_limit": 0,
+						"views": "messages",
+						"value": ""
+					},
+					function(data) {
+
+						$('.message-wrapper').html(data.code);
+						// console.log(data.code);
+					}
+				);
+
+			}
+		})
+
 	// модальное окно поиск
 	$("body").on("click", ".modal_search", function(){
 		var d = $(this).data();

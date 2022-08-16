@@ -5268,6 +5268,7 @@ class HtmlTemplate extends HtmlServive
 						<div class="subs-icon col-1">
 							'.$avatar.'							
 						</div>
+						<a name="' . $m['id'] .'" />
 						<div class="subs-info col-11 row">
 							'.$kol_notification.' 
 							<div class="subs-cat col-7">
@@ -5406,12 +5407,12 @@ class HtmlTemplate extends HtmlServive
 		foreach($row as $i => $m){
 
 				$tr .= self::TrPageMessagesFolders(array( 'm'=>$m , 'views'=>$p['views'] ));
-
+				
 		}
 		
 		$code = ($tr)? $tr : '';
-	
-		return $code;
+
+		return $tr;
 
 	}
 	
@@ -5506,7 +5507,8 @@ $tr_img .='<div class="img-item">
 				// var_dump($mes);
 				$tr = '	<div class="message-item row tech '.$cl_own.$cl_status.'">
 
-			<div class="message-info col col-md-10">
+				<div class="message-info col col-md-10">
+				<a name="' . $m['id'] . '">
 			<span>'.$m["ticket_exp"].'</span>
 			<div class="tech-info _col col-md-12">	
 				'.$mes.'										
@@ -5518,6 +5520,7 @@ $tr_img .='<div class="img-item">
 
 				$tr = '	<div class="message-item row '.$cl_own.$cl_status.'">
 				<div class="message-info col col-md-10">
+				<a name="' . $m['id'] . '">
 				<span class="user_name">'.$m["name_rcmc"].'</span><br />
 				'.$avatar.'	
 				'.$kol_notification.' 
