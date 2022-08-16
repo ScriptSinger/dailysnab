@@ -29,7 +29,7 @@ $in = array('email', 'pass', 'pass_again', 'id'=>'integer', 'value', 'flag', 'pa
     'group','group_id','sort_12','sort_who','flag_search',
     'status_buy_sell_id','promo','vendorid','enter13',
     'errors_code','name_error','name_error_qrq','name_error_etp','next_etp','company_id3',
-    'amo_cities_id', 'text'
+    'amo_cities_id', 'text', 'type'
 );
 
 $in = fieldIn($_POST, $in);
@@ -5230,6 +5230,19 @@ elseif($_GET['route'] == 'checkPaymentModal'){
 
     $jsd['code'] = $code;
 }
+
+elseif($_GET['route'] == 'FormGetInvoice'){
+
+    $arr = $f->FormGetInvoice(array('id'=>$in['id'], 'balance', $in['balance'], $in['type']));
+
+    $code = $t->getModal(
+        array('class_dialog' => 'podpiska', 'top' => $arr['top'], 'content' => $arr['content'], 'bottom' => $arr['bottom']),
+        array('id' => 'cancelPodpiska-form', 'class' => '')
+    );
+
+    $jsd['code'] = $code;
+}
+
 // Подключить/Отключить Pro режим
 elseif($_GET['route'] == 'user_pro_mode'){
 
