@@ -2,7 +2,7 @@
 
 session_start();
 
-
+//Hello Worlds
 require_once './protected/core/config.php';				// Настройки ядра
 require_once './protected/core/functions.php';			// Функции/классы
 require_once './protected/core/connect.php';			// Соединение с БД, Функции запросов
@@ -58,7 +58,7 @@ if(getArgs(0)=='cron'){// задания крон
 		else require './protected/views/index.php';
 
 }
-		
+
 
 disConnect();
 
