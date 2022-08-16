@@ -3483,15 +3483,17 @@ if(LOGIN_ID){
                 $r = reqUpDownTree(array('table'=>'slov_categories','id'=>$in['id'],'updown'=>'down','flag'=>false,'vkl'=>false));
                 if(!empty($r)){
                     $ids = implode(', ', array_map(function ($r) { return $r['ids']; }, $r));
-                    $r = reqSlovCategories(array('ids'=>$ids , 'level'=>3));
-                    foreach($r as $i => $m){
-                        // удаляем если ранее добавлена
-                        $STH = PreExecSQL(" DELETE FROM interests_company_param WHERE ".$sql_login_id." company_id=? AND interests_id=? AND interests_param_id=? AND flag=? AND tid=?; " ,
-                            array( COMPANY_ID,$in['interests_id'],$in['interests_param_id'],$flag,$m['id'] ));
-                        $STH = PreExecSQL(" INSERT INTO interests_company_param (login_id,company_id,interests_id,interests_param_id,flag,tid,views) VALUES (?,?,?, ?,?,?,?); " ,
-                            array( $login_id,COMPANY_ID,$in['interests_id'],$in['interests_param_id'],$flag,$m['id'],2 ));
-
-                    }
+                    $r = reqSlovCategories(array('ids'=>$ids , 'level'=>2));
+					$ids = implode(', ', array_map(function ($r) { return $r['id']; }, $r));
+					$r3 = reqSlovCategories(array('parent_id'=>$ids , 'level'=>3));
+					foreach($r3 as $i3 => $m3){
+						// удаляем если ранее добавлена
+						$STH = PreExecSQL(" DELETE FROM interests_company_param WHERE ".$sql_login_id." company_id=? AND interests_id=? AND interests_param_id=? AND flag=? AND tid=?; " ,
+							array( COMPANY_ID,$in['interests_id'],$in['interests_param_id'],$flag,$m3['id'] ));
+						$STH = PreExecSQL(" INSERT INTO interests_company_param (login_id,company_id,interests_id,interests_param_id,flag,tid,views) VALUES (?,?,?, ?,?,?,?); " ,
+							array( $login_id,COMPANY_ID,$in['interests_id'],$in['interests_param_id'],$flag,$m3['id'],2 ));
+					
+					}
                 }
             }
         }elseif($in['value']=='delete'){// УДАЛЕНИЕ
@@ -3501,11 +3503,20 @@ if(LOGIN_ID){
                 $r = reqUpDownTree(array('table'=>'slov_categories','id'=>$in['id'],'updown'=>'down','flag'=>false,'vkl'=>false));
                 if(!empty($r)){
                     $ids = implode(', ', array_map(function ($r) { return $r['ids']; }, $r));
-                    $r = reqSlovCategories(array('ids'=>$ids , 'level'=>3));
+                    $r = reqSlovCategories(array('ids'=>$ids , 'level'=>2));
+					$ids = implode(', ', array_map(function ($r) { return $r['id']; }, $r));
+					$r3 = reqSlovCategories(array('parent_id'=>$ids , 'level'=>3));
+					foreach($r3 as $i3 => $m3){
+						$STH = PreExecSQL(" DELETE FROM interests_company_param WHERE ".$sql_login_id." company_id=? AND interests_id=? AND interests_param_id=? AND flag=? AND tid=?; " ,
+                            array( COMPANY_ID,$in['interests_id'],$in['interests_param_id'],$flag,$m3['id'] ));
+					
+					}
+					/*
                     foreach($r as $i => $m){
                         $STH = PreExecSQL(" DELETE FROM interests_company_param WHERE ".$sql_login_id." company_id=? AND interests_id=? AND interests_param_id=? AND flag=? AND tid=?; " ,
                             array( COMPANY_ID,$in['interests_id'],$in['interests_param_id'],$flag,$m['id'] ));
                     }
+					*/
                 }
             }
         }
