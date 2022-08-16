@@ -5021,7 +5021,7 @@ elseif($_GET['route'] == 'pdf_generation'){
 	.sign table {width: 60%;}
 	.sign th {padding: 40px 0 0 0;text-align: left;}
 	.sign td {padding: 40px 0 0 0;border-bottom: 1px solid #000;text-align: right;font-size: 12px;}		
-	.sign-1 {position: absolute;left: 250px;top: 150px;}	
+	.sign-1 {position: absolute;left: 250px;top: 0;width: 150px;}	
 	.sign-2 {position: absolute;left: 250px;top: 220px;}	
 	.printing {position: absolute;left: 520px;top: 350px;}
 </style>
@@ -5128,8 +5128,8 @@ elseif($_GET['route'] == 'pdf_generation'){
 </div>
 
 <div class="sign">
-	<!--
-	<img class="sign-1" src="/image/invoice/sign-1.png">
+	
+	<!--<img class="sign-1" src="/image/sign.png">
 	<img class="sign-2" src="/image/invoice/sign-1.png">
 	<img class="printing" src="/image/invoice/printing.png">
 	-->
@@ -5148,12 +5148,13 @@ elseif($_GET['route'] == 'pdf_generation'){
 </div>
 </body>
 </html>';
-
+     // vecho($_SERVER['DOCUMENT_ROOT'] . '/image/sign.png');
+    
 
 	$mpdf->SetTitle('QRQ.ru счет на оплату'); // Заголовок PDF
 	$mpdf->SetAuthor('QRQ.ru');		// Автор
 	$mpdf->WriteHTML($html);
-
+    $mpdf->Image($_SERVER['DOCUMENT_ROOT'] . '/image/sign.png', 50, 140, 35, 35,'png', 'wwwWS', true, false, false, false);
 
 
 	// устанавливаем номер страницы если нужно
