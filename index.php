@@ -2,7 +2,7 @@
 
 session_start();
 
-//Hello Worlds
+//Hello Worl
 require_once './protected/core/config.php';				// Настройки ядра
 require_once './protected/core/functions.php';			// Функции/классы
 require_once './protected/core/connect.php';			// Соединение с БД, Функции запросов
