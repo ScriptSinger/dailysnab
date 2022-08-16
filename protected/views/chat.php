@@ -236,7 +236,13 @@ $last_message = [];
 						
 						$(window).scroll(function() {
 							if ( ( ( $(window).scrollTop() + $(window).height() ) >= ( $(document).height()*0.8 - 200 ) ) && !inProgress) {
-								
+								data =  {
+										"flag" 				: "chat",
+										"start_limit"		: start,
+										"views"				: "'.$views.'",
+										"value"				: "'.$value.'"
+									}
+									console.log(data)
 								$.ajax({
 									url: "/scroll_page",
 									method: "POST",

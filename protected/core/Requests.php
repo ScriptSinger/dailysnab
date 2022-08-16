@@ -6252,6 +6252,7 @@
 					";
 		//
 	//vecho($sql);
+
 		$row = ($one)? PreExecSQL_one($sql,$arr) : PreExecSQL_all($sql,$arr);
 
 		return $row;

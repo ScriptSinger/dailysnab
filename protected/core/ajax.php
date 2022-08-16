@@ -29,7 +29,7 @@ $in = array('email', 'pass', 'pass_again', 'id'=>'integer', 'value', 'flag', 'pa
     'group','group_id','sort_12','sort_who','flag_search',
     'status_buy_sell_id','promo','vendorid','enter13',
     'errors_code','name_error','name_error_qrq','name_error_etp','next_etp','company_id3',
-    'amo_cities_id'
+    'amo_cities_id', 'text'
 );
 
 $in = fieldIn($_POST, $in);
@@ -47,7 +47,7 @@ if($_GET['route'] == 'authorization'){
         $row = reqLogin(array('email'=>$in['email'],'pass'=>$pass));
         //$row['id'] = 634;
         if(!empty($row['id'])&&$row['active']==1){
-            $g->AutorizeUser(array(	'login_id'=>$row['id'] ));//авторизация пользователя
+            $g->AutorizeUser(array( 'login_id'=>$row['id'] ));//авторизация пользователя
             $ok = true;
         }elseif(!empty($row['id'])&&$row['active']<>1){
             $code = 'Нет доступа';
@@ -58,9 +58,173 @@ if($_GET['route'] == 'authorization'){
         $code = 'Неверно введен логин или пароль!';
     }
 
-    $jsd['ok'] 			= $ok;
-    $jsd['code'] 		= $code;
+    $jsd['ok']          = $ok;
+    $jsd['code']        = $code;
 }
+
+if($_GET['route'] == 'searchOnMessages'){
+   
+   $ok = true;
+   if(strlen($in['text']) > 0){
+   $sql = 'SELECT t.*, tf.folder_name, tf.id folder_id_links FROM tickets t  LEFT JOIN tickets_folder tf ON tf.id = t.folder_id WHERE t.ticket_exp LIKE "%' . $in['text'] . '%" AND t.company_id=' . COMPANY_ID . ' AND t.ticket_status=0 ORDER BY id DESC';
+    $STH = PreExecSQL_all($sql, []);  
+    $sql2 = "SELECT * FROM tickets_folder tf WHERE tf.owner_id = " . COMPANY_ID . " GROUP BY tf.companies_id" ;
+    // vecho($STH);
+    $STH2 = PreExecSQL_all($sql2, []);  
+    $sql3 = "SELECT * FROM tickets_folder WHERE folder_name LIKE '%" . $in['text'] . "%'";
+    $STH3 = PreExecSQL_all($sql3, []);  
+    // vecho($STH);  
+    $arr = [];
+    $tr = $tr1 = $tr2 = '';
+    foreach($STH as $k){
+        $company = array_diff(json_decode($k['companies']), [COMPANY_ID]);
+        $sql = "SELECT * FROM company WHERE id=?";
+        // vecho($company[1]);
+        $com = PreExecSQL_one($sql,[$company[1]]);
+
+        $folderName = (!empty($k['folder_name'])) ? $k['folder_name']: $com['company'];
+        // vecho($k);
+        $tr .= " <div class='subs-item row'>
+                        <div class='subs-icon col-1'>
+
+                        </div>
+                        <div class='subs-info col-11 row'>
+                          
+                            <div class='subs-cat col-7'>
+                                <a href='/chat/messages/" . $k['folder_id'] . "#" . $k['id'] ."'>" . $folderName ."</a><br />
+                                <span>" . $k['ticket_exp'] . "</span> 
+                            </div>
+                            
+                            <div class='subs-place col-2'>
+                               
+                            
+                                  
+                                <small class='_status-bar__time'>". $k['data_insert'] ."</small>
+                            </div>                          
+                        </div>
+                    </div>
+            ";
+    }
+    // foreach($STH2 as $k){
+        
+    //     $company = array_diff(json_decode($k['companies_id']), [COMPANY_ID]);
+    //     foreach ($company as $k) {
+          
+        
+    //     $sql = "SELECT * FROM company WHERE id=?" . " AND company LIKE '%" . $in['text'] . "%'";
+
+    //     // vecho($company[1]);
+    //     $com = PreExecSQL_one($sql,[$k]);
+
+    //     // $folderName = (!empty($k['folder_name'])) ? $k['folder_name']: $com['company'];
+    //     if(!empty($com))
+    //         $tr1 .= " <div class='subs-item row'>
+    //                     <div class='subs-icon col-1'>
+
+    //                     </div>
+    //                     <div class='subs-info col-11 row'>
+                          
+    //                         <div class='subs-cat col-7'>
+    //                             <a href='/chat/messages/'>" . $com['company'] ."</a><br />
+
+    //                         </div>
+                            
+    //                         <div class='subs-place col-2'>
+                               
+                            
+                                  
+
+    //                         </div>                          
+    //                     </div>
+    //                 </div>
+    //         ";
+    //         }
+    // }
+    foreach($STH3 as $k){
+        
+        $tr2 .= " <div class='subs-item row'>
+                        <div class='subs-icon col-1'>
+
+                        </div>
+                        <div class='subs-info col-11 row'>
+                          
+                            <div class='subs-cat col-7'>
+                                <a href='/chat/messages/" . $k['id'] ."'>" . $k['folder_name'] ."</a><br />
+                                
+                            </div>
+                            
+                            <div class='subs-place col-2'>
+                               
+                            
+                            </div>                          
+                        </div>
+                    </div>
+            ";
+    }
+    $row = $t->rowChatMessages(array(    'start_limit'   => 0,
+                                                    'views'         => 'messages' ));
+    $STH3 = '';
+    $arrayOn = [];
+    foreach ($row as $v) {
+         $company = json_decode($v['companies_id']);
+         if(!empty($company)){
+         foreach ($company as $k) {
+              $sql = "SELECT t.*, c.company company_name, tf.avatar FROM tickets t LEFT JOIN company c ON c.id = t.company_id LEFT JOIN tickets_folder tf ON tf.id = t.folder_id WHERE t.folder_id=" . $v['id'] . " AND t.company_id=" . $k . " AND c.company LIKE '%" . $in['text'] . "%'" ;
+             $STH3 = PreExecSQL_all($sql, []);  
+             if(!empty($STH3))
+                    array_push($arrayOn, $STH3);
+
+         }
+     }
+    }
+    foreach($arrayOn as $k){
+        foreach($k as $v){
+             $folderName = (!empty($v['folder_name'])) ? $v['folder_name']: $v['company_name'];
+                $tr1 .= " <div class='subs-item row'>
+                        <div class='subs-icon col-1'>
+                            " . $v['avatar'] . "
+                        </div>
+                        <div class='subs-info col-11 row'>
+                          
+                            <div class='subs-cat col-7'>
+                                <a href='/chat/messages/" . $v['folder_id'] . "#" . $v['id'] ."'>" . $folderName ."</a><br />
+                                <span><span id='name'>" . $v['company_name'] . '</span> : ' .$v['ticket_exp'] . "</span> 
+                            </div>
+                            
+                            <div class='subs-place col-2'>
+                               
+                            
+                                  
+                                <small class='_status-bar__time'>". $v['data_insert'] ."</small>
+                            </div>                          
+                        </div>
+                    </div>
+            ";
+        }
+    }
+    
+    array_push($arr, $tr1);
+    array_push($arr, $tr);
+    array_push($arr, $tr2);
+    $code = $arr;
+}else{
+    $row = $t->rowChatMessages(array(    'start_limit'   => 0,
+                                                    'views'         => $in['views'] ));
+
+       
+        $tr = '';
+        foreach($row as $i => $m){
+
+                $tr .= $t->TrPageMessagesFolders(array( 'm'=>$m , 'views'=>$in['views'] ));
+                
+        }
+        $code = $tr;
+
+}
+    $jsd['ok']          = $ok;
+    $jsd['code']        = $code;
+}
+
 
 //sms авторизация
 elseif($_GET['route'] == 'authorization_sms'){
