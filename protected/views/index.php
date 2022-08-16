@@ -121,8 +121,8 @@ foreach($member as $key => $v){
 	<script src="/component/jquery-ui/jquery-ui.min.js"></script>	
 
 	<!--webix-->
-	<link rel="stylesheet" href="http://cdn.webix.com/edge/webix.css" type="text/css">
-    <script src="http://cdn.webix.com/edge/webix.js" type="text/javascript"></script> 
+	<link rel="stylesheet" href="https://cdn.webix.com/edge/webix.css" type="text/css">
+    <script src="https://cdn.webix.com/edge/webix.js" type="text/javascript"></script> 
 	<!-- <script src="/component/webix4014/webix.js"  type="text/javascript" charset="utf-8"></script> -->
 
 	<link rel="stylesheet" href="/css/styles.css?<?=date('dmy')?>">
