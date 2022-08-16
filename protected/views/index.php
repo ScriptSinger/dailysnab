@@ -139,7 +139,10 @@ foreach($member as $key => $v){
 	
 	<script src="/js/refresh_notice.js"></script>
 
-	
+	<link href="https://cdn.jsdelivr.net/npm/suggestions-jquery@21.6.0/dist/css/suggestions.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@21.6.0/dist/js/jquery.suggestions.min.js"></script>
+
+
 <?
 if(LOGIN_ID){
 	if(PRAVA_1){

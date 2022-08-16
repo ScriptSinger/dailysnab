@@ -3356,6 +3356,121 @@ class HtmlForms extends HtmlTemplate
 
 		return array('top'=>$top,'content'=>$content,'bottom'=>$bottom);
 	}
+
+
+	// Подтверждение платежа
+	function FormGetInvoice( $p=array() ){
+		$in = fieldIn($p, array('id', 'balance', 'type'));
+
+		$top 	= '<div class="form-wrapper2">
+				<div class="modal-body__head">
+					<div class="modal__title"><h3>Формирование счета на оплату</h3></div>							
+				</div>';
+
+		$content = '<div class="invoice-form-block _form-wrapper">										
+						
+						
+						<form id="invoice_pdf_form">
+						<input type="hidden" id="login_id" name="login_id" value="'.LOGIN_ID.'" />
+						<input type="hidden" id="type_skills" name="type_skills" value="' . $in['type'] .'"/>
+						<input type="hidden" id="total" name="total" value="' . $in['balance'] . '"/>			
+						
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="form-group">
+									<input type="text" class="form-control" id="inn" name="inn" placeholder="Введите ваш ИНН" value="" >
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group">
+									<input type="text" class="form-control" id="kpp" name="kpp" placeholder="КПП" value="" >
+																
+								</div>		
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="form-group">
+									<input type="text" style="pointer-events:none;" class="form-control" id="company" name="company" placeholder="Наименование" value="" >
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group">							
+									<input type="text" class="form-control" id="ur_adr" name="ur_adr" placeholder="Юридический адрес" value="" >							
+								</div>		
+							</div>
+						</div>
+						<!--
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="form-group">
+									<input type="text" class="form-control" id="rschet" name="rschet"  placeholder="Расчетный счет" value="" >
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group">							
+									<input type="text" class="form-control" id="korr_schet" name="korr_schet" placeholder="Корр. счет" value="" >							
+								</div>		
+							</div>
+						</div>	
+						
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="form-group">
+									<input type="text" class="form-control" id="bik" name="bik" placeholder="БИК" value="" >
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group">							
+																
+								</div>		
+							</div>
+						</div>	
+						-->
+				
+						</form>
+				
+						<span id="pdf" class="btn button-blue" 
+							data-inn=""							
+							data-kpp=""
+							data-company=""							 
+							data-ur_adr=""
+							data-rschet=""
+							data-korr_schet=""
+							data-bik=""
+							target="_blank">скачать счет в формате PDF</span>	
+					</div>
+
+					';
+		$bottom = '<br>
+
+				<script>
+    $("#inn").suggestions({
+        token: "'. DADATA_API .'",
+        type: "PARTY",
+        /* Вызывается, когда пользователь выбирает одну из подсказок */
+        onSelect: function(suggestion) {
+            console.log(suggestion);			
+			$("#inn").val(suggestion.data.inn);
+			$("#company").val(suggestion.value);
+			$("#kpp").val(suggestion.data.kpp);
+			$("#ur_adr").val(suggestion.data.address.value);			
+
+			$("#pdf").attr("data-inn", suggestion.data.inn);
+			$("#pdf").attr("data-company", suggestion.value);
+			$("#pdf").attr("data-kpp", suggestion.data.kpp);
+			$("#pdf").attr("data-ur_adr", suggestion.data.address.value);
+			
+        }
+    });
+</script>
+			</div>';
+
+		return array('top'=>$top,'content'=>$content,'bottom'=>$bottom);
+	}
+
+
 	// Подписка
 	function FormPodpiska( $p=array() ){
 		$in = fieldIn($p, array('id','type_skills')); //type_skills - тип выбранного плана (Pro/Vip)
@@ -3500,11 +3615,44 @@ class HtmlForms extends HtmlTemplate
 				$.post("/add_balance", {balance:balance}, function(data){	
 					if(data.ok){
 						$("#card_pay").attr("href", data.code);
-						$("#invoice_pay").attr("href", "/pro/invoice/?type=0&sum="+balance);
+						$("#invoice_pay");
 						
 					}								
 				});				
-			});			
+			});		
+
+$( document ).ready(function() {
+    var modal_logo = $("#modal_logo");
+	var modal = $("#vmodal");
+	var modal_ar = $("#vmodal_ar");
+	var modal_amo = $("#modal_amo");
+	$("body").on("click", "#invoice_pay", function(){
+		$("#vmodal").removeData();
+		var balance = $("#balance").val();
+		var d = $(this).data();
+		console.log(d.id)
+		$.post("/FormGetInvoice", {balance:balance, type: 0}, 
+			function(data){
+				if(data.code){
+					modal.html(data.code);
+					modal.modal();
+					modal.on("shown.bs.modal",
+						function(e){
+							$(".select2").select2({
+								placeholder: function(){
+									$(this).data("placeholder");
+								}
+							});
+							
+						}
+						).on("hidden.bs.modal", function (e) {
+								//onReload("/profile");
+							});
+					}
+				}
+				);
+	});	
+	});
 		</script>
 		';
 
