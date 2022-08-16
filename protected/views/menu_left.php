@@ -52,7 +52,8 @@
 								<p>'.$m['menu'].'</p>
 								'.$kol_notification.'
 							</a>
-						</li>';		
+						</li>';	
+							
 		}
 	}
 
