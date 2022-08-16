@@ -5499,7 +5499,8 @@ elseif($_GET['route'] == 'create_new_message'){
 			//vecho($fid);
 			//die;
             // vecho($fid);
-			if(empty($fid)){ //проверка на наличие такого же чата (с теми же собеседниками)
+            // vecho($fid);
+			if(empty($fid) && !empty($fid)){ //проверка на наличие такого же чата (с теми же собеседниками)
 
 				//$fid = $rm_cat[0]['id'];
 
@@ -5611,6 +5612,7 @@ elseif($_GET['route'] == 'create_new_message'){
 
 
 			}
+            if(!empty($fid)){
             $sql = "SELECT id, folder_name FROM tickets_folder WHERE companies_id=? ORDER by id DESC";
              $last_chat = PreExecSQL_one($sql,array($cId));
             
@@ -5620,6 +5622,7 @@ elseif($_GET['route'] == 'create_new_message'){
 
                 $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status, chatId) VALUES (?,?,?,?,?, ?); " ,
                          array($fid,COMPANY_ID,$cId,$messagetext,2, $last_chat['id']));
+            }
 		}
 	}else{
 
