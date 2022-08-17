@@ -15753,6 +15753,25 @@
 		]
 	},
 	{
+		"DocID": "c3409cb5-1c80-11ed-8db6-0cc47a03c9dc",
+		"data1c": "2022-08-17T00:00:00",
+		"Massiv": [
+			{
+				"DocID": "c3409cb5-1c80-11ed-8db6-0cc47a03c9dc",
+				"StrID": 1,
+				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+				"ContractorID": "6c978f52-99dc-11ec-80c9-000c292c2d55",
+				"Date": "2022-08-15T14:58:10",
+				"buy_sell_id": "6128596",
+				"NomID": "a57e9231-6cbf-11ec-80dd-000c2999d0eb",
+				"Price": 1590,
+				"NDS": 0,
+				"Quantity": 3,
+				"Brand": ""
+			}
+		]
+	},
+	{
 		"DocID": "ec2811d9-1c8a-11ed-8db6-0cc47a03c9dc",
 		"data1c": "2022-08-17T00:00:00",
 		"Massiv": [
@@ -16121,19 +16140,6 @@
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-08-16T15:43:03",
-				"buy_sell_id": "5970349",
-				"NomID": "fe5dd4e1-6cbc-11ec-80dd-000c2999d0eb",
-				"Price": 64,
-				"NDS": 0,
-				"Quantity": 10,
-				"Brand": ""
-			},
-			{
-				"DocID": "339abf3b-1d50-11ed-8db6-0cc47a03c9dc",
-				"StrID": 10,
-				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
-				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
-				"Date": "2022-08-16T15:43:03",
 				"buy_sell_id": "5972457",
 				"NomID": "ce5dc934-6cbc-11ec-80dd-000c2999d0eb",
 				"Price": 84,
@@ -16143,7 +16149,7 @@
 			},
 			{
 				"DocID": "339abf3b-1d50-11ed-8db6-0cc47a03c9dc",
-				"StrID": 11,
+				"StrID": 10,
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-08-16T15:43:03",
@@ -16156,7 +16162,7 @@
 			},
 			{
 				"DocID": "339abf3b-1d50-11ed-8db6-0cc47a03c9dc",
-				"StrID": 12,
+				"StrID": 11,
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-08-16T15:43:03",
@@ -16169,7 +16175,7 @@
 			},
 			{
 				"DocID": "339abf3b-1d50-11ed-8db6-0cc47a03c9dc",
-				"StrID": 13,
+				"StrID": 12,
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-08-16T15:43:03",
@@ -16182,7 +16188,7 @@
 			},
 			{
 				"DocID": "339abf3b-1d50-11ed-8db6-0cc47a03c9dc",
-				"StrID": 14,
+				"StrID": 13,
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-08-16T15:43:03",
@@ -16195,7 +16201,7 @@
 			},
 			{
 				"DocID": "339abf3b-1d50-11ed-8db6-0cc47a03c9dc",
-				"StrID": 15,
+				"StrID": 14,
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-08-16T15:43:03",
@@ -16208,7 +16214,7 @@
 			},
 			{
 				"DocID": "339abf3b-1d50-11ed-8db6-0cc47a03c9dc",
-				"StrID": 16,
+				"StrID": 15,
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-08-16T15:43:03",
@@ -16221,7 +16227,7 @@
 			},
 			{
 				"DocID": "339abf3b-1d50-11ed-8db6-0cc47a03c9dc",
-				"StrID": 17,
+				"StrID": 16,
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-08-16T15:43:03",
@@ -16234,7 +16240,7 @@
 			},
 			{
 				"DocID": "339abf3b-1d50-11ed-8db6-0cc47a03c9dc",
-				"StrID": 18,
+				"StrID": 17,
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-08-16T15:43:03",
@@ -16247,7 +16253,7 @@
 			},
 			{
 				"DocID": "339abf3b-1d50-11ed-8db6-0cc47a03c9dc",
-				"StrID": 19,
+				"StrID": 18,
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-08-16T15:43:03",
@@ -16260,7 +16266,7 @@
 			},
 			{
 				"DocID": "339abf3b-1d50-11ed-8db6-0cc47a03c9dc",
-				"StrID": 20,
+				"StrID": 19,
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-08-16T15:43:03",
@@ -16273,7 +16279,7 @@
 			},
 			{
 				"DocID": "339abf3b-1d50-11ed-8db6-0cc47a03c9dc",
-				"StrID": 21,
+				"StrID": 20,
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-08-16T15:43:03",
