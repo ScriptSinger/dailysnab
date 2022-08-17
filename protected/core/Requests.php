@@ -248,8 +248,9 @@
 		$in = fieldIn($p, array('id','active','level','ids'));
 		$parent_id 	= (isset($p['parent_id']))? 	$p['parent_id'] : '';
 		if(($parent_id)||($parent_id===0)){
-			$sql	= 'and parent_id=?';
-			$arr	= array($parent_id);
+			//$sql	= 'and parent_id=?';
+			//$arr	= array($parent_id);
+			$sql .= ' AND sc.parent_id IN ('.$parent_id.') ';
 		}
 		if($in['id']){
 			$sql = 'AND sc.id=?';

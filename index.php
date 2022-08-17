@@ -23,6 +23,7 @@ require_once './protected/source/phpmailer/class.phpmailer.php';	// phpmailer о
 require_once './protected/source/phpmailer/class.pop3.php';			// phpmailer отправка писем smtp
 require_once './protected/source/phpmailer/class.smtp.php';			// phpmailer отправка писем smtp
 
+
 $e		= new HtmlElement();
 $g		= new HtmlServive();
 $t		= new HtmlTemplate();
@@ -57,7 +58,7 @@ if(getArgs(0)=='cron'){// задания крон
 		else require './protected/views/index.php';
 
 }
-		
+
 
 disConnect();
 

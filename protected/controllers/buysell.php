@@ -167,7 +167,7 @@
 						reqDeleteNotification(array('notification_id'=>$notification_id));
 						
 						// удаляем флаг, чтобы обновилось предложения не перегружая страницу
-						reqDeleteBuysellRefreshAmoSearch();						
+						reqDeleteBuysellRefreshAmoSearch();
 						
 						// фиксируем последнее посещение страницы
 						if($page_id){
