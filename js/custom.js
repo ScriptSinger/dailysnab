@@ -175,6 +175,7 @@ $(function(){
 							console.log(data.code[i])
 							console.log(data.code[i].search(searchStr))
 							if (data.code[i].search(searchStr)) {
+								if (searchStr != data.code[i].match(reg)[0]) searchStr = data.code[i].match(reg)[0];
 								data.code[i] = data.code[i].replace(reg, `<mark>${searchStr}</mark>`)
 							}
 						}
