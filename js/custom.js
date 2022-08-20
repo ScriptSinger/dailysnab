@@ -170,12 +170,13 @@ $(function(){
 					function(data) {
 						console.log(data)
 						for (let i = 0; i < data.code.length; i++) {
+							console.log(searchStr)
 							console.log(data.code[i].search(/searchStr/g))
 							console.log(data.code[i].search(searchStr))
-							console.log(data.code[i].test(searchStr))
-							if (data.code[i].search(/searchStr/g)) {
-								data.code[i] = data.code[i].replace(/searchStr/g, `<mark>${searchStr}</mark>`)
-							}
+							console.log(searchStr.test(data.code[i]))
+							// if (data.code[i].search(/searchStr/g)) {
+							// 	data.code[i] = data.code[i].replace(/searchStr/g, `<mark>${searchStr}</mark>`)
+							// }
 						}
 						console.log(data)
 						let o1 = (data.code[0].length > 0) ? data.code[0] : "<h5>Ничего не найдено</h5>"
