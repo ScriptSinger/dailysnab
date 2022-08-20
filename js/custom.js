@@ -170,10 +170,13 @@ $(function(){
 					function(data) {
 						let reg = new RegExp(searchStr, 'gi')
 						let content = []
+
 						for (let i = 0; i < data.code.length; i++) {
-							if (reg.test(data.code[i])) {
-								if (searchStr != data.code[i].match(reg)[0]) searchStr = data.code[i].match(reg)[0];
-								content[i] = data.code[i].replace(reg, `<mark>${searchStr}</mark>`)
+							let curItem = data.code[i];
+							
+							if (reg.test(curItem)) {
+								if (searchStr != curItem.match(reg)[0]) searchStr = curItem.match(reg)[0];
+								content[i] = curItem.replace(reg, `<mark>${searchStr}</mark>`)
 							} else {
 								content[i] = "<h5>Ничего не найдено</h5>"
 							}
