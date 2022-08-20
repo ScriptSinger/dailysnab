@@ -169,6 +169,10 @@ $(function(){
 					},
 					function(data) {
 						console.log(data)
+						for (let i = 0; i < data.length; i++) {
+						if (data[i].search(/searchStr/g))
+							console.log(data[i].search(/searchStr/g))
+						}
 						let o1 = (data.code[0].length > 0) ? data.code[0] : "<h5>Ничего не найдено</h5>"
 						let o2 = (data.code[1].length > 0) ? data.code[1] : "<h5>Ничего не найдено</h5>"
 						let o3 = (data.code[2].length > 0) ? data.code[2] : "<h5>Ничего не найдено</h5>"
