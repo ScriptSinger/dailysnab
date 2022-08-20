@@ -169,7 +169,7 @@ $(function(){
 					},
 					function(data) {
 						console.log(data)
-						let reg = new RegExp(searchStr, 'g')
+						let reg = new RegExp(searchStr, 'gi')
 						for (let i = 0; i < data.code.length; i++) {
 							console.log(searchStr)
 							console.log(data.code[i])
