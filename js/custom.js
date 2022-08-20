@@ -169,13 +169,12 @@ $(function(){
 					},
 					function(data) {
 						console.log(data)
+						let reg = new RegExp(searchStr, 'g')
 						for (let i = 0; i < data.code.length; i++) {
 							console.log(searchStr)
-							console.log(data.code[i].search(/searchStr/g))
-							console.log(data.code[i].search(searchStr))
-							// if (data.code[i].search(/searchStr/g)) {
-							// 	data.code[i] = data.code[i].replace(/searchStr/g, `<mark>${searchStr}</mark>`)
-							// }
+							if (data.code[i].search(searchStr)) {
+								data.code[i] = data.code[i].replace(reg, `<mark>${searchStr}</mark>`)
+							}
 						}
 						console.log(data)
 						let o1 = (data.code[0].length > 0) ? data.code[0] : "<h5>Ничего не найдено</h5>"
