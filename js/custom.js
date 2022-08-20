@@ -169,7 +169,9 @@ $(function(){
 					},
 					function(data) {
 						console.log(data)
-						for (let i = 0; i < data.length; i++) {
+						for (let i = 0; i < data.code.length; i++) {
+							console.log(data[i].search(/searchStr/g))
+							console.log(data[i].search(searchStr))
 						if (data[i].search(/searchStr/g))
 							console.log(data[i].search(/searchStr/g))
 						}
