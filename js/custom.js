@@ -169,20 +169,20 @@ $(function(){
 					},
 					function(data) {
 						let reg = new RegExp(searchStr, 'gi')
+						let content = []
 						for (let i = 0; i < data.code.length; i++) {
 							if (reg.test(data.code[i])) {
 								if (searchStr != data.code[i].match(reg)[0]) searchStr = data.code[i].match(reg)[0];
-								data.code[i] = data.code[i].replace(reg, `<mark>${searchStr}</mark>`)
+								content[i] = data.code[i].replace(reg, `<mark>${searchStr}</mark>`)
+							} else {
+								content[i] = "<h5>Ничего не найдено</h5>"
 							}
 						}
 
-						let o1 = (data.code[0].length > 0) ? data.code[0] : "<h5>Ничего не найдено</h5>"
-						let o2 = (data.code[1].length > 0) ? data.code[1] : "<h5>Ничего не найдено</h5>"
-						let o3 = (data.code[2].length > 0) ? data.code[2] : "<h5>Ничего не найдено</h5>"
 						$('.message-wrapper').html(
-							"<h1>Пользователи</h1>" + o1 +
-							"<h1>Сообщения</h1>" + o2 +
-							"<h1>Темы</h1>" + o3);
+							"<h1>Пользователи</h1>" + content[0] +
+							"<h1>Сообщения</h1>" + content[1] +
+							"<h1>Темы</h1>" + content[2]);
 
 					}
 				);
