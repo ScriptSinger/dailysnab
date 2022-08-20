@@ -172,6 +172,8 @@ $(function(){
 						let reg = new RegExp(searchStr, 'g')
 						for (let i = 0; i < data.code.length; i++) {
 							console.log(searchStr)
+							console.log(data.code[i])
+							console.log(data.code[i].search(searchStr))
 							if (data.code[i].search(searchStr)) {
 								data.code[i] = data.code[i].replace(reg, `<mark>${searchStr}</mark>`)
 							}
