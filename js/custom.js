@@ -170,8 +170,10 @@ $(function(){
 					function(data) {
 						console.log(data)
 						for (let i = 0; i < data.code.length; i++) {
+							console.log(data.code[i].search(/searchStr/g))
+							console.log(data.code[i].search(searchStr))
+							console.log(data.code[i].test(searchStr))
 							if (data.code[i].search(/searchStr/g)) {
-								console.log(data.code[i].search(/searchStr/g))
 								data.code[i] = data.code[i].replace(/searchStr/g, `<mark>${searchStr}</mark>`)
 							}
 						}
