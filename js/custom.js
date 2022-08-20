@@ -171,9 +171,9 @@ $(function(){
 						console.log(data)
 						for (let i = 0; i < data.code.length; i++) {
 							console.log(searchStr)
+							console.log(data.code[i])
 							console.log(data.code[i].search(/searchStr/g))
 							console.log(data.code[i].search(searchStr))
-							console.log(searchStr.test(data.code[i]))
 							// if (data.code[i].search(/searchStr/g)) {
 							// 	data.code[i] = data.code[i].replace(/searchStr/g, `<mark>${searchStr}</mark>`)
 							// }
