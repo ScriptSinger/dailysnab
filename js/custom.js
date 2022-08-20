@@ -170,10 +170,10 @@ $(function(){
 					function(data) {
 						console.log(data)
 						for (let i = 0; i < data.code.length; i++) {
-							console.log(data[i].search(/searchStr/g))
-							console.log(data[i].search(searchStr))
+							console.log(data.code[i].search(/searchStr/g))
+							console.log(data.code[i].search(searchStr))
 						if (data[i].search(/searchStr/g))
-							console.log(data[i].search(/searchStr/g))
+							console.log(data.code[i].search(/searchStr/g))
 						}
 						let o1 = (data.code[0].length > 0) ? data.code[0] : "<h5>Ничего не найдено</h5>"
 						let o2 = (data.code[1].length > 0) ? data.code[1] : "<h5>Ничего не найдено</h5>"
