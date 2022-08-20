@@ -161,12 +161,13 @@ $(function(){
 
 
 		$(".searchInMessages").on("keyup change blur", function() {
-			if ($('.searchInMessages').val().length > 2) {
+			let searchStr = $('.searchInMessages').val();
+
+			if (searchStr.length > 2) {
 				$.post('/searchOnMessages', {
-						text: $('.searchInMessages').val()
+						text: searchStr
 					},
 					function(data) {
-
 						let o1 = (data.code[0].length > 0) ? data.code[0] : "<h5>Ничего не найдено</h5>"
 						let o2 = (data.code[1].length > 0) ? data.code[1] : "<h5>Ничего не найдено</h5>"
 						let o3 = (data.code[2].length > 0) ? data.code[2] : "<h5>Ничего не найдено</h5>"
@@ -178,7 +179,7 @@ $(function(){
 					}
 				);
 			}
-			if ($('.searchInMessages').val().length == 0) {
+			if (searchStr.length == 0) {
 				$.post('/searchOnMessages', {
 						"flag": "chat",
 						"start_limit": 0,
