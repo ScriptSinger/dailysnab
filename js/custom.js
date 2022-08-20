@@ -171,7 +171,6 @@ $(function(){
 						console.log(data)
 						for (let i = 0; i < data.code.length; i++) {
 							console.log(searchStr)
-							console.log(data.code[i])
 							console.log(data.code[i].search(/searchStr/g))
 							console.log(data.code[i].search(searchStr))
 							// if (data.code[i].search(/searchStr/g)) {
