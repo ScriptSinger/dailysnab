@@ -554,7 +554,7 @@ class ClassQrq extends HtmlServive
 			$get_company_id = $r_p['company_id'];
 			$urgency_id = $r_p['urgency_id'];
 			$url = 'offer';
-		}elseif($in['where']=='buy_sell'){
+		}elseif($in['where']=='infopart'){
 			$url = 'sell_etp';
 		}
 		
@@ -661,6 +661,14 @@ class ClassQrq extends HtmlServive
 																		
 																			
 										if($arr['STH']){// сохраняем параметры
+												
+												if($in['where']=='buy_sell'){
+													// сохраняем понимание какая компания запросила объявления(предложение)
+													$STH = PreExecSQL(" INSERT INTO buy_sell_etp_sell (buy_sell_id, company_id, cookie_session) VALUES (?,?,?); " ,
+																				array( $arr['buy_sell_id'],$in['company_id_out'],$in['cookie_session'] ));
+												}
+								
+										
 												// есть ли такой Бренд в нашей базе
 													// сохраняем бренд какой вернулся (учитывая регистр)
 													$STH = PreExecSQL(" INSERT INTO buy_sell_attribute (buy_sell_id, attribute_id, value) VALUES (?,?,?); " ,
@@ -930,7 +938,7 @@ class ClassQrq extends HtmlServive
 		foreach($p['values'] as $k=>$m){
 			
 				$r = reqAmoAccountsEtp_AccountsidByCompanyid(array('company_id'=>COMPANY_ID));
-				//vecho($r);
+
 				
 				foreach($r as $kk=>$mm){// далее вызываем в ./cron/cron_amo_buy_sell_search_infopart.php
 						
@@ -962,7 +970,7 @@ class ClassQrq extends HtmlServive
 	}
 	
 	
-	
+	/* переделано в 
 	// получить результат предложений после выбора брендов (cron/cron_amo_buy_sell_search_infopart.php)
 	function getSellByAmoAccountsEtp( $p=array() ){
 	
@@ -1114,7 +1122,7 @@ class ClassQrq extends HtmlServive
 						
 		return array('error'=>$errors_message);
 	}
-	
+	*/
 	
 	
 	// Получение текста ошибки из json возвращаемое Этп
