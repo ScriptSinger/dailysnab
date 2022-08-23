@@ -252,21 +252,10 @@ echo '</pre>';
 						</div>
 					</div>
 					<div class="row">
-					<div class="col-3">
-						'.$rowt[0]['ticket_exp'].'
+					<div class="col-9">
+						<p style="word-wrap: break-word;">'.$rowt[0]['ticket_exp'].'</p>
 					</div>
-						<div class="col-6 images-wrapper">
 						
- 
-						'. $photoAndVideo .'
- 
-
-
-
-
-							
-							
-						</div>
 						<div class="col-3 product-info">
 							
 						
@@ -316,6 +305,20 @@ echo '</pre>';
 							</div>
 							
 							-->
+							
+						</div>
+					</div>
+					<div class="row">
+					<div class="col-6 images-wrapper">
+						
+ 
+						'. $photoAndVideo .'
+ 
+
+
+
+
+							
 							
 						</div>
 					</div>
