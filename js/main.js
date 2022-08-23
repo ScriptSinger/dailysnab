@@ -457,15 +457,15 @@ $(document).ready(function ($) {
 		
     });
 	
-	$("body").on('click', '.card-pro, .card-vip, .invoice-pay', function() {		//после клика модалку закрываем и редирект через 2 сек в профиль
-		console.log('закрытие окна');
-		$('#vmodal').modal('toggle');    
-		window.setTimeout(function(){			
-			window.location.href = "/profile/";
-		}, 2000);		
-		//$(window).attr('location','/profile/')
+	// $("body").on('click', '.card-pro, .card-vip, .invoice-pay', function() {		//после клика модалку закрываем и редирект через 2 сек в профиль
+	// 	console.log('закрытие окна');
+	// 	$('#vmodal').modal('toggle');    
+	// 	window.setTimeout(function(){			
+	// 		window.location.href = "/profile/";
+	// 	}, 2000);		
+	// 	//$(window).attr('location','/profile/')
 		
-    });		
+ //    });		
 	
 	$('#rschet, #kpp, #bik, #korr_schet').on('keydown', function(e){  //эти реквизиты - только цифры
 	  if(e.key.length == 1 && e.key.match(/[^0-9'".]/)){

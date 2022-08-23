@@ -2890,6 +2890,7 @@ class HtmlForms extends HtmlTemplate
 						<div class="btn-group" role="group" aria-label="pay">
 							<a type="button" class="btn btn-secondary card-pro" href="#" target="_blank">Картой</a>
 							<a type="button" class="btn btn-secondary invoice-pay" href="/pro/invoice/?type=1" target="_blank">По счету</a>
+							<a type="button"  id="invoice_pay" class="btn btn-secondary  invoice-pay" data-type_skills="1">По счету</a>
 						</div>	
 						
 						<p>Стоимость подписки Pro в первые три месяца составляет ' . PRICE_PRO_3m . ' рублей в месяц, далее ' . PRICE_PRO . ' рублей в месяц и будет списываться с вашего баланса календарный месяц. 
@@ -2915,6 +2916,7 @@ class HtmlForms extends HtmlTemplate
 							<a class="btn btn-secondary card-vip" href="#" target="_blank">Картой</a>
 							
 							<a class="btn btn-secondary invoice-pay" href="/pro/invoice/?type=2" target="_blank">По счету</a>
+							<a class="btn btn-secondary invoice-pay" id="invoice_pay" data-type_skills="2" >По счету</a>
 						</div>		
 						
 						<p>Стоимость подписки Vip в составляет ' . PRICE_VIP . ' рублей в месяц и будет списываться с вашего баланса календарный месяц. 
@@ -3006,6 +3008,7 @@ class HtmlForms extends HtmlTemplate
 							';
         }
             $bottom = '
+				
 				<script>
 				$(document).ready(function(){
 				  $(".collapse").on(\'show.bs.collapse\', function(e){
@@ -3018,9 +3021,45 @@ class HtmlForms extends HtmlTemplate
 									$(".card-vip").attr("href", data.code);
 								}								
 							});
+			
 
 				  });   
 				});
+$( document ).ready(function() {
+    var modal_logo = $("#modal_logo");
+	var modal = $("#vmodal");
+	var modal_ar = $("#vmodal_ar");
+	var modal_amo = $("#modal_amo");
+	$("body").on("click", "#invoice_pay", function(){
+		$("#vmodal").removeData();
+		
+		var type_skills = $(this).data(\'type_skills\');
+		var d = $(this).data();
+		console.log(d.id)
+		$.post("/FormGetInvoice", {balance:0, type: type_skills}, 
+			function(data){
+				if(data.code){
+					modal.html(data.code);
+					modal.modal();
+					modal.on("shown.bs.modal",
+						function(e){
+							$(".select2").select2({
+								placeholder: function(){
+									$(this).data("placeholder");
+								}
+							});
+							
+						}
+						).on("hidden.bs.modal", function (e) {
+								//onReload("/profile");
+							});
+					}
+				}
+				);
+	});	
+	});
+		
+				
 				</script>';
 
 

@@ -2373,6 +2373,15 @@ $("body").on("click", "#again_link", function(){
 		$.post("/pdf_generation", f, 	
 			function(data){					
 				if(data.ok){
+					// Создаём ссылку на него
+var link_url = document.createElement("a");
+	
+	link_url.download = data.file.substring((data.file.lastIndexOf("/") + 1), data.file.length);
+	link_url.href = data.file;
+	document.body.appendChild(link_url);
+	link_url.click();
+	document.body.removeChild(link_url);
+	delete link_url;
 						//webix.message(data.code);
 						webix.alert({
 							text:data.code,
