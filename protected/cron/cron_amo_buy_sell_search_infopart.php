@@ -15,7 +15,6 @@
 
 		foreach($row as $k=>$m){
 
-				sleep(5);
 
 				// Получаем и сохраняем в buy_sell данные от сторонних ресурсов
 				$arr = $qrq->QrqInsertBuySell(array(	'where'			=> 'infopart',
@@ -43,10 +42,14 @@
 															'company_id_out'=> $m['company_id_out'],
 															'cookie_session'=> $m['cookie_session']
 															));
-				*/											
-				$STH = PreExecSQL(" DELETE FROM cron_amo_buy_sell_search_infopart WHERE id=?; " ,
-									array( $m['id'] ));										
-
+				*/
+				if(!$arr['finished']){				
+					$STH = PreExecSQL(" DELETE FROM cron_amo_buy_sell_search_infopart WHERE id=?; " ,
+										array( $m['id'] ));										
+				}
+				
+				
+				sleep(5);
 		}
 
 
