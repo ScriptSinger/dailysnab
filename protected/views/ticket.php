@@ -210,7 +210,8 @@ echo '</pre>';
             }else {
                 $sl_video .= '<div class="carousel-item ' . $active2 . '"> <video class="img-fluid" autoplay loop><source src="/files/tickets/' . $t['owner_id'] . '/video/' . $key['file_name'] . '" type="video/mp4"> </video> </div>';
             }
-            $sl_thumbs .= '<button type="button" data-mdb-target="#carouselVideo" data-mdb-slide-to="'.$i.'" '.$active.' aria-label="Slide '.$i.'"></button>';
+            if(count($rtf) > 1)
+            	$sl_thumbs .= '<button type="button" data-mdb-target="#carouselVideo" data-mdb-slide-to="'.$i.'" '.$active.' aria-label="Slide '.$i.'"></button>';
 			$i++;
 
 		}
@@ -239,7 +240,7 @@ echo '</pre>';
 			  '.$sl_video.'
 			 
 			  </div>
-			 '.$buttonNextPrev.'
+			 '.$sl_thumbs.'
 			 
 			</div>';
 			}
