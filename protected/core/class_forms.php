@@ -2889,7 +2889,6 @@ class HtmlForms extends HtmlTemplate
 
 						<div class="btn-group" role="group" aria-label="pay">
 							<a type="button" class="btn btn-secondary card-pro" href="#" target="_blank">Картой</a>
-							<a type="button" class="btn btn-secondary invoice-pay" href="/pro/invoice/?type=1" target="_blank">По счету</a>
 							<a type="button"  id="invoice_pay" class="btn btn-secondary  invoice-pay" data-type_skills="1">По счету</a>
 						</div>	
 						
@@ -2915,7 +2914,6 @@ class HtmlForms extends HtmlTemplate
 						<div class="btn-group" role="group" aria-label="pay">
 							<a class="btn btn-secondary card-vip" href="#" target="_blank">Картой</a>
 							
-							<a class="btn btn-secondary invoice-pay" href="/pro/invoice/?type=2" target="_blank">По счету</a>
 							<a class="btn btn-secondary invoice-pay" id="invoice_pay" data-type_skills="2" >По счету</a>
 						</div>		
 						
@@ -3010,21 +3008,8 @@ class HtmlForms extends HtmlTemplate
             $bottom = '
 				
 				<script>
-				$(document).ready(function(){
-				  $(".collapse").on(\'show.bs.collapse\', function(e){
-						var form = $(e.target);
-						var type_skills = $(this).data(\'type_skills\');
-							$.post("/change_pay", {type_skills:type_skills}, function(data){	
-								if (type_skills === 1){
-									$(".card-pro").attr("href", data.code);
-								} else {
-									$(".card-vip").attr("href", data.code);
-								}								
-							});
 			
 
-				  });   
-				});
 $( document ).ready(function() {
     var modal_logo = $("#modal_logo");
 	var modal = $("#vmodal");
@@ -3035,8 +3020,6 @@ $( document ).ready(function() {
 		
 		var type_skills = $(this).data(\'type_skills\');
 		var d = $(this).data();
-		console.log(d.id)
-		$.post("/FormGetInvoice", {balance:0, type: type_skills}, 
 		console.log(type_skills)
 		$.post("/FormGetInvoice", {type: type_skills}, 
 			function(data){
@@ -3433,7 +3416,6 @@ $( document ).ready(function() {
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
-									<input type="text" style="pointer-events:none;" class="form-control" id="company" name="company" placeholder="Наименование" value="" >
 									<input type="text" style="pointer-events:none;" class="form-control" id="companyName" name="companyName" placeholder="Наименование" value="" >
 								</div>
 							</div>
@@ -3495,7 +3477,6 @@ $( document ).ready(function() {
         onSelect: function(suggestion) {
             console.log(suggestion);			
 			$("#inn").val(suggestion.data.inn);
-			$("#company").val(suggestion.value);
 			$("#companyName").val(suggestion.value);
 			$("#kpp").val(suggestion.data.kpp);
 			$("#ur_adr").val(suggestion.data.address.value);			
