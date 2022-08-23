@@ -3561,8 +3561,48 @@ $( document ).ready(function() {
 				$s_pay = 'Для подписки Вам не хватает <span class="pay_sum">'.$sum_to_pay.'</span> рублей.<br />Пополнить Баланс можно следующими способами:<br />';
 				$pay_buttons = '<div class="form-group">
 						<a class="btn button-blue pay_selector" id="card_pay" data-type="card" target="_blank" href="'.$confirmationUrl.'">По карте</a>			
-						<a class="btn button-blue pay_selector" id="invoice_pay" data-type="invoice" href="/pro/invoice/?type='.$type_skills.'">По счету</a>
-					</div>';
+						<a class="btn button-blue pay_selector" id="invoice_pay" data-type="invoice" data-type_skills="'. $type_skills.'">По счету</a>
+					</div>
+					<script>
+			
+
+$( document ).ready(function() {
+    var modal_logo = $("#modal_logo");
+	var modal = $("#vmodal");
+	var modal_ar = $("#vmodal_ar");
+	var modal_amo = $("#modal_amo");
+	$("body").on("click", "#invoice_pay", function(){
+		$("#vmodal").removeData();
+		
+		var type_skills = $(this).data(\'type_skills\');
+		var d = $(this).data();
+		console.log(type_skills)
+		$.post("/FormGetInvoice", {type: type_skills}, 
+			function(data){
+				if(data.code){
+					modal.html(data.code);
+					modal.modal();
+					modal.on("shown.bs.modal",
+						function(e){
+							$(".select2").select2({
+								placeholder: function(){
+									$(this).data("placeholder");
+								}
+							});
+							
+						}
+						).on("hidden.bs.modal", function (e) {
+								//onReload("/profile");
+							});
+					}
+				}
+				);
+	});	
+	});
+		
+				
+				</script>
+					';
 				$submit_button = '';
 
 

@@ -6494,7 +6494,7 @@
 		$sql_inner_join = "INNER JOIN company c ON c.id = t.owner_id";
 
 		$sql = "	SELECT t.id,t.owner_id,t.ticket_exp,t.ticket_flag,t.status,t.vazh,t.inv, t.data_insert, DATE_FORMAT(t.data_insert, '%H:%i') as t_time, c.phone tel, DATE_FORMAT(t.data_insert, '%d.%m.%Y %H:%i') as t_date_full,
-			   t2s.status_name,t2s.status_class, t2s.prava, c.company, l.email mail
+			   t2s.status_name,t2s.status_class, t2s.prava, c.company, l.email mail, c.email
 		FROM tickets2_status as t2s, tickets2 as t
 		
 			
