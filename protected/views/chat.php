@@ -71,7 +71,13 @@ $last_message = [];
 			$need_link = $rown[0]["need"];			
 
 			$companies_id = implode(",", $rown_name);
-			
+			$companyName = '';
+			foreach($rown_name as $k){
+				if($k != COMPANY_ID) {
+					$companyName = PreExecSQL_one('SELECT * FROM company WHERE id = ?', [$k]);
+				}
+			}
+
 			
 			
 /* 				if((count($needs) == 1) && ($needs[0]!='')){
@@ -105,8 +111,11 @@ $last_message = [];
 
 					$headData = '
 					<div class="row">
-						<div class="col-md-7">
-							'.$companies_id.'
+						<div class="col-md-1">
+							<img src="'.$companyName['avatar'].'" class="rounded-circle" height="50">
+						</div>	
+						<div class="col-md-6">
+							 '.$companyName['company'].'<br /><small>'.$need_link.'</small>
 						</div>
 						<div class="col-md-5">
 							'.$out_of_theme.'
