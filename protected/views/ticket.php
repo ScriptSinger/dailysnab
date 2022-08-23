@@ -245,8 +245,8 @@ echo '</pre>';
 			</div>';
 			}
 				//var_dump($rowt[0]);
-				$tel = (!empty($rowt[0]['tel'])) ? $rowt[0]['tel'] : 'Отсутсвует';
-				$mail = (!empty($rowt[0]['mail'])) ? $rowt[0]['mail'] : 'Отсутсвует';
+				// $tel = (!empty($rowt[0]['tel'])) ? $rowt[0]['tel'] : 'Отсутсвует';
+				// $mail = (!empty($rowt[0]['mail'])) ? $rowt[0]['mail'] : 'Отсутсвует';
 				$email = (!empty($rowt[0]['email'])) ? $rowt[0]['email'] : 'Отсутсвует';
 
 		$tr = '<section class="product ticket">
@@ -268,8 +268,7 @@ echo '</pre>';
 						
 						
 						<p> <a href="/company-profile/'.$rowt[0]['owner_id'].'" target="_blank">'.$rowt[0]['company'].'</a></p>
-						<p>Номер телефона компании: '.$tel.'</p>
-						<p>Почта компании: '.$email.'</p>
+						
 						<p>Логин: '.$mail.'</p>
 			
 						</div>
