@@ -4962,7 +4962,7 @@ elseif($_GET['route'] == 'pdf_generation'){
 
 	//Добавление деталей счета
 	$STH = PreExecSQL(" INSERT INTO company_details (company_id,name,inn,kpp,rschet,bik,korr_schet,ur_adr,type_skills) VALUES (?,?,?,?,?,?,?,?,?); " ,
-		array( COMPANY_ID,$in['company'],$in['inn'],$in['kpp'],$in['rschet'],$in['bik'],$in['korr_schet'],$in['ur_adr'],$in['type_skills']));
+		array( COMPANY_ID,$in['companyName'],$in['inn'],$in['kpp'],$in['rschet'],$in['bik'],$in['korr_schet'],$in['ur_adr'],$in['type_skills']));
 	//Добавление информации об оплате
 	$STH = PreExecSQL(" INSERT INTO pro_invoices (company_id,summ,type_s) VALUES (?,?,?); " ,
 		array( COMPANY_ID,$sum_to_pay,$in['type_skills']));
@@ -4994,7 +4994,7 @@ elseif($_GET['route'] == 'pdf_generation'){
 	]);
 
 	$kpp = ($in['kpp']) ? ", КПП ". $in['kpp']: "";
-	$company_name = ($in['companyName']) ? $in['company']: "";
+	$company_name = ($in['companyName']) ? $in['companyName']: "";
 	$inn = ($in['inn']) ? ", ИНН ". $in['inn']: "";
 	$ur_adr = ($in['ur_adr']) ? ", ". $in['ur_adr']: "";
 
