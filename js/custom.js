@@ -2385,13 +2385,13 @@ var link_url = document.createElement("a");
 						//webix.message(data.code);
 						webix.alert({
 							text:data.code,
-							callback:function(){
-											//download_file('/'+data.file, data.file);
-											download_file(data.file, data.file);
-											//console.log(data.file);
-											//window.open("data:application/pdf," + encodeURI(data.file)); 
-											//onReload('/profile');
-										} 
+							// callback:function(){
+							// 				//download_file('/'+data.file, data.file);
+							// 				download_file(data.file, data.file);
+							// 				//console.log(data.file);
+							// 				//window.open("data:application/pdf," + encodeURI(data.file)); 
+							// 				//onReload('/profile');
+							// 			} 
 									});						
 					}else{
 						webix.message({type:"error", text:data.code});
