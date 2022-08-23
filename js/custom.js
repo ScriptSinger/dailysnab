@@ -161,24 +161,36 @@ $(function(){
 
 
 		$(".searchInMessages").on("keyup change blur", function() {
-			if ($('.searchInMessages').val().length > 2) {
+			let searchStr = $('.searchInMessages').val();
+
+			if (searchStr.length > 2) {
 				$.post('/searchOnMessages', {
-						text: $('.searchInMessages').val()
+						text: searchStr
 					},
 					function(data) {
+						let reg = new RegExp(searchStr, 'gi')
+						let content = []
 
-						let o1 = (data.code[0].length > 0) ? data.code[0] : "<h5>Ничего не найдено</h5>"
-						let o2 = (data.code[1].length > 0) ? data.code[1] : "<h5>Ничего не найдено</h5>"
-						let o3 = (data.code[2].length > 0) ? data.code[2] : "<h5>Ничего не найдено</h5>"
+						for (let i = 0; i < data.code.length; i++) {
+							let curItem = data.code[i];
+							
+							if (reg.test(curItem)) {
+								if (searchStr != curItem.match(reg)[0]) searchStr = curItem.match(reg)[0];
+								content[i] = curItem.replace(reg, `<mark>${searchStr}</mark>`)
+							} else {
+								content[i] = "<h5>Ничего не найдено</h5>"
+							}
+						}
+
 						$('.message-wrapper').html(
-							"<h1>Пользователи</h1>" + o1 +
-							"<h1>Сообщения</h1>" + o2 +
-							"<h1>Темы</h1>" + o3);
+							"<h1>Пользователи</h1>" + content[0] +
+							"<h1>Сообщения</h1>" + content[1] +
+							"<h1>Темы</h1>" + content[2]);
 
 					}
 				);
 			}
-			if ($('.searchInMessages').val().length == 0) {
+			if (searchStr.length == 0) {
 				$.post('/searchOnMessages', {
 						"flag": "chat",
 						"start_limit": 0,
