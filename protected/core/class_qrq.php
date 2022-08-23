@@ -662,7 +662,7 @@ class ClassQrq extends HtmlServive
 																			
 										if($arr['STH']){// сохраняем параметры
 												
-												if($in['where']=='buy_sell'){
+												if($in['where']=='infopart'){
 													// сохраняем понимание какая компания запросила объявления(предложение)
 													$STH = PreExecSQL(" INSERT INTO buy_sell_etp_sell (buy_sell_id, company_id, cookie_session) VALUES (?,?,?); " ,
 																				array( $arr['buy_sell_id'],$in['company_id_out'],$in['cookie_session'] ));
