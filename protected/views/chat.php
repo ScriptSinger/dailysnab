@@ -90,6 +90,7 @@ $last_message = [];
 				//$company_name = $rcm[0]["name_rcmc"];
 
 				//надо будет условие поставить еще на проверку ранних сообщеницй и на заблокировать пользователя	
+				$out_of_theme = '';
 				if ($rown[0]['company_id'] == COMPANY_ID) //вывод выхода из темы для клиентов 
 					{
 						$out_of_theme = '<button type="button" class="button-blue pull-right close_theme" data-fid="'.$fid.'">Закрыть тему</button>'; //организаторов чатов
@@ -98,7 +99,7 @@ $last_message = [];
 					{ 
 						$out_of_theme = '<button type="button" class="button-blue pull-right block_of_theme" data-fid="'.$rown[1].'">Заблокировать пользователя</button>'; // уже после выхода из чата
 					} 				
-				else
+				elseif($theme != '')
 					{
 						$out_of_theme = '<button type="button" class="button-blue out_of_theme" data-fid="'.$fid.'">Выйти из темы</button>
 							<button type="button" class="button-blue close_theme_pr" data-fid="'.$fid.'">Предложить закрыть тему</button>'; //собеседников
