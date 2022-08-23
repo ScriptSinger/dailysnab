@@ -150,12 +150,13 @@ echo '</pre>';
 							 '.$ticket_attach.'							
 						
 						<div class="subs-info '.$attach_no_class.'">							 
-							<div class="theme"><a href="/ticket/?tid='.$t["id"].'">'.$ticket_text.'</a></div>
+							<div class="theme positionTickets"><a href="/ticket/?tid='.$t["id"].'">'.$ticket_text.'</a></div>
 							<div class="autor">'.$tecket.'</div>
 							
 							<br />
 							<div class="status">'.$vazhnost.'</div><div class="links"> <small>'.$ticket_inv.'</small></div>
 						</div>
+						
 						<div class="subs-place col-3 text-center">								
 							<div class="ticket_flag">'.$t["status_name"].'</div>
 							<span class="small">'.$t["data_insert"].'</span>
