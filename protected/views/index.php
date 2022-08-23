@@ -159,7 +159,7 @@ if(LOGIN_ID){
 .positionTickets {
   width: 600px;
   overflow: hidden;
-  position: relative;
+/* // position: relative;*/
       word-wrap: break-word;
 }
  
