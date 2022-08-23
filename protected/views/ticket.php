@@ -269,7 +269,7 @@ echo '</pre>';
 						
 						<p> <a href="/company-profile/'.$rowt[0]['owner_id'].'" target="_blank">'.$rowt[0]['company'].'</a></p>
 						
-						<p>Логин: '.$mail.'</p>
+						<p>Логин: '.$еmail.'</p>
 			
 						</div>
 						<div class="col-3 product-price-wrapper">
