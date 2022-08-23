@@ -554,8 +554,12 @@ class ClassQrq extends HtmlServive
 			$get_company_id = $r_p['company_id'];
 			$urgency_id = $r_p['urgency_id'];
 			$url = 'offer';
+			$flag_buy_sell = 2;
+			$status = 10;
 		}elseif($in['where']=='infopart'){
 			$url = 'sell_etp';
+			$flag_buy_sell = 1;
+			$status = 2;
 		}
 		
 
@@ -639,8 +643,8 @@ class ClassQrq extends HtmlServive
 																		'company_id2'		=> 0,
 																		'parent_id'			=> $parent_id,
 																		'copy_id'			=> 0,
-																		'flag_buy_sell'		=> 2,
-																		'status'			=> 10,
+																		'flag_buy_sell'		=> $flag_buy_sell,
+																		'status'			=> $status,
 																		'name'				=> $title,
 																		'url'				=> $url,
 																		'cities_id'			=> $cities_id,
@@ -658,7 +662,7 @@ class ClassQrq extends HtmlServive
 																		'item_id'			=> $item_id
 																		
 																		));
-																		
+																								
 																			
 										if($arr['STH']){// сохраняем параметры
 												
