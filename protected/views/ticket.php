@@ -238,7 +238,7 @@ echo '</pre>';
 			  </button>
 			</div>';
 			}
-
+				//var_dump($rowt[0]);
 				$tel = (!empty($rowt[0]['tel'])) ? $rowt[0]['tel'] : 'Отсутсвует';
 				$mail = (!empty($rowt[0]['mail'])) ? $rowt[0]['mail'] : 'Отсутсвует';
 
