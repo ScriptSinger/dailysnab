@@ -1,32 +1,23 @@
 <?php
 
 	//$row 	= $member['mainpage']['row'];
-/*
-				$cn->LetterSendNotification(array(	'notification_id'			=> 5,
-													'tid'						=> '',
-													'email'						=> 'vdo81@yandex.ru',
-													'login_id'					=> 565,
-													'company_id'				=> 1070,
-													'name'						=> 'Dm',
-													'flag_buy_sell'				=> 2,
-													'old_status_buy_sell_id'	=> '' ));
 
-*/
-/*
-					// Оповещение
-						$cn->StartNotification(array(	'flag'				=> 'buy_sell',
-														'tid'				=> 512293,
-														'status_buy_sell_id'=> 11,
-														'company_id2'		=> 1253 ));
-*/
+	
+	
+
+
+
 	$rowt = reqTicketMessages();
 	
-	$navPanel = empty($rowt) ? $t->SubmenuHelp(array('page'=>'faq')) : $t->NavTabsTicketsFolders();  
+	$navPanel = empty($rowt) ? $t->SubmenuHelp(array('page'=>'faq')) : $t->NavTabsTicketsFolders();
 
 	$code .= '
 
+			
+
 			<div class="container">'.$navPanel.'</div>	
 		
+			
 			
 			<section class="infopage">
 				<div class="container">

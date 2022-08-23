@@ -522,7 +522,14 @@ class ClassQrq extends HtmlServive
 		$result = false;
 		$flag_finished = 0;
 		$errors_message = $r_p['company_id'] = $r_p['id'] = $finished = '';
-		//$in = fieldIn($p, array('buy_sell_id','article_id','brand'));
+		
+		$in = fieldIn($p, array('where','buy_sell_id','login_id','company_id','categories_id','qrq_id','company_id_out','cookie_session'));
+		
+		$parent_id 	= 0;
+		$categories_id	= $in['categories_id'];
+		$get_buy_sell_id = $get_company_id = 0;
+		$urgency_id = 5;
+		
 		
 		
 		$url = DOMEN.'/qrq/amo/searchupdate.php';
@@ -539,12 +546,22 @@ class ClassQrq extends HtmlServive
 		// пишем лог
 		$ins_id = reqInsertAmoLogJson(array('url'=>'searchupdate','parameters'=>$parameters,'json'=>$json,'token'=>$p['token']));
 	
-		$r_p = reqBuySell_Amo(array('id' => $p['buy_sell_id']));
+		if($in['where']=='buy_sell'){
+			$r_p = reqBuySell_Amo(array('id' => $p['buy_sell_id']));
+			$parent_id 	= $r_p['id'];
+			$categories_id	= $r_p['categories_id'];
+			$get_buy_sell_id = $r_p['id'];
+			$get_company_id = $r_p['company_id'];
+			$urgency_id = $r_p['urgency_id'];
+			$url = 'offer';
+		}elseif($in['where']=='buy_sell'){
+			$url = 'sell_etp';
+		}
 		
 
 		// в массив Бренд
 		$arr3 = array();
-		$row = reqAttributeValue(array('categories_id'=>$r_p['categories_id'],'attribute_id'=>3,'flag'=>'buy_sell'));
+		$row = reqAttributeValue(array('categories_id'=>$categories_id,'attribute_id'=>3,'flag'=>'buy_sell'));
 		foreach($row as $i => $m){
 			$arr3[ $m['id'] ] = mb_strtolower($m['attribute_value']);
 		}
@@ -620,15 +637,15 @@ class ClassQrq extends HtmlServive
 										$arr = reqInsertBuySell(array(	'login_id'			=> $login_id,
 																		'company_id'		=> $company_id,
 																		'company_id2'		=> 0,
-																		'parent_id'			=> $r_p['id'],
+																		'parent_id'			=> $parent_id,
 																		'copy_id'			=> 0,
 																		'flag_buy_sell'		=> 2,
 																		'status'			=> 10,
 																		'name'				=> $title,
-																		'url'				=> 'offer',
+																		'url'				=> $url,
 																		'cities_id'			=> $cities_id,
-																		'categories_id'		=> $r_p['categories_id'],
-																		'urgency_id'		=> $r_p['urgency_id'],
+																		'categories_id'		=> $categories_id,
+																		'urgency_id'		=> $urgency_id,
 																		'currency_id'		=> 1,
 																		'cost'				=> $cost,
 																		'form_payment_id'	=> 1,
@@ -657,7 +674,7 @@ class ClassQrq extends HtmlServive
 													}else{
 															// Если нет добавляем в slov_attribute_value -> attribute_value и возвращаем attribute_value_id 
 															$arr_p = $this->ProverkaAndInsertSlovAttributeValue(array('flag'				=> 'qrq',
-																													'categories_id'		=> $r_p['categories_id'],
+																													'categories_id'		=> $categories_id,
 																													'attribute_id'		=> 3,
 																													'attribute_value'	=> $brand ));
 															$attribute_value_id 		= $arr_p['attribute_value_id']; 
@@ -714,7 +731,7 @@ class ClassQrq extends HtmlServive
 		}
 
 
-		return array('finished' => $flag_finished , 'errors_message'=>$errors_message , 'company_id'=>$r_p['company_id'] , 'buy_sell_id'=>$r_p['id'] );
+		return array('finished' => $flag_finished , 'errors_message'=>$errors_message , 'company_id'=>$get_company_id , 'buy_sell_id'=>$get_buy_sell_id );
 	}
 	
 	
@@ -917,10 +934,24 @@ class ClassQrq extends HtmlServive
 				
 				foreach($r as $kk=>$mm){// далее вызываем в ./cron/cron_amo_buy_sell_search_infopart.php
 						
-						$STH = PreExecSQL(" INSERT INTO cron_amo_buy_sell_search_infopart (token,brand,searchtext,accountid,login_id,company_id,categories_id,qrq_id,company_id_out,cookie_session) VALUES (?,?,?,?,?,?,?,?,?,?); " ,
-											array( $_SESSION['AMO_TOKEN'],$m['brand'],$p['searchtext'],$mm['accounts_id'],$mm['login_id'],$mm['company_id'],$categories_id,$mm['qrq_id'],COMPANY_ID,COOKIE_SESSION ));
-						if($STH){
-							$ok = true;
+						// получаем searchid для дальнейшего сохранения в крон
+							$arr = self::getSearchidBySearch(array(	'token'				=> $in['token'],
+																	'brand'				=> $m['brand'],
+																	'searchtext'		=> $p['searchtext'],
+																	'accountid'			=> $mm['accounts_id']	));
+							/*if($arr['searchid']){
+								$STH = reqInsertCronAmoBuysellSearchUpdate(array(	'buy_sell_id'		=> $in['buy_sell_id'],
+																					'token'				=> $in['token'],
+																					'searchid'			=> $arr['searchid']	));
+							}
+							*/
+						///
+						if($arr['searchid']){
+								$STH = PreExecSQL(" INSERT INTO cron_amo_buy_sell_search_infopart (token,searchid,login_id,company_id,categories_id,qrq_id,company_id_out,cookie_session) VALUES (?,?,?,?,?,?,?,?); " ,
+													array( $_SESSION['AMO_TOKEN'],$arr['searchid'],$mm['login_id'],$mm['company_id'],$categories_id,$mm['qrq_id'],COMPANY_ID,COOKIE_SESSION ));
+								if($STH){
+									$ok = true;
+								}
 						}
 				}
 				

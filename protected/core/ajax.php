@@ -1781,28 +1781,28 @@ elseif($_GET['route'] == 'autocomplete_search'){
     // получаем данные поиска
     if($in['flag']=='modal'||$in['flag']=='top'||$in['flag']=='mainpage'){
         $rf = reqSearchFilterParamCompany(array('login_id'=>LOGIN_ID,'company_id'=>COMPANY_ID));
-        $flag_search 	= $rf['flag_search'];
-        $categories_id	= $rf['categories_id'];
-        $cities_id 	= $rf['cities_id'];
+												$flag_search 	= $rf['flag_search'];
+												$categories_id	= $rf['categories_id'];
+												$cities_id 	= $rf['cities_id'];
     }
 
     //var_dump($in['where'].'<br>'.$cities_id.'<br>'.$categories_id.'<br>'.$in['value']);
     $r	= reqSearchRequestAutocomplete(array(	'value' 		=> $in['value'],
-        'flag'			=> $in['flag'],
-        'flag_buy_sell'	=> $flag_search,
-        'categories_id'	=> $categories_id,
-        'cities_id'		=> $cities_id,
-        'where'			=> $in['where']	));
+												'flag'			=> $in['flag'],
+												'flag_buy_sell'	=> $flag_search,
+												'categories_id'	=> $categories_id,
+												'cities_id'		=> $cities_id,
+												'where'			=> $in['where']	));
 
     foreach($r as $i => $m){
         $categories = ($m['categories'])? ' &larr; '.$m['categories'].' &larr; '.$m['categories_2'] : '';
         $jsd[] = array( 	'categories_id'	=> $m['categories_id'] ,
-            'name' 			=> $m['value'].'<span class="text-muted"> &larr; '.$m['nflag_pole'].$categories.'</span>',
-            'name2' 		=> $m['value'],
-            'value' 		=> $m['value'],
-            'nomenclature_id'=> $m['nomenclature_id'],// в случае номенклатуры
-            'id_attribute'	=> $m['id_attribute'],
-            'flag'			=> $m['flag'] );
+						'name' 			=> $m['value'].'<span class="text-muted"> &larr; '.$m['nflag_pole'].$categories.'</span>',
+						'name2' 		=> $m['value'],
+						'value' 		=> $m['value'],
+						'nomenclature_id'=> $m['nomenclature_id'],// в случае номенклатуры
+						'id_attribute'	=> $m['id_attribute'],
+						'flag'			=> $m['flag'] );
     }
     if (empty($jsd)) $jsd[] = array('name' => '<span class="text-muted">не найдено</span>' , 'name2' =>'не найдено' );
 }
