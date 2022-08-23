@@ -935,7 +935,7 @@ class ClassQrq extends HtmlServive
 				foreach($r as $kk=>$mm){// далее вызываем в ./cron/cron_amo_buy_sell_search_infopart.php
 						
 						// получаем searchid для дальнейшего сохранения в крон
-							$arr = self::getSearchidBySearch(array(	'token'				=> $in['token'],
+							$arr = self::getSearchidBySearch(array(	'token'				=> $_SESSION['AMO_TOKEN'],
 																	'brand'				=> $m['brand'],
 																	'searchtext'		=> $p['searchtext'],
 																	'accountid'			=> $mm['accounts_id']	));
