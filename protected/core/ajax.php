@@ -17,7 +17,7 @@ $in = array('email', 'pass', 'pass_again', 'id'=>'integer', 'value', 'flag', 'pa
     'who1', 'who2', 'name', 'phone', 'phone2', 'legal_entity_id', 'company', 'position', 'tax_system_id', 'cities_id',
     'flag_buy_sell', 'status', 'urgency_id', 'delivery_id', 'currency_id', 'comments', 'cost', 'form_payment_id', 'amount' ,
     'note' , 'buy_sell_id' , 'articul', 'comments_company', 'responsible', 'responsible_id', 'availability',
-    'multiplicity','min_party','cost1',
+    'multiplicity','min_party','cost1', 'companyName',
     'company_id','notification_id','interests_id','interests_param_id','share_url','prava_id',
     'start_limit','flag_limit','where','nomenclature_id','id_1c','qrq_id','flag_search','flag_interests',
     'amount1','unit_id1','amount2','unit_id2',
@@ -4994,7 +4994,7 @@ elseif($_GET['route'] == 'pdf_generation'){
 	]);
 
 	$kpp = ($in['kpp']) ? ", КПП ". $in['kpp']: "";
-	$company_name = ($in['company']) ? $in['company']: "";
+	$company_name = ($in['companyName']) ? $in['company']: "";
 	$inn = ($in['inn']) ? ", ИНН ". $in['inn']: "";
 	$ur_adr = ($in['ur_adr']) ? ", ". $in['ur_adr']: "";
 
@@ -5244,7 +5244,7 @@ elseif($_GET['route'] == 'checkPaymentModal'){
 
 elseif($_GET['route'] == 'FormGetInvoice'){
 
-    $arr = $f->FormGetInvoice(array('id'=>$in['id'], 'balance', $in['balance'], $in['type']));
+    $arr = $f->FormGetInvoice(array('id'=>$in['id'], 'balance' => $in['balance'], 'type' => $in['type']));
 
     $code = $t->getModal(
         array('class_dialog' => 'podpiska', 'top' => $arr['top'], 'content' => $arr['content'], 'bottom' => $arr['bottom']),

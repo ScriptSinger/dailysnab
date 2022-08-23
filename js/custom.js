@@ -546,6 +546,7 @@ $(function(){
 										//изменить категорию
 										$(".change_categories_buy_sell").on("change", function() {
 											var d = $(this).data();
+											console.log(d.flag_buy_sell)
 											$.post('/change_categories_buy_sell', {id:$(this).val() , flag_buy_sell:d.flag_buy_sell}, 
 												function(data){
 													$('#div_categories_buy_sell').html(data.code);
@@ -616,10 +617,138 @@ $(function(){
 							);
 	});
 
+	// Модальное окно создания карточки товара
+	$("body").on("click", ".modal-add-card", function(){
+		$('#vmodal').removeData();
+		
+		modal.modal('dispose');
+		
+		//$('#vmodal').modal('hide');
+		
+		var d = $(this).data();
+		var flag_offer_share = d.flag_offer_share;
+		$.post("/modal_add_card", { id:d.id , flag_buy_sell:d.flag_buy_sell , share_url:d.share_url, status:d.status , flag:d.flag }, 
+			function(data){
+				if(data.code){
+					modal.html(data.code);
+					modal.modal();
+					modal.on('shown.bs.modal',
+						function(e){
+									// main.js
+									$('.app-changer span').click(function () {
+										$('.app-cat-wrapper, .app-location-input').addClass('d-none');
+										$('.app-changer span').removeClass('active');
+										$(this).addClass('active');
+
+										if ($(this).hasClass('part')) {
+											$('.app-cat-wrapper').removeClass('d-none');
+											$('.none-req').addClass('req');
+										} else if ($(this).hasClass('location')) {
+											$('.app-location-input').removeClass('d-none');
+										}
+									});
+									///
+									
+
+									
+									getOnlyNumber();
+									
+									getUploadFiles('');
+									
+									MainJs_Search();
+
+									$(".select2").select2({
+										placeholder: function(){
+											$(this).data('placeholder');
+										}
+									});
+
+									Select2UsersAttributeValue();
+										//изменить категорию
+										$(".change_categories_buy_sell").on("change", function() {
+											var d = $(this).data();
+
+											$.post('/change_categories_card', {id:$(this).val() , flag_buy_sell:d.flag_buy_sell}, 
+												function(data){
+													$('#div_categories_buy_sell').html(data.code);
+													$(".select2").select2({
+														placeholder: function(){
+															$(this).data('placeholder');
+														}
+													});
+													Select2UsersAttributeValue();
+													MaskInput();
+												}
+												);
+										});
+										$("#change_status_buy_sell").on("click", function() {
+											var dd = $(this).data();
+											
+											var val_submit = $('#buy_sell-form #submit23').html();
+											var ds = $('#buy_sell-form #submit23').data();
+											var status_submit = ds.status;
+											
+											$('#buy_sell-form #submit23').html( $(this).html() );
+											$('#buy_sell-form #submit23').attr('data-status',dd.status).data('status', dd.status);
+											
+											$('#buy_sell-form #change_status_buy_sell').html( val_submit );
+											$('#change_status_buy_sell').attr('data-status',status_submit).data('status', status_submit);
+											$('#buy_sell-form #submit23').attr('disabled',false);
+											
+										});
+										
+										$("#unit_id1").on("change", function() {// Выбрать единицу измерения, фасовка
+											var d = $(this).data();	
+											var unit_id = $(this).val();
+
+											if(unit_id==1){
+												$('#div_amount_unit2').fadeIn(0);
+											}else{
+												$('#div_amount_unit2').fadeOut(0);
+											}
+
+											$("[name='amount1']").data('unit_id', unit_id).attr('data-unit_id', unit_id);
+
+											MaskUnit('#buy_sell-form');
+										});
+										
+										MaskUnit('#buy_sell-form');
+										MaskInput();
+										
+										AutocompleteSearch('buy_sell',d.flag_buy_sell);
+										AutocompleteCities('buy_sell');
+										AutocompleteCommentsCompany();
+										AutocompleteResponsible('buy_sell');
+										AutocompleteАssets('buy_sell');
+										if(d.flag_buy_sell==5){
+											AutocompleteFa('stock', d.flag_buy_sell);
+										}else if(d.flag_buy_sell==2){
+											AutocompleteFa('company_id3', d.flag_buy_sell);
+										}
+										CountStatusBuysellByNomenclature(d.nomenclature_id);
+										SaveBuySell(modal,flag_offer_share);
+										
+									}
+									).on('hidden.bs.modal', function (e) {
+										modal.modal('dispose');
+										$('.modal-backdrop').fadeOut(0);
+									});
+								}
+							}
+							);
+	});
+
+
 
 	$("body").on("click", "#save_buy_sell_formnovalidate", function(){
 
 		SaveBuySellAfter( modal , $('#buy_sell-form').serialize() , 1 , '' );
+
+	});
+
+	$("body").on("click", "#save_card_formnovalidate", function(){
+
+		SaveCardAfter( modal , $('#buy_sell-form').serialize() , 1 , '' );
 
 	});
 	
@@ -4310,6 +4439,142 @@ return false;
 };
 
 
+
+function SaveCardAfter(modal,form_serialize,status_id,flag_offer_share){
+	console.log(form_serialize)
+	webix.ajax().post( "/save_card", form_serialize+"&status="+status_id, 
+		function(text, data, xhr){
+			data = data.json();
+
+			if(data.ok){
+
+											//var tr = data.tr;
+											var id = data.id;
+											
+											//$('#loading').show();
+											$$("upload_files_buy_sell").files.data.each(function(obj){
+												obj.formData = { id:data.id };
+											});
+											
+											$$("upload_files_buy_sell").send(function(response){
+												
+												$$("upload_files_buy_sell").files.data.each(function(obj){
+
+													var status = obj.status;
+													var name = obj.name;
+													if(status=="server"){
+														webix.message("Файл: "+name+" загружен");
+													}
+													else{
+														webix.message({type:"error", text:"Нельзя загрузить: "+name});
+													}
+												});
+
+
+
+
+												var tr = '';
+												webix.ajax().post( "/get_cache_buy_sell", { buy_sell_id:id , status:status_id , flag_buy_sell:data.flag_buy_sell }, 
+													function(text, data2, xhr){
+
+														data2 = data2.json();
+														var tr = data2.tr;
+
+														if(data.noautorize && !flag_offer_share ){
+															modal.modal('hide');
+															$('.enter-btn').click();
+														}else{
+																					if(flag_offer_share){// изменить данное предложение
+																						$("#button_form_buy_sell"+data.parent_id+"").click();
+																						modal.modal('hide');
+																					}else{
+																						if(!data.flag_nomenclature && (data.flag_buy_sell==2) ){
+																								// создание/обновление номенклатуры от заявки
+																								webix.confirm({
+																									ok: "Создать", cancel:"Обновить",
+																									text: "Номенклатуру?",
+																									callback:function(result){
+																										if(result){
+																											$.post( "/save_nomenclature", form_serialize+"&buy_sell_id="+data.id+"&flag=insert" , 
+																												function(data){
+																														//
+																														if(data.ok){
+																															if(data.flag_reload){
+																																onReload('');
+																															}else{
+																																$('#div_mybs'+id+'').html(tr);
+																																modal.modal('hide');
+																																webix.message("Сохранено");
+																															}
+																														}else{
+																															webix.message({type:"error", text:"Нельзя сохранить"});
+																														}
+																													}
+																													);
+																										}else{
+																											$.post( "/save_nomenclature", form_serialize+"&buy_sell_id="+data.id+"&flag=update" , 
+																												function(data){
+																														//onReload('');
+																														if(data.ok){
+																															if(data.flag_reload){
+																																onReload('');
+																															}else{
+																																$('#div_mybs'+id+'').html(tr);
+																																modal.modal('hide');
+																																webix.message("Сохранено");
+																															}
+																														}else{
+																															webix.message({type:"error", text:"Нельзя сохранить"});
+																														}
+																													}
+																													);
+																										}
+																									}
+																								});
+																							}else{
+																									//onReload('');
+																									if(data.ok){
+																										if(data.flag_reload){
+																											onReload('');
+																										}else{
+																											$('#div_mybs'+id+'').html(tr);
+																											modal.modal('hide');
+																											webix.message("Сохранено");
+																										}
+																									}else{
+																										webix.message({type:"error", text:"Нельзя сохранить"});
+																									}
+																								}
+																							}
+																						}
+
+
+																					}
+																					);
+
+													//webix.message(tr);
+													//webix.message("2");
+													
+
+												});
+
+
+}else{
+	webix.message({type:"error", text:data.code});
+	// bv.disableSubmitButtons(false);
+}
+
+if (bv.getInvalidFields().length > 0) {
+	// bv.disableSubmitButtons(false);
+}
+}
+);
+
+return false;
+};
+
+
+
 // модальное окно История Заявка/Объявлени
 function ModalHistoryBuySell(id){
 	$.post("/modal_history_buy_sell", {id:id}, 
@@ -5706,6 +5971,7 @@ function MainJs_Search(){
 
 function ChangeCategoriesBuySell(categories_id,flag_buy_sell,flag,nomenclature_id,search_categories_id) {
 
+	if(document.location.pathname != '/admin_categories/cards'){
 	$.post('/change_categories_buy_sell', { id:					categories_id,
 		flag_buy_sell:		flag_buy_sell,
 		flag:				flag,
@@ -5765,6 +6031,66 @@ function ChangeCategoriesBuySell(categories_id,flag_buy_sell,flag,nomenclature_i
 									}
 									);
 
+}else{
+	$.post('/change_categories_card', { id:					categories_id,
+		flag_buy_sell:		flag_buy_sell,
+		flag:				flag,
+		nomenclature_id:	nomenclature_id,
+		search_categories_id:	search_categories_id }, 
+		function(data){
+
+										$('#buy_sell-form').bootstrapValidator('destroy');// важно до изменения формы
+										
+										$('#div_categories_buy_sell').html(data.code);
+										
+										if(data.required_name){
+											$('#buy_sell-form #name').prop('required',true).attr('required','required');
+										}else{
+											$('#buy_sell-form #name').removeAttr('required');
+										}
+										
+										if(data.required_file){
+											$('#buy_sell-form #cam').prop('required',true).attr('required','required');
+										}else{
+											$('#buy_sell-form #cam').removeAttr('required');
+										}
+										
+										
+										$(".select2").select2({
+											placeholder: function(){
+												$(this).data('placeholder');
+											}
+										});
+
+
+										$("#unit_id1").on("change", function() {// Выбрать единицу измерения, фасовка
+											var d = $(this).data();	
+											var unit_id = $(this).val();
+
+											if(unit_id==1){
+												$('#buy_sell-form #div_amount_unit2').fadeIn(0);
+
+											}else{
+												$('#buy_sell-form #div_amount_unit2').fadeOut(0);
+											}
+
+											$("#buy_sell-form [name='amount1']").data('unit_id', unit_id).attr('data-unit_id', unit_id);
+
+											MaskUnit('#buy_sell-form');
+										});
+										
+										MaskUnit('#buy_sell-form');
+										
+										MaskInput();
+
+										SaveBuySell($('#vmodal',false));
+										
+										Select2UsersAttributeValue();
+										
+										$('#span_select_categories .naming').html(data.categories);
+									}
+									);
+}
 }
 
 

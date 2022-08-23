@@ -3037,6 +3037,8 @@ $( document ).ready(function() {
 		var d = $(this).data();
 		console.log(d.id)
 		$.post("/FormGetInvoice", {balance:0, type: type_skills}, 
+		console.log(type_skills)
+		$.post("/FormGetInvoice", {type: type_skills}, 
 			function(data){
 				if(data.code){
 					modal.html(data.code);
