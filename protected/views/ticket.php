@@ -156,7 +156,7 @@ echo '</pre>';
 							<br />
 							<div class="status">'.$vazhnost.'</div><div class="links"> <small>'.$ticket_inv.'</small></div>
 						</div>
-						
+
 						<div class="subs-place col-3 text-center">								
 							<div class="ticket_flag">'.$t["status_name"].'</div>
 							<span class="small">'.$t["data_insert"].'</span>
@@ -216,6 +216,17 @@ echo '</pre>';
 		}
 
 			$photoAndVideo = '';
+			$buttonNextPrev = '';
+			if(count($rtf) > 1){
+				$buttonNextPrev = '<button  class="carousel-control-prev" type="button" data-mdb-target="#carouselVideo" data-mdb-slide="prev" >
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Назад</span>
+			  </button>
+			  <button lass="carousel-control-next" type="button" data-mdb-target="#carouselVideo" data-mdb-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Дальше</span>
+			  </button>';
+			}
 			if(count($rtf) > 0){
 				$photoAndVideo = '<div id="carouselVideo" class="carousel slide carousel-fade" data-mdb-ride="carousel">
 			 
@@ -228,15 +239,8 @@ echo '</pre>';
 			  '.$sl_video.'
 			 
 			  </div>
+			 '.$buttonNextPrev.'
 			 
-			  <button  class="carousel-control-prev" type="button" data-mdb-target="#carouselVideo" data-mdb-slide="prev" >
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Previous</span>
-			  </button>
-			  <button lass="carousel-control-next" type="button" data-mdb-target="#carouselVideo" data-mdb-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Next</span>
-			  </button>
 			</div>';
 			}
 				//var_dump($rowt[0]);
