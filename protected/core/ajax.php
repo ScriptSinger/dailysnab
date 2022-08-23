@@ -5803,7 +5803,7 @@ elseif($_GET['route'] == 'reply_message'){
 		$rce = reqCompanyEmails(array('ids'=>$companies));
 
 		foreach($rce as $i => $c){ //сбор ящиков для отправки оповещений
-			if(!empty($c['email'])){ //только у тех у кого указаны ящики
+			if(!empty($c['email']) && $c['id'] != COMPANY_ID){ //только у тех у кого указаны ящики
 				$rce_email[] = $c['email'];
 			}
 		}
