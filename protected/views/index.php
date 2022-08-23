@@ -155,7 +155,24 @@ if(LOGIN_ID){
 
 <body class="zooming<?=( (LOGIN_ID==1)? ' adminpanel' : '' )?>">
 
-
+<style type="text/css">
+.positionTickets {
+  width: 600px;
+  overflow: hidden;
+  position: relative;
+      word-wrap: break-word;
+}
+ 
+.positionTickets:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+ 
+}
+</style>
 <?
 	
 
