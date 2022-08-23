@@ -120,7 +120,7 @@ echo '</pre>';
 
 
 			$ticket_flag = $t["ticket_flag"];
-
+			$tecket = ($t['mail'] != '')?$t['mail'] : $t['tel'];
 			if (($ticket_flag == 1 || $ticket_flag == 2) && !in_array(LOGIN_ID, $adminsArr) && COMPANY_ID>0) {
 
 				$select_wraper_tfo = '
@@ -151,7 +151,7 @@ echo '</pre>';
 						
 						<div class="subs-info '.$attach_no_class.'">							 
 							<div class="theme"><a href="/ticket/?tid='.$t["id"].'">'.$ticket_text.'</a></div>
-							<div class="autor">'.$name_company.'</div>
+							<div class="autor">'.$tecket.'</div>
 							
 							<br />
 							<div class="status">'.$vazhnost.'</div><div class="links"> <small>'.$ticket_inv.'</small></div>
