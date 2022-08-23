@@ -592,7 +592,7 @@ class ClassQrq extends HtmlServive
 						
 						if($qrq_id&&$login_id&&$company_id){
 						
-								$cities_id 	= 1;// НАДО Фактический...думаем
+								$cities_id 	= 1;// по умолчанию
 								
 								//vecho($items);
 								foreach ($items as $item){
