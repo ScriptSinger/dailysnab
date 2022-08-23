@@ -214,23 +214,9 @@ echo '</pre>';
 
 		}
 
-
-
-
-		$tr = '<section class="product ticket">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="product-title">
-								<p>Тикет № '.$tid.'</p>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-6 images-wrapper">
-						
- 
-			<div id="carouselVideo" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+			$photoAndVideo = '';
+			if(count($rtf) > 0){
+				$photoAndVideo = '<div id="carouselVideo" class="carousel slide carousel-fade" data-mdb-ride="carousel">
 			 
 			  <div class="carousel-indicators">
 				'.$sl_thumbs.'
@@ -250,7 +236,29 @@ echo '</pre>';
 				<span class="carousel-control-next-icon" aria-hidden="true"></span>
 				<span class="visually-hidden">Next</span>
 			  </button>
-			</div>
+			</div>';
+			}
+
+				$tel = (!empty($rowt[0]['tel'])) ? $rowt[0]['tel'] : 'Отсутсвует';
+				$mail = (!empty($rowt[0]['mail'])) ? $rowt[0]['mail'] : 'Отсутсвует';
+
+		$tr = '<section class="product ticket">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="product-title">
+								<p>Тикет № '.$tid.'</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+					<div class="col-3">
+						'.$rowt[0]['ticket_exp'].'
+					</div>
+						<div class="col-6 images-wrapper">
+						
+ 
+						'. $photoAndVideo .'
  
 
 
@@ -261,12 +269,11 @@ echo '</pre>';
 						</div>
 						<div class="col-3 product-info">
 							
-						<div class="product-info__row">
-							<div class="product-info__cell">Тип</div>
-							<div class="product-info__cell">'.$rowt[0]['ticket_flag'].'</div>
-						</div>
 						
-						<p>'.$rowt[0]['ticket_exp'].'</p>
+						
+						<p> <a href="/company-profile/'.$rowt[0]['owner_id'].'" target="_blank">'.$rowt[0]['company'].'</a></p>
+						<p>Номер телефона: '.$tel.'</p>
+						<p>Почта: '.$mail.'</p>
 			
 						</div>
 						<div class="col-3 product-price-wrapper">
@@ -279,12 +286,13 @@ echo '</pre>';
 									<p class="view_phone" data-id="" data-amount="">Показать телефон</p>
 								</div>
 							-->
-							<div class="other-info">
-								<p class="product-num">№'.$tid.'</p>
+							<!--<div class="other-info">
+								
 								<p class="product-name"><a href="/company-profile/'.$rowt[0]['owner_id'].'" target="_blank">'.$rowt[0]['owner_id'].'</a></p>
 								<p class="product-location"></p>
 							</div>
-						  
+						  -->
+
 							<!--
 							<div id="div_note"><div class="text-left">
 								Заметка 
