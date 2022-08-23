@@ -3432,6 +3432,7 @@ $( document ).ready(function() {
 							<div class="col-sm-6">
 								<div class="form-group">
 									<input type="text" style="pointer-events:none;" class="form-control" id="company" name="company" placeholder="Наименование" value="" >
+									<input type="text" style="pointer-events:none;" class="form-control" id="companyName" name="companyName" placeholder="Наименование" value="" >
 								</div>
 							</div>
 							<div class="col-sm-6">
@@ -3493,6 +3494,7 @@ $( document ).ready(function() {
             console.log(suggestion);			
 			$("#inn").val(suggestion.data.inn);
 			$("#company").val(suggestion.value);
+			$("#companyName").val(suggestion.value);
 			$("#kpp").val(suggestion.data.kpp);
 			$("#ur_adr").val(suggestion.data.address.value);			
 
