@@ -5966,7 +5966,7 @@ elseif($_GET['route'] == 'update_theme_info'){
 						if (count($comp_ids)> count($comp_ids_input)) {
 
 							//удаление клиента
-							$messagetext = 'Из темы удален ' . $client['company'];
+							$messagetext = 'Из темы удален ' . $STH['company'];
 							$action_text = $client.' remove from '.$folder_id;
 
 							$STH2 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
@@ -5978,7 +5978,7 @@ elseif($_GET['route'] == 'update_theme_info'){
 						} elseif (count($comp_ids)< count($comp_ids_input)) {
 
 							//добавление клиента
-							$messagetext = $client.' добавлен в чат';
+							$messagetext = $STH['company'].' добавлен в чат';
 							$action_text = $client.' add to '.$folder_id;
 
 							$STH2 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
