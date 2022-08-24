@@ -6242,6 +6242,9 @@
         if(!empty($p['archive'])){
             $sql .= ' AND tf.status != 2 ';
         }
+        if(!empty($p['archiveTrue'])){
+            $sql .= ' AND tf.status = 2 ';
+        }
         $sql .= " AND tf.companies_id LIKE '%" . COMPANY_ID . "%'";
 
 

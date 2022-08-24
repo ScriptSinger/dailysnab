@@ -74,7 +74,9 @@ $last_message = [];
 			$companyName = '';
 			foreach($rown_name as $k){
 				if($k != COMPANY_ID) {
-					$companyName = PreExecSQL_one('SELECT * FROM company WHERE id = ?', [$k]);
+					$companyName = PreExecSQL_one('SELECT c.*, s.legal_entity FROM company c 
+                                                        LEFT JOIN slov_legal_entity s ON s.id = c.legal_entity_id
+                                                        WHERE c.id = ?', [$k]);
 				}
 			}
 
@@ -91,7 +93,7 @@ $last_message = [];
 
 				//надо будет условие поставить еще на проверку ранних сообщеницй и на заблокировать пользователя	
 				$out_of_theme = '';
-				if ($rown[0]['company_id'] == COMPANY_ID) //вывод выхода из темы для клиентов 
+				if ($rown[0]['company_id'] == COMPANY_ID && $theme != '') //вывод выхода из темы для клиентов
 					{
 						$out_of_theme = '<button type="button" class="button-blue pull-right close_theme" data-fid="'.$fid.'">Закрыть тему</button>'; //организаторов чатов
 					} 
@@ -109,14 +111,14 @@ $last_message = [];
 				$out_of_theme = ($rown[0]['status'] != 2) ? $out_of_theme : ''; // проверка, не в архиве ли чат
 				
 				if ($theme == ''){
-
+                    $formPrava = (!empty($companyName['legal_entity']) ? $companyName['legal_entity'] : '');
 					$headData = '
 					<div class="row">
 						<div class="col-md-1">
 							<img src="'.$companyName['avatar'].'" class="rounded-circle" height="50">
 						</div>	
 						<div class="col-md-6">
-							 '.$companyName['company'].'<br /><small>'.$need_link.'</small>
+							 '.$formPrava . ' ' . $companyName['company'].'<br /><small>'.$need_link.'</small>
 						</div>
 						<div class="col-md-5">
 							'.$out_of_theme.'
