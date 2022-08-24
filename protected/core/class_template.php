@@ -5381,11 +5381,13 @@ class HtmlTemplate extends HtmlServive
             }
         }
 
-        $buttonArchive = ($m['status'] != 2) ? '<button type="button" class="button-blue pull-right close_theme" data-fid="' . $m["id"] . '">в Архив</button>' : '<button type="button" class="button-blue pull-right open_theme" data-fid="' . $m["id"] . '">Открыть тему</button>';
+//        $buttonArchive = ($m['status'] != 2) ? '<button type="button" class="button-blue pull-right close_theme" data-fid="' . $m["id"] . '">в Архив</button>' : '<button type="button" class="button-blue pull-right open_theme" data-fid="' . $m["id"] . '">Открыть тему</button>';
         $buttonArchive = '';
-        if ($m['status'] != 2 && $m['folder_name'] != '') {
+        if ($m['status'] != 2 && $m['folder_name'] == '') {
             $buttonArchive = '<button type="button" class="button-blue pull-right close_theme" data-fid="' . $m["id"] . '">в Архив</button>';
-        } elseif ($m['status'] == 2) {
+        } elseif ($m['status'] != 2 && ($m['folder_name'] != '')) {
+            $buttonArchive = '<button type="button" class="button-blue pull-right open_theme" data-fid="' . $m["id"] . '">Закрыть тему</button>';
+        }elseif ($m['status'] == 2) {
             $buttonArchive = '<button type="button" class="button-blue pull-right open_theme" data-fid="' . $m["id"] . '">Открыть тему</button>';
         }
 
