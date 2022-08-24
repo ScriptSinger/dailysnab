@@ -5386,7 +5386,7 @@ class HtmlTemplate extends HtmlServive
         if ($m['status'] != 2 && $m['folder_name'] == '') {
             $buttonArchive = '<button type="button" class="button-blue pull-right close_theme" data-fid="' . $m["id"] . '">в Архив</button>';
         } elseif ($m['status'] != 2 && ($m['folder_name'] != '')) {
-            $buttonArchive = '<button type="button" class="button-blue pull-right open_theme" data-fid="' . $m["id"] . '">Закрыть тему</button>';
+            $buttonArchive = '<button type="button" class="button-blue pull-right close_theme" data-fid="' . $m["id"] . '">Закрыть тему</button>';
         }elseif ($m['status'] == 2) {
             $buttonArchive = '<button type="button" class="button-blue pull-right open_theme" data-fid="' . $m["id"] . '">Открыть тему</button>';
         }

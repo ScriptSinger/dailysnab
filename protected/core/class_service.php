@@ -893,7 +893,8 @@ class HtmlServive extends HtmlElement
 		// страница - Архив
 		elseif($in['views']=='arhive-chats'){
 				$row = reqChatFolders(array(	'start_limit' 	=> $in['start_limit'],
-												'status'		=> 2 ));
+												'status'		=> 2,
+                                                'archiveTrue'   => 'true'));
 		}
 		// страница - Без темы
 		elseif($in['views']=='wt-chats'){
