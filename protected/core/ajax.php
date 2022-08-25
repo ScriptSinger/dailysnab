@@ -6080,36 +6080,100 @@ elseif($_GET['route'] == 'close_theme'){
 
 
 }
-//Открыть тему
-elseif($_GET['route'] == 'open_theme'){
 
-    $ok = false;
-    $code = '';
+//Закрыть чат
+    elseif($_GET['route'] == 'close_chat'){
 
-    $folder_id = $in['id'];
+        $ok = false;
+        $code = '';
 
-    $rcf = reqChatFolders(array('id'=>$folder_id));
-    $companies_id   = $rcf[0]["companies_id"];
+        $folder_id = $in['id'];
 
-    $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-    $company_name = $rcm[0]["name_rcmc"];
+        $rcf = reqChatFolders(array('id'=>$folder_id));
+        $companies_id   = $rcf[0]["companies_id"];
 
-    $messagetext    = $company_name. ' открыл тему.';
+        $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
+        $company_name = $rcm[0]["name_rcmc"];
 
-    $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-        array($folder_id,COMPANY_ID,$companies_id,$messagetext,1));
-    $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=? WHERE id=?" ,
-        array(0,$folder_id));
-    if($STH && $STH2){
-        $ok = true;
-        $code = 'Тема открыта';
+        $messagetext    = $company_name. ' закрыл чат.';
+
+        $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+            array($folder_id,COMPANY_ID,$companies_id,$messagetext,1));
+        $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=? WHERE id=?" ,
+            array(2,$folder_id));
+        if($STH && $STH2){
+            $ok = true;
+            $code = 'Чат закрыт';
+        }
+
+        $jsd['ok'] = $ok;
+        $jsd['code'] = $code;
+
+
     }
 
-    $jsd['ok'] = $ok;
-    $jsd['code'] = $code;
+//Открыть тему
+    elseif($_GET['route'] == 'open_theme'){
+
+        $ok = false;
+        $code = '';
+
+        $folder_id = $in['id'];
+
+        $rcf = reqChatFolders(array('id'=>$folder_id));
+        $companies_id   = $rcf[0]["companies_id"];
+
+        $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
+        $company_name = $rcm[0]["name_rcmc"];
+
+        $messagetext    = $company_name. ' открыл тему.';
+
+        $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+            array($folder_id,COMPANY_ID,$companies_id,$messagetext,1));
+        $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=? WHERE id=?" ,
+            array(0,$folder_id));
+        if($STH && $STH2){
+            $ok = true;
+            $code = 'Тема открыта';
+        }
+
+        $jsd['ok'] = $ok;
+        $jsd['code'] = $code;
 
 
-}
+    }
+
+
+    //Открыть чат
+    elseif($_GET['route'] == 'open_chat'){
+
+        $ok = false;
+        $code = '';
+
+        $folder_id = $in['id'];
+
+        $rcf = reqChatFolders(array('id'=>$folder_id));
+        $companies_id   = $rcf[0]["companies_id"];
+
+        $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
+        $company_name = $rcm[0]["name_rcmc"];
+
+        $messagetext    = $company_name. ' открыл чат.';
+
+        $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+            array($folder_id,COMPANY_ID,$companies_id,$messagetext,1));
+        $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=? WHERE id=?" ,
+            array(0,$folder_id));
+        if($STH && $STH2){
+            $ok = true;
+            $code = 'Чат открыт';
+        }
+
+        $jsd['ok'] = $ok;
+        $jsd['code'] = $code;
+
+
+    }
 // Модальное окно Написать сообщение из сущностей
 elseif($_GET['route'] == 'modal_write_message_from_potrb'){
 
