@@ -171,7 +171,7 @@ $last_message = [];
 											
 											
 											
-											<div class="btn_area reply_message" data-status="'.$m['status'].'" data-mid="'.$mid.'">Ответить  → </div>	
+											<div class="btn_area reply_message" data-status="'.$m['status'].'" data-theme="'.$theme.'" data-mid="'.$mid.'">Ответить  → </div>	
 										
 								</div>
 								<br />

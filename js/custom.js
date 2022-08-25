@@ -2754,20 +2754,37 @@ var link_url = document.createElement("a");
 	$("body").on("click", ".reply_message", function(){
 		var im = $(".input-message").val(),
 		d = $(this).data();
-		if(d.status == 2){
-			$.post("/open_theme", {id:d.mid},
-			function(data){
-				if(data.ok){
-					console.log(data);
-					webix.message(data.code);
-					onReload('/chat/messages/');
-				}else{
-					console.log(data);
-					//webix.message({type:"error", text:data.code});
-				}
 
+		if(d.status == 2){
+			if(d.theme != '') {
+				$.post("/open_theme", {id: d.mid},
+					function (data) {
+						if (data.ok) {
+							console.log(data);
+							webix.message(data.code);
+							onReload('/chat/messages/');
+						} else {
+							console.log(data);
+							//webix.message({type:"error", text:data.code});
+						}
+
+					}
+				);
+			}else {
+				$.post("/open_chat", {id: d.mid},
+					function (data) {
+						if (data.ok) {
+							console.log(data);
+							webix.message(data.code);
+							onReload('/chat/messages/');
+						} else {
+							console.log(data);
+							//webix.message({type:"error", text:data.code});
+						}
+
+					}
+				);
 			}
-			);
 		}
 		var imagesM = $(".img-item input[name='images[]']").map(function(){return $(this).val();}).get();			
 				//console.log(im);
