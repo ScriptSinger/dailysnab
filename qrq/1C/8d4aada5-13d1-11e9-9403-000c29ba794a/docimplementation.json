@@ -44321,28 +44321,28 @@
 		"Goods": [
 			{
 				"NomID": "2078be28-7242-11ec-80c1-000c292c2d55",
-				"Price": 42258.33,
+				"Price": 42258,
 				"NDS": 0,
 				"Quantity": 1,
 				"Brand": "Michelin"
 			},
 			{
 				"NomID": "2078be28-7242-11ec-80c1-000c292c2d55",
-				"Price": 42258.33,
+				"Price": 42258,
 				"NDS": 0,
 				"Quantity": 1,
 				"Brand": "Michelin"
 			},
 			{
 				"NomID": "2078be28-7242-11ec-80c1-000c292c2d55",
-				"Price": 42258.33,
+				"Price": 42258,
 				"NDS": 0,
 				"Quantity": 1,
 				"Brand": "Michelin"
 			},
 			{
 				"NomID": "2078be28-7242-11ec-80c1-000c292c2d55",
-				"Price": 42258.33,
+				"Price": 42258,
 				"NDS": 0,
 				"Quantity": 1,
 				"Brand": "Michelin"
@@ -91852,7 +91852,7 @@
 			},
 			{
 				"NomID": "4e565507-6934-11ec-80dd-000c2999d0eb",
-				"Price": 53.4,
+				"Price": 42.72,
 				"NDS": 0,
 				"Quantity": 416.27,
 				"Brand": ""
@@ -92561,13 +92561,6 @@
 				"Brand": ""
 			},
 			{
-				"NomID": "4fc739ae-6cc9-11ec-80dd-000c2999d0eb",
-				"Price": 98,
-				"NDS": 0,
-				"Quantity": 3,
-				"Brand": ""
-			},
-			{
 				"NomID": "e171ac34-6cbe-11ec-80dd-000c2999d0eb",
 				"Price": 5204,
 				"NDS": 0,
@@ -92639,7 +92632,7 @@
 			},
 			{
 				"NomID": "28faa08a-93c2-11ec-80c9-000c292c2d55",
-				"Price": 641,
+				"Price": 602,
 				"NDS": 0,
 				"Quantity": 1,
 				"Brand": ""
@@ -92649,13 +92642,6 @@
 				"Price": 505,
 				"NDS": 0,
 				"Quantity": 2,
-				"Brand": ""
-			},
-			{
-				"NomID": "3b096c6a-6cc8-11ec-80dd-000c2999d0eb",
-				"Price": 555,
-				"NDS": 0,
-				"Quantity": 1,
 				"Brand": ""
 			},
 			{
@@ -92785,13 +92771,6 @@
 				"Brand": ""
 			},
 			{
-				"NomID": "b9bbc2bd-6cc8-11ec-80dd-000c2999d0eb",
-				"Price": 3209,
-				"NDS": 0,
-				"Quantity": 1,
-				"Brand": ""
-			},
-			{
 				"NomID": "a7ae4fb0-9d26-11ec-80c9-000c292c2d55",
 				"Price": 724,
 				"NDS": 0,
@@ -92837,7 +92816,7 @@
 				"NomID": "21009f45-7d06-11ec-80c5-000c292c2d55",
 				"Price": 1408,
 				"NDS": 0,
-				"Quantity": 1,
+				"Quantity": 2,
 				"Brand": ""
 			},
 			{
@@ -92862,17 +92841,17 @@
 				"Brand": ""
 			},
 			{
-				"NomID": "21009f45-7d06-11ec-80c5-000c292c2d55",
-				"Price": 1408,
+				"NomID": "3b096c6a-6cc8-11ec-80dd-000c2999d0eb",
+				"Price": 555,
 				"NDS": 0,
 				"Quantity": 1,
 				"Brand": ""
 			},
 			{
-				"NomID": "b9bbc2bd-6cc8-11ec-80dd-000c2999d0eb",
-				"Price": 3209,
+				"NomID": "4fc739ae-6cc9-11ec-80dd-000c2999d0eb",
+				"Price": 98,
 				"NDS": 0,
-				"Quantity": 0.4,
+				"Quantity": 3,
 				"Brand": ""
 			}
 		]
@@ -160072,6 +160051,64 @@
 				"NDS": 0,
 				"Quantity": 1131,
 				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-08-25T00:00:00",
+		"DocID": "f226c886-2426-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "4e821eef-6d3e-11ec-80bf-000c292c2d55",
+		"Date": "2022-08-25T08:35:21",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Goods": [
+			{
+				"NomID": "69e97283-1197-11ed-8db6-0cc47a03c9dc",
+				"Price": 8914,
+				"NDS": 0,
+				"Quantity": 5,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-08-25T00:00:00",
+		"DocID": "b63277a0-242b-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "8f4d4b4a-6ebc-11ec-80bf-000c292c2d55",
+		"Date": "2022-08-25T09:09:28",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Goods": [
+			{
+				"NomID": "7afce817-6cb8-11ec-80dd-000c2999d0eb",
+				"Price": 1467,
+				"NDS": 0,
+				"Quantity": 2,
+				"Brand": ""
+			},
+			{
+				"NomID": "49c30c51-6cc9-11ec-80dd-000c2999d0eb",
+				"Price": 530,
+				"NDS": 0,
+				"Quantity": 18,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-08-25T00:00:00",
+		"DocID": "a45419ca-242c-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "8f4d4b4a-6ebc-11ec-80bf-000c292c2d55",
+		"Date": "2022-08-25T09:16:15",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Goods": [
+			{
+				"NomID": "44f53ae2-b9c5-11ec-80e4-000c2999d0eb",
+				"Price": 30221,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": "Кама"
 			}
 		]
 	}
