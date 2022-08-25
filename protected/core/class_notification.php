@@ -134,7 +134,7 @@ class ClassNotification extends HtmlTemplateEmailSms
 											}
 									
 											//$m['email'] = 'vdo81@yandex.ru';
-											$validate_email = (filter_var($mm['email'], FILTER_VALIDATE_EMAIL));
+											$validate_email = (filter_var($m['email'], FILTER_VALIDATE_EMAIL));
 											if($validate_email){
 												$this->LetterSendNotification(array(	'notification_id'			=> $notification_id,
 																					'tid'						=> $in['tid'],
