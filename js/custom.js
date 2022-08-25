@@ -2904,7 +2904,27 @@ var link_url = document.createElement("a");
 				}
 
 			}
-			);
+		);
+	});
+
+
+	// Закрыть тему
+	$("body").on("click", ".close_chat", function(){
+		var d = $(this).data();
+
+		$.post("/close_chat", {id:d.fid},
+			function(data){
+				if(data.ok){
+					console.log(data);
+					webix.message(data.code);
+					onReload('/chat/messages/');
+				}else{
+					console.log(data);
+					//webix.message({type:"error", text:data.code});
+				}
+
+			}
+		);
 	});
 
 	// Открыть тему
@@ -2923,7 +2943,26 @@ var link_url = document.createElement("a");
 				}
 
 			}
-			);
+		);
+	});
+
+	// Открыть чат
+	$("body").on("click", ".open_chat", function(){
+		var d = $(this).data();
+
+		$.post("/open_chat", {id:d.fid},
+			function(data){
+				if(data.ok){
+					console.log(data);
+					webix.message(data.code);
+					onReload('/chat/messages/');
+				}else{
+					console.log(data);
+					//webix.message({type:"error", text:data.code});
+				}
+
+			}
+		);
 	});
 
 	
