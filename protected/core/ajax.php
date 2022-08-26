@@ -5467,7 +5467,7 @@ elseif($_GET['route'] == 'create_new_message'){
 		//проврека кол-ва собеседников, если больше одного, то тема обязательна
 		if(count(explode(',',$companies_id))>1 && empty($in['subject'])){
 			$ok = false;
-			$code = 'Тема обязательна для заполнения';
+			$code = 'Название темы обязательно для заполнения';
 
 		} else {
 
@@ -5691,7 +5691,7 @@ elseif($_GET['route'] == 'create_new_message_potrb'){
 			//проврека кол-ва собеседников, если больше одного, то тема обязательна
 			if(count(explode(',',$companies_id))>1 && empty($in['subject'])){
 				$ok = false;
-				$code = 'Тема обязательна для заполнения';
+				$code = 'Название темы обязательно для заполнения';
 
 			} else {
 
@@ -5937,7 +5937,7 @@ elseif($_GET['route'] == 'update_theme_info'){
 		//if(count(explode(',',$comp_ids_input))>1 && empty($in['subject'])){
 		if(count($comp_ids_input)>1 && empty($in['subject'])){
 			$ok = false;
-			$code = 'Тема обязательна для заполнения';
+			$code = 'Название темы обязательно для заполнения';
 
 		} else {
 
