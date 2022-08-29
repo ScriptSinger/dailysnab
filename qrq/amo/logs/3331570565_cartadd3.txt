@@ -1,1 +1,1 @@
-"{\"Response\":{\"entity\":{\"itemId\":\"3331570565\",\"status\":true,\"stats\":{\"timings\":{\"vendor\":{\"venMin\":\"0.1327\",\"venMax\":\"0.1485\",\"venAvg\":\"0.1406\",\"venCount\":2},\"api\":{\"apiMin\":\"0.1107\",\"apiMax\":\"0.3880\",\"apiAvg\":\"0.2494\",\"apiCount\":2}},\"counts\":{\"clarifications\":null,\"items\":null,\"errors\":null}},\"purchaseId\":\"e091a9c4-c42e-4cc1-aacb-763d16c12284\",\"type\":0},\"errors\":null,\"warnings\":null}}"
+false
