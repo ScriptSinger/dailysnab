@@ -386,8 +386,8 @@ if ( (strlen(trim($restaccount))>0) && (strlen(trim($restvendor))>0))
             vOption.value = zFieldName+','+zFieldId;
             vSelect.append(vOption);
 
-            document.getElementById('vSelect_'+zFieldId).style.display='none';
-            document.getElementById('vSelect_0').style.display='none';
+          //  document.getElementById('vSelect_'+zFieldId).style.display='none';
+           // document.getElementById('vSelect_0').style.display='none';
         }
 
         function funInputText(zFieldName,zTitle,zFieldId)
