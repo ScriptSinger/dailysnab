@@ -160235,7 +160235,7 @@
 		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 		"ContractorID": "8f4d4b4a-6ebc-11ec-80bf-000c292c2d55",
 		"Date": "2022-08-28T15:16:54",
-		"WhID": "4dc08b56-6d51-11ec-80bf-000c292c2d55",
+		"WhID": "a9fce963-6dec-11ec-80bf-000c292c2d55",
 		"Goods": [
 			{
 				"NomID": "11125352-6cc8-11ec-80dd-000c2999d0eb",
@@ -160249,6 +160249,151 @@
 				"Price": 189,
 				"NDS": 0,
 				"Quantity": 5,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-08-29T00:00:00",
+		"DocID": "c53930b1-275e-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "1d79de67-676f-11eb-80c5-000c2999d0eb",
+		"Date": "2022-08-29T10:52:39",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Goods": [
+			{
+				"NomID": "78405102-24d2-11ed-8db7-0cc47a03c9dc",
+				"Price": 211750,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-08-29T00:00:00",
+		"DocID": "c58db226-276b-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "71f3f9e3-fb79-11ec-8dab-000c295de724",
+		"Date": "2022-08-29T12:25:35",
+		"WhID": "a9fce973-6dec-11ec-80bf-000c292c2d55",
+		"Goods": [
+			{
+				"NomID": "fbc12fb2-6cc8-11ec-80dd-000c2999d0eb",
+				"Price": 1400,
+				"NDS": 0,
+				"Quantity": 487.8,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-08-29T00:00:00",
+		"DocID": "dec59109-2776-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "1d79de67-676f-11eb-80c5-000c2999d0eb",
+		"Date": "2022-08-29T13:45:02",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Goods": [
+			{
+				"NomID": "074bd0f5-a788-11ec-80cc-000c292c2d55",
+				"Price": 23650,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": "Belshina"
+			},
+			{
+				"NomID": "074bd0f5-a788-11ec-80cc-000c292c2d55",
+				"Price": 23650,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": "Bridgestone"
+			},
+			{
+				"NomID": "074bd0f5-a788-11ec-80cc-000c292c2d55",
+				"Price": 23650,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": "Cordiant"
+			},
+			{
+				"NomID": "a6cea82c-6cbd-11ec-80dd-000c2999d0eb",
+				"Price": 7104,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			},
+			{
+				"NomID": "a6cea82d-6cbd-11ec-80dd-000c2999d0eb",
+				"Price": 1496,
+				"NDS": 0,
+				"Quantity": 2,
+				"Brand": ""
+			},
+			{
+				"NomID": "7c57bd88-b87c-11ec-80e4-000c2999d0eb",
+				"Price": 2613,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			},
+			{
+				"NomID": "43a1d6e7-b87c-11ec-80e4-000c2999d0eb",
+				"Price": 2613,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			},
+			{
+				"NomID": "aa57cac7-6cbc-11ec-80dd-000c2999d0eb",
+				"Price": 21,
+				"NDS": 0,
+				"Quantity": 8,
+				"Brand": ""
+			},
+			{
+				"NomID": "8124184b-e61c-11ec-8da2-000c295de724",
+				"Price": 78,
+				"NDS": 0,
+				"Quantity": 8,
+				"Brand": ""
+			},
+			{
+				"NomID": "9246f2d2-6cbc-11ec-80dd-000c2999d0eb",
+				"Price": 2573,
+				"NDS": 0,
+				"Quantity": 4,
+				"Brand": ""
+			},
+			{
+				"NomID": "10528616-6cbd-11ec-80dd-000c2999d0eb",
+				"Price": 1436,
+				"NDS": 0,
+				"Quantity": 4,
+				"Brand": ""
+			},
+			{
+				"NomID": "7c51b276-6cbd-11ec-80dd-000c2999d0eb",
+				"Price": 22695,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-08-29T00:00:00",
+		"DocID": "488929aa-2779-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "6d820fad-7f96-11ec-80c5-000c292c2d55",
+		"Date": "2022-08-29T14:02:27",
+		"WhID": "a9fce973-6dec-11ec-80bf-000c292c2d55",
+		"Goods": [
+			{
+				"NomID": "fbc12fb2-6cc8-11ec-80dd-000c2999d0eb",
+				"Price": 940,
+				"NDS": 0,
+				"Quantity": 432.65,
 				"Brand": ""
 			}
 		]
