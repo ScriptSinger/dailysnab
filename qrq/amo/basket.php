@@ -109,14 +109,19 @@ echo "<input type='text' id='temp' >";
 echo "<br><br>";
 */
 
+    alert('000');
+
+
 $restaccount = file_get_contents('https://questrequest.ru/qrq/amo/accounts.php?token='.$pToken.'&accountid='.$pAccountId);
 if (strlen(trim($restaccount))>0)
 {
     $restvendor = file_get_contents('https://questrequest.ru/qrq/amo/vendorsget.php?token='.$pToken.'&vid='.$restaccount);    
+    alert('111');
 }
 else
 {
     $restvendor = '';
+    alert('222');
 }
 
 
