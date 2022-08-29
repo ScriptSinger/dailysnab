@@ -154,7 +154,9 @@ if ( (strlen(trim($restaccount))>0) && (strlen(trim($restvendor))>0))
     $Resp = json_decode($response,true);
     //$Resp = json_encode($response);
     
+    echo "<pre>";
     print_r($Resp);
+    echo "</pre>";
 
     
     if (strlen(trim($response))>0)
