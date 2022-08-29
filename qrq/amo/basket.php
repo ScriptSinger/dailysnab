@@ -9,6 +9,8 @@ $pAmount = '';
 $pBuy_sell_id = '';
 $pWhere = '';
 
+    echo '12333444';
+
 
 /*
 if (isset($_GET['pparam']))
@@ -109,7 +111,7 @@ echo "<input type='text' id='temp' >";
 echo "<br><br>";
 */
 
-    alert('000111');
+    echo '000111';
 
 
 $restaccount = file_get_contents('https://questrequest.ru/qrq/amo/accounts.php?token='.$pToken.'&accountid='.$pAccountId);
