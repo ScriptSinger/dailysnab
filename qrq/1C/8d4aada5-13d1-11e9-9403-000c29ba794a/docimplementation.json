@@ -160463,7 +160463,7 @@
 		"Goods": [
 			{
 				"NomID": "2695ebe3-6cb9-11ec-80dd-000c2999d0eb",
-				"Price": 22148,
+				"Price": 26577.6,
 				"NDS": 0,
 				"Quantity": 2,
 				"Brand": "TopTrust"
@@ -160737,6 +160737,40 @@
 				"Price": 112,
 				"NDS": 0,
 				"Quantity": 2,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-08-30T00:00:00",
+		"DocID": "b27a698f-2812-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "1d79de67-676f-11eb-80c5-000c2999d0eb",
+		"Date": "2022-08-30T08:20:28",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Goods": [
+			{
+				"NomID": "203b8c6d-6cbe-11ec-80dd-000c2999d0eb",
+				"Price": 25667,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-08-30T00:00:00",
+		"DocID": "4d25410a-2821-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "dbbfc219-7fa4-11ec-80c5-000c292c2d55",
+		"Date": "2022-08-20T23:59:59",
+		"WhID": "a9fce973-6dec-11ec-80bf-000c292c2d55",
+		"Goods": [
+			{
+				"NomID": "07c72854-6cc9-11ec-80dd-000c2999d0eb",
+				"Price": 500,
+				"NDS": 0,
+				"Quantity": 1921.2,
 				"Brand": ""
 			}
 		]
