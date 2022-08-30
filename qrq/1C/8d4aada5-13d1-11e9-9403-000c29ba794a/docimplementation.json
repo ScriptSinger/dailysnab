@@ -158111,7 +158111,7 @@
 				"NomID": "548c90ba-b502-11ec-80cd-000c292c2d55",
 				"Price": 580,
 				"NDS": 0,
-				"Quantity": 623.25,
+				"Quantity": 623.7,
 				"Brand": ""
 			}
 		]
@@ -160771,6 +160771,78 @@
 				"Price": 500,
 				"NDS": 0,
 				"Quantity": 1921.2,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-08-30T00:00:00",
+		"DocID": "614f4553-2824-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "4e821eef-6d3e-11ec-80bf-000c292c2d55",
+		"Date": "2022-08-30T10:27:03",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Goods": [
+			{
+				"NomID": "9f6c417c-6cbe-11ec-80dd-000c2999d0eb",
+				"Price": 185,
+				"NDS": 0,
+				"Quantity": 4,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-08-30T00:00:00",
+		"DocID": "18652e4b-2826-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "05fcaf32-6e02-11ec-80bf-000c292c2d55",
+		"Date": "2022-08-30T10:39:21",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Goods": [
+			{
+				"NomID": "ed02f760-27f6-11ed-8db7-0cc47a03c9dc",
+				"Price": 1384,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			},
+			{
+				"NomID": "a56e09f6-6cbe-11ec-80dd-000c2999d0eb",
+				"Price": 667,
+				"NDS": 0,
+				"Quantity": 4,
+				"Brand": ""
+			},
+			{
+				"NomID": "4bb39da7-253a-11ed-8db7-0cc47a03c9dc",
+				"Price": 51,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-08-30T00:00:00",
+		"DocID": "64ec1a41-2827-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "4e821eef-6d3e-11ec-80bf-000c292c2d55",
+		"Date": "2022-08-30T10:48:40",
+		"WhID": "2fd1f29a-6d55-11ec-80bf-000c292c2d55",
+		"Goods": [
+			{
+				"NomID": "e171ac56-6cbe-11ec-80dd-000c2999d0eb",
+				"Price": 1971,
+				"NDS": 0,
+				"Quantity": 2,
+				"Brand": ""
+			},
+			{
+				"NomID": "1fc2694c-6cc9-11ec-80dd-000c2999d0eb",
+				"Price": 51,
+				"NDS": 0,
+				"Quantity": 4,
 				"Brand": ""
 			}
 		]
