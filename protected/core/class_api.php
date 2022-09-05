@@ -1116,10 +1116,12 @@ class ClassApi extends HtmlServive
 		//curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($parameters));
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		$response = curl_exec($ch);
+		echo 'Ошибка curl: ' . curl_error($ch);
 		curl_close($ch);
 		
 		$json = json_decode($response);
-		 
+
+		vecho($response); 
 		if(is_array($json)&&!empty($json)){
 			
 			foreach ($json as $item0){
@@ -1138,12 +1140,13 @@ class ClassApi extends HtmlServive
 						
 						$DocID_uniq	= $DocID.'+'.$StrID;// формируем уникальный номер записи
 						
-						if($parent_id){
+
+						$r = reqBuySell1c_SavedBuy12(array('flag'=>2,'id_1c' => $DocID_uniq));
+						//vecho($r);
+						if(empty($r)){// ранее не обработан
+						
+							if($parent_id>0){
 								
-								$r = reqBuySell1c_SavedBuy12(array('flag'=>2,'id_1c' => $DocID_uniq));
-								//vecho($r);
-								if(empty($r)){// ранее не обработан
-									
 									echo 'Дожна быть отметка в купленных, что исполненно в 1С'.' = '.$parent_id.'<br/>';
 									
 									$STH = PreExecSQL(" UPDATE buy_sell SET comments=CONCAT('Исполненно в 1С ',comments) WHERE id=? ; " ,
@@ -1155,16 +1158,21 @@ class ClassApi extends HtmlServive
 											
 											$bs->SaveCacheBuySell(array('buy_sell_id'=>$parent_id,'flag_buy_sell'=>2));
 									}
-																		
-									
-									
-								}else{
-									
-									$z++;
-									
-									echo 'По данному идентификатору есть отметка в купленных '.$DocID.'<br/>';
-								}
+							
+							}else{
 								
+									// добавляем в купленное
+									echo 'добавляем в купленное '.$DocID.'<br/>';
+							}
+							
+							
+						}else{
+							
+							$z++;
+							
+							$dop = ($parent_id>0)? 'ОТМЕТКА' : 'ДОБАВЛЕН';
+							
+							echo 'По данному идентификатору есть '.$dop.' в купленных '.$DocID.'<br/>';
 						}
 
 					}

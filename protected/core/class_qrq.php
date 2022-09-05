@@ -800,7 +800,7 @@ class ClassQrq extends HtmlServive
 							$url = DOMEN.'/qrq/amo/basket.php?token='.AMO_TOKEN.'&accountid='.$ra['accounts_id'].'&amount='.$p['amount'].'&buy_sell_id='.$row_bs['id'].'&where='.$in['where'];//.'&pparam='.$param
 							$code = file_get_contents($url);
 							//vecho($url);
-							vecho($code);
+							//vecho($code);
 	/*
 							$url = DOMEN.'/qrq/amo/basket.php';
 
