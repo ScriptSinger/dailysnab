@@ -1184,7 +1184,7 @@ class ClassApi extends HtmlServive
 									$nomenclature_id = $rn['nomenclature_id'];
 									
 									
-									if( $login_id && $company_id2 ){// есть привязка
+									if( $login_id ){// есть привязка
 											
 											echo 'добавляем в купленное '.$DocID.'<br/>';
 											
