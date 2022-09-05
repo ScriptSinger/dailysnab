@@ -5749,6 +5749,47 @@
 
 		return $row;
 	}
+	
+	// получаем ID компании по идентификатору из 1c привязанная к нашей компании
+	function req1cCompanyCompanyById1c($p=array()) {
+		$sql = '';
+		$arr = array();
+		$one = false;
+		$in = fieldIn($p, array('id_1c','company_id'));
+
+		$company_id = isset($in['company_id'])? $in['company_id'] : COMPANY_ID;
+
+
+		$sql = "	SELECT cc.company_id_to
+				FROM 1c_company c, 1c_company_company cc
+				WHERE cc.1c_company_id=c.id AND c.id_1c=? AND cc.company_id=? ";
+
+		$row = PreExecSQL_one($sql,array($in['id_1c'],$in['company_id']));
+
+		return $row;
+	}
+	
+	
+	// получаем категорию по id_1c идентификатору
+	function reqNomenclatureById1c($p=array()) {
+		$sql = '';
+		$arr = array();
+		$one = false;
+		$in = fieldIn($p, array('id_1c','company_id'));
+
+		$company_id = isset($in['company_id'])? $in['company_id'] : COMPANY_ID;
+
+
+		$sql = "	SELECT n.categories_id, n.id nomenclature_id
+				FROM nomenclature n, 1c_nomenclature nc
+				WHERE n.1c_nomenclature_id=nc.id AND nc.id_1c=? AND n.company_id=? ";
+
+		$row = PreExecSQL_one($sql,array($in['id_1c'],$in['company_id']));
+
+		return $row;
+	}	
+	
+	
 
 	// Привязка Компании 1С и "Наших"
 	function req1cCompanyCompany($p=array()) {

@@ -1116,12 +1116,12 @@ class ClassApi extends HtmlServive
 		//curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($parameters));
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		$response = curl_exec($ch);
-		echo 'Ошибка curl: ' . curl_error($ch);
+		//echo 'Ошибка curl: ' . curl_error($ch);
 		curl_close($ch);
 		
 		$json = json_decode($response);
 
-		vecho($response); 
+		//vecho($response); 
 		if(is_array($json)&&!empty($json)){
 			
 			foreach ($json as $item0){
@@ -1137,11 +1137,21 @@ class ClassApi extends HtmlServive
 						$parent_id 	= $item->buy_sell_id;
 						$DocID 		= $item->DocID;
 						$StrID 		= $item->StrID;
+						$ContractorID	= $item->ContractorID;
+						$NomID		= $item->NomID;
+						$NDS 		= $item->NDS;
+						$Price		= $item->Price;
+						$Quantity 	= $item->Quantity;
+						$brand 		= $item->Brand;
+						
+						
+						$form_payment_id = ($NDS)? 1 : 2;
+						
 						
 						$DocID_uniq	= $DocID.'+'.$StrID;// формируем уникальный номер записи
 						
 
-						$r = reqBuySell1c_SavedBuy12(array('flag'=>2,'id_1c' => $DocID_uniq));
+						$r = reqBuySell1c_SavedBuy12(array('flag'=>3,'id_1c' => $DocID_uniq));
 						//vecho($r);
 						if(empty($r)){// ранее не обработан
 						
@@ -1154,15 +1164,111 @@ class ClassApi extends HtmlServive
 									if($STH){									
 											// Добавляем связь с 1с
 											$STH1 = PreExecSQL(" INSERT INTO buy_sell_1c (flag, company_id, buy_sell_id, id_1c, data_1c) VALUES (?,?,?,?,?); " ,
-																						array(2, $in['company_id'],$parent_id,$DocID_uniq,$data1c0 ));
+																						array(3, $in['company_id'],$parent_id,$DocID_uniq,$data1c0 ));
 											
-											$bs->SaveCacheBuySell(array('buy_sell_id'=>$parent_id,'flag_buy_sell'=>2));
+											$bs->SaveCacheBuySell(array('buy_sell_id'=>$parent_id,'flag_buy_sell'=>1));
 									}
 							
-							}else{
-								
-									// добавляем в купленное
-									echo 'добавляем в купленное '.$DocID.'<br/>';
+							}else{// добавляем в купленное
+									
+									// получаем login_id
+									$r = reqCompany(array('id'=>$in['company_id']));
+									$login_id = $r['login_id'];
+									
+									// получаем контрагента у кого купили по ContractorID
+									$rc = req1cCompanyCompanyById1c(array('id_1c'=>$ContractorID,'company_id'=>$in['company_id']));
+									$company_id2 = $rc['company_id_to'];
+									
+									$rn = reqNomenclatureById1c(array('id_1c'=>$NomID,'company_id'=>$in['company_id']));
+									$categories_id = $rn['categories_id'];
+									$nomenclature_id = $rn['nomenclature_id'];
+									
+									
+									if( $login_id && $company_id2 && $categories_id && $nomenclature_id ){// есть привязка
+											
+											echo 'добавляем в купленное '.$DocID.'<br/>';
+											
+											/*
+											$arr = reqInsertBuySell(array(	'login_id'			=> $login_id,
+																			'company_id'		=> $in['company_id'],
+																			'company_id2'		=> $company_id2,
+																			'parent_id'			=> 0,
+																			'copy_id'			=> 0,
+																			'flag_buy_sell'		=> 2,
+																			'status'			=> 11,
+																			'name'				=> '-',
+																			'url'				=> 'buy1c',
+																			'cities_id'			=> 1,
+																			'categories_id'		=> $categories_id,
+																			'urgency_id'		=> 5,
+																			'currency_id'		=> 1,
+																			'cost'				=> $Price,
+																			'cost1'				=> 0,
+																			'form_payment_id'	=> $form_payment_id,
+																			'amount'			=> $Quantity,
+																			'amount1'			=> 0,
+																			'unit_id1'			=> 0,
+																			'amount2'			=> 0,
+																			'unit_id2'			=> 0,
+																			'comments'			=> '',
+																			'comments_company'	=> '',
+																			'responsible_id'	=> '',
+																			'availability'		=> '',
+																			'nomenclature_id'	=> $r_p['nomenclature_id'],
+																			'multiplicity'		=> '',
+																			'min_party'			=> '',
+																			'delivery_id'		=> '',
+																			'stock_id'			=> '',
+																			'assets_id'			=> ''
+																			
+																			));
+											if($arr['STH']){// сохраняем параметры
+													
+													$z++;
+													
+													// Добавляем связь с 1с
+													$STH1 = PreExecSQL(" INSERT INTO buy_sell_1c (flag, company_id, buy_sell_id, id_1c, data_1c) VALUES (?,?,?,?,?); " ,
+																								array(3, $in['company_id'],$arr['buy_sell_id'],$DocID_uniq,$data1c0 ));
+													if($STH1){
+											
+																// есть ли такой Бренд в нашей базе
+															if($brand){
+																	// сохраняем бренд какой вернулся (учитывая регистр)
+																	$STH = PreExecSQL(" INSERT INTO buy_sell_attribute (buy_sell_id, attribute_id, value) VALUES (?,?,?); " ,
+																										array( $arr['buy_sell_id'],2,$brand ));
+																
+																	$key = array_search(mb_strtolower($brand), $arr3, true);
+																	
+																	if($key){
+																			$STH = PreExecSQL(" INSERT INTO buy_sell_attribute (buy_sell_id, attribute_id, attribute_value_id) VALUES (?,?,?); " ,
+																											array( $arr['buy_sell_id'],3,$key ));	
+																	}else{
+																			// Если нет добавляем в slov_attribute_value -> attribute_value и возвращаем attribute_value_id 
+																			$arr_p = $this->ProverkaAndInsertSlovAttributeValue(array('flag'				=> 'qrq',
+																																	'categories_id'		=> $r_p['categories_id'],
+																																	'attribute_id'		=> 3,
+																																	'attribute_value'	=> $brand ));
+																			$attribute_value_id 		= $arr_p['attribute_value_id']; 
+																			if($attribute_value_id){
+																				$arr3[ $attribute_value_id ] = mb_strtolower($brand);// добавляем новое значение, чтобы повторно не добавлять
+																				$STH = PreExecSQL(" INSERT INTO buy_sell_attribute (buy_sell_id, attribute_id, attribute_value_id) VALUES (?,?,?); " ,
+																												array( $arr['buy_sell_id'],3,$attribute_value_id ));	
+																			}
+
+																	}
+																///
+															}
+																			
+																			
+													}else{// неудалось занести связь с 1с, удаляем из buy_sell
+														$STH = PreExecSQL(" DELETE FROM buy_sell WHERE buy_sell_id=?; " ,
+																								array( $arr['buy_sell_id'] ));
+													}
+													
+											}
+											*/
+									}
+									
 							}
 							
 							
@@ -1182,11 +1288,11 @@ class ClassApi extends HtmlServive
 						
 						echo 'все элементы посажены = '.$DocID0.'<br/><br/><br/>';
 						
-						$r = reqBuySell1c_SavedBuy12(array('flag'=>2,'id_1c' => $DocID0));
+						$r = reqBuySell1c_SavedBuy12(array('flag'=>3,'id_1c' => $DocID0));
 						if(empty($r)){// ранее не добавлен
 							// Добавляем Docid для дальнейшей выгрузки для 1С, чтобы в 1с снять с выгрузки документ (в этом случае buy_sell_id=0)
 							$STH1 = PreExecSQL(" INSERT INTO buy_sell_1c (flag, company_id, buy_sell_id, id_1c, data_1c) VALUES (?,?,?,?,?); " ,
-																		array(2,$in['company_id'],0,$DocID0,$data1c0 ));
+																		array(3,$in['company_id'],0,$DocID0,$data1c0 ));
 						}
 						
 					}
