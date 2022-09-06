@@ -5,6 +5,7 @@
 $pToken = '';
 $pItemId = '';
 $pQuantity = '';
+$pAccountId = '';
 
 if (isset($_GET['token']))
 {
@@ -39,45 +40,70 @@ if (isset($_POST['quantity']))
     $pQuantity = trim($pQuantity);
 }
 
+if (isset($_GET['accountid']))
+{
+    $pAccountId = $_GET['accountid'];
+    $pAccountId = trim($pAccountId);
+}
+if (isset($_POST['accountid']))
+{
+    $pAccountId = $_POST['accountid'];
+    $pAccountId = trim($pAccountId);
+}
 
-$text = $pToken.' = '.$pItemId.' = '.$pQuantity;
-$filename = 'logs/'.$pItemId.'_cartadd1.txt';
-$fh = fopen($filename, 'w');
-fwrite($fh, $text);
-fclose($fh);
+
+$restaccount = file_get_contents('https://questrequest.ru/qrq/amo/accounts.php?token='.$pToken.'&accountid='.$pAccountId);
+if (strlen(trim($restaccount))>0)
+{
+    $restvendor = file_get_contents('https://questrequest.ru/qrq/amo/vendorsget.php?token='.$pToken.'&vid='.$restaccount);
+}
+else
+{
+    $restvendor = '';
+}
+
+if ( (strlen(trim($restaccount))>0) && (strlen(trim($restvendor))>0))
+{
 
 
-$postData = array(
-    'Request'=>array(
-        'RequestData'=>array(
-            'itemId'=>$pItemId,
-            'quantity'=>$pQuantity,
-            'comment'=>'pay'
+    $postData = array(
+        'Request' => array(
+            'RequestData' => array(
+                'itemId' => $pItemId,
+                'quantity' => $pQuantity,
+                'comment' => 'pay'
+            )
         )
-    )
-);
+    );
 
 
-$context = stream_context_create(array(
-    'http' => array(
-        'method' => 'POST',
-        'header' => "Authorization: Bearer {$pToken}\r\n".
-        "Content-Type: application/json\r\n",
-        'content' => json_encode($postData)
-    )
-));
+    $context = stream_context_create(array(
+        'http' => array(
+            'method' => 'POST',
+            'header' => "Authorization: Bearer {$pToken}\r\n" .
+                "Content-Type: application/json\r\n",
+            'content' => json_encode($postData)
+        )
+    ));
 
 
-$response = file_get_contents('https://userapi.qwep.ru/cart/add', FALSE, $context);
+    $response = file_get_contents('https://userapi.qwep.ru/cart/add', FALSE, $context);
 //$Resp = json_decode($response, JSON_UNESCAPED_UNICODE);
 
-$filename = 'logs/'.$pItemId.'_cartadd3.txt';
-$fh = fopen($filename, 'w');
-fwrite($fh, json_encode($response, JSON_UNESCAPED_UNICODE));
-fclose($fh);
+    echo $response;
 
-
-echo $response;
+}
+else
+{
+    if ( strlen(trim($restaccount))==0 )
+    {
+        echo '111';
+    }
+    else
+    {
+        echo '{"Response":{"errors":["code":"222","message":"AccountId='.$pAccountId.' ушел только в корзину","details":null],"warnings":null}}';
+    }
+}
 
 
 ?>
