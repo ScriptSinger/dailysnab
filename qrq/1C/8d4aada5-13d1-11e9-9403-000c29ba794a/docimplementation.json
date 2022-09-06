@@ -172108,5 +172108,87 @@
 				"Brand": ""
 			}
 		]
+	},
+	{
+		"data1c": "2022-09-06T00:00:00",
+		"DocID": "4e6afb91-2da2-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "7e1b61d6-6ebc-11ec-80bf-000c292c2d55",
+		"Date": "2022-09-06T10:11:06",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Goods": [
+			{
+				"NomID": "b171a0a8-6cbe-11ec-80dd-000c2999d0eb",
+				"Price": 439,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			},
+			{
+				"NomID": "b171a0a9-6cbe-11ec-80dd-000c2999d0eb",
+				"Price": 464,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-09-06T00:00:00",
+		"DocID": "8504390d-2da4-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "8f4d4b4a-6ebc-11ec-80bf-000c292c2d55",
+		"Date": "2022-09-06T10:26:56",
+		"WhID": "a9fce963-6dec-11ec-80bf-000c292c2d55",
+		"Goods": [
+			{
+				"NomID": "1112534f-6cc8-11ec-80dd-000c2999d0eb",
+				"Price": 102,
+				"NDS": 0,
+				"Quantity": 5,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-09-06T00:00:00",
+		"DocID": "c73e168d-2daf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "4e821eef-6d3e-11ec-80bf-000c292c2d55",
+		"Date": "2022-09-06T11:47:31",
+		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
+		"Goods": [
+			{
+				"NomID": "5bc3a961-6cc9-11ec-80dd-000c2999d0eb",
+				"Price": 311,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-09-06T00:00:00",
+		"DocID": "988be629-2dbe-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "4e821eef-6d3e-11ec-80bf-000c292c2d55",
+		"Date": "2022-09-06T13:33:36",
+		"WhID": "2fd1f29a-6d55-11ec-80bf-000c292c2d55",
+		"Goods": [
+			{
+				"NomID": "d7b8ce7c-6cc8-11ec-80dd-000c2999d0eb",
+				"Price": 128,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			},
+			{
+				"NomID": "e9b70b81-6cc8-11ec-80dd-000c2999d0eb",
+				"Price": 124,
+				"NDS": 0,
+				"Quantity": 5,
+				"Brand": ""
+			}
+		]
 	}
 ]
