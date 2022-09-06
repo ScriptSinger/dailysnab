@@ -154,13 +154,13 @@ echo "<br><br>";
 
 
 
-        /*
+        
             echo '<pre>';
             print_r($Resp);
             echo '</pre>';
             echo "<br>";
             echo "<br>";
-        */
+        
 
         $error = $Resp['Response']['errors'];
         $warnings = $Resp['Response']['warnings'];
@@ -573,7 +573,6 @@ echo "<br><br>";
 
                         // надо вставить эту переменную
                         // pRestParam
-                        AmoBasket(request.responseText,<? echo $pAmount; ?>,<? echo $pBuy_sell_id; ?>,<? echo '"'.$pWhere.'"'; ?> , <? echo $pAccountId; ?> , pRestParam );
 
 
 
