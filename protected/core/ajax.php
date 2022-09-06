@@ -3111,7 +3111,7 @@ if(LOGIN_ID){
         $jsd['code_qrq']				= $code_qrq;
         $jsd['flag_clear_parent']	= $flag_clear_parent;
         $jsd['error_qrq'] 			= $error_qrq;
-        $jsd['code_qrq_222'] 		= $code_qrq_222;
+        //$jsd['code_qrq_222'] 		= $code_qrq_222;
 
     }
 // сохранить Купить - Предложение/Объявление
