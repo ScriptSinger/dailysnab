@@ -769,7 +769,7 @@ class ClassQrq extends HtmlServive
 							'token' 		=> AMO_TOKEN,
 							'itemid' 		=> $row_bs['item_id'],
 							'quantity' 		=> $p['amount'],
-							'accounts_id' 	=> $ra['accounts_id']
+							'accountid' 	=> $ra['accounts_id']
 							];
 
 				$json = self::getJsonCurl(array('url'=>$url,'parameters'=>$parameters));
