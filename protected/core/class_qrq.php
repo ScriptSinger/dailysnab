@@ -773,7 +773,7 @@ class ClassQrq extends HtmlServive
 							];
 
 				$json = self::getJsonCurl(array('url'=>$url,'parameters'=>$parameters));
-				
+				vecho($json);
 				if($json){
 					
 					// пишем лог
