@@ -757,6 +757,10 @@ class ClassQrq extends HtmlServive
 		
 		if($row_bs['qrq_id']>0){
 			
+			
+				$ra = reqAmoAccountsEtp_AccountsidByCompanyid(array('qrq_id'=>$row_bs['qrq_id'],'company_id'=>COMPANY_ID));// получаем accountid
+						
+			
 			// 1 - Добавление товара в корзину
 			
 				$url = DOMEN.'/qrq/amo/cartadd.php';
@@ -764,7 +768,8 @@ class ClassQrq extends HtmlServive
 				$parameters = [
 							'token' 		=> AMO_TOKEN,
 							'itemid' 		=> $row_bs['item_id'],
-							'quantity' 		=> $p['amount']
+							'quantity' 		=> $p['amount'],
+							'accounts_id' 	=> $ra['accounts_id']
 							];
 
 				$json = self::getJsonCurl(array('url'=>$url,'parameters'=>$parameters));
@@ -788,8 +793,6 @@ class ClassQrq extends HtmlServive
 			//var_dump($warnings);
 					if( !$errors_message && !$warnings_message ){
 							
-							
-							$ra = reqAmoAccountsEtp_AccountsidByCompanyid(array('qrq_id'=>$row_bs['qrq_id'],'company_id'=>COMPANY_ID));// получаем accountid
 							
 							/*
 							$rap = reqAmoAccountsBasketParam(array('accounts_id'=>$ra['accounts_id']));
