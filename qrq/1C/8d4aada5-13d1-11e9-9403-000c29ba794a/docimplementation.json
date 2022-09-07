@@ -172418,5 +172418,22 @@
 				"Brand": ""
 			}
 		]
+	},
+	{
+		"data1c": "2022-09-07T00:00:00",
+		"DocID": "310f2fcd-2e65-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "5036aa72-edfc-11ec-8da3-000c295de724",
+		"Date": "2022-09-06T23:59:59",
+		"WhID": "a9fce973-6dec-11ec-80bf-000c292c2d55",
+		"Goods": [
+			{
+				"NomID": "548c90ba-b502-11ec-80cd-000c292c2d55",
+				"Price": 580,
+				"NDS": 0,
+				"Quantity": 744.45,
+				"Brand": ""
+			}
+		]
 	}
 ]
