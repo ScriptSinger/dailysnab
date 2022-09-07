@@ -5,18 +5,18 @@
  
  error_reporting( E_ALL | E_STRICT );
 
-
+/*
 
 				// лог ссылок
-					$file = '/home/d/dailysnab/questrequest.ru/public_html/cron30.txt';
+					$file = $_SERVER['DOCUMENT_ROOT'] .'/cron30.txt';
 					$fp = fopen($file, "a");
 					$mytext = date("Y-m-d H:i:s")." \r\n ";
 					$test = fwrite($fp, $mytext);
 					fclose($fp);		
 				///	
+*/
 
-
-		/*	
+		
 		$sql = "	SELECT c.id, c.token, c.searchid, c.login_id, c.company_id, c.qrq_id, 
 						c.categories_id, c.company_id_out, c.cookie_session
 				FROM cron_amo_buy_sell_search_infopart c ";
@@ -48,7 +48,7 @@
 				
 				sleep(5);
 		}
-		*/
+		
 
 		
 										
