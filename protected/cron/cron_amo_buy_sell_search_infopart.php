@@ -5,7 +5,7 @@
  
  error_reporting( E_ALL | E_STRICT );
 
-
+phpinfo();
 				// лог ссылок
 					$file = $_SERVER['DOCUMENT_ROOT'] .'/cron30.txt';
 					$fp = fopen($file, "a");
