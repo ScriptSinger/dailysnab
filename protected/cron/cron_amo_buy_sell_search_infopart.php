@@ -5,6 +5,7 @@
  
  error_reporting( E_ALL | E_STRICT );
 
+echo $_SERVER['DOCUMENT_ROOT'];
 
 				// лог ссылок
 					$file = $_SERVER['DOCUMENT_ROOT'] .'/cron30.txt';
