@@ -5,10 +5,10 @@
  
  error_reporting( E_ALL | E_STRICT );
 
-echo $_SERVER['DOCUMENT_ROOT'];
+
 
 				// лог ссылок
-					$file = $_SERVER['DOCUMENT_ROOT'] .'/cron30.txt';
+					$file = '/home/d/dailysnab/questrequest.ru/public_html/cron30.txt';
 					$fp = fopen($file, "a");
 					$mytext = date("Y-m-d H:i:s")." \r\n ";
 					$test = fwrite($fp, $mytext);
