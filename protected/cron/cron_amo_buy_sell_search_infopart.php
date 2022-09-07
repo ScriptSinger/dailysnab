@@ -5,7 +5,7 @@
  
  error_reporting( E_ALL | E_STRICT );
 
-echo $_SERVER['DOCUMENT_ROOT'];
+/*
 
 				// лог ссылок
 					$file = $_SERVER['DOCUMENT_ROOT'] .'/cron30.txt';
@@ -14,9 +14,9 @@ echo $_SERVER['DOCUMENT_ROOT'];
 					$test = fwrite($fp, $mytext);
 					fclose($fp);		
 				///	
+*/
 
-
-		/*	
+		
 		$sql = "	SELECT c.id, c.token, c.searchid, c.login_id, c.company_id, c.qrq_id, 
 						c.categories_id, c.company_id_out, c.cookie_session
 				FROM cron_amo_buy_sell_search_infopart c ";
@@ -48,7 +48,7 @@ echo $_SERVER['DOCUMENT_ROOT'];
 				
 				sleep(5);
 		}
-		*/
+		
 
 		
 										
