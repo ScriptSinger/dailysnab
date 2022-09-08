@@ -1583,21 +1583,35 @@ elseif($_GET['route'] == 'save_buy_sell'){
         // действия при "исполнено" , "возврат" , "возвращено"
         if($in['status']==12){// исполнено
             $bs->ChangeStatusBuy(array(	'row'			=> $r_p,
-                'status'		=> 12 ));
+										'status'		=> 12 ));
+			if($in['company_id3']){// если указано в заявке для кого завка, 
+									// то при исполении создаем в разделе "Мои объявления"->"Купленое" покупку у "company_id3"
+					$r = reqCompany(array('id'=>$in['company_id3']));
+					$login_id = $r['login_id'];
+					$arr2 = $bs->CopyRowBuySell(array(	'buy_sell_id'	=> $buy_sell_id,
+														'parent_id'		=> $buy_sell_id,
+														'copy_id'		=> 0,
+														'login_id'		=> $login_id,
+														'company_id'	=> $in['company_id3'],
+														'company_id2'	=> COMPANY_ID,
+														'flag_buy_sell'	=> 2,
+														'status'		=> 11
+					));
+			}
             // добавляем товар на склад
             $bs->AddStock(array(	'buy_sell_id'	=> $buy_sell_id,
-                'categories_id'	=> $categories_id,
-                'flag'			=> 'status_buy_sell_id12' ));
+								'categories_id'	=> $categories_id,
+								'flag'			=> 'status_buy_sell_id12' ));
         }elseif($in['status']==14){// возврат
             $bs->ChangeStatusBuy(array(	'row'			=> $r_p,
-                'buy_sell_id'	=> $buy_sell_id,
-                'parent_id'		=> 0,
-                'status'		=> 14,
-                'where_status'	=> 11,
-                'amount'		=> $in['amount'] ));
+										'buy_sell_id'	=> $buy_sell_id,
+										'parent_id'		=> 0,
+										'status'		=> 14,
+										'where_status'	=> 11,
+										'amount'		=> $in['amount'] ));
         }elseif($in['status']==15){// возвращено
             $bs->ChangeStatusBuy(array(	'row'			=> $r_p,
-                'status'		=> 15 ));
+										'status'		=> 15 ));
         }
         //
     }
