@@ -9,6 +9,9 @@
 					
 				$this->title = 'Частые вопросы';
 				
+				
+				$url = DOMEN.'/qrq/amo/cartadd.php';
+				
 				$parameters = [
 							'token' 		=> '121e454b37b7316ec91ecadcd05392a3d9bd07ae',
 							'itemid' 		=> '3468156582',
