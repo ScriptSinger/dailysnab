@@ -9,8 +9,8 @@
 					
 				$this->title = 'Частые вопросы';
 				
-				
-				$url = DOMEN.'/qrq/amo/cartadd.php';
+				/*
+				$url = 'https://questrequest.ru/qrq/amo/cartadd.php';
 				
 				$parameters = [
 							'token' 		=> '121e454b37b7316ec91ecadcd05392a3d9bd07ae',
@@ -33,6 +33,7 @@
 				$json = json_decode($response);
 				
 				vecho($json);
+				*/
 				/*
 				$api		= new ClassApi();
 				$arr = $api->Save1cBuySellId_Out1cBuy11_12(array( 'id_1c' 		=> 'd46cc13b-995d-11e9-9415-000c29ba794a' , 
