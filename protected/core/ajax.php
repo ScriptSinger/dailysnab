@@ -1593,7 +1593,7 @@ elseif($_GET['route'] == 'save_buy_sell'){
 														'copy_id'		=> 0,
 														'login_id'		=> $login_id,
 														'company_id'	=> $in['company_id3'],
-														'company_id2'	=> $company_id2,
+														'company_id2'	=> COMPANY_ID,
 														'flag_buy_sell'	=> 2,
 														'status'		=> 11
 					));
