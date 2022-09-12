@@ -20,11 +20,19 @@ echo '<br>';
                 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($parameters));
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 $response = curl_exec($ch);
+
+echo $response;                 
+echo '<br>';                
+echo '<br>';                
+
                 curl_close($ch);
                 
                 
                 $json = json_decode($response);
                 
+echo $json;                 
+echo '<br>';                
+echo '<br>';                
 
 echo '222';
 echo '<br>';                
