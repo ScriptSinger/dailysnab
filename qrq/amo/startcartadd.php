@@ -1,5 +1,8 @@
 <?
 
+echo '111';
+echo '<br>';
+
                 $url = 'https://questrequest.ru/qrq/amo/cartadd.php';
                 
                 $parameters = [
@@ -21,5 +24,9 @@
                 
                 
                 $json = json_decode($response);
+                
+
+echo '222';
+echo '<br>';                
 
 ?>
