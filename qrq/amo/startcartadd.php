@@ -2,6 +2,7 @@
 
 echo '111';
 echo '<br>';
+echo '<br>';
 
                 $url = 'https://questrequest.ru/qrq/amo/cartadd.php';
                 
@@ -28,7 +29,7 @@ echo '<br>';
                 curl_close($ch);
                 
                 
-                $json = json_decode($response);
+                $json = json_encode($response,true);
                 
 echo $json;                 
 echo '<br>';                
