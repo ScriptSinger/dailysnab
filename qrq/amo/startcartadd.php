@@ -35,6 +35,6 @@ echo $json;
                 
                 $json = json_decode($response);
                 
-echo($response); 
+echo($json); 
 
 ?>
