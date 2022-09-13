@@ -29,7 +29,7 @@ echo '<br>';
                 curl_close($ch);
                 
                 
-                $json = json_encode($response);
+                $json = json_decode($response);
                 
 echo $json;                 
 echo '<br>';                
