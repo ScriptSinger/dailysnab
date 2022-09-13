@@ -9,15 +9,15 @@
 					
 				$this->title = 'Частые вопросы';
 				
-				/*
+				
 				$url = 'https://questrequest.ru/qrq/amo/cartadd.php';
 				
-				$parameters = [
-							'token' 		=> '121e454b37b7316ec91ecadcd05392a3d9bd07ae',
-							'itemid' 		=> '3468156582',
-							'quantity' 		=> 1,
-							'accountid' 	=> '1671722'
-							];
+                $parameters = [
+                            'token'         => '6bc2aed632aa25cc4a384130d9a51be6491b7425',
+                            'itemid'         => '3535909686',
+                            'quantity'         => 1,
+                            'accountid'     => '1671722'
+                            ];
 				
 				
 				$ch = curl_init();
@@ -33,7 +33,7 @@
 				$json = json_decode($response);
 				
 				vecho($json);
-				*/
+				
 				/*
 				$api		= new ClassApi();
 				$arr = $api->Save1cBuySellId_Out1cBuy11_12(array( 'id_1c' 		=> 'd46cc13b-995d-11e9-9415-000c29ba794a' , 
