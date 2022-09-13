@@ -1,17 +1,5 @@
 <?
-/*
-$array = array("Response"=>array("errors"=>array(	"code"=>"222",
-												"message"=>"AccountId ушел только в корзину",
-												"details"=>""
-												),
-								"warnings"=>""
-								)
-			);
 
-$json = json_encode($array);
-header('Content-Type: application/json');
-echo $json;
-*/
 
                 $url = 'https://questrequest.ru/qrq/amo/cartadd.php';
 
@@ -34,7 +22,7 @@ echo $json;
                 
                 
                 $json = json_decode($response);
-                //header('Content-Type: application/json');
+				
 echo($response); 
 
 ?>
