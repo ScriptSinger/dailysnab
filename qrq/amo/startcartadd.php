@@ -20,9 +20,9 @@
                 $response = curl_exec($ch);
                 curl_close($ch);
                 
- echo($response);                
+                
                 $json = json_decode($response);
                 
-
+echo($json); 
 
 ?>
