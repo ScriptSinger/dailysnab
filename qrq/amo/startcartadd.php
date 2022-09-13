@@ -1,9 +1,11 @@
 <?
-$array = array(
-    'Ключ 1' => 'Значение 1',
-    'Ключ 2' => 'Значение 2',
-    'Ключ 3' => 'Значение 3',
-);
+$array = array("Response"=>array("errors"=>array(	"code":"222",
+																	"message":"AccountId=".$pAccountId." ушел только в корзину",
+																	"details":""
+																),
+												"warnings"=>""
+												)
+								);
 
 $json = json_encode($array);
 header('Content-Type: application/json');
