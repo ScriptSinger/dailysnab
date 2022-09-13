@@ -2,10 +2,10 @@
 
 
                 $url = 'https://questrequest.ru/qrq/amo/cartadd.php';
-                
+
                 $parameters = [
-                            'token'         => '121e454b37b7316ec91ecadcd05392a3d9bd07ae',
-                            'itemid'         => '3468156582',
+                            'token'         => '6bc2aed632aa25cc4a384130d9a51be6491b7425',
+                            'itemid'         => '3535909686',
                             'quantity'         => 1,
                             'accountid'     => '1671722'
                             ];
