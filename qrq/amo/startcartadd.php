@@ -34,7 +34,7 @@ echo $json;
                 
                 
                 $json = json_decode($response);
-                header('Content-Type: application/json');
+                //header('Content-Type: application/json');
 echo($response); 
 
 ?>
