@@ -1,12 +1,12 @@
 <?
-$array = [
+$array = array(
     'Ключ 1' => 'Значение 1',
     'Ключ 2' => 'Значение 2',
     'Ключ 3' => 'Значение 3',
-];
+);
 
 $json = json_encode($array);
-
+header('Content-Type: application/json');
 echo $json;
 /*
 
