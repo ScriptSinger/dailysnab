@@ -33,7 +33,7 @@ echo $json;
                 curl_close($ch);
                 
                 
-                $json = json_decode($response);
+                $json = json_decode($response,true);
                 
 echo($json); 
 
