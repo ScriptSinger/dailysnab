@@ -102,18 +102,21 @@ else
     else
     {
         //echo json_encode('[{"Response":{"errors":["code":"222","message":"AccountId='.$pAccountId.' ушел только в корзину","details":null],"warnings":null}}]');
-		echo json_encode('[
-					{
+		echo ('[
+							{
 							"Response":[
 								{
 									"errors":[
-										{"code":"222",
-										"message":"AccountId='.$pAccountId.' ушел только в корзину","details":""
-										}
-									],"warnings":""
-								}}
+												{
+													"code":"222",
+													"message":"AccountId='.$pAccountId.' ушел только в корзину","details":""
+												}
+											],
+									"warnings":""
+								}
 							]
-				]');
+							}
+						]');
     }
 }
 
