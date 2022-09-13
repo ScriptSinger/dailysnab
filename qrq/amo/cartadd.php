@@ -102,9 +102,8 @@ else
     else
     {
         //echo json_encode('[{"Response":{"errors":["code":"222","message":"AccountId='.$pAccountId.' ушел только в корзину","details":null],"warnings":null}}]');
-		header('Content-Type: application/json');
-		echo json_encode(array("Response"=>"dfgsdf")
-						);
+		//header('Content-Type: application/json');
+		echo '{"Response":"dfgsdf"}';
     }
 }
 
