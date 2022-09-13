@@ -1,5 +1,14 @@
 <?
+$array = [
+    'Ключ 1' => 'Значение 1',
+    'Ключ 2' => 'Значение 2',
+    'Ключ 3' => 'Значение 3',
+];
 
+$json = json_encode($array);
+
+echo $json;
+/*
 
                 $url = 'https://questrequest.ru/qrq/amo/cartadd.php';
 
@@ -24,5 +33,5 @@
                 $json = json_decode($response);
                 
 echo($response); 
-
+*/
 ?>
