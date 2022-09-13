@@ -1,11 +1,11 @@
 <?
 $array = array("Response"=>array("errors"=>array(	"code":"222",
-																	"message":"AccountId=".$pAccountId." ушел только в корзину",
-																	"details":""
-																),
-												"warnings"=>""
-												)
-								);
+												"message"=>"AccountId ушел только в корзину",
+												"details"=>""
+												),
+								"warnings"=>""
+								)
+			);
 
 $json = json_encode($array);
 header('Content-Type: application/json');
