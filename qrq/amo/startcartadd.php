@@ -23,6 +23,6 @@
                 
                 $json = json_decode($response);
                 
-var_dump( $json); 
+echo($json); 
 
 ?>
