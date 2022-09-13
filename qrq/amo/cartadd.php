@@ -101,9 +101,16 @@ else
     }
     else
     {
-        //echo json_encode('[{"Response":{"errors":["code":"222","message":"AccountId='.$pAccountId.' ушел только в корзину","details":null],"warnings":null}}]');
-		//header('Content-Type: application/json');
-		echo '{"Response":"dfgsdf"}';
+        //echo json_encode(-'[{"Response":{"errors":["code":"222","message":"AccountId='.$pAccountId.' ушел только в корзину","details":null],"warnings":null}}]');
+		
+		echo (array("Response"=>array("errors"=>array(	"code"=>"222",
+																	"message"=>"AccountId=".$pAccountId." ушел только в корзину",
+																	"details"=>""
+																),
+												"warnings"=>""
+												)
+								)
+						);
     }
 }
 
