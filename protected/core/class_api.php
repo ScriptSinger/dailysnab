@@ -1347,11 +1347,17 @@ class ClassApi extends HtmlServive
 	// ОБНОВИТЬ ВСЕ из 1С И СПРАВОЧНИКИ И ДАННЫЕ
 	function Cron1cSave( $m=array() ){
 
+			
+			// получаем включены ли навыки у пользователя
+			$rcv = reqCompanyVipFunctionByCompanyId(array('company_id' => $m['id']));
+vecho($rcv);
+			/*
+
 			// сажаем справочники
 			self::cron1cBindAllSpravochniki(array( 'id_1c' => $m['id_1c'] , 'company_id' => $m['id'] ));
 			
 			
-			if($m['flag_ispolnen']){// включено "исполение" на странице навыки
+			if($rcv['flag_ispolnen']){// включено "исполение" на странице навыки
 			
 				//  Посадить в базу Исполненные от Купленных
 				echo '<br/>Исполненные от Купленных<br/>';
@@ -1369,7 +1375,7 @@ class ClassApi extends HtmlServive
 				
 			}
 			
-			if($m['flag_ostatki']){// включено "остатки" на странице навыки
+			if($rcv['flag_ostatki']){// включено "остатки" на странице навыки
 			
 				//  Посадить в базу Остатки для склада
 				echo '<br/>Остатки для склада';
@@ -1378,7 +1384,7 @@ class ClassApi extends HtmlServive
 				
 			}
 			
-			if($m['flag_unii_prodavec']){// включено "Юный продавец" на странице навыки
+			if($rcv['flag_unii_prodavec']){// включено "Юный продавец" на странице навыки
 			
 				// сохраняем buy_sell_id переданные исполненные, для заказчика (чтобы повторно их не отдавать)
 				echo '<br/>Посадить переданные исполенные для заказчика';
@@ -1391,7 +1397,7 @@ class ClassApi extends HtmlServive
 				sleep(2);
 				
 			}
-			
+			*/
 			
 		return '';
 	}

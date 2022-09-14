@@ -8,11 +8,7 @@
  
 
 	// 
-	$sql = "	SELECT c.id, c.id_1c , t.company_id,
-					(SELECT t.id FROM company_vip_function t WHERE t.company_id=c.id AND vip_function_id=1
-					) flag_ispolnen,	/*включена исполение на странице навыки*/
-					(SELECT t.id FROM company_vip_function t WHERE t.company_id=c.id AND vip_function_id=2
-					) flag_ostatki		/*включена на странице навыки*/
+	$sql = "	SELECT c.id, c.id_1c , t.company_id
 			FROM company c , 1c_refresh_all t
 			WHERE t.company_id=c.id ";
 
@@ -35,10 +31,8 @@
 
 
 					// ОБНОВИТЬ ВСЕ из 1С И СПРАВОЧНИКИ И ДАННЫЕ
-					$api->Cron1cSave(array(	'id_1c' 		=> $m['id_1c'],
-											'flag_ispolnen'	=> $m['flag_ispolnen'],
-											'flag_ostatki'	=> $m['flag_ostatki'],
-											'id'			=> $m['id'] ));
+					$api->Cron1cSave(array(	'id_1c' 				=> $m['id_1c'],
+											'id'					=> $m['id'] ));
 				}
 			}
 

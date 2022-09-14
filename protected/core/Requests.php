@@ -6757,7 +6757,29 @@
 
 		return $row;
 	}
+	
+	
+	// Права на функционал Pro
+	function reqCompanyVipFunctionByCompanyId($p=array()) {
 
+		$in = fieldIn($p, array('company_id'));
+
+		$sql = "	SELECT 
+					(SELECT t.id FROM company_vip_function t WHERE t.company_id=".$in['company_id']." AND vip_function_id=1
+					) flag_ispolnen,			/*включена исполение на странице навыки*/
+					(SELECT t.id FROM company_vip_function t WHERE t.company_id=".$in['company_id']." AND vip_function_id=2
+					) flag_ostatki,				/*включена на странице навыки*/
+					(SELECT t.id FROM company_vip_function t WHERE t.company_id=".$in['company_id']." AND vip_function_id=8
+					) flag_unii_prodavec		/*включена на странице навыки*/
+					";
+
+	//vecho($sql);
+		$row = PreExecSQL_one($sql,array());
+
+		return $row;
+	}
+	
+	
 
 	// Количество не привязанная номенклатура, контрагент, категория к 1С в купленных заявках
 	function reqNo_SumLogoNotification($p=array()) {
