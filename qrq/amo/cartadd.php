@@ -26,7 +26,6 @@ if (isset($_GET['itemid']))
 if (isset($_POST['itemid']))
 {
     $pItemId = $_POST['itemid'];
-    $pItemId = trim($pItemId);
 }
 
 if (isset($_GET['quantity']))
