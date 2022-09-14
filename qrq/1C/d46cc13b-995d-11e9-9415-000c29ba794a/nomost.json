@@ -73327,6 +73327,12 @@
 	},
 	{
 		"data1c": "2022-09-14T00:00:00",
+		"NomID": "2695ec1e-6cb9-11ec-80dd-000c2999d0eb",
+		"WhID": "584abb7e-6f8d-11ec-80c1-000c292c2d55",
+		"Quantity": -4
+	},
+	{
+		"data1c": "2022-09-14T00:00:00",
 		"NomID": "ec692409-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 2
