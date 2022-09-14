@@ -1350,8 +1350,7 @@ class ClassApi extends HtmlServive
 			
 			// получаем включены ли навыки у пользователя
 			$rcv = reqCompanyVipFunctionByCompanyId(array('company_id' => $m['id']));
-vecho($rcv);
-			/*
+
 
 			// сажаем справочники
 			self::cron1cBindAllSpravochniki(array( 'id_1c' => $m['id_1c'] , 'company_id' => $m['id'] ));
@@ -1368,10 +1367,6 @@ vecho($rcv);
 				// сохраняем buy_sell_id переданные купленные (чтобы повторно их не отдавать)
 				$arr = self::Save1cBuySellId_Out1cBuy11(array( 'id_1c' => $m['id_1c'] ));
 				sleep(2);
-				
-				
-				
-				
 				
 			}
 			
@@ -1397,7 +1392,7 @@ vecho($rcv);
 				sleep(2);
 				
 			}
-			*/
+			
 			
 		return '';
 	}
