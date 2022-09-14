@@ -5620,25 +5620,25 @@ function AmoBasket( json , amount , buy_sell_id , where , accounts_id , param , 
 			//alert(data.flag_clear_parent+'*'+data.parent_id+'*'+buy_sell_id);
 			if(data.ok){
 				
-				if(data.modal_errors_message){// выводим модаль с сообщением об ошибки
-					modal_amo.html(data.modal_errors_message);
-					modal_amo.modal();
-					modal_amo.on('shown.bs.modal',
-						function (e) {
+					if(data.modal_errors_message){// выводим модаль с сообщением об ошибки
+						modal_amo.html(data.modal_errors_message);
+						modal_amo.modal();
+						modal_amo.on('shown.bs.modal',
+							function (e) {
 
-							$('.next_etp_next_amo_basket').click(function () {
-								modal_amo.modal('hide');
-								AmoBasket( json , amount , buy_sell_id , where , accounts_id , '' , true )
-							});
+								$('.next_etp_next_amo_basket').click(function () {
+									modal_amo.modal('hide');
+									AmoBasket( json , amount , buy_sell_id , where , accounts_id , '' , true )
+								});
 
-							$('.next_etp_stop_amo_basket').click(function () {
-								modal_amo.modal('hide');
-							});
+								$('.next_etp_stop_amo_basket').click(function () {
+									modal_amo.modal('hide');
+								});
 
-						}
-						).on('hidden.bs.modal', function (e) {
-							$('#modal_amo').modal('dispose');
-						}); 
+							}
+							).on('hidden.bs.modal', function (e) {
+								$('#modal_amo').modal('dispose');
+							}); 
 					}else{
 						if(where=="modal_offer11"){																									
 							$("#div_offer"+buy_sell_id+"").html(data.code);
