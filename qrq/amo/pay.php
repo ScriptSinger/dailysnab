@@ -85,10 +85,6 @@ else
 }
 
 
-$filename = 'logs/'.$pAccountId.'_pay_data.txt';
-$fh = fopen($filename, 'w');
-fwrite($fh, json_encode($postData, JSON_UNESCAPED_UNICODE));
-fclose($fh);
 
 
 $context = stream_context_create(array(
@@ -103,12 +99,6 @@ $context = stream_context_create(array(
 
 $response = file_get_contents('https://userapi.qwep.ru/basket/order', FALSE, $context);
 //$Resp = json_decode($response, JSON_UNESCAPED_UNICODE);
-
-$filename = 'logs/'.$pAccountId.'_pay1.txt';
-$fh = fopen($filename, 'w');
-fwrite($fh, json_encode($response, JSON_UNESCAPED_UNICODE));
-fclose($fh);
-
 
 
 
