@@ -51,18 +51,6 @@ if (isset($_POST['accountid']))
 }
 
 
-$restaccount = file_get_contents('https://questrequest.ru/qrq/amo/accounts.php?token='.$pToken.'&accountid='.$pAccountId);
-if (strlen(trim($restaccount))>0)
-{
-    $restvendor = file_get_contents('https://questrequest.ru/qrq/amo/vendorsget.php?token='.$pToken.'&vid='.$restaccount);
-}
-else
-{
-    $restvendor = '';
-}
-
-if ( (strlen(trim($restaccount))>0) && (strlen(trim($restvendor))>0))
-{
 
 
     $postData = array(
@@ -91,20 +79,6 @@ if ( (strlen(trim($restaccount))>0) && (strlen(trim($restvendor))>0))
 
     echo $response;
 
-}
-else
-{
-    if ( strlen(trim($restaccount))==0 )
-    {
-        echo '111';
-    }
-    else
-    {
-
-        echo ('{"Response":{"errors":[{"code":"222","message":"AccountId='.$pAccountId.' ушел только в корзину","details":null}],"warnings":null}}');
-
-    }
-}
 
 
 ?>
