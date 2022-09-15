@@ -117,11 +117,7 @@ $response = file_get_contents('https://userapi.qwep.ru/basket/order', FALSE, $co
 //$Resp = json_decode($response, JSON_UNESCAPED_UNICODE);
 
 
-
 print_r($response);
-
-
-
 
 
 
@@ -134,9 +130,7 @@ else
     }
     else
     {
-
-        echo ('{"Response":{"errors":[{"code":"222","message":"AccountId='.$pAccountId.' ушел только в корзину","details":null}],"warnings":null}}');
-
+        echo '{"Response":{"errors":[{"code":"222","message":"AccountId='.$pAccountId.' ушел только в корзину","details":null}],"warnings":null}}';
     }
 }
 
