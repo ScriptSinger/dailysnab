@@ -20160,5 +20160,22 @@
 				"Brand": ""
 			}
 		]
+	},
+	{
+		"data1c": "2022-09-15T00:00:00",
+		"DocID": "c69ae1cd-34ed-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "3e37a0b6-becc-11ec-80e4-000c2999d0eb",
+		"Date": "2022-09-15T14:50:24",
+		"IncomeUPD": "7674009",
+		"Goods": [
+			{
+				"NomID": "ec692408-6cbc-11ec-80dd-000c2999d0eb",
+				"Price": 45000,
+				"NDS": 0,
+				"Quantity": 3,
+				"Brand": ""
+			}
+		]
 	}
 ]
