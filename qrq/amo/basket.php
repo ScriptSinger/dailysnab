@@ -683,7 +683,7 @@ else
 
                 var vBut = document.createElement('button');
                 vBut.innerHTML = 'Уже в корзине';
-                vBut.setAttribute("onclick","funBut();" );
+                vBut.setAttribute("onclick","funBut777();" );
                 p.append(vBut);
             
         </script>
