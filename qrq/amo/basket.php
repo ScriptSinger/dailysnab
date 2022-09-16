@@ -674,6 +674,8 @@ else
     }
     else
     {
+        ?>
+        <script>
                 var vBr = document.createElement('br');
                 p.append(vBr);
                 var vBr = document.createElement('br');
@@ -683,6 +685,9 @@ else
                 vBut.innerHTML = 'Уже в корзине';
                 vBut.setAttribute("onclick","funBut();" );
                 p.append(vBut);
+            
+        </script>
+        <?
                 
         // echo '{"Response":{"errors":["code":"222","message":"AccountId='.$pAccountId.' ушел только в корзину","details":null],"warnings":null}}';
     }
