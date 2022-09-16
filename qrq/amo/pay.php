@@ -51,18 +51,7 @@ foreach ($pieces as $value)
 }
 
 
-$restaccount = file_get_contents('https://questrequest.ru/qrq/amo/accounts.php?token='.$pToken.'&accountid='.$pAccountId);
-if (strlen(trim($restaccount))>0)
-{
-    $restvendor = file_get_contents('https://questrequest.ru/qrq/amo/vendorsget.php?token='.$pToken.'&vid='.$restaccount);
-}
-else
-{
-    $restvendor = '';
-}
 
-if ( (strlen(trim($restaccount))>0) && (strlen(trim($restvendor))>0))
-{
 
 
 
@@ -120,19 +109,6 @@ $response = file_get_contents('https://userapi.qwep.ru/basket/order', FALSE, $co
 print_r($response);
 
 
-
-}
-else
-{
-    if ( strlen(trim($restaccount))==0 )
-    {
-        echo '111';
-    }
-    else
-    {
-        echo '{"Response":{"errors":[{"code":"222","message":"AccountId='.$pAccountId.' ушел только в корзину","details":null}],"warnings":null}}';
-    }
-}
 
 
 
