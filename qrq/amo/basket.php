@@ -675,6 +675,7 @@ else
     else
     {
         ?>
+        <div id="basket_body"></div>
         <script>
         
               //  var vBr = document.createElement('br');
