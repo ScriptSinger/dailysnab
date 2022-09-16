@@ -675,7 +675,7 @@ else
     else
     {
         ?>
-        <div id="basket_body"></div>
+        <div id="basket_body">test</div>
         <script>
         
               //  var vBr = document.createElement('br');
@@ -693,7 +693,6 @@ else
         </script>
         <?
         
-
                 
      //    echo '{"Response":{"errors":["code":"222","message":"AccountId='.$pAccountId.' ушел только в корзину","details":null],"warnings":null}}';
     }
