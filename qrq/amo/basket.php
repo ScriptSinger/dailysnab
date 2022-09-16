@@ -110,6 +110,18 @@ echo "<input type='text' id='temp' >";
 echo "<br><br>";
 */
 
+$restaccount = file_get_contents('https://questrequest.ru/qrq/amo/accounts.php?token='.$pToken.'&accountid='.$pAccountId);
+if (strlen(trim($restaccount))>0)
+{
+    $restvendor = file_get_contents('https://questrequest.ru/qrq/amo/vendorsget.php?token='.$pToken.'&vid='.$restaccount);
+}
+else
+{
+    $restvendor = '';
+}
+
+if ( (strlen(trim($restaccount))>0) && (strlen(trim($restvendor))>0))
+{
 
 
 
@@ -573,6 +585,7 @@ echo "<br><br>";
 
                         // надо вставить эту переменную
                         // pRestParam
+                        AmoBasket(request.responseText,<? echo $pAmount; ?>,<? echo $pBuy_sell_id; ?>,<? echo '"'.$pWhere.'"'; ?> , <? echo $pAccountId; ?> , pRestParam );
 
 
 
@@ -649,5 +662,22 @@ echo "<br><br>";
     {
         echo '';
     }
+    
+    
+
+}
+else
+{
+    if ( strlen(trim($restaccount))==0 )
+    {
+        echo '111';
+    }
+    else
+    {
+        echo '{"Response":{"errors":["code":"222","message":"AccountId='.$pAccountId.' ушел только в корзину","details":null],"warnings":null}}';
+    }
+}
+
+    
 
 ?>
