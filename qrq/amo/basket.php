@@ -674,7 +674,17 @@ else
     }
     else
     {
-        echo '{"Response":{"errors":["code":"222","message":"AccountId='.$pAccountId.' ушел только в корзину","details":null],"warnings":null}}';
+                var vBr = document.createElement('br');
+                p.append(vBr);
+                var vBr = document.createElement('br');
+                p.append(vBr);
+
+                var vBut = document.createElement('button');
+                vBut.innerHTML = 'Уже в корзине';
+                vBut.setAttribute("onclick","funBut();" );
+                p.append(vBut);
+                
+        // echo '{"Response":{"errors":["code":"222","message":"AccountId='.$pAccountId.' ушел только в корзину","details":null],"warnings":null}}';
     }
 }
 
