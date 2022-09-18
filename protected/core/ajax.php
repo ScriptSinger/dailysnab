@@ -3137,6 +3137,7 @@ if(LOGIN_ID){
 
         $json = isset($_POST['json'])? $_POST['json'] : '';
 
+vecho($json);
         $json = json_decode($json);
 
         if(!$in['flag']){// обрабатываем ошибку
@@ -3155,7 +3156,6 @@ if(LOGIN_ID){
         }
 
 
-vecho($json);
 
         if($json){
 
