@@ -673,12 +673,9 @@ else
     }
     else
     {
-        ?>
-  
-        <?
-        
+        echo "<button>Уже в корзине</button>";
                 
-         echo '{"Response":{"errors":["code":"222","message":"AccountId='.$pAccountId.' ушел только в корзину","details":null],"warnings":null}}';
+        // echo '{"Response":{"errors":["code":"222","message":"AccountId='.$pAccountId.' ушел только в корзину","details":null],"warnings":null}}';
     }
 }
 
