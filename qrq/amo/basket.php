@@ -677,8 +677,9 @@ else
         <script>
         function funButNew()
         {
-            var pRestParam0 = '{"Response":{"errors":["code":"222","message":"AccountId='+<? echo $pAccountId; ?>+' ушел только в корзину","details":null],"warnings":null}}';
-            var pRestParam = '';
+            //var pRestParam0 = '{"Response":{"errors":["code":"222","message":"AccountId='+<? echo $pAccountId; ?>+' ушел только в корзину","details":null],"warnings":null}}';
+            var pRestParam0 = '{"Response":{"entity":{"baskets":null,"status":false},"errors":[{"code":"222","message":"AccountId='+<? echo $pAccountId; ?>+' ушел только в корзину","details":null,"accountId":null}],"warnings":null}}';
+			var pRestParam = '';
             AmoBasket(pRestParam0,<? echo $pAmount; ?>,<? echo $pBuy_sell_id; ?>,<? echo '"'.$pWhere.'"'; ?> , <? echo $pAccountId; ?> , pRestParam );
         }
         </script>
