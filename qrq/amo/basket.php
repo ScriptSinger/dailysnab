@@ -677,7 +677,8 @@ else
         <script>
         function funButNew()
         {
-            alert('111');
+            var pRestParam = '{"Response":{"errors":["code":"222","message":"AccountId='.$pAccountId.' ушел только в корзину","details":null],"warnings":null}}';
+            AmoBasket(request.responseText,<? echo $pAmount; ?>,<? echo $pBuy_sell_id; ?>,<? echo '"'.$pWhere.'"'; ?> , <? echo $pAccountId; ?> , pRestParam );
         }
         </script>
         
