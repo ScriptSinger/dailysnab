@@ -677,10 +677,9 @@ else
         <script>
         function funButNew()
         {
-            alert('111');
-            var pRestParam = '{"Response":{"errors":["code":"222","message":"AccountId='+<? echo $pAccountId; ?>+' ушел только в корзину","details":null],"warnings":null}}';
-            alert('222 = '+pRestParam);
-            AmoBasket(request.responseText,<? echo $pAmount; ?>,<? echo $pBuy_sell_id; ?>,<? echo '"'.$pWhere.'"'; ?> , <? echo $pAccountId; ?> , pRestParam );
+            var pRestParam0 = '{"Response":{"errors":["code":"222","message":"AccountId='+<? echo $pAccountId; ?>+' ушел только в корзину","details":null],"warnings":null}}';
+            var pRestParam = '';
+            AmoBasket(pRestParam0,<? echo $pAmount; ?>,<? echo $pBuy_sell_id; ?>,<? echo '"'.$pWhere.'"'; ?> , <? echo $pAccountId; ?> , pRestParam );
         }
         </script>
         
