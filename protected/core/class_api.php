@@ -1188,7 +1188,7 @@ class ClassApi extends HtmlServive
 											
 											echo 'добавляем в купленное '.$DocID.'<br/>';
 											
-											/*
+											
 											$arr = reqInsertBuySell(array(	'login_id'			=> $login_id,
 																			'company_id'		=> $in['company_id'],
 																			'company_id2'		=> $company_id2,
@@ -1266,7 +1266,7 @@ class ClassApi extends HtmlServive
 													}
 													
 											}
-											*/
+											
 									}
 									
 							}
