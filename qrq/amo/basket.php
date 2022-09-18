@@ -682,8 +682,6 @@ else
             AmoBasket(pRestParam0,<? echo $pAmount; ?>,<? echo $pBuy_sell_id; ?>,<? echo '"'.$pWhere.'"'; ?> , <? echo $pAccountId; ?> , pRestParam );
         }
         </script>
-        
-
         <?
         echo "<button onclick=\"funButNew();\" >Уже в корзине</button>";
                 
