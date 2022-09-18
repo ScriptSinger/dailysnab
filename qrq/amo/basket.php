@@ -684,7 +684,7 @@ else
         }
         </script>
         <?
-        echo "<button onclick=\"funButNew();\" >Уже в корзине</button>";
+        echo "<button onclick=\"funButNew();\" >Купить</button>";
                 
         // echo '{"Response":{"errors":["code":"222","message":"AccountId='.$pAccountId.' ушел только в корзину","details":null],"warnings":null}}';
     }
