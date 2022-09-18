@@ -1214,7 +1214,7 @@ class ClassApi extends HtmlServive
 																			'comments_company'	=> '',
 																			'responsible_id'	=> '',
 																			'availability'		=> '',
-																			'nomenclature_id'	=> $r_p['nomenclature_id'],
+																			'nomenclature_id'	=> $nomenclature_id,
 																			'multiplicity'		=> '',
 																			'min_party'			=> '',
 																			'delivery_id'		=> '',
