@@ -120,12 +120,13 @@ else
     $restvendor = '';
 }
 
+/*
 // Мидкам
-if ($restaccount=='4fe3e4b-fc4f-4727-99d7-75e07ec0cc96') 
+if ($restaccount=='74fe3e4b-fc4f-4727-99d7-75e07ec0cc96') 
 {
     $restvendor = '';
 }
-
+*/
 
 echo "restaccount = ".$restaccount;
 echo "<br>";
