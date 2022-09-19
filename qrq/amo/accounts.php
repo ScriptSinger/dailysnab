@@ -65,8 +65,7 @@ if (is_array($items))
         {
             if ( ($pvid=='df837bc1-599b-46f7-83b5-3a764ce850e0') or
                  ($pvid=='977ff8fc-6ecc-403a-b6b9-e39abdadfa45') or
-                 ($pvid=='0dd3d1c5-acf3-4805-ac14-5e9ab9ed2a46') or
-                 ($pvid=='4fe3e4b-fc4f-4727-99d7-75e07ec0cc96') 
+                 ($pvid=='0dd3d1c5-acf3-4805-ac14-5e9ab9ed2a46') 
 
                 // Armtek API
                 or ($pvid=='2a9a260a-474c-4ff9-a304-f99f38319319')
