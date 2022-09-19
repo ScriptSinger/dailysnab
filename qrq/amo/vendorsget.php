@@ -56,6 +56,7 @@ $context = stream_context_create(array(
 
 $response = file_get_contents('https://userapi.qwep.ru/vendors', FALSE, $context);
 $Resp = json_decode($response);
+
 if(!empty($Resp->Response->entity->vendors[0]->checkout))
     $items = $Resp->Response->entity->vendors[0]->checkout;
 
