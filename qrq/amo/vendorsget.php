@@ -1,6 +1,6 @@
 <?php
 
-// https://questrequest.ru/qrq/amo/vendorsget.php?token=73b7d210f74223b6cf3f35f63b8da6ed63fd45c8
+// https://questrequest.ru/qrq/amo/vendorsget.php?token=73b7d210f74223b6cf3f35f63b8da6ed63fd45c8&vid=74fe3e4b-fc4f-4727-99d7-75e07ec0cc96
 
 
 $pToken = '';
