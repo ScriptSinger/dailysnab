@@ -120,25 +120,18 @@ else
     $restvendor = '';
 }
 
-/*
+
 // Мидкам
 if ($restaccount=='74fe3e4b-fc4f-4727-99d7-75e07ec0cc96') 
 {
     $restvendor = '';
 }
-*/
 
-echo "restaccount = ".$restaccount;
-echo "<br>";
-echo "restvendor = ".$restvendor;
-echo "<br>";
 
 
 if ( (strlen(trim($restaccount))>0) && (strlen(trim($restvendor))>0))
 {
 
-    
-echo "goooo";
 
     $postData = array(
         'Request'=>array(

@@ -177426,5 +177426,86 @@
 				"Brand": ""
 			}
 		]
+	},
+	{
+		"data1c": "2022-09-19T00:00:00",
+		"DocID": "476aa0ab-37ed-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "db5c5888-fc33-11ec-8dab-000c295de724",
+		"Date": "2022-09-16T23:59:59",
+		"WhID": "a9fce973-6dec-11ec-80bf-000c292c2d55",
+		"Goods": [
+			{
+				"NomID": "97bb5f7d-6cc9-11ec-80dd-000c2999d0eb",
+				"Price": 1200,
+				"NDS": 0,
+				"Quantity": 56.25,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-09-19T00:00:00",
+		"DocID": "386ca834-37ef-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "7e1b61d6-6ebc-11ec-80bf-000c292c2d55",
+		"Date": "2022-09-19T12:46:51",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Goods": [
+			{
+				"NomID": "9246f2a3-6cbc-11ec-80dd-000c2999d0eb",
+				"Price": 9,
+				"NDS": 0,
+				"Quantity": 10,
+				"Brand": ""
+			},
+			{
+				"NomID": "d7b8ce7c-6cc8-11ec-80dd-000c2999d0eb",
+				"Price": 128,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-09-19T00:00:00",
+		"DocID": "bb2aa339-37ef-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "05fcaf32-6e02-11ec-80bf-000c292c2d55",
+		"Date": "2022-09-19T12:50:30",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Goods": [
+			{
+				"NomID": "8c4527a3-6cbc-11ec-80dd-000c2999d0eb",
+				"Price": 47,
+				"NDS": 0,
+				"Quantity": 6,
+				"Brand": ""
+			},
+			{
+				"NomID": "9246f2a2-6cbc-11ec-80dd-000c2999d0eb",
+				"Price": 11,
+				"NDS": 0,
+				"Quantity": 10,
+				"Brand": ""
+			},
+			{
+				"NomID": "9246f2a3-6cbc-11ec-80dd-000c2999d0eb",
+				"Price": 9,
+				"NDS": 0,
+				"Quantity": 10,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-09-19T00:00:00",
+		"DocID": "71bb7552-37f0-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "1d79de67-676f-11eb-80c5-000c2999d0eb",
+		"Date": "2022-09-19T12:55:42",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Goods": []
 	}
 ]
