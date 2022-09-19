@@ -1171,9 +1171,7 @@ class ClassApi extends HtmlServive
 							
 							}else{// добавляем в купленное
 									
-									// получаем login_id
-									$r = reqCompany(array('id'=>$in['company_id']));
-									$login_id = $r['login_id'];
+									
 									
 									// получаем контрагента у кого купили по ContractorID
 									$rc = req1cCompanyCompanyById1c(array('id_1c'=>$ContractorID,'company_id'=>$in['company_id']));
@@ -1184,14 +1182,19 @@ class ClassApi extends HtmlServive
 									$nomenclature_id = $rn['nomenclature_id'];
 									
 									
+									// получаем login_id
+									$r = reqCompany(array('id'=>$company_id2));
+									$login_id = $r['login_id'];
+									
+									
 									if( $login_id && $company_id2 && $categories_id && $nomenclature_id ){// есть привязка
 											
 											echo 'добавляем в купленное '.$DocID.'<br/>';
 											
 											
 											$arr = reqInsertBuySell(array(	'login_id'			=> $login_id,
-																			'company_id'		=> $in['company_id'],
-																			'company_id2'		=> $company_id2,
+																			'company_id'		=> $company_id2,
+																			'company_id2'		=> $in['company_id'],
 																			'parent_id'			=> 0,
 																			'copy_id'			=> 0,
 																			'flag_buy_sell'		=> 2,
