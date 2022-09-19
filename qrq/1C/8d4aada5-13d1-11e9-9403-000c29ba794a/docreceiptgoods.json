@@ -24071,19 +24071,6 @@
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-09-15T17:02:11",
-				"buy_sell_id": "6820540",
-				"NomID": "1d0d5aa5-28c0-11ed-8db7-0cc47a03c9dc",
-				"Price": 6084,
-				"NDS": 0,
-				"Quantity": 1,
-				"Brand": ""
-			},
-			{
-				"DocID": "7098b0d6-34ea-11ed-8db7-0cc47a03c9dc",
-				"StrID": 2,
-				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
-				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
-				"Date": "2022-09-15T17:02:11",
 				"buy_sell_id": "6938515",
 				"NomID": "bedf5e5c-6cbd-11ec-80dd-000c2999d0eb",
 				"Price": 685,
@@ -24093,7 +24080,7 @@
 			},
 			{
 				"DocID": "7098b0d6-34ea-11ed-8db7-0cc47a03c9dc",
-				"StrID": 3,
+				"StrID": 2,
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-09-15T17:02:11",
@@ -24106,7 +24093,7 @@
 			},
 			{
 				"DocID": "7098b0d6-34ea-11ed-8db7-0cc47a03c9dc",
-				"StrID": 4,
+				"StrID": 3,
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-09-15T17:02:11",
@@ -24119,7 +24106,7 @@
 			},
 			{
 				"DocID": "7098b0d6-34ea-11ed-8db7-0cc47a03c9dc",
-				"StrID": 5,
+				"StrID": 4,
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-09-15T17:02:11",
@@ -24132,7 +24119,7 @@
 			},
 			{
 				"DocID": "7098b0d6-34ea-11ed-8db7-0cc47a03c9dc",
-				"StrID": 6,
+				"StrID": 5,
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-09-15T17:02:11",
@@ -24145,7 +24132,7 @@
 			},
 			{
 				"DocID": "7098b0d6-34ea-11ed-8db7-0cc47a03c9dc",
-				"StrID": 7,
+				"StrID": 6,
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-09-15T17:02:11",
