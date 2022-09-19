@@ -178100,5 +178100,14 @@
 				"Brand": ""
 			}
 		]
+	},
+	{
+		"data1c": "2022-09-19T00:00:00",
+		"DocID": "f324a111-380e-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "1d79de67-676f-11eb-80c5-000c2999d0eb",
+		"Date": "2022-09-19T16:33:58",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Goods": []
 	}
 ]
