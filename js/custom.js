@@ -5203,6 +5203,7 @@ function Select2InterestsCompanyParamCities(){
 
 
 // Загрузка файлов
+var up;
 function getUploadFiles( id ){
 	
 	if(up){
