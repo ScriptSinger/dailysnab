@@ -532,7 +532,7 @@ $(function(){
 									
 									getOnlyNumber();
 									
-									getUploadFiles('');
+									getUploadFiles(d.id);
 									
 									MainJs_Search();
 
