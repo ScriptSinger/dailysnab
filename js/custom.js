@@ -535,7 +535,7 @@ $(function(){
 
 									
 									getOnlyNumber();
-									
+									alert(id);
 									getUploadFiles(id);
 									
 									MainJs_Search();
@@ -5215,7 +5215,7 @@ function getUploadFiles( id ){
 				height:1,
 				width:400,
 				name:"files",
-				link:"mylist"+id+"",  upload: "/upload_files_buy_sell", autosend:false,
+				link:"mylist",  upload: "/upload_files_buy_sell", autosend:false,
 				on:{
 					onBeforeFileAdd:function(item){
 						var type = item.type.toLowerCase();
@@ -5237,7 +5237,7 @@ function getUploadFiles( id ){
 								}*/
 			},
 			{
-				view:"list", scroll:false, id:"mylist"+id+"", type:"uploader",
+				view:"list", scroll:false, id:"mylist", type:"uploader",
 				autoheight:true, borderless:true	
 			}
 			]
