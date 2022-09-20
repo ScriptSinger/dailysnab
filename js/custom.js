@@ -502,10 +502,13 @@ $(function(){
 		
 		modal.modal('dispose');
 		
-		var id = d.id;
+		
 		//$('#vmodal').modal('hide');
 		
 		var d = $(this).data();
+		
+		var id = d.id;
+		
 		var flag_offer_share = d.flag_offer_share;
 		$.post("/modal_buy_sell", { id:d.id , flag_buy_sell:d.flag_buy_sell , share_url:d.share_url, status:d.status , flag:d.flag }, 
 			function(data){
