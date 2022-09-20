@@ -535,7 +535,7 @@ $(function(){
 
 									
 									getOnlyNumber();
-									alert(id);
+									
 									getUploadFiles('');
 									
 									MainJs_Search();
