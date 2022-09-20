@@ -5202,7 +5202,7 @@ function Select2InterestsCompanyParamCities(){
 function getUploadFiles( id ){
 	
 	webix.ready(function() {
-
+		alert('1');
 		webix.ui({
 			container:"container_upload_files"+id+"",
 			rows:[
@@ -5231,14 +5231,14 @@ function getUploadFiles( id ){
 									//flag : $('#flag_upload').val(),
 									//id: $('#id_upload').val()
 								}*/
-							},
-							{
-								view:"list", scroll:false, id:"mylist"+id+"", type:"uploader",
-								autoheight:true, borderless:true	
-							}
-							]
-						});
-
+			},
+			{
+				view:"list", scroll:false, id:"mylist"+id+"", type:"uploader",
+				autoheight:true, borderless:true	
+			}
+			]
+		});
+		alert('2');
 	});
 }
 
