@@ -174294,28 +174294,21 @@
 				"NomID": "4e565507-6934-11ec-80dd-000c2999d0eb",
 				"Price": 53.4,
 				"NDS": 0,
-				"Quantity": 7111.24,
+				"Quantity": 5458.72,
 				"Brand": ""
 			},
 			{
 				"NomID": "7e7a23e4-6934-11ec-80dd-000c2999d0eb",
 				"Price": 47.35,
 				"NDS": 0,
-				"Quantity": 315.51,
+				"Quantity": 232.88,
 				"Brand": ""
 			},
 			{
 				"NomID": "4e565507-6934-11ec-80dd-000c2999d0eb",
 				"Price": 53.4,
 				"NDS": 0,
-				"Quantity": 5305.52,
-				"Brand": ""
-			},
-			{
-				"NomID": "4e565507-6934-11ec-80dd-000c2999d0eb",
-				"Price": 53.4,
-				"NDS": 0,
-				"Quantity": 650,
+				"Quantity": 4487.27,
 				"Brand": ""
 			},
 			{
@@ -174605,7 +174598,7 @@
 				"NomID": "7e7a23e4-6934-11ec-80dd-000c2999d0eb",
 				"Price": 47.35,
 				"NDS": 0,
-				"Quantity": 289.38,
+				"Quantity": 372.01,
 				"Brand": ""
 			},
 			{
@@ -174634,6 +174627,27 @@
 				"Price": 53.4,
 				"NDS": 0,
 				"Quantity": 52.02,
+				"Brand": ""
+			},
+			{
+				"NomID": "4e565507-6934-11ec-80dd-000c2999d0eb",
+				"Price": 53.4,
+				"NDS": 0,
+				"Quantity": 650,
+				"Brand": ""
+			},
+			{
+				"NomID": "4e565507-6934-11ec-80dd-000c2999d0eb",
+				"Price": 53.4,
+				"NDS": 0,
+				"Quantity": 1652.52,
+				"Brand": ""
+			},
+			{
+				"NomID": "4e565507-6934-11ec-80dd-000c2999d0eb",
+				"Price": 53.4,
+				"NDS": 0,
+				"Quantity": 818.25,
 				"Brand": ""
 			}
 		]
