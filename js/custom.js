@@ -5202,7 +5202,7 @@ function Select2InterestsCompanyParamCities(){
 function getUploadFiles( id ){
 	
 	webix.ready(function() {
-		alert('1');
+		alert(id);
 		webix.ui({
 			container:"container_upload_files"+id+"",
 			rows:[
