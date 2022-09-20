@@ -502,6 +502,7 @@ $(function(){
 		
 		modal.modal('dispose');
 		
+		var id = d.id;
 		//$('#vmodal').modal('hide');
 		
 		var d = $(this).data();
@@ -532,7 +533,7 @@ $(function(){
 									
 									getOnlyNumber();
 									
-									getUploadFiles(d.id);
+									getUploadFiles(id);
 									
 									MainJs_Search();
 
