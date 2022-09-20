@@ -5210,7 +5210,7 @@ function getUploadFiles( id ){
 	}
 
 	
-	webix.ready(function() {
+	//webix.ready(function() {
 
 		up = webix.ui({
 			container:"container_upload_files"+id+"",
@@ -5248,7 +5248,7 @@ function getUploadFiles( id ){
 			]
 		});
 
-	});
+	//});
 }
 
 
