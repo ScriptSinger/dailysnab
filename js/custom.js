@@ -5206,7 +5206,7 @@ function Select2InterestsCompanyParamCities(){
 function getUploadFiles( id ){
 	
 	webix.ready(function() {
-		alert(id);
+
 		webix.ui({
 			container:"container_upload_files"+id+"",
 			rows:[
@@ -5242,7 +5242,7 @@ function getUploadFiles( id ){
 			}
 			]
 		});
-		alert('2');
+
 	});
 }
 
