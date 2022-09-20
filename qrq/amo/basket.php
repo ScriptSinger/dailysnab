@@ -173,13 +173,13 @@ if ( (strlen(trim($restaccount))>0) && (strlen(trim($restvendor))>0))
 
 
 
-        
+        /*
             echo '<pre>';
             print_r($Resp);
             echo '</pre>';
             echo "<br>";
-           echo "<br>";
-        
+            echo "<br>";
+        */
 
         $error = $Resp['Response']['errors'];
         $warnings = $Resp['Response']['warnings'];
@@ -252,7 +252,6 @@ if ( (strlen(trim($restaccount))>0) && (strlen(trim($restvendor))>0))
 
                         if (pFormArray[i]['typeName']=='InputField')
                         {
-                            alert('pTitle = '+pTitle);
                             funInputText(pFieldName,pTitle,pFieldId);
                         }
                         if (pFormArray[i]['typeName']=='TextareaField')
@@ -593,8 +592,7 @@ if ( (strlen(trim($restaccount))>0) && (strlen(trim($restvendor))>0))
 
                         // надо вставить эту переменную
                         // pRestParam
-                     
-
+                        AmoBasket(request.responseText,<? echo $pAmount; ?>,<? echo $pBuy_sell_id; ?>,<? echo '"'.$pWhere.'"'; ?> , <? echo $pAccountId; ?> , pRestParam );
 
 
                         //alert(request.responseText);
