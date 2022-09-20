@@ -5205,14 +5205,14 @@ function Select2InterestsCompanyParamCities(){
 // Загрузка файлов
 function getUploadFiles( id ){
 	
-	if($$("container_upload_files"+id+"")){
-        $$("container_upload_files"+id+"").destructor();
+	if(up){
+        up.destructor();
 	}
 
 	
 	webix.ready(function() {
 
-		webix.ui({
+		up = webix.ui({
 			container:"container_upload_files"+id+"",
 			rows:[
 			{ 
