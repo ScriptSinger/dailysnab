@@ -5205,8 +5205,9 @@ function Select2InterestsCompanyParamCities(){
 // Загрузка файлов
 function getUploadFiles( id ){
 	
-
+	if($$("container_upload_files"+id+"")){
         $$("container_upload_files"+id+"").destructor();
+	}
 
 	
 	webix.ready(function() {
