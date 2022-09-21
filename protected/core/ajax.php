@@ -239,8 +239,8 @@ elseif($_GET['route'] == 'authorization_sms'){
         $pass = $g->vmd5($in['pass']);
         $row = reqLogin(array('email'=>$in['email'],'pass'=>$pass));
         //$login_id = $row['id'];
-        $row['id'] = 378;
-        $row['active'] = 1;
+        //$row['id'] = 378;
+        //$row['active'] = 1;
         //	if($login_id){
         //		$row_login = reqCompany(array('login_id'=>$login_id,'flag_account'=>1));	//для получения телефонного номера
         //	}
