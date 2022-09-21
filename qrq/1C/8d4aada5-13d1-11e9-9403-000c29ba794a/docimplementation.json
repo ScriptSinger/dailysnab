@@ -178562,5 +178562,77 @@
 				"Brand": ""
 			}
 		]
+	},
+	{
+		"data1c": "2022-09-21T00:00:00",
+		"DocID": "4311b574-396c-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "05fcaf32-6e02-11ec-80bf-000c292c2d55",
+		"Date": "2022-09-21T10:14:26",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Goods": [
+			{
+				"NomID": "3b66cbf1-6cbf-11ec-80dd-000c2999d0eb",
+				"Price": 462,
+				"NDS": 0,
+				"Quantity": 2,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-09-21T00:00:00",
+		"DocID": "c46bc246-396d-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "8f4d4b4a-6ebc-11ec-80bf-000c292c2d55",
+		"Date": "2022-09-21T10:25:13",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Goods": [
+			{
+				"NomID": "2695ebe9-6cb9-11ec-80dd-000c2999d0eb",
+				"Price": 24934,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": "Volture"
+			}
+		]
+	},
+	{
+		"data1c": "2022-09-21T00:00:00",
+		"DocID": "f6162f52-396d-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "8f4d4b4a-6ebc-11ec-80bf-000c292c2d55",
+		"Date": "2022-09-21T10:26:37",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Goods": [
+			{
+				"NomID": "1112534f-6cc8-11ec-80dd-000c2999d0eb",
+				"Price": 139,
+				"NDS": 0,
+				"Quantity": 5,
+				"Brand": ""
+			},
+			{
+				"NomID": "a44c54a3-6cbc-11ec-80dd-000c2999d0eb",
+				"Price": 7,
+				"NDS": 0,
+				"Quantity": 50,
+				"Brand": ""
+			},
+			{
+				"NomID": "d45d3229-6cbc-11ec-80dd-000c2999d0eb",
+				"Price": 2,
+				"NDS": 0,
+				"Quantity": 50,
+				"Brand": ""
+			},
+			{
+				"NomID": "1d5dd414-6cbf-11ec-80dd-000c2999d0eb",
+				"Price": 3,
+				"NDS": 0,
+				"Quantity": 100,
+				"Brand": ""
+			}
+		]
 	}
 ]
