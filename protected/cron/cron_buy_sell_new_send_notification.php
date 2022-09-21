@@ -44,9 +44,9 @@
 			$arr_email = [];
 			foreach($row2 as $k=>$mm){
 				if (!in_array($mm['email'], $arr_email)) {
-					echo $mm['email'].' - обработка';
+					echo $mm['email'].' - обработка<br/>';
 				}else{
-					echo $mm['email'].' - double';
+					echo $mm['email'].' - double<br/>';
 				}
 				
 				
@@ -103,7 +103,7 @@
 							}
 							
 					}
-					*/
+					
 				}
 				/*
 				// лог send
