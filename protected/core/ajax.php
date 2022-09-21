@@ -834,16 +834,7 @@ elseif($_GET['route'] == 'modal_getPassword'){
 
     $jsd['code'] = $code;
 }
-// модальное окно Регистрация
-elseif($_GET['route'] == 'modal_registration'){
 
-    $arr = $f->FormRegistration(array('id'=>$in['id'],'email'=>$in['email'],'name'=>$in['name'],'phone'=>$in['phone2']));
-
-    $code = $t->getModal(	array('class_dialog'=>'register-dialog', 'class_content'=>'register','content'=>$arr['content']),
-        array('id'=>'registration-form','class'=>''));
-
-    $jsd['code'] = $code;
-}
 // сохранить Регистрация
 elseif($_GET['route'] == 'registration'){
     $ok = $recaptcha = false;
