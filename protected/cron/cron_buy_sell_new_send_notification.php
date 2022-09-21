@@ -36,7 +36,10 @@
 							)
 							/*
 							AND pvs.data_visited<'".$m['data_status_buy_sell_23']."'
-							*/ 
+							*/
+							
+							AND NOT (SELECT email FROM login l WHERE l.id=pvs.login_id) IN ('nokkdeoniszxc@gmail.com_v_admin')
+							
 					ORDER BY 3 DESC
 				";
 
