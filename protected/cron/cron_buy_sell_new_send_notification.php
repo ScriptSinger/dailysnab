@@ -26,7 +26,7 @@
 					WHERE c.id=pvs.company_id AND pvs.page_id=1 
 							AND c.id<>".$m['company_id']."
 							AND c.active=1
-							AND c.flag_account=1
+							/*AND c.flag_account=1*/
 							AND (SELECT email FROM login l WHERE l.id=c.login_id) LIKE '%@%'
 							AND ( 
 								(TIMESTAMPDIFF(SECOND,pvs.data_last_send_email,NOW())) IS NULL
