@@ -36,7 +36,8 @@
 							)
 							/*
 							AND pvs.data_visited<'".$m['data_status_buy_sell_23']."'
-							*/  
+							*/ 
+					ORDER BY 3 DESC
 				";
 
 			$row2 = PreExecSQL_all($sql,array());
@@ -109,7 +110,7 @@
 						///
 								
 				}else{
-					echo $mm['email'].' - double<br/>';
+					echo $mm['email'].' - double (иключаем повторы в выборке)<br/>';
 				}
 				
 				
