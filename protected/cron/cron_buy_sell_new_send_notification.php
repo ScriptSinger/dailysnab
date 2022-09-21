@@ -44,82 +44,83 @@
 			$arr_email = [];
 			foreach($row2 as $k=>$mm){
 				if (!in_array($mm['email'], $arr_email)) {
-					echo $mm['email'].' - обработка<br/>';
+					
+						$rez =   'uslovie 0 (interesi)';
+						// проверяем компания удавлетворяет "Интересу"
+						$sql = "	SELECT bs.id FROM buy_sell bs
+								WHERE bs.id=".$m['buy_sell_id']."
+										 AND (	bs.status_buy_sell_id IN (3)
+													OR ( bs.status_buy_sell_id IN (2) AND bs.company_id IN ( SELECT t.company_id_out FROM subscriptions t WHERE t.company_id_in=".$mm['company_id']." ) ) 
+												)
+										".$g->SqlCompanyInterests(array('company_id'=>$mm['company_id']))." ";
+						$row3 = PreExecSQL_one($sql,array());
+						
+		//echo $mm['company_id'].'***'.$sql.'<br/><br/>';
+
+						if($row3['id']){
+							$rez =   'uslovie 1 (uslovie polucheniya)';
+							// пользователь указал получать "все заявки" или только "срочные"
+							if( (!$mm['notification_param_id_10']||$mm['notification_param_id_10']==1)  || ($m['urgency_id']==1&&(!$mm['notification_param_id_11']||$mm['notification_param_id_11']==1)) ){
+									$rez =   'uslovie 2 (sutki ne proshli) ';
+									
+									if(empty($mm['flag_data_last_send_email'])||$mm['flag_data_last_send_email']>86400){// прошли сутки с последнего уведомления или уведомление не отправлялось (или был на странице "заявки")
+											
+											$rez =   'uslovie 3 (tehnicheskiy sboy otpravki) ';
+
+											if( $mm['notification_param_id_10']==3 && $m['urgency_id']==1 && (!$mm['notification_param_id_11']||$mm['notification_param_id_11']==1)){// шаблон id=11
+												$notification_id = 11;
+											}else{
+												$notification_id = 10;
+											}
+											
+											//$mm['email'] = 'vdo81@yandex.ru';
+											$arr['rez'] = '';
+											
+											sleep(2);
+											$validate_email = (filter_var($mm['email'], FILTER_VALIDATE_EMAIL));
+											if($validate_email){
+												$arr = $tes->LetterSendNotification(array('notification_id'			=> $notification_id,
+																						'email'						=> $mm['email'],
+																						'name'						=> $mm['company'] ));
+											}
+											
+											if($arr['rez']){
+													// обновляем дату последней отправки (она очищается при посещении пользователем страници "заявки")
+													$STH = PreExecSQL(" UPDATE company_page_visited_send SET data_last_send_email=NOW()
+																										WHERE company_id IN (SELECT t.id FROM company t WHERE t.login_id=(SELECT l.id FROM login l WHERE l.email=? ))
+																											AND page_id=1 ; " ,
+																						array( $mm['email']));
+													echo $mm['company_id'].'<br/>';
+											}
+											$rez = ($arr['rez'])? 'send' : 'nosend';
+											
+									}
+									
+							}
+							
+						}
+						
+						// лог send
+							$file = $_SERVER['DOCUMENT_ROOT'] .'/send.txt';
+							$fp = fopen($file, "a");
+							$mytext = date("Y-m-d H:i:s")." -  buy_sell_id=".$m['buy_sell_id']." - email=".$mm['email']." - ".$rez." \r\n\r\n ";
+							$test = fwrite($fp, $mytext);
+							fclose($fp);		
+						///
+								
 				}else{
 					echo $mm['email'].' - double<br/>';
 				}
 				
 				
-				$arr_email[] = $mm['email'];
-				
-				/*
-				$rez =   'uslovie 0 (interesi)';
-				// проверяем компания удавлетворяет "Интересу"
-				$sql = "	SELECT bs.id FROM buy_sell bs
-						WHERE bs.id=".$m['buy_sell_id']."
-								 AND (	bs.status_buy_sell_id IN (3)
-											OR ( bs.status_buy_sell_id IN (2) AND bs.company_id IN ( SELECT t.company_id_out FROM subscriptions t WHERE t.company_id_in=".$mm['company_id']." ) ) 
-										)
-								".$g->SqlCompanyInterests(array('company_id'=>$mm['company_id']))." ";
-				$row3 = PreExecSQL_one($sql,array());
-				
-//echo $mm['company_id'].'***'.$sql.'<br/><br/>';
+				$arr_email[] = $mm['email'];// иключаем повторы в выборке
 
-				if($row3['id']){
-					$rez =   'uslovie 1 (uslovie polucheniya)';
-					// пользователь указал получать "все заявки" или только "срочные"
-					if( (!$mm['notification_param_id_10']||$mm['notification_param_id_10']==1)  || ($m['urgency_id']==1&&(!$mm['notification_param_id_11']||$mm['notification_param_id_11']==1)) ){
-							$rez =   'uslovie 2 (sutki ne proshli) ';
-							
-							if(empty($mm['flag_data_last_send_email'])||$mm['flag_data_last_send_email']>86400){// прошли сутки с последнего уведомления или уведомление не отправлялось (или был на странице "заявки")
-									
-									$rez =   'uslovie 3 (tehnicheskiy sboy otpravki) ';
-
-									if( $mm['notification_param_id_10']==3 && $m['urgency_id']==1 && (!$mm['notification_param_id_11']||$mm['notification_param_id_11']==1)){// шаблон id=11
-										$notification_id = 11;
-									}else{
-										$notification_id = 10;
-									}
-									
-									//$mm['email'] = 'vdo81@yandex.ru';
-									$arr['rez'] = '';
-									
-									sleep(2);
-									$validate_email = (filter_var($mm['email'], FILTER_VALIDATE_EMAIL));
-									if($validate_email){
-										$arr = $tes->LetterSendNotification(array('notification_id'			=> $notification_id,
-																				'email'						=> $mm['email'],
-																				'name'						=> $mm['company'] ));
-									}
-									
-									if($arr['rez']){
-											// обновляем дату последней отправки (она очищается при посещении пользователем страници "заявки")
-											$STH = PreExecSQL(" UPDATE company_page_visited_send SET data_last_send_email=NOW() WHERE id=?; " ,
-																				array( $mm['id']));
-											echo $mm['company_id'].'<br/>';
-									}
-									$rez = ($arr['rez'])? 'send' : 'nosend';
-									
-							}
-							
-					}
-					
-				}
-				/*
-				// лог send
-					$file = $_SERVER['DOCUMENT_ROOT'] .'/send.txt';
-					$fp = fopen($file, "a");
-					$mytext = date("Y-m-d H:i:s")." -  buy_sell_id=".$m['buy_sell_id']." - email=".$mm['email']." - ".$rez." \r\n\r\n ";
-					$test = fwrite($fp, $mytext);
-					fclose($fp);		
-				///
-				*/
 			}
-		/*
+		
 		// удаляем новую заявку из "cron_new_buysell"
 			$STH = PreExecSQL(" DELETE FROM cron_new_buysell WHERE id=?; " ,
 									array( $m['id']));
-		*/
+		
 	}
 
 ?>
