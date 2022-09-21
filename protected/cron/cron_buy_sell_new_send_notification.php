@@ -40,8 +40,19 @@
 				";
 
 			$row2 = PreExecSQL_all($sql,array());
-
+			
+			$arr_email = [];
 			foreach($row2 as $k=>$mm){
+				if (!in_array($mm['email'], $arr_email)) {
+					echo $mm['email'].' - обработка';
+				}else{
+					echo $mm['email'].' - double';
+				}
+				
+				
+				$arr_email[] = $mm['email'];
+				
+				/*
 				$rez =   'uslovie 0 (interesi)';
 				// проверяем компания удавлетворяет "Интересу"
 				$sql = "	SELECT bs.id FROM buy_sell bs
@@ -92,9 +103,9 @@
 							}
 							
 					}
-					
+					*/
 				}
-				
+				/*
 				// лог send
 					$file = $_SERVER['DOCUMENT_ROOT'] .'/send.txt';
 					$fp = fopen($file, "a");
@@ -102,13 +113,13 @@
 					$test = fwrite($fp, $mytext);
 					fclose($fp);		
 				///
-					
+				*/
 			}
-		
+		/*
 		// удаляем новую заявку из "cron_new_buysell"
 			$STH = PreExecSQL(" DELETE FROM cron_new_buysell WHERE id=?; " ,
 									array( $m['id']));
-		
+		*/
 	}
 
 ?>
