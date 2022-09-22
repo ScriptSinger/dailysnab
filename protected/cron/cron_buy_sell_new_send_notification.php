@@ -14,10 +14,11 @@
 
 	foreach($row as $k=>$m){
 
-			$sql = "	SELECT 	pvs.id, pvs.company_id,
+			$sql = "	SELECT 	pvs.id, c.id company_id,
 							TIMESTAMPDIFF(SECOND,pvs.data_last_send_email,NOW()) flag_data_last_send_email, /* 86400 - одни сутки */
 							(SELECT email FROM login l WHERE l.id=pvs.login_id) email,
 							c.company,
+							c.login_id,
 							n1.notification_param_id notification_param_id_10,
 							n2.notification_param_id notification_param_id_11
 					FROM company c, company_page_visited_send pvs
@@ -56,10 +57,10 @@
 										 AND (	bs.status_buy_sell_id IN (3)
 													OR ( bs.status_buy_sell_id IN (2) AND bs.company_id IN ( SELECT t.company_id_out FROM subscriptions t WHERE t.company_id_in=".$mm['company_id']." ) ) 
 												)
-										".$g->SqlCompanyInterests(array('company_id'=>$mm['company_id']))." ";
+										".$g->SqlCompanyInterests(array('company_id'=>$mm['company_id'],'flag'=>1))." ";
 						$row3 = PreExecSQL_one($sql,array());
 						
-		//echo $mm['company_id'].'***'.$sql.'<br/><br/>';
+						//echo $mm['company_id'].'***'.$sql.'<br/><br/>';
 
 						if($row3['id']){
 							$rez =   'uslovie 1 (uslovie polucheniya)';
@@ -78,13 +79,15 @@
 											}
 											
 											//$mm['email'] = 'vdo81@yandex.ru';
-											$arr['rez'] = '';
+											$arr['rez'] = false;
 											
 											sleep(2);
 											$validate_email = (filter_var($mm['email'], FILTER_VALIDATE_EMAIL));
 											if($validate_email){
 												$arr = $tes->LetterSendNotification(array('notification_id'			=> $notification_id,
 																						'email'						=> $mm['email'],
+																						'company_id'				=> $mm['company_id'],
+																						'login_id'					=> $mm['login_id'],
 																						'name'						=> $mm['company'] ));
 											}
 											
@@ -94,9 +97,15 @@
 																										WHERE company_id IN (SELECT t.id FROM company t WHERE t.login_id=(SELECT l.id FROM login l WHERE l.email=? ))
 																											AND page_id=1 ; " ,
 																						array( $mm['email']));
-													echo $mm['company_id'].'<br/>';
+													
+													$flag_update = 'update';
+													$rez = 'send update';
+													echo $mm['company_id'].' - '.$mm['email'].' - '.$rez.'<br/>';
+											}else{
+													$rez = 'nosend NO UPDATE';
+													echo $mm['company_id'].' - '.$mm['email'].' - '.$rez.'<br/>';
 											}
-											$rez = ($arr['rez'])? 'send' : 'nosend';
+											
 											
 									}
 									
