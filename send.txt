@@ -1,0 +1,7 @@
+2022-09-22 20:46:57 -  buy_sell_id=7947924 - email=twentyny@yanex.ru - uslovie 0 (interesi) 
+
+ 2022-09-22 20:46:59 -  buy_sell_id=7947924 - email=xrustit@yandex.ru - send update 
+
+ 2022-09-22 20:47:01 -  buy_sell_id=7947924 - email=Test3Alsu@yandex.ru - send update 
+
+ 
