@@ -4,4 +4,86 @@
 
  2022-09-22 20:47:01 -  buy_sell_id=7947924 - email=Test3Alsu@yandex.ru - send update 
 
+ 2022-09-22 20:47:03 -  buy_sell_id=7947924 - email=test.alsu@yandex.ru - send update 
+
+ 2022-09-22 20:47:05 -  buy_sell_id=7947924 - email=aleksei.borisov.2011@mail.ru - send update 
+
+ 2022-09-22 20:47:07 -  buy_sell_id=7947924 - email=nokkdeoniszxc@gmail.com - send update 
+
+ 2022-09-22 20:47:07 -  buy_sell_id=7947924 - email=sto-servis74@mail.ru - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:09 -  buy_sell_id=7947924 - email=vdo81@yandex.ru - send update 
+
+ 2022-09-22 20:47:11 -  buy_sell_id=7947924 - email=vma@zveno.ru - send update 
+
+ 2022-09-22 20:47:13 -  buy_sell_id=7947924 - email=radik_fattahov@mail.ru - send update 
+
+ 2022-09-22 20:47:13 -  buy_sell_id=7947924 - email=kr2@gazimport.ru - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:15 -  buy_sell_id=7947924 - email=m.sav@sddetal.com - send update 
+
+ 2022-09-22 20:47:15 -  buy_sell_id=7947924 - email=1@startruck.shop - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:15 -  buy_sell_id=7947924 - email=piterkomtrans@mail.ru - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:15 -  buy_sell_id=7947924 - email=meller@autodetal.net - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:15 -  buy_sell_id=7947924 - email=mdv@gstruck.ru - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:15 -  buy_sell_id=7947924 - email=uptk-ufa@mail.ru - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:15 -  buy_sell_id=7947924 - email=Test5Alsu@yandex.ru - uslovie 1 (uslovie polucheniya) 
+
+ 2022-09-22 20:47:15 -  buy_sell_id=7947924 - email=rudakov@korvin.pro - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:17 -  buy_sell_id=7947924 - email=89823148553@mail.ru - send update 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7947924 - email=d7758987@gmail.com - send update 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7947924 - email=minocatik@gmail.com - uslovie 1 (uslovie polucheniya) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952282 - email=twentyny@yanex.ru - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952282 - email=minocatik@gmail.com - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952282 - email=sto-servis74@mail.ru - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952282 - email=kr2@gazimport.ru - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952282 - email=1@startruck.shop - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952282 - email=piterkomtrans@mail.ru - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952282 - email=meller@autodetal.net - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952282 - email=mdv@gstruck.ru - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952282 - email=uptk-ufa@mail.ru - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952282 - email=rudakov@korvin.pro - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952282 - email=Test5Alsu@yandex.ru - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952283 - email=twentyny@yanex.ru - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952283 - email=minocatik@gmail.com - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952283 - email=sto-servis74@mail.ru - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952283 - email=kr2@gazimport.ru - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952283 - email=1@startruck.shop - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952283 - email=piterkomtrans@mail.ru - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952283 - email=meller@autodetal.net - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952283 - email=mdv@gstruck.ru - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952283 - email=uptk-ufa@mail.ru - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952283 - email=rudakov@korvin.pro - uslovie 0 (interesi) 
+
+ 2022-09-22 20:47:19 -  buy_sell_id=7952283 - email=Test5Alsu@yandex.ru - uslovie 0 (interesi) 
+
  
