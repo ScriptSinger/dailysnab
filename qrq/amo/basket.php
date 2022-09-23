@@ -252,7 +252,7 @@ if ( (strlen(trim($restaccount))>0) && (strlen(trim($restvendor))>0))
 
                         if (pFormArray[i]['typeName']=='InputField')
                         {
-                            funInputText(pFieldName,pTitle,pFieldId);
+                            funInput(pFieldName,pTitle,pFieldId);
                         }
                         if (pFormArray[i]['typeName']=='TextareaField')
                         {
