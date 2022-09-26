@@ -1488,9 +1488,9 @@ elseif($_GET['route'] == 'save_buy_sell'){
                         // Проверяем не пользовательское ли значение и есть ли в базе.
                         // Если нет довабляем в slov_attribute_value -> attribute_value и возвращаем attribute_value_id
                         $arr_p = $g->ProverkaAndInsertSlovAttributeValue(array(	'flag'				=> 'buy_sell',
-                            'categories_id'		=> $categories_id,
-                            'attribute_id'		=> $m['attribute_id'],
-                            'attribute_value'	=> $v ));
+																				'categories_id'		=> $categories_id,
+																				'attribute_id'		=> $m['attribute_id'],
+																				'attribute_value'	=> $v ));
                         $attribute_value_id = $arr_p['attribute_value_id'];
 
                         if($attribute_value_id){
@@ -1515,9 +1515,9 @@ elseif($_GET['route'] == 'save_buy_sell'){
                     if($flag_value==1){// связь по id
                         // Если нет довабляем в slov_attribute_value -> attribute_value и возвращаем attribute_value_id
                         $arr_p = $g->ProverkaAndInsertSlovAttributeValue(array(	'flag'				=> 'buy_sell',
-                            'categories_id'		=> $categories_id,
-                            'attribute_id'		=> $m['attribute_id'],
-                            'attribute_value'	=> $arr ));
+																				'categories_id'		=> $categories_id,
+																				'attribute_id'		=> $m['attribute_id'],
+																				'attribute_value'	=> $arr ));
                         $arr = $arr_p['attribute_value_id'];
                     }
 
@@ -1959,7 +1959,7 @@ elseif($_GET['route'] == 'search_buy_sell'){
             $url_fbs40 = 'sell';
         }
     }
-
+vecho($rf);
 
     if(($rf['flag']==1||$rf['flag']==0)&&COMPANY_ID){
         $url_fbs = 'buy-sell/buy/0';
