@@ -787,7 +787,7 @@ class HtmlServive extends HtmlElement
 		
 		$attribute_value = $in['attribute_value'];
 
-		if($in['flag']=='buy_sell'){// пользователь добавляет атрибут
+		if($in['flag']=='buy_sell'&&COMPANY_ID){// пользователь добавляет атрибут
 			$r 			= reqAttributeValue(array('id'=>$attribute_value));
 			$flag_insert 	= 3;
 			$company_id	= COMPANY_ID;
