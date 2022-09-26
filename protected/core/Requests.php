@@ -634,7 +634,9 @@
 					FROM attribute_value av, slov_attribute_value sav
 					WHERE av.attribute_value_id=sav.id ".$sql."
 							AND (sav.company_id=0 OR sav.company_id=".COMPANY_ID.") ";
-
+if($in['attribute_id']==589){
+	vecho($sql);
+}
 		$row = ($one)? PreExecSQL_one($sql,$arr) : PreExecSQL_all($sql,$arr);
 
 		return $row;
