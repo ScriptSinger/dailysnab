@@ -4970,7 +4970,7 @@
 
 
 		$sql = "	SELECT f.flag_search, f.categories_id, f.cities_id, f.flag, f.flag_interest, f.cookie_session,
-							f.sort_12, f.sort_who
+							f.sort_12, f.sort_who, f.flag_buy_sell
 					FROM search_filter_param_company f
 					WHERE 1=1 ".$sql." ";
 
