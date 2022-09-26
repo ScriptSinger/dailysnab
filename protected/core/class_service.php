@@ -781,7 +781,7 @@ class HtmlServive extends HtmlElement
 		
 		$in = fieldIn($p, array('categories_id','attribute_id','attribute_value','flag'));
 		
-		$attribute_value_id = $id = false;
+		$attribute_value_id = $id = $flag_insert = false;
 		
 		$company_id = 0;
 		
@@ -791,12 +791,14 @@ class HtmlServive extends HtmlElement
 			$r 			= reqAttributeValue(array('id'=>$attribute_value));
 			$flag_insert 	= 3;
 			$company_id	= COMPANY_ID;
+			$flag_insert	= true;
 		}elseif($in['flag']=='qrq'){
 			$r['id'] 	= 0;
 			$flag_insert 	= 2;
+			$flag_insert	= true;
 		}
 
-		if(!$r['id']){
+		if( !$r['id'] && $flag_insert ){
 			// 1 шаг, добавляем в словарь атрибутов
 				$STH = PreExecSQL(" INSERT INTO slov_attribute_value(attribute_id,attribute_value,flag_insert,company_id) VALUES (?,?,?,?); " ,
 																		array( $in['attribute_id'],$attribute_value,$flag_insert,$company_id ));
