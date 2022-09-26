@@ -1959,7 +1959,7 @@ elseif($_GET['route'] == 'search_buy_sell'){
             $url_fbs40 = 'sell';
         }
     }
-vecho($rf);
+
 
     if(($rf['flag']==1||$rf['flag']==0)&&COMPANY_ID){
         $url_fbs = 'buy-sell/buy/0';
