@@ -4484,14 +4484,14 @@ class HtmlTemplate extends HtmlServive
             $form_buy_sell = '	
 									<div class="btn-group">
 										' . $this->Input(array('type' => 'button',
-                        'id' => 'button_form_buy_sell' . $m['id'],
-                        'class' => 'btn btn-primary btn-sm form_buy_sell',
-                        'value' => 'Дать предложение',
-                        'data' => array('id' => $m['id'],
-                            'categories_id' => $m['categories_id'],
-                            'flag' => 'buy',
-                            'status' => 10,
-                            'share_url' => $row_share['share_url'])
+															'id' => 'button_form_buy_sell' . $m['id'],
+															'class' => 'btn btn-primary btn-sm form_buy_sell',
+															'value' => 'Дать предложение',
+															'data' => array('id' => $m['id'],
+																			'categories_id' => $m['categories_id'],
+																			'flag' => 'buy',
+																			'status' => 10,
+																			'share_url' => $row_share['share_url'])
                     )
                 ) . '
 										<button type="button" class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -4526,9 +4526,9 @@ class HtmlTemplate extends HtmlServive
 
         $str_day_noactive = $this->format_by_count($m['day_noactive'], 'день', 'дня', 'дней');
         $day_noactive = '	<span class="request-days">
-											<span>' . $m['day_noactive'] . ' ' . $str_day_noactive . '</span>
-											<span class="request-days-line"></span>
-										</span>';
+							<span>' . $m['day_noactive'] . ' ' . $str_day_noactive . '</span>
+							<span class="request-days-line"></span>
+						</span>';
 
 
         // количество купленных
