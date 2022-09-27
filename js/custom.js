@@ -3798,6 +3798,13 @@ function ChangePass2(flag) {
 				validators: {
 					notEmpty: {
 						message: 'Введите пароль'
+					},
+					identical: {
+						field: 'new_pass_again',
+						message: 'Не совпадает пароль'
+					},
+					blank: {
+						message: 'Не совпадает пароль'
 					}
 				}
 			},
