@@ -2705,7 +2705,8 @@ elseif($_GET['route'] == 'get_html_sell_by_infopart'){
 
     }
 	
-	if(1==1){
+	$r = reqCronAmoBuySellSearchInfopart(array('cookie_session'=>COOKIE_SESSION));
+	if(!$r['id']){
 		$noload = true;
 	}
 
