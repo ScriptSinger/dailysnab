@@ -4381,8 +4381,8 @@ class HtmlTemplate extends HtmlServive
                             $code .= '<div>'.$this->nf($mm['amount']).' '.$mm['unit'].' - '.$mm['stock'].'</div>';
                         }
                     } else {// остальные статусы
-                        $r = reqCompanyStatusBuySellByNomenclature(array('nomenclature_id' => $in['nomenclature_id'],
-                            'status_buy_sell_id' => $m['id']));
+                        $r = reqCompanyStatusBuySellByNomenclature(array('nomenclature_id' 		=> $in['nomenclature_id'],
+																		'status_buy_sell_id' 	=> $m['id']));
                         foreach ($r as $ii => $mm) {
                             $code .= '<div>'.$mm['company'].' - '.$mm['attribute'].' - '.$this->nf($mm['amount']).' '.$mm['unit'].' - '.$mm['cost'].' - '.$mm['ndata_insert'].'</div>';
                         }

@@ -2689,7 +2689,7 @@ elseif($_GET['route'] == 'get_html_sell_by_infopart'){
 
         // проверяем поступили ли новые предложения от qwep (проверяем с последнего пришедшего id)
         $row = reqBuySell_PageSell(array('value' 		=> $in['value'],
-            'etp'			=> true	));
+										'etp'			=> true	));
         $tr = '';
         $arr = array();
         foreach($row as $i => $m){
