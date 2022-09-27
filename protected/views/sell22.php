@@ -69,9 +69,11 @@
 																	alert("qw");
 																	clearTimeout(timeOutId3);
 																	//$("#loading").hide();
+																}else{
+																	timeOutId3 = setTimeout(ajaxFn3, 3000);
 																}
 															}
-															timeOutId3 = setTimeout(ajaxFn3, 3000);
+															
 												}
 									);
 							};
