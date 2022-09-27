@@ -12,11 +12,11 @@ class HtmlTemplate extends HtmlServive
     function indexLeftCol($menuleft = false, $content = false, $col = false)
     {
         return '
-					<div class="col-md-' . $col . '">
-						' . $menuleft . '
+					<div class="col-md-'.$col.'">
+						'.$menuleft.'
 					</div>
-					<div class="col-md-' . (12 - $col) . '">
-						' . $content . '
+					<div class="col-md-'.(12 - $col).'">
+						'.$content.'
 					</div>
 				';
     }
@@ -28,7 +28,7 @@ class HtmlTemplate extends HtmlServive
     //модальное окно
     function getModal($modal = array(), $form = array(), $arr = array())
     {
-        $f = ($form['id']) ? '<form id="' . $form['id'] . '" class="' . $form['class'] . '" role="form">' : '';
+        $f = ($form['id']) ? '<form id="'.$form['id'].'" class="'.$form['class'].'" role="form">' : '';
         $f_ = ($form['id']) ? '</form>' : '';
 
         $modal['class_dialog'] = isset($modal['class_dialog']) ? $modal['class_dialog'] : '';
@@ -42,19 +42,19 @@ class HtmlTemplate extends HtmlServive
         $size = (isset($arr['size']) && ($arr['size'])) ? $arr['size'] : '';
 
         $html = '
-			  <div class="modal-dialog ' . $modal['class_dialog'] . ' ' . $size . '" role="document">
+			  <div class="modal-dialog '.$modal['class_dialog'].' '.$size.'" role="document">
 				<div class="modal-close-wrap">
 					<div class="modal-close" data-dismiss="modal">&#215;</div>
 				</div>
-				<div class="modal-content ' . $modal['class_content'] . '">
-					' . $f . '
-						<div class="modal-body ' . $modal['class_body'] . '">
-							' . $modal['top'] . '
-							' . $modal['content'] . '
-							' . $bottom . '
+				<div class="modal-content '.$modal['class_content'].'">
+					'.$f.'
+						<div class="modal-body '.$modal['class_body'].'">
+							'.$modal['top'].'
+							'.$modal['content'].'
+							'.$bottom.'
 						</div>
 								
-					' . $f_ . '
+					'.$f_.'
 				</div>
 			  </div>
 				';
@@ -104,13 +104,13 @@ class HtmlTemplate extends HtmlServive
         if (!empty($r)) {
 
             foreach ($r as $k => $m) {
-                $elem = 'li_file' . $k . $id_uniq;
+                $elem = 'li_file'.$k.$id_uniq;
 
                 $del = ($delete) ? '<span class="delete_file_buy_sell" style=""
-																title="Удалить файл<br/>' . $m['name_file'] . '"
-																data-value="' . $m['id_md5'] . '"
-																data-name="' . $m['name_file'] . '"
-																data-elem="' . $elem . '">удалить</span>' : '';
+																title="Удалить файл<br/>'.$m['name_file'].'"
+																data-value="'.$m['id_md5'].'"
+																data-name="'.$m['name_file'].'"
+																data-elem="'.$elem.'">удалить</span>' : '';
                 // предпросмотр изображения
                 $img = '';
 
@@ -118,15 +118,15 @@ class HtmlTemplate extends HtmlServive
                     'wh' => 50,
                     'dopol' => 'style="margin-right:20px;"'));
 
-                $code .= ' 	<div id="' . $elem . '" style="margin-bottom:5px;">
-								<a href="' . $m['path'] . '">' . $img . '' . $m['name_file'] . '</a>
-								' . $del . '
+                $code .= ' 	<div id="'.$elem.'" style="margin-bottom:5px;">
+								<a href="'.$m['path'].'">'.$img.''.$m['name_file'].'</a>
+								'.$del.'
 							</div>';
             }
 
             if ($code) {
                 $code = '<div class="container_files_orders" style="margin-top:5px;">
-								' . $code . '
+								'.$code.'
 							</div>';
             }
 
@@ -149,9 +149,9 @@ class HtmlTemplate extends HtmlServive
             $ac = '';
             if ($k == 0) {
                 $ac = 'class="activeSlide"';
-                $first_img = '<img src="' . $m['path'] . '" alt="photo">';
+                $first_img = '<img src="'.$m['path'].'" alt="photo">';
             }
-            $code .= '<img src="' . $m['path'] . '" alt="photo" ' . $ac . '>';
+            $code .= '<img src="'.$m['path'].'" alt="photo" '.$ac.'>';
         }
 
         return array('code' => $code, 'first_img' => $first_img);
@@ -165,7 +165,7 @@ class HtmlTemplate extends HtmlServive
         $code = '<div class="page-header">
 					<h2>Восстановление доступа</h2>
 				</div>
-				На электронную почту <b>' . $p['email'] . '</b> отправлено письмо. 
+				На электронную почту <b>'.$p['email'].'</b> отправлено письмо. 
 				Перейдите по ссылке в письме, чтобы задать новый пароль от вашей учетной записи.
 				<div class="text-muted" style="margin:15px 0px;">
 					Если вы не видите письма, обязательно проверьте папку СПАМ.
@@ -199,16 +199,16 @@ class HtmlTemplate extends HtmlServive
             $st_ml = $in['level'] * 100;
             if ($in['level'] <> 3) {
                 $add_categories = '<span class="modal_admin_categories" title="Добавить под категорию" style="font-size:26px;cursor:pointer;"
-														data-parent_id="' . $m['id'] . '"
-														data-level="' . ($m['level'] + 1) . '">+</span>';
+														data-parent_id="'.$m['id'].'"
+														data-level="'.($m['level'] + 1).'">+</span>';
             }
             $cl_span = ($m['active'] == 2) ? 'text-muted' : '';
 
             // перенести в другую категорию
             if ($in['level'] > 0) {
                 $change_level = '<span class="modal_admin_change_level_categories" title="Перенести в другую категорию" style="font-size:26px;cursor:pointer;"
-																						data-id="' . $m['id'] . '"
-																						data-level="' . ($m['level'] + 1) . '">*</span>';
+																						data-id="'.$m['id'].'"
+																						data-level="'.($m['level'] + 1).'">*</span>';
             }
             //
 
@@ -235,21 +235,21 @@ class HtmlTemplate extends HtmlServive
                         }
                     }
 
-                    $td_attribute .= '	<td class="td_attribute  ' . $cl_td . '" style="cursor:crosshair;" title="' . $m['categories'] . ' | ' . $a . '"
+                    $td_attribute .= '	<td class="td_attribute  '.$cl_td.'" style="cursor:crosshair;" title="'.$m['categories'].' | '.$a.'"
 																					data-toggle="tooltip" 
 																					data-placement="bottom"
-																				data-categories_id="' . $m['id'] . '"
-																				data-attribute_id="' . $k . '"
-																				data-active="' . $active . '">
-											' . $this->Input(array('type' => 'text',
-                                'id' => 'sort' . $m['id'] . $k,
+																				data-categories_id="'.$m['id'].'"
+																				data-attribute_id="'.$k.'"
+																				data-active="'.$active.'">
+											'.$this->Input(array('type' => 'text',
+                                'id' => 'sort'.$m['id'].$k,
                                 'class' => 'form-control form-control-sm float-right text-center change_sort',
                                 'value' => $value_sort,
                                 'placeholder' => '',
-                                'dopol' => 'style="width:50px;' . $st_dn_sort . '"',
+                                'dopol' => 'style="width:50px;'.$st_dn_sort.'"',
                                 'data' => array('table' => 'categories_attribute', 'id' => $id_sort)
                             )
-                        ) . '										
+                        ).'										
 										</td>';
                 }
 
@@ -258,25 +258,25 @@ class HtmlTemplate extends HtmlServive
             ///
 
 
-            $tr .= '<tr class="level-' . ($m['level'] + 1) . '">
-						<td style="padding-left:' . $st_ml . 'px;">
-							<span class="' . $cl_span . ' sp_a modal_admin_categories" title="Редактировать"
+            $tr .= '<tr class="level-'.($m['level'] + 1).'">
+						<td style="padding-left:'.$st_ml.'px;">
+							<span class="'.$cl_span.' sp_a modal_admin_categories" title="Редактировать"
 														data-toggle="tooltip" 
 														data-placement="bottom"
-														data-id="' . $m['id'] . '">' . $m['categories'] . '</span>
-							' . $this->Input(array('type' => 'text',
-                        'id' => 'sort' . $m['id'],
+														data-id="'.$m['id'].'">'.$m['categories'].'</span>
+							'.$this->Input(array('type' => 'text',
+                        'id' => 'sort'.$m['id'],
                         'class' => 'form-control form-control-sm text-center change_sort',
                         'value' => $m['sort'],
                         'placeholder' => '',
                         'dopol' => 'style="width:50px;"',
                         'data' => array('table' => 'slov_categories', 'id' => $m['id'])
                     )
-                ) . '
-							' . $add_categories . '
-							' . $change_level . '
+                ).'
+							'.$add_categories.'
+							'.$change_level.'
 						</td>
-						' . $td_attribute . '
+						'.$td_attribute.'
 					</tr>
 			';
             /*
@@ -323,7 +323,7 @@ class HtmlTemplate extends HtmlServive
             $delete = '';
             $r = reqProverkaDelete_CategoriesAttribute_SlovAttributeValue(array('categories_attribute_id' => $m['id']));
             if (!$r['kol']) {
-                $delete = '<a class="sp_a delete_categories_attribute" data-id="' . $m['id'] . '" data-text="' . $m['attribute'] . '"></a>';
+                $delete = '<a class="sp_a delete_categories_attribute" data-id="'.$m['id'].'" data-text="'.$m['attribute'].'"></a>';
             }
 
 
@@ -331,62 +331,62 @@ class HtmlTemplate extends HtmlServive
             $checked_assets = ($m['assets']) ? 'checked' : '';
 
             $code .= '
-                    <div id="div_categories_attribute' . $m['id'] . '" class="amc-row">
+                    <div id="div_categories_attribute'.$m['id'].'" class="amc-row">
                         <div class="amc-col-number amc-col-4">								
-								' . $this->Input(array('type' => 'text',
-                        'id' => 'sort' . $m['id'],
+								'.$this->Input(array('type' => 'text',
+                        'id' => 'sort'.$m['id'],
                         'class' => 'form-control form-control-sm text-center change_sort',
                         'value' => $m['sort'],
                         'placeholder' => '',
                         'dopol' => 'style="width:50px;"',
                         'data' => array('table' => 'categories_attribute', 'id' => $m['id'])
                     )
-                ) . '</div>
+                ).'</div>
                         <div class="amc-col-22">
-                            <span class="amc-designation">' . $m['attribute'] . '</span> ' . $delete . '
+                            <span class="amc-designation">'.$m['attribute'].'</span> '.$delete.'
                         </div>
                         <div class="amc-col-22">
-								' . $this->SelectTypeAttribute(array('row' => $row_ta,
+								'.$this->SelectTypeAttribute(array('row' => $row_ta,
                     'id' => $m['buy_type_attribute_id'],
                     'm_id' => $m['id'],
-                    'flag' => 'buy')) . '
+                    'flag' => 'buy')).'
                         </div>
                         <div class="amc-col-22">
-								' . $this->SelectTypeAttribute(array('row' => $row_ta,
+								'.$this->SelectTypeAttribute(array('row' => $row_ta,
                     'id' => $m['sell_type_attribute_id'],
                     'm_id' => $m['id'],
-                    'flag' => 'sell')) . '
+                    'flag' => 'sell')).'
                         </div>
 						<div class="amc-col-22">
-								' . $this->SelectAttributeValue(array('categories_id' => $in['categories_id'], 'attribute_id' => $m['attribute_id'])) . '
+								'.$this->SelectAttributeValue(array('categories_id' => $in['categories_id'], 'attribute_id' => $m['attribute_id'])).'
                         </div>
                         <div class="amc-col-10">
-								' . $this->Input(array('type' => 'text',
-                        'id' => 'sort' . $m['id'],
+								'.$this->Input(array('type' => 'text',
+                        'id' => 'sort'.$m['id'],
                         'class' => 'form-control form-control-sm text-center save_no_empty_categories_attribute',
                         'value' => $m['no_empty_buy'],
                         'placeholder' => '',
                         'dopol' => 'style="width:50px;"',
                         'data' => array('flag' => 'buy', 'id' => $m['id'])
                     )
-                ) . '
+                ).'
                         </div>
                         <div class="amc-col-10">
-								' . $this->Input(array('type' => 'text',
-                        'id' => 'sort' . $m['id'],
+								'.$this->Input(array('type' => 'text',
+                        'id' => 'sort'.$m['id'],
                         'class' => 'form-control form-control-sm text-center save_no_empty_categories_attribute',
                         'value' => $m['no_empty_sell'],
                         'placeholder' => '',
                         'dopol' => 'style="width:50px;"',
                         'data' => array('flag' => 'sell', 'id' => $m['id'])
                     )
-                ) . '
+                ).'
                         </div>
                         <div class="amc-col-10">
-                            <input type="checkbox" class="checkbox_grouping_sell" data-id="' . $m['id'] . '" value="' . $m['grouping_sell'] . '" ' . $checked_grouping_sell . '/>
+                            <input type="checkbox" class="checkbox_grouping_sell" data-id="'.$m['id'].'" value="'.$m['grouping_sell'].'" '.$checked_grouping_sell.'/>
                         </div>
 						<div class="amc-col-10">
-                            <input type="checkbox" class="checkbox_assets" data-id="' . $m['id'] . '" value="' . $m['assets'] . '" ' . $checked_assets . '/>
+                            <input type="checkbox" class="checkbox_assets" data-id="'.$m['id'].'" value="'.$m['assets'].'" '.$checked_assets.'/>
                         </div>
                     </div>
 			
@@ -409,22 +409,22 @@ class HtmlTemplate extends HtmlServive
             $delete = '';
             $r = reqProverkaDelete_CategoriesAttribute_SlovAttributeValue(array('slov_attribute_value_id' => $m['id']));
             if (!$r['kol']) {
-                $delete = '<span class="pointer delete_slov_attribute_value" data-id="' . $m['id'] . '" data-text="' . $m['attribute_value'] . '" data-feather="trash"></span>';
+                $delete = '<span class="pointer delete_slov_attribute_value" data-id="'.$m['id'].'" data-text="'.$m['attribute_value'].'" data-feather="trash"></span>';
             }
 
             $code .= '
-					<div id="div_attribute_value' . $m['id'] . '" class="row">
+					<div id="div_attribute_value'.$m['id'].'" class="row">
 							<div class="col form-group">
-								' . $this->Input(array('type' => 'text',
-                        'id' => 'attribute_value' . $m['id'],
+								'.$this->Input(array('type' => 'text',
+                        'id' => 'attribute_value'.$m['id'],
                         'class' => 'form-control form-control-sm update_slov_attribute_value',
                         'value' => $m['attribute_value'],
                         'data' => array('id' => $m['id'])
                     )
-                ) . '
+                ).'
 							</div>
 							<div class="col-1">
-									' . $delete . '
+									'.$delete.'
 							</div>
 					</div>';
         }
@@ -454,12 +454,12 @@ class HtmlTemplate extends HtmlServive
         foreach ($row as $i => $m) {
             $active = ($m['id'] == $in['status_buy_sell_id']) ? 'active' : '';
             $have_num = ($m['kol'] == 0) ? 'd-none' : '';
-            $kol_notification = ($m['kol_notification']) ? ' <span class="badge badge-warning">' . $m['kol_notification'] . '</span>' : '';
+            $kol_notification = ($m['kol_notification']) ? ' <span class="badge badge-warning">'.$m['kol_notification'].'</span>' : '';
 
-            $li .= ' 	<li class="request-menu-item ' . $have_num . '">
+            $li .= ' 	<li class="request-menu-item '.$have_num.'">
 						<button>
-							<a href="/buy-sell/' . $m['url_priznak'] . '/' . $m['id'] . '" class="' . $active . '">
-								' . $m[$pole] . ' <span>' . $m['kol'] . '</span>' . $kol_notification . '
+							<a href="/buy-sell/'.$m['url_priznak'].'/'.$m['id'].'" class="'.$active.'">
+								'.$m[$pole].' <span>'.$m['kol'].'</span>'.$kol_notification.'
 							</a>
 						</button>
 					</li>';
@@ -475,10 +475,10 @@ class HtmlTemplate extends HtmlServive
 						<ul class="request-menu">
 							<li class="request-menu-item">
 								<button>
-									<a href="/buy-sell/' . $url_priznak . '/0" class="' . $active0 . '">' . $str1 . ' ' . $kol . '</a>
+									<a href="/buy-sell/'.$url_priznak.'/0" class="'.$active0.'">'.$str1.' '.$kol.'</a>
 								</button>
 							</li>
-							' . $li . '
+							'.$li.'
 						</ul>
 						<div class="request-head-btn">
 							<img src="/image/menu-request-icon.svg" class="share_buy_sell" data-flag="1" alt="">
@@ -487,7 +487,7 @@ class HtmlTemplate extends HtmlServive
 							<button class="request-btn heading-btn change-btn share_buy_sell" data-flag="2">
 								Отменить
 							</button>
-							<button class="request-btn heading-btn inactive choose-client modal_share_buy_sell" data-flag_buy_sell="' . $in['flag_buy_sell'] . '">
+							<button class="request-btn heading-btn inactive choose-client modal_share_buy_sell" data-flag_buy_sell="'.$in['flag_buy_sell'].'">
 								Выбрать получателя
 							</button>
 						</div>
@@ -510,10 +510,10 @@ class HtmlTemplate extends HtmlServive
             $active = ($m['id'] == $in['status_buy_sell_id']) ? 'active' : '';
             $have_num = ($m['kol'] == 0) ? 'd-none' : '';
 
-            $li .= ' 	<li class="request-menu-item ' . $have_num . '">
+            $li .= ' 	<li class="request-menu-item '.$have_num.'">
 						<button>
-							<a href="/assets/' . $m['id'] . '" class="' . $active . '">
-								' . $m['status_buy'] . ' <span>' . $m['kol'] . '</span>
+							<a href="/assets/'.$m['id'].'" class="'.$active.'">
+								'.$m['status_buy'].' <span>'.$m['kol'].'</span>
 							</a>
 						</button>
 					</li>';
@@ -526,10 +526,10 @@ class HtmlTemplate extends HtmlServive
 						<ul class="request-menu">
 							<li class="request-menu-item">
 								<button>
-									<a href="/assets" class="' . $active0 . '">Мои активы ' . $kol . '</a>
+									<a href="/assets" class="'.$active0.'">Мои активы '.$kol.'</a>
 								</button>
 							</li>
-							' . $li . '
+							'.$li.'
 						</ul>
 					</div>';
 
@@ -552,8 +552,8 @@ class HtmlTemplate extends HtmlServive
 
                 $li .= ' 	<li class="request-menu-item">
 							<button>
-								<a href="/stock/' . $m['sbs_id'] . '/' . $m['stock_id'] . '" class="' . $active . '">
-									' . $m['stock'] . ' <span>' . $m['kol'] . '</span>
+								<a href="/stock/'.$m['sbs_id'].'/'.$m['stock_id'].'" class="'.$active.'">
+									'.$m['stock'].' <span>'.$m['kol'].'</span>
 								</a>
 							</button>
 						</li>';
@@ -567,10 +567,10 @@ class HtmlTemplate extends HtmlServive
 						<ul class="request-menu">
 							<li class="request-menu-item">
 								<button>
-									<a href="/stock" class="' . $active0 . '">Мой склад ' . $kol . '</a>
+									<a href="/stock" class="'.$active0.'">Мой склад '.$kol.'</a>
 								</button>
 							</li>
-							' . $li . '
+							'.$li.'
 						</ul>
 					</div>';
 
@@ -593,10 +593,10 @@ class HtmlTemplate extends HtmlServive
 
         $code = '	<ul class="nav nav-tabs">
 						<li class="nav-item">
-							<a href="/admin_search/1" class="nav-link ' . $active1 . '">Поисковые запросы</a>
+							<a href="/admin_search/1" class="nav-link '.$active1.'">Поисковые запросы</a>
 						</li>
 						<li class="nav-item">
-							<a href="/admin_search/2" class="nav-link ' . $active2 . '">Категории</a>
+							<a href="/admin_search/2" class="nav-link '.$active2.'">Категории</a>
 						</li>
 					</ul>';
 
@@ -634,27 +634,27 @@ class HtmlTemplate extends HtmlServive
 					<ul class="request-menu">
 						<li class="request-menu-item">
 							<button>
-								<a href="/subscriptions/profile" class="nav-link ' . $views_profile . '">Все пользователи</a>
+								<a href="/subscriptions/profile" class="nav-link '.$views_profile.'">Все пользователи</a>
 							</button>
 						</li>
 						<li class="request-menu-item">
 							<button>
-								<a href="/subscriptions/profile-buy" class="nav-link ' . $views_profile_buy . '">Все покупатели</a>
+								<a href="/subscriptions/profile-buy" class="nav-link '.$views_profile_buy.'">Все покупатели</a>
 							</button>
 						</li>
 						<li class="request-menu-item">
 							<button>
-								<a href="/subscriptions/profile-sell" class="nav-link ' . $views_profile_sell . '">Все продавцы</a>
+								<a href="/subscriptions/profile-sell" class="nav-link '.$views_profile_sell.'">Все продавцы</a>
 							</button>
 						</li>
 						<li class="request-menu-item">
 							<button>
-								<a href="/subscriptions/my" class="nav-link ' . $views_my . '">Подписки  <span id="count_subscriptions">' . $row_kol_my['kol'] . '</span></a>
+								<a href="/subscriptions/my" class="nav-link '.$views_my.'">Подписки  <span id="count_subscriptions">'.$row_kol_my['kol'].'</span></a>
 							</button>
 						</li>
 						<li class="request-menu-item">
 							<button>
-								<a href="/subscriptions/me" class="nav-link ' . $views_me . '">Подписчики  <span>' . $row_kol_me['kol'] . '</span></a>
+								<a href="/subscriptions/me" class="nav-link '.$views_me.'">Подписчики  <span>'.$row_kol_me['kol'].'</span></a>
 							</button>
 						</li>
 					</ul>
@@ -758,8 +758,8 @@ class HtmlTemplate extends HtmlServive
             if ($elem) {
                 $code_elem .= '
 						<div class="form-group bttip-wrap">
-							' . $elem . '
-							<span class="bttip 1" style="display: none;">' . $m['attribute'] . '</span>
+							'.$elem.'
+							<span class="bttip 1" style="display: none;">'.$m['attribute'].'</span>
 						</div>';
 
             } else {
@@ -796,7 +796,7 @@ class HtmlTemplate extends HtmlServive
         $pole2 = 'sell_flag_value';
         $pole3 = 'no_empty_sell';
 
-        $script10 = ($in['flag'] == 'buy' || $in['flag'] == 'mybuy') ? ' $("#button_form_buy_sell' . $in['parent_id'] . '").click(); ' : ' onReload(""); ';
+        $script10 = ($in['flag'] == 'buy' || $in['flag'] == 'mybuy') ? ' $("#button_form_buy_sell'.$in['parent_id'].'").click(); ' : ' onReload(""); ';
 
 
         $company_id_share = 0;
@@ -806,7 +806,7 @@ class HtmlTemplate extends HtmlServive
         }
 
 
-        $id_form = 'offer_' . $in['parent_id'] . '-form';
+        $id_form = 'offer_'.$in['parent_id'].'-form';
 
         $row_bs = reqBuySell_FormBuyAmount(array('id' => $in['parent_id']));// данные заявки
 
@@ -865,10 +865,10 @@ class HtmlTemplate extends HtmlServive
 				$n++;
 			}*/
 
-            $code_elem .= $button_dopol_attribute . '
-							<div class="offer-form__item' . $cl_attribute . '">
+            $code_elem .= $button_dopol_attribute.'
+							<div class="offer-form__item'.$cl_attribute.'">
 									<div class="form-group">
-										' . $elem . '
+										'.$elem.'
 									</div>
 							</div>';
 
@@ -880,19 +880,19 @@ class HtmlTemplate extends HtmlServive
         $code_flag_account3 = '';
         if ($in['flag_account'] == 3) {
             $code_flag_account3 = '<div class="form-group offer-form__item">
-												' . $this->Input(array('type' => 'text',
+												'.$this->Input(array('type' => 'text',
                         'id' => 'qwertyu',
-                        'class' => 'form-control require-input autocomplete_fa' . $in['parent_id'] . '',
+                        'class' => 'form-control require-input autocomplete_fa'.$in['parent_id'].'',
                         'value' => '',
                         'placeholder' => 'Поставщик',
                         'dopol' => 'required data-bv-notempty-message="Не выбран поставщик"'
                     )
-                ) . '
-												' . $this->Input(array('type' => 'text',
+                ).'
+												'.$this->Input(array('type' => 'text',
                         'id' => 'company_id',
                         'value' => ''
                     )
-                ) . '
+                ).'
 										</div>';
         } else {
             $code_flag_account3 = $this->Input(array('type' => 'text',
@@ -908,7 +908,7 @@ class HtmlTemplate extends HtmlServive
         $code_form_payment = '';
         if ($in['status'] == 10 && FLAG_ACCOUNT <> 1) {
             $code_form_payment = '<div class="form-group offer-form__item">
-											' . $this->Select(array('id' => 'form_payment_id',
+											'.$this->Select(array('id' => 'form_payment_id',
                     'class' => 'form-control select2',
                     'value' => '',
                     'data' => array('placeholder' => 'Форма оплаты')
@@ -917,7 +917,7 @@ class HtmlTemplate extends HtmlServive
                         'param' => array('' => ''),
                         'option' => array('id' => 'id', 'name' => 'form_payment')
                     )
-                ) . '
+                ).'
 										</div>';
             $submit_value = 'Предложить';
         }
@@ -939,24 +939,24 @@ class HtmlTemplate extends HtmlServive
             $code_multiplicity_min_party = '
 
 										<div class="form-group offer-form__item">
-											' . $this->Input(array('type' => 'text',
+											'.$this->Input(array('type' => 'text',
                         'id' => 'multiplicity',
                         'class' => 'form-control',
                         'value' => $row_bs['multiplicity'],
                         'placeholder' => 'Кратность',
                         'dopol' => 'autocomplete="off"'
                     )
-                ) . '
+                ).'
 										</div>
 										<div class="form-group offer-form__item">
-											' . $this->Input(array('type' => 'text',
+											'.$this->Input(array('type' => 'text',
                         'id' => 'min_party',
                         'class' => 'form-control',
                         'value' => $row_bs['min_party'],
                         'placeholder' => 'Минимальная Партия',
                         'dopol' => 'autocomplete="off"'
                     )
-                ) . '
+                ).'
 										</div>';
         }
         ///
@@ -965,7 +965,7 @@ class HtmlTemplate extends HtmlServive
 
         /*if(PRO_MODE){*/
         $currency = '	<div class="form-group offer-form__item currency_form">
-								' . $this->Select(array('id' => 'currency_id',
+								'.$this->Select(array('id' => 'currency_id',
                 'class' => 'form-control select2',
                 'value' => $row_bs['currency_id'],
                 'data' => array('placeholder' => 'Валюта')
@@ -975,7 +975,7 @@ class HtmlTemplate extends HtmlServive
                     'opt' => array('id' => '', 'name' => ''),
                     'option' => array('id' => 'id', 'name' => 'currency')
                 )
-            ) . '
+            ).'
 							</div>';
         /*}else{
 				$currency = $this->Input(	array(	'type'			=> 'hidden',
@@ -1040,14 +1040,14 @@ class HtmlTemplate extends HtmlServive
         $code_availability = $code_delivery = '';
         if ($in['status'] <> 12) {
             $code_availability = '	<div class="form-group offer-form__item">
-											' . $this->Input(array('type' => 'text',
+											'.$this->Input(array('type' => 'text',
                         'name' => 'availability',
                         'class' => 'form-control require-input',
                         'value' => $row_bs['availability'],
                         'placeholder' => 'Наличие',
                         'dopol' => 'list="availability" required data-bv-notempty-message="Введите наличие" autocomplete="off"'
                     )
-                ) . '
+                ).'
 											<datalist id="availability">
 													<option value="в наличии" />
 													<option value="1 день" />
@@ -1058,7 +1058,7 @@ class HtmlTemplate extends HtmlServive
 										</div>';
 
             $code_delivery = '		<div class="form-group offer-form__item">
-											' . $this->Select(array('id' => 'delivery_id',
+											'.$this->Select(array('id' => 'delivery_id',
                     'class' => 'form-control select2',
                     'value' => $row_bs['delivery_id'],
                     'data' => array('placeholder' => 'Доставка'),
@@ -1069,138 +1069,138 @@ class HtmlTemplate extends HtmlServive
                         'opt' => array('id' => '', 'name' => ''),
                         'option' => array('id' => 'id', 'name' => 'delivery')
                     )
-                ) . '
+                ).'
 										</div>';
         }
 
 
         $code .= '
-					<form id="' . $id_form . '" class="" role="form">
+					<form id="'.$id_form.'" class="" role="form">
 						<div class="offer-form">
 						<div class="offer-form_main">
-							' . $code_flag_account3 . '
+							'.$code_flag_account3.'
 							
 							<div class="form-group offer-form__item">
-								' . $this->Input(array('type' => 'text',
+								'.$this->Input(array('type' => 'text',
                     'id' => 'cost',
                     'class' => 'form-control require-input vmask',
                     'value' => $row_bs['cost'],
                     'placeholder' => 'Цена',
                     'dopol' => 'required data-bv-notempty-message="Введите цену" autocomplete="off"'
                 )
-            ) . '
+            ).'
 							</div>
 
-							' . $currency . '
+							'.$currency.'
 							
 							
-							' . $code_form_payment . '
+							'.$code_form_payment.'
 							
 							
-							' . $code_unit . '
+							'.$code_unit.'
 							
 							
-							' . $code_availability . '
+							'.$code_availability.'
 							
-							' . $code_delivery . '
+							'.$code_delivery.'
 							
 							
 							<div class="form-group offer-form__item">
-								' . $this->SelectCities(array('cities_id' => $arr_cities['cities_id'])) . '
+								'.$this->SelectCities(array('cities_id' => $arr_cities['cities_id'])).'
 							</div>
 									
 							<div class="form-group offer-form__item">
-									' . $this->Input(array('type' => 'text',
+									'.$this->Input(array('type' => 'text',
                 'id' => 'comments',
                 'class' => 'form-control',
                 'value' => $row_bs['comments'],
                 'placeholder' => 'Комментарий'
-            )) . '
+            )).'
 							</div>
 						</div>
 						<div class="offer-form_sec">
 							<div class="offer-form_sec-main">
 								<div class="offer-form__item cam_form">
 									<label for="cam" class="file none-req">	
-										<input type="buttom" id="cam" onclick="$$(\'upload_files_buy_sell' . $in['parent_id'] . '\').fileDialog();" ' . $required_file . '>										
+										<input type="buttom" id="cam" onclick="$$(\'upload_files_buy_sell'.$in['parent_id'].'\').fileDialog();" '.$required_file.'>										
 									</label>
 								</div>
 								<div class="form-group offer-form__item">
-									' . $this->Input(array('type' => 'text',
+									'.$this->Input(array('type' => 'text',
                     'id' => 'name',
                     'class' => 'form-control',
                     'value' => $row_bs['name'],
                     'placeholder' => 'Наименование',
-                    'dopol' => 'autocomplete="off" ' . $required_name . ' data-bv-notempty-message="Введите наименование"'
+                    'dopol' => 'autocomplete="off" '.$required_name.' data-bv-notempty-message="Введите наименование"'
                 )
-            ) . '
+            ).'
 								</div>
-								' . $code_elem . '
+								'.$code_elem.'
 								
 								
-								<div id="container_upload_files' . $in['parent_id'] . '"></div>
+								<div id="container_upload_files'.$in['parent_id'].'"></div>
 									
-									' . $button_dopol_attribute . '
+									'.$button_dopol_attribute.'
 						
-								' . $code_multiplicity_min_party . '
+								'.$code_multiplicity_min_party.'
 							</div>
 							<div class="offer-form_sec-more">
-								<span class="request-hidden-more div_offer_dopol_attribute_visible" data-id_form="offer_' . $in['parent_id'] . '-form" style="cursor:pointer;"><span class="request-hidden-more__text">Дополнительные параметры</span> <span><img src="/image/request-arrow.png" alt=""></span>
+								<span class="request-hidden-more div_offer_dopol_attribute_visible" data-id_form="offer_'.$in['parent_id'].'-form" style="cursor:pointer;"><span class="request-hidden-more__text">Дополнительные параметры</span> <span><img src="/image/request-arrow.png" alt=""></span>
 								</span>
 							</div>
 						</div>
-							' . $this->Input(array('type' => 'hidden',
+							'.$this->Input(array('type' => 'hidden',
                     'id' => 'parent_id',
                     'value' => $in['parent_id']
                 )
-            ) . '
-							' . $this->Input(array('type' => 'hidden',
+            ).'
+							'.$this->Input(array('type' => 'hidden',
                     'id' => 'flag_buy_sell',
                     'value' => 2
                 )
-            ) . '	
-							' . $this->Input(array('type' => 'hidden',
+            ).'	
+							'.$this->Input(array('type' => 'hidden',
                     'id' => 'share_url',
                     'value' => $in['share_url']
                 )
-            ) . '
-							' . $this->Input(array('type' => 'hidden',
+            ).'
+							'.$this->Input(array('type' => 'hidden',
                     'id' => 'nomenclature_id',
                     'value' => $row_bs['nomenclature_id']
                 )
-            ) . '
-							' . $this->Input(array('type' => 'hidden',
+            ).'
+							'.$this->Input(array('type' => 'hidden',
                     'id' => 'responsible_id',
                     'value' => $row_bs['responsible_id']
                 )
-            ) . '
-							' . $this->Input(array('type' => 'hidden',
+            ).'
+							'.$this->Input(array('type' => 'hidden',
                     'id' => 'stock_id',
                     'value' => $row_bs['stock_id']
                 )
-            ) . '
-							' . $this->Input(array('type' => 'hidden',
+            ).'
+							'.$this->Input(array('type' => 'hidden',
                     'id' => 'company_id3',
                     'value' => $row_bs['company_id3']
                 )
-            ) . '			
-							' . $this->Input(array('type' => 'submit',
+            ).'			
+							'.$this->Input(array('type' => 'submit',
                     'class' => 'request-btn request-hidden-btn',
                     'value' => $submit_value,
                     'data' => array('status' => $in['status'])
                 )
-            ) . '
+            ).'
 						</div>
 					</form>
 					<script>
-							$("#' . $id_form . '").bootstrapValidator({
+							$("#'.$id_form.'").bootstrapValidator({
 								feedbackIcons: {
 									valid: "glyphicon glyphicon-ok",
 									invalid: "glyphicon glyphicon-remove",
 									validating: "glyphicon glyphicon-refresh"
 								},
 								fields: {
-									' . $js_amount . '
+									'.$js_amount.'
 									cities_id: {
 										validators: {
 											notEmpty: {
@@ -1219,9 +1219,9 @@ class HtmlTemplate extends HtmlServive
 								bv.disableSubmitButtons(true);
 								
 								var flag_uploader = true;
-								if($("#' . $id_form . ' #cam").attr("required")=="required"){
+								if($("#'.$id_form.' #cam").attr("required")=="required"){
 								
-									var order = $$("upload_files_buy_sell' . $in['parent_id'] . '").files.data.order;
+									var order = $$("upload_files_buy_sell'.$in['parent_id'].'").files.data.order;
 									var kol_file = order.length;
 									if(kol_file==0){
 										flag_uploader = false;
@@ -1236,12 +1236,12 @@ class HtmlTemplate extends HtmlServive
 									$.post("/save_buy_sell", $form.serialize()+"&status="+d.status,
 										function(data){
 												if(data.ok){
-														$$("upload_files_buy_sell' . $in['parent_id'] . '").files.data.each(function(obj){
+														$$("upload_files_buy_sell'.$in['parent_id'].'").files.data.each(function(obj){
 																	obj.formData = { id:data.id };
 														});
 														
-														$$("upload_files_buy_sell' . $in['parent_id'] . '").send(function(response){
-																$$("upload_files_buy_sell' . $in['parent_id'] . '").files.data.each(function(obj){
+														$$("upload_files_buy_sell'.$in['parent_id'].'").send(function(response){
+																$$("upload_files_buy_sell'.$in['parent_id'].'").files.data.each(function(obj){
 																	
 																	var status = obj.status;
 																	var name = obj.name;
@@ -1252,11 +1252,11 @@ class HtmlTemplate extends HtmlServive
 																		webix.message({type:"error", text:"Нельзя загрузить: "+name});
 																	}
 																});
-																if( (' . COMPANY_ID . '>0) || (' . $company_id_share . '>0) ){
+																if( ('.COMPANY_ID.'>0) || ('.$company_id_share.'>0) ){
 																	if(d.status==10){
-																		' . $script10 . '
+																		'.$script10.'
 																	}else{
-																		' . $js_add_assets . '
+																		'.$js_add_assets.'
 																	}
 																}else{
 																	if(d.status==10){
@@ -1314,23 +1314,23 @@ class HtmlTemplate extends HtmlServive
 
         }
 
-        $comments = ($row_bs['comments']) ? ', ' . $row_bs['comments'] : '';
+        $comments = ($row_bs['comments']) ? ', '.$row_bs['comments'] : '';
 
         $m['name'] = isset($m['name']) & !empty($m['name']) ? $m['name'] : '-';
 
         if ($row_bs['unit_group_id']) {
-            $amoun_unit = $this->nf($row_bs['amount1']) . ' ' . $row_bs['unit1'];
+            $amoun_unit = $this->nf($row_bs['amount1']).' '.$row_bs['unit1'];
         } else {
-            $amoun_unit = $this->nf($row_bs['amount']) . ' ' . $row_bs['unit'];
+            $amoun_unit = $this->nf($row_bs['amount']).' '.$row_bs['unit'];
         }
 
 
         $content = '	<section class="request" id="request">
 							<div class="request__top">
-								<div class="request__top-content"><b>' . $row_bs['name'] . ',</b> ' . $amoun_unit . ', ' . $row_bs['urgency'] . $comments . '</div>
+								<div class="request__top-content"><b>'.$row_bs['name'].',</b> '.$amoun_unit.', '.$row_bs['urgency'].$comments.'</div>
 								<div id="div_count_status_buysell"></div>
 							</div>
-							<div class="request__content">' . $tr . '</div>
+							<div class="request__content">'.$tr.'</div>
 							<div class="request__bottom"></div>
 						</section>';
 
@@ -1350,7 +1350,7 @@ class HtmlTemplate extends HtmlServive
         $arr_six = array(1 => '', 2 => '', 3 => '', 4 => '', 5 => '', 6 => '');
         $r = reqBuySellAttributeSixParam(array('buy_sell_id' => $m['id'], 'categories_id' => $m['categories_id'], 'flag' => 'six'));
         foreach ($r as $n => $mm) {
-            $arr_six[$mm['sort']] = '<span class="c999">' . $mm['attribute'] . '</span> <strong>' . $mm['attribute_value'] . '</strong>';
+            $arr_six[$mm['sort']] = '<span class="c999">'.$mm['attribute'].'</span> <strong>'.$mm['attribute_value'].'</strong>';
         }
 
         $buy_offer = '';
@@ -1359,7 +1359,7 @@ class HtmlTemplate extends HtmlServive
             'company_id' => COMPANY_ID));
         foreach ($row_buy_offer as $ii => $mm) {
             $buy_offer .= '<div>
-										<span class="badge badge-success font12">' . $mm['status_buy2'] . ' ' . $this->nf($mm['amount']) . ' ' . $mm['unit'] . '</span>
+										<span class="badge badge-success font12">'.$mm['status_buy2'].' '.$this->nf($mm['amount']).' '.$mm['unit'].'</span>
 									</div>';
             $amount_buy_current = $amount_buy_current + $mm['amount'];
         }
@@ -1371,7 +1371,7 @@ class HtmlTemplate extends HtmlServive
             $notification_tid = $m['id'];//пишем ID для - удалить маркер оповещения
         }
 
-        $cost_coefficient = ($m['cost_coefficient'] && ($m['cost_coefficient'] <> $m['cost'])) ? '<div>(' . $this->nf($m['cost_coefficient']) . ')</div>' : '';
+        $cost_coefficient = ($m['cost_coefficient'] && ($m['cost_coefficient'] <> $m['cost'])) ? '<div>('.$this->nf($m['cost_coefficient']).')</div>' : '';
 
 
         // рекомендация по покупаемому количеству
@@ -1425,9 +1425,9 @@ class HtmlTemplate extends HtmlServive
 
         $company = '	<div class="request-user">
 								<span class="user-name">
-									<a href="/company-profile/' . $m['company_id'] . '" target="_blank">' . $m['company'] . '</a>
+									<a href="/company-profile/'.$m['company_id'].'" target="_blank">'.$m['company'].'</a>
 								</span>
-								' . $ico_userimg . '
+								'.$ico_userimg.'
 							</div>';
 
         // группированная строка
@@ -1438,9 +1438,9 @@ class HtmlTemplate extends HtmlServive
             $company = $m['cities_name'] = $m['urgency'] = $m['availability'] = $day_noactive = $m['data_status_buy_sell_23'] = $m['categories'] = '';
             $m['comments'] = $m['form_payment'] = $m['cities_name'] = $m['unit'] = $m['amount'] = '';
             $button_grouping = $this->Input(array('type' => 'button',
-                        'id' => 'view_grouping' . $m['id'],
+                        'id' => 'view_grouping'.$m['id'],
                         'class' => 'change-btn view_grouping',
-                        'value' => 'от ' . $this->nf($m['cost_grouping']) . ' ' . $m['currency'] . ' (' . $m['kol_grouping'] . ')',
+                        'value' => 'от '.$this->nf($m['cost_grouping']).' '.$m['currency'].' ('.$m['kol_grouping'].')',
                         'data' => array('value' => $m['val_grouping'],
                             'id' => $m['id'],
                             'parent_id' => $in['parent_id'],
@@ -1448,50 +1448,50 @@ class HtmlTemplate extends HtmlServive
                             'flag_limit' => true,
                             'start_limit' => 0)
                     )
-                ) . '
-									' . $this->Input(array('type' => 'button',
-                        'id' => 'close_view_grouping' . $m['id'],
+                ).'
+									'.$this->Input(array('type' => 'button',
+                        'id' => 'close_view_grouping'.$m['id'],
                         'class' => 'change-btn close_view_grouping',
                         'value' => 'Свернуть',
                         'dopol' => 'style="display:none;"',
                         'data' => array('id' => $m['id'])
                     )
                 );
-            $div_view_grouping = '	<div id="tr_' . $m['id'] . '" class="request-hidden" style="display:none;">
+            $div_view_grouping = '	<div id="tr_'.$m['id'].'" class="request-hidden" style="display:none;">
 											</div>';
         } else {
 
-            $div_id = 'div_offer' . $m['id'] . '';// id div`a для обновления при покупке
+            $div_id = 'div_offer'.$m['id'].'';// id div`a для обновления при покупке
 
             if ($m['urgency'] == 'Срочно') {
-                $urgency = '<span class="data-month urgency-urgent">' . $m['urgency'] . '<span class="bttip" style="display: none;">Срочность</span></span>';
+                $urgency = '<span class="data-month urgency-urgent">'.$m['urgency'].'<span class="bttip" style="display: none;">Срочность</span></span>';
             }
 
             if ($m['cities_name'] != '') {
-                $city = $m['cities_name'] . ',';
+                $city = $m['cities_name'].',';
             }
 
             $data_item = $m['data_insert'];
 
 
-            $consignment = ($m['min_party'] || $m['multiplicity']) ? '<span class="sell-item_quantity-bottom__left">' . $m['min_party'] . '</span>/<span class="sell-item_quantity-bottom__right">' . $m['multiplicity'] . '</span>' : '';
+            $consignment = ($m['min_party'] || $m['multiplicity']) ? '<span class="sell-item_quantity-bottom__left">'.$m['min_party'].'</span>/<span class="sell-item_quantity-bottom__right">'.$m['multiplicity'].'</span>' : '';
 
 
             if ($m['qrq_srok_dn']) {
                 $str = $this->format_by_count($m['qrq_srok_dn'], 'день', 'дня', 'дней');
-                $time = $m['qrq_srok_dn'] . ' ' . $str;
+                $time = $m['qrq_srok_dn'].' '.$str;
             }
 
 
-            $cost = '<span><span class="rpCost">' . $this->nf($m['cost']) . '</span><span class="rpCurrency"> ' . $m['currency'] . '</span></span>';
+            $cost = '<span><span class="rpCost">'.$this->nf($m['cost']).'</span><span class="rpCurrency"> '.$m['currency'].'</span></span>';
 
             $row_status = '<div class="sell-item_status-bars status-bar">
 										<button class="status-bar__convert">
 											<img src="/image/status-mail.svg" alt="Отправить сообщение (Предложения по заявкам)" class="status-request write_message_need" 
 												data-need="25" 
-												data-company="' . COMPANY_ID . '"
-												data-id="' . $m['id'] . '"
-												data-url="/' . $m['url_cities'] . '/' . $m['url_categories'] . '/' . $m['url'] . '"
+												data-company="'.COMPANY_ID.'"
+												data-id="'.$m['id'].'"
+												data-url="/'.$m['url_cities'].'/'.$m['url_categories'].'/'.$m['url'].'"
 											>
 										</button>
 									</div>';
@@ -1503,7 +1503,7 @@ class HtmlTemplate extends HtmlServive
             $form_payment = '<span class="request-money"></span>';
         } else {
             if ($m['form_payment']) {
-                $form_payment = '<span class="request-nds"><span class="ndsText">' . $m['form_payment'] . '</span></span>';
+                $form_payment = '<span class="request-nds"><span class="ndsText">'.$m['form_payment'].'</span></span>';
             } else {
                 $form_payment = '';
             }
@@ -1514,7 +1514,7 @@ class HtmlTemplate extends HtmlServive
         $availability = '';
         if ($m['availability']) {
             $str = $this->format_by_count($m['availability'], 'день', 'дня', 'дней');
-            $availability = $m['availability'] . ' ' . $str;
+            $availability = $m['availability'].' '.$str;
         }
         //
 
@@ -1528,7 +1528,7 @@ class HtmlTemplate extends HtmlServive
         //
 
 
-        $kol_status11 = ($m['kol_status11']) ? '(' . $this->nf($m['kol_status11']) . ')' : '';//количество купленного данного предложения
+        $kol_status11 = ($m['kol_status11']) ? '('.$this->nf($m['kol_status11']).')' : '';//количество купленного данного предложения
 
         if (PRAVA_5) {
             $cost_coefficient = $cost = $form_payment = $company = '';
@@ -1544,24 +1544,24 @@ class HtmlTemplate extends HtmlServive
         $m['name'] = ($m['name']) ? $m['name'] : '-';
 
         // количество/ед.измерения
-        $amount_unit = $m['amount'] . ' ' . $m['unit'];
+        $amount_unit = $m['amount'].' '.$m['unit'];
 
         // фасовка
         $packing = '';
         if ($m['unit_group_id']) {
 
             if ($m['unit_id2'] && $m['amount2']) {// выбрано ШТУКИ и другая ед.измерения
-                $packing = '<span style="color:#b2afaf;">Фасовка</span><br/>' . $this->nf($m['amount1']) . '' . $m['unit1'] . '/' . $this->nf($m['amount2']) . '' . $m['unit2'];
-                $cost = '' . $this->nf($m['cost1']) . ' ' . $m['currency'] . '/шт
+                $packing = '<span style="color:#b2afaf;">Фасовка</span><br/>'.$this->nf($m['amount1']).''.$m['unit1'].'/'.$this->nf($m['amount2']).''.$m['unit2'];
+                $cost = ''.$this->nf($m['cost1']).' '.$m['currency'].'/шт
 									<br/>
-									' . $this->nf($m['cost']) . ' ' . $m['currency'] . '/' . $m['unit'];
+									'.$this->nf($m['cost']).' '.$m['currency'].'/'.$m['unit'];
                 $cost_coefficient = '';
                 $amount_unit = '';
             } elseif ($m['unit_id1'] && !$m['unit_id2'] && ($m['unit_id'] <> $m['unit_id1'])) {// выбрано НЕ штуки, а другая ед.измерения отличная от "по умолчанию" у категории
 
-                $cost = '' . $this->nf($m['cost']) . ' ' . $m['currency'] . '/' . $m['unit'];
+                $cost = ''.$this->nf($m['cost']).' '.$m['currency'].'/'.$m['unit'];
 
-                $amount_unit = $this->nf($m['amount1']) . ' ' . $m['unit1'];
+                $amount_unit = $this->nf($m['amount1']).' '.$m['unit1'];
 
             }
 
@@ -1570,13 +1570,13 @@ class HtmlTemplate extends HtmlServive
 
 
         $tr = '
-				<div id="' . $div_id . '" class="container">
-					<div class="sell-item view_1' . $noPhoto . '">
+				<div id="'.$div_id.'" class="container">
+					<div class="sell-item view_1'.$noPhoto.'">
 						<div class="sell-item__img">
 							<div class="request-slider-wrapper">
 								<div class="image-wrapper">
 									<div class="inner-wrapper">
-										' . $img . '
+										'.$img.'
 									</div>
 								</div>
 								<div class="slider-control"></div>
@@ -1584,66 +1584,66 @@ class HtmlTemplate extends HtmlServive
 						</div>
 						<div class="sell-item__info">
 							<div class="sell-item_name">
-								<div class="sell-item_name-top ' . $m['kol_grouping'] . '">
-									<a href="/' . $m['url_cities'] . '/' . $m['url_categories'] . '/' . $m['url'] . '" target="_blank">' . $m['name'] . '</a>
+								<div class="sell-item_name-top '.$m['kol_grouping'].'">
+									<a href="/'.$m['url_cities'].'/'.$m['url_categories'].'/'.$m['url'].'" target="_blank">'.$m['name'].'</a>
 								</div>
 								<div class="sell-item_name-bottom">
-									<span class="sell-item_name-bottom__num">' . $availability . '</span>
-									<span class="sell-item_name-bottom__time">' . $time . '</span>
+									<span class="sell-item_name-bottom__num">'.$availability.'</span>
+									<span class="sell-item_name-bottom__time">'.$time.'</span>
 								</div>
 							</div>
 							<div class="sell-item_quantity">
 								<div class="sell-item_quantity-top">
-									<span class="sell-item_quantity-top__quantity">' . $amount_unit . '</span>
-									<span class="sell-item_quantity-top__sec">' . $kol_status11 . '</span>
-									' . $packing . ' 
+									<span class="sell-item_quantity-top__quantity">'.$amount_unit.'</span>
+									<span class="sell-item_quantity-top__sec">'.$kol_status11.'</span>
+									'.$packing.' 
 								</div>
-								<div class="sell-item_quantity-bottom">' . $consignment . '</div>
+								<div class="sell-item_quantity-bottom">'.$consignment.'</div>
 							</div>
 							<div class="sell-item_price">
 								<div class="sell-item_prop-left">
-									<div class="sell-item_prop-left__top">' . $cost_coefficient . '</div>
+									<div class="sell-item_prop-left__top">'.$cost_coefficient.'</div>
 									<div class="sell-item_prop-left__bottom"></div>
 								</div>
 								<div class="sell-item_prop-middle">
-									<div class="sell-item_prop-middle__top">' . $cost . '</div>
-									<div class="sell-item_prop-middle__bottom"><div>' . $notification . '</div></div>
+									<div class="sell-item_prop-middle__top">'.$cost.'</div>
+									<div class="sell-item_prop-middle__bottom"><div>'.$notification.'</div></div>
 								</div>
 								<div class="sell-item_prop-right">
-									<div class="sell-item_prop-right__top">' . $form_payment . '</div>
-									<div class="sell-item_prop-right__bottom">' . $delivery . '</div>
+									<div class="sell-item_prop-right__top">'.$form_payment.'</div>
+									<div class="sell-item_prop-right__bottom">'.$delivery.'</div>
 								</div>
 							</div>
 							<div class="sell-item_prop">
-								<div class="sell-item_prop-item">' . $arr_six[1] . '</div>
-								<div class="sell-item_prop-item">' . $arr_six[2] . '</div>
-								<div class="sell-item_prop-item">' . $arr_six[3] . '</div>
-								<div class="sell-item_prop-item">' . $arr_six[4] . '</div>
-								<div class="sell-item_prop-item">' . $arr_six[5] . '</div>
-								<div class="sell-item_prop-item">' . $arr_six[6] . '</div>
+								<div class="sell-item_prop-item">'.$arr_six[1].'</div>
+								<div class="sell-item_prop-item">'.$arr_six[2].'</div>
+								<div class="sell-item_prop-item">'.$arr_six[3].'</div>
+								<div class="sell-item_prop-item">'.$arr_six[4].'</div>
+								<div class="sell-item_prop-item">'.$arr_six[5].'</div>
+								<div class="sell-item_prop-item">'.$arr_six[6].'</div>
 							</div>
 							<div class="sell-item_middle">
-								<div class="sell-item_middle-comment">' . $m['comments'] . '</div>
-								<div class="sell-item_middle-btn">' . $button_buy . '' . $button_grouping . '</div>
+								<div class="sell-item_middle-comment">'.$m['comments'].'</div>
+								<div class="sell-item_middle-btn">'.$button_buy.''.$button_grouping.'</div>
 							</div>
 							<div class="sell-item_bottom">
 								<div class="sell-item_bottom-left">
-									<span class="sell-item_bottom-left__sticker">' . $urgency . '</span>
-									<span class="sell-item_bottom-left__city">' . $city . '</span>
-									<span class="sell-item_bottom-left__date"> ' . $data_item . '</span>
+									<span class="sell-item_bottom-left__sticker">'.$urgency.'</span>
+									<span class="sell-item_bottom-left__city">'.$city.'</span>
+									<span class="sell-item_bottom-left__date"> '.$data_item.'</span>
 								</div>
 								<div class="sell-item_bottom-right">
-									<span class="sell-item_bottom-right__cat">' . $m['categories'] . '</span>
+									<span class="sell-item_bottom-right__cat">'.$m['categories'].'</span>
 									<!--<span class="sell-item_bottom-right__icon">●</span>
 									Точка Онлайн-->
-									<span class="sell-item_bottom-right__name">' . $company . '</span>
+									<span class="sell-item_bottom-right__name">'.$company.'</span>
 								</div>
 							</div>
-							' . $row_status . '
+							'.$row_status.'
 						</div>
 					</div>
 				</div>
-				' . $div_view_grouping . '
+				'.$div_view_grouping.'
 			';
 
         return array('tr' => $tr, 'notification_tid' => $notification_tid);
@@ -1700,7 +1700,7 @@ class HtmlTemplate extends HtmlServive
         $arr_six = array(1 => '', 2 => '', 3 => '', 4 => '', 5 => '', 6 => '');
         $r = reqBuySellAttributeSixParam(array('buy_sell_id' => $m['id'], 'categories_id' => $m['categories_id'], 'flag' => 'six'));
         foreach ($r as $n => $mm) {
-            $arr_six[$mm['sort']] = '<span data-name="' . $mm['attribute'] . '">' . $mm['attribute_value'] . '</span>';
+            $arr_six[$mm['sort']] = '<span data-name="'.$mm['attribute'].'">'.$mm['attribute_value'].'</span>';
         }
 
         $form_buy_sell = $form_buy_sell_hidden = $edit = $data_status_buy_sell_23 = $day_noactive = '';
@@ -1718,7 +1718,7 @@ class HtmlTemplate extends HtmlServive
             $form_payment = '<span class="request-money"></span>';
         } else {
             if ($m['form_payment']) {
-                $form_payment = '<span class="request-nds"><span class="ndsText">' . $m['form_payment'] . '</span></span>';
+                $form_payment = '<span class="request-nds"><span class="ndsText">'.$m['form_payment'].'</span></span>';
             } else {
                 $form_payment = '';
             }
@@ -1729,7 +1729,7 @@ class HtmlTemplate extends HtmlServive
         $availability = '';
         if ($m['availability']) {
             $str = $this->format_by_count($m['availability'], 'день', 'дня', 'дней');
-            $availability = $m['availability'] . ' ' . $str;
+            $availability = $m['availability'].' '.$str;
         }
         //
         if ($img == '') {
@@ -1742,7 +1742,7 @@ class HtmlTemplate extends HtmlServive
         // количество купленных
         $kol_status = '';
         if ($m['kol_status11'] > 0) {
-            $kol_status = '&nbsp;<span style="color:#008000;" title="куплено">(' . $this->nf($m['kol_status11']) . ')</span>';
+            $kol_status = '&nbsp;<span style="color:#008000;" title="куплено">('.$this->nf($m['kol_status11']).')</span>';
         }
         ///
 
@@ -1753,21 +1753,21 @@ class HtmlTemplate extends HtmlServive
 
         $m['name'] = ($m['name']) ? $m['name'] : '-';
 
-        $amount_unit = '<span class="rAmount">' . $this->nf($m['amount']) . '</span> <span class="rMeasure"> ' . $m['unit'] . '</span>';
-        $cost = '<span><span class="rpCost">' . $this->nf($m['cost']) . '</span><span class="rpCurrency"> ' . $m['currency'] . '</span></span>';
+        $amount_unit = '<span class="rAmount">'.$this->nf($m['amount']).'</span> <span class="rMeasure"> '.$m['unit'].'</span>';
+        $cost = '<span><span class="rpCost">'.$this->nf($m['cost']).'</span><span class="rpCurrency"> '.$m['currency'].'</span></span>';
         // фасовка
         $packing = '';
         if ($m['unit_group_id']) {
 
             if ($m['unit_id2'] && $m['amount2']) {// выбрано ШТУКИ и другая ед.измерения
-                $packing = '<span style="color:#b2afaf;">Фасовка</span><br/>' . $this->nf($m['amount1']) . '' . $m['unit1'] . '/' . $this->nf($m['amount2']) . '' . $m['unit2'];
-                $cost = '' . $this->nf($m['cost1']) . ' ' . $m['currency'];
+                $packing = '<span style="color:#b2afaf;">Фасовка</span><br/>'.$this->nf($m['amount1']).''.$m['unit1'].'/'.$this->nf($m['amount2']).''.$m['unit2'];
+                $cost = ''.$this->nf($m['cost1']).' '.$m['currency'];
                 $amount_unit = '';
             } elseif ($m['unit_id1'] && !$m['unit_id2'] && ($m['unit_id'] <> $m['unit_id1'])) {// выбрано НЕ штуки, а другая ед.измерения отличная от "по умолчанию" у категории
 
-                $cost = '' . $this->nf($m['cost']) . ' ' . $m['currency'] . '/' . $m['unit'];
+                $cost = ''.$this->nf($m['cost']).' '.$m['currency'].'/'.$m['unit'];
 
-                $amount_unit = $this->nf($m['amount1']) . ' ' . $m['unit1'];
+                $amount_unit = $this->nf($m['amount1']).' '.$m['unit1'];
 
             }
 
@@ -1776,10 +1776,10 @@ class HtmlTemplate extends HtmlServive
 
         $tr .= '
 						<div class="container">
-							<div class="request-item request-list' . $noPhoto . ' item-list-2">
+							<div class="request-item request-list'.$noPhoto.' item-list-2">
 								<div class="request-slider-wrapper">
 									<div class="image-wrapper">
-										<div class="inner-wrapper">' . $img . '</div>
+										<div class="inner-wrapper">'.$img.'</div>
 									</div>
 									<div class="slider-control"></div>
 									<div class="request-list__27">27</div>
@@ -1791,65 +1791,65 @@ class HtmlTemplate extends HtmlServive
 												<div class="request-pics-wrapper">
 													<div class="image-wrapper">
 														<div class="inner-wrapper">
-															' . $img . '
+															'.$img.'
 														</div>
 													</div>
 													<div class="slider-control"></div>
 												</div>
 												<div class="request-data-name 222">
 													<p>
-														<a href="/' . $m['url_cities'] . '/' . $m['url_categories'] . '/' . $m['url'] . '" target="_blank">' . $m['name'] . '</a>
+														<a href="/'.$m['url_cities'].'/'.$m['url_categories'].'/'.$m['url'].'" target="_blank">'.$m['name'].'</a>
 													</p>
-													<span class="request-quantity">' . $amount_unit . ' ' . $kol_status . '</span>
-													' . $packing . '
+													<span class="request-quantity">'.$amount_unit.' '.$kol_status.'</span>
+													'.$packing.'
 													<div class="request-data-name__bottom">
-														<p>' . $availability . '</p>
-														<span>' . $m['min_party'] . '</span>
-														<span>' . $m['multiplicity'] . '</span>
+														<p>'.$availability.'</p>
+														<span>'.$m['min_party'].'</span>
+														<span>'.$m['multiplicity'].'</span>
 													</div>
 												</div>
 												
 												<div class="request-pricing">
 													<div class="request-price">
 														<div>
-															' . $cost . '
+															'.$cost.'
 															<span></span>
 														</div>
 														<!--
 														<div>
-															<span class="rpCurrency"> ' . $m['currency'] . '</span>
+															<span class="rpCurrency"> '.$m['currency'].'</span>
 															<span></span>
 														</div>
 														-->
 														<div>
-															<span>' . $form_payment . '</span>
+															<span>'.$form_payment.'</span>
 															<span></span>
 														</div>
 													</div>
 												</div>
 												<div class="request-stage__right">
-													<div class="request-stage__right-24">' . $m['categories'] . '</div>
+													<div class="request-stage__right-24">'.$m['categories'].'</div>
 													<div class="request-stage__right-middle">
 														<span>Предложение</span>
 														<span></span>
 													</div>
-													<div class="request-stage__right-25">' . $m['data_status_buy_sell_10'] . '</div>
+													<div class="request-stage__right-25">'.$m['data_status_buy_sell_10'].'</div>
 												</div>
 												<div class="request-data">
 													<div class="request-data-params">
-														' . $arr_six[1] . '
-														' . $arr_six[2] . '
-														' . $arr_six[3] . '
-														' . $arr_six[4] . '
-														' . $arr_six[5] . '
-														' . $arr_six[6] . '
+														'.$arr_six[1].'
+														'.$arr_six[2].'
+														'.$arr_six[3].'
+														'.$arr_six[4].'
+														'.$arr_six[5].'
+														'.$arr_six[6].'
 													</div>
 												</div>
 												<div class="request-for-price">
 													<p class="comments">
-														' . $m['comments'] . '
+														'.$m['comments'].'
 													</p>
-													<span class="bttip" style="display: none;">' . $m['comments'] . '</span>
+													<span class="bttip" style="display: none;">'.$m['comments'].'</span>
 												</div>
 											</div>
 										</div>
@@ -1859,27 +1859,27 @@ class HtmlTemplate extends HtmlServive
 										<div class="request-data-place__left">
 											<span class="request-data-place__sticker"></span>
 											<span class="data-city">
-												' . $m['cities_name'] . '
+												'.$m['cities_name'].'
 											</span>
 										</div>
 										<div class="request-data-place__right">
 											<span class="request-user">
 												<span class="user-name">
-													<a href="/company-profile/' . $m['company_id'] . '" target="_blank">' . $m['company'] . '</a>
+													<a href="/company-profile/'.$m['company_id'].'" target="_blank">'.$m['company'].'</a>
 												</span>
-												' . $ico_userimg . '
+												'.$ico_userimg.'
 											</span>
 										</div>
 									</div>
 									<div class="status-bar">
-										' . $this->Input(array('type' => 'button',
+										'.$this->Input(array('type' => 'button',
                 'class' => 'modal_buy_sell',
                 'value' => '<img src="/image/status-edit.svg" alt="" class="status-request">',
                 'data' => array('id' => $m['id'],
                     'share_url' => $p['share_url'],
                     'flag_offer_share' => true,
                     'nomenclature_id' => $m['nomenclature_id'])
-            )) . '
+            )).'
 									</div>
 								</div>
 							</div>
@@ -1906,7 +1906,7 @@ class HtmlTemplate extends HtmlServive
         if ($arr['ok']) {
             $company1 = reqCompany(array('id' => $row['company_id']));
             $company = reqCompany(array('login_id' => $company1['login_id'], 'flag_account' => 1, 'one' => true));
-            $phone = '<span>' . self::phone_number($company['phone']) . '</span>';
+            $phone = '<span>'.self::phone_number($company['phone']).'</span>';
 
             if (COMPANY_ID && COMPANY_ID <> $row['company_id']) {
 
@@ -1917,7 +1917,7 @@ class HtmlTemplate extends HtmlServive
                     $code_buy_offer = ($row['status_buy_sell_id'] == 10 || $row['flag_buy_sell'] == 1) ? '
 								<form id="form_buy-form" class="" role="form" style="display:none;">
 									<div class="form-group product-quant" style="max-height:70px;">
-											' . $this->Input(array('type' => 'text',
+											'.$this->Input(array('type' => 'text',
                                 'name' => 'amount',
                                 'class' => 'product-input vmask',
                                 'value' => '',
@@ -1925,23 +1925,23 @@ class HtmlTemplate extends HtmlServive
                                 'dopol' => 'list="amount" autocomplete="off" ',
                                 'data' => array('unit_id' => ($row['unit_id1'] ? $row['unit_id1'] : $row['unit_id']))
                             )
-                        ) . '
+                        ).'
 											<datalist id="amount">
-												<option value="' . $in['amount'] . '" />
+												<option value="'.$in['amount'].'" />
 											</datalist>
 									</div>
 									<div class="form-group">
-											' . $this->Input(array('type' => 'submit',
+											'.$this->Input(array('type' => 'submit',
                                 'class' => 'product-button request-btn product-submit',
                                 'value' => 'Купить'
                             )
-                        ) . '
+                        ).'
 									</div>
-									' . $this->Input(array('type' => 'hidden',
+									'.$this->Input(array('type' => 'hidden',
                                 'id' => 'buy_sell_id',
                                 'value' => $in['buy_sell_id']
                             )
-                        ) . '				
+                        ).'				
 								</form>
 								<script>
 										$("#form_buy-form").bootstrapValidator({
@@ -1978,12 +1978,12 @@ class HtmlTemplate extends HtmlServive
 										});
 								</script>
 								<div class="form-group">
-									' . $this->Input(array('type' => 'button',
+									'.$this->Input(array('type' => 'button',
                                 'id' => 'click_buy',
                                 'class' => 'product-button request-btn product-submit',
                                 'value' => 'Купить'
                             )
-                        ) . '
+                        ).'
 								</div>' : '';
                 }
             }
@@ -2010,30 +2010,30 @@ class HtmlTemplate extends HtmlServive
         $code = '
 						<form id="form_note-form" class="" role="form">
 								<div class="form-group">
-									' . $this->Textarea(array('id' => 'note',
+									'.$this->Textarea(array('id' => 'note',
                 'class' => 'product-area',
                 'value' => $row['note'],
                 'placeholder' => 'Заметка',
                 'dopol' => 'cols="30" rows="10"'
-            )) . '
+            )).'
 								</div>
 								<div class="form-group">
-									' . $this->Input(array('type' => 'submit',
+									'.$this->Input(array('type' => 'submit',
                     'class' => 'product-button change-btn',
                     'value' => 'Сохранить'
                 )
-            ) . '
+            ).'
 								</div>
-								' . $this->Input(array('type' => 'hidden',
+								'.$this->Input(array('type' => 'hidden',
                     'id' => 'id',
                     'value' => $row['id']
                 )
-            ) . '
-								' . $this->Input(array('type' => 'hidden',
+            ).'
+								'.$this->Input(array('type' => 'hidden',
                     'id' => 'buy_sell_id',
                     'value' => $in['buy_sell_id']
                 )
-            ) . '
+            ).'
 						</form>
 						<script>
 								$("#form_note-form").bootstrapValidator({
@@ -2086,8 +2086,8 @@ class HtmlTemplate extends HtmlServive
 
         $code = '<div class="text-left">
 					Заметка <img src="/image/status-edit.svg" alt="" class="status-request edit_buy_sell_note" data-flag="1">
-					<div id="div_note_view" class="text-muted font12">' . $r['note'] . '</div>
-					<div id="div_note_edit" style="display:none;">' . $code_note . '</div>
+					<div id="div_note_view" class="text-muted font12">'.$r['note'].'</div>
+					<div id="div_note_edit" style="display:none;">'.$code_note.'</div>
 				</div>';
 
         return $code;
@@ -2106,29 +2106,29 @@ class HtmlTemplate extends HtmlServive
             $str1 = 'Потребности';
         }
 
-        $top = 'История ' . $str1 . ' <small class="text-muted">' . $r['name'] . ', ' . $this->nf($r['amount']) . ' ' . $r['unit'] . '</small>';
+        $top = 'История '.$str1.' <small class="text-muted">'.$r['name'].', '.$this->nf($r['amount']).' '.$r['unit'].'</small>';
 
         $row = reqHistoryBuySell(array('buy_sell_id' => $in['id']));
 
         $tr = '';
         foreach ($row as $i => $m) {
             if ($m['value_old']) {
-                $value = 'с ' . $m['value_old'] . ' на ' . $m['value_new'];
+                $value = 'с '.$m['value_old'].' на '.$m['value_new'];
             } else {
                 $value = $m['value_new'];
             }
             $tr .= '	<tr>
 							<td>
-								' . $m['company'] . '
+								'.$m['company'].'
 							</td>
 							<td>
-								' . $m['data_insert'] . '
+								'.$m['data_insert'].'
 							</td>
 							<td>
-								' . $m['comments'] . '
+								'.$m['comments'].'
 							</td>
 							<td>
-								' . $value . '
+								'.$value.'
 							</td>
 						</tr>
 				';
@@ -2136,7 +2136,7 @@ class HtmlTemplate extends HtmlServive
 
         $content = '	<table id="" class="table font12" border="0" cellspacing="0" cellpadding="0" style="">
 						<tbody>
-							' . $tr . '
+							'.$tr.'
 						</tbody>
 					</table>';
 
@@ -2257,7 +2257,7 @@ class HtmlTemplate extends HtmlServive
                     } else {
                         $cl_kol_status12 = 'success';
                     }
-                    $kol_status = '<span class="text-' . $cl_kol_status12 . '">(' . $this->nf($r_dop['kol_status12']) . ')</span>';
+                    $kol_status = '<span class="text-'.$cl_kol_status12.'">('.$this->nf($r_dop['kol_status12']).')</span>';
                 }
             } else {
                 $tr_cl = 'c999';
@@ -2267,7 +2267,7 @@ class HtmlTemplate extends HtmlServive
             $arr_six = array(1 => '', 2 => '', 3 => '', 4 => '', 5 => '', 6 => '');
             $r = reqBuySellAttributeSixParam(array('buy_sell_id' => $m['id'], 'categories_id' => $m['categories_id'], 'flag' => 'six'));
             foreach ($r as $n => $mm) {
-                $arr_six[$mm['sort']] = '<span data-name="' . $mm['attribute'] . '">' . $mm['attribute_value'] . '</span>';
+                $arr_six[$mm['sort']] = '<span data-name="'.$mm['attribute'].'">'.$mm['attribute_value'].'</span>';
             }
 
 
@@ -2276,7 +2276,7 @@ class HtmlTemplate extends HtmlServive
                 $form_payment = '<span class="request-money"></span>';
             } else {
                 if ($m['form_payment']) {
-                    $form_payment = '<span class="request-nds"><span class="ndsText">' . $m['form_payment'] . '</span></span>';
+                    $form_payment = '<span class="request-nds"><span class="ndsText">'.$m['form_payment'].'</span></span>';
                 } else {
                     $form_payment = '';
                 }
@@ -2284,8 +2284,8 @@ class HtmlTemplate extends HtmlServive
             ///
 
 
-            $cost = ($m['status_buy_sell_id'] <> 6) ? '	<span><span class="rpCost">' . $this->nf($m['cost']) . '</span><span class="rpCurrency"> ' . $m['currency'] . '</span></span>
-														' . $form_payment . '' : '';
+            $cost = ($m['status_buy_sell_id'] <> 6) ? '	<span><span class="rpCost">'.$this->nf($m['cost']).'</span><span class="rpCurrency"> '.$m['currency'].'</span></span>
+														'.$form_payment.'' : '';
             $cost_old = $m['cost'];
 
 
@@ -2323,7 +2323,7 @@ class HtmlTemplate extends HtmlServive
             // имя заказа
             $comments_company = $urgency = '';
             if ($m['status_buy_sell_id'] == 6) {
-                $comments_company = ($m['flag_buy_sell'] == 2) ? '<span class="">' . $m['comments_company'] . '</span>' : '';
+                $comments_company = ($m['flag_buy_sell'] == 2) ? '<span class="">'.$m['comments_company'].'</span>' : '';
                 /*$urgency			= ' <span class="data-month '.$urgency_color.'">
 												'.$m['urgency'].'
 												<span class="bttip" style="display: none;">Срочность</span>
@@ -2334,7 +2334,7 @@ class HtmlTemplate extends HtmlServive
             $availability = '';
             if ($m['availability']) {
                 $str = $this->format_by_count($m['availability'], 'день', 'дня', 'дней');
-                $availability = $m['availability'] . ' ' . $str;
+                $availability = $m['availability'].' '.$str;
             }
             //
             /*
@@ -2344,7 +2344,7 @@ class HtmlTemplate extends HtmlServive
 			}
 			*/
 
-            $amount_unit = '<span class="rAmount">' . $this->nf($m['amount']) . '</span> <span class="rMeasure"> ' . $m['unit'] . '</span>';
+            $amount_unit = '<span class="rAmount">'.$this->nf($m['amount']).'</span> <span class="rMeasure"> '.$m['unit'].'</span>';
 
             // фасовка
             $packing = '';
@@ -2352,19 +2352,19 @@ class HtmlTemplate extends HtmlServive
 
                 if ($m['unit_id2'] && $m['amount2']) {// выбрано ШТУКИ и другая ед.измерения
                     $t_amount = ($m['status_buy_sell_id'] == 11) ? $m['amount_buy'] : $m['amount1'];
-                    $packing = '<span style="color:#b2afaf;">Фасовка</span><br/>' . $this->nf($t_amount) . '' . $m['unit1'] . '/' . $this->nf($m['amount2']) . '' . $m['unit2'];
-                    $cost = '' . $this->nf($m['cost1']) . ' ' . $m['currency'];
+                    $packing = '<span style="color:#b2afaf;">Фасовка</span><br/>'.$this->nf($t_amount).''.$m['unit1'].'/'.$this->nf($m['amount2']).''.$m['unit2'];
+                    $cost = ''.$this->nf($m['cost1']).' '.$m['currency'];
                     $cost_old = $m['cost1'];
                     $cost_coefficient = '';
                     $amount_unit = '';
                 } elseif ($m['unit_id1'] && !$m['unit_id2'] && ($m['unit_id'] <> $m['unit_id1'])) {// выбрано НЕ штуки, а другая ед.измерения отличная от "по умолчанию" у категории
 
-                    $cost = '' . $this->nf($m['cost']) . ' ' . $m['currency'] . '/' . $m['unit'];
+                    $cost = ''.$this->nf($m['cost']).' '.$m['currency'].'/'.$m['unit'];
                     $cost_old = $m['cost'];
 
                     $t_amount = ($m['status_buy_sell_id'] == 11) ? $m['amount_buy'] : $m['amount1'];
 
-                    $amount_unit = $this->nf($t_amount) . '' . $m['unit1'];
+                    $amount_unit = $this->nf($t_amount).''.$m['unit1'];
 
                 }
             }
@@ -2389,37 +2389,37 @@ class HtmlTemplate extends HtmlServive
 						<div class="buy-item-main-left">
 							<div class="buy-item-main-left__left">
 								<div class="buy-item-main-left__left-name">
-									<a href="/' . $m['url_cities'] . '/' . $m['url_categories'] . '/' . $m['url'] . '" class="' . $tr_cl . ' bold" target="_blank">
-										' . $m['name'] . '
-										<span class="bttip" style="display: none;">' . $m['name'] . '</span>
+									<a href="/'.$m['url_cities'].'/'.$m['url_categories'].'/'.$m['url'].'" class="'.$tr_cl.' bold" target="_blank">
+										'.$m['name'].'
+										<span class="bttip" style="display: none;">'.$m['name'].'</span>
 									</a>
 								</div>
 								<div class="buy-item-main-left__left-city">
-									' . $availability . ' ' . $m['cities_name'] . '
+									'.$availability.' '.$m['cities_name'].'
 									<span class="bttip" style="display: none;">Куда / Откуда</span>
 								</div>
 								<div class="buy-item-main-left__left-comment">
-									<p class="comments">' . $m['comments'] . '</p>
-									' . $comments_company . '
+									<p class="comments">'.$m['comments'].'</p>
+									'.$comments_company.'
 								</div>
 							</div>
 							<div class="buy-item-main-left__right">
-								<div class="buy-item-main-left__right-quantity">' . $amount_unit . ' ' . $kol_status . '</div>
-								' . $packing . '
-								<div class="buy-item-main-left__right-icon">' . $ico_photo . '</div>
+								<div class="buy-item-main-left__right-quantity">'.$amount_unit.' '.$kol_status.'</div>
+								'.$packing.'
+								<div class="buy-item-main-left__right-icon">'.$ico_photo.'</div>
 							</div>
 						</div>
 						<div class="buy-item-main-center">
-							<div class="buy-item-main-center_prop">' . $arr_six[1] . '</div>
-							<div class="buy-item-main-center_prop">' . $arr_six[2] . '</div>
-							<div class="buy-item-main-center_prop">' . $arr_six[3] . '</div>
-							<div class="buy-item-main-center_prop">' . $arr_six[4] . '</div>
-							<div class="buy-item-main-center_prop">' . $arr_six[5] . '</div>
-							<div class="buy-item-main-center_prop">' . $arr_six[6] . '</div>
+							<div class="buy-item-main-center_prop">'.$arr_six[1].'</div>
+							<div class="buy-item-main-center_prop">'.$arr_six[2].'</div>
+							<div class="buy-item-main-center_prop">'.$arr_six[3].'</div>
+							<div class="buy-item-main-center_prop">'.$arr_six[4].'</div>
+							<div class="buy-item-main-center_prop">'.$arr_six[5].'</div>
+							<div class="buy-item-main-center_prop">'.$arr_six[6].'</div>
 						</div>
 						<div class="buy-item-main-right">
 							<div class="buy-item-main-right__left">
-								<div class="buy-item-main-right__left-cost" style="' . $st_cost . '">' . $cost . '</div>
+								<div class="buy-item-main-right__left-cost" style="'.$st_cost.'">'.$cost.'</div>
 								<div class="buy-item-main-right__left-company"></div>
 							</div>
 							
@@ -2540,9 +2540,9 @@ class HtmlTemplate extends HtmlServive
             $tr .= '	
 					<div class="interests-item">
 						<div class="interests-name">
-							' . $m['interests_param'] . '
+							'.$m['interests_param'].'
 						</div>
-						' . $this->HtmlInterestsSelect2(array('interests_id' => $p['interests_id'],
+						'.$this->HtmlInterestsSelect2(array('interests_id' => $p['interests_id'],
                     'interests_param_id' => $m['id'],
                     'row' => $row,
                     'pole' => $pole,
@@ -2551,15 +2551,15 @@ class HtmlTemplate extends HtmlServive
                     'flag' => $p['flag'],
                     'login_id' => $p['login_id'],
                     'where' => $where
-                )) . '
+                )).'
 					</div>';
         }
 
         $tr = '	<div class="interests-wrapper">
 					<div class="interests-info">
-						' . $tr . '
+						'.$tr.'
 					</div>
-					<a href="/buy?interests_id=' . $p['interests_id'] . '" class="interests-go request-btn change-btn" target="_blank">Перейти</a>
+					<a href="/buy?interests_id='.$p['interests_id'].'" class="interests-go request-btn change-btn" target="_blank">Перейти</a>
 				</div>';
 
 
@@ -2647,8 +2647,8 @@ class HtmlTemplate extends HtmlServive
         //vecho($in['flag_buy_sell'].$r['kol']);
         if ($flag_buy_sell == 2 && ($r['kol'] > 0)) {
             $data_flag_interest = ($rf['flag_interest']) ? 2 : 1;
-            $button_interests = '<button class="request-btn interests-btn button_serch_flag_interest" data-flag="' . $data_flag_interest . '">Мои интересы</button>
-							<input type="hidden" id="flag_serch_interest" value="' . $rf['flag_interest'] . '">';
+            $button_interests = '<button class="request-btn interests-btn button_serch_flag_interest" data-flag="'.$data_flag_interest.'">Мои интересы</button>
+							<input type="hidden" id="flag_serch_interest" value="'.$rf['flag_interest'].'">';
         }
 
 
@@ -2656,17 +2656,17 @@ class HtmlTemplate extends HtmlServive
         if (COMPANY_ID) {
 
             $search_select_group = '<li class="nav-item">
-									' . $this->SelectGroupSearchBuySell(array('id' => 0)) . '
+									'.$this->SelectGroupSearchBuySell(array('id' => 0)).'
 								</li>';
             $search_select_sort = '<li class="nav-item">
-									<img src="/image/icon/arrow_up.svg" id="sort_arrow_up" class="sort_arrow" data-flag="up" style="' . $st_sort_1 . '"/>
-									<img src="/image/icon/arrow_down.svg" id="sort_arrow_down" class="sort_arrow" data-flag="down" style="' . $st_sort_2 . '">
-									' . $this->SelectSortSearchBuySell(array('id' => $sort_who)) . '
-									' . $this->Input(array('type' => 'hidden',
+									<img src="/image/icon/arrow_up.svg" id="sort_arrow_up" class="sort_arrow" data-flag="up" style="'.$st_sort_1.'"/>
+									<img src="/image/icon/arrow_down.svg" id="sort_arrow_down" class="sort_arrow" data-flag="down" style="'.$st_sort_2.'">
+									'.$this->SelectSortSearchBuySell(array('id' => $sort_who)).'
+									'.$this->Input(array('type' => 'hidden',
                         'id' => 'sort_12',
                         'value' => $sort_12
                     )
-                ) . '
+                ).'
 								</li>';
         }
 
@@ -2676,43 +2676,43 @@ class HtmlTemplate extends HtmlServive
 					<span class="after search-after" data-toggle="modal" data-target="#search-modal"></span>
 					<div class="main-search__thumb">
 					</div>
-					' . $this->Input(array('type' => 'hidden',
+					'.$this->Input(array('type' => 'hidden',
                     'id' => 'flag',
                     'value' => $flag
                 )
-            ) . '
+            ).'
 				</div>
 				<div class="hidden-wrapper">
 					<ul class="nav nav-tabs setting-nav" id="myTab" role="tablist">
 						<li class="nav-item">
-								' . $this->SelectFlagSearchWherePage(array('id' => $flag_search)) . '
+								'.$this->SelectFlagSearchWherePage(array('id' => $flag_search)).'
 						</li>
 						<li class="nav-item">
-							<a class="nav-link category-link ' . $active_categories . '" id="order-tab" data-toggle="tab" href="#nav-category" role="tab" aria-controls="category" aria-selected="false">
-							  <img src="/image/icon/part.png" alt="" class="setting-img"><span>' . $categories . '</span>
+							<a class="nav-link category-link '.$active_categories.'" id="order-tab" data-toggle="tab" href="#nav-category" role="tab" aria-controls="category" aria-selected="false">
+							  <img src="/image/icon/part.png" alt="" class="setting-img"><span>'.$categories.'</span>
 							  <div class="cancel-choose" data-flag="clear_category_search">x</div>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link location-link ' . $active_cities . '" id="partner-tab" data-toggle="tab" href="#nav-location" role="tab" aria-controls="location" aria-selected="false">
-							  <img src="/image/icon/loc.png" alt="" class="setting-img"><span id="get_span_cities">' . $cities_name . '</span>
+							<a class="nav-link location-link '.$active_cities.'" id="partner-tab" data-toggle="tab" href="#nav-location" role="tab" aria-controls="location" aria-selected="false">
+							  <img src="/image/icon/loc.png" alt="" class="setting-img"><span id="get_span_cities">'.$cities_name.'</span>
 													  <div class="cancel-choose" data-flag="clear_location_search">x</div>
 							</a>
 						</li>
-						' . $search_select_group . '
-						' . $search_select_sort . '
-						' . $button_interests . '
+						'.$search_select_group.'
+						'.$search_select_sort.'
+						'.$button_interests.'
 					</ul>
 					<div class="tab-content" id="myTabContent">
 						<div class="tab-pane fade show nav-first" id="nav-first" role="tabpanel" aria-labelledby="home-tab">
 							<div class="app-wrapper blue-buttons">
-								<button class="post-request ' . $active_flag_buy_sell2 . ' param_search_buy_sell" data-src="/image/icon/request.png" data-flag_buy_sell="2">Заявка</button>
-								<button class="post-post ' . $active_flag_buy_sell1 . ' param_search_buy_sell" data-src="/image/icon/add.png" data-flag_buy_sell="1">Объявление</button>
-									' . $this->Input(array('type' => 'hidden',
+								<button class="post-request '.$active_flag_buy_sell2.' param_search_buy_sell" data-src="/image/icon/request.png" data-flag_buy_sell="2">Заявка</button>
+								<button class="post-post '.$active_flag_buy_sell1.' param_search_buy_sell" data-src="/image/icon/add.png" data-flag_buy_sell="1">Объявление</button>
+									'.$this->Input(array('type' => 'hidden',
                     'id' => 'flag_buy_sell',
                     'value' => $flag_buy_sell
                 )
-            ) . '
+            ).'
 							</div>
 						</div>
 					  
@@ -2720,24 +2720,24 @@ class HtmlTemplate extends HtmlServive
 						<div class="tab-pane fade show nav-category" id="nav-category" role="tabpanel" aria-labelledby="home-tab">
 							<div class="cat-wrapper">
 								<div class="list-wrapper d-inline-flex">
-									' . $this->CategoriesListElement(array('flag' => 'search')) . '
-									' . $this->Input(array('type' => 'hidden',
+									'.$this->CategoriesListElement(array('flag' => 'search')).'
+									'.$this->Input(array('type' => 'hidden',
                     'id' => 'categories_id',
                     'value' => $categories_id
                 )
-            ) . '
+            ).'
 								</div>
 							</div>
 						</div>
 
 						<div class="tab-pane fade show nav-location" id="nav-location" role="tabpanel" aria-labelledby="home-tab">
 							<div class="city city-wrapper">
-								<input type="text" placeholder="Введите город" class="city-input autocomplete_cities" value="' . (($cities_name <> 'Город') ? $cities_name : '') . '" autocomplete="off">
-								' . $this->Input(array('type' => 'hidden',
+								<input type="text" placeholder="Введите город" class="city-input autocomplete_cities" value="'.(($cities_name <> 'Город') ? $cities_name : '').'" autocomplete="off">
+								'.$this->Input(array('type' => 'hidden',
                     'id' => 'cities_id',
                     'value' => $cities_id
                 )
-            ) . '
+            ).'
 								<div class="city-thumbs">
 								</div>
 							</div>
@@ -2759,63 +2759,63 @@ class HtmlTemplate extends HtmlServive
 
         $row0 = reqSlovCategories(array('parent_id' => 0, 'active' => true));
         foreach ($row0 as $i => $m0) {
-            $arr_0[] = '<p class="level0_' . $m0['id'] . '" data-block="level0_' . $m0['id'] . '" 
-															data-categories_id="' . $m0['id'] . '" 
-															data-flag="' . $in['flag'] . '"
-															data-flag_buy_sell="' . $in['flag_buy_sell'] . '">' . $m0['categories'] . '</p>';
+            $arr_0[] = '<p class="level0_'.$m0['id'].'" data-block="level0_'.$m0['id'].'" 
+															data-categories_id="'.$m0['id'].'" 
+															data-flag="'.$in['flag'].'"
+															data-flag_buy_sell="'.$in['flag_buy_sell'].'">'.$m0['categories'].'</p>';
 
             // Первый уровень
             $row1 = reqSlovCategories(array('parent_id' => $m0['id'], 'active' => true));
             $p1 = '';
             foreach ($row1 as $i => $m1) {
-                $p1 .= '<p class="level1_' . $m1['id'] . '" data-block="level1_' . $m1['id'] . '" 
-															data-categories_id="' . $m1['id'] . '" 
-															data-flag="' . $in['flag'] . '"
-															data-flag_buy_sell="' . $in['flag_buy_sell'] . '">' . $m1['categories'] . '</p>';
+                $p1 .= '<p class="level1_'.$m1['id'].'" data-block="level1_'.$m1['id'].'" 
+															data-categories_id="'.$m1['id'].'" 
+															data-flag="'.$in['flag'].'"
+															data-flag_buy_sell="'.$in['flag_buy_sell'].'">'.$m1['categories'].'</p>';
 
                 // Второй уровень
                 $row2 = reqSlovCategories(array('parent_id' => $m1['id'], 'active' => true));
                 $p2 = '';
                 foreach ($row2 as $i => $m2) {
-                    $p2 .= '<p class="level2_' . $m2['id'] . '" data-block="level2_' . $m2['id'] . '"
-																		data-categories_id="' . $m2['id'] . '" 
-																		data-flag="' . $in['flag'] . '"
-																		data-flag_buy_sell="' . $in['flag_buy_sell'] . '">' . $m2['categories'] . '</p>';
+                    $p2 .= '<p class="level2_'.$m2['id'].'" data-block="level2_'.$m2['id'].'"
+																		data-categories_id="'.$m2['id'].'" 
+																		data-flag="'.$in['flag'].'"
+																		data-flag_buy_sell="'.$in['flag_buy_sell'].'">'.$m2['categories'].'</p>';
 
                     // Третий уровень
                     $row3 = reqSlovCategories(array('parent_id' => $m2['id'], 'active' => true));
                     $p3 = '';
                     foreach ($row3 as $i => $m3) {
-                        $p3 .= '<p class="level3_' . $m3['id'] . '" data-block="level3_' . $m2['id'] . '" 
-																				data-categories_id="' . $m3['id'] . '" 
-																				data-flag="' . $in['flag'] . '"
-																				data-flag_buy_sell="' . $in['flag_buy_sell'] . '">' . $m3['categories'] . '</p>';
+                        $p3 .= '<p class="level3_'.$m3['id'].'" data-block="level3_'.$m2['id'].'" 
+																				data-categories_id="'.$m3['id'].'" 
+																				data-flag="'.$in['flag'].'"
+																				data-flag_buy_sell="'.$in['flag_buy_sell'].'">'.$m3['categories'].'</p>';
                     }
-                    $arr_3[] = '	<div class="level2_' . $m2['id'] . '">
-												' . $p3 . '
+                    $arr_3[] = '	<div class="level2_'.$m2['id'].'">
+												'.$p3.'
 											</div>';
                 }
-                $arr_2[] = '	<div class="level1_' . $m1['id'] . '">
-										' . $p2 . '
+                $arr_2[] = '	<div class="level1_'.$m1['id'].'">
+										'.$p2.'
 									</div>';
             }
-            $arr_1[] = '	<div class="level0_' . $m0['id'] . '">
-								' . $p1 . '
+            $arr_1[] = '	<div class="level0_'.$m0['id'].'">
+								'.$p1.'
 							</div>';
 
         }
 
         $code = '<div class="cat-changer">
-					' . implode('', $arr_0) . '
+					'.implode('', $arr_0).'
 				</div>
 				<div class="list-element element-1">
-					' . implode('', $arr_1) . '
+					'.implode('', $arr_1).'
 				</div>
 				<div class="list-element element-2">
-					' . implode('', $arr_2) . '
+					'.implode('', $arr_2).'
 				</div>
 				<div class="list-element element-3">
-					' . implode('', $arr_3) . '
+					'.implode('', $arr_3).'
 				</div>';
 
         return $code;
@@ -2862,13 +2862,13 @@ class HtmlTemplate extends HtmlServive
         foreach ($r as $n => $mm) {
             $arr = explode(',', $m['attribute_ids_grouping']);
             if (in_array($mm['id'], $arr) || !$m['kol_grouping']) {
-                $arr_six[$mm['sort']] = '<span data-name="' . $mm['attribute'] . '">' . $mm['attribute_value'] . '</span>';
+                $arr_six[$mm['sort']] = '<span data-name="'.$mm['attribute'].'">'.$mm['attribute_value'].'</span>';
             }
         }
 
-        $company = '<a href="/company-profile/' . $m['company_id'] . '" target="_blank">' . $m['company'] . '</a>';
+        $company = '<a href="/company-profile/'.$m['company_id'].'" target="_blank">'.$m['company'].'</a>';
 
-        $cost_coefficient = ($m['cost_coefficient'] > 0) ? '(' . $this->nf($m['cost_coefficient']) . ')' : '';
+        $cost_coefficient = ($m['cost_coefficient'] > 0) ? '('.$this->nf($m['cost_coefficient']).')' : '';
 
         // кнопка купить на кого подписан
         $button_buy = '';
@@ -2896,21 +2896,21 @@ class HtmlTemplate extends HtmlServive
             $company = $m['cities_name'] = $m['urgency'] = $m['data_status_buy_sell_23'] = $m['categories'] = '';//$day_noactive =
             $m['comments'] = $m['form_payment'] = $m['cities_name'] = $m['unit'] = $m['amount'] = '';
             $button_grouping = $this->Input(array('type' => 'button',
-                        'id' => 'view_grouping' . $m['id'],
+                        'id' => 'view_grouping'.$m['id'],
                         'class' => 'change-btn view_grouping',
-                        'value' => 'от ' . $m['min_cost_grouping'] . ' ' . $m['currency'] . ' (' . $m['kol_grouping'] . ')',
+                        'value' => 'от '.$m['min_cost_grouping'].' '.$m['currency'].' ('.$m['kol_grouping'].')',
                         'data' => array('value' => $m['val_grouping'], 'id' => $m['id'], 'flag' => 'sell')
                     )
-                ) . '
-									' . $this->Input(array('type' => 'button',
-                        'id' => 'close_view_grouping' . $m['id'],
+                ).'
+									'.$this->Input(array('type' => 'button',
+                        'id' => 'close_view_grouping'.$m['id'],
                         'class' => 'change-btn close_view_grouping',
                         'value' => 'Свернуть',
                         'dopol' => 'style="display:none;"',
                         'data' => array('id' => $m['id'])
                     )
                 );
-            $div_view_grouping = '	<div id="tr_' . $m['id'] . '" class="request-hidden" style="display:none;">
+            $div_view_grouping = '	<div id="tr_'.$m['id'].'" class="request-hidden" style="display:none;">
 							
 										</div>';
         }
@@ -2921,7 +2921,7 @@ class HtmlTemplate extends HtmlServive
             $form_payment = '<span class="request-money"></span>';
         } else {
             if ($m['form_payment']) {
-                $form_payment = '<span class="request-nds"><span class="ndsText">' . $m['form_payment'] . '</span></span>';
+                $form_payment = '<span class="request-nds"><span class="ndsText">'.$m['form_payment'].'</span></span>';
             } else {
                 $form_payment = '';
             }
@@ -2929,7 +2929,7 @@ class HtmlTemplate extends HtmlServive
         ///
 
         // Срочность
-        $urgency = ($m['urgency_id'] == 1) ? '<span class="data-month urgency-urgent">' . $m['urgency'] . '</span>' : '';
+        $urgency = ($m['urgency_id'] == 1) ? '<span class="data-month urgency-urgent">'.$m['urgency'].'</span>' : '';
         ///
         if ($img == '') {
             $noPhoto = ' no-photo';
@@ -2945,23 +2945,23 @@ class HtmlTemplate extends HtmlServive
         }
         //
 
-        $consignment = ($m['min_party'] || $m['multiplicity']) ? '<span class="sell-item_quantity-bottom__left">' . $m['min_party'] . '</span>/<span class="sell-item_quantity-bottom__right">' . $m['multiplicity'] . '</span>' : '';
+        $consignment = ($m['min_party'] || $m['multiplicity']) ? '<span class="sell-item_quantity-bottom__left">'.$m['min_party'].'</span>/<span class="sell-item_quantity-bottom__right">'.$m['multiplicity'].'</span>' : '';
 
         // количество купленных
         $kol_status = '';
         if ($m['kol_status11'] > 0) {
-            $kol_status = '&nbsp;<span class="request-quantity__bought" title="куплено">(' . $this->nf($m['kol_status11']) . ')</span>';
+            $kol_status = '&nbsp;<span class="request-quantity__bought" title="куплено">('.$this->nf($m['kol_status11']).')</span>';
         }
 
 
         $m['name'] = ($m['name']) ? $m['name'] : '-';
 
 
-        $tr = '	<div class="sell-item view_2' . $noPhoto . '">
+        $tr = '	<div class="sell-item view_2'.$noPhoto.'">
 						<div class="request-slider-wrapper">
 							<div class="image-wrapper">
 								<div class="inner-wrapper">
-									' . $img . '
+									'.$img.'
 								</div>
 							</div>
 							<div class="slider-control"></div>
@@ -2969,74 +2969,74 @@ class HtmlTemplate extends HtmlServive
 						<div class="sell-item__info">
 							<div class="sell-item_name">
 								<div class="sell-item_name-top">
-									<a href="/' . $m['url_cities'] . '/' . $m['url_categories'] . '/' . $m['url'] . '" target="_blank">' . $m['name'] . '</a>
+									<a href="/'.$m['url_cities'].'/'.$m['url_categories'].'/'.$m['url'].'" target="_blank">'.$m['name'].'</a>
 								</div>
 								<div class="sell-item_name-bottom">
-									<span class="sell-item_name-bottom__num">' . $availability . ' </span>
-									<span class="sell-item_name-bottom__time">' . $availability_str . '</span>
+									<span class="sell-item_name-bottom__num">'.$availability.' </span>
+									<span class="sell-item_name-bottom__time">'.$availability_str.'</span>
 								</div>
 							</div>
 							<div class="sell-item_quantity">
 								<div class="sell-item_quantity-top">
-									<span class="sell-item_quantity-top__quantity">' . $this->nf($m['amount']) . ' ' . $m['unit'] . '</span>' . $kol_status . '
+									<span class="sell-item_quantity-top__quantity">'.$this->nf($m['amount']).' '.$m['unit'].'</span>'.$kol_status.'
 								</div>
 								<div class="sell-item_quantity-bottom">
-									' . $consignment . '
+									'.$consignment.'
 								</div>
 							</div>
 							<div class="sell-item_price">
 								<div class="sell-item_prop-left">
-									<div class="sell-item_prop-left__top">' . $cost_coefficient . '</div>
+									<div class="sell-item_prop-left__top">'.$cost_coefficient.'</div>
 									<div class="sell-item_prop-left__bottom"></div>
 								</div>
 								<div class="sell-item_prop-middle">
-									<div class="sell-item_prop-middle__top">' . $this->nf($m['cost']) . ' <span class="sell-item_prop-top__new-currency">' . $m['currency'] . '</span></div>
+									<div class="sell-item_prop-middle__top">'.$this->nf($m['cost']).' <span class="sell-item_prop-top__new-currency">'.$m['currency'].'</span></div>
 									<div class="sell-item_prop-middle__bottom"><div>3 000 Р</div></div>
 								</div>
 								<div class="sell-item_prop-right">
-									<div class="sell-item_prop-right__top">' . $form_payment . '</div>
+									<div class="sell-item_prop-right__top">'.$form_payment.'</div>
 									<div class="sell-item_prop-right__bottom"></div>
 								</div>
 							</div>
 							<div class="sell-item_prop">
-								<div class="sell-item_prop-item">' . $arr_six[1] . '</div>
-								<div class="sell-item_prop-item">' . $arr_six[2] . '</div>
-								<div class="sell-item_prop-item">' . $arr_six[3] . '</div>
-								<div class="sell-item_prop-item">' . $arr_six[4] . '</div>
-								<div class="sell-item_prop-item">' . $arr_six[5] . '</div>
-								<div class="sell-item_prop-item">' . $arr_six[6] . '</div>
+								<div class="sell-item_prop-item">'.$arr_six[1].'</div>
+								<div class="sell-item_prop-item">'.$arr_six[2].'</div>
+								<div class="sell-item_prop-item">'.$arr_six[3].'</div>
+								<div class="sell-item_prop-item">'.$arr_six[4].'</div>
+								<div class="sell-item_prop-item">'.$arr_six[5].'</div>
+								<div class="sell-item_prop-item">'.$arr_six[6].'</div>
 							</div>
 							<div class="sell-item_middle">
-								<div class="sell-item_middle-comment">' . $m['comments'] . '</div>
-								<div class="sell-item_middle-btn">' . $button_buy . '' . $button_grouping . '</div>
+								<div class="sell-item_middle-comment">'.$m['comments'].'</div>
+								<div class="sell-item_middle-btn">'.$button_buy.''.$button_grouping.'</div>
 							</div>
 							<div class="sell-item_bottom">
 								<div class="sell-item_bottom-left">
-									<span class="sell-item_bottom-left__sticker">' . $urgency . '</span>
-									<span class="sell-item_bottom-left__city">' . $m['cities_name'] . ',</span>
-									<span class="sell-item_bottom-left__date"> ' . $m['data_status_buy_sell_23'] . '</span>
+									<span class="sell-item_bottom-left__sticker">'.$urgency.'</span>
+									<span class="sell-item_bottom-left__city">'.$m['cities_name'].',</span>
+									<span class="sell-item_bottom-left__date"> '.$m['data_status_buy_sell_23'].'</span>
 									
 								</div>
 								<div class="sell-item_bottom-right">
-									<span class="sell-item_bottom-right__cat">' . $m['categories'] . '</span>
+									<span class="sell-item_bottom-right__cat">'.$m['categories'].'</span>
 									<!--<span class="sell-item_bottom-right__icon">●</span>-->
-									<span class="sell-item_bottom-right__name">' . $company . '</span>
+									<span class="sell-item_bottom-right__name">'.$company.'</span>
 								</div>
 							</div>
 							<div class="sell-item_status-bars status-bar">
 								<button>
 									<img src="/image/status-mail.svg" alt="Отправить сообщение (Чужие объявления)" class="status-request write_message_need" 
 										data-need="26" 
-										data-company="' . $m['company_id'] . '"
-										data-id="' . $m['id'] . '"
-										data-url="/' . $m['url_cities'] . '/' . $m['url_categories'] . '/' . $m['url'] . '"
+										data-company="'.$m['company_id'].'"
+										data-id="'.$m['id'].'"
+										data-url="/'.$m['url_cities'].'/'.$m['url_categories'].'/'.$m['url'].'"
 									>
 								</button>
 							</div>
 						</div>
 					</div>
 
-					' . $div_view_grouping . '';
+					'.$div_view_grouping.'';
 
 
         return $tr;
@@ -3075,14 +3075,14 @@ class HtmlTemplate extends HtmlServive
             $m['company'] = $m['cities_name'] = $m['urgency'] = $m['data_status_buy_sell_23'] = $m['categories'] = '';//$day_noactive =
             $m['comments'] = $m['form_payment'] = $m['cities_name'] = $m['unit'] = $m['amount'] = '';
             $button_grouping = $this->Input(array('type' => 'button',
-                        'id' => 'view_grouping' . $m['id'],
+                        'id' => 'view_grouping'.$m['id'],
                         'class' => 'change-btn view_grouping',
-                        'value' => 'от ' . $m['min_cost_grouping'] . ' ' . $m['currency'] . ' (' . $m['kol_grouping'] . ')',
+                        'value' => 'от '.$m['min_cost_grouping'].' '.$m['currency'].' ('.$m['kol_grouping'].')',
                         'data' => array('value' => $m['val_grouping'], 'id' => $m['id'], 'flag' => 'sell')
                     )
-                ) . '
-									' . $this->Input(array('type' => 'button',
-                        'id' => 'close_view_grouping' . $m['id'],
+                ).'
+									'.$this->Input(array('type' => 'button',
+                        'id' => 'close_view_grouping'.$m['id'],
                         'class' => 'change-btn close_view_grouping',
                         'value' => 'Свернуть',
                         'dopol' => 'style="display:none;"',
@@ -3093,7 +3093,7 @@ class HtmlTemplate extends HtmlServive
         ///
 
 
-        $sell22 = require($_SERVER['DOCUMENT_ROOT'] . '/new/dist/sell22.php');
+        $sell22 = require($_SERVER['DOCUMENT_ROOT'].'/new/dist/sell22.php');
 
 
         return $sell22;
@@ -3162,20 +3162,20 @@ class HtmlTemplate extends HtmlServive
                     $kol = 5;
                 }
 
-                $dop_offer = '<div class="request-hidden__bottom"> <span class="view_grouping" data-value="' . $p['val_grouping'] . '"
-																							data-parent_id="' . $in['parent_id'] . '"
+                $dop_offer = '<div class="request-hidden__bottom"> <span class="view_grouping" data-value="'.$p['val_grouping'].'"
+																							data-parent_id="'.$in['parent_id'].'"
 																							data-flag="offer"
 																							data-flag_tr="3"
 																							data-flag_limit="true"
-																							data-start_limit="' . $next_step . '">показать ещё ' . $kol . ' предложение из ' . $row_count['kol'] . ' от ' . $this->nf($row_count['min_cost']) . 'р.</span> 
-						или <span class="view_grouping" data-value="' . $p['val_grouping'] . '"
-														data-parent_id="' . $in['parent_id'] . '"
+																							data-start_limit="'.$next_step.'">показать ещё '.$kol.' предложение из '.$row_count['kol'].' от '.$this->nf($row_count['min_cost']).'р.</span> 
+						или <span class="view_grouping" data-value="'.$p['val_grouping'].'"
+														data-parent_id="'.$in['parent_id'].'"
 														data-flag="offer"
 														data-flag_tr="2">Показать все предложения</span></div> <!-- Эту строку нужно оставить только в единственном экземпляре в сгруппированном списке в конце -->';
             }
         }
 
-        $tr = $tr . $dop_offer;
+        $tr = $tr.$dop_offer;
 
         return array('code' => $tr, 'tid' => $tid);
     }
@@ -3192,34 +3192,34 @@ class HtmlTemplate extends HtmlServive
             $cl_role = 'worker-admin';
             $span_role = '<span class="worker-for-admin">Админ</span>';
         } else {
-            $edit = '<img src="/image/status-edit.svg" alt="" class="status-request modal_invite_workers" data-id="' . $in['id'] . '" data-flag="' . $in['flag'] . '" >';
-            $delete = '<u class="delete_invite_workers" data-id="' . $in['id'] . '" data-flag="' . $in['flag'] . '" data-question="Удалить" data-name="' . $in['name'] . '">удалить</u>';
+            $edit = '<img src="/image/status-edit.svg" alt="" class="status-request modal_invite_workers" data-id="'.$in['id'].'" data-flag="'.$in['flag'].'" >';
+            $delete = '<u class="delete_invite_workers" data-id="'.$in['id'].'" data-flag="'.$in['flag'].'" data-question="Удалить" data-name="'.$in['name'].'">удалить</u>';
         }
 
         if ($in['flag'] == 2) {
             $str = '<strong>Не зарегистрирован</strong>';
         }
 
-        $code = '<div id="div_workers' . $in['id'] . '" class="workers-worker ' . $online . ' ' . $cl_role . '">
+        $code = '<div id="div_workers'.$in['id'].'" class="workers-worker '.$online.' '.$cl_role.'">
 					<div class="worker-left">
 						<div class="worker-img">
-							<img src="' . $in['avatar'] . '" alt="">
+							<img src="'.$in['avatar'].'" alt="">
 						</div>
-						' . $span_role . '
+						'.$span_role.'
 					</div>
 					<div class="worker-info">
 						<div class="worker-name">
-							<span>' . $in['name'] . '</span>
-							' . $edit . '
-							' . $delete . '
+							<span>'.$in['name'].'</span>
+							'.$edit.'
+							'.$delete.'
 						</div>
 						<div class="worker-prof">
-							' . $in['position'] . '
+							'.$in['position'].'
 						</div>
 						<div class="worker-contacts">
-							' . $in['phone'] . ', ' . $in['email'] . '
+							'.$in['phone'].', '.$in['email'].'
 						</div>
-						' . $str . '
+						'.$str.'
 					</div>
 				</div>';
 
@@ -3249,7 +3249,7 @@ class HtmlTemplate extends HtmlServive
         $arr_six = array(1 => '', 2 => '', 3 => '', 4 => '', 5 => '', 6 => '');
         $r = reqBuySellAttributeSixParam(array('buy_sell_id' => $m['id'], 'categories_id' => $m['categories_id'], 'flag' => 'six'));
         foreach ($r as $n => $mm) {
-            $arr_six[$mm['sort']] = '<span data-name="' . $mm['attribute'] . '">' . $mm['attribute_value'] . '</span>';
+            $arr_six[$mm['sort']] = '<span data-name="'.$mm['attribute'].'">'.$mm['attribute_value'].'</span>';
         }
 
         $notification = ($r_dop['kol_notification']) ? '<span class="badge badge-warning badge-pill">&nbsp;</span>' : '';
@@ -3264,7 +3264,7 @@ class HtmlTemplate extends HtmlServive
             $kol_views = $r_dop['kol_views'];
             // количество купленных
             if ($r_dop['kol_status11'] > 0) {// количество купленных
-                $kol_status = '&nbsp;<span style="color:#008000;" title="куплено">(' . $this->nf($r_dop['kol_status11']) . ')</span>';
+                $kol_status = '&nbsp;<span style="color:#008000;" title="куплено">('.$this->nf($r_dop['kol_status11']).')</span>';
             }
         }
 
@@ -3278,7 +3278,7 @@ class HtmlTemplate extends HtmlServive
         if ($m['status_buy_sell_id'] == 1 || $m['status_buy_sell_id'] == 2 || $m['status_buy_sell_id'] == 3) {
             // дать предложение
             $form_buy_sell = $this->Input(array('type' => 'button',
-                    'id' => 'button_form_buy_sell' . $m['id'],
+                    'id' => 'button_form_buy_sell'.$m['id'],
                     'class' => 'for-hidden-request form_buy_sell',
                     'value' => '<img src="/image/status-request.svg" alt="" class="status-request">',
                     'data' => array('id' => $m['id'],
@@ -3296,13 +3296,13 @@ class HtmlTemplate extends HtmlServive
                 )
             );
 
-            $button_edit = '<button class="modal_buy_sell" data-id="' . $m['id'] . '" 
-																data-flag_buy_sell="' . $m['flag_buy_sell'] . '" 
-																data-status="' . $m['status_buy_sell_id'] . '" 
-																data-nomenclature_id="' . $m['nomenclature_id'] . '">
+            $button_edit = '<button class="modal_buy_sell" data-id="'.$m['id'].'" 
+																data-flag_buy_sell="'.$m['flag_buy_sell'].'" 
+																data-status="'.$m['status_buy_sell_id'].'" 
+																data-nomenclature_id="'.$m['nomenclature_id'].'">
 									<img src="/image/status-edit.svg" alt="" class="status-request">
 								</button>';
-            $qrq_update = '	<button class="qrq_update_in_buy_sell" data-id="' . $m['id'] . '">
+            $qrq_update = '	<button class="qrq_update_in_buy_sell" data-id="'.$m['id'].'">
 										<img src="/image/ic_refresh.png" alt="" class="status-request">
 									</button>';
 
@@ -3312,19 +3312,19 @@ class HtmlTemplate extends HtmlServive
 
         $checkbox_share = '';
         if ($m['status_buy_sell_id'] == 2 || $m['status_buy_sell_id'] == 3) {
-            $checkbox_share = '<input type="checkbox" class="checkbox_share" data-id="' . $m['id'] . '" style="display:none;"/>';
+            $checkbox_share = '<input type="checkbox" class="checkbox_share" data-id="'.$m['id'].'" style="display:none;"/>';
         }
 
         $status_buy2 = $m['status_buy2'];
         if ($m['status_buy_sell_id'] == 1 || $m['status_buy_sell_id'] == 2) {
-            $status_buy2 = '<span class="modal_history_buy_sell" data-id="' . $m['id'] . '">' . $m['status_buy2'] . '</span>';
+            $status_buy2 = '<span class="modal_history_buy_sell" data-id="'.$m['id'].'">'.$m['status_buy2'].'</span>';
         }
 
 
         if ($cache) {
             $comments_company = '{COMMENTS_COMPANY}';
         } else {
-            $comments_company = ($m['comments_company'] && PRO_MODE) ? '	<span class="data-time-type">' . $m['comments_company'] . '</span>' : '';
+            $comments_company = ($m['comments_company'] && PRO_MODE) ? '	<span class="data-time-type">'.$m['comments_company'].'</span>' : '';
         }
 
 
@@ -3396,8 +3396,8 @@ class HtmlTemplate extends HtmlServive
                 $urgency_color = 'urgency-not-urgently';
         }
 
-        $urgency = '<span class="data-month ' . $urgency_color . '">
-							' . $m['urgency'] . '
+        $urgency = '<span class="data-month '.$urgency_color.'">
+							'.$m['urgency'].'
 							<span class="bttip" style="display: none;">Срочность</span>
 						</span>';
 
@@ -3418,53 +3418,53 @@ class HtmlTemplate extends HtmlServive
                     $form_payment = '<span class="request-money"></span>';
                 } else {
                     if ($m['form_payment']) {
-                        $form_payment = '<span class="request-nds"><span class="ndsText">' . $m['form_payment'] . '</span></span>';
+                        $form_payment = '<span class="request-nds"><span class="ndsText">'.$m['form_payment'].'</span></span>';
                     } else {
                         $form_payment = '';
                     }
                 }
                 ///
-                $cost = '	<span><span class="rpCost">' . $this->nf($m['cost']) . '</span><span class="rpCurrency"> ' . $m['currency'] . '</span></span>
-									' . $form_payment;
+                $cost = '	<span><span class="rpCost">'.$this->nf($m['cost']).'</span><span class="rpCurrency"> '.$m['currency'].'</span></span>
+									'.$form_payment;
 
-                $company = '<a href="/company-profile/' . $m['company_id2'] . '" target="_blank">' . $m['company2'] . '</a>';
+                $company = '<a href="/company-profile/'.$m['company_id2'].'" target="_blank">'.$m['company2'].'</a>';
 
             }
 
             $m['name'] = ($m['name']) ? $m['name'] : '-';
 
             // количество/ед.измерения
-            $amount_unit = '<span class="rAmount">' . $this->nf($m['amount']) . '</span> <span class="rMeasure"> ' . $m['unit'] . '</span>';
+            $amount_unit = '<span class="rAmount">'.$this->nf($m['amount']).'</span> <span class="rMeasure"> '.$m['unit'].'</span>';
 
             // фасовка
             $packing = $packing_unit2 = '';
             if ($m['unit_group_id']) {
                 if ($m['unit_id2'] && $m['amount2']) {// выбрано ШТУКИ и другая ед.измерения
-                    $packing = '<div>' . $this->nf($m['amount1']) . ' ' . $m['unit1'] . '</div>';
-                    $packing_unit2 = '<span>' . $this->nf($m['amount2']) . '' . $m['unit2'] . '<span class="bttip" style="display: none;">Фасовка</span></span>';
+                    $packing = '<div>'.$this->nf($m['amount1']).' '.$m['unit1'].'</div>';
+                    $packing_unit2 = '<span>'.$this->nf($m['amount2']).''.$m['unit2'].'<span class="bttip" style="display: none;">Фасовка</span></span>';
 
-                    $cost = '' . $this->nf($m['cost1']) . ' ' . $m['currency'];
+                    $cost = ''.$this->nf($m['cost1']).' '.$m['currency'];
 
                     $arr_six[6] = '';
                     $amount_unit = '';
                 } elseif ($m['unit_id1'] && !$m['unit_id2'] && ($m['unit_id'] <> $m['unit_id1'])) {// выбрано НЕ штуки, а другая ед.измерения отличная от "по умолчанию" у категории
 
-                    $cost = '' . $this->nf($m['cost']) . ' ' . $m['currency'] . '/' . $m['unit'];
+                    $cost = ''.$this->nf($m['cost']).' '.$m['currency'].'/'.$m['unit'];
 
                     $t_amount = ($m['status_buy_sell_id'] == 11) ? $m['amount_buy'] : $m['amount1'];
 
-                    $amount_unit = $this->nf($t_amount) . '' . $m['unit1'];
+                    $amount_unit = $this->nf($t_amount).''.$m['unit1'];
 
                 }
             }
             ///
 
             $tr .= '
-							<div class="request-item' . $noPhoto . ' item-list-4">
+							<div class="request-item'.$noPhoto.' item-list-4">
 								<div class="request-slider-wrapper">
 									<div class="image-wrapper">
 										<div class="inner-wrapper">
-											' . $img . '
+											'.$img.'
 										</div>
 									</div>
 									<div class="slider-control"></div>
@@ -3474,17 +3474,17 @@ class HtmlTemplate extends HtmlServive
 										<div class="request-stages">
 											<div class="request-stage">
 												<div class="request-data-name 444">
-													' . $checkbox_share . '
+													'.$checkbox_share.'
 													<p>
-														<a href="/' . $m['url_cities'] . '/' . $m['url_categories'] . '/' . $m['url'] . '" target="_blank">' . $m['name'] . '</a>
+														<a href="/'.$m['url_cities'].'/'.$m['url_categories'].'/'.$m['url'].'" target="_blank">'.$m['name'].'</a>
 													</p>
-													<span class="request-quantity">' . $amount_unit . '' . $packing . '</span>' . $kol_status . '
-													<span class="data-hidden-city">' . $m['cities_name'] . '</span>
+													<span class="request-quantity">'.$amount_unit.''.$packing.'</span>'.$kol_status.'
+													<span class="data-hidden-city">'.$m['cities_name'].'</span>
 													<a href="">
 														<img src="/image/request-images.png" alt="" class="request-hidden-images">
 													</a>
 													<div class="request-data-hidden-name">
-														' . $m['name'] . '
+														'.$m['name'].'
 													</div>
 												</div>
 											
@@ -3493,25 +3493,25 @@ class HtmlTemplate extends HtmlServive
 														
 													</div>
 													<div class="request-user">
-														<span class="user-name">' . $m['responsible'] . '</span>
-														' . $ico_responsible . '
+														<span class="user-name">'.$m['responsible'].'</span>
+														'.$ico_responsible.'
 													</div>
 												</div>
 												<div class="request-data">
 													<div class="request-data-params">
-														' . $packing_unit2 . '
-														' . $arr_six[1] . '
-														' . $arr_six[2] . '
-														' . $arr_six[3] . '
-														' . $arr_six[4] . '
-														' . $arr_six[5] . '
-														' . $arr_six[6] . '
+														'.$packing_unit2.'
+														'.$arr_six[1].'
+														'.$arr_six[2].'
+														'.$arr_six[3].'
+														'.$arr_six[4].'
+														'.$arr_six[5].'
+														'.$arr_six[6].'
 													</div>
 													
 													<div class="buy-item-main-right">
 														<div class="buy-item-main-right__left">
-															<div class="buy-item-main-right__left-cost">' . $cost . '</div>
-															<div class="buy-item-main-right__left-company">' . $company . '</div>
+															<div class="buy-item-main-right__left-cost">'.$cost.'</div>
+															<div class="buy-item-main-right__left-company">'.$company.'</div>
 														</div>
 														
 													</div>
@@ -3521,9 +3521,9 @@ class HtmlTemplate extends HtmlServive
 												
 												<div class="request-for-price">
 													<p class="comments">
-														' . $m['comments'] . '
+														'.$m['comments'].'
 													</p>
-													<span class="bttip" style="display: none;">' . $m['comments'] . '</span>
+													<span class="bttip" style="display: none;">'.$m['comments'].'</span>
 												</div>
 											</div>
 											
@@ -3531,50 +3531,50 @@ class HtmlTemplate extends HtmlServive
 										<div class="request-actions">
 											<p class="request-status">
 												<span class="status-category">
-												' . $m['categories'] . '<span class="bttip">Категория: ' . $m['categories'] . '</span>
+												'.$m['categories'].'<span class="bttip">Категория: '.$m['categories'].'</span>
 												</span>
 												<span class="status-condition">
-													' . $status_buy2 . '
+													'.$status_buy2.'
 												</span>
-												<span class="status-when">' . $data_status_buy_sell_23 . '</span>
+												<span class="status-when">'.$data_status_buy_sell_23.'</span>
 											</p>
-											' . $notification . '
+											'.$notification.'
 											<div class="status-bar">
-												' . $button_edit . '
-												' . $form_buy_sell . '
+												'.$button_edit.'
+												'.$form_buy_sell.'
 												<button class="convert">
 													3<img src="/image/status-mail.svg" alt="Отправить сообщение (Мои заявки)" class="status-request write_message_need" 
 														data-need="25" 
-														data-company="' . COMPANY_ID . '"
-														data-id="' . $m['id'] . '"
-														data-url="/' . $m['url_cities'] . '/' . $m['url_categories'] . '/' . $m['url'] . '"
+														data-company="'.COMPANY_ID.'"
+														data-id="'.$m['id'].'"
+														data-url="/'.$m['url_cities'].'/'.$m['url_categories'].'/'.$m['url'].'"
 													>
 												</button>
-												' . $qrq_update . '
+												'.$qrq_update.'
 											</div>
 											<p></p>
-											<div id="div_form_buy_sell' . $m['id'] . '">' . $button . '</div>
-											<div id="div_form_buy_sell_hidden' . $m['id'] . '" style="display:none;">' . $form_buy_sell_hidden . '</div>
+											<div id="div_form_buy_sell'.$m['id'].'">'.$button.'</div>
+											<div id="div_form_buy_sell_hidden'.$m['id'].'" style="display:none;">'.$form_buy_sell_hidden.'</div>
 											
 										</div>
 									</div>
 									<div class="request-data-place">
-										' . $urgency . '
+										'.$urgency.'
 										<span class="data-city">
-											' . $m['cities_name'] . '
-											' . $edit . '
+											'.$m['cities_name'].'
+											'.$edit.'
 										</span>
-										' . $comments_company . '
+										'.$comments_company.'
 										
 										<div class="request-stats">
 												{DAY_NOACTIVE}
-												<span class="request-views">' . $kol_views . '</span>
+												<span class="request-views">'.$kol_views.'</span>
 											</div>
 									</div>
 								</div>
 							</div>
 							  
-							<div id="tr_' . $m['id'] . '" class="request-hidden">
+							<div id="tr_'.$m['id'].'" class="request-hidden">
 									
 							</div>
 							
@@ -3594,14 +3594,14 @@ class HtmlTemplate extends HtmlServive
             } else {
 
                 if ($m['status_buy_sell_id'] >= 10) {
-                    $company = '<a href="/company-profile/' . $m['company_id2'] . '" target="_blank">' . $m['company2'] . '</a>';
-                    $responsible = ($m['responsible']) ? '<span class="user-name">' . $m['responsible'] . '</span>' : '';
+                    $company = '<a href="/company-profile/'.$m['company_id2'].'" target="_blank">'.$m['company2'].'</a>';
+                    $responsible = ($m['responsible']) ? '<span class="user-name">'.$m['responsible'].'</span>' : '';
                 } else {
 
                     if ($m['company_id'] == COMPANY_ID) {// если своя компания, то показываем ответственного
                         $company = $m['responsible'];
                     } else {
-                        $company = '<a href="/company-profile/' . $m['company_id'] . '" target="_blank">' . $m['company'] . '</a>';
+                        $company = '<a href="/company-profile/'.$m['company_id'].'" target="_blank">'.$m['company'].'</a>';
                     }
 
                 }
@@ -3625,7 +3625,7 @@ class HtmlTemplate extends HtmlServive
 								<div class="request-slider-wrapper d-none">
 									<div class="image-wrapper">
 										<div class="inner-wrapper">
-											' . $img . '
+											'.$img.'
 										</div>
 									</div>
 									<div class="slider-control">
@@ -3635,50 +3635,50 @@ class HtmlTemplate extends HtmlServive
 								<div class="request-info 03">
 									<div class="request-info-head">
 										<div class="request-stages">
-											' . $arr['tr'] . '
-											' . $code_shleyf1 . '
+											'.$arr['tr'].'
+											'.$code_shleyf1.'
 											{ASSETS}
 										</div>
 										<div class="request-actions">
 											<p class="request-status">
 												<span class="status-category">
-												' . mb_strimwidth($m['categories'], 0, 21, "...", 'utf-8') . '<span class="bttip">Категория: ' . $m['categories'] . '</span>
+												'.mb_strimwidth($m['categories'], 0, 21, "...", 'utf-8').'<span class="bttip">Категория: '.$m['categories'].'</span>
 												</span>
 											</p>
-											' . $notification . '
+											'.$notification.'
 											<div class="status-bar">
-												' . $button_edit . '
-												' . $form_buy_sell . '
+												'.$button_edit.'
+												'.$form_buy_sell.'
 												<button class="convert">
 													4<img src="/image/status-mail.svg" alt="" class="status-request">
 												</button>
 											</div>
 											<div class="request-actions__info">
 												<span class="status-condition">
-													' . $m['status_buy2'] . '
+													'.$m['status_buy2'].'
 													<div class="request-actions__info-data">
-														<span class="status-when">' . $m['ndata_insert'] . '</span>
+														<span class="status-when">'.$m['ndata_insert'].'</span>
 													</div>
 												</span>
-												' . $button . '
+												'.$button.'
 											</div>
 										</div>
 									</div>
 									<div class="buy-item__bottom">
-										<div>' . $urgency . '</div>
+										<div>'.$urgency.'</div>
 										<div class="buy-item__bottom-right">
-											' . $comments_company . '
+											'.$comments_company.'
 											<div>
-												' . $company . '
-												' . $responsible . '
-												' . $ico_responsible . '
+												'.$company.'
+												'.$responsible.'
+												'.$ico_responsible.'
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 							
-							<div id="tr_' . $m['id'] . '" class="request-hidden">
+							<div id="tr_'.$m['id'].'" class="request-hidden">
 									
 							</div>
 						</div>
@@ -3715,39 +3715,39 @@ class HtmlTemplate extends HtmlServive
                 $pole_group_id = 'comments_company';
             }
 
-            $button = $this->Input(array('type' => 'button',
-                        'id' => 'view_group' . $m['id'],
-                        'class' => 'change-btn view_group',
-                        'value' => 'Развернуть (' . $m['kol_group'] . ')',
-                        'data' => array('id' => $m['id'],
-                            'group' => $p['group'],
-                            'group_id' => $m[$pole_group_id])
-                    )
-                ) . '
-						' . $this->Input(array('type' => 'button',
-                        'id' => 'close_group' . $m['id'],
-                        'class' => 'change-btn close_group',
-                        'value' => 'Свернуть',
-                        'dopol' => 'style="display:none;"',
-                        'data' => array('id' => $m['id'])
-                    )
-                );
+            $button = $this->Input(array(	'type' => 'button',
+										'id' => 'view_group'.$m['id'],
+										'class' => 'change-btn view_group',
+										'value' => 'Развернуть ('.$m['kol_group'].')',
+										'data' => array('id' => $m['id'],
+														'group' => $p['group'],
+														'group_id' => $m[$pole_group_id])
+									)
+								).'
+					'.$this->Input(array(	'type' 	=> 'button',
+										'id' 	=> 'close_group'.$m['id'],
+										'class' => 'change-btn close_group',
+										'value' => 'Свернуть',
+										'dopol' => 'style="display:none;"',
+										'data' 	=> array('id' => $m['id'])
+				)
+			);
         } else {
             $button = $bs->ActionBuySell(array('row' => $m));
         }
 
-        $comments_company = ($m['comments_company'] && PRO_MODE) ? '	<span class="data-time-type">' . $m['comments_company'] . '</span>' : '';
+        $comments_company = ($m['comments_company'] && PRO_MODE) ? '	<span class="data-time-type">'.$m['comments_company'].'</span>' : '';
 
 
         if ($m['status_buy_sell_id'] >= 10) {
-            $company = '<a href="/company-profile/' . $m['company_id2'] . '" target="_blank">' . $m['company2'] . '</a>';
-            $responsible = ($m['responsible']) ? '<br/><span class="user-name">' . $m['responsible'] . '</span>' : '';
+            $company = '<a href="/company-profile/'.$m['company_id2'].'" target="_blank">'.$m['company2'].'</a>';
+            $responsible = ($m['responsible']) ? '<br/><span class="user-name">'.$m['responsible'].'</span>' : '';
         } else {
 
             if ($m['company_id'] == COMPANY_ID) {// если своя компания, то показываем ответственного
                 $company = $m['responsible'];
             } else {
-                $company = '<a href="/company-profile/' . $m['company_id'] . '" target="_blank">' . $m['company'] . '</a>';
+                $company = '<a href="/company-profile/'.$m['company_id'].'" target="_blank">'.$m['company'].'</a>';
             }
 
         }
@@ -3763,7 +3763,7 @@ class HtmlTemplate extends HtmlServive
 
         // количество купленных
         if ($m['kol_status11'] > 0) {// количество купленных
-            $kol_status = '&nbsp;<span style="color:#008000;" title="куплено">(' . $this->nf($m['kol_status11']) . ')</span>';
+            $kol_status = '&nbsp;<span style="color:#008000;" title="куплено">('.$this->nf($m['kol_status11']).')</span>';
         }
 
         $day_noactive = '';
@@ -3771,7 +3771,7 @@ class HtmlTemplate extends HtmlServive
         if ($m['data_status_buy_sell_23'] && ($m['status_buy_sell_id'] == 2 || $m['status_buy_sell_id'] == 3)) {
             $str_day_noactive = $this->format_by_count($m['day_noactive'], 'день', 'дня', 'дней');
             $day_noactive = '	<span class="request-days">
-												<span class="whenOff">' . $m['day_noactive'] . ' ' . $str_day_noactive . '</span>
+												<span class="whenOff">'.$m['day_noactive'].' '.$str_day_noactive.'</span>
 												<span class="request-days-line"><span class="days-before"></span></span>
 											</span>';
         }
@@ -3808,8 +3808,8 @@ class HtmlTemplate extends HtmlServive
         if ($p['flag'] == 'refresh') {
             $code = $m['cache_2'];
         } else {
-            $code = '<div id="div_mybs' . $m['id'] . '">' . $m['cache_2'] . '</div>
-					<div id="tr_' . $m['id'] . '" class="request-hidden">
+            $code = '<div id="div_mybs'.$m['id'].'">'.$m['cache_2'].'</div>
+					<div id="tr_'.$m['id'].'" class="request-hidden">
 									
 					</div>
 					';
@@ -3844,7 +3844,7 @@ class HtmlTemplate extends HtmlServive
         $r = reqBuySellAttributeSixParam(array('buy_sell_id' => $m['id'], 'categories_id' => $m['categories_id'], 'flag' => 'six', 'where' => $where_six));
 
         foreach ($r as $n => $mm) {
-            $arr_six[$mm['sort']] = '<span data-name="' . $mm['attribute'] . '">' . $mm['attribute_value'] . '</span>';
+            $arr_six[$mm['sort']] = '<span data-name="'.$mm['attribute'].'">'.$mm['attribute_value'].'</span>';
         }
 
         $notification = ($r_dop['kol_notification']) ? '<span class="badge badge-warning badge-pill">&nbsp;</span>' : '';
@@ -3852,10 +3852,10 @@ class HtmlTemplate extends HtmlServive
 
         $edit = $day_noactive = '';
 
-        $status_sell2 = ($m['status_buy_sell_id'] == 5) ? '' : $m['status_sell2'] . '<br/>';
+        $status_sell2 = ($m['status_buy_sell_id'] == 5) ? '' : $m['status_sell2'].'<br/>';
 
         if ($m['status_buy_sell_id'] == 1 || $m['status_buy_sell_id'] == 2) {
-            $status_sell2 = '<span class="modal_history_buy_sell" data-id="' . $m['id'] . '">' . $status_sell2 . '</span>';
+            $status_sell2 = '<span class="modal_history_buy_sell" data-id="'.$m['id'].'">'.$status_sell2.'</span>';
         }
 
 
@@ -3902,8 +3902,8 @@ class HtmlTemplate extends HtmlServive
                 $urgency_color = 'urgency-not-urgently';
         }
 
-        $urgency = '<span class="data-month ' . $urgency_color . '">
-								' . $m['urgency'] . '
+        $urgency = '<span class="data-month '.$urgency_color.'">
+								'.$m['urgency'].'
 								<span class="bttip" style="display: none;">Срочность</span>
 							</span>';
 
@@ -3911,7 +3911,7 @@ class HtmlTemplate extends HtmlServive
         if ($m['flag_buy_sell'] == 4 || $m['flag_buy_sell'] == 5 || $m['status_buy_sell_id'] == 1 || $m['status_buy_sell_id'] == 2 || $m['status_buy_sell_id'] == 3) {
 
             $edit = ($m['status_buy_sell_id'] <> 32 && $m['status_buy_sell_id'] <> 33) ?
-                '	<button class="modal_buy_sell" data-id="' . $m['id'] . '" data-flag_buy_sell="' . $m['flag_buy_sell'] . '" data-nomenclature_id="' . $m['nomenclature_id'] . '">
+                '	<button class="modal_buy_sell" data-id="'.$m['id'].'" data-flag_buy_sell="'.$m['flag_buy_sell'].'" data-nomenclature_id="'.$m['nomenclature_id'].'">
 												<img src="/image/status-edit.svg" alt="" class="status-request">
 											</button>' : '';
 
@@ -3932,7 +3932,7 @@ class HtmlTemplate extends HtmlServive
                 $form_payment = '<span class="request-money"></span>';
             } else {
                 if ($m['form_payment']) {
-                    $form_payment = '<span class="request-nds"><span class="ndsText">' . $m['form_payment'] . '</span></span>';
+                    $form_payment = '<span class="request-nds"><span class="ndsText">'.$m['form_payment'].'</span></span>';
                 } else {
                     $form_payment = '';
                 }
@@ -3940,20 +3940,20 @@ class HtmlTemplate extends HtmlServive
             ///
 
             // Срочность
-            $urgency = ($m['urgency_id'] == 1) ? '<span class="data-month urgency-urgent">' . $m['urgency'] . '</span>' : '';
+            $urgency = ($m['urgency_id'] == 1) ? '<span class="data-month urgency-urgent">'.$m['urgency'].'</span>' : '';
             ///
 
             // Наличие
             $availability = '';
             if ($m['availability']) {
                 $str = $this->format_by_count($m['availability'], 'день', 'дня', 'дней');
-                $availability = $m['availability'] . ' ' . $str;
+                $availability = $m['availability'].' '.$str;
             }
             //
 
             $checkbox_share = '';
             if ($m['status_buy_sell_id'] == 2 || $m['status_buy_sell_id'] == 3) {
-                $checkbox_share = '<input type="checkbox" class="checkbox_share" data-id="' . $m['id'] . '" style="display:none;"/>';
+                $checkbox_share = '<input type="checkbox" class="checkbox_share" data-id="'.$m['id'].'" style="display:none;"/>';
             }
 
 
@@ -3961,7 +3961,7 @@ class HtmlTemplate extends HtmlServive
 
 
             // количество/ед.измерения
-            $amount_unit = '<span class="rAmount">' . $this->nf($m['amount']) . '</span> <span class="rMeasure"> ' . $m['unit'] . '</span>';
+            $amount_unit = '<span class="rAmount">'.$this->nf($m['amount']).'</span> <span class="rMeasure"> '.$m['unit'].'</span>';
 
 
             // фасовка
@@ -3969,14 +3969,14 @@ class HtmlTemplate extends HtmlServive
             if ($m['unit_group_id']) {
 
                 if ($m['unit_id2'] && $m['amount2']) {// выбрано ШТУКИ и другая ед.измерения
-                    $packing = '<span style="color:#b2afaf;">Фасовка</span><br/>' . $this->nf($m['amount1']) . '' . $m['unit1'] . '/' . $this->nf($m['amount2']) . '' . $m['unit2'];
+                    $packing = '<span style="color:#b2afaf;">Фасовка</span><br/>'.$this->nf($m['amount1']).''.$m['unit1'].'/'.$this->nf($m['amount2']).''.$m['unit2'];
 
                     $amount_unit = '';
                 } elseif ($m['unit_id1'] && !$m['unit_id2'] && ($m['unit_id'] <> $m['unit_id1'])) {// выбрано НЕ штуки, а другая ед.измерения отличная от "по умолчанию" у категории
 
                     $t_amount = ($m['status_buy_sell_id'] == 11) ? $m['amount_buy'] : $m['amount1'];
 
-                    $amount_unit = $this->nf($t_amount) . '' . $m['unit1'];
+                    $amount_unit = $this->nf($t_amount).''.$m['unit1'];
 
                 }
             }
@@ -3984,13 +3984,13 @@ class HtmlTemplate extends HtmlServive
 
 
             $code_status_bar = '	<div class="status-bar">
-											' . $edit . '
+											'.$edit.'
 											<button class="convert">
 												<img src="/image/status-mail.png" alt="Отправить сообщение (Склад)" class="status-request write_message_need" 
 												data-need="28" 
-												data-company="' . COMPANY_ID . '"
-												data-id="' . $m['id'] . '"
-												data-url="/' . $m['url_cities'] . '/' . $m['url_categories'] . '/' . $m['url'] . '"
+												data-company="'.COMPANY_ID.'"
+												data-id="'.$m['id'].'"
+												data-url="/'.$m['url_cities'].'/'.$m['url_categories'].'/'.$m['url'].'"
 												>													  
 											</button>
 										</div>';
@@ -4004,10 +4004,10 @@ class HtmlTemplate extends HtmlServive
                     $stock = '{STOCK}';
                 } else {
                     $responsible = '	<div class="request-user">
-														<span class="user-name">' . $m['responsible'] . '</span>
+														<span class="user-name">'.$m['responsible'].'</span>
 													</div>';
                     $stock = '		<div class="request-user">
-														<span class="user-name">' . $m['stock'] . '</span>
+														<span class="user-name">'.$m['stock'].'</span>
 												</div>';
                 }
 
@@ -4024,7 +4024,7 @@ class HtmlTemplate extends HtmlServive
 
                 // количество/ед.измерения заменяем остатком, если есть остаток
                 if ($m['ostatok'] > 0) {
-                    $amount_unit = '<span class="rAmount">' . $this->nf($m['ostatok']) . '</span> <span class="rMeasure"> ' . $m['unit'] . '</span>';
+                    $amount_unit = '<span class="rAmount">'.$this->nf($m['ostatok']).'</span> <span class="rMeasure"> '.$m['unit'].'</span>';
                 }
 
                 if ($m['kol_stock'] > 1) {
@@ -4036,18 +4036,18 @@ class HtmlTemplate extends HtmlServive
                 if ($cache) {
                     $amount_reserve = '{AMOUNT_RESERVE}';
                 } else {
-                    $amount_reserve = ($m['amount_reserve']) ? ' <span style="color:#ff0000;">(' . $this->nf($m['amount_reserve']) . ')</span>' : '';
+                    $amount_reserve = ($m['amount_reserve']) ? ' <span style="color:#ff0000;">('.$this->nf($m['amount_reserve']).')</span>' : '';
                 }
 
             }
             ///
 
             $tr .= '
-								<div class="request-item item-list-5 ' . $noPhoto . '">
+								<div class="request-item item-list-5 '.$noPhoto.'">
 									<div class="request-slider-wrapper">
 										<div class="image-wrapper">
 											<div class="inner-wrapper">
-												' . $img . '
+												'.$img.'
 											</div>
 										</div>
 										<div class="slider-control"></div>
@@ -4059,86 +4059,86 @@ class HtmlTemplate extends HtmlServive
 													<div class="request-pics-wrapper">
 														<div class="image-wrapper">
 															<div class="inner-wrapper">
-																' . $img . '
+																'.$img.'
 															</div>
 														</div>
 														<div class="slider-control"></div>
 													</div>
 													<div class="request-data-name 555">
-														' . $checkbox_share . '
+														'.$checkbox_share.'
 														<p>
-															<a href="/' . $m['url_cities'] . '/' . $m['url_categories'] . '/' . $m['url'] . '" target="_blank">' . $m['name'] . '<span class="bttip">' . $m['name'] . '</span></a><br>
-															<span class="request-availability">' . $availability . '</span>
+															<a href="/'.$m['url_cities'].'/'.$m['url_categories'].'/'.$m['url'].'" target="_blank">'.$m['name'].'<span class="bttip">'.$m['name'].'</span></a><br>
+															<span class="request-availability">'.$availability.'</span>
 														</p>
-														<span class="request-quantity">' . $amount_unit . '</span>' . $amount_reserve . '
-														' . $packing . '
-														<span class="data-hidden-city">' . $m['cities_name'] . '</span>
+														<span class="request-quantity">'.$amount_unit.'</span>'.$amount_reserve.'
+														'.$packing.'
+														<span class="data-hidden-city">'.$m['cities_name'].'</span>
 														<a href="">
 															<img src="/image/request-images.png" alt="" class="request-hidden-images">
 														</a>
 														<div class="request-data-hidden-name">
-															' . $m['name'] . '
+															'.$m['name'].'
 														</div>
 													</div>
 													
 													<div class="request-pricing">
 														<div class="request-price">
-															<span>' . $str_avg . '<span class="rpCost">' . (($this->nf($m['cost1'])) ? $this->nf($m['cost1']) : $this->nf($m['cost'])) . '</span><span class="rpCurrency"> ' . $m['currency'] . '</span></span>
-															' . $form_payment . '
+															<span>'.$str_avg.'<span class="rpCost">'.(($this->nf($m['cost1'])) ? $this->nf($m['cost1']) : $this->nf($m['cost'])).'</span><span class="rpCurrency"> '.$m['currency'].'</span></span>
+															'.$form_payment.'
 														</div>
-														' . $responsible . '
-														' . $stock . '
-														' . $company2 . '
+														'.$responsible.'
+														'.$stock.'
+														'.$company2.'
 													</div>
 													<div class="request-data">
 														<div class="request-data-params">
-															' . $arr_six[1] . '
-															' . $arr_six[2] . '
-															' . $arr_six[3] . '
-															' . $arr_six[4] . '
-															' . $arr_six[5] . '
-															' . $arr_six[6] . '
+															'.$arr_six[1].'
+															'.$arr_six[2].'
+															'.$arr_six[3].'
+															'.$arr_six[4].'
+															'.$arr_six[5].'
+															'.$arr_six[6].'
 														</div>
 													</div>
 													<div class="request-for-price">
 														<p class="comments">
-															' . $m['comments'] . '
+															'.$m['comments'].'
 														</p>
-														<span class="bttip" style="display: none;">' . $m['comments'] . '</span>
+														<span class="bttip" style="display: none;">'.$m['comments'].'</span>
 													</div>
 												</div>
 											</div>
 											<div class="request-actions">
 												<p class="request-status">
 													<span class="status-category">
-													' . mb_strimwidth($m['categories'], 0, 21, "...", 'utf-8') . '<span class="bttip">Категория: ' . $m['categories'] . '</span>
+													'.mb_strimwidth($m['categories'], 0, 21, "...", 'utf-8').'<span class="bttip">Категория: '.$m['categories'].'</span>
 													</span>
 													<span class="status-condition">
-														' . $status_sell2 . '
+														'.$status_sell2.'
 													</span>
-													<span class="status-when">' . $data_status_buy_sell_23 . '</span>
+													<span class="status-when">'.$data_status_buy_sell_23.'</span>
 												</p>
-												' . $notification . '
-												' . $code_status_bar . '
+												'.$notification.'
+												'.$code_status_bar.'
 												<p></p>
-												' . $button . '
+												'.$button.'
 												
 											</div>
 										</div>
 										<div class="request-data-place">
-											' . $urgency . '
+											'.$urgency.'
 											<span class="data-city">
-												' . $m['cities_name'] . '
+												'.$m['cities_name'].'
 											</span>
 											<div class="request-stats">
 													{DAY_NOACTIVE}
-													 <span class="request-views">' . $kol_views . '</span>
+													 <span class="request-views">'.$kol_views.'</span>
 												</div>
 										</div>
 									</div>
 								</div>
 								  
-								<div id="tr_' . $m['id'] . '" class="request-hidden">
+								<div id="tr_'.$m['id'].'" class="request-hidden">
 
 								</div>
 						';
@@ -4152,13 +4152,13 @@ class HtmlTemplate extends HtmlServive
                 $company = '{COMPANY}';
             } else {
                 if ($m['status_buy_sell_id'] >= 10) {
-                    $company = '<a href="/company-profile/' . $m['company_id2'] . '" target="_blank">' . $m['company2'] . '</a>';
+                    $company = '<a href="/company-profile/'.$m['company_id2'].'" target="_blank">'.$m['company2'].'</a>';
                 } else {
 
                     if ($m['company_id'] == COMPANY_ID) {// если своя компания, то показываем ответственного
                         $company = $m['responsible'];
                     } else {
-                        $company = '<a href="/company-profile/' . $m['company_id'] . '" target="_blank">' . $m['company'] . '</a>';
+                        $company = '<a href="/company-profile/'.$m['company_id'].'" target="_blank">'.$m['company'].'</a>';
                     }
 
                 }
@@ -4185,41 +4185,41 @@ class HtmlTemplate extends HtmlServive
 									<div class="request-info">
 										<div class="request-info-head">
 											<div class="request-stages">
-												' . $arr['tr'] . '
+												'.$arr['tr'].'
 											</div>
 											<div class="request-actions">
 												<p class="request-status">
 													<span class="status-category">
-													' . mb_strimwidth($m['categories'], 0, 21, "...", 'utf-8') . '<span class="bttip">Категория: ' . $m['categories'] . '</span>
+													'.mb_strimwidth($m['categories'], 0, 21, "...", 'utf-8').'<span class="bttip">Категория: '.$m['categories'].'</span>
 													</span>
 													<span class="status-condition">
-														' . $m['status_buy2'] . '
+														'.$m['status_buy2'].'
 													</span>
-													<span class="status-when">' . $m['ndata_insert'] . '</span>
+													<span class="status-when">'.$m['ndata_insert'].'</span>
 												</p>
-												' . $notification . '
+												'.$notification.'
 												<div class="status-bar">
-													' . $edit . '
+													'.$edit.'
 													<button class="convert">
 														5<img src="/image/status-mail.svg" alt="" class="status-request">
 													</button>
 												</div>
 												<p></p>
-												' . $button . '
+												'.$button.'
 											</div>
 										</div>
 										<div class="buy-item__bottom">
-											<div>' . $urgency . '</div>
+											<div>'.$urgency.'</div>
 											<div class="buy-item__bottom-right">
 												<div>
-													' . $company . '
+													'.$company.'
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 								
-								<div id="tr_' . $m['id'] . '" class="request-hidden">
+								<div id="tr_'.$m['id'].'" class="request-hidden">
 										
 								</div>
 						';
@@ -4250,13 +4250,13 @@ class HtmlTemplate extends HtmlServive
 
 
         if ($m['status_buy_sell_id'] >= 10) {
-            $company = '<a href="/company-profile/' . $m['company_id2'] . '" target="_blank">' . $m['company2'] . '</a>';
+            $company = '<a href="/company-profile/'.$m['company_id2'].'" target="_blank">'.$m['company2'].'</a>';
         } else {
 
             if ($m['company_id'] == COMPANY_ID) {// если своя компания, то показываем ответственного
                 $company = $m['responsible'];
             } else {
-                $company = '<a href="/company-profile/' . $m['company_id'] . '" target="_blank">' . $m['company'] . '</a>';
+                $company = '<a href="/company-profile/'.$m['company_id'].'" target="_blank">'.$m['company'].'</a>';
             }
 
         }
@@ -4269,7 +4269,7 @@ class HtmlTemplate extends HtmlServive
         if ($m['data_status_buy_sell_23']) {
             $str_day_noactive = $this->format_by_count($m['day_noactive'], 'день', 'дня', 'дней');
             $day_noactive = '	<span class="request-days">
-												<span class="whenOff">' . $m['day_noactive'] . ' ' . $str_day_noactive . '</span>
+												<span class="whenOff">'.$m['day_noactive'].' '.$str_day_noactive.'</span>
 												<span class="request-days-line"><span class="days-before"></span></span>
 											</span>';
         }
@@ -4283,7 +4283,7 @@ class HtmlTemplate extends HtmlServive
         if ($p['flag'] == 'refresh') {
             $code = $m['cache_1'];
         } else {
-            $code = '<div id="div_mybs' . $m['id'] . '">' . $m['cache_1'] . '</div>';
+            $code = '<div id="div_mybs'.$m['id'].'">'.$m['cache_1'].'</div>';
         }
 
         return $code;
@@ -4319,27 +4319,27 @@ class HtmlTemplate extends HtmlServive
             $rp = reqMyBuySell_ProverkaInvite();
             $flag_interests_invite = (!empty($rp)) ? true : false;
             ///
-            $row = reqMyBuySellCache(array('company_id' => COMPANY_ID,
-                'flag_buy_sell' => $p['flag_buy_sell'],
-                'status_buy_sell_id' => $p['status_buy_sell_id'],
-                'active' => 1,
-                'sbs_flag' => 1,
-                'start_limit' => $p['start_limit'],
-                'categories_id' => $p['categories_id'],
-                'cities_id' => $p['cities_id'],
-                'value' => $p['value'],
-                'flag_interests_invite' => $flag_interests_invite,
-                'group' => $p['group'],
-                'flag_group_id' => $p['flag_group_id'],
-                'group_id' => $p['group_id']
-            ));
+            $row = reqMyBuySellCache(array(	'company_id' 			=> COMPANY_ID,
+											'flag_buy_sell' 		=> $p['flag_buy_sell'],
+											'status_buy_sell_id'	=> $p['status_buy_sell_id'],
+											'active' 				=> 1,
+											'sbs_flag' 				=> 1,
+											'start_limit' 			=> $p['start_limit'],
+											'categories_id' 		=> $p['categories_id'],
+											'cities_id' 			=> $p['cities_id'],
+											'value' 				=> $p['value'],
+											'flag_interests_invite' => $flag_interests_invite,
+											'group' 				=> $p['group'],
+											'flag_group_id' 		=> $p['flag_group_id'],
+											'group_id' 				=> $p['group_id']
+										));
         } else {
             $func = 'TrMySellCache';
-            $row = reqMyBuySellCache(array('flag' => 'flag_my_sell',
-                'status_buy_sell_id' => $p['status_buy_sell_id'],
-                'active' => 1,
-                'sbs_flag' => 1,
-                'start_limit' => $p['start_limit']));
+            $row = reqMyBuySellCache(array(	'flag' 					=> 'flag_my_sell',
+											'status_buy_sell_id' 	=> $p['status_buy_sell_id'],
+											'active' 				=> 1,
+											'sbs_flag' 				=> 1,
+											'start_limit' 			=> $p['start_limit']));
         }
 
         $tr = '';
@@ -4378,17 +4378,17 @@ class HtmlTemplate extends HtmlServive
                     if ($m['id'] == 31) {// на складе
                         $r = reqStockByNomenclature(array('nomenclature_id' => $in['nomenclature_id']));
                         foreach ($r as $ii => $mm) {
-                            $code .= '<div>' . $this->nf($mm['amount']) . ' ' . $mm['unit'] . ' - ' . $mm['stock'] . '</div>';
+                            $code .= '<div>'.$this->nf($mm['amount']).' '.$mm['unit'].' - '.$mm['stock'].'</div>';
                         }
                     } else {// остальные статусы
                         $r = reqCompanyStatusBuySellByNomenclature(array('nomenclature_id' => $in['nomenclature_id'],
                             'status_buy_sell_id' => $m['id']));
                         foreach ($r as $ii => $mm) {
-                            $code .= '<div>' . $mm['company'] . ' - ' . $mm['attribute'] . ' - ' . $this->nf($mm['amount']) . ' ' . $mm['unit'] . ' - ' . $mm['cost'] . ' - ' . $mm['ndata_insert'] . '</div>';
+                            $code .= '<div>'.$mm['company'].' - '.$mm['attribute'].' - '.$this->nf($mm['amount']).' '.$mm['unit'].' - '.$mm['cost'].' - '.$mm['ndata_insert'].'</div>';
                         }
                     }
 
-                    $arr[$m['id']] = array($m['status_bs_count'] . ' - ', $m['kol'], $code);
+                    $arr[$m['id']] = array($m['status_bs_count'].' - ', $m['kol'], $code);
 
                 } else {
                     $arr[$m['id']] = array('', '', '');
@@ -4399,49 +4399,49 @@ class HtmlTemplate extends HtmlServive
 						<div class="modal-status">
 							<div class="modal-status__left">
 								<div class="modal-status__left-item">
-									' . $arr[2][0] . ' <span class="modal-status__left-item__quantity">' . $arr[2][1] . '</span>
+									'.$arr[2][0].' <span class="modal-status__left-item__quantity">'.$arr[2][1].'</span>
 									<span class="bttip" style="display: none;">
-										' . $arr[2][2] . '
+										'.$arr[2][2].'
 									</span>
 								</div>
 								<div class="modal-status__left-item">
-									' . $arr[3][0] . ' <span class="modal-status__left-item__quantity">' . $arr[3][1] . '</span>
+									'.$arr[3][0].' <span class="modal-status__left-item__quantity">'.$arr[3][1].'</span>
 									<span class="bttip" style="display: none;">
-										' . $arr[3][2] . '
+										'.$arr[3][2].'
 									</span>
 								</div>
 								<div class="modal-status__left-item">
-									' . $arr[11][0] . ' <span class="modal-status__left-item__quantity">' . $arr[11][1] . '</span>
+									'.$arr[11][0].' <span class="modal-status__left-item__quantity">'.$arr[11][1].'</span>
 									<span class="bttip" style="display: none;">
-										' . $arr[11][2] . '
+										'.$arr[11][2].'
 									</span>
 								</div>
 							</div>
 							<div class="modal-status__right">
 								<div class="modal-status__right-item">
-									' . $arr[12][0] . ' <span class="modal-status__right-item__quantity">' . $arr[12][1] . '</span>
+									'.$arr[12][0].' <span class="modal-status__right-item__quantity">'.$arr[12][1].'</span>
 									<span class="bttip" style="display: none;">
-										' . $arr[12][2] . '
+										'.$arr[12][2].'
 									</span>
 								</div>
 								<div class="modal-status__right-item">
-									' . $arr[14][0] . ' <span class="modal-status__right-item__quantity">' . $arr[14][1] . '</span>
+									'.$arr[14][0].' <span class="modal-status__right-item__quantity">'.$arr[14][1].'</span>
 									<span class="bttip" style="display: none;">
-										' . $arr[14][2] . '
+										'.$arr[14][2].'
 									</span>
 								</div>
 								<div class="modal-status__right-item">
-									' . $arr[15][0] . ' <span class="modal-status__right-item__quantity">' . $arr[15][1] . '</span>
+									'.$arr[15][0].' <span class="modal-status__right-item__quantity">'.$arr[15][1].'</span>
 									<span class="bttip" style="display: none;">
-										' . $arr[15][2] . '
+										'.$arr[15][2].'
 									</span>
 								</div>
 							</div>
 							<div class="modal-status__right" style="margin-left:30px;">
 								<div class="modal-status__right-item">
-									' . $arr[31][0] . ' <span class="modal-status__right-item__quantity">' . $arr[31][1] . '</span>
+									'.$arr[31][0].' <span class="modal-status__right-item__quantity">'.$arr[31][1].'</span>
 									<span class="bttip" style="display: none;">
-										' . $arr[31][2] . '
+										'.$arr[31][2].'
 									</span>
 								</div>
 							</div>
@@ -4472,9 +4472,9 @@ class HtmlTemplate extends HtmlServive
         $arr_six = array(1 => '', 2 => '', 3 => '', 4 => '', 5 => '', 6 => '');
         $r = reqBuySellAttributeSixParam(array('buy_sell_id' => $m['id'], 'categories_id' => $m['categories_id'], 'flag' => 'six'));
         foreach ($r as $n => $mm) {
-            $arr_six[$mm['sort']] = '<span data-name="' . $mm['attribute'] . '">
-												' . $mm['attribute_value'] . '
-												<span class="bttip" style="display: none;">' . $mm['attribute'] . ': ' . $mm['attribute_value'] . '</span>
+            $arr_six[$mm['sort']] = '<span data-name="'.$mm['attribute'].'">
+												'.$mm['attribute_value'].'
+												<span class="bttip" style="display: none;">'.$mm['attribute'].': '.$mm['attribute_value'].'</span>
 											</span>';
         }
 
@@ -4483,8 +4483,8 @@ class HtmlTemplate extends HtmlServive
         if ((PRAVA_2 || PRAVA_3) && (($m['company_id'] <> COMPANY_ID) || $row_share['share_url'])) {
             $form_buy_sell = '	
 									<div class="btn-group">
-										' . $this->Input(array('type' => 'button',
-															'id' => 'button_form_buy_sell' . $m['id'],
+										'.$this->Input(array('type' => 'button',
+															'id' => 'button_form_buy_sell'.$m['id'],
 															'class' => 'btn btn-primary btn-sm form_buy_sell',
 															'value' => 'Дать предложение',
 															'data' => array('id' => $m['id'],
@@ -4493,7 +4493,7 @@ class HtmlTemplate extends HtmlServive
 																			'status' => 10,
 																			'share_url' => $row_share['share_url'])
                     )
-                ) . '
+                ).'
 										<button type="button" class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 											<span class="sr-only"></span>
 										</button>
@@ -4526,7 +4526,7 @@ class HtmlTemplate extends HtmlServive
 
         $str_day_noactive = $this->format_by_count($m['day_noactive'], 'день', 'дня', 'дней');
         $day_noactive = '	<span class="request-days">
-							<span>' . $m['day_noactive'] . ' ' . $str_day_noactive . '</span>
+							<span>'.$m['day_noactive'].' '.$str_day_noactive.'</span>
 							<span class="request-days-line"></span>
 						</span>';
 
@@ -4534,7 +4534,7 @@ class HtmlTemplate extends HtmlServive
         // количество купленных
         $kol_status = '';
         if ($m['kol_status11'] > 0) {
-            $kol_status = '&nbsp;<span class="request-quantity__bought" title="куплено">(' . $this->nf($m['kol_status11']) . ')</span>';
+            $kol_status = '&nbsp;<span class="request-quantity__bought" title="куплено">('.$this->nf($m['kol_status11']).')</span>';
         }
 
 
@@ -4568,21 +4568,21 @@ class HtmlTemplate extends HtmlServive
                 $urgency_color = 'urgency-not-urgently';
         }
 
-        $url = 'href="/' . $m['url_cities'] . '/' . $m['url_categories'] . '/' . $m['url'] . '"';
+        $url = 'href="/'.$m['url_cities'].'/'.$m['url_categories'].'/'.$m['url'].'"';
 
         if ($m['status_buy_sell_id'] == 2 && $in['where'] == 'company_profile') {
-            $url = 'class="get_url_buy_sell_one" data-id="' . $m['id'] . '"';
+            $url = 'class="get_url_buy_sell_one" data-id="'.$m['id'].'"';
         }
 
 
         $tr .= '
 				<div class="container">
 					<div class="request-item buy-item">
-						<div class="request-info item-list-6 ' . $noPhoto . '">
+						<div class="request-info item-list-6 '.$noPhoto.'">
 							<div class="request-slider-wrapper">
 								<div class="image-wrapper">
 									<div class="inner-wrapper">
-										' . $img . '
+										'.$img.'
 									</div>
 								</div>
 								<div class="slider-control"></div>
@@ -4593,31 +4593,31 @@ class HtmlTemplate extends HtmlServive
 										<div class="request-stage">
 											<div class="request-data-name 666">
 												<p>
-													<a ' . $url . ' target="_blank">
-														' . $m['name'] . '
-														<span class="bttip" style="display: none;">' . $m['name'] . '</span>
+													<a '.$url.' target="_blank">
+														'.$m['name'].'
+														<span class="bttip" style="display: none;">'.$m['name'].'</span>
 													</a>
 												</p>
 												<span class="request-quantity">
-													' . $this->nf($m['amount']) . ' ' . $m['unit'] . '' . $kol_status . '
+													'.$this->nf($m['amount']).' '.$m['unit'].''.$kol_status.'
 													<span class="bttip" style="display: none;">Количество</span>
 												</span>
 											</div>
 											<div class="request-data">
 												<div class="request-data-params">
-													' . $arr_six[1] . '
-													' . $arr_six[2] . '
-													' . $arr_six[3] . '
-													' . $arr_six[4] . '
-													' . $arr_six[5] . '
-													' . $arr_six[6] . '
+													'.$arr_six[1].'
+													'.$arr_six[2].'
+													'.$arr_six[3].'
+													'.$arr_six[4].'
+													'.$arr_six[5].'
+													'.$arr_six[6].'
 												</div>
 											</div>
 											<div class="request-for-price">
 												<p class="comments">
-													' . $m['comments'] . '
+													'.$m['comments'].'
 												</p>
-												<span class="bttip" style="display: none;">' . $m['comments'] . '</span>
+												<span class="bttip" style="display: none;">'.$m['comments'].'</span>
 											</div>
 										</div>
 									</div>
@@ -4626,39 +4626,39 @@ class HtmlTemplate extends HtmlServive
 											<button class="status-bar__convert">
 												<img src="/image/status-mail.png" alt="Отправить сообщение (Чужие заявки)" class="status-request write_message_need" 
 													data-need="25" 
-													data-company="' . $m['company_id'] . '"
-													data-id="' . $m['id'] . '"
-													data-url="/' . $m['url_cities'] . '/' . $m['url_categories'] . '/' . $m['url'] . '"
+													data-company="'.$m['company_id'].'"
+													data-id="'.$m['id'].'"
+													data-url="/'.$m['url_cities'].'/'.$m['url_categories'].'/'.$m['url'].'"
 												>
 												<span class="bttip" style="display: none;">Нажмите, чтобы отправить сообщение</span>
 											</button>
 										</div>
-										<div class="btn-action" id="div_form_buy_sell' . $m['id'] . '">' . $form_buy_sell . '</div>
-										<div class="btn-action" id="div_form_buy_sell_hidden' . $m['id'] . '" style="display:none;">' . $form_buy_sell_hidden . '</div>
+										<div class="btn-action" id="div_form_buy_sell'.$m['id'].'">'.$form_buy_sell.'</div>
+										<div class="btn-action" id="div_form_buy_sell_hidden'.$m['id'].'" style="display:none;">'.$form_buy_sell_hidden.'</div>
 									</div>
 								</div>
 								<div class="request-data-place">
 									<p>
-										<span class="data-month ' . $urgency_color . '">
-											' . $m['urgency'] . '
+										<span class="data-month '.$urgency_color.'">
+											'.$m['urgency'].'
 											<span class="bttip" style="display: none;">Срочность</span>
 										</span>
 										<span class="data-city">
-											' . $m['cities_name'] . '
+											'.$m['cities_name'].'
 											<span class="bttip" style="display: none;">Куда / Откуда</span>
 										</span>
 										<span class="status-when">
-											' . $m['data_status_buy_sell_23'] . '
+											'.$m['data_status_buy_sell_23'].'
 											<span class="bttip" style="display: none;">Дата и время присвоение статуса</span>
 										</span>
 									</p>
 									<p class="request-status">
 										<span class="user-name">
-											<a href="/company-profile/' . $m['company_id'] . '" target="_blank">' . $m['company'] . '</a>
+											<a href="/company-profile/'.$m['company_id'].'" target="_blank">'.$m['company'].'</a>
 											<span class="bttip" style="display: none;">Заказчик</span>
 										</span>
 										<span class="status-category">
-											' . $m['categories'] . '
+											'.$m['categories'].'
 											<span class="bttip" style="display: none;">Категория</span>
 										</span>
 									</p>
@@ -4667,7 +4667,7 @@ class HtmlTemplate extends HtmlServive
 						</div>
 					</div>
 					  
-					<div id="tr_' . $m['id'] . '" class="request-hidden">
+					<div id="tr_'.$m['id'].'" class="request-hidden">
 							
 					</div>
 				</div>
@@ -4723,9 +4723,9 @@ class HtmlTemplate extends HtmlServive
         $m = $p['m'];
 
         if ($m['flag_account'] == 1) {//  Профиль аккаунта (физ.лицо)
-            $company = '<a href="/company-profile/' . $m['id'] . '" target="_blank">' . $m['company'] . '</a>';;
+            $company = '<a href="/company-profile/'.$m['id'].'" target="_blank">'.$m['company'].'</a>';;
         } else {// Компания
-            $company = $m['legal_entity'] . ' ' . '<a href="/company-profile/' . $m['id'] . '" target="_blank">' . $m['company'] . '</a>';;
+            $company = $m['legal_entity'].' '.'<a href="/company-profile/'.$m['id'].'" target="_blank">'.$m['company'].'</a>';;
         }
 
         $rcc = reqCompanyCategories(array('flag' => 'group_categories', 'company_id' => $m['id']));
@@ -4739,33 +4739,33 @@ class HtmlTemplate extends HtmlServive
 
         $tr = '	<div class="subs-item">
 						<div class="subs-icon">
-							<img src="' . $m['avatar'] . '" alt="" class="rounded-circle" height="60">
+							<img src="'.$m['avatar'].'" alt="" class="rounded-circle" height="60">
 						</div>
 						<div class="subs-info">
-							' . $kol_notification . '
+							'.$kol_notification.'
 							<div class="subs-name">
-								' . $company . '
+								'.$company.'
 							</div>
 							<div class="subs-cat">
-								' . $rcc['categories'] . '
+								'.$rcc['categories'].'
 							</div>
 							<div class="subs-place">
-								' . $m['cities_name'] . '
+								'.$m['cities_name'].'
 							</div>
 										<div class="status-bar" style="position:relative;top:5px;right:0px;opacity:1;">
 											<button class="status-bar__convert">
 												<img src="/image/status-mail.png" alt="Отправить сообщение (Подписки)" class="status-request write_message_need" 
 													data-need="22" 
-													data-company="' . COMPANY_ID . '"
-													data-id="' . $m['id'] . '"
-													data-url="/company-profile/' . $m['id'] . '"
+													data-company="'.COMPANY_ID.'"
+													data-id="'.$m['id'].'"
+													data-url="/company-profile/'.$m['id'].'"
 												>
 												<span class="bttip" style="display: none;">Нажмите, чтобы отправить сообщение</span>
 											</button>
 										</div>
 						</div>
 						<div>
-							' . $button . '
+							'.$button.'
 						</div>
 					</div>
 			';
@@ -4821,13 +4821,13 @@ class HtmlTemplate extends HtmlServive
 			<div class="submenu-block">
 				<div class="container">
 					<div class="submenu-items">
-						<a href="/faq" class="' . $cl_faq . '">Частые вопросы</a>
+						<a href="/faq" class="'.$cl_faq.'">Частые вопросы</a>
 						<!--<a href="">Мои вопросы</a>
 						<a href="">Предложения</a>
 						<a href="">Отзывы</a>-->
-						<a href="/about" class="' . $cl_about . '">О QRQ</a>
-						<a href="/rules" class="' . $cl_rules . '">Соглашение</a>
-						<a href="/confidentiality" class="' . $cl_confidentiality . '">Конфиденциальность</a>
+						<a href="/about" class="'.$cl_about.'">О QRQ</a>
+						<a href="/rules" class="'.$cl_rules.'">Соглашение</a>
+						<a href="/confidentiality" class="'.$cl_confidentiality.'">Конфиденциальность</a>
 					</div>
 				</div>
 			</div>';
@@ -4851,10 +4851,10 @@ class HtmlTemplate extends HtmlServive
 
         $code = '	<ul class="nav nav-tabs">
 						<li class="nav-item">
-							<a href="/admin_qrq" class="nav-link ' . $active1 . '">Поставщики AMO</a>
+							<a href="/admin_qrq" class="nav-link '.$active1.'">Поставщики AMO</a>
 						</li>
 						<li class="nav-item">
-							<a href="/admin_qrq/accounts" class="nav-link ' . $active2 . '">Аккаунты пользователей</a>
+							<a href="/admin_qrq/accounts" class="nav-link '.$active2.'">Аккаунты пользователей</a>
 						</li>
 					</ul>';
 
@@ -4881,19 +4881,19 @@ class HtmlTemplate extends HtmlServive
 
         $code = '	<ul class="nav nav-tabs">
 						<li class="nav-item">
-							<a href="/admin_etp" class="nav-link ' . $active1 . '">ЭТП</a>
+							<a href="/admin_etp" class="nav-link '.$active1.'">ЭТП</a>
 						</li>
 						<li class="nav-item">
-							<a href="/admin_etp/accounts" class="nav-link ' . $active2 . '">Аккаунты пользователей</a>
+							<a href="/admin_etp/accounts" class="nav-link '.$active2.'">Аккаунты пользователей</a>
 						</li>
 						<li class="nav-item">
-							<a href="/admin_etp/errors" class="nav-link ' . $active3 . '">Ошибки</a>
+							<a href="/admin_etp/errors" class="nav-link '.$active3.'">Ошибки</a>
 						</li>
 						<li class="nav-item">
-							<a href="/admin_etp/errors_log" class="nav-link ' . $active4 . '">Ошибки Лог</a>
+							<a href="/admin_etp/errors_log" class="nav-link '.$active4.'">Ошибки Лог</a>
 						</li>
 						<li class="nav-item">
-							<a href="/admin_etp/cities" class="nav-link ' . $active5 . '">Города</a>
+							<a href="/admin_etp/cities" class="nav-link '.$active5.'">Города</a>
 						</li>
 					</ul>';
 
@@ -4935,7 +4935,7 @@ class HtmlTemplate extends HtmlServive
 						<div class="offer-form__item-couple">
 							<div class="form-group offer-form__item">
 							
-								' . $this->Input(array('type' => 'text',
+								'.$this->Input(array('type' => 'text',
                         'name' => 'amount1',
                         'class' => 'form-control require-input vmask',
                         'value' => $row_bs['amount1'],
@@ -4943,31 +4943,31 @@ class HtmlTemplate extends HtmlServive
                         'dopol' => 'required data-bv-notempty-message="Введите" autocomplete="off"',
                         'data' => array('unit_id' => $row_bs['unit_id1'])
                     )
-                ) . '
+                ).'
 								<!--
 								<div id="div_krat_amount1" style="display:none;">Кратность должна быть до 0,01</div>
 								-->
 							</div>
 							<div class="form-group offer-form__item">
-								' . $this->SelectUnitGropByCategories(array('unit_group_id' => $row_categories['unit_group_id'], 'unit_id1' => $row_bs['unit_id1'])) . '
+								'.$this->SelectUnitGropByCategories(array('unit_group_id' => $row_categories['unit_group_id'], 'unit_id1' => $row_bs['unit_id1'])).'
 							</div>
 						</div>
-						<div id="div_amount_unit2" class="form-group offer-form__item offer-form__item-couple" style="' . $div_amount_unit2_st_dn . '">
+						<div id="div_amount_unit2" class="form-group offer-form__item offer-form__item-couple" style="'.$div_amount_unit2_st_dn.'">
 							<div class="form-group offer-form__item">
-								' . $this->Input(array('type' => 'text',
+								'.$this->Input(array('type' => 'text',
                         'name' => 'amount2',
                         'class' => 'form-control require-input vmask',
                         'value' => $row_bs['amount2'],
                         'placeholder' => 'Группа ед.изм.(фасовка)',
                         'dopol' => 'required data-bv-notempty-message="Введите" autocomplete="off"'
                     )
-                ) . '
+                ).'
 									<!--
 									<div id="div_krat_amount2" style="display:none;">Кратность должна быть до 0,01</div>
 									-->
 							</div>
 							<div class="form-group offer-form__item">
-									' . $this->Select(array('id' => 'unit_id2',
+									'.$this->Select(array('id' => 'unit_id2',
                     'class' => 'form-control select2',
                     'value' => $row_bs['unit_id2'],
                     'dopol' => 'required data-bv-notempty-message=" Выберите ед.изм."'
@@ -4976,7 +4976,7 @@ class HtmlTemplate extends HtmlServive
                         'param' => array('unit_group_id' => $row_categories['unit_group_id']),
                         'option' => array('id' => 'id', 'name' => 'unit')
                     )
-                ) . '
+                ).'
 							</div>
 						</div>
 						';
@@ -4986,22 +4986,22 @@ class HtmlTemplate extends HtmlServive
             $min = ($row_bs['unit_id1'] == 1) ? ' min="1" ' : '';
 
             $code = '<div class="form-group offer-form__item">
-							' . $this->Input(array('type' => 'hidden',
+							'.$this->Input(array('type' => 'hidden',
                         'name' => 'unit_id1',
                         'value' => $row_bs['unit_id1']
                     )
-                ) . '	
-							' . $this->Input(array('type' => 'text',
+                ).'	
+							'.$this->Input(array('type' => 'text',
                         'name' => 'amount1',
                         'class' => 'form-control require-input vmask',
                         'value' => '',
                         'placeholder' => $row_bs['unit1'],
-                        'dopol' => ' ' . $min . '  list="amount" required data-bv-notempty-message="Введите" autocomplete="off" ',
+                        'dopol' => ' '.$min.'  list="amount" required data-bv-notempty-message="Введите" autocomplete="off" ',
                         'data' => array('unit_id' => $row_bs['unit_id1'])
                     )
-                ) . '
+                ).'
 							<datalist id="amount">
-								<option value="' . $row_bs['amount'] . '" />
+								<option value="'.$row_bs['amount'].'" />
 							</datalist>
 						</div>';
 
@@ -5025,7 +5025,7 @@ class HtmlTemplate extends HtmlServive
 
 
             $code = '<div class="form-group offer-form__item">
-							' . $this->Input(array('type' => 'text',
+							'.$this->Input(array('type' => 'text',
                         'name' => 'amount',
                         'class' => 'form-control require-input vmask',
                         'value' => $row_bs['amount'],
@@ -5033,7 +5033,7 @@ class HtmlTemplate extends HtmlServive
                         'dopol' => 'required data-bv-notempty-message="Введите" autocomplete="off" ',
                         'data' => array('unit_id' => $unit_id)
                     )
-                ) . '
+                ).'
 						</div>';
         }
 
@@ -5071,22 +5071,22 @@ class HtmlTemplate extends HtmlServive
 
         $m = $p['m'];
 
-        $id_elem = 'div_nomenclature' . $m['id'] . '';
+        $id_elem = 'div_nomenclature'.$m['id'].'';
 
         $delete = ($m['flag_nomenclature_bs']) ? '' : '<span class="delete_nomenclature" style="color:#999;cursor:pointer;" title="Удалить" 
-																data-id="' . $m['id'] . '" data-elem="' . $id_elem . '" data-name="' . $m['name'] . '">x</span>';
+																data-id="'.$m['id'].'" data-elem="'.$id_elem.'" data-name="'.$m['name'].'">x</span>';
 
-        $tr = '	<div class="subs-item" id="' . $id_elem . '">
+        $tr = '	<div class="subs-item" id="'.$id_elem.'">
 						<div class="subs-info">
 							<div class="subs-name">
-								' . $m['name'] . '
-								<button class="modal_nomenclature" data-id="' . $m['id'] . '">
+								'.$m['name'].'
+								<button class="modal_nomenclature" data-id="'.$m['id'].'">
 									<img src="/image/status-edit.png" alt="" class="status-request">
 								</button>
-								' . $delete . '
+								'.$delete.'
 							</div>
 							<div class="subs-cat">
-								' . $m['categories'] . '
+								'.$m['categories'].'
 							</div>
 						</div>
 					</div>
@@ -5121,22 +5121,22 @@ class HtmlTemplate extends HtmlServive
 
         $m = $p['m'];
 
-        $id_elem = 'div_search_categories' . $m['id'] . '';
+        $id_elem = 'div_search_categories'.$m['id'].'';
 
         $delete = '<span class="delete_search_categories" style="color:#999;cursor:pointer;" title="Удалить" 
-													data-id="' . $m['id'] . '" data-elem="' . $id_elem . '" data-name="' . $m['name'] . '">x</span>';
+													data-id="'.$m['id'].'" data-elem="'.$id_elem.'" data-name="'.$m['name'].'">x</span>';
 
-        $tr = '	<div class="subs-item" id="' . $id_elem . '">
+        $tr = '	<div class="subs-item" id="'.$id_elem.'">
 						<div class="subs-info">
 							<div class="subs-name">
-								' . $m['name'] . '
-								<button class="modal_search_categories" data-id="' . $m['id'] . '">
+								'.$m['name'].'
+								<button class="modal_search_categories" data-id="'.$m['id'].'">
 									<img src="/image/status-edit.png" alt="" class="status-request">
 								</button>
-								' . $delete . '
+								'.$delete.'
 							</div>
 							<div class="subs-cat">
-								' . $m['categories'] . '
+								'.$m['categories'].'
 							</div>
 						</div>
 					</div>
@@ -5194,24 +5194,24 @@ class HtmlTemplate extends HtmlServive
 					<ul class="request-menu">
 						<li class="request-menu-item">
 							<button>
-								<a href="/chat/messages" class="nav-link ' . $views_chat . '">Все сообщения</a>
+								<a href="/chat/messages" class="nav-link '.$views_chat.'">Все сообщения</a>
 							</button>
 						</li>
 						<!--
 						<li class="request-menu-item">
 							<button>
-								<a href="/chat/open-chats" class="nav-link ' . $views_open_chats . '">Открытая тема</a>
+								<a href="/chat/open-chats" class="nav-link '.$views_open_chats.'">Открытая тема</a>
 							</button>
 						</li>
 						-->
 						<li class="request-menu-item">
 							<button>
-								<a href="/chat/wt-chats" class="nav-link ' . $views_wt_chats . '">Открытая тема</a> <!-- без темы --!>
+								<a href="/chat/wt-chats" class="nav-link '.$views_wt_chats.'">Открытая тема</a> <!-- без темы --!>
 							</button>
 						</li>						
 						<li class="request-menu-item">
 							<button>
-								<a href="/chat/arhive-chats" class="nav-link ' . $views_arhive_chats . '">Архив</a>
+								<a href="/chat/arhive-chats" class="nav-link '.$views_arhive_chats.'">Архив</a>
 							</button>
 						</li>
 					</ul>
@@ -5241,14 +5241,14 @@ class HtmlTemplate extends HtmlServive
             $rc = reqCompany(array('id' => $arr_companies[1]));
             //vecho($rc);
         }
-        $b_comp = (!empty($rc['company'])) ? ', ' . $rc['company'] : ''; //второй собеседник
+        $b_comp = (!empty($rc['company'])) ? ', '.$rc['company'] : ''; //второй собеседник
 
         $rcm = reqChatMessages(array('folder_id' => $m['folder_id']));
 
         $last_message = end($rcm); //информация о последнем сообщении
         //$last_message = $rcm[count($rcm) - 1];
 
-        $last_am = $last_message["name_rcmc"] . ': ' . $last_message["ticket_exp"];
+        $last_am = $last_message["name_rcmc"].': '.$last_message["ticket_exp"];
 
         //if (!empty($rcm)){
 
@@ -5262,7 +5262,7 @@ class HtmlTemplate extends HtmlServive
             $avatar = $m['ava_folder'];
         } else {
             $avatar = !empty($m['ava_company']) ?
-                "<img src='" . $m['ava_company'] . "' class='rounded-circle' height='50'>" :
+                "<img src='".$m['ava_company']."' class='rounded-circle' height='50'>" :
                 "<img src='/image/profile-icon.png' class='rounded-circle' height='50'>";
         }
 
@@ -5270,7 +5270,7 @@ class HtmlTemplate extends HtmlServive
             $theme = $m['folder_name'];
             $edit_theme = '	
 								<div class="_status-bar ">
-									<button class="_status-bar__convert edit_theme" data-id="' . $m['folder_id'] . '">
+									<button class="_status-bar__convert edit_theme" data-id="'.$m['folder_id'].'">
 										<img src="/image/status-edit.svg" alt="" class="status-request">												
 									</button>
 								</div>';
@@ -5279,30 +5279,30 @@ class HtmlTemplate extends HtmlServive
             $theme = $m['folder_name'];
             $edit_theme = '';
         } else {
-            $theme = $m["name_rcmc"] . $b_comp;
+            $theme = $m["name_rcmc"].$b_comp;
             $edit_theme = '';
         }
 
 
         $tr = '	<div class="subs-item row">
 						<div class="subs-icon col-1">
-							' . $avatar . '							
+							'.$avatar.'							
 						</div>
-						<a name="' . $m['id'] . '" />
+						<a name="'.$m['id'].'" />
 						<div class="subs-info col-11 row">
-							' . $kol_notification . ' 
+							'.$kol_notification.' 
 							<div class="subs-cat col-7">
-								<a href="/chat/messages/' . $m["folder_id"] . '">' . $theme . '</a><br />
-								<span>' . $last_am . '</span> 
+								<a href="/chat/messages/'.$m["folder_id"].'">'.$theme.'</a><br />
+								<span>'.$last_am.'</span> 
 							</div>
 							<div class="subs-place col-3">
-								' . $status_on_off . '
+								'.$status_on_off.'
 							</div>
 							<div class="subs-place col-2">
-								' . $edit_theme . '
+								'.$edit_theme.'
 							
-								  <!-- <span class="badge ' . $status_badge . ' badge-pill">&nbsp;</span>  -->
-								<small class="_status-bar__time">' . $last_message["t_date_full"] . '</small>
+								  <!-- <span class="badge '.$status_badge.' badge-pill">&nbsp;</span>  -->
+								<small class="_status-bar__time">'.$last_message["t_date_full"].'</small>
 							</div>							
 						</div>
 					</div>
@@ -5347,14 +5347,14 @@ class HtmlTemplate extends HtmlServive
 
         //$last_message["ava_company"] - аватарка последнего отправиышего сообщение в чате
 
-        $last_am = $last_message["name_rcmc"] . ': ' . $last_message["ticket_exp"];
+        $last_am = $last_message["name_rcmc"].': '.$last_message["ticket_exp"];
 
 
         if (!empty($m['avatar'])) { // если явно проставлен логотип чата
-            $avatar = "<img src='" . $m['avatar'] . "' class='rounded-circle' height='50'>";
+            $avatar = "<img src='".$m['avatar']."' class='rounded-circle' height='50'>";
         } else {
             $avatar = !empty($ava_sobesednika) ?
-                "<img src='" . $ava_sobesednika . "' class='rounded-circle' height='50'>" :
+                "<img src='".$ava_sobesednika."' class='rounded-circle' height='50'>" :
                 "<img src='/image/profile-icon.png' class='rounded-circle' height='50'>";
         }
 
@@ -5362,7 +5362,7 @@ class HtmlTemplate extends HtmlServive
             $theme = $m['folder_name'];
             $edit_theme = '	
 								<div class="_status-bar ">
-									<button class="_status-bar__convert edit_theme" data-id="' . $m['id'] . '">
+									<button class="_status-bar__convert edit_theme" data-id="'.$m['id'].'">
 										<img src="/image/status-edit.svg" alt="" class="status-request">												
 									</button>
 								</div>';
@@ -5372,7 +5372,7 @@ class HtmlTemplate extends HtmlServive
             $edit_theme = '';
         } else {
             if (!empty($rc2)) {
-                $theme = $rc2['legal_entity'] . ' ' . $rc2["company"];
+                $theme = $rc2['legal_entity'].' '.$rc2["company"];
                 $edit_theme = '';
             } else {
                 $theme = $last_message["name_rcmc"];
@@ -5380,41 +5380,41 @@ class HtmlTemplate extends HtmlServive
             }
         }
 
-//        $buttonArchive = ($m['status'] != 2) ? '<button type="button" class="button-blue pull-right close_theme" data-fid="' . $m["id"] . '">в Архив</button>' : '<button type="button" class="button-blue pull-right open_theme" data-fid="' . $m["id"] . '">Открыть тему</button>';
+//        $buttonArchive = ($m['status'] != 2) ? '<button type="button" class="button-blue pull-right close_theme" data-fid="'.$m["id"].'">в Архив</button>' : '<button type="button" class="button-blue pull-right open_theme" data-fid="'.$m["id"].'">Открыть тему</button>';
         $buttonArchive = '';
        
         if ($m['status'] != 2 && $m['folder_name'] == '') {
-            $buttonArchive = '<button type="button" class="button-blue pull-right close_chat" data-fid="' . $m["id"] . '">в Архив</button>';
+            $buttonArchive = '<button type="button" class="button-blue pull-right close_chat" data-fid="'.$m["id"].'">в Архив</button>';
         } elseif ($m['status'] != 2 && ($m['folder_name'] != '' && $m['owner_id'] == COMPANY_ID)) {
-            $buttonArchive = '<button type="button" class="button-blue pull-right close_theme" data-fid="' . $m["id"] . '">Закрыть тему</button>';
+            $buttonArchive = '<button type="button" class="button-blue pull-right close_theme" data-fid="'.$m["id"].'">Закрыть тему</button>';
         }elseif ($m['status'] == 2 && ($m['folder_name'] != '') && $m['owner_id'] == COMPANY_ID) {
-            $buttonArchive = '<button type="button" class="button-blue pull-right open_theme" data-fid="' . $m["id"] . '">Открыть тему</button>';
+            $buttonArchive = '<button type="button" class="button-blue pull-right open_theme" data-fid="'.$m["id"].'">Открыть тему</button>';
         }
         elseif ($m['status'] == 2 && ($m['folder_name'] == '')) {
-            $buttonArchive = '<button type="button" class="button-blue pull-right open_chat" data-fid="' . $m["id"] . '">Вернуть чат</button>';
+            $buttonArchive = '<button type="button" class="button-blue pull-right open_chat" data-fid="'.$m["id"].'">Вернуть чат</button>';
         }
 
         $tr = '	<div class="subs-item row">
 						<div class="subs-icon col-1">
-							' . $avatar . '							
+							'.$avatar.'							
 						</div>
 						<div class="subs-info col-11 row">
-							' . $kol_notification . ' 
+							'.$kol_notification.' 
 							<div class="subs-cat col-6">
-								<a href="/chat/messages/' . $m["id"] . '">' . $theme . '</a><br />
-								<span>' . $last_am . '</span> 
+								<a href="/chat/messages/'.$m["id"].'">'.$theme.'</a><br />
+								<span>'.$last_am.'</span> 
 							</div>
 							<div class="subs-place col-2">
-								' . $status_on_off . '
+								'.$status_on_off.'
 							</div>
 							<div class="subs-place col-2">
-								' . $buttonArchive . '</div>
+								'.$buttonArchive.'</div>
 
 							<div class="subs-place col-2">
-								' . $edit_theme . '
+								'.$edit_theme.'
 							
-								  <!-- <span class="badge ' . $status_badge . ' badge-pill">&nbsp;</span>  -->
-								<small class="_status-bar__time">' . $last_message["t_date_full"] . '</small>
+								  <!-- <span class="badge '.$status_badge.' badge-pill">&nbsp;</span>  -->
+								<small class="_status-bar__time">'.$last_message["t_date_full"].'</small>
 							</div>							
 						</div>
 					</div>
@@ -5467,27 +5467,27 @@ class HtmlTemplate extends HtmlServive
 
                 if (in_array($ext, $allowImage)) {
                     $tr_img .= '<div class="img-item">
-					<a data-fancybox="gallery6" class="img-item-link" href="/files/messages/' . $m['company_id'] . '/' . $val['name'] . '">
-					<img src="/files/messages/' . $m['company_id'] . '/' . pathinfo($val['name'], PATHINFO_FILENAME) . '-thumb.png">
+					<a data-fancybox="gallery6" class="img-item-link" href="/files/messages/'.$m['company_id'].'/'.$val['name'].'">
+					<img src="/files/messages/'.$m['company_id'].'/'.pathinfo($val['name'], PATHINFO_FILENAME).'-thumb.png">
 					</a>						
 					</div>';
                 } elseif (in_array($ext, $allowDoc)) {
                     $tr_img .= '<div class="img-item">
-						<a class="img-item-link" target="_blank" href="https://docs.google.com/viewer?url=https://questrequest.ru/files/messages/' . $m['company_id'] . '/' . $val['name'] . '">
-							<img style="width:100px" src="/image/iconMessages/' . $ext . '.png">
+						<a class="img-item-link" target="_blank" href="https://docs.google.com/viewer?url=https://questrequest.ru/files/messages/'.$m['company_id'].'/'.$val['name'].'">
+							<img style="width:100px" src="/image/iconMessages/'.$ext.'.png">
 						</a>						
 					</div>';
                 } else {
                     $tr_img .= '<div class="img-item">
-						<a class="img-item-link" href="/files/messages/' . $m['company_id'] . '/' . $val['name'] . '">
-							<img style="width:100px" src="/image/iconMessages/' . $ext . '.png">
+						<a class="img-item-link" href="/files/messages/'.$m['company_id'].'/'.$val['name'].'">
+							<img style="width:100px" src="/image/iconMessages/'.$ext.'.png">
 						</a>						
 					</div>';
                 }
             }
 
             $tr_img_wrapper .= '<div class="img-list col-md-10" id="js-file-listM">
-				' . $tr_img . '
+				'.$tr_img.'
 				</div>';
 
         }
@@ -5496,7 +5496,7 @@ class HtmlTemplate extends HtmlServive
         $cl_own = ($m['company_id'] == COMPANY_ID) ? 'justify-content-end own' : 'justify-content-start';
         $cl_status = ($m['ticket_status'] == 1) ? ' tech' : '';
 
-        $avatar = "<img src='" . $m['ava_company'] . "' class='rounded-circle' height='40'>";
+        $avatar = "<img src='".$m['ava_company']."' class='rounded-circle' height='40'>";
 
         /* 			if (empty($m['folder_name'])) {
 					$avatar = "<img src='".$m['ava_company']."' class='rounded-circle' height='40'>";
@@ -5516,10 +5516,10 @@ class HtmlTemplate extends HtmlServive
 
         if ($m['ticket_status'] == 1) {
 
-            $tr = '	<div class="message-item row ' . $cl_own . $cl_status . '">
+            $tr = '	<div class="message-item row '.$cl_own.$cl_status.'">
 				<div class="tech-info _col col-md-12 text-center">	
 
-				<span>' . $m["ticket_exp"] . '</span>															
+				<span>'.$m["ticket_exp"].'</span>															
 				</div>
 				</div>
 				';
@@ -5532,29 +5532,29 @@ class HtmlTemplate extends HtmlServive
                 $mes .= self::TrPageMessages(array('m' => $k, 'views' => 'messages'));
             }
             // var_dump($mes);
-            $tr = '	<div class="message-item row tech ' . $cl_own . $cl_status . '">
+            $tr = '	<div class="message-item row tech '.$cl_own.$cl_status.'">
 
 				<div class="message-info col col-md-10">
-				<a name="' . $m['id'] . '">
-			<span>' . $m["ticket_exp"] . '</span>
+				<a name="'.$m['id'].'">
+			<span>'.$m["ticket_exp"].'</span>
 			<div class="tech-info _col col-md-12">	
-				' . $mes . '										
+				'.$mes.'										
 				</div>		
 				</div>
 				</div>
 				';
         } else {
 
-            $tr = '	<div class="message-item row ' . $cl_own . $cl_status . '">
+            $tr = '	<div class="message-item row '.$cl_own.$cl_status.'">
 				<div class="message-info col col-md-10">
-				<a name="' . $m['id'] . '">
-				<span class="user_name">' . $m["name_rcmc"] . '</span><br />
-				' . $avatar . '	
-				' . $kol_notification . ' 
-				' . $m["ticket_exp"] . '
-				<small class="pull-right">' . $date_message . '</small>							
+				<a name="'.$m['id'].'">
+				<span class="user_name">'.$m["name_rcmc"].'</span><br />
+				'.$avatar.'	
+				'.$kol_notification.' 
+				'.$m["ticket_exp"].'
+				<small class="pull-right">'.$date_message.'</small>							
 				</div>						
-				' . $tr_img_wrapper . '	
+				'.$tr_img_wrapper.'	
 				</div>
 				';
 
@@ -5649,24 +5649,24 @@ class HtmlTemplate extends HtmlServive
             $view_active = ($kol_3 > 0) ? '
 							<li class="request-menu-item">
 								<button>
-									<a href="/ticket/active" class="nav-link ' . $views_active . '">Активные <sup>' . $kol_3 . '</sup></a>
+									<a href="/ticket/active" class="nav-link '.$views_active.'">Активные <sup>'.$kol_3.'</sup></a>
 								</button>
 							</li>' : '';
             $view_na_proverk = ($kol_5 > 0) ? '
 							<li class="request-menu-item">
 								<button>
-									<a href="/ticket/na_proverku" class="nav-link ' . $views_na_proverku . '">На проверке <sup>' . $kol_5 . '</sup></a>
+									<a href="/ticket/na_proverku" class="nav-link '.$views_na_proverku.'">На проверке <sup>'.$kol_5.'</sup></a>
 								</button>
 							</li>' : '';
             $view_vozvrat = ($kol_6 > 0) ? '
 							<li class="request-menu-item">
 								<button>
-									<a href="/ticket/vozvrat" class="nav-link ' . $views_vozvrat . '">Возвращено <sup></sup>' . $kol_6 . '</a>
+									<a href="/ticket/vozvrat" class="nav-link '.$views_vozvrat.'">Возвращено <sup></sup>'.$kol_6.'</a>
 								</button>
 							</li>' : '';
 
 
-            $views_admins = $view_active . $view_na_proverk . $view_vozvrat;
+            $views_admins = $view_active.$view_na_proverk.$view_vozvrat;
 
 
         } else {
@@ -5683,31 +5683,31 @@ class HtmlTemplate extends HtmlServive
         }
         $kol_1v = ($kol_1 > 0) ? '<li class="request-menu-item">
 							<button>
-								<a href="/ticket/errors" class="nav-link ' . $views_errors . '">Ошибки <sup>' . $kol_1 . '</sup></a>
+								<a href="/ticket/errors" class="nav-link '.$views_errors.'">Ошибки <sup>'.$kol_1.'</sup></a>
 							</button>
 						</li>' : '';
 
         $kol_2v = ($kol_2 > 0) ? '<li class="request-menu-item">
 							<button>
-								<a href="/ticket/pred" class="nav-link ' . $views_pred . '">Предложения <sup>' . $kol_2 . '</sup></a>
+								<a href="/ticket/pred" class="nav-link '.$views_pred.'">Предложения <sup>'.$kol_2.'</sup></a>
 							</button>
 						</li>' : '';
 
         $kol_4v = ($kol_4 > 0) ? '<li class="request-menu-item">
 							<button>
-								<a href="/ticket/in_works" class="nav-link ' . $views_in_works . '">В работе <sup>' . $kol_4 . '</sup></a>
+								<a href="/ticket/in_works" class="nav-link '.$views_in_works.'">В работе <sup>'.$kol_4.'</sup></a>
 							</button>
 						</li>' : '';
 
         $kol_7v = ($kol_7 > 0) ? '<li class="request-menu-item">
 							<button>
-								<a href="/ticket/done" class="nav-link ' . $views_done . '">Исполненные <sup>' . $kol_7 . '</sup></a>
+								<a href="/ticket/done" class="nav-link '.$views_done.'">Исполненные <sup>'.$kol_7.'</sup></a>
 							</button>
 						</li>' : '';
 
         $kol_8v = ($kol_8 > 0) ? '<li class="request-menu-item">
 							<button>
-								<a href="/ticket/arhiv" class="nav-link ' . $views_arhiv . '">Архив <sup>' . $kol_8 . '</sup></a>
+								<a href="/ticket/arhiv" class="nav-link '.$views_arhiv.'">Архив <sup>'.$kol_8.'</sup></a>
 							</button>
 						</li>' : '';
 
@@ -5720,11 +5720,11 @@ class HtmlTemplate extends HtmlServive
 					<ul class="request-menu">
 						
 
-							' . $kol_1v . $kol_2v . $kol_4v . $kol_7v . $kol_8v . $views_admins . '
+							'.$kol_1v.$kol_2v.$kol_4v.$kol_7v.$kol_8v.$views_admins.'
 						<!--
 						<li class="request-menu-item">
 							<button>
-								<a href="/ticket/otzyv" class="nav-link ' . $views_otzyv . '">Отзывы <sup></sup></a>
+								<a href="/ticket/otzyv" class="nav-link '.$views_otzyv.'">Отзывы <sup></sup></a>
 							</button>
 						</li>
 						-->
@@ -5768,11 +5768,11 @@ class HtmlTemplate extends HtmlServive
 				
 									<h5>Обновить из 1С</h5>
 
-									' . $this->Input(array('type' => 'button',
+									'.$this->Input(array('type' => 'button',
                         'class' => 'profile-btn request-btn refresh_1c_all',
                         'value' => 'обновить из 1С'
                     )
-                ) . '
+                ).'
 											
 							</div>';
         } else {
@@ -5797,17 +5797,17 @@ class HtmlTemplate extends HtmlServive
 								<div class="profile-info-wrapper">
 									<div class="profile-info">
 										<div class="form-group">
-											' . $this->Input(array('type' => 'text',
+											'.$this->Input(array('type' => 'text',
                     'id' => 'id_1c',
                     'value' => $row_company['id_1c'],
                     'placeholder' => 'Идентификатор компании из 1С'
                 )
-            ) . '
-											' . $this->Input(array('type' => 'submit',
+            ).'
+											'.$this->Input(array('type' => 'submit',
                     'class' => 'profile-btn request-btn',
                     'value' => 'Привязать'
                 )
-            ) . '
+            ).'
 										</div>
 										Идентификатор компании, берется из 1С и имеет вид 00000000-0000-0000-0000-000000000000
 									</div>
@@ -5821,33 +5821,33 @@ class HtmlTemplate extends HtmlServive
 				
 						<h5>Шаг 4. Привязать единицы измерения</h5>
 
-						' . $this->Input(array('type' => 'button',
+						'.$this->Input(array('type' => 'button',
                     'id' => 'bind_unit_1c',
                     'class' => 'profile-btn request-btn',
                     'value' => 'Привязать'
                 )
-            ) . '
+            ).'
 						
 						<div id="div_bind_unit_1c"></div>
 				</div>
 					
 				<div class="container">	
 				
-						<h5>Шаг 5. Привязать вид номенклатуры' . COMPANY_ID . '</h5>
+						<h5>Шаг 5. Привязать вид номенклатуры'.COMPANY_ID.'</h5>
 
-						' . $this->Input(array('type' => 'button',
+						'.$this->Input(array('type' => 'button',
                     'id' => 'bind_1c_typenom',
                     'class' => 'profile-btn request-btn',
                     'value' => 'обновить из 1С'
                 )
-            ) . '
+            ).'
 								
-						' . $this->Input(array('type' => 'button',
+						'.$this->Input(array('type' => 'button',
                     'class' => 'profile-btn request-btn get_form_bind_1c_typenom',
                     'value' => 'Привязать',
                     'data' => array('id' => 1)
                 )
-            ) . '
+            ).'
 						
 						<div id="div_bind_1c_typenom1"></div>
 				</div>
@@ -5856,19 +5856,19 @@ class HtmlTemplate extends HtmlServive
 				
 						<h5>Шаг 6. Привязать склады</h5>
 
-						' . $this->Input(array('type' => 'button',
+						'.$this->Input(array('type' => 'button',
                     'id' => 'bind_1c_stock',
                     'class' => 'profile-btn request-btn',
                     'value' => 'обновить из 1С'
                 )
-            ) . '
+            ).'
 								
-						' . $this->Input(array('type' => 'button',
+						'.$this->Input(array('type' => 'button',
                     'id' => 'get_form_bind_1c_stock',
                     'class' => 'profile-btn request-btn',
                     'value' => 'Привязать'
                 )
-            ) . '
+            ).'
 						
 						<div id="div_bind_1c_stock"></div>
 				</div>
@@ -5877,12 +5877,12 @@ class HtmlTemplate extends HtmlServive
 				
 						<h5>Шаг 7. Привязать компании</h5>
 
-						' . $this->Input(array('type' => 'button',
+						'.$this->Input(array('type' => 'button',
                     'id' => 'bind_1c_company',
                     'class' => 'profile-btn request-btn',
                     'value' => 'обновить из 1С'
                 )
-            ) . '
+            ).'
 								
 						<a href="/subscriptions/profile" class="profile-btn request-btn">Привязать</a>
 						
@@ -5893,19 +5893,19 @@ class HtmlTemplate extends HtmlServive
 				
 						<h5>Шаг 8. Привязать номенклатуру</h5>
 
-						' . $this->Input(array('type' => 'button',
+						'.$this->Input(array('type' => 'button',
                     'id' => 'bind_1c_nomenclature',
                     'class' => 'profile-btn request-btn',
                     'value' => 'обновить из 1С'
                 )
-            ) . '
+            ).'
 								
 						<a href="/nomenclature" class="profile-btn request-btn">Привязать</a>
 						
 						<div id="div_bind_1c_stock"></div>
 				</div>
 				
-				' . $code_refresh . '
+				'.$code_refresh.'
 				
 		
 				';
