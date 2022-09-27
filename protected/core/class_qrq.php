@@ -548,18 +548,18 @@ class ClassQrq extends HtmlServive
 	
 		if($in['where']=='buy_sell'){
 			$r_p = reqBuySell_Amo(array('id' => $p['buy_sell_id']));
-			$parent_id 	= $r_p['id'];
-			$categories_id	= $r_p['categories_id'];
-			$get_buy_sell_id = $r_p['id'];
-			$get_company_id = $r_p['company_id'];
-			$urgency_id = $r_p['urgency_id'];
-			$url = 'offer';
-			$flag_buy_sell = 2;
-			$status = 10;
+			$parent_id 		= $r_p['id'];
+			$categories_id		= $r_p['categories_id'];
+			$get_buy_sell_id 	= $r_p['id'];
+			$get_company_id 	= $r_p['company_id'];
+			$urgency_id 		= $r_p['urgency_id'];
+			$url 				= 'offer';
+			$flag_buy_sell 	= 2;
+			$status 			= 10;
 		}elseif($in['where']=='infopart'){
-			$url = 'sell_etp';
+			$url 			= 'sell_etp';
 			$flag_buy_sell = 1;
-			$status = 2;
+			$status 		= 2;
 		}
 		
 
