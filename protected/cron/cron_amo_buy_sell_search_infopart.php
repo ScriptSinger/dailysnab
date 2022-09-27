@@ -28,7 +28,7 @@
 
 				// Получаем и сохраняем в buy_sell данные от сторонних ресурсов
 				$arr = $qrq->QrqInsertBuySell(array(	'where'			=> 'infopart',
-													'buy_sell_id'	=> $m['buy_sell_id'],
+													//'buy_sell_id'	=> $m['buy_sell_id'],
 													'token'			=> $m['token'],
 													'searchid'		=> $m['searchid'],
 													'login_id'		=> $m['login_id'],
