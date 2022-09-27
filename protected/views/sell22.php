@@ -65,6 +65,10 @@
 															if(data.code){
 																$("#div_tr_sell").html(data.code);
 																$("#last_etp_id").val(data.id);
+																if(data.noload){
+																	alert("qw");
+																	//$("#loading").hide();
+																}
 															}
 															timeOutId3 = setTimeout(ajaxFn3, 3000);
 												}
