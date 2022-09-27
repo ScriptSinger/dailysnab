@@ -67,6 +67,7 @@
 																$("#last_etp_id").val(data.id);
 																if(data.noload){
 																	alert("qw");
+																	clearTimeout(timeOutId3);
 																	//$("#loading").hide();
 																}
 															}
