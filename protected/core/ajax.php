@@ -2673,7 +2673,7 @@ elseif($_GET['route'] == 'get_sell_by_amo_accountsetp'){
 // обновить предложения (объявления) при полуении с ЭТП (cron/cron_amo_buy_sell_search_infopart)
 elseif($_GET['route'] == 'get_html_sell_by_infopart'){
 
-    $ok = false;
+    $ok = $noload = false;
     $tr = '';
     $last_etp_id = 0;
 
@@ -2704,11 +2704,16 @@ elseif($_GET['route'] == 'get_html_sell_by_infopart'){
         ///
 
     }
+	
+	if(1==1){
+		$noload = true;
+	}
 
 
-    $jsd['ok'] 	= $ok;
-    $jsd['code']	= $tr;
-    $jsd['id']	= $last_etp_id;
+	$jsd['ok'] 		= $ok;
+    $jsd['code']		= $tr;
+    $jsd['id']		= $last_etp_id;
+	$jsd['noload']	= $noload;
 }
 // показать телефон Объявление/Предложение
 elseif($_GET['route'] == 'view_phone'){
