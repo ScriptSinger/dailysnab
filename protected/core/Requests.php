@@ -7386,20 +7386,20 @@
 		$in = fieldIn($p, array('cookie_session'));
 
 		if($in['cookie_session']){
-			$sql = 'AND ci.cookie_session=?';
+			$sql = ' AND ci.cookie_session=? ';
 			$arr = array($in['cookie_session']);
 			$one = true;
 		}
 
-		$sql = "	SELECT ci.id, ci.token, ci.searchid, ci.brand, ci.searchtext, ci.accountid, ci.login_id, ci.company_id, ci.categories_id, 
-						ci.qrq_id, ci.company_id_out, ci.cookie_session
+		$sql = "	SELECT ci.id, ci.token, ci.searchid, ci.brand, ci.searchtext, ci.accountid, ci.login_id, ci.company_id, 
+						ci.categories_id, ci.qrq_id, ci.company_id_out, ci.cookie_session
 				FROM cron_amo_buy_sell_search_infopart ci
-				WHERE 1=1 AND ".$sql." ";
+				WHERE 1=1 ".$sql." ";
 
 		$row = ($one)? PreExecSQL_one($sql,$arr) : PreExecSQL_all($sql,$arr);
 
 		return $row;
-	}	
+	}
 	
 	
 
