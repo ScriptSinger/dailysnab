@@ -4229,7 +4229,6 @@ function SaveBuySell(modal,flag_offer_share) {
 
 			bv.disableSubmitButtons(false);
 			
-			alert(d.status);
 			
 			if( /*flag_categories &&*/ d.status==1 || (flag_amount && flag_amount1 && flag_amount2 && flag_name && flag_uploader) ){
 				
