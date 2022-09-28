@@ -4959,7 +4959,7 @@ class HtmlTemplate extends HtmlServive
 													'class' 	=> 'form-control require-input vmask',
 													'value' 	=> $row_bs['amount2'],
 													'placeholder' => 'Группа ед.изм.(фасовка)',
-													'dopol' 	=> 'required data-bv-notempty-message="Введите" autocomplete="off"'
+													'dopol' 	=> 'autocomplete="off"'//required data-bv-notempty-message="Введите"
 												)
 											).'
 									<!--
@@ -4996,7 +4996,7 @@ class HtmlTemplate extends HtmlServive
 												'class' 	=> 'form-control require-input vmask',
 												'value' 	=> '',
 												'placeholder' => $row_bs['unit1'],
-												'dopol' 	=> ' '.$min.'  list="amount" required data-bv-notempty-message="Введите" autocomplete="off" ',
+												'dopol' 	=> ' '.$min.'  list="amount"  autocomplete="off" ',//required data-bv-notempty-message="Введите"
 												'data' 		=> array('unit_id' => $row_bs['unit_id1'])
 											)
 										).'
@@ -5025,13 +5025,13 @@ class HtmlTemplate extends HtmlServive
 
 
             $code = '<div class="form-group offer-form__item">
-							'.$this->Input(array('type' => 'text',
-												'name' => 'amount',
-												'class' => 'form-control require-input vmask',
-												'value' => $row_bs['amount'],
-												'placeholder' => $placeholder,
-												'dopol' => 'autocomplete="off" ',//required data-bv-notempty-message="Введите" 
-												'data' => array('unit_id' => $unit_id)
+							'.$this->Input(array('type' 			=> 'text',
+												'name' 			=> 'amount',
+												'class' 		=> 'form-control require-input vmask',
+												'value' 		=> $row_bs['amount'],
+												'placeholder' 	=> $placeholder,
+												'dopol' 		=> 'autocomplete="off" ',//required data-bv-notempty-message="Введите" 
+												'data' 			=> array('unit_id' => $unit_id)
 											)
 										).'
 						</div>';
