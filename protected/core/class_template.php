@@ -5028,7 +5028,7 @@ class HtmlTemplate extends HtmlServive
 							'.$this->Input(array('type' 			=> 'text',
 												'name' 			=> 'amount',
 												'class' 		=> 'form-control require-input vmask',
-												'value' 		=> ($row_bs['amount'])? $row_bs['amount'] : '',
+												'value' 		=> ($row_bs['amount']>0)? $row_bs['amount'] : '',
 												'placeholder' 	=> $placeholder,
 												'dopol' 		=> 'autocomplete="off" ',//required data-bv-notempty-message="Введите" 
 												'data' 			=> array('unit_id' => $unit_id)
