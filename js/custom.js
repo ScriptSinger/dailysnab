@@ -4175,7 +4175,9 @@ function SaveBuySell(modal,flag_offer_share) {
 			$("#buy_sell-form [name='amount']").each(function(indx, element){
 				if ( $(element).val()=='' || $(element).val()==0 ){
 					flag_amount = false;
-					webix.message({type:"error", text:"Введите количесвто"});
+					if(d.status!=1){
+						webix.message({type:"error", text:"Введите количесвто"});
+					}
 				}
 			});
 			
