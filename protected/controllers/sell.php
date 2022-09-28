@@ -72,11 +72,11 @@
 								);
 				*/				
 				$this->sell22 = array( 	'row'		=> reqBuySell_PageSell(array(	'categories_id' 	=> $categories_id,
-																				'cities_id' 		=> $cities_id,
-																				'value' 			=> $value,
-																				'flag_search' 		=> $flag_search,
-																				'share_url' 		=> $row_share['share_url'],
-																				'etp'				=> $etp	)),
+																					'cities_id' 		=> $cities_id,
+																					'value' 			=> $value,
+																					'flag_search' 		=> $flag_search,
+																					'share_url' 		=> $row_share['share_url'],
+																					'etp'				=> $etp	)),
 										'categories_id'	=> $categories_id,
 										'cat_id'		=> $cat_id,
 										'etp'			=> $etp
