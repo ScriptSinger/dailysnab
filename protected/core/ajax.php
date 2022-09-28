@@ -1905,14 +1905,14 @@ elseif($_GET['route'] == 'view_group_mybuysell'){
     $status_buy_sell_id = isset($arr[3])?  $arr[3] : '';
 
     $code = $t->NextTrMyBuySell(array(	'start_limit'			=> $in['start_limit'],
-        'flag_buy_sell'			=> $in['flag_buy_sell'],
-        'status_buy_sell_id'	=> $status_buy_sell_id,
-        'categories_id' 		=> $rf['categories_id'],
-        'cities_id' 			=> $rf['cities_id'],
-        'value' 				=> $in['value'],
-        'group_id' 				=> $in['group_id'],
-        'flag_group_id' 		=> true,
-        'group' 				=> $in['group'] ));
+										'flag_buy_sell'			=> $in['flag_buy_sell'],
+										'status_buy_sell_id'	=> $status_buy_sell_id,
+										'categories_id' 		=> $rf['categories_id'],
+										'cities_id' 			=> $rf['cities_id'],
+										'value' 				=> $in['value'],
+										'group_id' 				=> $in['group_id'],
+										'flag_group_id' 		=> true,
+										'group' 				=> $in['group'] ));
 
 
     $jsd['code'] = $code;
