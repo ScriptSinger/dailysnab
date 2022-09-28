@@ -2812,19 +2812,21 @@
 				array_push($arr , '%'.$in['value'].'%');
 			}
 		}else{// по наименованию/артикулу
+			
+			$sql_etp = " AND NOT bs.id IN ( SELECT buy_sell_id FROM buy_sell_etp_sell be ) ";// исключаем етп предложения (чтобы не попали других пользователей, которые запросили)
+			
 			if($in['value']){
 
 				$sql_order = " bs.cost ";
 
 				// вывести предложения с Етп
-				$sql_etp = '';
 				if($in['etp']){
 					$sql_cities = '';// при Этп город не учитывать (пока не понятно как с этп город учитыать 18-05-2022)
-					$sql_etp = " OR	bs.id IN (
-																SELECT buy_sell_id
-																FROM buy_sell_etp_sell be
-																WHERE be.cookie_session='".COOKIE_SESSION."' AND be.company_id=".COMPANY_ID." 
-																)";
+					$sql_etp = " OR bs.id IN (
+											SELECT buy_sell_id
+											FROM buy_sell_etp_sell be
+											WHERE be.cookie_session='".COOKIE_SESSION."' AND be.company_id=".COMPANY_ID." 
+											)";
 					//array_push($arr , COOKIE_SESSION);
 					//array_push($arr , COMPANY_ID);
 				}
@@ -2838,6 +2840,7 @@
 																								";
 				array_push($arr , '%'.$in['value'].'%');
 				array_push($arr , '%'.$in['value'].'%');
+				
 			}
 		}
 		///
