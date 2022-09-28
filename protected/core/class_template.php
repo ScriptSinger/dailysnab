@@ -4936,14 +4936,14 @@ class HtmlTemplate extends HtmlServive
 							<div class="form-group offer-form__item">
 							
 								'.$this->Input(array('type' => 'text',
-                        'name' => 'amount1',
-                        'class' => 'form-control require-input vmask',
-                        'value' => $row_bs['amount1'],
-                        'placeholder' => 'Ед. измерения',
-                        'dopol' => 'required data-bv-notempty-message="Введите" autocomplete="off"',
-                        'data' => array('unit_id' => $row_bs['unit_id1'])
-                    )
-                ).'
+													'name' => 'amount1',
+													'class' => 'form-control require-input vmask',
+													'value' => $row_bs['amount1'],
+													'placeholder' => 'Ед. измерения',
+													'dopol' => 'autocomplete="off"',//required data-bv-notempty-message="Введите" 
+													'data' => array('unit_id' => $row_bs['unit_id1'])
+												)
+											).'
 								<!--
 								<div id="div_krat_amount1" style="display:none;">Кратность должна быть до 0,01</div>
 								-->
