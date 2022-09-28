@@ -4160,10 +4160,6 @@ function SaveBuySell(modal,flag_offer_share) {
 			var bv = $form.data('bootstrapValidator');
 			var button=$(e.target).data('bootstrapValidator').getSubmitButton();
 			var d = button.data();
-			
-			
-			
-			bv.disableSubmitButtons(true);
 
 
 			/*
@@ -4229,11 +4225,13 @@ function SaveBuySell(modal,flag_offer_share) {
 					bv.disableSubmitButtons(false);
 				}
 				
-			}			
+			}
+
+			bv.disableSubmitButtons(true);			
 			
 			if( /*flag_categories &&*/ flag_amount && flag_amount1 && flag_amount2 && flag_name && flag_uploader ){
 				
-				alert('qw');
+				
 				
 				var status_id = d.status;
 				
