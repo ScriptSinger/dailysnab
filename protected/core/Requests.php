@@ -2787,7 +2787,7 @@
 
 		// поиск
 																						// по умолчанию
-		$sql_etp = " AND NOT bs.id IN ( SELECT buy_sell_id FROM buy_sell_etp_sell be ) ";// исключаем етп предложения (чтобы не попали других пользователей, которые запросили)
+		$sql_no_etp = " AND NOT bs.id IN ( SELECT buy_sell_id FROM buy_sell_etp_sell be ) ";// исключаем етп предложения (чтобы не попали других пользователей, которые запросили)
 
 		
 		if($in['categories_id']){
@@ -2823,6 +2823,7 @@
 				$sql_order = " bs.cost ";
 
 				// вывести предложения с Етп
+				$sql_no_etp = $sql_etp = '';
 				if($in['etp']){
 					$sql_cities = '';// при Этп город не учитывать (пока не понятно как с этп город учитыать 18-05-2022)
 					$sql_etp = " OR bs.id IN (
@@ -2894,6 +2895,8 @@
 							".$sql."
 							
 							".$sql_cities."
+							
+							".$sql_no_etp."
 
 					ORDER BY ".$sql_order."   ";
 	//vecho($sql);
