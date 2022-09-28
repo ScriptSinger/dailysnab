@@ -4954,29 +4954,29 @@ class HtmlTemplate extends HtmlServive
 						</div>
 						<div id="div_amount_unit2" class="form-group offer-form__item offer-form__item-couple" style="'.$div_amount_unit2_st_dn.'">
 							<div class="form-group offer-form__item">
-								'.$this->Input(array('type' => 'text',
-                        'name' => 'amount2',
-                        'class' => 'form-control require-input vmask',
-                        'value' => $row_bs['amount2'],
-                        'placeholder' => 'Группа ед.изм.(фасовка)',
-                        'dopol' => 'required data-bv-notempty-message="Введите" autocomplete="off"'
-                    )
-                ).'
+								'.$this->Input(array(	'type'		=> 'text',
+													'name' 		=> 'amount2',
+													'class' 	=> 'form-control require-input vmask',
+													'value' 	=> $row_bs['amount2'],
+													'placeholder' => 'Группа ед.изм.(фасовка)',
+													'dopol' 	=> 'required data-bv-notempty-message="Введите" autocomplete="off"'
+												)
+											).'
 									<!--
 									<div id="div_krat_amount2" style="display:none;">Кратность должна быть до 0,01</div>
 									-->
 							</div>
 							<div class="form-group offer-form__item">
-									'.$this->Select(array('id' => 'unit_id2',
-                    'class' => 'form-control select2',
-                    'value' => $row_bs['unit_id2'],
-                    'dopol' => 'required data-bv-notempty-message=" Выберите ед.изм."'
-                ),
-                    array('func' => 'reqSlovUnit',
-                        'param' => array('unit_group_id' => $row_categories['unit_group_id']),
-                        'option' => array('id' => 'id', 'name' => 'unit')
-                    )
-                ).'
+									'.$this->Select(array('id' 	=> 'unit_id2',
+														'class' => 'form-control select2',
+														'value' => $row_bs['unit_id2'],
+														'dopol' => 'required data-bv-notempty-message=" Выберите ед.изм."'
+													),
+													array(	'func'	=> 'reqSlovUnit',
+															'param' => array('unit_group_id' => $row_categories['unit_group_id']),
+															'option'=> array('id' => 'id', 'name' => 'unit')
+													)
+												).'
 							</div>
 						</div>
 						';
@@ -4987,19 +4987,19 @@ class HtmlTemplate extends HtmlServive
 
             $code = '<div class="form-group offer-form__item">
 							'.$this->Input(array('type' => 'hidden',
-                        'name' => 'unit_id1',
-                        'value' => $row_bs['unit_id1']
-                    )
-                ).'	
-							'.$this->Input(array('type' => 'text',
-                        'name' => 'amount1',
-                        'class' => 'form-control require-input vmask',
-                        'value' => '',
-                        'placeholder' => $row_bs['unit1'],
-                        'dopol' => ' '.$min.'  list="amount" required data-bv-notempty-message="Введите" autocomplete="off" ',
-                        'data' => array('unit_id' => $row_bs['unit_id1'])
-                    )
-                ).'
+												'name' => 'unit_id1',
+												'value' => $row_bs['unit_id1']
+											)
+										).'	
+							'.$this->Input(array('type' 		=> 'text',
+												'name'		=> 'amount1',
+												'class' 	=> 'form-control require-input vmask',
+												'value' 	=> '',
+												'placeholder' => $row_bs['unit1'],
+												'dopol' 	=> ' '.$min.'  list="amount" required data-bv-notempty-message="Введите" autocomplete="off" ',
+												'data' 		=> array('unit_id' => $row_bs['unit_id1'])
+											)
+										).'
 							<datalist id="amount">
 								<option value="'.$row_bs['amount'].'" />
 							</datalist>
@@ -5026,14 +5026,14 @@ class HtmlTemplate extends HtmlServive
 
             $code = '<div class="form-group offer-form__item">
 							'.$this->Input(array('type' => 'text',
-                        'name' => 'amount',
-                        'class' => 'form-control require-input vmask',
-                        'value' => $row_bs['amount'],
-                        'placeholder' => $placeholder,
-                        'dopol' => 'required data-bv-notempty-message="Введите" autocomplete="off" ',
-                        'data' => array('unit_id' => $unit_id)
-                    )
-                ).'
+												'name' => 'amount',
+												'class' => 'form-control require-input vmask',
+												'value' => $row_bs['amount'],
+												'placeholder' => $placeholder,
+												'dopol' => 'autocomplete="off" ',//required data-bv-notempty-message="Введите" 
+												'data' => array('unit_id' => $unit_id)
+											)
+										).'
 						</div>';
         }
 
