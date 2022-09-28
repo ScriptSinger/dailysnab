@@ -1013,10 +1013,10 @@ elseif($_GET['route'] == 'modal_search'){
 elseif($_GET['route'] == 'modal_buy_sell'){
 
     $arr = $f->FormBuySell(array('id'=>$in['id'],'flag_buy_sell'=>$in['flag_buy_sell'],'share_url'=>$in['share_url'],
-        'status'=>$in['status'],'flag'=>$in['flag'] ));
+								'status'=>$in['status'],'flag'=>$in['flag'] ));
 
     $code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
-        array('id'=>'buy_sell-form','class'=>'') );
+							array('id'=>'buy_sell-form','class'=>'') );
 
     $jsd['code'] = $code;
 }
