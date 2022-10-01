@@ -2102,25 +2102,28 @@ elseif($_GET['route'] == 'scroll_page'){
     $ok = false;
 
     if( $in['flag']=='buy_sell' && COMPANY_ID ){// Страница "Мои заявки/объявления"
-        $code = $t->NextTrMyBuySell(array(	'start_limit'			=> $in['start_limit'],
-            'flag_buy_sell'			=> $in['flag_buy_sell'],
-            'status_buy_sell_id'	=> $in['status'],
-            'categories_id' 		=> $in['categories_id'],
-            'cities_id' 			=> $in['cities_id'],
-            'value' 				=> $in['value'],
-            'group' 				=> $in['group'] ));
+        $code = $t->NextTrMyBuySell(array('start_limit'			=> $in['start_limit'],
+										'flag_buy_sell'			=> $in['flag_buy_sell'],
+										'status_buy_sell_id'	=> $in['status'],
+										'categories_id' 		=> $in['categories_id'],
+										'cities_id' 			=> $in['cities_id'],
+										'value' 				=> $in['value'],
+										'group' 				=> $in['group'],
+										'type' 					=> $in['type'] 
+									));
     }elseif($in['flag']=='pagebuy'){// Страница "Чужие заявки"
         $flag_companyprofile = ($in['where']=='company_profile')? true : false;
-        $code = $t->NextTrPageBuy(array(		'start_limit'			=> $in['start_limit'],
-            'flag_interests' 		=> $in['flag_interests'],
-            'share_url' 			=> $in['share_url'],
-            'categories_id' 		=> $in['categories_id'],
-            'cities_id' 			=> $in['cities_id'],
-            'value'					=> $in['value'],
-            'flag_search' 			=> $in['flag_search'],
-            'company_id' 			=> $in['company_id'],
-            'flag_companyprofile'	=> $flag_companyprofile
-        ));
+        $code = $t->NextTrPageBuy(array(	'start_limit'			=> $in['start_limit'],
+										'flag_interests' 		=> $in['flag_interests'],
+										'share_url' 			=> $in['share_url'],
+										'categories_id' 		=> $in['categories_id'],
+										'cities_id' 			=> $in['cities_id'],
+										'value'					=> $in['value'],
+										'flag_search' 			=> $in['flag_search'],
+										'company_id' 			=> $in['company_id'],
+										'flag_companyprofile'	=> $flag_companyprofile,
+										'type' 					=> $in['type']
+								));
     }elseif($in['flag']=='subscr_profile'){// Страница "Подписки"
 
         $code = $t->NextTrPageSubscrProfile(array(	'start_limit' 	=> $in['start_limit'],
