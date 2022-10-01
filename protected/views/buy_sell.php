@@ -103,6 +103,9 @@ $(function(){
 					start = start + 10;
 					$(".dropdown-toggle").dropdown();
 					window.requestSliderWrapper();
+					if($("#share_buy_sell_1").data().change==2){
+						$(".checkbox_share").fadeIn(0);
+					}
                 }
             });
 			
