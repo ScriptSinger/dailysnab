@@ -2787,7 +2787,7 @@
 
 		// поиск
 																						// по умолчанию
-		$sql_no_etp = " AND NOT bs.id IN ( SELECT buy_sell_id FROM buy_sell_etp_sell be ) ";// исключаем етп предложения (чтобы не попали других пользователей, которые запросили)
+		$sql_no_etp = '';// " AND NOT bs.id IN ( SELECT buy_sell_id FROM buy_sell_etp_sell be ) ";// исключаем етп предложения (чтобы не попали других пользователей, которые запросили)
 
 		
 		if($in['categories_id']){
