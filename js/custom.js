@@ -1270,9 +1270,11 @@ $(function(){
 
 		if(d.flag==1){
 			$('body').on('click', cancelClickForShare);
+			$('#share_buy_sell_1').attr('data-change',2).data('change',2);
 			$('.checkbox_share').fadeIn(0);
 		} else if(d.flag==2){
 			$('.checkbox_share').fadeOut(0);
+			$('#share_buy_sell_1').attr('data-change',1).data('change',1);
 		}
 	});
 
