@@ -481,7 +481,7 @@ class HtmlTemplate extends HtmlServive
 							'.$li.'
 						</ul>
 						<div class="request-head-btn">
-							<img src="/image/menu-request-icon.svg" id="share_buy_sell_1" class="share_buy_sell" data-flag="1" alt="">
+							<img src="/image/menu-request-icon.svg" id="share_buy_sell_1" class="share_buy_sell" data-flag="1" data-change="2" alt="">
 						</div>
 						<div class="request-heading">
 							<button class="request-btn heading-btn change-btn share_buy_sell" data-flag="2">
