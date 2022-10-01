@@ -90,7 +90,8 @@ $(function(){
 					"categories_id"		: "'.$categories_id.'",
 					"cities_id"			: "'.$cities_id.'",
 					"value"				: "'.htmlspecialchars($value).'",
-					"group"				: "'.$group.'"
+					"group"				: "'.$group.'",
+					"type"				: $("#share_buy_sell_1").data().change
                 },
                 beforeSend: function() {
                     inProgress = true;
