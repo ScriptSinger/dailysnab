@@ -470,7 +470,7 @@ class HtmlTemplate extends HtmlServive
 
         $code = '<div class="request-head">
 						<div class="request-checking">
-							<input type="checkbox" class="checkbox_checking_buysell" data-flag="1">
+							<input type="checkbox" id="checkbox_checking_buysell" class="checkbox_checking_buysell" data-flag="1">
 						</div>
 						<ul class="request-menu">
 							<li class="request-menu-item">
