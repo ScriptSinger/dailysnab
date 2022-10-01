@@ -107,6 +107,7 @@ $(function(){
 						$(".checkbox_share").fadeIn(0);
 						if($("#checkbox_checking_buysell").data().flag==2){
 							$("#checkbox_checking_buysell").click();
+							$("#checkbox_checking_buysell").click();
 						}
 					}
                 }
