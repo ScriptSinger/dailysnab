@@ -3105,7 +3105,7 @@ class HtmlTemplate extends HtmlServive
     {
 
         $row = reqBuySell_PageSell(array('val_grouping' => $p['val_grouping']));
-
+vecho($row);
         $tr = '';
         foreach ($row as $i => $m) {
 
