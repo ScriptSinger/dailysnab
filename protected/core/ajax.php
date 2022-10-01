@@ -2109,7 +2109,7 @@ elseif($_GET['route'] == 'scroll_page'){
 										'cities_id' 			=> $in['cities_id'],
 										'value' 				=> $in['value'],
 										'group' 				=> $in['group'],
-										'flag_share_buy_sell' 	=> $in['type'] 
+										'type' 					=> $in['type'] 
 									));
     }elseif($in['flag']=='pagebuy'){// Страница "Чужие заявки"
         $flag_companyprofile = ($in['where']=='company_profile')? true : false;
@@ -2122,7 +2122,7 @@ elseif($_GET['route'] == 'scroll_page'){
 										'flag_search' 			=> $in['flag_search'],
 										'company_id' 			=> $in['company_id'],
 										'flag_companyprofile'	=> $flag_companyprofile,
-										'flag_share_buy_sell' 	=> $in['type']
+										'type' 					=> $in['type']
 								));
     }elseif($in['flag']=='subscr_profile'){// Страница "Подписки"
 

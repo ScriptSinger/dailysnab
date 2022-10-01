@@ -481,7 +481,7 @@ class HtmlTemplate extends HtmlServive
 							'.$li.'
 						</ul>
 						<div class="request-head-btn">
-							<img src="/image/menu-request-icon.svg" id="share_buy_sell_1" class="share_buy_sell" data-flag="1" data-change="1" alt="">
+							<img src="/image/menu-request-icon.svg" id="share_buy_sell_1" class="share_buy_sell" data-flag="1" alt="">
 						</div>
 						<div class="request-heading">
 							<button class="request-btn heading-btn change-btn share_buy_sell" data-flag="2">
@@ -4690,16 +4690,16 @@ class HtmlTemplate extends HtmlServive
 
         $row_np = reqNotificationParamId_1011();
 
-        $row = reqBuySell_pageBuy(array('start_limit' => $p['start_limit'],
-            //'parent_id'			=> 0,
-            'flag_interests' => $p['flag_interests'],
-            'share_url' => $row_share['share_url'],
-            'categories_id' => $p['categories_id'],
-            'cities_id' => $p['cities_id'],
-            'value' => $p['value'],
-            'flag_search' => $p['flag_search'],
-            'company_id' => $p['company_id'],
-            'flag_companyprofile' => $p['flag_companyprofile']));
+        $row = reqBuySell_pageBuy(array('start_limit' 			=> $p['start_limit'],
+										//'parent_id'			=> 0,
+										'flag_interests' 		=> $p['flag_interests'],
+										'share_url' 			=> $row_share['share_url'],
+										'categories_id' 		=> $p['categories_id'],
+										'cities_id' 			=> $p['cities_id'],
+										'value' 				=> $p['value'],
+										'flag_search' 			=> $p['flag_search'],
+										'company_id' 			=> $p['company_id'],
+										'flag_companyprofile' 	=> $p['flag_companyprofile']));
 
 
         $tr = '';
