@@ -1369,7 +1369,7 @@ $(function(){
 		var d = obj.data();
 		var flag_tr = d.flag_tr;
 		$.post("/view_grouping", { value:d.value , flag:d.flag , parent_id:d.parent_id , 
-			flag_limit:d.flag_limit , start_limit:d.start_limit }, 
+									flag_limit:d.flag_limit , start_limit:d.start_limit }, 
 			function(data){
 				if(flag_tr==3){
 					obj.parent().parent().append(data.code);
