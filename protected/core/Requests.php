@@ -2756,11 +2756,14 @@
 						/**/
 							";
 
+																						// по умолчанию
+		$sql_no_etp = " AND NOT bs.id IN ( SELECT buy_sell_id FROM buy_sell_etp_sell be ) ";// исключаем етп предложения (чтобы не попали других пользователей, которые запросили)
 
 
 
 
 		if($in['val_grouping']){// Раскрываем Сгруппированные строки
+			$sql_no_etp = '';
 			$sql_order = " bs.cost ";
 			$sql .= " AND bs.id IN (	SELECT t.buy_sell_id 
 										FROM view_grouping_id_val_page_sell t
@@ -2786,9 +2789,6 @@
 
 
 		// поиск
-																						// по умолчанию
-		$sql_no_etp = '';// " AND NOT bs.id IN ( SELECT buy_sell_id FROM buy_sell_etp_sell be ) ";// исключаем етп предложения (чтобы не попали других пользователей, которые запросили)
-
 		
 		if($in['categories_id']){
 			$arr_c = explode(',',$in['categories_id']);
