@@ -11,6 +11,76 @@
 	},
 	{
 		"data1c": "2022-10-02T00:00:00",
+		"NomID": "766ad90d-7836-11ec-80c5-000c292c2d55",
+		"Article": "",
+		"Name": "Транспортные услуги (рейс)",
+		"Code": "00-00017387",
+		"MeasureID": 0,
+		"nomenclature_id": "",
+		"TypeNomID": "f509d399-7835-11ec-80c5-000c292c2d55"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "13235b79-7ec8-11ec-80c5-000c292c2d55",
+		"Article": "7405-1029032",
+		"Name": "Втулка вала привода Н=12мм",
+		"Code": "00-00017493",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "7bfd66d2-7eca-11ec-80c5-000c292c2d55",
+		"Article": "6520-1301010-01",
+		"Name": "Блок радиаторов (Радиатор медный 4х рядный ШААЗ) КАМАЗ 6520 Евро-2,3 БУ",
+		"Code": "00-00017501",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "36b4cf4a-7f3c-11ec-80c5-000c292c2d55",
+		"Article": "",
+		"Name": "Транспортные услуги (т)",
+		"Code": "00-00017504",
+		"MeasureID": 168,
+		"nomenclature_id": "",
+		"TypeNomID": "f509d399-7835-11ec-80c5-000c292c2d55"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "5463a723-7f5b-11ec-80c5-000c292c2d55",
+		"Article": "",
+		"Name": "Смесь щебёночно-песчаная С-5 (0-40), т",
+		"Code": "00-00017514",
+		"MeasureID": 168,
+		"nomenclature_id": "",
+		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "7c3c2e6e-7f72-11ec-80c5-000c292c2d55",
+		"Article": "",
+		"Name": "Монтаж навигационного оборудования",
+		"Code": "00-00017539",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "430f08e6-800b-11ec-80c5-000c292c2d55"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "7c3c2e70-7f72-11ec-80c5-000c292c2d55",
+		"Article": "",
+		"Name": "Обслуживание навигационного оборудования",
+		"Code": "00-00017541",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "430f08e6-800b-11ec-80c5-000c292c2d55"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
 		"NomID": "8242be31-7f72-11ec-80c5-000c292c2d55",
 		"Article": "",
 		"Name": "Услуги манипулятора (км)",
@@ -38,6 +108,186 @@
 		"MeasureID": 0,
 		"nomenclature_id": "",
 		"TypeNomID": "f509d399-7835-11ec-80c5-000c292c2d55"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "4595e1eb-7ffa-11ec-80c5-000c292c2d55",
+		"Article": "",
+		"Name": "Демонтаж навигационного оборудования",
+		"Code": "00-00017659",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "430f08e6-800b-11ec-80c5-000c292c2d55"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "87d1f536-8016-11ec-80c5-000c292c2d55",
+		"Article": "",
+		"Name": "Демонтаж прибора спутникого мониторинга ",
+		"Code": "00-00017677",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "430f08e6-800b-11ec-80c5-000c292c2d55"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "692aee80-801a-11ec-80c5-000c292c2d55",
+		"Article": "",
+		"Name": "Щебень фр. 4-8 (т)",
+		"Code": "00-00017680",
+		"MeasureID": 168,
+		"nomenclature_id": "",
+		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "72c4629d-8423-11ec-80c5-000c292c2d55",
+		"Article": "",
+		"Name": "(узкд)Видеокамера HIWatch DS-i205M(2.8-12мм), 2Мп, скоростная, уличная",
+		"Code": "00-00017745",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "ce103ff6-75ec-11ec-80c3-000c292c2d55"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "2ce79326-87f5-11ec-80c6-000c292c2d55",
+		"Article": "315/80 R22.5 ",
+		"Name": "Шинокомплект 315/80 R22,5 БУ ",
+		"Code": "00-00017814",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "980b4cd1-6a1f-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "12efadeb-895f-11ec-80c9-000c292c2d55",
+		"Article": "С4942359",
+		"Name": "Форсунка DongFeng БУ",
+		"Code": "00-00017833",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "bbac1e1e-895f-11ec-80c9-000c292c2d55",
+		"Article": "",
+		"Name": "ТНВД DongFeng БУ",
+		"Code": "00-00017834",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "43c95c67-8962-11ec-80c9-000c292c2d55",
+		"Article": "",
+		"Name": "Клейма буквенные",
+		"Code": "00-00017835",
+		"MeasureID": 839,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "77dabf8b-8962-11ec-80c9-000c292c2d55",
+		"Article": "",
+		"Name": "Клейма цифровые",
+		"Code": "00-00017836",
+		"MeasureID": 839,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "dda0d1a2-8963-11ec-80c9-000c292c2d55",
+		"Article": "",
+		"Name": "Средство для мытья стекол и зеркал",
+		"Code": "00-00017837",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "c1273434-8966-11ec-80c9-000c292c2d55",
+		"Article": "",
+		"Name": "Смазка для буров",
+		"Code": "00-00017838",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "30a58e71-8967-11ec-80c9-000c292c2d55",
+		"Article": "инв1378",
+		"Name": "Бетонолом Союз ПЕС-2520 РБ",
+		"Code": "00-00017839",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "3d4aec6c-8968-11ec-80c9-000c292c2d55",
+		"Article": "",
+		"Name": "(УЗКД)ИБП РАПАН-100 12В 10А",
+		"Code": "00-00017840",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "d7347963-8968-11ec-80c9-000c292c2d55",
+		"Article": "",
+		"Name": "(УЗКД)Карта памяти  microSDXС 256Gb Class 10",
+		"Code": "00-00017841",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "2f26059e-8969-11ec-80c9-000c292c2d55",
+		"Article": "130110-00002",
+		"Name": "Колодка тормозная DOOSAN",
+		"Code": "00-00017842",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "443a0e97-896c-11ec-80c9-000c292c2d55",
+		"Article": "",
+		"Name": "Кабель (провод) 4*2*0,52",
+		"Code": "00-00017843",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "245a5fea-896d-11ec-80c9-000c292c2d55",
+		"Article": "21230-1411020-10",
+		"Name": "Контроллер (пульт)",
+		"Code": "00-00017844",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "5e027f74-896e-11ec-80c9-000c292c2d55",
+		"Article": "",
+		"Name": "Услуги аренды помещений",
+		"Code": "00-00017845",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "cd2ed314-828d-11ec-80c5-000c292c2d55"
 	},
 	{
 		"data1c": "2022-10-02T00:00:00",
@@ -361,256 +611,6 @@
 	},
 	{
 		"data1c": "2022-10-02T00:00:00",
-		"NomID": "692aee80-801a-11ec-80c5-000c292c2d55",
-		"Article": "",
-		"Name": "Щебень фр. 4-8 (т)",
-		"Code": "00-00017680",
-		"MeasureID": 168,
-		"nomenclature_id": "",
-		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "87d1f536-8016-11ec-80c5-000c292c2d55",
-		"Article": "",
-		"Name": "Демонтаж прибора спутникого мониторинга ",
-		"Code": "00-00017677",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "430f08e6-800b-11ec-80c5-000c292c2d55"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "4595e1eb-7ffa-11ec-80c5-000c292c2d55",
-		"Article": "",
-		"Name": "Демонтаж навигационного оборудования",
-		"Code": "00-00017659",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "430f08e6-800b-11ec-80c5-000c292c2d55"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "7c3c2e70-7f72-11ec-80c5-000c292c2d55",
-		"Article": "",
-		"Name": "Обслуживание навигационного оборудования",
-		"Code": "00-00017541",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "430f08e6-800b-11ec-80c5-000c292c2d55"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "7c3c2e6e-7f72-11ec-80c5-000c292c2d55",
-		"Article": "",
-		"Name": "Монтаж навигационного оборудования",
-		"Code": "00-00017539",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "430f08e6-800b-11ec-80c5-000c292c2d55"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "5463a723-7f5b-11ec-80c5-000c292c2d55",
-		"Article": "",
-		"Name": "Смесь щебёночно-песчаная С-5 (0-40), т",
-		"Code": "00-00017514",
-		"MeasureID": 168,
-		"nomenclature_id": "",
-		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "36b4cf4a-7f3c-11ec-80c5-000c292c2d55",
-		"Article": "",
-		"Name": "Транспортные услуги (т)",
-		"Code": "00-00017504",
-		"MeasureID": 168,
-		"nomenclature_id": "",
-		"TypeNomID": "f509d399-7835-11ec-80c5-000c292c2d55"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "7bfd66d2-7eca-11ec-80c5-000c292c2d55",
-		"Article": "6520-1301010-01",
-		"Name": "Блок радиаторов (Радиатор медный 4х рядный ШААЗ) КАМАЗ 6520 Евро-2,3 БУ",
-		"Code": "00-00017501",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "13235b79-7ec8-11ec-80c5-000c292c2d55",
-		"Article": "7405-1029032",
-		"Name": "Втулка вала привода Н=12мм",
-		"Code": "00-00017493",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "766ad90d-7836-11ec-80c5-000c292c2d55",
-		"Article": "",
-		"Name": "Транспортные услуги (рейс)",
-		"Code": "00-00017387",
-		"MeasureID": 0,
-		"nomenclature_id": "",
-		"TypeNomID": "f509d399-7835-11ec-80c5-000c292c2d55"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "5e027f74-896e-11ec-80c9-000c292c2d55",
-		"Article": "",
-		"Name": "Услуги аренды помещений",
-		"Code": "00-00017845",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "cd2ed314-828d-11ec-80c5-000c292c2d55"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "245a5fea-896d-11ec-80c9-000c292c2d55",
-		"Article": "21230-1411020-10",
-		"Name": "Контроллер (пульт)",
-		"Code": "00-00017844",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "443a0e97-896c-11ec-80c9-000c292c2d55",
-		"Article": "",
-		"Name": "Кабель (провод) 4*2*0,52",
-		"Code": "00-00017843",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "2f26059e-8969-11ec-80c9-000c292c2d55",
-		"Article": "130110-00002",
-		"Name": "Колодка тормозная DOOSAN",
-		"Code": "00-00017842",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "d7347963-8968-11ec-80c9-000c292c2d55",
-		"Article": "",
-		"Name": "(УЗКД)Карта памяти  microSDXС 256Gb Class 10",
-		"Code": "00-00017841",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "3d4aec6c-8968-11ec-80c9-000c292c2d55",
-		"Article": "",
-		"Name": "(УЗКД)ИБП РАПАН-100 12В 10А",
-		"Code": "00-00017840",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "30a58e71-8967-11ec-80c9-000c292c2d55",
-		"Article": "инв1378",
-		"Name": "Бетонолом Союз ПЕС-2520 РБ",
-		"Code": "00-00017839",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "c1273434-8966-11ec-80c9-000c292c2d55",
-		"Article": "",
-		"Name": "Смазка для буров",
-		"Code": "00-00017838",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "dda0d1a2-8963-11ec-80c9-000c292c2d55",
-		"Article": "",
-		"Name": "Средство для мытья стекол и зеркал",
-		"Code": "00-00017837",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "77dabf8b-8962-11ec-80c9-000c292c2d55",
-		"Article": "",
-		"Name": "Клейма цифровые",
-		"Code": "00-00017836",
-		"MeasureID": 839,
-		"nomenclature_id": "",
-		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "43c95c67-8962-11ec-80c9-000c292c2d55",
-		"Article": "",
-		"Name": "Клейма буквенные",
-		"Code": "00-00017835",
-		"MeasureID": 839,
-		"nomenclature_id": "",
-		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "bbac1e1e-895f-11ec-80c9-000c292c2d55",
-		"Article": "",
-		"Name": "ТНВД DongFeng БУ",
-		"Code": "00-00017834",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "12efadeb-895f-11ec-80c9-000c292c2d55",
-		"Article": "С4942359",
-		"Name": "Форсунка DongFeng БУ",
-		"Code": "00-00017833",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "2ce79326-87f5-11ec-80c6-000c292c2d55",
-		"Article": "315/80 R22.5 ",
-		"Name": "Шинокомплект 315/80 R22,5 БУ ",
-		"Code": "00-00017814",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "980b4cd1-6a1f-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "72c4629d-8423-11ec-80c5-000c292c2d55",
-		"Article": "",
-		"Name": "(узкд)Видеокамера HIWatch DS-i205M(2.8-12мм), 2Мп, скоростная, уличная",
-		"Code": "00-00017745",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "ce103ff6-75ec-11ec-80c3-000c292c2d55"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
 		"NomID": "26988e2e-8a29-11ec-80c9-000c292c2d55",
 		"Article": "",
 		"Name": "Пылесос LG",
@@ -871,6 +871,1006 @@
 	},
 	{
 		"data1c": "2022-10-02T00:00:00",
+		"NomID": "a07a0944-a9f3-11ec-80cc-000c292c2d55",
+		"Article": "ИНВ466",
+		"Name": "(Кушкуль АЗС)Видеокамера Оптимус IP-E011.0(2,8)",
+		"Code": "00-00020861",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "dc305ac2-75ec-11ec-80c3-000c292c2d55"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "a07a0945-a9f3-11ec-80cc-000c292c2d55",
+		"Article": "ИНВ467",
+		"Name": "(Кушкуль АЗС)Видеокамера Оптимус IP-E011.0(2,8)",
+		"Code": "00-00020862",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "dc305ac2-75ec-11ec-80c3-000c292c2d55"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "11f7420d-af36-11ec-80cc-000c292c2d55",
+		"Article": "516849/1408149/2124235",
+		"Name": "Подшипник дифференциала 3/14 SCANIA",
+		"Code": "00-00021197",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "32ed436d-b177-11ec-80cc-000c292c2d55",
+		"Article": "",
+		"Name": "Сервер Supermicro 5017R-MTF",
+		"Code": "00-00021278",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e7f40487-75ec-11ec-80c3-000c292c2d55"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "31899574-b178-11ec-80cc-000c292c2d55",
+		"Article": "77.38.052-1 ",
+		"Name": "Колодка ДТ-75 тормозной ленты",
+		"Code": "00-00021279",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "71615d65-b179-11ec-80cc-000c292c2d55",
+		"Article": "77.38.016-1",
+		"Name": "Лента ДТ-75 планетарная ",
+		"Code": "00-00021280",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "27a75d1e-b180-11ec-80cc-000c292c2d55",
+		"Article": "46382",
+		"Name": "Щетка стеклоочистителя 51см.",
+		"Code": "00-00021281",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "b05e0b44-b196-11ec-80cd-000c292c2d55",
+		"Article": "C-5106",
+		"Name": "Фильтр масляный SAKURA C-5106",
+		"Code": "00-00021282",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "1e8150bd-b197-11ec-80cd-000c292c2d55",
+		"Article": "PP848/2",
+		"Name": "Фильтр топливный FILTRON PP848/2",
+		"Code": "00-00021283",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "82bed514-b197-11ec-80cd-000c292c2d55",
+		"Article": "FS-4301",
+		"Name": "Фильтр топливный SAKURA FS-4301",
+		"Code": "00-00021284",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "01af677a-b19d-11ec-80cd-000c292c2d55",
+		"Article": "50312421P0",
+		"Name": "Коробка отбора мощности Scania GRS 905",
+		"Code": "00-00021285",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "c1833dea-b1a2-11ec-80cd-000c292c2d55",
+		"Article": "08102116",
+		"Name": "Крышка гидробака в сборе с фильтром Scania",
+		"Code": "00-00021286",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "11081d6b-b1a4-11ec-80cd-000c292c2d55",
+		"Article": "14795120",
+		"Name": "Шланг низкого давления гидробака 1 3/4\"-LP-28-2000-00",
+		"Code": "00-00021287",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "667f3f51-b1a4-11ec-80cd-000c292c2d55",
+		"Article": "14796600",
+		"Name": "Хомут на шланг гидробака LP28",
+		"Code": "00-00021288",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "5f9f6abf-b1a6-11ec-80cd-000c292c2d55",
+		"Article": "",
+		"Name": "Смесь готовая, щебеночно- песчаная, С-4, ГОСТ 25607-2009",
+		"Code": "00-00021289",
+		"MeasureID": 113,
+		"nomenclature_id": "",
+		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "28ceaeb3-b1a9-11ec-80cd-000c292c2d55",
+		"Article": "",
+		"Name": "Гравий",
+		"Code": "00-00021290",
+		"MeasureID": 168,
+		"nomenclature_id": "",
+		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "4591044a-b1a9-11ec-80cd-000c292c2d55",
+		"Article": "",
+		"Name": "Станок для тиснения MSY1300",
+		"Code": "00-00021291",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "50107f5a-9c5d-11ec-80c9-000c292c2d55"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "536a497e-b1a9-11ec-80cd-000c292c2d55",
+		"Article": "",
+		"Name": "Щебеночно-песчанная смесь С4 (0-80) (т)",
+		"Code": "00-00021292",
+		"MeasureID": 168,
+		"nomenclature_id": "",
+		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "71eb4ffe-b1a9-11ec-80cd-000c292c2d55",
+		"Article": "",
+		"Name": "Стойка СВ 130-8 (СНВ 7-13)",
+		"Code": "00-00021293",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "80abd90a-b1a9-11ec-80cd-000c292c2d55",
+		"Article": "",
+		"Name": "Щебень 20-40",
+		"Code": "00-00021294",
+		"MeasureID": 168,
+		"nomenclature_id": "",
+		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "8c09b13c-b1a9-11ec-80cd-000c292c2d55",
+		"Article": "",
+		"Name": "Щебень 40-70",
+		"Code": "00-00021295",
+		"MeasureID": 168,
+		"nomenclature_id": "",
+		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "97a45c48-b1a9-11ec-80cd-000c292c2d55",
+		"Article": "",
+		"Name": "Щебень 5-20",
+		"Code": "00-00021296",
+		"MeasureID": 168,
+		"nomenclature_id": "",
+		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "43da532a-b1aa-11ec-80cd-000c292c2d55",
+		"Article": "",
+		"Name": "РВД гайка 32 дл.1510 б/у",
+		"Code": "00-00021297",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "65936c48-b1aa-11ec-80cd-000c292c2d55",
+		"Article": "",
+		"Name": "РВД гайка 32 дл.1010 б/у",
+		"Code": "00-00021298",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "83f98c37-b1b8-11ec-80cd-000c292c2d55",
+		"Article": "2022257",
+		"Name": "Шестерня привода компрессора Scania",
+		"Code": "00-00021299",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "44cad9f8-b25e-11ec-80cd-000c292c2d55",
+		"Article": "21080-1203019-08",
+		"Name": "Р/к № 13крепления приемной трубы 9(4шпильки,4гайки) ВАЗ",
+		"Code": "00-00021300",
+		"MeasureID": 839,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "d02d298b-b25e-11ec-80cd-000c292c2d55",
+		"Article": "134350",
+		"Name": "Трапеция стеклоочистителя  Г-3302",
+		"Code": "00-00021301",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "20aa6570-b277-11ec-80cd-000c292c2d55",
+		"Article": "12273399",
+		"Name": "Толкатель штанги Deutz TD226B-6   ",
+		"Code": "00-00021302",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "d1a75ff1-b279-11ec-80cd-000c292c2d55",
+		"Article": "204112012",
+		"Name": "Трос газа TARSUS",
+		"Code": "00-00021303",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "1ce59f5a-b3d9-11ec-80cd-000c292c2d55",
+		"Article": "1695010015",
+		"Name": "Крышка расширительного бачка MERCEDES-Sprinter",
+		"Code": "00-00021304",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "b76a23b3-b3de-11ec-80cd-000c292c2d55",
+		"Article": "HK4020",
+		"Name": "Подшипник КПП ZF(40x47x20)",
+		"Code": "00-00021305",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "dd5463d2-b3df-11ec-80cd-000c292c2d55",
+		"Article": "HK3520",
+		"Name": "Подшипник КПП ZF(35x42x20)",
+		"Code": "00-00021307",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "ebf94eb3-b3e0-11ec-80cd-000c292c2d55",
+		"Article": "803164329",
+		"Name": "Фильтр гидравлики XCMG LW300F",
+		"Code": "00-00021308",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "d8728ac2-b3e1-11ec-80cd-000c292c2d55",
+		"Article": "803502426",
+		"Name": "Фара левая погрузчик XCMG LW300F",
+		"Code": "00-00021309",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "d837f4d6-b3e4-11ec-80cd-000c292c2d55",
+		"Article": "295/80 R22.5",
+		"Name": "Шинокомплект 295/80 R22.5  рулевые (2 кат.)",
+		"Code": "00-00021310",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "980b4cd1-6a1f-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "7963f4b0-b3e5-11ec-80cd-000c292c2d55",
+		"Article": "295/80 R22.5",
+		"Name": "А/шина 295/80 R22.5  рулевые (2 кат.)",
+		"Code": "00-00021311",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "980b4cd1-6a1f-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "ccc00eaa-b3e5-11ec-80cd-000c292c2d55",
+		"Article": "",
+		"Name": "Шинокомплект 315/70 R22.5 зад. (2 кат)",
+		"Code": "00-00021312",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "980b4cd1-6a1f-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "3a14001a-b3e6-11ec-80cd-000c292c2d55",
+		"Article": "",
+		"Name": "Шинокомплект 295/80 R22.5 задний Тягач (2 кат)",
+		"Code": "00-00021313",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "980b4cd1-6a1f-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "2006807d-b410-11ec-80cd-000c292c2d55",
+		"Article": "800101763",
+		"Name": "Радиатор водяной XCMG LW300FN",
+		"Code": "00-00021314",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "31de5763-b4a7-11ec-80cd-000c292c2d55",
+		"Article": "206910004R",
+		"Name": "Прокладка глушителя RENAULT",
+		"Code": "00-00021315",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "a7e5874b-b4aa-11ec-80cd-000c292c2d55",
+		"Article": "2002310096",
+		"Name": "Комплект изнашиваемых частей плиты АВ 500-3 TV Vogele",
+		"Code": "00-00021316",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "e4aea536-b4ad-11ec-80cd-000c292c2d55",
+		"Article": "14301345",
+		"Name": "Кожух центральный задний VOLVO",
+		"Code": "00-00021317",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "395bfa3c-b4af-11ec-80cd-000c292c2d55",
+		"Article": "2009540120635",
+		"Name": "Подшипник VOGELE",
+		"Code": "00-00021318",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "f8d0cd12-b4b6-11ec-80cd-000c292c2d55",
+		"Article": "2002329896",
+		"Name": "Болт Vogele",
+		"Code": "00-00021319",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "45363d92-b4b7-11ec-80cd-000c292c2d55",
+		"Article": "2004602202348",
+		"Name": "Втулка Vogele",
+		"Code": "00-00021320",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "948d09b3-b4b7-11ec-80cd-000c292c2d55",
+		"Article": "2009506321481",
+		"Name": "Штифт стяжной Vogele",
+		"Code": "00-00021321",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "56a80b4d-b4b8-11ec-80cd-000c292c2d55",
+		"Article": "2009540025419",
+		"Name": "Кольцо Vogele",
+		"Code": "00-00021322",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "acef0dbc-b4b8-11ec-80cd-000c292c2d55",
+		"Article": "2009511089021",
+		"Name": "Шайба В8,4 Vogele",
+		"Code": "00-00021323",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "be7a4b2f-b4ba-11ec-80cd-000c292c2d55",
+		"Article": "2002195911",
+		"Name": "Клапан гидравл. обратный Vogele",
+		"Code": "00-00021324",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "38bcdd7c-b4bb-11ec-80cd-000c292c2d55",
+		"Article": "80667983",
+		"Name": "Датчик скоростью правый Vogele",
+		"Code": "00-00021325",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "42031d97-b4bd-11ec-80cd-000c292c2d55",
+		"Article": "4812156095",
+		"Name": "Комплект рулевого сцепления Dynapac",
+		"Code": "00-00021326",
+		"MeasureID": 839,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "1895f1a1-b4be-11ec-80cd-000c292c2d55",
+		"Article": "2002306819",
+		"Name": "Пластина мет.Vogele",
+		"Code": "00-00021327",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "42e07d5d-b4be-11ec-80cd-000c292c2d55",
+		"Article": "2002315482",
+		"Name": "Пластина мет.Vogele",
+		"Code": "00-00021328",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "7e8ac35c-b4be-11ec-80cd-000c292c2d55",
+		"Article": "2002333356",
+		"Name": "Держатель Vogele",
+		"Code": "00-00021329",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "ab81a6b0-b4be-11ec-80cd-000c292c2d55",
+		"Article": "2002175078",
+		"Name": "Адаптер Vogele",
+		"Code": "00-00021330",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "4cdf3234-b4c0-11ec-80cd-000c292c2d55",
+		"Article": "425030109",
+		"Name": "Датчик Bomag",
+		"Code": "00-00021331",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "75625cc8-b4c0-11ec-80cd-000c292c2d55",
+		"Article": "434022310",
+		"Name": "Лампа Bomag",
+		"Code": "00-00021332",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "f836b030-b4c0-11ec-80cd-000c292c2d55",
+		"Article": "300311685",
+		"Name": "Указатель поворота Hamm",
+		"Code": "00-00021333",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "32aa4a90-b4c1-11ec-80cd-000c292c2d55",
+		"Article": "3002419966",
+		"Name": "Датчик Hamm",
+		"Code": "00-00021334",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "1082bc03-b4c2-11ec-80cd-000c292c2d55",
+		"Article": "3002117171",
+		"Name": "Датчик приближения с кабелем Hamm",
+		"Code": "00-00021335",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "4e359c1f-b4c3-11ec-80cd-000c292c2d55",
+		"Article": "4700945908",
+		"Name": "Комплект скребков Dynapac",
+		"Code": "00-00021336",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "4290bf4e-b4c4-11ec-80cd-000c292c2d55",
+		"Article": "300420328",
+		"Name": "Диск кромкоформирующий Hamm",
+		"Code": "00-00021337",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "6e8a8e7c-b4c4-11ec-80cd-000c292c2d55",
+		"Article": "3001456776",
+		"Name": "Набор уплотнений Hamm",
+		"Code": "00-00021338",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "e1ea30af-b4c4-11ec-80cd-000c292c2d55",
+		"Article": "4700359003",
+		"Name": "Крышка водяного бака Dynapac",
+		"Code": "00-00021339",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "74837a7d-b4c5-11ec-80cd-000c292c2d55",
+		"Article": "4700902061",
+		"Name": "Подшипник Dynapac",
+		"Code": "00-00021340",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "beed82e2-b4cb-11ec-80cd-000c292c2d55",
+		"Article": "4700357418",
+		"Name": "Сальник Dynapac",
+		"Code": "00-00021341",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "f6a3a7f8-b4cb-11ec-80cd-000c292c2d55",
+		"Article": "4700167044",
+		"Name": "Уплотнение Dynapac",
+		"Code": "00-00021342",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "78701ca4-b4cc-11ec-80cd-000c292c2d55",
+		"Article": "3001461176",
+		"Name": "Палец Hamm",
+		"Code": "00-00021343",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "c2765cd3-b4cd-11ec-80cd-000c292c2d55",
+		"Article": "429095067",
+		"Name": "Фара Bomag",
+		"Code": "00-00021344",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "f44753b9-b4cd-11ec-80cd-000c292c2d55",
+		"Article": "83630200",
+		"Name": "Втулка Bomag",
+		"Code": "00-00021345",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "15eaf7ad-b4ce-11ec-80cd-000c292c2d55",
+		"Article": "83630199",
+		"Name": "Втулка Bomag",
+		"Code": "00-00021346",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "4dfb128f-b4ce-11ec-80cd-000c292c2d55",
+		"Article": "83630024",
+		"Name": "Ступица фланцевая Bomag",
+		"Code": "00-00021347",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "7f492666-b4ce-11ec-80cd-000c292c2d55",
+		"Article": "06285503",
+		"Name": "Втулка Bomag",
+		"Code": "00-00021348",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "069ca32b-b4d2-11ec-80cd-000c292c2d55",
+		"Article": "56294002",
+		"Name": "Трамбовка Volvo ",
+		"Code": "00-00021349",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "2ee695a5-b4d2-11ec-80cd-000c292c2d55",
+		"Article": "56293830",
+		"Name": "Трамбовка Volvo ",
+		"Code": "00-00021350",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "b60f32e3-b4d2-11ec-80cd-000c292c2d55",
+		"Article": "85001092",
+		"Name": "Комплект резцедержателей Bomag (8шт.)",
+		"Code": "00-00021351",
+		"MeasureID": 839,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "efd3923f-b4d3-11ec-80cd-000c292c2d55",
+		"Article": "2004615106680",
+		"Name": "Пластина Vogele",
+		"Code": "00-00021352",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "029dbab9-b4d5-11ec-80cd-000c292c2d55",
+		"Article": "",
+		"Name": "Адаптер диагностический Origin",
+		"Code": "00-00021353",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "9b7ddbd9-b4d6-11ec-80cd-000c292c2d55",
+		"Article": "1312304159",
+		"Name": "Сухарь синхронизатора КПП ZF КАМАЗ 1312304159",
+		"Code": "00-00021354",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "e3a7815b-b4db-11ec-80cd-000c292c2d55",
+		"Article": "740.31",
+		"Name": "Двигатель Камаз ЕВРО-2,3 (2кат.)",
+		"Code": "00-00021355",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "1742cdfb-b501-11ec-80cd-000c292c2d55",
+		"Article": "",
+		"Name": "Мусор",
+		"Code": "00-00021357",
+		"MeasureID": 168,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "3d2eab65-b502-11ec-80cd-000c292c2d55",
+		"Article": "",
+		"Name": "ПГС",
+		"Code": "00-00021360",
+		"MeasureID": 168,
+		"nomenclature_id": "",
+		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "548c90ba-b502-11ec-80cd-000c292c2d55",
+		"Article": "",
+		"Name": "Песчано-гравийная смесь (т)",
+		"Code": "00-00021361",
+		"MeasureID": 168,
+		"nomenclature_id": "",
+		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "effef8c2-b576-11ec-80cd-000c292c2d55",
+		"Article": "ARN-79002",
+		"Name": "Шрус карданного вала ГАЗ Соболь 4х4 задний ",
+		"Code": "00-00021362",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "fbada84b-b57b-11ec-80cd-000c292c2d55",
+		"Article": "",
+		"Name": "АЗС №4 стационар  (1 кол.2-х пост. 4емк-ДТ, 1емк-АИ) Аскино",
+		"Code": "00-00021363",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "50107f5a-9c5d-11ec-80c9-000c292c2d55"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "3a7ec08a-b580-11ec-80cd-000c292c2d55",
+		"Article": "",
+		"Name": "Двигатель А-01 ",
+		"Code": "00-00021364",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "1553d1d0-b58c-11ec-80cd-000c292c2d55",
+		"Article": "R-35",
+		"Name": "Пластырь R-35",
+		"Code": "00-00021365",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "39ee4a4e-b58c-11ec-80cd-000c292c2d55",
+		"Article": "R-25",
+		"Name": "Пластырь R-25",
+		"Code": "00-00021366",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "55e87b29-b58c-11ec-80cd-000c292c2d55",
+		"Article": "R-19",
+		"Name": "Пластырь R-19",
+		"Code": "00-00021367",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "7aad3a25-b58c-11ec-80cd-000c292c2d55",
+		"Article": "R-18",
+		"Name": "Пластырь R-18",
+		"Code": "00-00021368",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "48e13f6f-b58d-11ec-80cd-000c292c2d55",
+		"Article": "",
+		"Name": "Золотник для шин",
+		"Code": "00-00021369",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "8b39134e-b58d-11ec-80cd-000c292c2d55",
+		"Article": "",
+		"Name": "Измеритель протектора шины электронный",
+		"Code": "00-00021370",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "9e66a3b3-b58e-11ec-80cd-000c292c2d55",
+		"Article": "",
+		"Name": "Гофра глушителя d75х100",
+		"Code": "00-00021371",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "8e01957c-b591-11ec-80cd-000c292c2d55",
+		"Article": "0730150774",
+		"Name": "Шайба регулировочная (51.110) YD13",
+		"Code": "00-00021372",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "c69573a1-b591-11ec-80cd-000c292c2d55",
+		"Article": "351007",
+		"Name": "Подшипник (51.130) YD13",
+		"Code": "00-00021373",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "0bdbcf32-b592-11ec-80cd-000c292c2d55",
+		"Article": "4644351094",
+		"Name": "Шайба упорная (51.52.53.170) YD13",
+		"Code": "00-00021374",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "482e1eb6-b592-11ec-80cd-000c292c2d55",
+		"Article": "0769120468",
+		"Name": "Шайба регулировочная (51.52.53.080) YD13",
+		"Code": "00-00021375",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "80ea86d6-b592-11ec-80cd-000c292c2d55",
+		"Article": "0730150779",
+		"Name": "Шайба упорная YD13",
+		"Code": "00-00021376",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "ef98139f-b592-11ec-80cd-000c292c2d55",
+		"Article": "0750112141",
+		"Name": "Кольцо поршневое YD13",
+		"Code": "00-00021377",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "3f804fe5-b593-11ec-80cd-000c292c2d55",
+		"Article": "0501309329",
+		"Name": "Диск фрикционный (53.420.440) YD13",
+		"Code": "00-00021378",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
 		"NomID": "a1735d79-b593-11ec-80cd-000c292c2d55",
 		"Article": "4642308083",
 		"Name": "Кольцо направляющее (51.52.53230) YD13",
@@ -1078,1326 +2078,6 @@
 		"MeasureID": 112,
 		"nomenclature_id": "",
 		"TypeNomID": "3ca6c7f9-6934-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "a07a0945-a9f3-11ec-80cc-000c292c2d55",
-		"Article": "ИНВ467",
-		"Name": "(Кушкуль АЗС)Видеокамера Оптимус IP-E011.0(2,8)",
-		"Code": "00-00020862",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "dc305ac2-75ec-11ec-80c3-000c292c2d55"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "a07a0944-a9f3-11ec-80cc-000c292c2d55",
-		"Article": "ИНВ466",
-		"Name": "(Кушкуль АЗС)Видеокамера Оптимус IP-E011.0(2,8)",
-		"Code": "00-00020861",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "dc305ac2-75ec-11ec-80c3-000c292c2d55"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "9e66a3b3-b58e-11ec-80cd-000c292c2d55",
-		"Article": "",
-		"Name": "Гофра глушителя d75х100",
-		"Code": "00-00021371",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "8b39134e-b58d-11ec-80cd-000c292c2d55",
-		"Article": "",
-		"Name": "Измеритель протектора шины электронный",
-		"Code": "00-00021370",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "48e13f6f-b58d-11ec-80cd-000c292c2d55",
-		"Article": "",
-		"Name": "Золотник для шин",
-		"Code": "00-00021369",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "7aad3a25-b58c-11ec-80cd-000c292c2d55",
-		"Article": "R-18",
-		"Name": "Пластырь R-18",
-		"Code": "00-00021368",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "55e87b29-b58c-11ec-80cd-000c292c2d55",
-		"Article": "R-19",
-		"Name": "Пластырь R-19",
-		"Code": "00-00021367",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "39ee4a4e-b58c-11ec-80cd-000c292c2d55",
-		"Article": "R-25",
-		"Name": "Пластырь R-25",
-		"Code": "00-00021366",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "1553d1d0-b58c-11ec-80cd-000c292c2d55",
-		"Article": "R-35",
-		"Name": "Пластырь R-35",
-		"Code": "00-00021365",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "3a7ec08a-b580-11ec-80cd-000c292c2d55",
-		"Article": "",
-		"Name": "Двигатель А-01 ",
-		"Code": "00-00021364",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "fbada84b-b57b-11ec-80cd-000c292c2d55",
-		"Article": "",
-		"Name": "АЗС №4 стационар  (1 кол.2-х пост. 4емк-ДТ, 1емк-АИ) Аскино",
-		"Code": "00-00021363",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "50107f5a-9c5d-11ec-80c9-000c292c2d55"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "6cf3ad07-b715-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Угол крепежный 90*90*65*2мм усилин.",
-		"Code": "00-00021413",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "a633d758-6a24-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "818ecfb5-b715-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Уголок",
-		"Code": "00-00021414",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "8eb56eb9-b715-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Фурнитура",
-		"Code": "00-00021415",
-		"MeasureID": 839,
-		"nomenclature_id": "",
-		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "97b22d0d-b715-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Швеллер  № 10",
-		"Code": "00-00021416",
-		"MeasureID": 168,
-		"nomenclature_id": "",
-		"TypeNomID": "50107f5a-9c5d-11ec-80c9-000c292c2d55"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "892ea543-b717-11ec-80e4-000c2999d0eb",
-		"Article": "1762624/1492747",
-		"Name": "кронштейн",
-		"Code": "00-00021417",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "ed48177e-b71b-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Герметик селиконовый VAG",
-		"Code": "00-00021418",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "f8f1bf05-b71c-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Набор шпателей",
-		"Code": "00-00021419",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "03ef1780-b71d-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Нога мебельная складная",
-		"Code": "00-00021420",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "0f90f266-b71d-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Откос оконный",
-		"Code": "00-00021421",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "9897a2e7-b721-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Смеситель д/кухни 40мм",
-		"Code": "00-00021422",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "d4dbbcf4-b721-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Насос дренажный CS400N",
-		"Code": "00-00021423",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "4ac7d9e0-b728-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Эмаль базовая 690 серебристая",
-		"Code": "00-00021424",
-		"MeasureID": 112,
-		"nomenclature_id": "",
-		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "7203a0be-b730-11ec-80e4-000c2999d0eb",
-		"Article": "8201219552",
-		"Name": "Фильтр АКПП RENAULT DUSTER",
-		"Code": "00-00021425",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "de9e4b59-b738-11ec-80e4-000c2999d0eb",
-		"Article": "AT101565",
-		"Name": "Фильтр топливный John Deere",
-		"Code": "00-00021426",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "c8afd61a-b7fb-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Патрубок прямой Д=50 L=1100мм силикон ",
-		"Code": "00-00021427",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "43a1d6e7-b87c-11ec-80e4-000c2999d0eb",
-		"Article": "2713-1228A",
-		"Name": "Бокорез правый DOOSAN 140",
-		"Code": "00-00021428",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "7c57bd88-b87c-11ec-80e4-000c2999d0eb",
-		"Article": "2713-1229A",
-		"Name": "Бокорез левый DOOSAN 140",
-		"Code": "00-00021429",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "b30b8b9e-b8bf-11ec-80e4-000c2999d0eb",
-		"Article": "YD1313351012",
-		"Name": "Шестерня YD13",
-		"Code": "00-00021430",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "8df73123-b8c0-11ec-80e4-000c2999d0eb",
-		"Article": "4644351076",
-		"Name": "Вал  YD13",
-		"Code": "00-00021431",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "68e7bf62-b94f-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "АИ-100",
-		"Code": "00-00021432",
-		"MeasureID": 112,
-		"nomenclature_id": "",
-		"TypeNomID": "3ca6c7f9-6934-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "32a58cc5-b951-11ec-80e4-000c2999d0eb",
-		"Article": "инв1459",
-		"Name": "Модем HUAWEI 3G/4G",
-		"Code": "00-00021433",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "47019d6e-b951-11ec-80e4-000c2999d0eb",
-		"Article": "инв1460",
-		"Name": "Модем HUAWEI 3G/4G",
-		"Code": "00-00021434",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "5be2f844-b951-11ec-80e4-000c2999d0eb",
-		"Article": "инв1461",
-		"Name": "Модем HUAWEI Е3372 3G/4G",
-		"Code": "00-00021435",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "460368a6-b95f-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Аппарат высокого давления 011992",
-		"Code": "00-00021436",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "4f218815-b95f-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Аппарат высокого давления 012144",
-		"Code": "00-00021437",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "6126f116-b95f-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Воздухонагреватель NEW EC Volcano VR1 (5-30kW, монтажнаяв комплекте)",
-		"Code": "00-00021438",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "6e8dcb08-b95f-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Ворота промышленные секционные из сэндвич панелей",
-		"Code": "00-00021439",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "7550b83e-b95f-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Ворота промышленные секционные из сэндвич панелей с калиткой",
-		"Code": "00-00021440",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "bc4912f4-b964-11ec-80e4-000c2999d0eb",
-		"Article": "12167047",
-		"Name": "Болт шатуна ДВС DEUTZ",
-		"Code": "00-00021441",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "4f05b8bd-b966-11ec-80e4-000c2999d0eb",
-		"Article": "0750112140",
-		"Name": "Кольцо уплотнительное ZF",
-		"Code": "00-00021442",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "e4f3fc44-b966-11ec-80e4-000c2999d0eb",
-		"Article": "0732041183/4110000076251",
-		"Name": "Пружина КПП ZF",
-		"Code": "00-00021443",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "4c974657-b967-11ec-80e4-000c2999d0eb",
-		"Article": "4110000076302/",
-		"Name": "Кольцо стопорное КПП ZF 4-6WG200 WG180",
-		"Code": "00-00021444",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "effef8c2-b576-11ec-80cd-000c292c2d55",
-		"Article": "ARN-79002",
-		"Name": "Шрус карданного вала ГАЗ Соболь 4х4 задний ",
-		"Code": "00-00021362",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "548c90ba-b502-11ec-80cd-000c292c2d55",
-		"Article": "",
-		"Name": "Песчано-гравийная смесь (т)",
-		"Code": "00-00021361",
-		"MeasureID": 168,
-		"nomenclature_id": "",
-		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "3d2eab65-b502-11ec-80cd-000c292c2d55",
-		"Article": "",
-		"Name": "ПГС",
-		"Code": "00-00021360",
-		"MeasureID": 168,
-		"nomenclature_id": "",
-		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "1742cdfb-b501-11ec-80cd-000c292c2d55",
-		"Article": "",
-		"Name": "Мусор",
-		"Code": "00-00021357",
-		"MeasureID": 168,
-		"nomenclature_id": "",
-		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "e3a7815b-b4db-11ec-80cd-000c292c2d55",
-		"Article": "740.31",
-		"Name": "Двигатель Камаз ЕВРО-2,3 (2кат.)",
-		"Code": "00-00021355",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "9b7ddbd9-b4d6-11ec-80cd-000c292c2d55",
-		"Article": "1312304159",
-		"Name": "Сухарь синхронизатора КПП ZF КАМАЗ 1312304159",
-		"Code": "00-00021354",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "029dbab9-b4d5-11ec-80cd-000c292c2d55",
-		"Article": "",
-		"Name": "Адаптер диагностический Origin",
-		"Code": "00-00021353",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "efd3923f-b4d3-11ec-80cd-000c292c2d55",
-		"Article": "2004615106680",
-		"Name": "Пластина Vogele",
-		"Code": "00-00021352",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "b60f32e3-b4d2-11ec-80cd-000c292c2d55",
-		"Article": "85001092",
-		"Name": "Комплект резцедержателей Bomag (8шт.)",
-		"Code": "00-00021351",
-		"MeasureID": 839,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "2ee695a5-b4d2-11ec-80cd-000c292c2d55",
-		"Article": "56293830",
-		"Name": "Трамбовка Volvo ",
-		"Code": "00-00021350",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "069ca32b-b4d2-11ec-80cd-000c292c2d55",
-		"Article": "56294002",
-		"Name": "Трамбовка Volvo ",
-		"Code": "00-00021349",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "7f492666-b4ce-11ec-80cd-000c292c2d55",
-		"Article": "06285503",
-		"Name": "Втулка Bomag",
-		"Code": "00-00021348",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "4dfb128f-b4ce-11ec-80cd-000c292c2d55",
-		"Article": "83630024",
-		"Name": "Ступица фланцевая Bomag",
-		"Code": "00-00021347",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "15eaf7ad-b4ce-11ec-80cd-000c292c2d55",
-		"Article": "83630199",
-		"Name": "Втулка Bomag",
-		"Code": "00-00021346",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "f44753b9-b4cd-11ec-80cd-000c292c2d55",
-		"Article": "83630200",
-		"Name": "Втулка Bomag",
-		"Code": "00-00021345",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "c2765cd3-b4cd-11ec-80cd-000c292c2d55",
-		"Article": "429095067",
-		"Name": "Фара Bomag",
-		"Code": "00-00021344",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "78701ca4-b4cc-11ec-80cd-000c292c2d55",
-		"Article": "3001461176",
-		"Name": "Палец Hamm",
-		"Code": "00-00021343",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "f6a3a7f8-b4cb-11ec-80cd-000c292c2d55",
-		"Article": "4700167044",
-		"Name": "Уплотнение Dynapac",
-		"Code": "00-00021342",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "beed82e2-b4cb-11ec-80cd-000c292c2d55",
-		"Article": "4700357418",
-		"Name": "Сальник Dynapac",
-		"Code": "00-00021341",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "74837a7d-b4c5-11ec-80cd-000c292c2d55",
-		"Article": "4700902061",
-		"Name": "Подшипник Dynapac",
-		"Code": "00-00021340",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "e1ea30af-b4c4-11ec-80cd-000c292c2d55",
-		"Article": "4700359003",
-		"Name": "Крышка водяного бака Dynapac",
-		"Code": "00-00021339",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "6e8a8e7c-b4c4-11ec-80cd-000c292c2d55",
-		"Article": "3001456776",
-		"Name": "Набор уплотнений Hamm",
-		"Code": "00-00021338",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "4290bf4e-b4c4-11ec-80cd-000c292c2d55",
-		"Article": "300420328",
-		"Name": "Диск кромкоформирующий Hamm",
-		"Code": "00-00021337",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "4e359c1f-b4c3-11ec-80cd-000c292c2d55",
-		"Article": "4700945908",
-		"Name": "Комплект скребков Dynapac",
-		"Code": "00-00021336",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "1082bc03-b4c2-11ec-80cd-000c292c2d55",
-		"Article": "3002117171",
-		"Name": "Датчик приближения с кабелем Hamm",
-		"Code": "00-00021335",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "32aa4a90-b4c1-11ec-80cd-000c292c2d55",
-		"Article": "3002419966",
-		"Name": "Датчик Hamm",
-		"Code": "00-00021334",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "f836b030-b4c0-11ec-80cd-000c292c2d55",
-		"Article": "300311685",
-		"Name": "Указатель поворота Hamm",
-		"Code": "00-00021333",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "75625cc8-b4c0-11ec-80cd-000c292c2d55",
-		"Article": "434022310",
-		"Name": "Лампа Bomag",
-		"Code": "00-00021332",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "4cdf3234-b4c0-11ec-80cd-000c292c2d55",
-		"Article": "425030109",
-		"Name": "Датчик Bomag",
-		"Code": "00-00021331",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "ab81a6b0-b4be-11ec-80cd-000c292c2d55",
-		"Article": "2002175078",
-		"Name": "Адаптер Vogele",
-		"Code": "00-00021330",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "7e8ac35c-b4be-11ec-80cd-000c292c2d55",
-		"Article": "2002333356",
-		"Name": "Держатель Vogele",
-		"Code": "00-00021329",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "42e07d5d-b4be-11ec-80cd-000c292c2d55",
-		"Article": "2002315482",
-		"Name": "Пластина мет.Vogele",
-		"Code": "00-00021328",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "1895f1a1-b4be-11ec-80cd-000c292c2d55",
-		"Article": "2002306819",
-		"Name": "Пластина мет.Vogele",
-		"Code": "00-00021327",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "42031d97-b4bd-11ec-80cd-000c292c2d55",
-		"Article": "4812156095",
-		"Name": "Комплект рулевого сцепления Dynapac",
-		"Code": "00-00021326",
-		"MeasureID": 839,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "38bcdd7c-b4bb-11ec-80cd-000c292c2d55",
-		"Article": "80667983",
-		"Name": "Датчик скоростью правый Vogele",
-		"Code": "00-00021325",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "be7a4b2f-b4ba-11ec-80cd-000c292c2d55",
-		"Article": "2002195911",
-		"Name": "Клапан гидравл. обратный Vogele",
-		"Code": "00-00021324",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "acef0dbc-b4b8-11ec-80cd-000c292c2d55",
-		"Article": "2009511089021",
-		"Name": "Шайба В8,4 Vogele",
-		"Code": "00-00021323",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "56a80b4d-b4b8-11ec-80cd-000c292c2d55",
-		"Article": "2009540025419",
-		"Name": "Кольцо Vogele",
-		"Code": "00-00021322",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "948d09b3-b4b7-11ec-80cd-000c292c2d55",
-		"Article": "2009506321481",
-		"Name": "Штифт стяжной Vogele",
-		"Code": "00-00021321",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "45363d92-b4b7-11ec-80cd-000c292c2d55",
-		"Article": "2004602202348",
-		"Name": "Втулка Vogele",
-		"Code": "00-00021320",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "f8d0cd12-b4b6-11ec-80cd-000c292c2d55",
-		"Article": "2002329896",
-		"Name": "Болт Vogele",
-		"Code": "00-00021319",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "395bfa3c-b4af-11ec-80cd-000c292c2d55",
-		"Article": "2009540120635",
-		"Name": "Подшипник VOGELE",
-		"Code": "00-00021318",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "e4aea536-b4ad-11ec-80cd-000c292c2d55",
-		"Article": "14301345",
-		"Name": "Кожух центральный задний VOLVO",
-		"Code": "00-00021317",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "a7e5874b-b4aa-11ec-80cd-000c292c2d55",
-		"Article": "2002310096",
-		"Name": "Комплект изнашиваемых частей плиты АВ 500-3 TV Vogele",
-		"Code": "00-00021316",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "31de5763-b4a7-11ec-80cd-000c292c2d55",
-		"Article": "206910004R",
-		"Name": "Прокладка глушителя RENAULT",
-		"Code": "00-00021315",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "2006807d-b410-11ec-80cd-000c292c2d55",
-		"Article": "800101763",
-		"Name": "Радиатор водяной XCMG LW300FN",
-		"Code": "00-00021314",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "3a14001a-b3e6-11ec-80cd-000c292c2d55",
-		"Article": "",
-		"Name": "Шинокомплект 295/80 R22.5 задний Тягач (2 кат)",
-		"Code": "00-00021313",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "980b4cd1-6a1f-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "ccc00eaa-b3e5-11ec-80cd-000c292c2d55",
-		"Article": "",
-		"Name": "Шинокомплект 315/70 R22.5 зад. (2 кат)",
-		"Code": "00-00021312",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "980b4cd1-6a1f-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "7963f4b0-b3e5-11ec-80cd-000c292c2d55",
-		"Article": "295/80 R22.5",
-		"Name": "А/шина 295/80 R22.5  рулевые (2 кат.)",
-		"Code": "00-00021311",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "980b4cd1-6a1f-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "d837f4d6-b3e4-11ec-80cd-000c292c2d55",
-		"Article": "295/80 R22.5",
-		"Name": "Шинокомплект 295/80 R22.5  рулевые (2 кат.)",
-		"Code": "00-00021310",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "980b4cd1-6a1f-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "d8728ac2-b3e1-11ec-80cd-000c292c2d55",
-		"Article": "803502426",
-		"Name": "Фара левая погрузчик XCMG LW300F",
-		"Code": "00-00021309",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "ebf94eb3-b3e0-11ec-80cd-000c292c2d55",
-		"Article": "803164329",
-		"Name": "Фильтр гидравлики XCMG LW300F",
-		"Code": "00-00021308",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "dd5463d2-b3df-11ec-80cd-000c292c2d55",
-		"Article": "HK3520",
-		"Name": "Подшипник КПП ZF(35x42x20)",
-		"Code": "00-00021307",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "b76a23b3-b3de-11ec-80cd-000c292c2d55",
-		"Article": "HK4020",
-		"Name": "Подшипник КПП ZF(40x47x20)",
-		"Code": "00-00021305",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "1ce59f5a-b3d9-11ec-80cd-000c292c2d55",
-		"Article": "1695010015",
-		"Name": "Крышка расширительного бачка MERCEDES-Sprinter",
-		"Code": "00-00021304",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "d1a75ff1-b279-11ec-80cd-000c292c2d55",
-		"Article": "204112012",
-		"Name": "Трос газа TARSUS",
-		"Code": "00-00021303",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "20aa6570-b277-11ec-80cd-000c292c2d55",
-		"Article": "12273399",
-		"Name": "Толкатель штанги Deutz TD226B-6   ",
-		"Code": "00-00021302",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "d02d298b-b25e-11ec-80cd-000c292c2d55",
-		"Article": "134350",
-		"Name": "Трапеция стеклоочистителя  Г-3302",
-		"Code": "00-00021301",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "44cad9f8-b25e-11ec-80cd-000c292c2d55",
-		"Article": "21080-1203019-08",
-		"Name": "Р/к № 13крепления приемной трубы 9(4шпильки,4гайки) ВАЗ",
-		"Code": "00-00021300",
-		"MeasureID": 839,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "83f98c37-b1b8-11ec-80cd-000c292c2d55",
-		"Article": "2022257",
-		"Name": "Шестерня привода компрессора Scania",
-		"Code": "00-00021299",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "65936c48-b1aa-11ec-80cd-000c292c2d55",
-		"Article": "",
-		"Name": "РВД гайка 32 дл.1010 б/у",
-		"Code": "00-00021298",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "43da532a-b1aa-11ec-80cd-000c292c2d55",
-		"Article": "",
-		"Name": "РВД гайка 32 дл.1510 б/у",
-		"Code": "00-00021297",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "97a45c48-b1a9-11ec-80cd-000c292c2d55",
-		"Article": "",
-		"Name": "Щебень 5-20",
-		"Code": "00-00021296",
-		"MeasureID": 168,
-		"nomenclature_id": "",
-		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "8c09b13c-b1a9-11ec-80cd-000c292c2d55",
-		"Article": "",
-		"Name": "Щебень 40-70",
-		"Code": "00-00021295",
-		"MeasureID": 168,
-		"nomenclature_id": "",
-		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "80abd90a-b1a9-11ec-80cd-000c292c2d55",
-		"Article": "",
-		"Name": "Щебень 20-40",
-		"Code": "00-00021294",
-		"MeasureID": 168,
-		"nomenclature_id": "",
-		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "71eb4ffe-b1a9-11ec-80cd-000c292c2d55",
-		"Article": "",
-		"Name": "Стойка СВ 130-8 (СНВ 7-13)",
-		"Code": "00-00021293",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "536a497e-b1a9-11ec-80cd-000c292c2d55",
-		"Article": "",
-		"Name": "Щебеночно-песчанная смесь С4 (0-80) (т)",
-		"Code": "00-00021292",
-		"MeasureID": 168,
-		"nomenclature_id": "",
-		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "4591044a-b1a9-11ec-80cd-000c292c2d55",
-		"Article": "",
-		"Name": "Станок для тиснения MSY1300",
-		"Code": "00-00021291",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "50107f5a-9c5d-11ec-80c9-000c292c2d55"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "28ceaeb3-b1a9-11ec-80cd-000c292c2d55",
-		"Article": "",
-		"Name": "Гравий",
-		"Code": "00-00021290",
-		"MeasureID": 168,
-		"nomenclature_id": "",
-		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "5f9f6abf-b1a6-11ec-80cd-000c292c2d55",
-		"Article": "",
-		"Name": "Смесь готовая, щебеночно- песчаная, С-4, ГОСТ 25607-2009",
-		"Code": "00-00021289",
-		"MeasureID": 113,
-		"nomenclature_id": "",
-		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "667f3f51-b1a4-11ec-80cd-000c292c2d55",
-		"Article": "14796600",
-		"Name": "Хомут на шланг гидробака LP28",
-		"Code": "00-00021288",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "11081d6b-b1a4-11ec-80cd-000c292c2d55",
-		"Article": "14795120",
-		"Name": "Шланг низкого давления гидробака 1 3/4\"-LP-28-2000-00",
-		"Code": "00-00021287",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "c1833dea-b1a2-11ec-80cd-000c292c2d55",
-		"Article": "08102116",
-		"Name": "Крышка гидробака в сборе с фильтром Scania",
-		"Code": "00-00021286",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "01af677a-b19d-11ec-80cd-000c292c2d55",
-		"Article": "50312421P0",
-		"Name": "Коробка отбора мощности Scania GRS 905",
-		"Code": "00-00021285",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "82bed514-b197-11ec-80cd-000c292c2d55",
-		"Article": "FS-4301",
-		"Name": "Фильтр топливный SAKURA FS-4301",
-		"Code": "00-00021284",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "1e8150bd-b197-11ec-80cd-000c292c2d55",
-		"Article": "PP848/2",
-		"Name": "Фильтр топливный FILTRON PP848/2",
-		"Code": "00-00021283",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "b05e0b44-b196-11ec-80cd-000c292c2d55",
-		"Article": "C-5106",
-		"Name": "Фильтр масляный SAKURA C-5106",
-		"Code": "00-00021282",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "27a75d1e-b180-11ec-80cc-000c292c2d55",
-		"Article": "46382",
-		"Name": "Щетка стеклоочистителя 51см.",
-		"Code": "00-00021281",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "71615d65-b179-11ec-80cc-000c292c2d55",
-		"Article": "77.38.016-1",
-		"Name": "Лента ДТ-75 планетарная ",
-		"Code": "00-00021280",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "31899574-b178-11ec-80cc-000c292c2d55",
-		"Article": "77.38.052-1 ",
-		"Name": "Колодка ДТ-75 тормозной ленты",
-		"Code": "00-00021279",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "32ed436d-b177-11ec-80cc-000c292c2d55",
-		"Article": "",
-		"Name": "Сервер Supermicro 5017R-MTF",
-		"Code": "00-00021278",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "e7f40487-75ec-11ec-80c3-000c292c2d55"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "11f7420d-af36-11ec-80cc-000c292c2d55",
-		"Article": "516849/1408149/2124235",
-		"Name": "Подшипник дифференциала 3/14 SCANIA",
-		"Code": "00-00021197",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "8e01957c-b591-11ec-80cd-000c292c2d55",
-		"Article": "0730150774",
-		"Name": "Шайба регулировочная (51.110) YD13",
-		"Code": "00-00021372",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "c69573a1-b591-11ec-80cd-000c292c2d55",
-		"Article": "351007",
-		"Name": "Подшипник (51.130) YD13",
-		"Code": "00-00021373",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "0bdbcf32-b592-11ec-80cd-000c292c2d55",
-		"Article": "4644351094",
-		"Name": "Шайба упорная (51.52.53.170) YD13",
-		"Code": "00-00021374",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "482e1eb6-b592-11ec-80cd-000c292c2d55",
-		"Article": "0769120468",
-		"Name": "Шайба регулировочная (51.52.53.080) YD13",
-		"Code": "00-00021375",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "80ea86d6-b592-11ec-80cd-000c292c2d55",
-		"Article": "0730150779",
-		"Name": "Шайба упорная YD13",
-		"Code": "00-00021376",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "ef98139f-b592-11ec-80cd-000c292c2d55",
-		"Article": "0750112141",
-		"Name": "Кольцо поршневое YD13",
-		"Code": "00-00021377",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "3f804fe5-b593-11ec-80cd-000c292c2d55",
-		"Article": "0501309329",
-		"Name": "Диск фрикционный (53.420.440) YD13",
-		"Code": "00-00021378",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
 	},
 	{
 		"data1c": "2022-10-02T00:00:00",
@@ -3971,6 +3651,16 @@
 	},
 	{
 		"data1c": "2022-10-02T00:00:00",
+		"NomID": "f8fcd840-6cc7-11ec-80dd-000c2999d0eb",
+		"Article": "",
+		"Name": "(пост охраны)Шкаф телекоммуникационный 16U",
+		"Code": "00-00011924",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
 		"NomID": "1711bbc4-6cc8-11ec-80dd-000c2999d0eb",
 		"Article": "",
 		"Name": "Абонентский терминал М2М-Cyber GX",
@@ -3985,86 +3675,6 @@
 		"Article": "1-КУШКУЛЬ, 1-ПРОГР",
 		"Name": "Антенна для усиления связи Триада МА 993 SOTA",
 		"Code": "00-00012336",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "df0bc878-b70f-11ec-80e4-000c2999d0eb",
-		"Article": "YD13351014",
-		"Name": "Вал YD13",
-		"Code": "00-00021405",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "0fdb5a52-b710-11ec-80e4-000c2999d0eb",
-		"Article": "YD13352003",
-		"Name": "Шестерня YD13",
-		"Code": "00-00021406",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "183a1811-b715-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Кронштейн мебельный",
-		"Code": "00-00021408",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "310d49e4-b715-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Крестики для плитки 2,5мм 100шт",
-		"Code": "00-00021409",
-		"MeasureID": 778,
-		"nomenclature_id": "",
-		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "417b00b9-b715-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Кромка",
-		"Code": "00-00021410",
-		"MeasureID": 6,
-		"nomenclature_id": "",
-		"TypeNomID": "a633d758-6a24-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "52624f25-b715-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Профиль ПВХ",
-		"Code": "00-00021411",
-		"MeasureID": 796,
-		"nomenclature_id": "",
-		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "6277cf18-b715-11ec-80e4-000c2999d0eb",
-		"Article": "",
-		"Name": "Труба квадр. 12*12*1,2",
-		"Code": "00-00021412",
-		"MeasureID": 168,
-		"nomenclature_id": "",
-		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
-	},
-	{
-		"data1c": "2022-10-02T00:00:00",
-		"NomID": "f8fcd840-6cc7-11ec-80dd-000c2999d0eb",
-		"Article": "",
-		"Name": "(пост охраны)Шкаф телекоммуникационный 16U",
-		"Code": "00-00011924",
 		"MeasureID": 796,
 		"nomenclature_id": "",
 		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
@@ -4225,6 +3835,396 @@
 		"Article": "YD1313351001",
 		"Name": "Блок фрикционов(муфта) YD13",
 		"Code": "00-00021404",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "df0bc878-b70f-11ec-80e4-000c2999d0eb",
+		"Article": "YD13351014",
+		"Name": "Вал YD13",
+		"Code": "00-00021405",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "0fdb5a52-b710-11ec-80e4-000c2999d0eb",
+		"Article": "YD13352003",
+		"Name": "Шестерня YD13",
+		"Code": "00-00021406",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "183a1811-b715-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Кронштейн мебельный",
+		"Code": "00-00021408",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "310d49e4-b715-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Крестики для плитки 2,5мм 100шт",
+		"Code": "00-00021409",
+		"MeasureID": 778,
+		"nomenclature_id": "",
+		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "417b00b9-b715-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Кромка",
+		"Code": "00-00021410",
+		"MeasureID": 6,
+		"nomenclature_id": "",
+		"TypeNomID": "a633d758-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "52624f25-b715-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Профиль ПВХ",
+		"Code": "00-00021411",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "6277cf18-b715-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Труба квадр. 12*12*1,2",
+		"Code": "00-00021412",
+		"MeasureID": 168,
+		"nomenclature_id": "",
+		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "6cf3ad07-b715-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Угол крепежный 90*90*65*2мм усилин.",
+		"Code": "00-00021413",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "a633d758-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "818ecfb5-b715-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Уголок",
+		"Code": "00-00021414",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "8eb56eb9-b715-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Фурнитура",
+		"Code": "00-00021415",
+		"MeasureID": 839,
+		"nomenclature_id": "",
+		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "97b22d0d-b715-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Швеллер  № 10",
+		"Code": "00-00021416",
+		"MeasureID": 168,
+		"nomenclature_id": "",
+		"TypeNomID": "50107f5a-9c5d-11ec-80c9-000c292c2d55"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "892ea543-b717-11ec-80e4-000c2999d0eb",
+		"Article": "1762624/1492747",
+		"Name": "кронштейн",
+		"Code": "00-00021417",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "ed48177e-b71b-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Герметик селиконовый VAG",
+		"Code": "00-00021418",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "f8f1bf05-b71c-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Набор шпателей",
+		"Code": "00-00021419",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "03ef1780-b71d-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Нога мебельная складная",
+		"Code": "00-00021420",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "0f90f266-b71d-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Откос оконный",
+		"Code": "00-00021421",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "9897a2e7-b721-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Смеситель д/кухни 40мм",
+		"Code": "00-00021422",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "d4dbbcf4-b721-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Насос дренажный CS400N",
+		"Code": "00-00021423",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "4ac7d9e0-b728-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Эмаль базовая 690 серебристая",
+		"Code": "00-00021424",
+		"MeasureID": 112,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "7203a0be-b730-11ec-80e4-000c2999d0eb",
+		"Article": "8201219552",
+		"Name": "Фильтр АКПП RENAULT DUSTER",
+		"Code": "00-00021425",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "de9e4b59-b738-11ec-80e4-000c2999d0eb",
+		"Article": "AT101565",
+		"Name": "Фильтр топливный John Deere",
+		"Code": "00-00021426",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "c8afd61a-b7fb-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Патрубок прямой Д=50 L=1100мм силикон ",
+		"Code": "00-00021427",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "43a1d6e7-b87c-11ec-80e4-000c2999d0eb",
+		"Article": "2713-1228A",
+		"Name": "Бокорез правый DOOSAN 140",
+		"Code": "00-00021428",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "7c57bd88-b87c-11ec-80e4-000c2999d0eb",
+		"Article": "2713-1229A",
+		"Name": "Бокорез левый DOOSAN 140",
+		"Code": "00-00021429",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "b30b8b9e-b8bf-11ec-80e4-000c2999d0eb",
+		"Article": "YD1313351012",
+		"Name": "Шестерня YD13",
+		"Code": "00-00021430",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "8df73123-b8c0-11ec-80e4-000c2999d0eb",
+		"Article": "4644351076",
+		"Name": "Вал  YD13",
+		"Code": "00-00021431",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "68e7bf62-b94f-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "АИ-100",
+		"Code": "00-00021432",
+		"MeasureID": 112,
+		"nomenclature_id": "",
+		"TypeNomID": "3ca6c7f9-6934-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "32a58cc5-b951-11ec-80e4-000c2999d0eb",
+		"Article": "инв1459",
+		"Name": "Модем HUAWEI 3G/4G",
+		"Code": "00-00021433",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "47019d6e-b951-11ec-80e4-000c2999d0eb",
+		"Article": "инв1460",
+		"Name": "Модем HUAWEI 3G/4G",
+		"Code": "00-00021434",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "5be2f844-b951-11ec-80e4-000c2999d0eb",
+		"Article": "инв1461",
+		"Name": "Модем HUAWEI Е3372 3G/4G",
+		"Code": "00-00021435",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "460368a6-b95f-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Аппарат высокого давления 011992",
+		"Code": "00-00021436",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "4f218815-b95f-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Аппарат высокого давления 012144",
+		"Code": "00-00021437",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "6126f116-b95f-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Воздухонагреватель NEW EC Volcano VR1 (5-30kW, монтажнаяв комплекте)",
+		"Code": "00-00021438",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "6e8dcb08-b95f-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Ворота промышленные секционные из сэндвич панелей",
+		"Code": "00-00021439",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "7550b83e-b95f-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Ворота промышленные секционные из сэндвич панелей с калиткой",
+		"Code": "00-00021440",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "bc4912f4-b964-11ec-80e4-000c2999d0eb",
+		"Article": "12167047",
+		"Name": "Болт шатуна ДВС DEUTZ",
+		"Code": "00-00021441",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "4f05b8bd-b966-11ec-80e4-000c2999d0eb",
+		"Article": "0750112140",
+		"Name": "Кольцо уплотнительное ZF",
+		"Code": "00-00021442",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "e4f3fc44-b966-11ec-80e4-000c2999d0eb",
+		"Article": "0732041183/4110000076251",
+		"Name": "Пружина КПП ZF",
+		"Code": "00-00021443",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-10-02T00:00:00",
+		"NomID": "4c974657-b967-11ec-80e4-000c2999d0eb",
+		"Article": "4110000076302/",
+		"Name": "Кольцо стопорное КПП ZF 4-6WG200 WG180",
+		"Code": "00-00021444",
 		"MeasureID": 796,
 		"nomenclature_id": "",
 		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
