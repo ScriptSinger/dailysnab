@@ -10,7 +10,7 @@
 			{
 				"NomID": "7afce844-6cb8-11ec-80dd-000c2999d0eb",
 				"Price": 20,
-				"NDS": 0,
+				"NDS": 20,
 				"Quantity": 10,
 				"Brand": ""
 			}
@@ -27,7 +27,7 @@
 			{
 				"NomID": "7afce844-6cb8-11ec-80dd-000c2999d0eb",
 				"Price": 2,
-				"NDS": 0,
+				"NDS": 20,
 				"Quantity": 3,
 				"Brand": ""
 			}
@@ -44,7 +44,7 @@
 			{
 				"NomID": "7afce844-6cb8-11ec-80dd-000c2999d0eb",
 				"Price": 1,
-				"NDS": 0,
+				"NDS": 20,
 				"Quantity": 2,
 				"Brand": ""
 			}
@@ -61,7 +61,7 @@
 			{
 				"NomID": "7afce844-6cb8-11ec-80dd-000c2999d0eb",
 				"Price": 13,
-				"NDS": 0,
+				"NDS": 20,
 				"Quantity": 3,
 				"Brand": ""
 			}
@@ -78,7 +78,7 @@
 			{
 				"NomID": "9d655333-8a2b-11ec-80c9-000c292c2d55",
 				"Price": 1,
-				"NDS": 0,
+				"NDS": 20,
 				"Quantity": 5,
 				"Brand": ""
 			}
@@ -95,7 +95,7 @@
 			{
 				"NomID": "7afce844-6cb8-11ec-80dd-000c2999d0eb",
 				"Price": 500,
-				"NDS": 0,
+				"NDS": 20,
 				"Quantity": 10,
 				"Brand": ""
 			}
@@ -112,7 +112,7 @@
 			{
 				"NomID": "7afce844-6cb8-11ec-80dd-000c2999d0eb",
 				"Price": 222,
-				"NDS": 0,
+				"NDS": 20,
 				"Quantity": 4,
 				"Brand": ""
 			}
@@ -129,7 +129,7 @@
 			{
 				"NomID": "9d655333-8a2b-11ec-80c9-000c292c2d55",
 				"Price": 4,
-				"NDS": 0,
+				"NDS": 20,
 				"Quantity": 10,
 				"Brand": ""
 			}
@@ -146,7 +146,7 @@
 			{
 				"NomID": "9d655333-8a2b-11ec-80c9-000c292c2d55",
 				"Price": 10,
-				"NDS": 0,
+				"NDS": 20,
 				"Quantity": 10,
 				"Brand": ""
 			}
@@ -163,7 +163,7 @@
 			{
 				"NomID": "9d655333-8a2b-11ec-80c9-000c292c2d55",
 				"Price": 2,
-				"NDS": 0,
+				"NDS": 20,
 				"Quantity": 20,
 				"Brand": ""
 			}
@@ -180,7 +180,7 @@
 			{
 				"NomID": "2695ec1e-6cb9-11ec-80dd-000c2999d0eb",
 				"Price": 230,
-				"NDS": 0,
+				"NDS": 20,
 				"Quantity": 4,
 				"Brand": "Bridgestone"
 			}
@@ -197,7 +197,7 @@
 			{
 				"NomID": "9246f2ce-6cbc-11ec-80dd-000c2999d0eb",
 				"Price": 1200,
-				"NDS": 0,
+				"NDS": 20,
 				"Quantity": 1,
 				"Brand": "Scania"
 			}
@@ -214,7 +214,7 @@
 			{
 				"NomID": "9246f2ce-6cbc-11ec-80dd-000c2999d0eb",
 				"Price": 500,
-				"NDS": 0,
+				"NDS": 20,
 				"Quantity": 2,
 				"Brand": "Scania"
 			}
@@ -231,7 +231,7 @@
 			{
 				"NomID": "9246f2ce-6cbc-11ec-80dd-000c2999d0eb",
 				"Price": 50,
-				"NDS": 0,
+				"NDS": 20,
 				"Quantity": 1,
 				"Brand": "Scania"
 			}
@@ -248,7 +248,7 @@
 			{
 				"NomID": "2695ec1e-6cb9-11ec-80dd-000c2999d0eb",
 				"Price": 6,
-				"NDS": 0,
+				"NDS": 20,
 				"Quantity": 10,
 				"Brand": ""
 			}
@@ -265,7 +265,7 @@
 			{
 				"NomID": "2695ec1e-6cb9-11ec-80dd-000c2999d0eb",
 				"Price": 10,
-				"NDS": 0,
+				"NDS": 20,
 				"Quantity": 4,
 				"Brand": "Кама"
 			}
@@ -282,7 +282,7 @@
 			{
 				"NomID": "2695ec1e-6cb9-11ec-80dd-000c2999d0eb",
 				"Price": 1,
-				"NDS": 0,
+				"NDS": 20,
 				"Quantity": 5,
 				"Brand": "Кама"
 			}
