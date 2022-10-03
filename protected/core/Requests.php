@@ -1243,7 +1243,7 @@
 		if(v_int($in['buy_sell_id'])){
 
 			$STH = PreExecSQL(" DELETE FROM buy_sell WHERE status_buy_sell_id=10 AND parent_id=? AND qrq_id<>0
-															AND NOT id IN (SELECT t.parent_id FROM buy_sell t WHERE t.parent_id=parent_id) ; " ,
+														AND NOT id IN (SELECT * FROM (SELECT t.parent_id FROM buy_sell t WHERE t.parent_id=parent_id) AS q)  ; " ,
 				array( $in['buy_sell_id'] ));
 			if($STH){
 				$ok = true;
