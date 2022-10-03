@@ -506,7 +506,7 @@ class ClassQrq extends HtmlServive
 					reqInsertAmoLogJson(array('parent_id'=>$ins_id,'url'=>'search','parameters'=>$parameters,'json'=>$json,'token'=>$p['token']));
 
 					
-					vecho($errors_message);
+					vecho($p['brand'].' - '.$errors_message);
 			}
 			
 		}
