@@ -1,1 +1,1 @@
-null
+";select,vSelect_token,0;select,vSelect_FormId,0;select,vSelect_pAccountId,0;select,vSelect_pBasketItemId,0;select,vSelect_payer_key,0;select,vSelect_wait_all_goods,1;select,vSelect_comment,0;input,,;input,checkbox_checking_buysell,on;input,,on;input,,on;input,,on;input,,on;input,,on;input,,on;input,,on;input,,on;input,,on;input,,on;input,,on;input,,on;input,,on;input,,on;input,,on;input,,on;input,,on;input,,on;input,,on;input,,on;input,,on;input,,on;input,,on;input,,on"
