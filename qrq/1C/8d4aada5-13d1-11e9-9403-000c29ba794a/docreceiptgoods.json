@@ -26826,7 +26826,7 @@
 				"Date": "2022-09-24T12:52:07",
 				"buy_sell_id": "7389560",
 				"NomID": "9fe7d92e-8275-11ec-80c5-000c292c2d55",
-				"Price": 1869,
+				"Price": 1889,
 				"NDS": 0,
 				"Quantity": 10,
 				"Brand": ""
@@ -28834,6 +28834,25 @@
 				"Price": 975,
 				"NDS": 0,
 				"Quantity": 4,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"DocID": "a31d8ddc-42dc-11ed-8db7-0cc47a03c9dc",
+		"data1c": "2022-10-03T00:00:00",
+		"Massiv": [
+			{
+				"DocID": "a31d8ddc-42dc-11ed-8db7-0cc47a03c9dc",
+				"StrID": 1,
+				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+				"ContractorID": "d9f6e09e-7f97-11ec-80c5-000c292c2d55",
+				"Date": "2022-10-03T10:31:33",
+				"buy_sell_id": "8007260",
+				"NomID": "c3749fb4-6cbe-11ec-80dd-000c2999d0eb",
+				"Price": 70000,
+				"NDS": 0,
+				"Quantity": 2,
 				"Brand": ""
 			}
 		]
