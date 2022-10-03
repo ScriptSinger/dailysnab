@@ -47,7 +47,7 @@
 						
 								$json = $api->saved1cNom(array('company_id'=>$r['id']));
 								
-						}elseif($args1=='saved_buy12'){// исполненные
+						}elseif($args1=='saved_docreceiptgoods'){// исполненные
 							
 								$json = $api->saved1cBuy12(array('company_id'=>$r['id'],'flag'=>1));
 								
