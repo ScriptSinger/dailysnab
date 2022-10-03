@@ -51,9 +51,9 @@
 							
 								$json = $api->saved1cBuy12(array('company_id'=>$r['id'],'flag'=>1));
 								
-						}elseif($args1=='saved_buy11_12'){// понимание в купденных, что исполненные в 1с
+						}elseif($args1=='saved_docimplementation'){// понимание в купденных, что исполненные в 1с
 							
-								$json = $api->saved1cBuy12(array('company_id'=>$r['id'],'flag'=>2));
+								$json = $api->saved1cBuy12(array('company_id'=>$r['id'],'flag'=>3));
 								
 						}elseif($args1=='saved_nomost'){// остатки
 							
