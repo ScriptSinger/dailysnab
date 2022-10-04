@@ -27419,5 +27419,379 @@
 				"Brand": ""
 			}
 		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "1827ae3d-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "34860283-e2fe-11ec-8da2-000c295de724",
+		"Date": "2022-10-03T08:55:39",
+		"IncomeUPD": "8146617",
+		"Goods": [
+			{
+				"NomID": "99928512-43b8-11ed-8db7-0cc47a03c9dc",
+				"Price": 15239.2,
+				"NDS": 0,
+				"Quantity": 2,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "1e297d5f-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "6c978f52-99dc-11ec-80c9-000c292c2d55",
+		"Date": "2022-10-03T09:01:54",
+		"IncomeUPD": "8146620",
+		"Goods": [
+			{
+				"NomID": "99d9f8ea-43b8-11ed-8db7-0cc47a03c9dc",
+				"Price": 45,
+				"NDS": 0,
+				"Quantity": 4,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "1e297e02-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "34860283-e2fe-11ec-8da2-000c295de724",
+		"Date": "2022-10-03T09:35:41",
+		"IncomeUPD": "8146626",
+		"Goods": [
+			{
+				"NomID": "96eae3ab-43b8-11ed-8db7-0cc47a03c9dc",
+				"Price": 967,
+				"NDS": 0,
+				"Quantity": 7,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "1e297eee-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "3bbce0d7-1157-11ed-8db6-0cc47a03c9dc",
+		"Date": "2022-10-03T09:37:48",
+		"IncomeUPD": "8146628",
+		"Goods": [
+			{
+				"NomID": "96eaf7fb-43b8-11ed-8db7-0cc47a03c9dc",
+				"Price": 2742.69,
+				"NDS": 0,
+				"Quantity": 4,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "1e297f91-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "335fdb9c-dbf2-11ec-80e6-000c2999d0eb",
+		"Date": "2022-10-03T09:38:05",
+		"IncomeUPD": "8146630",
+		"Goods": [
+			{
+				"NomID": "96eaf7fb-43b8-11ed-8db7-0cc47a03c9dc",
+				"Price": 2748.05,
+				"NDS": 0,
+				"Quantity": 5,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "24373cbc-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "066b48c2-9529-11ec-80c9-000c292c2d55",
+		"Date": "2022-10-03T09:49:17",
+		"IncomeUPD": "8146632",
+		"Goods": [
+			{
+				"NomID": "99167c2f-43b8-11ed-8db7-0cc47a03c9dc",
+				"Price": 2250,
+				"NDS": 0,
+				"Quantity": 10,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "24373d83-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "8b68a6fe-324e-11ed-8db7-0cc47a03c9dc",
+		"Date": "2022-10-03T10:10:16",
+		"IncomeUPD": "8147539",
+		"Goods": [
+			{
+				"NomID": "9960649b-43b8-11ed-8db7-0cc47a03c9dc",
+				"Price": 40000,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "24373e4b-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "066b48c2-9529-11ec-80c9-000c292c2d55",
+		"Date": "2022-10-03T11:46:44",
+		"IncomeUPD": "8151316",
+		"Goods": [
+			{
+				"NomID": "98cca60a-43b8-11ed-8db7-0cc47a03c9dc",
+				"Price": 1050,
+				"NDS": 0,
+				"Quantity": 6,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "24373eee-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
+		"Date": "2022-10-03T14:41:51",
+		"IncomeUPD": "8164484",
+		"Goods": [
+			{
+				"NomID": "96eae398-43b8-11ed-8db7-0cc47a03c9dc",
+				"Price": 693,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "2a4036fe-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "3ad912f4-6de4-11ec-80bf-000c292c2d55",
+		"Date": "2022-10-03T14:43:48",
+		"IncomeUPD": "8164487",
+		"Goods": [
+			{
+				"NomID": "96eae385-43b8-11ed-8db7-0cc47a03c9dc",
+				"Price": 967,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "2a4037c5-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "3ad912f4-6de4-11ec-80bf-000c292c2d55",
+		"Date": "2022-10-03T14:48:50",
+		"IncomeUPD": "8164490",
+		"Goods": [
+			{
+				"NomID": "96eae34e-43b8-11ed-8db7-0cc47a03c9dc",
+				"Price": 1220,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "2f325c9b-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "38ea4a7c-6932-11ec-80bf-000c292c2d55",
+		"Date": "2022-10-03T15:28:12",
+		"IncomeUPD": "8164624",
+		"Goods": [
+			{
+				"NomID": "9a1cbc92-43b8-11ed-8db7-0cc47a03c9dc",
+				"Price": 2700,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "2fb56142-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "73eb8eaf-b94c-11ec-80e4-000c2999d0eb",
+		"Date": "2022-10-04T08:29:58",
+		"IncomeUPD": "8174029",
+		"Goods": [
+			{
+				"NomID": "8249f4a0-6cbd-11ec-80dd-000c2999d0eb",
+				"Price": 7582.29,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "30388e9a-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "6695c1eb-99dc-11ec-80c9-000c292c2d55",
+		"Date": "2022-10-04T08:31:17",
+		"IncomeUPD": "8174109",
+		"Goods": [
+			{
+				"NomID": "96eae305-43b8-11ed-8db7-0cc47a03c9dc",
+				"Price": 10517.67,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "30388f61-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "6695c1eb-99dc-11ec-80c9-000c292c2d55",
+		"Date": "2022-10-04T08:34:16",
+		"IncomeUPD": "8174111",
+		"Goods": [
+			{
+				"NomID": "9b421f96-43b8-11ed-8db7-0cc47a03c9dc",
+				"Price": 2232.84,
+				"NDS": 0,
+				"Quantity": 4,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "303890ee-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "596bda1c-783b-11ec-80c5-000c292c2d55",
+		"Date": "2022-10-04T08:41:24",
+		"IncomeUPD": "8174116",
+		"Goods": [
+			{
+				"NomID": "9b42076b-43b8-11ed-8db7-0cc47a03c9dc",
+				"Price": 300,
+				"NDS": 0,
+				"Quantity": 10,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "303893bc-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "596bda1c-783b-11ec-80c5-000c292c2d55",
+		"Date": "2022-10-04T08:51:09",
+		"IncomeUPD": "8174124",
+		"Goods": [
+			{
+				"NomID": "9a5abb06-43b8-11ed-8db7-0cc47a03c9dc",
+				"Price": 37228,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "3630c9ef-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
+		"Date": "2022-10-04T08:52:16",
+		"IncomeUPD": "8174126",
+		"Goods": [
+			{
+				"NomID": "9a9b1fe8-43b8-11ed-8db7-0cc47a03c9dc",
+				"Price": 775,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "378f553c-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
+		"Date": "2022-10-04T08:53:39",
+		"IncomeUPD": "8174128",
+		"Goods": [
+			{
+				"NomID": "9ad1ffbf-43b8-11ed-8db7-0cc47a03c9dc",
+				"Price": 841,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "390f43d6-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "596bda1c-783b-11ec-80c5-000c292c2d55",
+		"Date": "2022-10-04T09:05:26",
+		"IncomeUPD": "8174237",
+		"Goods": [
+			{
+				"NomID": "9b1bde1c-43b8-11ed-8db7-0cc47a03c9dc",
+				"Price": 7800,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "3a2632e0-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "85a8f887-badb-11ec-80e4-000c2999d0eb",
+		"Date": "2022-10-04T11:14:58",
+		"IncomeUPD": "8188344",
+		"Goods": [
+			{
+				"NomID": "11d606c1-43be-11ed-8db7-0cc47a03c9dc",
+				"Price": 2873.14,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "3b65a0aa-43bf-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "1945a380-9bad-11ec-80c9-000c292c2d55",
+		"Date": "2022-10-04T11:15:18",
+		"IncomeUPD": "8188346",
+		"Goods": [
+			{
+				"NomID": "11d606c1-43be-11ed-8db7-0cc47a03c9dc",
+				"Price": 2929.14,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
 	}
 ]
