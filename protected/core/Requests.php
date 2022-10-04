@@ -7361,7 +7361,9 @@
 							SELECT (SELECT t.login_id FROM company t WHERE t.id=(SELECT t.company_id FROM slov_qrq t WHERE t.id=ae.qrq_id LIMIT 1) LIMIT 1) login_id,
 									(SELECT t.company_id FROM slov_qrq t WHERE t.id=ae.qrq_id LIMIT 1) company_id,
 									ae.qrq_id,
-									CASE WHEN ae.flag_autorize=1 THEN (SELECT t.accounts_id FROM amo_accounts_etp t WHERE t.qrq_id=ae.qrq_id AND t.flag_autorize=3) 
+									CASE WHEN ae.flag_autorize=1 THEN (SELECT t.accounts_id 
+													FROM amo_accounts_etp t, slov_qrq sq
+													WHERE t.qrq_id=sq.id AND sq.flag_autorize=1 AND t.qrq_id=ae.qrq_id AND t.flag_autorize=3) 
 												ELSE ae.accounts_id END accounts_id
 							FROM amo_accounts_etp ae
 							WHERE ae.company_id=".$p['company_id']."
