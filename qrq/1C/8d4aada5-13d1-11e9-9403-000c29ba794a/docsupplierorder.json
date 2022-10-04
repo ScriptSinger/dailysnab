@@ -27793,5 +27793,90 @@
 				"Brand": ""
 			}
 		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "7e07dd33-4412-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "85a8f887-badb-11ec-80e4-000c2999d0eb",
+		"Date": "2022-10-04T14:37:44",
+		"IncomeUPD": "8189142",
+		"Goods": [
+			{
+				"NomID": "11d606c1-43be-11ed-8db7-0cc47a03c9dc",
+				"Price": 2930.6,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "8434a06c-4412-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "266533cc-e882-11ec-8da3-000c295de724",
+		"Date": "2022-10-04T14:38:51",
+		"IncomeUPD": "8190286",
+		"Goods": [
+			{
+				"NomID": "28443e05-6cbd-11ec-80dd-000c2999d0eb",
+				"Price": 6,
+				"NDS": 0,
+				"Quantity": 150,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "85931605-4412-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "266533cc-e882-11ec-8da3-000c295de724",
+		"Date": "2022-10-04T14:39:18",
+		"IncomeUPD": "8190529",
+		"Goods": [
+			{
+				"NomID": "28443e0d-6cbd-11ec-80dd-000c2999d0eb",
+				"Price": 15,
+				"NDS": 0,
+				"Quantity": 180,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "86994b4c-4412-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "335fdb9c-dbf2-11ec-80e6-000c2999d0eb",
+		"Date": "2022-10-04T15:12:18",
+		"IncomeUPD": "8190538",
+		"Goods": [
+			{
+				"NomID": "b7736c12-6cbe-11ec-80dd-000c2999d0eb",
+				"Price": 1515.35,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-04T00:00:00",
+		"DocID": "893c0989-4412-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
+		"Date": "2022-10-04T15:15:08",
+		"IncomeUPD": "8190540",
+		"Goods": [
+			{
+				"NomID": "b7736c12-6cbe-11ec-80dd-000c2999d0eb",
+				"Price": 1551,
+				"NDS": 0,
+				"Quantity": 25,
+				"Brand": ""
+			}
+		]
 	}
 ]
