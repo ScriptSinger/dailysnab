@@ -94,11 +94,15 @@
 											if($arr['rez']){
 													// обновляем дату последней отправки (она очищается при посещении пользователем страници "заявки")
 													$STH = PreExecSQL(" UPDATE company_page_visited_send SET data_last_send_email=NOW()
+																							WHERE login_id IN (SELECT l.id FROM login l WHERE l.email=? )
+																								AND page_id=1 ; " ,
+																						array( $mm['email']));
+													/*$STH = PreExecSQL(" UPDATE company_page_visited_send SET data_last_send_email=NOW()
 																										WHERE company_id IN (SELECT t.id FROM company t WHERE t.login_id=(SELECT l.id FROM login l WHERE l.email=? ))
 																											AND page_id=1 ; " ,
 																						array( $mm['email']));
-													
-													$flag_update = 'update';
+													04-10-2022
+													*/
 													$rez = 'send update';
 													echo $mm['company_id'].' - '.$mm['email'].' - '.$rez.'<br/>';
 											}else{
