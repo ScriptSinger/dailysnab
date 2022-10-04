@@ -11,7 +11,7 @@
 	
 				$router = new AltoRouter();
 				
-			
+			vecho($_SESSION);
 				
 				$url_priznak = getArgs(1);
 				$status_buy_sell_id = getArgs(2);
