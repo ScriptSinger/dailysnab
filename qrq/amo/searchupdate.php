@@ -71,6 +71,8 @@ $context = stream_context_create(array(
 $response = file_get_contents('https://userapi.qwep.ru/search/updates', FALSE, $context);
 echo $response;
 
+    echo "111";
+    echo "<br>";
 
 $Resp = json_decode($response,true);
 
@@ -79,6 +81,8 @@ $Resp = json_decode($response,true);
     echo '</pre>';
     echo "<br>";
     
+    echo "222";
+    echo "<br>";
 
 
 ?>
