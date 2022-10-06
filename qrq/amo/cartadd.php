@@ -74,11 +74,10 @@ if (isset($_POST['accountid']))
     ));
 
 
-    $response = file_get_contents('https://userapi.qwep.ru/cart/add', FALSE, $context);
-//$Resp = json_decode($response, JSON_UNESCAPED_UNICODE);
+$response = file_get_contents('https://userapi.qwep.ru/cart/add', FALSE, $context);
+echo $response;
 
-    echo $response;
-
+echo "";
 
 
 ?>
