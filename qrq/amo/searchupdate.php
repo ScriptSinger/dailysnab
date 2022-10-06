@@ -71,14 +71,14 @@ $context = stream_context_create(array(
 $response = file_get_contents('https://userapi.qwep.ru/search/updates', FALSE, $context);
 echo $response;
 
-/*
+
 $Resp = json_decode($response,true);
 
     echo '<pre>';
     print_r($Resp);
     echo '</pre>';
     echo "<br>";
-    */
+    
 
 
 ?>
