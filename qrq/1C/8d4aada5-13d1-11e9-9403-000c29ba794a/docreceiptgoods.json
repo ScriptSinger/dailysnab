@@ -30950,5 +30950,75 @@
 				"Brand": ""
 			}
 		]
+	},
+	{
+		"DocID": "c5b78d76-4543-11ed-8db7-0cc47a03c9dc",
+		"data1c": "2022-10-06T00:00:00",
+		"Massiv": [
+			{
+				"DocID": "c5b78d76-4543-11ed-8db7-0cc47a03c9dc",
+				"StrID": 1,
+				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+				"ContractorID": "f39cc28f-7ea0-11ec-80c5-000c292c2d55",
+				"Date": "2022-09-30T23:59:59",
+				"buy_sell_id": "7985577",
+				"NomID": "94c946e1-6cbd-11ec-80dd-000c2999d0eb",
+				"Price": 6600,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"DocID": "2cd8d3b3-4544-11ed-8db7-0cc47a03c9dc",
+		"data1c": "2022-10-06T00:00:00",
+		"Massiv": [
+			{
+				"DocID": "2cd8d3b3-4544-11ed-8db7-0cc47a03c9dc",
+				"StrID": 1,
+				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+				"ContractorID": "c1537f67-7fa2-11ec-80c5-000c292c2d55",
+				"Date": "2022-10-06T11:57:47",
+				"buy_sell_id": "8371212",
+				"NomID": "01af732c-6cbe-11ec-80dd-000c2999d0eb",
+				"Price": 1636.76,
+				"NDS": 0,
+				"Quantity": 18,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"DocID": "5621929a-4545-11ed-8db7-0cc47a03c9dc",
+		"data1c": "2022-10-06T00:00:00",
+		"Massiv": [
+			{
+				"DocID": "5621929a-4545-11ed-8db7-0cc47a03c9dc",
+				"StrID": 1,
+				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+				"ContractorID": "76f13b79-7f96-11ec-80c5-000c292c2d55",
+				"Date": "2022-10-06T12:06:06",
+				"buy_sell_id": "8371189",
+				"NomID": "2c97b772-6cb9-11ec-80dd-000c2999d0eb",
+				"Price": 16000,
+				"NDS": 0,
+				"Quantity": 8,
+				"Brand": "AEOLUS"
+			},
+			{
+				"DocID": "5621929a-4545-11ed-8db7-0cc47a03c9dc",
+				"StrID": 2,
+				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+				"ContractorID": "76f13b79-7f96-11ec-80c5-000c292c2d55",
+				"Date": "2022-10-06T12:06:06",
+				"buy_sell_id": "8371187",
+				"NomID": "2695ebe8-6cb9-11ec-80dd-000c2999d0eb",
+				"Price": 28000,
+				"NDS": 0,
+				"Quantity": 4,
+				"Brand": "Forward"
+			}
+		]
 	}
 ]
