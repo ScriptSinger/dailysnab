@@ -77,7 +77,6 @@ if (isset($_POST['accountid']))
 $response = file_get_contents('https://userapi.qwep.ru/cart/add', FALSE, $context);
 echo $response;
 
-echo "";
 
 
 ?>
