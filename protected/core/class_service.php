@@ -37,9 +37,10 @@ class HtmlServive extends HtmlElement
 		$_SESSION['prava'][ $r['prava_id'] ] = true;// не забудь отметить в config.php
 		
 		// авторизация со стороннем ресуром
-			$qrq		= new ClassQrq();
-			$token 	= $qrq->AuthorizationAmo();
-			$_SESSION['AMO_TOKEN'] 	= $token;
+			//$qrq		= new ClassQrq();
+			//$token 	= $qrq->AuthorizationAmo();
+			//$_SESSION['AMO_TOKEN'] 	= $token;
+			$_SESSION['AMO_TOKEN'] 	= 'bd219dd9eb0f64d6e152d179dae9ba3dda6b4619';
 		///
 		
 		// закрепление заявок/объявл за пользователем после авторизации/регистрации
