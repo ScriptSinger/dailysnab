@@ -105,8 +105,7 @@ $context = stream_context_create(array(
 
 
 $response = file_get_contents('https://userapi.qwep.ru/search', FALSE, $context);
-$json = json_encode($response, JSON_UNESCAPED_UNICODE);
-echo $json;
+echo $response;
 
 
 ?>
