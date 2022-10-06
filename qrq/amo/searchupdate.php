@@ -72,9 +72,10 @@ $response = file_get_contents('https://userapi.qwep.ru/search/updates', FALSE, $
 echo $response;
 
 
-$Resp = json_decode($response,true);
 
 /*
+$Resp = json_decode($response,true);
+
     echo "111";
     echo "<br>";
 
