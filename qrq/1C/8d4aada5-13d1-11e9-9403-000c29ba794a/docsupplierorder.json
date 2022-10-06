@@ -28932,5 +28932,22 @@
 				"Brand": ""
 			}
 		]
+	},
+	{
+		"data1c": "2022-10-06T00:00:00",
+		"DocID": "fdb0413b-4547-11ed-8db7-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "1945a380-9bad-11ec-80c9-000c292c2d55",
+		"Date": "2022-10-06T09:30:17",
+		"IncomeUPD": "8379478",
+		"Goods": [
+			{
+				"NomID": "cebb4a44-4546-11ed-8db7-0cc47a03c9dc",
+				"Price": 12710.78,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
 	}
 ]
