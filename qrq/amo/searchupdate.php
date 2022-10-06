@@ -73,20 +73,5 @@ echo $response;
 echo '';
 
 
-/*
-$Resp = json_decode($response,true);
-
-    echo "111";
-    echo "<br>";
-
-    echo '<pre>';
-    print_r($Resp);
-    echo '</pre>';
-    echo "<br>";
-    
-    echo "222";
-    echo "<br>";
-    */
-
 
 ?>
