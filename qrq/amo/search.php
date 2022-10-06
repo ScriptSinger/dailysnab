@@ -104,7 +104,7 @@ $context = stream_context_create(array(
 ));
 
 
-$response = file_get_contents('https://userapi.qwep.ru/search', FALSE, $context);
+$response = file_get_contents('https://userapi.qwep.ru/search', TRUE, $context);
 echo $response;
 
 
