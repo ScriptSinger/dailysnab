@@ -112,20 +112,14 @@ $Resp = json_decode($response,true);
   
   $count = count($serg);
   echo "count = "+$count;
-     echo "<br>";
+  echo "<br>";
+  
   foreach ($serg as $value) 
   {
      echo $value['title'];
      echo "<br>";
   }  
 
-/*  
-foreach ($serg as $key => $value) {
-    // $arr[3] будет перезаписываться значениями $arr при каждой итерации цикла
-    echo "{$key} => {$value} ";
-    print_r($arr);
-}
-*/
 
 
   
