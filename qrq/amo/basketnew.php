@@ -115,15 +115,15 @@ function fnCountMass($pJson,$pStr)
      
      $pStrLen = strlen($pStr);
      
-     if ()
+     if ($pStrLen>0)
      {
-         
+         echo "";
      }
      
      if ($pCountOptions>0)
      {
         echo "<br>";
-        echo '<select name="select" id="select'.$pFieldId.'">';
+        echo '<select id="select'.$pFieldId.'">';
         echo '</select>';
         fnCountMass($pOptions,$pFieldId);
         echo "<br><br>";
