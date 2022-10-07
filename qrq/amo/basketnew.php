@@ -162,7 +162,11 @@ function fnCountMass($pJson)
      
      if ($pCountOptions>0)
      {
+        echo "<br>";
+        echo '<select name="select" id="serg">';
         fnCountMass($pValue['options']);
+        echo '</select>';
+        echo "<br><br>";
      }
      
      
