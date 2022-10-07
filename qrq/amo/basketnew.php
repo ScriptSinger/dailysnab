@@ -103,11 +103,25 @@ $response = file_get_contents('https://userapi.qwep.ru/basket', false, $context)
 //$Resp = json_decode($response, JSON_UNESCAPED_UNICODE);
 $Resp = json_decode($response,true);
 
+  
+  echo "111";
+  echo "<br><br>";
+
   $serg = $Resp->Response;
   echo $serg;
 
+  echo "<br><br>";
+  echo "222";
+  
+  echo "<br><br>";
   echo "<pre>";
   print_r($Resp);
   echo "</pre>";
-
+  echo "<br><br>";
+  
+  
 ?>
+
+
+
+
