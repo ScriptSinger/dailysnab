@@ -113,15 +113,19 @@ function fnCountMass($pJson,$pStrId)
      
      echo $pTitle.' - '.$pTypeName.' - '.$pFieldId;
      
-     $pStrLen = strlen($pStr);
+     $pStrLen = strlen($pStrId);
      
      if ($pStrLen>0)
      {
+         echo 'strlen';
+       
+        echo '<script>';
         echo 'var insSelect = document.getElementById("select".$pStrId);';
         echo 'var insOption = document.createElement("option");';
         echo 'insOption.innerHTML = $pStrId;';
         echo 'insOption.value = $pStrId;';
         echo 'insSelect.append(insOption);';
+        echo '</script>';
         
      }
      
