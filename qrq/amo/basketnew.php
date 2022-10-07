@@ -114,33 +114,7 @@ function fnCountMass($pJson,$pPapaId)
      $pAllText = $pTypeName.' - '.$pFieldName.' - '.$pFieldId.' = '.$pPapaId;
      
      
-     if ( ($pCountOptions==0) && ($pCountFields==0) )
-     {
-         
-         if ($pTypeName=='InputField')
-         {
-            echo "<div style='border:1px solid #000000; margin-top: 5px'>";
-            echo $pTitle; 
-            echo "<br>";
-            echo $pAllText;
-            echo "<br>";
-            
-            echo '<input type="text" />';
-            echo "</div>";
-         }
-         if ($pTypeName=='TextareaField')
-         {
-            echo "<div style='border:1px solid #000000; margin-top: 5px'>";
-            echo $pTitle; 
-            echo "<br>";
-            echo $pAllText;
-            echo "<br>";
 
-            echo '<textarea ></textarea>';
-            echo "</div>";
-         }
-     }     
-     
      $pParentId = strlen($pParentId);
      if ($pParentId>0)
      {
@@ -173,6 +147,35 @@ function fnCountMass($pJson,$pPapaId)
         fnCountMass($pOptions,$pFieldId);
         echo "</div>";
      }
+     
+     
+     if ( ($pCountOptions==0) && ($pCountFields==0) )
+     {
+         
+         if ($pTypeName=='InputField')
+         {
+            echo "<div style='border:1px solid #000000; margin-top: 5px'>";
+            echo $pTitle; 
+            echo "<br>";
+            echo $pAllText;
+            echo "<br>";
+            
+            echo '<input type="text" />';
+            echo "</div>";
+         }
+         if ($pTypeName=='TextareaField')
+         {
+            echo "<div style='border:1px solid #000000; margin-top: 5px'>";
+            echo $pTitle; 
+            echo "<br>";
+            echo $pAllText;
+            echo "<br>";
+
+            echo '<textarea ></textarea>';
+            echo "</div>";
+         }
+     }     
+          
      
      
      
