@@ -115,8 +115,8 @@ function fnCountMass($pJson,$pPapaId)
      
      
 
-     $pParentId = strlen($pParentId);
-     if ($pParentId>0)
+     $pPapaId = strlen($pPapaId);
+     if ($pPapaId>0)
      {
 
         echo '<script>';
