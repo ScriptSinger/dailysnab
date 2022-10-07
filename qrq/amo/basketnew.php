@@ -151,7 +151,7 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
         
         echo '<select id="select'.$pFieldId.'">';
         echo '</select>';
-//        fnCountMass($pOptions,$pFieldId,'');
+    //    fnCountMass($pOptions,$pFieldId,'');
         echo "</div>";
      }
      
