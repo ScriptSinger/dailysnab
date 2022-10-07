@@ -95,10 +95,10 @@ $Resp = json_decode($response,true);
 function fnCountMac($pJson)
 {
     
-  $count = count($serg);
+  $count = count($pJson);
   echo "Кол-во = ".$count;
   echo "<br>";    
-  foreach ($serg as $value) 
+  foreach ($pJson as $value) 
   {
      echo $value['title'].' - '.$value['typeName'];
      echo "<br>";
@@ -114,7 +114,7 @@ function fnCountMac($pJson)
   $serg = $Resp['Response']['entity']['baskets'][0]['basketForm']['fields'];
   
 
-  fnCountMac($pJson);
+  fnCountMac($serg);
 
 
 
