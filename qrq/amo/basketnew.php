@@ -118,7 +118,14 @@ foreach ($jsonIterator as $key => $val) {
     if(is_array($val)) {
         echo "$key:\n<br>";
     } else {
+        
+        $vallen = strlen($val);
+        if ($key=='fields' && $vallen>0 )
+        {
         echo "$key => $val\n<br>";
+            
+        }
+        
     }
 }
 
