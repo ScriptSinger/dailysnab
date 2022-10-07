@@ -28957,6 +28957,12 @@
 	},
 	{
 		"data1c": "2022-10-07T00:00:00",
+		"NomID": "da24d199-461e-11ed-8db7-0cc47a03c9dc",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-10-07T00:00:00",
 		"NomID": "87c7efa6-6934-11ec-80dd-000c2999d0eb",
 		"WhID": "8f383647-72a7-11ec-80c3-000c292c2d55",
 		"Quantity": 6156.046
@@ -77073,6 +77079,12 @@
 		"data1c": "2022-10-07T00:00:00",
 		"NomID": "5a843c85-07e0-11ed-8db5-0cc47a03c9dc",
 		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-10-07T00:00:00",
+		"NomID": "8b7fae31-461e-11ed-8db7-0cc47a03c9dc",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 1
 	},
 	{
