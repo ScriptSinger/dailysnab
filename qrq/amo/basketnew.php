@@ -109,10 +109,7 @@ function fnCountMass($pJson)
      $pText = $pValue['text'];
      
      
-     if ($pCountOptions>0)
-     {
-        fnCountMass($pValue['options']);
-     }
+
      
      if ( ($pCountOptions==0) && ($pCountFields==0) )
      {
@@ -154,6 +151,15 @@ function fnCountMass($pJson)
      }
      
      echo "<br><br>";
+     
+     
+     
+     if ($pCountOptions>0)
+     {
+        fnCountMass($pValue['options']);
+     }
+     
+     
   } 
   
   
