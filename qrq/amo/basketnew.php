@@ -116,7 +116,7 @@ $Resp = json_decode($response,true);
   
   foreach ($serg as $value) 
   {
-     echo $value['title'].' - '.['typeName'];
+     echo $value['title'].' - '.$value['typeName'];
      echo "<br>";
   }  
 
