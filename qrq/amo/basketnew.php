@@ -112,7 +112,7 @@ function fnCountMass($pJson, $pPapaId)
      $pFieldName = $pValueStr['fieldName'];
      
      
-     $pAllText = $pTypeName.' - '.$pFieldName.' - '.$pFieldId." = ".$pValue;
+     $pAllText = $pTypeName.' - '.$pFieldName.' - '.$pFieldId;
      
      if (strlen($pTitle)>0)
      {
@@ -129,7 +129,7 @@ function fnCountMass($pJson, $pPapaId)
         echo '<script>';
         echo ' var insSelect = document.getElementById("select'.$pPapaId.'"); ';
         echo ' var insOption = document.createElement("option"); ';
-        echo " insOption.innerHTML = '".$pTitleText.'-'.$pValue."'; "; 
+        echo " insOption.innerHTML = '".$pTitleText.'-'.$pValue.'-'.$pFieldId."'; "; 
         echo " insOption.value = '".$pTitleText."'; ";
         echo " insSelect.append(insOption); ";
         echo '</script>';
