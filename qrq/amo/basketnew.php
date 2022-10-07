@@ -157,7 +157,7 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
         echo '<select id="select'.$pFieldId.'">';
         echo '</select>';
         fnCountMass($pOptions,$pFieldId,'');
-        echo "<br><br>";
+        echo "<br>";
      }
      
      if ( ($pCountOptions==0) && ($pCountFields==0) )
@@ -214,10 +214,6 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
        echo "titletext =".$pTitle.' = '.$pText;
        */
      }
-     
-     echo "<br><br>";
-     
-     
      
 
      
