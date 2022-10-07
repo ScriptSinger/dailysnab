@@ -141,6 +141,21 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
          }
      }     
      
+     if ($pCountOptions>0)
+     {
+        echo "<div style='margin-top: 5px'>";
+        echo $pTitle; 
+        echo "<br>";
+        echo $pAllText.' => '.$pFieldId;
+        echo "<br>";
+        
+        echo '<select id="select'.$pFieldId.'">';
+        echo '</select>';
+//        fnCountMass($pOptions,$pFieldId,'');
+        echo "</div>";
+     }
+     
+     
      /*
      $pAllText = $pTypeName.' - '.$pFieldId.' + '.$pEndtId;
 
