@@ -134,7 +134,7 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
         echo '<script>';
         echo ' var insSelect = document.getElementById("select'.$pBeginId.'"); ';
         echo ' var insOption = document.createElement("option"); ';
-        echo " insOption.innerHTML = '".$pTitleText.'#'.$pValue.'='.$pFieldId."'; "; 
+        echo " insOption.innerHTML = '".$pTitleText.'#'.$pValue."'; "; 
         echo " insOption.value = '".$pBeginId."'; ";
         echo " insSelect.append(insOption); ";
         echo '</script>';
@@ -244,30 +244,7 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
   echo "<br><br>";
   echo "222";
   echo "<br><br>";
-  
-/*  
-  $jsonIterator = new RecursiveIteratorIterator(
-    new RecursiveArrayIterator(json_decode($response, TRUE)),
-    RecursiveIteratorIterator::SELF_FIRST);
 
-foreach ($jsonIterator as $key => $val) {
-    if(is_array($val)) {
-        echo "$key:\n<br>";
-    } else {
-        
-        $vallen = strlen($val);
-        //if ( ($key=='fields') && ($vallen>0) )
-        {
-        echo "$key => $val\n<br>";
-            
-        }
-        
-    }
-}
-*/
-
-  echo "<br><br>";
-  echo "333";
   
   echo "<br><br>";
   echo "<pre>";
