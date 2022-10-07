@@ -92,7 +92,7 @@ $Resp = json_decode($response,true);
 
 
 
-function fnCountMass($pJson,$pStr)
+function fnCountMass($pJson,$pStrId)
 {
     
   $pCount = count($pJson);
@@ -117,12 +117,12 @@ function fnCountMass($pJson,$pStr)
      
      if ($pStrLen>0)
      {
-         echo "";
-         
-         var insOption = document.createElement('option');
-                    insOption.innerHTML = $pStr;
-                    insOption.value = $pStr;
-                    vSelect.append(insOption);
+        echo 'var insSelect = document.getElementById("select".$pStrId);';
+        echo 'var insOption = document.createElement("option");';
+        echo 'insOption.innerHTML = $pStrId;';
+        echo 'insOption.value = $pStrId;';
+        echo 'insSelect.append(insOption);';
+        
      }
      
      if ($pCountOptions>0)
