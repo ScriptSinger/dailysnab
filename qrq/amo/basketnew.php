@@ -96,9 +96,7 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
 {
     
   $pCount = count($pJson);
-//  echo "<br><br>";    
-//  echo "Кол-во = ".$pCount;
- // echo "<br>";    
+
   foreach ($pJson as $pValueStr) 
   {
 
@@ -114,7 +112,33 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
      $pFieldName = $pValueStr['fieldName'];
      
      
+     if ( ($pCountOptions==0) && ($pCountFields==0) )
+     {
+         
+         if ($pTypeName=='InputField')
+         {
+            echo $pTitle; 
+            echo "<br>";
+            echo $pAllText;
+            echo "<br>";
+            
+            echo '<input type="text" />';
+            echo "<br>";
+         }
+         if ($pTypeName=='TextareaField')
+         {
+            echo "<br>";
+            echo $pTitle; 
+            echo "<br>";
+            echo $pAllText;
+            echo "<br>";
+
+            echo '<textarea ></textarea>';
+            echo "<br>";
+         }
+     }     
      
+     /*
      $pAllText = $pTypeName.' - '.$pFieldId.' + '.$pEndtId;
 
      if (strlen($pTitle)>0)
@@ -142,7 +166,6 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
         if ($pCountFields>0)
         {
             fnCountMass($pFields,$pValue,$pValue);
-            //echo "111 = ".$pValue;
         }
         
      }
@@ -163,14 +186,6 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
      
      if ( ($pCountOptions==0) && ($pCountFields==0) )
      {
-         /*
-         if ($pValue['typeName']=='SelectField')
-         {
-            echo '<select name="select">';
-            echo '<option value="1">0= '.fnCountMass.'</option>';
-            echo '</select>';
-         }
-         */
          
          if ($pTypeName=='InputField')
          {
@@ -194,32 +209,7 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
             echo "<br>";
          }
      }
-     else
-     {
-         /*
-         if ($pValue['typeName']=='SelectField')
-         {
-            echo "<br>";
-            echo '<select name="select" id="">';
-            echo '<option value="1">0> '.$pText.'</option>';
-            echo '</select>';
-         }
-         */
-      /*   
-       echo "<br>";
-       echo "options =".$pCountOptions;
-       echo "<br>";
-       echo "fields =".$pCountFields;
-       echo "<br>";
-       echo "fieldId =".$pFieldId;
-       echo "<br>";
-       echo "value =".$pValue;
-       echo "<br>";
-       echo "titletext =".$pTitle.' = '.$pText;
-       */
-     }
-     
-
+     */
      
      
   } 
