@@ -150,7 +150,7 @@ function fnCountMass($pJson)
        echo "<br>";
        echo "fields =".$pCountFields;
        echo "<br>";
-       echo "text =".$pText;
+       echo "titletext =".$pTitle.' = '.$pText;
      }
      
      echo "<br><br>";
