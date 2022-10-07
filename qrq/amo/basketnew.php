@@ -112,7 +112,7 @@ function fnCountMac($pJson)
      
      if ($pCountOptions>0)
      {
-         fnCountMac($pValue['options']);
+       //  fnCountMac($pValue['options']);
      }
      
      
