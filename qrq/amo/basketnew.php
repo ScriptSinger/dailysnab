@@ -108,7 +108,7 @@ $Resp = json_decode($response,true);
   echo "<br><br>";
 
 
-  $serg = $Resp['Response']['entity']['baskets'][0]['basketForm'];
+  $serg = $Resp['Response']['entity']['baskets'][0]['basketForm']['fields'];
   print_r($serg);
   echo "<br><br>";
   echo "222";
