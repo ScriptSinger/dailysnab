@@ -106,10 +106,6 @@ function fnCountMass($pJson)
      $pCountOptions = count($pValue['options']);
      $pCountFields = count($pValue['fields']);
      
-     echo "<br>";
-     echo "options =".$pCountOptions;
-     echo "<br>";
-     echo "fields =".$pCountFields;
      
      if ($pCountOptions>0)
      {
@@ -120,13 +116,21 @@ function fnCountMass($pJson)
      {
          if ($pValue['typeName']=='InputField')
          {
-             echo '<input type="text" />';
+            echo "<br>";
+            echo '<input type="text" />';
          }
          if ($pValue['typeName']=='TextareaField')
          {
-             echo '<textarea ></textarea>';
-             
+            echo "<br>";
+            echo '<textarea ></textarea>';
          }
+     }
+     else
+     {
+       echo "<br>";
+       echo "options =".$pCountOptions;
+       echo "<br>";
+       echo "fields =".$pCountFields;
      }
      
      echo "<br><br>";
