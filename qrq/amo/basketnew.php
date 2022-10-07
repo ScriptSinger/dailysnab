@@ -115,7 +115,7 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
      
      
      
-     $pAllText = $pTypeName.' - '.$pFieldId.' + '.$pEndtId;
+     $pAllText = $pTypeName.' - '.$pFieldId.' + '.$pEndtId.' = '.$pBeginId;
 
      if (strlen($pTitle)>0)
      {
