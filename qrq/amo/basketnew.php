@@ -127,10 +127,10 @@ function fnCountMass($pJson,$pPapaId)
         echo " insSelect.append(insOption); ";
         echo '</script>';
         
-        if ($pCountFields>0)
-        {
+      //  if ($pCountFields>0)
+      //  {
         //    fnCountMass($pFields,$pValue,$pValue);
-        }
+       // }
         
      }
 
