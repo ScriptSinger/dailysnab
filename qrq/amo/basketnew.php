@@ -126,12 +126,11 @@ function fnCountMass($pJson,$pStrId)
      $pStrLen = strlen($pStrId);
      if ($pStrLen>0)
      {
-         echo 'strlen = '.$pTitleText;
-       
+
         echo '<script>';
         echo ' var insSelect = document.getElementById("select'.$pStrId.'"); ';
         echo ' var insOption = document.createElement("option"); ';
-        echo ' insOption.innerHTML = '.$pStrId.'; '; 
+        echo ' insOption.innerHTML = "'.$pTitleText.'"; '; 
         echo ' insOption.value = '.$pStrId.'; ';
         echo ' insSelect.append(insOption); ';
         echo '</script>';
