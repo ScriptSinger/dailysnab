@@ -135,7 +135,7 @@ function fnCountMass($pJson,$pStrId)
         echo " insSelect.append(insOption); ";
         echo '</script>';
         
-        if (fields>0)
+        if ($pCountFields>0)
         {
             echo "111111111111111111";
         }
