@@ -107,8 +107,20 @@ $Resp = json_decode($response,true);
   echo "111";
   echo "<br><br>";
 
-  $serg = $response['Response']['entity'];
-  echo $serg;
+
+  
+  
+  $jsonIterator = new RecursiveIteratorIterator(
+    new RecursiveArrayIterator(json_decode($response, TRUE)),
+    RecursiveIteratorIterator::SELF_FIRST);
+
+foreach ($jsonIterator as $key => $val) {
+    if(is_array($val)) {
+        echo "$key:\n";
+    } else {
+        echo "$key => $val\n";
+    }
+}
 
 
   echo "<br><br>";
