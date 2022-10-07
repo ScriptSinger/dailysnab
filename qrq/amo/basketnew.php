@@ -120,7 +120,7 @@ foreach ($jsonIterator as $key => $val) {
     } else {
         
         $vallen = strlen($val);
-        if ($key=='fields' && $vallen>0 )
+        if ( ($key=='fields') && ($vallen>0) )
         {
         echo "$key => $val\n<br>";
             
