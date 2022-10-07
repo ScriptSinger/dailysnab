@@ -124,8 +124,8 @@ function fnCountMass($pJson,$pBeginId,$pEndId)
      }
 
      
-     $pStrLen = strlen($pStrId);
-     if ($pStrLen>0)
+     $pBeginLen = strlen($pBeginId);
+     if ($pBeginLen>0)
      {
 
         echo '<script>';
