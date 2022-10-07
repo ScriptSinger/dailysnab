@@ -119,17 +119,18 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
          
          if ($pTypeName=='InputField')
          {
+            echo "<div style='border: 1px solid #000000;margin-top: 5px'>";
             echo $pTitle; 
             echo "<br>";
             echo $pAllText;
             echo "<br>";
             
             echo '<input type="text" />';
-            echo "<br>";
+            echo "</div>";
          }
          if ($pTypeName=='TextareaField')
          {
-            echo "<div style='border: 2px solid #000000'>";
+            echo "<div style='border: 1px solid #000000;margin-top: 5px'>";
             echo $pTitle; 
             echo "<br>";
             echo $pAllText;
