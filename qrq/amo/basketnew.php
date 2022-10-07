@@ -115,10 +115,10 @@ function fnCountMass($pJson)
      if ( ($pCountOptions==0) && ($pCountFields==0) )
      {
          
-         if ($pValue['typeName']=='InputField')
+         if ($pValue['typeName']=='SelectField')
          {
             echo '<select name="select">';
-            echo '<option value="1">'.fnCountMass.'</option>';
+            echo '<option value="1">0= '.fnCountMass.'</option>';
             echo '</select>';
          }
          
@@ -135,6 +135,14 @@ function fnCountMass($pJson)
      }
      else
      {
+         
+         if ($pValue['typeName']=='SelectField')
+         {
+            echo '<select name="select">';
+            echo '<option value="1">0> '.fnCountMass.'</option>';
+            echo '</select>';
+         }
+         
        echo "<br>";
        echo "options =".$pCountOptions;
        echo "<br>";
