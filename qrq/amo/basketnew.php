@@ -101,12 +101,11 @@ function fnCountMass($pJson,$pStr)
   echo "<br>";    
   foreach ($pJson as $pValueStr) 
   {
-     
-     
+
      $pCountOptions = count($pValueStr['options']);
      $pCountFields = count($pValueStr['fields']);
      $pValue = $pValueStr['value'];
-     $pOptions = count($pValueStr['options']);
+     $pOptions = $pValueStr['options'];
      $pFieldId = $pValueStr['fieldId'];
      $pTitle = $pValueStr['title'];
      $pText = $pValueStr['text'];
