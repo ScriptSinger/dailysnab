@@ -106,9 +106,9 @@ function fnCountMac($pJson)
      $pCountFields = count($pValue['fields']);
      
      echo "<br>";
-     echo "options =".$pValue['options'];
+     echo "options =".$pCountOptions;
      echo "<br>";
-     echo "fields =".$pValue['fields'];
+     echo "fields =".$pCountFields;
      
      
      echo "<br><br>";
