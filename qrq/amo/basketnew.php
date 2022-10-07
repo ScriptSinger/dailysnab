@@ -105,7 +105,7 @@ function fnCountMass($pJson,$pStr)
      
      $pCountOptions = count($pValueStr['options']);
      $pCountFields = count($pValueStr['fields']);
-     //$palue = $pValueStr['value'];
+  //   $pValue = $pValueStr['value'];
      $pFieldId = $pValueStr['fieldId'];
      $pTitle = $pValueStr['title'];
      $pText = $pValueStr['text'];
@@ -162,6 +162,8 @@ function fnCountMass($pJson,$pStr)
        echo "fields =".$pCountFields;
        echo "<br>";
        echo "fieldId =".$pFieldId;
+       echo "<br>";
+    //   echo "value =".$pValue;
        echo "<br>";
        echo "titletext =".$pTitle.' = '.$pText;
      }
