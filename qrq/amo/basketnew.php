@@ -105,6 +105,7 @@ function fnCountMass($pJson)
      
      $pCountOptions = count($pValue['options']);
      $pCountFields = count($pValue['fields']);
+     $pTitle = $pValue['title'];
      $pText = $pValue['text'];
      
      
@@ -140,7 +141,7 @@ function fnCountMass($pJson)
          if ($pValue['typeName']=='SelectField')
          {
             echo '<select name="select">';
-            echo '<option value="1">0> '.fnCountMass.'</option>';
+            echo '<option value="1">0> '.$pText.'</option>';
             echo '</select>';
          }
          
@@ -148,6 +149,8 @@ function fnCountMass($pJson)
        echo "options =".$pCountOptions;
        echo "<br>";
        echo "fields =".$pCountFields;
+       echo "<br>";
+       echo "text =".$pText;
      }
      
      echo "<br><br>";
