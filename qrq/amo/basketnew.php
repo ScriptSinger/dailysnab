@@ -112,7 +112,7 @@ function fnCountMass($pJson,$pBeginId,$pParentId)
      $pText = $pValueStr['text'];
      $pTypeName = $pValueStr['typeName'];
      
-     $pAllText = $pTitle.' - '.$pText.' - '.$pTypeName.' - '.$pFieldId.' + '.$pParentId;
+     $pAllText = $pTitle.' - '.$pText.' - '.$pTypeName.' - '.$pFieldId.' + '.$pBeginId;
 
      if (strlen($pTitle)>0)
      {
@@ -138,7 +138,7 @@ function fnCountMass($pJson,$pBeginId,$pParentId)
         
         if ($pCountFields>0)
         {
-            fnCountMass($pFields,$pValue,$pParentId);
+            fnCountMass($pFields,$pValue,$pBeginId);
             //echo "111 = ".$pValue;
         }
         
@@ -219,10 +219,10 @@ function fnCountMass($pJson,$pBeginId,$pParentId)
   echo "<br><br>";
 
   // основной массив
-  $serg = $Resp['Response']['entity']['baskets'][0]['basketForm']['fields'];
+  $pOsn = $Resp['Response']['entity']['baskets'][0]['basketForm']['fields'];
   
 
-  fnCountMass($serg,'','');
+  fnCountMass($pOsn,'','');
 
 
 
