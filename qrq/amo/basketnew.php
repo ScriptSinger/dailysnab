@@ -92,7 +92,7 @@ $Resp = json_decode($response,true);
 
 
 
-function fnCountMass($pJson,$pPapaId)
+function fnCountMass($pJson, $pPapaId)
 {
     
   $pCount = count($pJson);
@@ -145,6 +145,7 @@ function fnCountMass($pJson,$pPapaId)
         echo '<select id="select'.$pFieldId.'">';
         echo '</select>';
         fnCountMass($pOptions,$pFieldId);
+        echo $pAllText.' <=> '.$pFieldId;
         echo "</div>";
      }
      
