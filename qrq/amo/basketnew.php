@@ -92,9 +92,19 @@ $Resp = json_decode($response,true);
 
 
 
-function fnVountMac(pJson)
+function fnCountMac($pJson)
 {
     
+  $count = count($serg);
+  echo "Кол-во = ".$count;
+  echo "<br>";    
+  foreach ($serg as $value) 
+  {
+     echo $value['title'].' - '.$value['typeName'];
+     echo "<br>";
+  } 
+  
+  
 }
   
   echo "111";
@@ -103,15 +113,9 @@ function fnVountMac(pJson)
   // основной массив
   $serg = $Resp['Response']['entity']['baskets'][0]['basketForm']['fields'];
   
-  $count = count($serg);
-  echo "Кол-во = ".$count;
-  echo "<br>";
-  
-  foreach ($serg as $value) 
-  {
-     echo $value['title'].' - '.$value['typeName'];
-     echo "<br>";
-  }  
+
+  fnCountMac($pJson);
+
 
 
 
