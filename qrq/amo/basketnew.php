@@ -96,6 +96,7 @@ function fnCountMass($pJson)
 {
     
   $pCount = count($pJson);
+  echo "<br><br>";    
   echo "Кол-во = ".$pCount;
   echo "<br>";    
   foreach ($pJson as $pValue) 
