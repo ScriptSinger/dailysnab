@@ -171,12 +171,12 @@ function fnCountMass($pJson)
   
   echo "<br><br>";
   
-  print_r($serg);
+ // print_r($serg);
   echo "<br><br>";
   echo "222";
   echo "<br><br>";
   
-  
+/*  
   $jsonIterator = new RecursiveIteratorIterator(
     new RecursiveArrayIterator(json_decode($response, TRUE)),
     RecursiveIteratorIterator::SELF_FIRST);
@@ -195,7 +195,7 @@ foreach ($jsonIterator as $key => $val) {
         
     }
 }
-
+*/
 
   echo "<br><br>";
   echo "333";
