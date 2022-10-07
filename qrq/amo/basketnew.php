@@ -96,8 +96,8 @@ function fnCountMass($pJson,$pStr)
 {
     
   $pCount = count($pJson);
-  echo "<br><br>";    
-  echo "Кол-во = ".$pCount;
+//  echo "<br><br>";    
+//  echo "Кол-во = ".$pCount;
   echo "<br>";    
   foreach ($pJson as $pValueStr) 
   {
@@ -164,7 +164,7 @@ function fnCountMass($pJson,$pStr)
        echo "<br>";
        echo "fieldId =".$pFieldId;
        echo "<br>";
-    //   echo "value =".$pValue;
+       echo "value =".$pValue;
        echo "<br>";
        echo "titletext =".$pTitle.' = '.$pText;
      }
