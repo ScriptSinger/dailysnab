@@ -92,7 +92,7 @@ $Resp = json_decode($response,true);
 
 
 
-function fnCountMass($pJson,$pBeginId,$pParentId)
+function fnCountMass($pJson,$pBeginId,$pEndtId)
 {
     
   $pCount = count($pJson);
@@ -112,7 +112,7 @@ function fnCountMass($pJson,$pBeginId,$pParentId)
      $pText = $pValueStr['text'];
      $pTypeName = $pValueStr['typeName'];
      
-     $pAllText = $pTitle.' - '.$pText.' - '.$pTypeName.' - '.$pFieldId.' + '.$pBeginId;
+     $pAllText = $pTitle.' - '.$pText.' - '.$pTypeName.' - '.$pFieldId.' + '.$pEndtId;
 
      if (strlen($pTitle)>0)
      {
@@ -138,7 +138,7 @@ function fnCountMass($pJson,$pBeginId,$pParentId)
         
         if ($pCountFields>0)
         {
-            fnCountMass($pFields,$pValue,$pBeginId);
+            fnCountMass($pFields,$pValue,$pEndtId);
             //echo "111 = ".$pValue;
         }
         
