@@ -112,9 +112,18 @@ function fnCountMass($pJson,$pStrId)
      $pTypeName = $pValueStr['typeName'];
      
      echo $pTitle.' - '.$pTypeName.' - '.$pFieldId;
+
+     if (strlen($pTitle)>0)
+     {
+       $pTitleText = $pTitle;  
+     }
+     if (strlen($pText)>0)
+     {
+       $pTitleText = $pText;  
+     }
+
      
      $pStrLen = strlen($pStrId);
-     
      if ($pStrLen>0)
      {
          echo 'strlen';
@@ -122,7 +131,7 @@ function fnCountMass($pJson,$pStrId)
         echo '<script>';
         echo ' var insSelect = document.getElementById("select'.$pStrId.'"); ';
         echo ' var insOption = document.createElement("option"); ';
-        echo ' insOption.innerHTML = '.$pStrId.'; '; 
+        echo ' insOption.innerHTML = '.$pTitleText.'; '; 
         echo ' insOption.value = '.$pStrId.'; ';
         echo ' insSelect.append(insOption); ';
         echo '</script>';
