@@ -109,6 +109,11 @@ $Resp = json_decode($response,true);
 
 
   $serg = $Resp['Response']['entity']['baskets'][0]['basketForm']['fields'];
+  
+  $count = count($serg);
+  echo "count = "+$count;
+  echo "<br><br>";
+  
   print_r($serg);
   echo "<br><br>";
   echo "222";
