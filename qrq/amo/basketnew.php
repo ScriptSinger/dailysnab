@@ -127,7 +127,6 @@ function fnCountMass($pJson,$pStrId)
      if ($pStrLen>0)
      {
 
-        echo $pAllText; 
         echo '<script>';
         echo ' var insSelect = document.getElementById("select'.$pStrId.'"); ';
         echo ' var insOption = document.createElement("option"); ';
