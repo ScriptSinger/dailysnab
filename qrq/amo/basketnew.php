@@ -92,7 +92,7 @@ $Resp = json_decode($response,true);
 
 
 
-function fnCountMac($pJson)
+function fnCountMass($pJson)
 {
     
   $pCount = count($pJson);
@@ -112,7 +112,7 @@ function fnCountMac($pJson)
      
      if ($pCountOptions>0)
      {
-       //  fnCountMac($pValue['options']);
+        fnCountMass($pValue['options']);
      }
      
      
@@ -129,7 +129,7 @@ function fnCountMac($pJson)
   $serg = $Resp['Response']['entity']['baskets'][0]['basketForm']['fields'];
   
 
-  fnCountMac($serg);
+  fnCountMass($serg);
 
 
 
