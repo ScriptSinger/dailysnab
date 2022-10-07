@@ -146,7 +146,7 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
         echo "<div style='margin-top: 5px'>";
         echo $pTitle; 
         echo "<br>";
-        echo $pAllText.' => '.$pFieldId;
+        echo $pAllText;
         echo "<br>";
         
         echo '<select id="select'.$pFieldId.'">';
