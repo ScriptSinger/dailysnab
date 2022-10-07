@@ -138,7 +138,7 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
         
         if ($pCountFields>0)
         {
-            fnCountMass($pFields,$pValue,$pEndtId);
+            fnCountMass($pFields,$pValue,$pBeginId);
             //echo "111 = ".$pValue;
         }
         
