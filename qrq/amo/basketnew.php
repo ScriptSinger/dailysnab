@@ -99,16 +99,17 @@ function fnCountMass($pJson,$pStr)
   echo "<br><br>";    
   echo "Кол-во = ".$pCount;
   echo "<br>";    
-  foreach ($pJson as $pValue) 
+  foreach ($pJson as $pValueStr) 
   {
      
      
-     $pFieldId = $pValue['fieldId'];
-     $pCountOptions = count($pValue['options']);
-     $pCountFields = count($pValue['fields']);
-     $pTitle = $pValue['title'];
-     $pText = $pValue['text'];
-     $pTypeName = $pValue['typeName'];
+     $pCountOptions = count($pValueStr['options']);
+     $pCountFields = count($pValueStr['fields']);
+     //$palue = $pValueStr['value'];
+     $pFieldId = $pValueStr['fieldId'];
+     $pTitle = $pValueStr['title'];
+     $pText = $pValueStr['text'];
+     $pTypeName = $pValueStr['typeName'];
      
      echo $pTitle.' - '.$pTypeName.' - '.$pFieldId;
      
@@ -132,12 +133,12 @@ function fnCountMass($pJson,$pStr)
          }
          */
          
-         if ($pValue['typeName']=='InputField')
+         if ($pTypeName=='InputField')
          {
             echo "<br>";
             echo '<input type="text" />';
          }
-         if ($pValue['typeName']=='TextareaField')
+         if ($pTypeName=='TextareaField')
          {
             echo "<br>";
             echo '<textarea ></textarea>';
