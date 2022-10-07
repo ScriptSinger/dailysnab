@@ -130,8 +130,8 @@ function fnCountMass($pJson,$pStrId)
         echo '<script>';
         echo ' var insSelect = document.getElementById("select'.$pStrId.'"); ';
         echo ' var insOption = document.createElement("option"); ';
-        echo " insOption.innerHTML = '$pTitleText'; "; 
-        echo " insOption.value = '$pStrId'; ";
+        echo " insOption.innerHTML = '".$pTitleText."'; "; 
+        echo " insOption.value = '".$pStrId."'; ";
         echo " insSelect.append(insOption); ";
         echo '</script>';
         
