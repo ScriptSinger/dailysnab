@@ -98,7 +98,7 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
   $pCount = count($pJson);
 //  echo "<br><br>";    
 //  echo "Кол-во = ".$pCount;
-  echo "<br>";    
+ // echo "<br>";    
   foreach ($pJson as $pValueStr) 
   {
 
@@ -149,6 +149,7 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
      
      if ($pCountOptions>0)
      {
+        echo "<br>";
         echo $pTitle; 
         echo "<br>";
         echo $pAllText;
@@ -179,10 +180,11 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
             echo "<br>";
             
             echo '<input type="text" />';
-             echo "<br>";
+            echo "<br>";
          }
          if ($pTypeName=='TextareaField')
          {
+            echo "<br>";
             echo $pTitle; 
             echo "<br>";
             echo $pAllText;
