@@ -141,6 +141,25 @@ function fnCountMass($pJson,$pParentId)
          }
      }     
      
+     $pParentId = strlen($pParentId);
+     if ($pParentId>0)
+     {
+
+        echo '<script>';
+        echo ' var insSelect = document.getElementById("select'.$pParentId.'"); ';
+        echo ' var insOption = document.createElement("option"); ';
+        echo " insOption.innerHTML = '".$pTitleText.'-'.$pValue."'; "; 
+        echo " insOption.value = '".$pValue."'; ";
+        echo " insSelect.append(insOption); ";
+        echo '</script>';
+        
+        if ($pCountFields>0)
+        {
+        //    fnCountMass($pFields,$pValue,$pValue);
+        }
+        
+     }
+
      if ($pCountOptions>0)
      {
         echo "<div style='border:1px solid #000000; margin-top: 5px'>";
@@ -154,6 +173,7 @@ function fnCountMass($pJson,$pParentId)
         fnCountMass($pOptions,$pFieldId);
         echo "</div>";
      }
+     
      
      
      /*
