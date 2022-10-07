@@ -116,6 +116,18 @@ function fnCountMass($pJson)
         fnCountMass($pValue['options']);
      }
      
+     if ( ($pCountOptions==0) && ($pCountFields==0) )
+     {
+         if ($pValue['typeName']=='InputField')
+         {
+             echo '<input type="text" />';
+         }
+         if ($pValue['typeName']=='TextareaField')
+         {
+             echo '<textarea ></textarea>';
+             
+         }
+     }
      
      echo "<br><br>";
   } 
