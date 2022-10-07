@@ -118,6 +118,11 @@ function fnCountMass($pJson,$pStr)
      if ($pStrLen>0)
      {
          echo "";
+         
+         var insOption = document.createElement('option');
+                    insOption.innerHTML = $pStr;
+                    insOption.value = $pStr;
+                    vSelect.append(insOption);
      }
      
      if ($pCountOptions>0)
