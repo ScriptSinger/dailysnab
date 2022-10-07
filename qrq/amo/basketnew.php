@@ -120,17 +120,17 @@ function fnCountMass($pJson,$pPapaId)
      {
 
         echo '<script>';
-        echo ' var insSelect = document.getElementById("select'.$pPapaId.'"); ';
+        echo ' var insSelect = document.getElementById("select'.$pFieldId.'"); ';
         echo ' var insOption = document.createElement("option"); ';
         echo " insOption.innerHTML = '".$pTitleText.'-'.$pValue.'='.$pCountFields."'; "; 
         echo " insOption.value = '".$pValue."'; ";
         echo " insSelect.append(insOption); ";
         echo '</script>';
         
-      //  if ($pCountFields>0)
-      //  {
-        //    fnCountMass($pFields,$pValue,$pValue);
-       // }
+        if ($pCountFields>0)
+        {
+            fnCountMass($pFields,$pValue,$pValue);
+        }
         
      }
 
@@ -139,7 +139,7 @@ function fnCountMass($pJson,$pPapaId)
         echo "<div style='border:1px solid #000000; margin-top: 5px'>";
         echo $pTitle; 
         echo "<br>";
-        echo $pAllText.' + '.$pFieldId;
+        echo $pAllText;
         echo "<br>";
         
         echo '<select id="select'.$pFieldId.'">';
