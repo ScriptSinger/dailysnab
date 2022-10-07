@@ -92,7 +92,7 @@ $Resp = json_decode($response,true);
 
 
 
-function fnCountMass($pJson)
+function fnCountMass($pJson,$pStr)
 {
     
   $pCount = count($pJson);
@@ -112,7 +112,14 @@ function fnCountMass($pJson)
      
      echo $pTitle.' - '.$pTypeName.' - '.$pFieldId;
      
-
+     if ($pCountOptions>0)
+     {
+        echo "<br>";
+        echo '<select name="select" id="serg">';
+        fnCountMass($pValue['options']);
+        echo '</select>';
+        echo "<br><br>";
+     }
      
      if ( ($pCountOptions==0) && ($pCountFields==0) )
      {
@@ -160,14 +167,7 @@ function fnCountMass($pJson)
      
      
      
-     if ($pCountOptions>0)
-     {
-        echo "<br>";
-        echo '<select name="select" id="serg">';
-        fnCountMass($pValue['options']);
-        echo '</select>';
-        echo "<br><br>";
-     }
+
      
      
   } 
@@ -182,7 +182,7 @@ function fnCountMass($pJson)
   $serg = $Resp['Response']['entity']['baskets'][0]['basketForm']['fields'];
   
 
-  fnCountMass($serg);
+  fnCountMass($serg,'');
 
 
 
