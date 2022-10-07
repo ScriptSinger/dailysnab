@@ -110,6 +110,11 @@ function fnCountMac($pJson)
      echo "<br>";
      echo "fields =".$pCountFields;
      
+     if ($pCountOptions>0)
+     {
+         fnCountMac($pValue['options']);
+     }
+     
      
      echo "<br><br>";
   } 
