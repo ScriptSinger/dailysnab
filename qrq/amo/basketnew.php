@@ -111,7 +111,9 @@ function fnCountMass($pJson, $pPapaId)
      $pTypeName = $pValueStr['typeName'];
      $pFieldName = $pValueStr['fieldName'];
      
-     $pAllText = $pTypeName.' - '.$pFieldName.' - '.$pFieldId.' +++ '.$pPapaId;
+     
+     echo 'soska = '.$pPapaId;
+     $pAllText = $pTypeName.' - '.$pFieldName.' - '.$pFieldId;
      
      
 
@@ -145,7 +147,6 @@ function fnCountMass($pJson, $pPapaId)
         echo '<select id="select'.$pFieldId.'">';
         echo '</select>';
         fnCountMass($pOptions,$pFieldId);
-        echo $pAllText.' <=> '.$pFieldId;
         echo "</div>";
      }
      
