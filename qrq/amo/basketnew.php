@@ -120,7 +120,7 @@ function fnCountMass($pJson,$pPapaId)
      {
 
         echo '<script>';
-        echo ' var insSelect = document.getElementById("select'.$pFieldId.'"); ';
+        echo ' var insSelect = document.getElementById("select'.$pPapaId.'"); ';
         echo ' var insOption = document.createElement("option"); ';
         echo " insOption.innerHTML = '".$pTitleText.'-'.$pValue.'='.$pCountFields."'; "; 
         echo " insOption.value = '".$pValue."'; ";
@@ -129,7 +129,7 @@ function fnCountMass($pJson,$pPapaId)
         
         if ($pCountFields>0)
         {
-            fnCountMass($pFields,$pValue,$pValue);
+     //       fnCountMass($pFields,$pValue,$pValue);
         }
         
      }
