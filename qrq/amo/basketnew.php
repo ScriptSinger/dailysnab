@@ -113,6 +113,13 @@ function fnCountMass($pJson,$pStr)
      
      echo $pTitle.' - '.$pTypeName.' - '.$pFieldId;
      
+     $pStrLen = strlen($pStr);
+     
+     if ()
+     {
+         
+     }
+     
      if ($pCountOptions>0)
      {
         echo "<br>";
