@@ -107,8 +107,9 @@ $Resp = json_decode($response,true);
   echo "111";
   echo "<br><br>";
 
-  $serg = $Resp->Response;
+  $serg = $response->Response;
   echo $serg;
+
 
   echo "<br><br>";
   echo "222";
