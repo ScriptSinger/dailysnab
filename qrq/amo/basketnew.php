@@ -11,19 +11,6 @@ $pWhere = '';
 
 
 
-/*
-if (isset($_GET['pparam']))
-{
-    $pParam = $_GET['pparam'];
-    $pParam = trim($pParam);
-}
-if (isset($_POST['pparam']))
-{
-    $pParam = $_POST['pparam'];
-    $pParam = trim($pParam);
-}
-*/
-
 if (isset($_GET['token']))
 {
     $pToken = $_GET['token'];
@@ -103,6 +90,12 @@ $response = file_get_contents('https://userapi.qwep.ru/basket', false, $context)
 //$Resp = json_decode($response, JSON_UNESCAPED_UNICODE);
 $Resp = json_decode($response,true);
 
+
+
+function fnVountMac(pJson)
+{
+    
+}
   
   echo "111";
   echo "<br><br>";
