@@ -134,14 +134,14 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
         echo '<script>';
         echo ' var insSelect = document.getElementById("select'.$pBeginId.'"); ';
         echo ' var insOption = document.createElement("option"); ';
-        echo " insOption.innerHTML = '".$pTitleText.'#'.$pFieldId."'; "; 
+        echo " insOption.innerHTML = '".$pTitleText.'#'.$pValue."'; "; 
         echo " insOption.value = '".$pBeginId."'; ";
         echo " insSelect.append(insOption); ";
         echo '</script>';
         
         if ($pCountFields>0)
         {
-            fnCountMass($pFields,$pValue,$pBeginId);
+            fnCountMass($pFields,$pValue,$pValue);
             //echo "111 = ".$pValue;
         }
         
