@@ -189,7 +189,7 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
             echo '</select>';
          }
          */
-         
+      /*   
        echo "<br>";
        echo "options =".$pCountOptions;
        echo "<br>";
@@ -200,7 +200,7 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
        echo "value =".$pValue;
        echo "<br>";
        echo "titletext =".$pTitle.' = '.$pText;
-       
+       */
      }
      
      echo "<br><br>";
