@@ -115,7 +115,7 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
      
      
      
-     $pAllText = $pTitle.' - '.$pText.' - '.$pTypeName.' - '.$pFieldId.' + '.$pEndtId;
+     $pAllText = $pTypeName.' - '.$pFieldId.' + '.$pEndtId;
 
      if (strlen($pTitle)>0)
      {
@@ -151,6 +151,9 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
      {
         echo $pTitle; 
         echo "<br>";
+        echo $pAllText
+        echo "<br>";
+        
         echo '<select id="select'.$pFieldId.'">';
         echo '</select>';
         fnCountMass($pOptions,$pFieldId,'');
@@ -172,12 +175,18 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
          {
             echo $pTitle; 
             echo "<br>";
+            echo $pAllText
+            echo "<br>";
+            
             echo '<input type="text" />';
          }
          if ($pTypeName=='TextareaField')
          {
             echo $pTitle; 
             echo "<br>";
+            echo $pAllText
+            echo "<br>";
+
             echo '<textarea ></textarea>';
          }
      }
