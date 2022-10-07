@@ -107,7 +107,7 @@ $Resp = json_decode($response,true);
   echo "111";
   echo "<br><br>";
 
-
+  // основной массив
   $serg = $Resp['Response']['entity']['baskets'][0]['basketForm']['fields'];
   
   $count = count($serg);
