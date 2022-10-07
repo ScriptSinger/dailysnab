@@ -116,9 +116,9 @@ $Resp = json_decode($response,true);
 
 foreach ($jsonIterator as $key => $val) {
     if(is_array($val)) {
-        echo "$key:\n";
+        echo "$key:\n<br>";
     } else {
-        echo "$key => $val\n";
+        echo "$key => $val\n<br>";
     }
 }
 
