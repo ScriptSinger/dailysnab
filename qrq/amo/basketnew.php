@@ -102,10 +102,12 @@ function fnCountMac($pJson)
   {
      echo $value['title'].' - '.$value['typeName'];
      echo "<br>";
-     echo $value['options'];
+     echo "options =".$value['options'];
      echo "<br>";
-     echo $value['fields'];
-     echo "<br>";
+     echo "fields =".$value['fields'];
+     
+     
+     echo "<br><br>";
   } 
   
   
