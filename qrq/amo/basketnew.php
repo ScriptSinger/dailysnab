@@ -95,16 +95,20 @@ $Resp = json_decode($response,true);
 function fnCountMac($pJson)
 {
     
-  $count = count($pJson);
-  echo "Кол-во = ".$count;
+  $pCount = count($pJson);
+  echo "Кол-во = ".$pCount;
   echo "<br>";    
-  foreach ($pJson as $value) 
+  foreach ($pJson as $pValue) 
   {
-     echo $value['title'].' - '.$value['typeName'];
+     echo $pValue['title'].' - '.$pValue['typeName'];
+     
+     $pCountOptions = count($pValue['options']);
+     $pCountFields = count($pValue['fields']);
+     
      echo "<br>";
-     echo "options =".$value['options'];
+     echo "options =".$pValue['options'];
      echo "<br>";
-     echo "fields =".$value['fields'];
+     echo "fields =".$pValue['fields'];
      
      
      echo "<br><br>";
