@@ -92,7 +92,7 @@ $Resp = json_decode($response,true);
 
 
 
-function fnCountMass($pJson,$pParentId)
+function fnCountMass($pJson,$pPapaId)
 {
     
   $pCount = count($pJson);
@@ -111,7 +111,7 @@ function fnCountMass($pJson,$pParentId)
      $pTypeName = $pValueStr['typeName'];
      $pFieldName = $pValueStr['fieldName'];
      
-     $pAllText = $pTypeName.' - '.$pFieldName.' - '.$pFieldId.' = '.$pParentId;
+     $pAllText = $pTypeName.' - '.$pFieldName.' - '.$pFieldId.' = '.$pPapaId;
      
      
      if ( ($pCountOptions==0) && ($pCountFields==0) )
@@ -146,7 +146,7 @@ function fnCountMass($pJson,$pParentId)
      {
 
         echo '<script>';
-        echo ' var insSelect = document.getElementById("select'.$pParentId.'"); ';
+        echo ' var insSelect = document.getElementById("select'.$pPapaId.'"); ';
         echo ' var insOption = document.createElement("option"); ';
         echo " insOption.innerHTML = '".$pTitleText.'-'.$pValue."'; "; 
         echo " insOption.value = '".$pValue."'; ";
