@@ -108,6 +108,10 @@ $Resp = json_decode($response,true);
   echo "<br><br>";
 
 
+  $serg = $response['Response']['entity'];
+  print_r($serg);
+  echo "<br><br>";
+  echo "222";
   
   
   $jsonIterator = new RecursiveIteratorIterator(
@@ -131,7 +135,7 @@ foreach ($jsonIterator as $key => $val) {
 
 
   echo "<br><br>";
-  echo "222";
+  echo "333";
   
   echo "<br><br>";
   echo "<pre>";
