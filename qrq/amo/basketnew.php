@@ -112,6 +112,12 @@ $Resp = json_decode($response,true);
   
   $count = count($serg);
   echo "count = "+$count;
+  foreach ($count as $value) 
+  {
+     echo $value['title'];
+     echo "<br>";
+  }  
+  
   echo "<br><br>";
   
   print_r($serg);
