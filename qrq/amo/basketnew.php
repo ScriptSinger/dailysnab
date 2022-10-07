@@ -160,6 +160,8 @@ function fnCountMass($pJson,$pStr)
        echo "<br>";
        echo "fields =".$pCountFields;
        echo "<br>";
+       echo "fieldId =".$pFieldId;
+       echo "<br>";
        echo "titletext =".$pTitle.' = '.$pText;
      }
      
