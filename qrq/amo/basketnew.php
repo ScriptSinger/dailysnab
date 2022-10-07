@@ -179,16 +179,17 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
             echo "<br>";
             
             echo '<input type="text" />';
+             echo "<br>";
          }
          if ($pTypeName=='TextareaField')
          {
-            echo "<br>";
             echo $pTitle; 
             echo "<br>";
             echo $pAllText;
             echo "<br>";
 
             echo '<textarea ></textarea>';
+            echo "<br>";
          }
      }
      else
