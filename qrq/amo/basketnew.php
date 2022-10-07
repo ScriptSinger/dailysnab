@@ -112,15 +112,13 @@ function fnCountMass($pJson, $pPapaId)
      $pFieldName = $pValueStr['fieldName'];
      
      
-     echo 'soska = '.$pPapaId;
-     $pAllText = $pTypeName.' - '.$pFieldName.' - '.$pFieldId;
+     $pAllText = $pTypeName.' - '.$pFieldName.' - '.$pFieldId." st ".$pPapaId;
      
      
 
-     $pPapaId = strlen($pPapaId);
-     if ($pPapaId>0)
+     $pPapaLen = strlen($pPapaId);
+     if ($pPapaLen>0)
      {
-        echo "papa = ".$pPapaId;
         echo '<script>';
         echo ' var insSelect = document.getElementById("select'.$pPapaId.'"); ';
         echo ' var insOption = document.createElement("option"); ';
