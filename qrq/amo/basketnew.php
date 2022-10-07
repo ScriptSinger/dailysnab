@@ -127,14 +127,14 @@ function fnCountMass($pJson,$pBeginId,$pEndtId)
          }
          if ($pTypeName=='TextareaField')
          {
-            echo "<br>";
+            echo "<div style='border: 2px solid #000000'>";
             echo $pTitle; 
             echo "<br>";
             echo $pAllText;
             echo "<br>";
 
             echo '<textarea ></textarea>';
-            echo "<br>";
+            echo "</div>";
          }
      }     
      
