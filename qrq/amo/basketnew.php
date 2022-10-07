@@ -92,7 +92,7 @@ $Resp = json_decode($response,true);
 
 
 
-function fnCountMass($pJson,$pStrId)
+function fnCountMass($pJson,$pBeginId,$pEndId)
 {
     
   $pCount = count($pJson);
@@ -129,16 +129,16 @@ function fnCountMass($pJson,$pStrId)
      {
 
         echo '<script>';
-        echo ' var insSelect = document.getElementById("select'.$pStrId.'"); ';
+        echo ' var insSelect = document.getElementById("select'.$pBeginId.'"); ';
         echo ' var insOption = document.createElement("option"); ';
         echo " insOption.innerHTML = '".$pTitleText."'; "; 
-        echo " insOption.value = '".$pStrId."'; ";
+        echo " insOption.value = '".$pBeginId."'; ";
         echo " insSelect.append(insOption); ";
         echo '</script>';
         
         if ($pCountFields>0)
         {
-            fnCountMass($pFields,$pValue);
+            fnCountMass($pFields,$pValue,'');
             //echo "111 = ".$pValue;
         }
         
@@ -150,7 +150,7 @@ function fnCountMass($pJson,$pStrId)
         echo "<br>";
         echo '<select id="select'.$pFieldId.'">';
         echo '</select>';
-        fnCountMass($pOptions,$pFieldId);
+        fnCountMass($pOptions,$pFieldId,'');
         echo "<br><br>";
      }
      
@@ -200,6 +200,7 @@ function fnCountMass($pJson,$pStrId)
        echo "value =".$pValue;
        echo "<br>";
        echo "titletext =".$pTitle.' = '.$pText;
+       
      }
      
      echo "<br><br>";
@@ -221,7 +222,7 @@ function fnCountMass($pJson,$pStrId)
   $serg = $Resp['Response']['entity']['baskets'][0]['basketForm']['fields'];
   
 
-  fnCountMass($serg,'');
+  fnCountMass($serg,'','');
 
 
 
