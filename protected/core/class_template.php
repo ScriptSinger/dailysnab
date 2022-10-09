@@ -3074,21 +3074,21 @@ class HtmlTemplate extends HtmlServive
             $button_buy = '';
             $m['company'] = $m['cities_name'] = $m['urgency'] = $m['data_status_buy_sell_23'] = $m['categories'] = '';//$day_noactive =
             $m['comments'] = $m['form_payment'] = $m['cities_name'] = $m['unit'] = $m['amount'] = '';
-            $button_grouping = $this->Input(array('type' => 'button',
-                        'id' => 'view_grouping'.$m['id'],
-                        'class' => 'change-btn view_grouping',
-                        'value' => 'от '.$m['min_cost_grouping'].' '.$m['currency'].' ('.$m['kol_grouping'].')',
-                        'data' => array('value' => $m['val_grouping'], 'id' => $m['id'], 'flag' => 'sell')
-                    )
-                ).'
-									'.$this->Input(array('type' => 'button',
-                        'id' => 'close_view_grouping'.$m['id'],
-                        'class' => 'change-btn close_view_grouping',
-                        'value' => 'Свернуть',
-                        'dopol' => 'style="display:none;"',
-                        'data' => array('id' => $m['id'])
-                    )
-                );
+            $button_grouping = $this->Input(array(	'type' => 'button',
+												'id' => 'view_grouping'.$m['id'],
+												'class' => 'change-btn view_grouping',
+												'value' => 'от '.$m['min_cost_grouping'].' '.$m['currency'].' ('.$m['kol_grouping'].')',
+												'data' => array('value' => $m['val_grouping'], 'id' => $m['id'], 'flag' => 'sell')
+											)
+										).'
+							'.$this->Input(array('type' => 'button',
+												'id' => 'close_view_grouping'.$m['id'],
+												'class' => 'change-btn close_view_grouping',
+												'value' => 'Свернуть',
+												'dopol' => 'style="display:none;"',
+												'data' => array('id' => $m['id'])
+											)
+										);
         }
         ///
 
