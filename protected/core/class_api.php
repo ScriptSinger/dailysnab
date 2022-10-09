@@ -1483,7 +1483,6 @@ class ClassApi extends HtmlServive
 						$brand 		= $item->Brand;
 						
 						
-						$form_payment_id = ($NDS)? 1 : 2;
 						
 						
 						$DocID_uniq	= $DocID.'+'.$StrID;// формируем уникальный номер записи
