@@ -4923,19 +4923,19 @@ elseif($_GET['route'] == 'connect_users_etp'){
 }
 // проверка кнопки "Без входа" при подписке Этп
 elseif($_GET['route'] == 'proverka_button_etp_no_autorize'){
+	
+	$ok = false;// по умолчанию
 
 	$cq 	= ($in['id'])? reqSlovQrq(array('id'=>$in['id'])) : array('flag_autorize'=>0);;
 
 	if($cq['flag_autorize']){
 			// проверяем подключен ли в qwep
-			$r 	= reqSlovQrq(array('flag'=>'flag_proverka_connect_3','qrq_id'=>$in['id']));
+			$r 	= reqAmoAccountsEtp(array('flag'=>'flag_proverka_connect_3','qrq_id'=>$in['id']));
 			if($r['id']){
 				$ok = true;
 			}
-	}else{
-		$ok = false;
 	}
-
+	
 	$jsd['ok'] = $ok;
 }
 
