@@ -4928,8 +4928,10 @@ elseif($_GET['route'] == 'proverka_button_etp_no_autorize'){
 
 	if($cq['flag_autorize']){
 			// проверяем подключен ли в qwep
-			$cq 	= reqSlovQrq(array('flag'=>'flag_proverka_connect_3','qrq_id'=>$in['id']));
-			$ok = true;
+			$r 	= reqSlovQrq(array('flag'=>'flag_proverka_connect_3','qrq_id'=>$in['id']));
+			if($r['id']){
+				$ok = true;
+			}
 	}else{
 		$ok = false;
 	}
