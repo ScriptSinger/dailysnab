@@ -4927,7 +4927,9 @@ elseif($_GET['route'] == 'proverka_button_etp_no_autorize'){
 	$cq 	= ($in['id'])? reqSlovQrq(array('id'=>$in['id'])) : array('flag_autorize'=>0);;
 
 	if($cq['flag_autorize']){
-		$ok = true;
+			// проверяем подключен ли в qwep
+			$cq 	= reqSlovQrq(array('flag'=>'flag_proverka_connect_3','qrq_id'=>$in['id']));
+			$ok = true;
 	}else{
 		$ok = false;
 	}
