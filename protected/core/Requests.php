@@ -6776,11 +6776,13 @@
 
 		$sql = "	SELECT 
 					(SELECT t.id FROM company_vip_function t WHERE t.company_id=".$in['company_id']." AND vip_function_id=1
-					) flag_ispolnen,			/*включена исполение на странице навыки*/
+					) flag_ispolnen,			/*включена Исполение на странице навыки*/
 					(SELECT t.id FROM company_vip_function t WHERE t.company_id=".$in['company_id']." AND vip_function_id=2
-					) flag_ostatki,				/*включена на странице навыки*/
+					) flag_ostatki,				/*включена Остатки*/
 					(SELECT t.id FROM company_vip_function t WHERE t.company_id=".$in['company_id']." AND vip_function_id=8
-					) flag_unii_prodavec		/*включена на странице навыки*/
+					) flag_unii_prodavec,		/*включена Юный продавец*/
+					(SELECT t.id FROM company_vip_function t WHERE t.company_id=".$in['company_id']." AND vip_function_id=4
+					) flag_vidacha_tovara		/*включена Выдача товара*/
 					";
 
 	//vecho($sql);
