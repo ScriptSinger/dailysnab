@@ -7175,6 +7175,12 @@
 			$arr = array($in['accounts_id']);
 			$one = true;
 		}
+		
+		if($in['flag_proverka_connect_3']){
+			$sql = ' AND sq.id=? AND  ae.flag_autorize=3 ';
+			$arr = array($in['qrq_id']);
+			$one = true;
+		}
 
 
 		$sql = "	SELECT ae.id, ae.company_id, ae.qrq_id, ae.flag_autorize, ae.login, ae.pass, ae.accounts_id, ae.account_title,
