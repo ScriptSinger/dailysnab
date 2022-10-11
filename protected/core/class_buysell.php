@@ -299,12 +299,12 @@ class HtmlBuySell extends HtmlServive
 		// удаляем не которые кнопки по правам
 		if(PRAVA_4||PRAVA_5){
 			unset($arr_status);
-			$arr = array('','');
+			//$arr = array('','');
 			//$ok = false;
 			//unset($arr_status[3]);
 		}
 //vecho($arr_status);
-		if( (!empty($arr_status)&&$ok) /*&& ( $r_min['flag_offer_min_cost'] || $r_min['flag_offer_min_cost2'] )*/ ){		
+		if( (!empty($arr_status)&&$ok) || ($r_min['flag_offer_min_cost'] || $r_min['flag_offer_min_cost2']) /*&& ( $r_min['flag_offer_min_cost'] || $r_min['flag_offer_min_cost2'] )*/ ){		
 				if(count($arr_status)>1||(!empty($arr_status)&&!empty($arr_button))){// более одного действия
 
 					foreach($arr_status as $status_id => $arr){
