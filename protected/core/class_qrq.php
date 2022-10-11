@@ -262,7 +262,7 @@ class ClassQrq extends HtmlServive
 			$at = array(386,389,388);// допустимые категории 3 уровнея
 
 			if((in_array($rc['parent_id'], $at))&&$r['flag_buy_sell']==2&&($r['status_buy_sell_id']==2||$r['status_buy_sell_id']==3)){
-				vecho($rc);
+	
 					$STH = reqInsertCronAmoBuySell(array('buy_sell_id'=>$in['buy_sell_id']));// добавляем id для cron
 					
 					if($STH){
