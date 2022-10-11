@@ -2875,6 +2875,7 @@ var link_url = document.createElement("a");
  					}
  					);		
  			});
+			
 	// Выход из темы для не владельца чата
 	$("body").on("click", ".out_of_theme", function(){
 		var d = $(this).data();	
@@ -2893,6 +2894,27 @@ var link_url = document.createElement("a");
 					}
 					); 			
 	});	
+
+	//Заблокировать пользователя
+	let btn_block_of_theme = document.querySelector('.block_of_theme');
+	if (btn_block_of_theme)
+	{
+		btn_block_of_theme.addEventListener('click', function(){
+			let fid = btn_block_of_theme.dataset.fid;
+
+			$.post(
+				"/block_of_theme",
+				{
+					id:fid
+				},
+				function(data){
+					console.log(data);
+				}
+
+			);
+		});
+	}
+
 	// Предложить закрыть тему
 	$("body").on("click", ".close_theme_pr", function(){
 		var d = $(this).data();	
@@ -2929,8 +2951,7 @@ var link_url = document.createElement("a");
 			}
 		);
 	});
-
-
+	
 	// Закрыть тему
 	$("body").on("click", ".close_chat", function(){
 		var d = $(this).data();

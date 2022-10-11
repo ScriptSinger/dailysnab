@@ -50,7 +50,7 @@ $last_message = [];
 			echo '</pre>';  
 */		
 			if (!empty($rown)){	
-				
+		
 				foreach($rown as $i => $m){
 					//vecho(json_decode($m['companies']));
 					
@@ -88,9 +88,18 @@ $last_message = [];
 					$need_link = DOMEN.'/'.$row_menu["href"];
 				} */
 				
+				?>
+				<pre style="margin-left: 150px; width: calc(100vw - 150px);">
+					<code>
+						<?php var_dump($rown); ?>
+					</code>
+				</pre>
+			
+				<?php
+
 				//$rcm = reqChatMessages(array('company_id' => COMPANY_ID)); 
 				//$company_name = $rcm[0]["name_rcmc"];
-
+				//TODO: кнопки клиентов
 				//надо будет условие поставить еще на проверку ранних сообщеницй и на заблокировать пользователя	
 				$out_of_theme = '';
 				if ($rown[0]['company_id'] == COMPANY_ID && $theme != '') //вывод выхода из темы для клиентов
@@ -98,9 +107,9 @@ $last_message = [];
 						$out_of_theme = '<button type="button" class="button-blue pull-right close_theme" data-fid="'.$fid.'">Закрыть тему</button>'; //организаторов чатов
 					} 
  				else if(in_array_r( $comp, $rowf_comp ) && !in_array( $comp, end($rowf_comp) )) //кнопка для тех кто уже вышел из чата
-					{
-						// if () 
-						$out_of_theme = '<button type="button" class="button-blue pull-right block_of_theme" data-fid="'.$fid.'">Заблокировать пользователя</button>'; // уже после выхода из чата
+					{ 
+						//TODO: зачем то ссылается на второе сообщение в чате О_о зачем?!
+						$out_of_theme = '<button type="button" class="button-blue pull-right block_of_theme" data-fid="'.$rown[1]['folder_id'].'">Заблокировать пользователя</button>'; // уже после выхода из чата
 					} 				
 				elseif($theme != '')
 					{
