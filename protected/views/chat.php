@@ -88,6 +88,15 @@ $last_message = [];
 					$need_link = DOMEN.'/'.$row_menu["href"];
 				} */
 				
+				?>
+				<pre style="margin-left: 150px; width: calc(100vw - 150px);">
+					<code>
+						<?php var_dump($rown); ?>
+					</code>
+				</pre>
+			
+				<?php
+
 				//$rcm = reqChatMessages(array('company_id' => COMPANY_ID)); 
 				//$company_name = $rcm[0]["name_rcmc"];
 				//TODO: кнопки клиентов
