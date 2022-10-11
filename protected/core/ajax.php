@@ -1420,14 +1420,14 @@ elseif($_GET['route'] == 'save_buy_sell'){
 
         // Обновляем и пересчитываем количество "amount" если у категории указано фасовка
         $bs->UpdateBuySellByPacking(array(	'buy_sell_id'	=> $buy_sell_id,
-            'categories_id'	=> $categories_id,
-            'status'		=> $in['status'],
-            'cost'			=> $in['cost'],
-            'amount'		=> $in['amount'],
-            'amount1'		=> $in['amount1'],
-            'unit_id1'		=> $in['unit_id1'],
-            'amount2'		=> $in['amount2'],
-            'unit_id2'		=> $in['unit_id2'] ));
+											'categories_id'	=> $categories_id,
+											'status'		=> $in['status'],
+											'cost'			=> $in['cost'],
+											'amount'		=> $in['amount'],
+											'amount1'		=> $in['amount1'],
+											'unit_id1'		=> $in['unit_id1'],
+											'amount2'		=> $in['amount2'],
+											'unit_id2'		=> $in['unit_id2'] ));
         ///
 
 
