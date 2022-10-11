@@ -97,7 +97,7 @@ $last_message = [];
 				?>
 					<pre style="padding-left: 150px;">
 						<code>
-							<?php var_dump($rown[1]['folder_id']); ?>
+							<?php var_dump($rown); ?>
 						</code>
 					</pre>
 				<?php
