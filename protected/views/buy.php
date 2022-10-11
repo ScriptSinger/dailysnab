@@ -69,7 +69,7 @@
 					
 					<div id="div_scrol"></div>
 					
-					<br />Категории: '.$categories_id.'<br />Описание: '.$descCategory.'
+					
 	
 				</div>
 				<div id="footer_message">
