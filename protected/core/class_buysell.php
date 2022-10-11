@@ -307,31 +307,32 @@ class HtmlBuySell extends HtmlServive
 		if( (!empty($arr_status)&&$ok) || ($r_min['flag_offer_min_cost'] || $r_min['flag_offer_min_cost2']) /*&& ( $r_min['flag_offer_min_cost'] || $r_min['flag_offer_min_cost2'] )*/ ){		
 				if(count($arr_status)>1||(!empty($arr_button))){// более одного действия
 
-					foreach($arr_status as $status_id => $arr){
-							$nstatus 			= isset($arr[0])? $arr[0] : '';
-							$button_class 		= isset($arr[1])? $arr[1] : '';
-							$categories_id 	= isset($arr[2])? $arr[2] : '';
-							$flag_buy_sell 	= isset($arr[3])? $arr[3] : '';
-							$stock_id 		= isset($arr[4])? $arr[4] : '';
-							$nomenclature_id 	= isset($arr[5])? $arr[5] : '';
-							if(empty($arr_button)){
-								$type = 'button';
-								$button_class2 = 'btn btn-primary btn-sm '.$button_class;
-							}else{
-								$type = 'a';
-								$button_class2 = 'dropdown-item '.$button_class;
-							}
-							$arr_button[] = self::ButtonAction(array(	'type'			=> $type,
-																	'buy_sell_id'	=> $in['id'],
-																	'status_id'		=> $status_id,
-																	'value'			=> $nstatus,
-																	'button_class'	=> $button_class2,
-																	'categories_id'	=> $categories_id,
-																	'flag_buy_sell'	=> $flag_buy_sell,
-																	'stock_id'		=> $stock_id,
-																	'nomenclature_id'=> $nomenclature_id	));
+					if(count($arr_status)>1){
+						foreach($arr_status as $status_id => $arr){
+								$nstatus 			= isset($arr[0])? $arr[0] : '';
+								$button_class 		= isset($arr[1])? $arr[1] : '';
+								$categories_id 	= isset($arr[2])? $arr[2] : '';
+								$flag_buy_sell 	= isset($arr[3])? $arr[3] : '';
+								$stock_id 		= isset($arr[4])? $arr[4] : '';
+								$nomenclature_id 	= isset($arr[5])? $arr[5] : '';
+								if(empty($arr_button)){
+									$type = 'button';
+									$button_class2 = 'btn btn-primary btn-sm '.$button_class;
+								}else{
+									$type = 'a';
+									$button_class2 = 'dropdown-item '.$button_class;
+								}
+								$arr_button[] = self::ButtonAction(array(	'type'			=> $type,
+																		'buy_sell_id'	=> $in['id'],
+																		'status_id'		=> $status_id,
+																		'value'			=> $nstatus,
+																		'button_class'	=> $button_class2,
+																		'categories_id'	=> $categories_id,
+																		'flag_buy_sell'	=> $flag_buy_sell,
+																		'stock_id'		=> $stock_id,
+																		'nomenclature_id'=> $nomenclature_id	));
+						}
 					}
-					
 					$arr_drop = array();
 					$i = 1;
 					for($i=1 ; $i<=count($arr_button)-1 ; $i++){
