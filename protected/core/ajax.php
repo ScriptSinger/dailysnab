@@ -2625,15 +2625,15 @@ elseif($_GET['route'] == 'search_brend_etp'){
                 }
 
                 $arr = $qrq->AmoHtmlSearchbrend(array('flag'			=> 2,
-                    'token'			=> $_SESSION['AMO_TOKEN'],
-                    'artname'		=> $in['value'],
-                    'categories_id'	=> $rf['categories_id']
-                ));
+													'token'			=> $_SESSION['AMO_TOKEN'],
+													'artname'		=> $in['value'],
+													'categories_id'	=> $rf['categories_id']
+												));
 
                 if($arr['code']){
                     $error = 1;
                     $code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','top'=>'','content'=>$arr['code']),
-                        array('id'=>'','class'=>'') );
+											array('id'=>'','class'=>'') );
                 }
 
             }

@@ -7228,7 +7228,7 @@
 								WHERE ae.company_id='".$in['company_id']."'
 									) qw
 					WHERE qw.accounts_id>0	".$sql."
-					GROUP BY qw.login_id, qw.company_id, qw.qrq_id limit 3 ";
+					GROUP BY qw.login_id, qw.company_id, qw.qrq_id /*limit 3*/ ";
 
 
 		$row = ($one)? PreExecSQL_one($sql,$arr) : PreExecSQL_all($sql,$arr);
