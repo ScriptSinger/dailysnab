@@ -4347,10 +4347,10 @@ class HtmlTemplate extends HtmlServive
         $tr = '';
         foreach ($row as $i => $m) {
 
-            $tr .= self::$func(array('m' => $m,
-                'group' => $p['group'],
-                'group_id' => $p['group_id'],
-                'flag_group_id' => $p['flag_group_id']));
+            $tr .= self::$func(array(	'm' 			=> $m,
+									'group' 		=> $p['group'],
+									'group_id' 		=> $p['group_id'],
+									'flag_group_id' => $p['flag_group_id']));
 
         }
 
