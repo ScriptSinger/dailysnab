@@ -7411,8 +7411,7 @@
 			$one = true;
 		}
 
-		$sql = "	SELECT ci.id, ci.token, ci.searchid, ci.brand, ci.searchtext, ci.accountid, 
-						ci.categories_id, ci.company_id_out, ci.cookie_session
+		$sql = "	SELECT ci.id, ci.token, ci.searchid, ci.categories_id, ci.company_id_out, ci.cookie_session
 				FROM cron_amo_buy_sell_search_infopart ci
 				WHERE 1=1 ".$sql." ";
 
