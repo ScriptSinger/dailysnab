@@ -305,7 +305,7 @@ class HtmlBuySell extends HtmlServive
 		}
 //vecho($arr_status);
 		if( (!empty($arr_status)&&$ok) || ($r_min['flag_offer_min_cost'] || $r_min['flag_offer_min_cost2']) /*&& ( $r_min['flag_offer_min_cost'] || $r_min['flag_offer_min_cost2'] )*/ ){		
-				if(count($arr_status)>1||(!empty($arr_status)&&!empty($arr_button))){// более одного действия
+				if(count($arr_status)>1||(!empty($arr_button))){// более одного действия
 
 					foreach($arr_status as $status_id => $arr){
 							$nstatus 			= isset($arr[0])? $arr[0] : '';
