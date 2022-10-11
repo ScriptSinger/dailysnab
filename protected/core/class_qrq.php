@@ -942,32 +942,25 @@ class ClassQrq extends HtmlServive
 		$ok = false;
 
 		$categories_id = $p['categories_id'];
+						
+		$r = reqAmoAccountsEtp_AccountsidByCompanyid2();
+		$accountid = $r['accounts_ids'];
 
 		foreach($p['values'] as $k=>$m){
 			
-				//$r = reqAmoAccountsEtp_AccountsidByCompanyid(array('company_id'=>COMPANY_ID));
+				$r = reqAmoAccountsEtp_AccountsidByCompanyid(array('company_id'=>COMPANY_ID));
 				
-				$r = reqAmoAccountsEtp_AccountsidByCompanyid2();
-				$accountid = $r['accounts_ids'];
+				//$r = reqAmoAccountsEtp_AccountsidByCompanyid2();
+				//$accountid = $r['accounts_ids'];
 
 				
 				//foreach($r as $kk=>$mm){// далее вызываем в ./cron/cron_amo_buy_sell_search_infopart.php
 						
 						// получаем searchid для дальнейшего сохранения в крон
-						
-								// получаем searchid для дальнейшего сохранения в крон
 							$arr = self::getSearchidBySearch(array(	'token'				=> $_SESSION['AMO_TOKEN'],
 																	'brand'				=> $m['brand'],
 																	'searchtext'		=> $p['searchtext'],
 																	'accountid'			=> $accountid	));
-
-
-						
-						/*
-							$arr = self::getSearchidBySearch(array(	'token'				=> $_SESSION['AMO_TOKEN'],
-																	'brand'				=> $m['brand'],
-																	'searchtext'		=> $p['searchtext'],
-																	'accountid'			=> $mm['accounts_id']	));
 							/*if($arr['searchid']){
 								$STH = reqInsertCronAmoBuysellSearchUpdate(array(	'buy_sell_id'		=> $in['buy_sell_id'],
 																					'token'				=> $in['token'],
@@ -975,15 +968,15 @@ class ClassQrq extends HtmlServive
 							}
 							*/
 						///
-						
 						if($arr['searchid']){
-								$STH = PreExecSQL(" INSERT INTO cron_amo_buy_sell_search_infopart (token,searchid,login_id,company_id,categories_id,qrq_id,company_id_out,cookie_session) VALUES (?,?,?,?,?,?,?,?); " ,
-													array( $_SESSION['AMO_TOKEN'],$arr['searchid'],$mm['login_id'],$mm['company_id'],$categories_id,$mm['qrq_id'],COMPANY_ID,COOKIE_SESSION ));
+								//$STH = PreExecSQL(" INSERT INTO cron_amo_buy_sell_search_infopart (token,searchid,login_id,company_id,categories_id,qrq_id,company_id_out,cookie_session) VALUES (?,?,?,?,?,?,?,?); " ,
+								//					array( $_SESSION['AMO_TOKEN'],$arr['searchid'],$mm['login_id'],$mm['company_id'],$categories_id,$mm['qrq_id'],COMPANY_ID,COOKIE_SESSION ));
+								$STH = PreExecSQL(" INSERT INTO cron_amo_buy_sell_search_infopart (token,searchid,categories_id,company_id_out,cookie_session) VALUES (?,?,?,?,?); " ,
+													array( $_SESSION['AMO_TOKEN'],$arr['searchid'],$categories_id,COMPANY_ID,COOKIE_SESSION ));
 								if($STH){
 									$ok = true;
 								}
 						}
-						
 				//}
 				
 		}
