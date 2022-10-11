@@ -90,7 +90,7 @@ $last_message = [];
 				
 				//$rcm = reqChatMessages(array('company_id' => COMPANY_ID)); 
 				//$company_name = $rcm[0]["name_rcmc"];
-
+				//TODO: кнопки клиентов
 				//надо будет условие поставить еще на проверку ранних сообщеницй и на заблокировать пользователя	
 				$out_of_theme = '';
 				if ($rown[0]['company_id'] == COMPANY_ID && $theme != '') //вывод выхода из темы для клиентов
@@ -99,6 +99,7 @@ $last_message = [];
 					} 
  				else if(in_array_r( $comp, $rowf_comp ) && !in_array( $comp, end($rowf_comp) )) //кнопка для тех кто уже вышел из чата
 					{ 
+						//TODO: зачем то ссылается на второе сообщение в чате О_о зачем?!
 						$out_of_theme = '<button type="button" class="button-blue pull-right block_of_theme" data-fid="'.$rown[1]['folder_id'].'">Заблокировать пользователя</button>'; // уже после выхода из чата
 					} 				
 				elseif($theme != '')
