@@ -1438,25 +1438,25 @@ class HtmlTemplate extends HtmlServive
             $company = $m['cities_name'] = $m['urgency'] = $m['availability'] = $day_noactive = $m['data_status_buy_sell_23'] = $m['categories'] = '';
             $m['comments'] = $m['form_payment'] = $m['cities_name'] = $m['unit'] = $m['amount'] = '';
             $button_grouping = $this->Input(array('type' => 'button',
-                        'id' => 'view_grouping'.$m['id'],
-                        'class' => 'change-btn view_grouping',
-                        'value' => 'от '.$this->nf($m['cost_grouping']).' '.$m['currency'].' ('.$m['kol_grouping'].')',
-                        'data' => array('value' => $m['val_grouping'],
-                            'id' => $m['id'],
-                            'parent_id' => $in['parent_id'],
-                            'flag' => 'offer',
-                            'flag_limit' => true,
-                            'start_limit' => 0)
-                    )
-                ).'
-									'.$this->Input(array('type' => 'button',
-                        'id' => 'close_view_grouping'.$m['id'],
-                        'class' => 'change-btn close_view_grouping',
-                        'value' => 'Свернуть',
-                        'dopol' => 'style="display:none;"',
-                        'data' => array('id' => $m['id'])
-                    )
-                );
+											'id' => 'view_grouping'.$m['id'],
+											'class' => 'change-btn view_grouping',
+											'value' => 'от '.$this->nf($m['cost_grouping']).' '.$m['currency'].' ('.$m['kol_grouping'].')',
+											'data' => array('value' => $m['val_grouping'],
+															'id' => $m['id'],
+															'parent_id' => $in['parent_id'],
+															'flag' => 'offer',
+															'flag_limit' => true,
+															'start_limit' => 0)
+										)
+									).'
+							'.$this->Input(array('type' => 'button',
+												'id' => 'close_view_grouping'.$m['id'],
+												'class' => 'change-btn close_view_grouping',
+												'value' => 'Свернуть',
+												'dopol' => 'style="display:none;"',
+												'data' => array('id' => $m['id'])
+											)
+										);
             $div_view_grouping = '	<div id="tr_'.$m['id'].'" class="request-hidden" style="display:none;">
 											</div>';
         } else {
@@ -1567,6 +1567,10 @@ class HtmlTemplate extends HtmlServive
 
         }
         ///
+
+		if (PRAVA_5) {
+			 $cost = '';
+		}
 
 
         $tr = '
