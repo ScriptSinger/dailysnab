@@ -248,9 +248,9 @@ class ClassQrq extends HtmlServive
 		
 		//if($r['id']||LOGIN_ID==565){
 		
-		$r = reqAmoAccountsEtp(array('company_id'=>COMPANY_ID));//есть хотя бы один аккаунт на стороннем ресурсе
+		//$r = reqAmoAccountsEtp(array('company_id'=>COMPANY_ID));//есть хотя бы один аккаунт на стороннем ресурсе
 		
-		if(!empty($r)){
+		//if(!empty($r)){
 		
 			$in = fieldIn($p, array('buy_sell_id'));
 
@@ -271,7 +271,7 @@ class ClassQrq extends HtmlServive
 					
 			}
 			
-		}
+		//}
 		
 
 		return $ok;
