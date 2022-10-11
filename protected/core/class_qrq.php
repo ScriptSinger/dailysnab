@@ -961,11 +961,7 @@ class ClassQrq extends HtmlServive
 																	'searchtext'		=> $p['searchtext'],
 																	'accountid'			=> $accountid	));
 
-							if($arr['searchid']){
-								$STH = reqInsertCronAmoBuysellSearchUpdate(array(	'buy_sell_id'		=> $in['buy_sell_id'],
-																					'token'				=> $_SESSION['AMO_TOKEN'],
-																					'searchid'			=> $arr['searchid']	));
-							}
+
 						
 						/*
 							$arr = self::getSearchidBySearch(array(	'token'				=> $_SESSION['AMO_TOKEN'],
@@ -979,7 +975,7 @@ class ClassQrq extends HtmlServive
 							}
 							*/
 						///
-						/*
+						
 						if($arr['searchid']){
 								$STH = PreExecSQL(" INSERT INTO cron_amo_buy_sell_search_infopart (token,searchid,login_id,company_id,categories_id,qrq_id,company_id_out,cookie_session) VALUES (?,?,?,?,?,?,?,?); " ,
 													array( $_SESSION['AMO_TOKEN'],$arr['searchid'],$mm['login_id'],$mm['company_id'],$categories_id,$mm['qrq_id'],COMPANY_ID,COOKIE_SESSION ));
@@ -987,7 +983,7 @@ class ClassQrq extends HtmlServive
 									$ok = true;
 								}
 						}
-						*/
+						
 				//}
 				
 		}
