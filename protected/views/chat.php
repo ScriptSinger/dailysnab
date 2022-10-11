@@ -94,7 +94,7 @@ $last_message = [];
 				//надо будет условие поставить еще на проверку ранних сообщеницй и на заблокировать пользователя	
 				$out_of_theme = '';
 				?>
-					<pre>
+					<pre style="padding-left: 150px;">
 						<code>
 							<?php var_dump($rown); ?>
 						</code>
