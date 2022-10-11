@@ -17,8 +17,7 @@
 */
 
 		
-		$sql = "	SELECT c.id, c.token, c.searchid, c.login_id, c.company_id, c.qrq_id, 
-						c.categories_id, c.company_id_out, c.cookie_session
+		$sql = "	SELECT c.id, c.token, c.searchid, c.categories_id, c.company_id_out, c.cookie_session
 				FROM cron_amo_buy_sell_search_infopart c ";
 
 		$row = PreExecSQL_all($sql,array());
