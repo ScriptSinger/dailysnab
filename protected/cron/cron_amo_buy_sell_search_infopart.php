@@ -31,10 +31,10 @@
 													//'buy_sell_id'	=> $m['buy_sell_id'],
 													'token'			=> $m['token'],
 													'searchid'		=> $m['searchid'],
-													'login_id'		=> $m['login_id'],
-													'company_id'	=> $m['company_id'],
+													//'login_id'		=> $m['login_id'],
+													//'company_id'	=> $m['company_id'],
 													'categories_id'	=> $m['categories_id'],
-													'qrq_id'		=> $m['qrq_id'],
+													//'qrq_id'		=> $m['qrq_id'],
 													'company_id_out'=> $m['company_id_out'],
 													'cookie_session'=> $m['cookie_session']
 													));				
