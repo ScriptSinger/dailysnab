@@ -6099,8 +6099,6 @@ elseif($_GET['route'] == 'close_theme'){
 
 }
 
-
-
 //Закрыть чат
     elseif($_GET['route'] == 'close_chat'){
 
@@ -6234,33 +6232,18 @@ elseif($_GET['route'] == 'out_of_theme'){
 	$STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
 		array($folder_id,COMPANY_ID,$upd_companies_json,$messagetext,1));
 	//Обновление папки для сообщений
-	$STH2 = PreExecSQL(" UPDATE tickets_folder SET companies_id=? WHERE id=?" ,
+	$STH = PreExecSQL(" UPDATE tickets_folder SET companies_id=? WHERE id=?" ,
 		array($upd_companies_json,$folder_id));
-    
-	if($STH && $STH2){
+
+	if($STH){
 		$ok = true;
-        $code = 'Тема закрыта';
 	}
 
-    /*
-    $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=? WHERE id=?" ,
-        array(2,$folder_id));
-    if($STH && $STH2){
-        $ok = true;
-        $code = 'Тема закрыта';
-    }
-    */
 	$jsd['ok'] = $ok;
 	//$jsd['code'] = $code;
 
 
 }
-
-//заблокировать пользователя
-elseif($_GET['route'] == 'block_of_theme'){
-    $jsd['resp'] = 'test-resp';
-}
-
 //Загрузка медиафайлов для сообщений
 elseif($_GET['route'] == 'upload_files_message'){
 
