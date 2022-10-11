@@ -2615,14 +2615,14 @@ elseif($_GET['route'] == 'search_brend_etp'){
             $at = array(386,389,388);// допустимые категории 3 уровнея
             if(in_array($rc['parent_id'], $at)){//
 
-                /*if(!COMPANY_ID){
+                if(!COMPANY_ID){
                     if(!AMO_TOKEN){
-                        $qrq		= new ClassQrq();
-                        $token 	= $qrq->AuthorizationAmo();
-                        $_SESSION['AMO_TOKEN'] 	= $token;
+                        //$qrq		= new ClassQrq();
+                        //$token 	= $qrq->AuthorizationAmo();
+                        $_SESSION['AMO_TOKEN'] 	= 'bd219dd9eb0f64d6e152d179dae9ba3dda6b4619';
                     }
 
-                }*/
+                }
 
                 $arr = $qrq->AmoHtmlSearchbrend(array('flag'			=> 2,
 													'token'			=> $_SESSION['AMO_TOKEN'],
