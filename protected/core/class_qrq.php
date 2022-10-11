@@ -956,7 +956,7 @@ class ClassQrq extends HtmlServive
 						// получаем searchid для дальнейшего сохранения в крон
 						
 								// получаем searchid для дальнейшего сохранения в крон
-							$arr = $qrq->getSearchidBySearch(array(	'token'				=> $_SESSION['AMO_TOKEN'],
+							$arr = self::getSearchidBySearch(array(	'token'				=> $_SESSION['AMO_TOKEN'],
 																	'brand'				=> $m['brand'],
 																	'searchtext'		=> $p['searchtext'],
 																	'accountid'			=> $accountid	));
