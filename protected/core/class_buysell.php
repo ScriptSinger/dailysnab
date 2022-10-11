@@ -299,7 +299,6 @@ class HtmlBuySell extends HtmlServive
 		// удаляем не которые кнопки по правам
 		if(PRAVA_4||PRAVA_5){
 			unset($arr_status);
-			$arr_status = array('','');
 			$arr = array('','');
 			//$ok = false;
 			//unset($arr_status[3]);
@@ -309,8 +308,8 @@ class HtmlBuySell extends HtmlServive
 				if(count($arr_status)>1||(!empty($arr_status)&&!empty($arr_button))){// более одного действия
 
 					foreach($arr_status as $status_id => $arr){
-							$nstatus 			= $arr[0];
-							$button_class 		= $arr[1];
+							$nstatus 			= isset($arr[0])? $arr[0] : '';
+							$button_class 		= isset($arr[1])? $arr[1] : '';
 							$categories_id 	= isset($arr[2])? $arr[2] : '';
 							$flag_buy_sell 	= isset($arr[3])? $arr[3] : '';
 							$stock_id 		= isset($arr[4])? $arr[4] : '';
