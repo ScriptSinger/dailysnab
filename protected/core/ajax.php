@@ -3827,6 +3827,8 @@ elseif($_GET['route'] == 'cron_amo_search'){
 												'brand'				=> $m['brand'],
 												'searchtext'		=> $in['value'],
 												'accountid'			=> $accountid	));
+		vecho($arr);
+		vecho($_POST);
 		if($arr['searchid']){
 			$STH = reqInsertCronAmoBuysellSearchUpdate(array(	'buy_sell_id'		=> $in['buy_sell_id'],
 																'token'				=> $in['token'],
