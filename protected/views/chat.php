@@ -93,13 +93,23 @@ $last_message = [];
 
 				//надо будет условие поставить еще на проверку ранних сообщеницй и на заблокировать пользователя	
 				$out_of_theme = '';
+				/*
+				?>
+					<pre style="padding-left: 150px;">
+						<code>
+							<?php var_dump($rown); ?>
+						</code>
+					</pre>
+				<?php
+				*/
 				if ($rown[0]['company_id'] == COMPANY_ID && $theme != '') //вывод выхода из темы для клиентов
 					{
 						$out_of_theme = '<button type="button" class="button-blue pull-right close_theme" data-fid="'.$fid.'">Закрыть тему</button>'; //организаторов чатов
 					} 
  				else if(in_array_r( $comp, $rowf_comp ) && !in_array( $comp, end($rowf_comp) )) //кнопка для тех кто уже вышел из чата
 					{ 
-						$out_of_theme = '<button type="button" class="button-blue pull-right block_of_theme" data-fid="'.$rown[1].'">Заблокировать пользователя</button>'; // уже после выхода из чата
+						$out_of_theme = '<button type="button" class="button-blue pull-right block_of_theme" data-fid="'.$rown[1]['folder_id'].'">Заблокировать пользователя</button>'; // уже после выхода из чата
+						// $out_of_theme = '<button type="button" class="button-blue pull-right block_of_theme" data-fid="'.$rown[1].'">Заблокировать пользователя</button>'; // уже после выхода из чата
 					} 				
 				elseif($theme != '')
 					{
