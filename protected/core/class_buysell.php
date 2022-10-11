@@ -299,6 +299,7 @@ class HtmlBuySell extends HtmlServive
 		// удаляем не которые кнопки по правам
 		if(PRAVA_4||PRAVA_5){
 			unset($arr_status);
+			$arr_status = array(0=>'');
 			//$ok = false;
 			//unset($arr_status[3]);
 		}
