@@ -7248,9 +7248,9 @@
 
 		$sql = "	SELECT buy_sell_id
 					FROM buy_sell_etp_sell be
-					WHERE be.cookie_session=? AND be.company_id=? ";
+					WHERE be.cookie_session=? /*AND be.company_id=?*/ ";
 
-		$row = PreExecSQL_all($sql,array($in['cookie_session'],$in['company_id']));
+		$row = PreExecSQL_all($sql,array($in['cookie_session']/*,$in['company_id']*/));
 
 		return $row;
 	}
