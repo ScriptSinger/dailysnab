@@ -29,6 +29,7 @@ $cfg['Servers'][$i]['auth_type'] = 'cookie';
 /* Server parameters */
 $cfg['Servers'][$i]['host'] = 'dailysnab.beget.tech';
 $cfg['Servers'][$i]['compress'] = false;
+$cfg['Servers'][$i]['password'] = 'r*6bVbrm';
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
 
 /**
