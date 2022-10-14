@@ -6367,7 +6367,7 @@
 			$sql .= 'AND bs.company_id=?';
 			array_push($arr , $in['company_id']);
 		}
-
+vecho($in['company_id']);
 		$sql = "	SELECT 
 						(	SELECT cc2.id_1c FROM 1c_company_company cc, 1c_company cc2
 							WHERE cc.1c_company_id=cc2.id AND cc.company_id=bs.company_id AND cc.company_id_to=bs.company_id2
