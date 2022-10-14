@@ -784,7 +784,7 @@ class HtmlServive extends HtmlElement
 		
 		$attribute_value_id = $id = $flag_insert = false;
 		
-		$company_id = 0;
+		$company_id = $r['id'] = 0;
 		
 		$attribute_value = $in['attribute_value'];
 
