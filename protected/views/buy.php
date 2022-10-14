@@ -69,7 +69,7 @@
 					
 					<div id="div_scrol"></div>
 					
-					
+					Описание: '.$descCategory.'
 	
 				</div>
 				<div id="footer_message">
