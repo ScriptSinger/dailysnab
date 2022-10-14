@@ -9,14 +9,12 @@
  	$tr = $trM = $replyMessage = $headData = $need_link ='';
 	$comp = (int) COMPANY_ID;
 			
-		/* 
+		
 			echo '<pre>';
-			if(!empty($row)){
-				vecho($row);
-				}
+				var_dump($member);
 			echo '</pre>'; 
 			
-		*/
+		
 $last_message = [];
         foreach ($row as $i => $m){
             $rcm = reqChatMessages(array('folder_id' => $m['id']));
