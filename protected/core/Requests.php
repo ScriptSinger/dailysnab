@@ -6369,27 +6369,25 @@
 		}
 
 		$sql = "	SELECT 
-						(	SELECT cc2.id_1c FROM 1c_company_company cc, 1c_company cc2
-							WHERE cc.1c_company_id=cc2.id AND cc.company_id=bs.company_id AND cc.company_id_to=bs.company_id2
-						) contractorid,
-						bs.data_insert `date`,
-						nc.id_1c `nomid`,
-						bs.cost,
-						CASE WHEN bs.form_payment_id=1 THEN 20 ELSE 0 END `nds`,
-						bs.amount `quantity`,
-						bsa3.attribute_value brend,
-						s1.id_1c stock_id_1c,
-						bs.id buy_sell_id
-					FROM  buy_sell bs
-					LEFT JOIN nomenclature n ON n.id=bs.nomenclature_id
-					LEFT JOIN stock s ON s.id=bs.stock_id
-					LEFT JOIN 1c_stock s1 ON s1.id=s.1c_stock_id
-					LEFT JOIN 1c_nomenclature nc ON nc.id=n.1c_nomenclature_id
-					LEFT JOIN ( 	SELECT bsa.buy_sell_id, sav.attribute_value
-									FROM attribute_value av, slov_attribute_value sav, buy_sell_attribute bsa
-									WHERE bsa.attribute_value_id=av.id 
-											AND av.attribute_id=3 AND av.attribute_value_id=sav.id ) bsa3 ON bsa3.buy_sell_id=bs.id
-					WHERE bs.flag_buy_sell=2 AND bs.status_buy_sell_id=11 
+					cc2.id_1c contractorid,
+					bs.data_insert `date`,
+					nc.id_1c `nomid`,
+					bs.cost,
+					CASE WHEN bs.form_payment_id=1 THEN 20 ELSE 0 END `nds`,
+					bs.amount `quantity`,
+					bsa3.attribute_value brend,
+					s1.id_1c stock_id_1c,
+					bs.id buy_sell_id
+				FROM 1c_company_company cc, 1c_company cc2, nomenclature n, 1c_nomenclature nc, buy_sell bs
+				LEFT JOIN stock s ON s.id=bs.stock_id
+				LEFT JOIN 1c_stock s1 ON s1.id=s.1c_stock_id
+				LEFT JOIN ( 	SELECT bsa.buy_sell_id, sav.attribute_value
+								FROM attribute_value av, slov_attribute_value sav, buy_sell_attribute bsa
+								WHERE bsa.attribute_value_id=av.id 
+										AND av.attribute_id=3 AND av.attribute_value_id=sav.id ) bsa3 ON bsa3.buy_sell_id=bs.id
+				WHERE cc.1c_company_id=cc2.id AND cc.company_id=bs.company_id AND cc.company_id_to=bs.company_id2
+					AND n.id=bs.nomenclature_id AND nc.id=n.1c_nomenclature_id 
+					AND bs.flag_buy_sell=2 AND bs.status_buy_sell_id=11 
 							AND NOT bs.id IN (SELECT t.buy_sell_id FROM 1c_outbuy11 t)/*исключаем ранее переданные, которые уже сели в 1с (берем из buy11.json)*/
 							".$sql."
 					ORDER BY bs.id ";
