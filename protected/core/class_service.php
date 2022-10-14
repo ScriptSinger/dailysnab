@@ -589,6 +589,9 @@ class HtmlServive extends HtmlElement
 																				WHERE c.cookie_session=?
 																				) AND t.company_id=0 " ,
 							array( $p['company_id'],$p['login_id'],COOKIE_SESSION ));
+							
+			vecho(array( $p['company_id'],$p['login_id'],COOKIE_SESSION )));
+							
 			if($STH){// очищаем свои куки привязку
 					$STH = PreExecSQL(" DELETE FROM buy_sell_cookie WHERE cookie_session=? " ,
 							array( COOKIE_SESSION ));
