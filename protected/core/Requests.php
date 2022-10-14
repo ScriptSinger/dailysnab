@@ -6407,10 +6407,7 @@
 		$in = fieldIn($p, array('company_id'));
 
 
-		$sql = "	SELECT 
-						(	SELECT cc2.id_1c FROM 1c_company_company cc, 1c_company cc2
-							WHERE cc.1c_company_id=cc2.id AND cc.company_id=bs.company_id2 AND cc.company_id_to=bs.company_id
-						) contractorid,
+		$sql = "	SELECT cc2.id_1c contractorid,
 						bs.data_insert `date`,
 						nc.id_1c `nomid`,
 						bs.cost,
@@ -6419,17 +6416,17 @@
 						bsa3.attribute_value brend,
 						s1.id_1c stock_id_1c,
 						bs.id buy_sell_id
-					FROM  buy_sell bs
-					LEFT JOIN nomenclature n ON n.id=bs.nomenclature_id
+					FROM 1c_company_company cc, 1c_company cc2, nomenclature n, 1c_nomenclature nc, buy_sell bs
 					LEFT JOIN stock s ON s.id=bs.stock_id
 					LEFT JOIN 1c_stock s1 ON s1.id=s.1c_stock_id
-					LEFT JOIN 1c_nomenclature nc ON nc.id=n.1c_nomenclature_id
 					LEFT JOIN ( 	SELECT bsa.buy_sell_id, sav.attribute_value
 									FROM attribute_value av, slov_attribute_value sav, buy_sell_attribute bsa
 									WHERE bsa.attribute_value_id=av.id 
 											AND av.attribute_id=3 AND av.attribute_value_id=sav.id ) bsa3 ON bsa3.buy_sell_id=bs.id
 											
-					WHERE bs.flag_buy_sell=2 
+					WHERE cc.1c_company_id=cc2.id AND cc.company_id=bs.company_id2 AND cc.company_id_to=bs.company_id 
+							AND n.id=bs.nomenclature_id AND nc.id=n.1c_nomenclature_id 
+							AND bs.flag_buy_sell=2
 							AND bs.status_buy_sell_id=11 AND ( (bs.flag_buy_sell=1 AND bs.company_id=".$in['company_id'].") 
 												OR CASE WHEN bs.company_id2=".$in['company_id']." AND bs.company_id2>0 THEN bs.flag_buy_sell IN (1,2) ELSE bs.company_id2=".$in['company_id']."
 												AND bs.flag_buy_sell IN (1) END ) 
