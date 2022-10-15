@@ -1304,9 +1304,9 @@ class HtmlTemplate extends HtmlServive
         $tr = '';
         foreach ($row as $i => $m) {
 
-            $arr = self::TrModalOffer(array('row' => $m,
-                'parent_id' => $in['id'],
-                'amount_parent' => $amount_parent));
+            $arr = self::TrModalOffer(array(	'row' 			=> $m,
+											'parent_id' 	=> $in['id'],
+											'amount_parent' => $amount_parent));
             $tr .= $arr['tr'];
             if ($arr['notification_tid']) {
                 $arr_tid[] = $arr['notification_tid'];
@@ -1356,11 +1356,11 @@ class HtmlTemplate extends HtmlServive
         $buy_offer = '';
         $amount_buy_current = 0;
         $row_buy_offer = reqBuySell_TableOfferBuy(array('parent_id' => $m['id'],
-            'company_id' => COMPANY_ID));
+													'company_id' => COMPANY_ID));
         foreach ($row_buy_offer as $ii => $mm) {
             $buy_offer .= '<div>
-										<span class="badge badge-success font12">'.$mm['status_buy2'].' '.$this->nf($mm['amount']).' '.$mm['unit'].'</span>
-									</div>';
+							<span class="badge badge-success font12">'.$mm['status_buy2'].' '.$this->nf($mm['amount']).' '.$mm['unit'].'</span>
+						</div>';
             $amount_buy_current = $amount_buy_current + $mm['amount'];
         }
 
@@ -1403,12 +1403,12 @@ class HtmlTemplate extends HtmlServive
             }
 
             if ($flag_view_button) {
-                $button_buy = $this->Input(array('type' => 'button',
-                        'class' => 'pull-right btn btn-pfimary btn-sm get_form_buy_amount',
-                        'value' => 'купить',
-                        'data' => array('id' => $m['id'], 'where' => 'modal_offer11', 'amount_recom' => $amount_recom)
-                    )
-                );
+                $button_buy = $this->Input(array(	'type' 	=> 'button',
+												'class' => 'pull-right btn btn-pfimary btn-sm get_form_buy_amount',
+												'value' => 'купить'.COMPANY_ID,
+												'data' 	=> array('id' => $m['id'], 'where' => 'modal_offer11', 'amount_recom' => $amount_recom)
+											)
+										);
             }
         }
 
@@ -1457,8 +1457,7 @@ class HtmlTemplate extends HtmlServive
 												'data' => array('id' => $m['id'])
 											)
 										);
-            $div_view_grouping = '	<div id="tr_'.$m['id'].'" class="request-hidden" style="display:none;">
-											</div>';
+            $div_view_grouping = '	<div id="tr_'.$m['id'].'" class="request-hidden" style="display:none;"></div>';
         } else {
 
             $div_id = 'div_offer'.$m['id'].'';// id div`a для обновления при покупке
