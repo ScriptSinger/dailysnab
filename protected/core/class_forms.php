@@ -1365,7 +1365,7 @@ class HtmlForms extends HtmlTemplate
 
 		// для предложения запрещаем менять категорию
 		$cl_change_categories = 'app-changer';
-		if($in['flag_buy_sell']==10){
+		if($r['status_buy_sell_id']==10){
 			$cl_change_categories = '';
 		}
 		
