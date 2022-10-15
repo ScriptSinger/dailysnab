@@ -47,6 +47,8 @@ while (time() - $start < 60) {
 				
 				usleep(100000);
 		}
+
+        flock($lockFile, LOCK_UN);
     }
 
     usleep(200000);
