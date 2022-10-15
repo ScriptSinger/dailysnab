@@ -5,7 +5,7 @@ if ($_SERVER['REMOTE_ADDR'] !== '5.18.234.111') {
     die;
 }
 
-$f = fopen(__FILE__ . '.lock', 'r+');
+$f = fopen(__FILE__ . '.lock', 'w');
 
 if (flock($f, LOCK_EX | LOCK_NB)) {
     echo 'Lock';
