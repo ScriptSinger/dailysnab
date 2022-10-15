@@ -30,7 +30,8 @@ while (time() - $start < 60) {
 
     if (flock($lockFile, LOCK_EX)) {
 		$sql = "	SELECT c.id, c.token, c.searchid, c.categories_id, c.company_id_out, c.cookie_session
-				FROM cron_amo_buy_sell_search_infopart c ";
+				FROM cron_amo_buy_sell_search_infopart c 
+                WHERE finished IS NULL ";
 
 		$row = PreExecSQL_all($sql,array());
 
