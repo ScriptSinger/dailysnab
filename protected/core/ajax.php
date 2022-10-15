@@ -1262,7 +1262,7 @@ elseif($_GET['route'] == 'save_buy_sell'){
 
 										));
 
-vecho($arr);
+
             if($arr['STH']){
 
                 $flag_insert = true;
@@ -1414,7 +1414,7 @@ vecho($arr);
 
     // Сохранение динамических параметров
     if($buy_sell_id){
-
+vecho($buy_sell_id);
         // запрос на сторонии ресурсы
         $qrq->InsertCronAmoBuySell(array('buy_sell_id'=>$buy_sell_id));
 
