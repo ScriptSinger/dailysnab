@@ -1236,7 +1236,7 @@ class HtmlForms extends HtmlTemplate
 				}
 				$save_button = '<button type="submit" data-status="'.$status.'" class="request-btn request-hidden-btn">'.$nstatus.'</button>';
 			}else{
-				$save_button = '<button type="submit" data-status="1" class="request-btn request-hidden-btn">Сохранить</button>';
+				$save_button = '<button  type="button" id="save_buy_sell_formnovalidate" data-status="1" class="request-btn request-hidden-btn">Сохранить</button>';
 			}
 		}
 		///
