@@ -1364,7 +1364,7 @@ class HtmlForms extends HtmlTemplate
 
 
 		// для предложения запрещаем менять категорию
-		$cl_change_categories = 'app-changer';
+		$cl_change_categories = 'part';
 		if($r['status_buy_sell_id']==10){
 			$cl_change_categories = '';
 		}
@@ -1382,8 +1382,8 @@ class HtmlForms extends HtmlTemplate
 						</div>
 				</label>
 				
-				<p class="'.$cl_change_categories.'">
-					<span id="span_select_categories" class="part '.$class_categories.'" style=""> <span class="naming">'.$select_categories.'</span>
+				<p class="app-changer">
+					<span id="span_select_categories" class="'.$cl_change_categories.' '.$class_categories.'" style=""> <span class="naming">'.$select_categories.'</span>
 					</span>
 					<span class="location"> <span id="get_span_cities" class="naming">'.$r['cities_name']. '</span>
 					</span>
