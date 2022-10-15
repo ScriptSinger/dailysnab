@@ -98,7 +98,9 @@
 										)
 								).'
 					
-					<br />'.$descCategory.'
+					<br />
+					
+					Описание: '.$descCategory.'
 				</div>
 				<div id="footer_message">
 					<div class="__status-bar" style="width:27px;float:right">
