@@ -17,7 +17,7 @@
 */
 
 $start = time();
-$lockFile;
+$lockFile = false;
 
 while (time() - $start < 60) {
     if (!$lockFile) {
