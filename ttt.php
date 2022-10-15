@@ -5,6 +5,10 @@ if ($_SERVER['REMOTE_ADDR'] !== '5.18.234.111') {
     die;
 }
 
+require_once './protected/core/config.php';				// Настройки ядра
+require_once './protected/core/functions.php';			// Функции/классы
+require_once './protected/core/connect.php';			// Соединение с БД, Функции запросов
+
 ini_set('display_errors', 1);
 
 echo '<pre>';
