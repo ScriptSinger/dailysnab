@@ -1392,6 +1392,7 @@ class HtmlTemplate extends HtmlServive
         if ($m['flag_subscriptions_company_in'] || $m['login_id'] == LOGIN_ID || $m['flag_subscriptions_company_out'] || $m['qrq_id']) {
             $flag_view_button = true;// по умолчанию показываем
             if ($m['qrq_id'] > 0) {
+				$flag_view_button = false;
                 // проверяем , если про аккаунт ЭТП и нет своей авторизации , то кнопку "купить" не показываем
                 $re = reqProverkaEtpPromoAccountsBySell(array('qrq_id' => $m['qrq_id']));
                 if ($re['promo'] == 1) {
