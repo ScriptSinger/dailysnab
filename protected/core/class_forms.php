@@ -1363,6 +1363,13 @@ class HtmlForms extends HtmlTemplate
 		}
 
 
+		// для предложения запрещаем менять категорию
+		$cl_change_categories = 'app-changer';
+		if($in['flag_buy_sell']==10){
+			$cl_change_categories = '';
+		}
+		
+
 		$content = '
 			<div class="app-form-wrapper btn-option">
 			
@@ -1375,8 +1382,8 @@ class HtmlForms extends HtmlTemplate
 						</div>
 				</label>
 				
-				<p class="app-changer">
-					<span id="" class="part '.$class_categories.'" style=""> <span class="naming">'.$select_categories.'</span>
+				<p class="'.$cl_change_categories.'">
+					<span id="span_select_categories" class="part '.$class_categories.'" style=""> <span class="naming">'.$select_categories.'</span>
 					</span>
 					<span class="location"> <span id="get_span_cities" class="naming">'.$r['cities_name']. '</span>
 					</span>
