@@ -19,6 +19,8 @@
 $start = time();
 $lockFile = false;
 
+PreExecSQL(" DELETE FROM cron_amo_buy_sell_search_infopart WHERE data_insert < FROM_UNIXTIME(UNIX_TIMESTAMP() - 60); ", []);
+
 while (time() - $start < 60) {
     if (!$lockFile) {
         $lockFile = fopen(__FILE__ . '.lock', 'w');
@@ -43,12 +45,6 @@ while (time() - $start < 60) {
 													'company_id_out'=> $m['company_id_out'],
 													'cookie_session'=> $m['cookie_session']
 													));				
-
-				if(!$arr['finished']){				
-					//$STH = PreExecSQL(" DELETE FROM cron_amo_buy_sell_search_infopart WHERE id=?; " ,
-										//array( $m['id'] ));									
-				}
-				
 				
 				usleep(100000);
 		}
