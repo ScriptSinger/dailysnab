@@ -1262,7 +1262,7 @@ elseif($_GET['route'] == 'save_buy_sell'){
 
 										));
 
-
+vecho($arr);
             if($arr['STH']){
 
                 $flag_insert = true;
