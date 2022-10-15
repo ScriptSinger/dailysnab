@@ -1290,11 +1290,11 @@ elseif($_GET['route'] == 'save_buy_sell'){
                 //						если номенклатура привязана, то обновляем в другом месте...
                 if( $categories_id<>1302 && !$noautorize && !$in['nomenclature_id'] && ($in['flag_buy_sell']==2) && ($in['status']==2||$in['status']==3) ){
                     $arr = $bs->NomenclatureInsertUpdate(array( 	'buy_sell_id'	=> $buy_sell_id,
-                        'id'			=> 0,
-                        'name'			=> $in['name'],
-                        'categories_id'	=> $categories_id,
-                        'id_1c'			=> $in['id_1c'],
-                        'post'			=> $_POST	));
+																'id'			=> 0,
+																'name'			=> $in['name'],
+																'categories_id'	=> $categories_id,
+																'id_1c'			=> $in['id_1c'],
+																'post'			=> $_POST	));
                     //vecho('qw');
                     $flag_nomenclature = true;
                 }elseif($in['nomenclature_id']){
