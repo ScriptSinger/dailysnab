@@ -1406,7 +1406,7 @@ class HtmlTemplate extends HtmlServive
             if ($flag_view_button) {
                 $button_buy = $this->Input(array(	'type' 	=> 'button',
 												'class' => 'pull-right btn btn-pfimary btn-sm get_form_buy_amount',
-												'value' => 'купить'.COMPANY_ID,
+												'value' => 'купить',
 												'data' 	=> array('id' => $m['id'], 'where' => 'modal_offer11', 'amount_recom' => $amount_recom)
 											)
 										);
