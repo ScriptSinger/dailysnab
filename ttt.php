@@ -5,14 +5,18 @@ if ($_SERVER['REMOTE_ADDR'] !== '5.18.234.111') {
     die;
 }
 
-$f = fopen(__FILE__ . '.lock', 'w');
+echo '<pre>';
+passthru('ps aux');
+echo '</pre>';
 
-if (flock($f, LOCK_EX | LOCK_NB)) {
-    echo 'Lock';
-    sleep(10);
-    flock($f, LOCK_UN);
-} else {
-    echo 'No';
-}
-
-fclose($f);
+//$f = fopen(__FILE__ . '.lock', 'w');
+//
+//if (flock($f, LOCK_EX | LOCK_NB)) {
+    //echo 'Lock';
+    //sleep(10);
+    //flock($f, LOCK_UN);
+//} else {
+    //echo 'No';
+//}
+//
+//fclose($f);
