@@ -1414,7 +1414,7 @@ elseif($_GET['route'] == 'save_buy_sell'){
 
     // Сохранение динамических параметров
     if($buy_sell_id){
-vecho($buy_sell_id);
+		
         // запрос на сторонии ресурсы
         $qrq->InsertCronAmoBuySell(array('buy_sell_id'=>$buy_sell_id));
 
@@ -1560,6 +1560,7 @@ vecho($buy_sell_id);
         }
 
     }
+	/*
     if(!empty($error_required)){
         $code = 'Заполните: '.implode(', ',$error_required);
         $ok = false;
@@ -1568,7 +1569,7 @@ vecho($buy_sell_id);
                 array( $buy_sell_id ));
         }
     }
-
+	*/
 
     if($ok&&!$in['id']){
         // действия при "исполнено" , "возврат" , "возвращено"
