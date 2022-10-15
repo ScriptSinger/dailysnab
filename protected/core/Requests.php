@@ -5031,7 +5031,7 @@
 
 	// Insert - Добавить в cron Опубликованую||Активную заявку
 	function reqInsertCronAmoBuySell($p=array()) {
-
+vecho(array( $p['buy_sell_id'],AMO_TOKEN));
 		$STH = PreExecSQL(" INSERT INTO cron_amo_buy_sell (buy_sell_id,token) VALUES (?,?); " ,
 			array( $p['buy_sell_id'],AMO_TOKEN));
 		if($STH){
@@ -7379,7 +7379,7 @@
 	// Insert - Добавить в cron searchid для дальнейшего использования в cron->cron_amo_buy_sell_searchupdate
 	function reqInsertCronAmoBuysellSearchUpdate($p=array()) {
 
-vecho(array( $p['buy_sell_id'],$p['token'],$p['searchid'] ));
+
 		$STH = PreExecSQL(" INSERT INTO cron_amo_buy_sell_searchupdate (buy_sell_id,token,searchid) VALUES (?,?,?); " ,
 			array( $p['buy_sell_id'],$p['token'],$p['searchid'] ));
 		if($STH){
