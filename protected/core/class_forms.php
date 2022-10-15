@@ -919,7 +919,7 @@ class HtmlForms extends HtmlTemplate
 					//$st_span_select_categories = 'display:none;';// скрыть выбор категории
 					//$select_categories 	= '<span style="font-weight:bold;color: #1cb6ff !important;">'.$rbs['categories'].'</span>';
 					$select_categories 	= $rbs['categories'];
-					//$class_categories = 'active';
+					$class_categories = 'active';
 					$arr 	= $this->CategoriesAttributeBuySell(array(	'row_bs'		=> $rbs,
 																		'buy_sell_id'	=> $rbs['id'],
 																		'parent_id'		=> $rbs['parent_id'],
@@ -1376,7 +1376,7 @@ class HtmlForms extends HtmlTemplate
 				</label>
 				
 				<p class="app-changer">
-					<span id="span_select_categories" class="part '.$class_categories.'" style=""> <span class="naming">'.$select_categories.'</span>
+					<span id="" class="part '.$class_categories.'" style=""> <span class="naming">'.$select_categories.'</span>
 					</span>
 					<span class="location"> <span id="get_span_cities" class="naming">'.$r['cities_name']. '</span>
 					</span>
