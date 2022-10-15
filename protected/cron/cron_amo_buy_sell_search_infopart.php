@@ -17,9 +17,15 @@
 */
 
 $start = time();
-$lockFile = fopen(__FILE__ . '.lock', 'w');
+$lockFile;
 
 while (time() - $start < 60) {
+    if (!$lockFile) {
+        $lockFile = fopen(__FILE__ . '.lock', 'w');
+        usleep(400000);
+        continue;
+    }
+
     if (flock($lockFile, LOCK_EX)) {
 		$sql = "	SELECT c.id, c.token, c.searchid, c.categories_id, c.company_id_out, c.cookie_session
 				FROM cron_amo_buy_sell_search_infopart c ";
@@ -54,7 +60,9 @@ while (time() - $start < 60) {
     usleep(200000);
 }
 
-fclose($lockFile);
+if ($lockFile) {
+    fclose($lockFile);
+}
 										
 
 ?>
