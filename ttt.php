@@ -15,7 +15,7 @@ echo '<pre>';
 //passthru('ps aux');
 var_dump(PreExecSQL_all('DESCRIBE cron_amo_buy_sell_search_infopart', []));
 var_dump(PreExecSQL_all('SELECT * FROM cron_amo_buy_sell_search_infopart', []));
-var_dump(PreExecSQL_all('SELECT CURRENT_TIMESTAMP() - 60', []));
+var_dump(PreExecSQL_all('SELECT CURRENT_TIMESTAMP(), FROM_UNIXTIME(UNIX_TIMESTAMP() - 60)', []));
 echo '</pre>';
 
 //$f = fopen(__FILE__ . '.lock', 'w');
