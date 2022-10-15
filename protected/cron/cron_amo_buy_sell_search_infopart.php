@@ -18,7 +18,6 @@
 
 $start = time();
 $lockFile = false;
-$logFilePath = __FILE__ . '.log';
 
 while (time() - $start < 60) {
     if (!$lockFile) {
@@ -45,11 +44,9 @@ while (time() - $start < 60) {
 													'cookie_session'=> $m['cookie_session']
 													));				
 
-                file_put_contents($logFilePath, $arr['finished'] ? "Finished\n" : "Not finished\n", FILE_APPEND);
-
 				if(!$arr['finished']){				
-					$STH = PreExecSQL(" DELETE FROM cron_amo_buy_sell_search_infopart WHERE id=?; " ,
-										array( $m['id'] ));										
+					//$STH = PreExecSQL(" DELETE FROM cron_amo_buy_sell_search_infopart WHERE id=?; " ,
+										//array( $m['id'] ));										
 				}
 				
 				
