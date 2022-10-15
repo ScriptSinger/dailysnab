@@ -46,7 +46,7 @@ while (time() - $start < 60) {
 
 				if(!$arr['finished']){				
 					//$STH = PreExecSQL(" DELETE FROM cron_amo_buy_sell_search_infopart WHERE id=?; " ,
-										//array( $m['id'] ));										
+										//array( $m['id'] ));									
 				}
 				
 				
