@@ -2710,7 +2710,7 @@ elseif($_GET['route'] == 'get_html_sell_by_infopart'){
     }
 	
 	$r = reqCronAmoBuySellSearchInfopart(array('cookie_session'=>COOKIE_SESSION));
-	if(!$r['id']){
+	if($r['finished']){
 		$noload = true;
 	}
 
