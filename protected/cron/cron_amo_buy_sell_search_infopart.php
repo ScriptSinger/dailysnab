@@ -24,7 +24,7 @@ PreExecSQL(" DELETE FROM cron_amo_buy_sell_search_infopart WHERE finished < FROM
 while (time() - $start < 60) {
     if (!$lockFile) {
         $lockFile = fopen(__FILE__ . '.lock', 'w');
-        usleep(400000);
+        usleep(200000);
         continue;
     }
 
@@ -52,7 +52,7 @@ while (time() - $start < 60) {
 										array( $m['id'] ));										
 				}
 
-				usleep(100000);
+				usleep(200000);
 		}
 
         flock($lockFile, LOCK_UN);
