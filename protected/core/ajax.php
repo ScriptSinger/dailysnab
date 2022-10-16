@@ -2662,6 +2662,8 @@ elseif($_GET['route'] == 'get_sell_by_amo_accountsetp'){
 
         $STH = PreExecSQL($sql,array($m['buy_sell_id']));
     }
+    
+    PreExecSQL('DELETE FROM cron_amo_buy_sell_search_infopart WHERE cookie_session = ?', [COOKIE_SESSION]);
     ///
 
 
