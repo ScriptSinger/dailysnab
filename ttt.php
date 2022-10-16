@@ -16,7 +16,8 @@ echo '<pre>';
 var_dump(PreExecSQL_all('DESCRIBE cron_amo_buy_sell_search_infopart', []));
 //var_dump(PreExecSQL('ALTER TABLE cron_amo_buy_sell_search_infopart CHANGE COLUMN finished finished TIMESTAMP NULL', []));
 var_dump(PreExecSQL_all('SELECT * FROM cron_amo_buy_sell_search_infopart', []));
-var_dump(PreExecSQL_all('SELECT CURRENT_TIMESTAMP(), FROM_UNIXTIME(UNIX_TIMESTAMP() - 60)', []));
+//var_dump(PreExecSQL_all('SELECT CURRENT_TIMESTAMP(), FROM_UNIXTIME(UNIX_TIMESTAMP() - 60)', []));
+var_dump(PreExecSQL_all('SELECT COUNT(*) FROM buy_sell', []));
 echo '</pre>';
 
 //$f = fopen(__FILE__ . '.lock', 'w');
