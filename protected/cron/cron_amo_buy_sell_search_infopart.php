@@ -46,7 +46,7 @@ while (time() - $start < 60) {
 													'company_id_out'=> $m['company_id_out'],
 													'cookie_session'=> $m['cookie_session']
 													));				
-				
+				vecho($arr);
 				if(!$arr['finished']){				
 					$STH = PreExecSQL(" UPDATE cron_amo_buy_sell_search_infopart SET finished = NOW() WHERE id=?; " ,
 										array( $m['id'] ));										
