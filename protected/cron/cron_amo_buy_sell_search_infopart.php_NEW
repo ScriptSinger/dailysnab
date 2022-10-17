@@ -16,9 +16,22 @@
 				///	
 */
 
-		
+$start = time();
+$lockFile = false;
+
+PreExecSQL(" DELETE FROM cron_amo_buy_sell_search_infopart WHERE finished < FROM_UNIXTIME(UNIX_TIMESTAMP() - 60); ", []);
+
+while (time() - $start < 60) {
+    if (!$lockFile) {
+        $lockFile = fopen(__FILE__ . '.lock', 'w');
+        usleep(200000);
+        continue;
+    }
+
+    if (flock($lockFile, LOCK_EX)) {
 		$sql = "	SELECT c.id, c.token, c.searchid, c.categories_id, c.company_id_out, c.cookie_session
-				FROM cron_amo_buy_sell_search_infopart c ";
+				FROM cron_amo_buy_sell_search_infopart c 
+                WHERE finished IS NULL ";
 
 		$row = PreExecSQL_all($sql,array());
 
@@ -33,19 +46,24 @@
 													'company_id_out'=> $m['company_id_out'],
 													'cookie_session'=> $m['cookie_session']
 													));				
-
-
+				
 				if(!$arr['finished']){				
-					$STH = PreExecSQL(" DELETE FROM cron_amo_buy_sell_search_infopart WHERE id=?; " ,
+					$STH = PreExecSQL(" UPDATE cron_amo_buy_sell_search_infopart SET finished = NOW() WHERE id=?; " ,
 										array( $m['id'] ));										
 				}
-				
-				
-				sleep(5);
-		}
-		
 
-		
+				usleep(200000);
+		}
+
+        flock($lockFile, LOCK_UN);
+    }
+
+    usleep(200000);
+}
+
+if ($lockFile) {
+    fclose($lockFile);
+}
 										
 
 ?>
