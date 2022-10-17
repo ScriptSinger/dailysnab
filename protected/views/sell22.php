@@ -70,12 +70,12 @@
 															if(data.noload){
 																clearTimeout(timeOutId3);
 															}else{
-																timeOutId3 = setTimeout(ajaxFn3, 1000);
+																timeOutId3 = setTimeout(ajaxFn3, 3000);
 															}
 												}
 									);
 							};
-							timeOutId3 = setTimeout(ajaxFn3, 1000);
+							timeOutId3 = setTimeout(ajaxFn3, 3000);
 					});
 				</script>';
 	}
