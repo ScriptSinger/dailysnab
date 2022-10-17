@@ -4268,7 +4268,8 @@ class HtmlTemplate extends HtmlServive
         if (PRAVA_5) {// Заказчик (не видит компании и цены)
             $company = '';
 			// Удаляем  цену (во ./views/buy_sell.php script который затерает)
-          //  $m['cache_1'] = str_replace('<div class="buy-item-main-right__left-cost"', '<div class="buy-item-main-right__left-cost delete_html_teg"', $m['cache_1']);
+            $m['cache_1'] = str_replace('<div class="buy-item-main-right__left-cost"', '<div class="buy-item-main-right__left-cost delete_html_teg"', $m['cache_1']);
+			$m['cache_1'] = str_replace('<div class="request-price"', '<div class="request-price delete_html_teg"', $m['cache_1']);
         }
 
         $day_noactive = '';
