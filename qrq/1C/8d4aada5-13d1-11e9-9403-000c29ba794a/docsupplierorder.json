@@ -33624,5 +33624,226 @@
 				"Brand": "Kolbenschmidt"
 			}
 		]
+	},
+	{
+		"data1c": "2022-10-18T00:00:00",
+		"DocID": "87faee57-4f0e-11ed-8dba-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "3ad912f4-6de4-11ec-80bf-000c292c2d55",
+		"Date": "2022-10-18T08:07:27",
+		"IncomeUPD": "8835597",
+		"Goods": [
+			{
+				"NomID": "db5003b2-4ecf-11ed-8dba-0cc47a03c9dc",
+				"Price": 179,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-18T00:00:00",
+		"DocID": "8c11a342-4f0e-11ed-8dba-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "3ad912f4-6de4-11ec-80bf-000c292c2d55",
+		"Date": "2022-10-18T08:10:23",
+		"IncomeUPD": "8835600",
+		"Goods": [
+			{
+				"NomID": "db50039f-4ecf-11ed-8dba-0cc47a03c9dc",
+				"Price": 1488,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-18T00:00:00",
+		"DocID": "8c11a355-4f0e-11ed-8dba-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "3ad912f4-6de4-11ec-80bf-000c292c2d55",
+		"Date": "2022-10-18T08:16:50",
+		"IncomeUPD": "8837563",
+		"Goods": [
+			{
+				"NomID": "db50038c-4ecf-11ed-8dba-0cc47a03c9dc",
+				"Price": 286,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-18T00:00:00",
+		"DocID": "8c11a368-4f0e-11ed-8dba-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "3ad912f4-6de4-11ec-80bf-000c292c2d55",
+		"Date": "2022-10-18T08:33:49",
+		"IncomeUPD": "8837569",
+		"Goods": [
+			{
+				"NomID": "db500379-4ecf-11ed-8dba-0cc47a03c9dc",
+				"Price": 1758,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-18T00:00:00",
+		"DocID": "8fbd130f-4f0e-11ed-8dba-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "3ad912f4-6de4-11ec-80bf-000c292c2d55",
+		"Date": "2022-10-18T09:21:21",
+		"IncomeUPD": "8837573",
+		"Goods": [
+			{
+				"NomID": "db5003c5-4ecf-11ed-8dba-0cc47a03c9dc",
+				"Price": 184,
+				"NDS": 0,
+				"Quantity": 4,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-18T00:00:00",
+		"DocID": "90e4b5c2-4f0e-11ed-8dba-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "55d17d3e-742b-11ec-80e0-000c2999d0eb",
+		"Date": "2022-10-18T13:45:54",
+		"IncomeUPD": "8877032",
+		"Goods": [
+			{
+				"NomID": "dce391b5-6cbd-11ec-80dd-000c2999d0eb",
+				"Price": 593.01,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-18T00:00:00",
+		"DocID": "91e3da66-4f0e-11ed-8dba-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
+		"Date": "2022-10-18T13:59:14",
+		"IncomeUPD": "8877034",
+		"Goods": [
+			{
+				"NomID": "765970de-6cbd-11ec-80dd-000c2999d0eb",
+				"Price": 672,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-18T00:00:00",
+		"DocID": "921383ce-4f0e-11ed-8dba-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
+		"Date": "2022-10-18T14:06:38",
+		"IncomeUPD": "8877036",
+		"Goods": [
+			{
+				"NomID": "d6e42945-6cbd-11ec-80dd-000c2999d0eb",
+				"Price": 238,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": "Rosteco"
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-18T00:00:00",
+		"DocID": "921383e1-4f0e-11ed-8dba-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "3ad912f4-6de4-11ec-80bf-000c292c2d55",
+		"Date": "2022-10-18T14:18:59",
+		"IncomeUPD": "8877039",
+		"Goods": [
+			{
+				"NomID": "224999ad-6cbd-11ec-80dd-000c2999d0eb",
+				"Price": 387,
+				"NDS": 0,
+				"Quantity": 2,
+				"Brand": "Rosteco"
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-18T00:00:00",
+		"DocID": "921383f4-4f0e-11ed-8dba-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "1945a380-9bad-11ec-80c9-000c292c2d55",
+		"Date": "2022-10-18T14:22:39",
+		"IncomeUPD": "8877041",
+		"Goods": [
+			{
+				"NomID": "81765a58-6cbe-11ec-80dd-000c2999d0eb",
+				"Price": 4095.96,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-18T00:00:00",
+		"DocID": "92138407-4f0e-11ed-8dba-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
+		"Date": "2022-10-18T14:25:06",
+		"IncomeUPD": "8877043",
+		"Goods": [
+			{
+				"NomID": "d6e4290f-6cbd-11ec-80dd-000c2999d0eb",
+				"Price": 366,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": "Rosteco"
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-18T00:00:00",
+		"DocID": "98641287-4f0e-11ed-8dba-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "335fdb9c-dbf2-11ec-80e6-000c2999d0eb",
+		"Date": "2022-10-18T14:26:16",
+		"IncomeUPD": "8877045",
+		"Goods": [
+			{
+				"NomID": "344a369a-6cbd-11ec-80dd-000c2999d0eb",
+				"Price": 601.42,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": "Kolbenschmidt"
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-18T00:00:00",
+		"DocID": "9abd0d7c-4f0e-11ed-8dba-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "3bbce0d7-1157-11ed-8db6-0cc47a03c9dc",
+		"Date": "2022-10-18T15:36:30",
+		"IncomeUPD": "8878305",
+		"Goods": [
+			{
+				"NomID": "7b7e1818-6cbe-11ec-80dd-000c2999d0eb",
+				"Price": 893.08,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
 	}
 ]
