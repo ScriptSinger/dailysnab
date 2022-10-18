@@ -10,9 +10,9 @@
 	$comp = (int) COMPANY_ID;
 			
 		
-			echo '<pre>';
-				var_dump($member);
-			echo '</pre>'; 
+			// echo '<pre>';
+			// 	var_dump($member);
+			// echo '</pre>'; 
 			
 		
 $last_message = [];
@@ -89,11 +89,11 @@ $last_message = [];
 				//$rcm = reqChatMessages(array('company_id' => COMPANY_ID)); 
 				//$company_name = $rcm[0]["name_rcmc"];
 				?>
-				<pre style="margin-left: 150px; width: calc(100vw - 150px);">
+				<!-- <pre style="margin-left: 150px; width: calc(100vw - 150px);">
 					<code>
 						<?php //var_dump($rown);?>
 					</code>
-				</pre>
+				</pre> -->
 				<?php
 				//надо будет условие поставить еще на проверку ранних сообщеницй и на заблокировать пользователя	
 				$out_of_theme = '';
