@@ -6791,7 +6791,7 @@
 		"IncomeUPD": "6160493",
 		"Goods": [
 			{
-				"NomID": "cc2a7ccd-0f9c-11ed-8db6-0cc47a03c9dc",
+				"NomID": "0570e125-6cbf-11ec-80dd-000c2999d0eb",
 				"Price": 5385.43,
 				"NDS": 0,
 				"Quantity": 6,
@@ -33298,7 +33298,7 @@
 				"Price": 1410,
 				"NDS": 0,
 				"Quantity": 30,
-				"Brand": "stal"
+				"Brand": ""
 			}
 		]
 	},
@@ -33383,7 +33383,7 @@
 				"Price": 996.7,
 				"NDS": 0,
 				"Quantity": 1,
-				"Brand": "ELRING"
+				"Brand": ""
 			}
 		]
 	},
@@ -33503,6 +33503,125 @@
 				"NDS": 0,
 				"Quantity": 1,
 				"Brand": "Mahle/Knecht"
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-18T00:00:00",
+		"DocID": "cd493bc5-4ecf-11ed-8dba-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "335fdb9c-dbf2-11ec-80e6-000c2999d0eb",
+		"Date": "2022-10-14T15:47:59",
+		"IncomeUPD": "8734383",
+		"Goods": [
+			{
+				"NomID": "464ad341-6cbd-11ec-80dd-000c2999d0eb",
+				"Price": 580.84,
+				"NDS": 0,
+				"Quantity": 10,
+				"Brand": "Emmerre"
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-18T00:00:00",
+		"DocID": "cd493beb-4ecf-11ed-8dba-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "733737a7-7e81-11ec-80c5-000c292c2d55",
+		"Date": "2022-10-17T08:58:02",
+		"IncomeUPD": "8748967",
+		"Goods": [
+			{
+				"NomID": "fbaaee36-4e77-11ed-8dba-0cc47a03c9dc",
+				"Price": 11000,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": "оригинал"
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-18T00:00:00",
+		"DocID": "d37d301c-4ecf-11ed-8dba-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
+		"Date": "2022-10-17T14:55:23",
+		"IncomeUPD": "8822451",
+		"Goods": [
+			{
+				"NomID": "01d57316-4e78-11ed-8dba-0cc47a03c9dc",
+				"Price": 6026,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": "Zevs"
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-18T00:00:00",
+		"DocID": "d37d3030-4ecf-11ed-8dba-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "3ad912f4-6de4-11ec-80bf-000c292c2d55",
+		"Date": "2022-10-18T08:04:40",
+		"IncomeUPD": "8835594",
+		"Goods": [
+			{
+				"NomID": "757c4cc3-6cbe-11ec-80dd-000c2999d0eb",
+				"Price": 690,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": "RUBENA"
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-18T00:00:00",
+		"DocID": "d37d3044-4ecf-11ed-8dba-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "3ad912f4-6de4-11ec-80bf-000c292c2d55",
+		"Date": "2022-10-18T08:13:33",
+		"IncomeUPD": "8836891",
+		"Goods": [
+			{
+				"NomID": "705a0845-6cbd-11ec-80dd-000c2999d0eb",
+				"Price": 788,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": "Hofer"
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-18T00:00:00",
+		"DocID": "d37d306a-4ecf-11ed-8dba-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "3ad912f4-6de4-11ec-80bf-000c292c2d55",
+		"Date": "2022-10-18T08:24:24",
+		"IncomeUPD": "8837566",
+		"Goods": [
+			{
+				"NomID": "4cadb115-f934-11ec-8da9-000c295de724",
+				"Price": 341,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": "Rosteco"
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-18T00:00:00",
+		"DocID": "d37d307e-4ecf-11ed-8dba-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "53af208d-6de4-11ec-80bf-000c292c2d55",
+		"Date": "2022-10-18T12:28:41",
+		"IncomeUPD": "8856990",
+		"Goods": [
+			{
+				"NomID": "c25ef7b9-6cbc-11ec-80dd-000c2999d0eb",
+				"Price": 9500,
+				"NDS": 0,
+				"Quantity": 10,
+				"Brand": "Kolbenschmidt"
 			}
 		]
 	}
