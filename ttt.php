@@ -4,6 +4,32 @@ require_once './protected/core/functions.php';			// Функции/классы
 require_once './protected/core/connect.php';			// Соединение с БД, Функции запросов
 require_once './protected/core/Requests.php';			// Функции вспомогательных SQL-запросов
 
+require_once './protected/core/class_htmlelement.php';	// класс html элементов
+require_once './protected/core/class_service.php';		// класс настроек
+require_once './protected/core/class_template.php';		// класс шаблонов
+require_once './protected/core/class_forms.php';		// класс форм и элементов форм
+require_once './protected/core/class_template_email_sms.php';
+require_once './protected/core/class_buysell.php';		// класс действия представления с Заявкой/Предложением/Объявлением
+require_once './protected/core/class_notification.php';	// Оповещения/Уведомления
+require_once './protected/core/class_qrq.php';			// Захват со стороних ресурсов
+require_once './protected/core/class_api.php';			// Захват со стороних ресурсов
+
+// phpmailer
+require_once './protected/source/phpmailer/class.phpmailer.php';	// phpmailer отправка писем smtp
+require_once './protected/source/phpmailer/class.pop3.php';			// phpmailer отправка писем smtp
+require_once './protected/source/phpmailer/class.smtp.php';			// phpmailer отправка писем smtp
+
+
+$e		= new HtmlElement();
+$g		= new HtmlServive();
+$t		= new HtmlTemplate();
+$f		= new HtmlForms();
+$tes		= new HtmlTemplateEmailSms();
+$bs		= new HtmlBuySell();
+$cn		= new ClassNotification();
+$qrq		= new ClassQrq();
+$api		= new ClassApi();
+
 //$r = PreExecSQL_all('SELECT * FROM amo_log_json ORDER BY id DESC LIMIT 1');
 //var_dump($r);
 //
