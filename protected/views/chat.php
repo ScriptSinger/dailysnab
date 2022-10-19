@@ -126,7 +126,7 @@ $last_message = [];
 							 '.$formPrava . ' ' . $companyName['company'].'<br /><small>'.$need_link.'</small>
 						</div>
 						<div class="col-md-5">
-							'.$out_of_theme.'
+							'.$out_of_theme.'2
 						</div>				
 					</div>
 					';
@@ -140,7 +140,7 @@ $last_message = [];
 							 '.$theme.'<br /><small>'.$need_link.'</small>
 						</div>
 						<div class="col-md-5">
-							'.$out_of_theme.'
+							'.$out_of_theme.'2
 						</div>						
 					</div>
 					';				
