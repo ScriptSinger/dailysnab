@@ -48,10 +48,6 @@ $logFilePath = __FILE__ . '.log';
 		$row = PreExecSQL_all($sql,array());
 
 		foreach($row as $k=>$m){
-            var_dump($k, $m);
-            continue;
-                file_put_contents($logFilePath, "searchid: $m[searchid]\n", FILE_APPEND);
-
 				// Получаем и сохраняем в buy_sell данные от сторонних ресурсов
 				$arr = $qrq->QrqInsertBuySell(array(	'where'			=> 'infopart',
 													'token'			=> $m['token'],
@@ -60,13 +56,15 @@ $logFilePath = __FILE__ . '.log';
 													'company_id_out'=> $m['company_id_out'],
 													'cookie_session'=> $m['cookie_session']
 													));				
+
+                var_dump($arr);
 				
 				if(!$arr['finished']){				
 					$STH = PreExecSQL(" UPDATE cron_amo_buy_sell_search_infopart SET finished = NOW() WHERE id=?; " ,
 										array( $m['id'] ));										
 				}
 
-				usleep(200000);
+				//usleep(200000);
 		}
 
         //flock($lockFile, LOCK_UN);
