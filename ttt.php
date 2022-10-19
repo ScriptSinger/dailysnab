@@ -6,3 +6,6 @@ require_once './protected/core/Requests.php';			// Функции вспомог
 
 $r = PreExecSQL_all('SELECT * FROM amo_log_json ORDER BY id DESC LIMIT 1');
 var_dump($r);
+
+$r = PreExecSQL_all('SELECT * FROM cron_amo_buy_sell_search_infopart');
+var_dump($r);
