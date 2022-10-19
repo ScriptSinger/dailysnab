@@ -6,7 +6,7 @@
 	// компании, которым отсылаем отчет(уведомление)
 	$sql = "	SELECT n.login_id, n.company_id, c.company, l.email
 			FROM notification_cron_send_1800 n, company c, login l
-			WHERE n.login_id=l.id AND n.company_id=c.id AND l.email LIKE '%@%'
+			WHERE n.login_id=l.id AND n.company_id=c.id AND l.email LIKE '%@%' AND NOT l.email LIKE 'AMO_%'
 			GROUP BY n.login_id, n.company_id, c.company  ";
 
 	$row = PreExecSQL_all($sql,array());
