@@ -18,6 +18,7 @@
 
 $start = time();
 $lockFile = false;
+$logFilePath = __FILE__ . '.log';
 
 PreExecSQL(" DELETE FROM cron_amo_buy_sell_search_infopart WHERE finished < FROM_UNIXTIME(UNIX_TIMESTAMP() - 60); ", []);
 
@@ -36,7 +37,7 @@ while (time() - $start < 60) {
 		$row = PreExecSQL_all($sql,array());
 
 		foreach($row as $k=>$m){
-
+                file_put_contents($logFilePath, "searchid: $m[searchid]\n", FILE_APPEND);
 
 				// Получаем и сохраняем в buy_sell данные от сторонних ресурсов
 				$arr = $qrq->QrqInsertBuySell(array(	'where'			=> 'infopart',
