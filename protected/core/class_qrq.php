@@ -758,77 +758,88 @@ class ClassQrq extends HtmlServive
 		if($row_bs['qrq_id']>0){
 			
 			
-				$ra = reqAmoAccountsEtp_AccountsidByCompanyid(array('qrq_id'=>$row_bs['qrq_id'],'company_id'=>COMPANY_ID));// получаем accountid
+				// Проверяем есть ли своя авторизация или без входа"( если нет смотрим есть ли "промо")
+				$ra = reqAmoAccountsEtp_AccountsidByCompanyid3(array('qrq_id'=>$row_bs['qrq_id'],'company_id'=>COMPANY_ID));// получаем accountid
+				
+				if(!$ra['accounts_id']){// нет своего аккаунта, берем "промо" если есть
+					$ra = reqAmoAccountsEtp_AccountsidByCompanyid_Promo(array('qrq_id'=>$row_bs['qrq_id']));// получаем accountid
+					
+				}
+				
 				vecho($ra);
 				exit;
+
+				if($ra['accounts_id']){
 			
-			// 1 - Добавление товара в корзину
-			
-				$url = DOMEN.'/qrq/amo/cartadd.php';
+					// 1 - Добавление товара в корзину
+					
+						$url = DOMEN.'/qrq/amo/cartadd.php';
 
-				$parameters = [
-							'token' 		=> AMO_TOKEN,
-							'itemid' 		=> $row_bs['item_id'],
-							'quantity' 		=> $p['amount'],
-							'accountid' 	=> $ra['accounts_id']
-							];
+						$parameters = [
+									'token' 		=> AMO_TOKEN,
+									'itemid' 		=> $row_bs['item_id'],
+									'quantity' 		=> $p['amount'],
+									'accountid' 	=> $ra['accounts_id']
+									];
 
-				$json = self::getJsonCurl(array('url'=>$url,'parameters'=>$parameters));
-				//vecho($parameters);
-				//vecho($json);
-				if($json){
-					
-					// пишем лог
-					$ins_id = reqInsertAmoLogJson(array('url'=>'cartadd','parameters'=>$parameters,'json'=>$json,'token'=>AMO_TOKEN));
-					
-					//vecho($parameters);
-					//vecho($json);
-					
-					$Response	= isset($json->Response)? $json->Response : '';
-					
-					$errors = isset($Response->errors)? $Response->errors : '';
-					$errors_message 	= isset($errors[0]->message)?	 	$errors[0]->message 		: '';
-
-					$warnings = isset($Response->warnings)? $Response->warnings : '';//errors
-					$warnings_message = isset($warnings[0]->message)? 	$warnings[0]->message 	: '';
-			//var_dump($errors);
-			//var_dump($warnings);
-					if( !$errors_message && !$warnings_message ){
+						$json = self::getJsonCurl(array('url'=>$url,'parameters'=>$parameters));
+						//vecho($parameters);
+						//vecho($json);
+						if($json){
 							
+							// пишем лог
+							$ins_id = reqInsertAmoLogJson(array('url'=>'cartadd','parameters'=>$parameters,'json'=>$json,'token'=>AMO_TOKEN));
 							
-							/*
-							$rap = reqAmoAccountsBasketParam(array('accounts_id'=>$ra['accounts_id']));
-							$param = $rap['param'];
-							*/
-							// 2 - Получение корзины (без получении корзины не оформить заказ), появиться форма
+							//vecho($parameters);
+							//vecho($json);
 							
-							$url = DOMEN.'/qrq/amo/basket.php?token='.AMO_TOKEN.'&accountid='.$ra['accounts_id'].'&amount='.$p['amount'].'&buy_sell_id='.$row_bs['id'].'&where='.$in['where'];//.'&pparam='.$param
-							$code = file_get_contents($url);
-							//vecho($url);
-							//vecho($code);
-	/*
-							$url = DOMEN.'/qrq/amo/basket.php';
+							$Response	= isset($json->Response)? $json->Response : '';
+							
+							$errors = isset($Response->errors)? $Response->errors : '';
+							$errors_message 	= isset($errors[0]->message)?	 	$errors[0]->message 		: '';
 
-							$parameters = [
-										'token' 		=> AMO_TOKEN,
-										'accountid' 	=> $ra['accounts_id'],
-										'amount' 		=> $p['amount'],
-										'buy_sell_id' 	=> $row_bs['id'],
-										'where' 		=> $in['where'],
-										'param'			=> $param
-										];
+							$warnings = isset($Response->warnings)? $Response->warnings : '';//errors
+							$warnings_message = isset($warnings[0]->message)? 	$warnings[0]->message 	: '';
+					//var_dump($errors);
+					//var_dump($warnings);
+							if( !$errors_message && !$warnings_message ){
+									
+									
+									/*
+									$rap = reqAmoAccountsBasketParam(array('accounts_id'=>$ra['accounts_id']));
+									$param = $rap['param'];
+									*/
+									// 2 - Получение корзины (без получении корзины не оформить заказ), появиться форма
+									
+									$url = DOMEN.'/qrq/amo/basket.php?token='.AMO_TOKEN.'&accountid='.$ra['accounts_id'].'&amount='.$p['amount'].'&buy_sell_id='.$row_bs['id'].'&where='.$in['where'];//.'&pparam='.$param
+									$code = file_get_contents($url);
+									//vecho($url);
+									//vecho($code);
+			/*
+									$url = DOMEN.'/qrq/amo/basket.php';
 
-							$code = self::getJsonCurl(array('url'=>$url,'parameters'=>$parameters));
-							//vecho($code);
-	*/
-					}else{
-						$errors_message = $errors_message.' '.$warnings_message;
+									$parameters = [
+												'token' 		=> AMO_TOKEN,
+												'accountid' 	=> $ra['accounts_id'],
+												'amount' 		=> $p['amount'],
+												'buy_sell_id' 	=> $row_bs['id'],
+												'where' 		=> $in['where'],
+												'param'			=> $param
+												];
+
+									$code = self::getJsonCurl(array('url'=>$url,'parameters'=>$parameters));
+									//vecho($code);
+			*/
+							}else{
+								$errors_message = $errors_message.' '.$warnings_message;
+								
+								// пишем ошибку и привязываем к общему json через parent_id
+								reqInsertAmoLogJson(array('parent_id'=>$ins_id,'url'=>'cartadd','parameters'=>$parameters,'json'=>$json,'token'=>AMO_TOKEN));
+								
+							}
+							
+						}
 						
-						// пишем ошибку и привязываем к общему json через parent_id
-						reqInsertAmoLogJson(array('parent_id'=>$ins_id,'url'=>'cartadd','parameters'=>$parameters,'json'=>$json,'token'=>AMO_TOKEN));
-						
-					}
-					
 				}
 				
 		}
