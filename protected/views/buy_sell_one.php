@@ -10,11 +10,20 @@
 	if($flag_offer){// Предложение
 		$zagolovoc = $row['name'].' '.$row['amount'].' '.$row['unit'];
 	}else{
-		$dop = '';
+		$amount_unit = '';
 		if($row['flag_buy_sell']==2||$row['flag_buy_sell']==3){// Заявка или Предложение
-			$dop = ' '.$row['amount'].' '.$row['unit'];
+			$amount_unit = ' '.$row['amount'].' '.$row['unit'];
+            // фасовка
+            if ($m['unit_group_id']) {
+                if ($m['unit_id2'] && $m['amount2']) {// выбрано ШТУКИ и другая ед.измерения
+                    $amount_unit = $this->nf($m['amount1']).' '.$m['unit1'];
+                } elseif ($m['unit_id1'] && !$m['unit_id2'] && ($m['unit_id'] <> $m['unit_id1'])) {// выбрано НЕ штуки, а другая ед.измерения отличная от "по умолчанию" у категории
+                    $t_amount = ($m['status_buy_sell_id'] == 11) ? $m['amount_buy'] : $m['amount1'];
+                    $amount_unit = $this->nf($t_amount).''.$m['unit1'];
+                }
+            }
 		}
-		$zagolovoc = $row['name'].$dop;
+		$zagolovoc = $row['name'].$amount_unit;
 	}
 	
 	
