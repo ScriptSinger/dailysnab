@@ -34,7 +34,7 @@
 		
 					if($ok){
 						$amount_recom	= getGets('amount');
-						
+						vecho($row);
 						$this->buy_sell_one = array( 	'row' 			=> $row,
 													'flag_offer'	=> $flag_offer,
 													'row_buy'		=> $row_buy,
