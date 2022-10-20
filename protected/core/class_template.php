@@ -3281,24 +3281,24 @@ class HtmlTemplate extends HtmlServive
 
         if ($m['status_buy_sell_id'] == 1 || $m['status_buy_sell_id'] == 2 || $m['status_buy_sell_id'] == 3) {
             // дать предложение
-            $form_buy_sell = $this->Input(array('type' => 'button',
-                    'id' => 'button_form_buy_sell'.$m['id'],
-                    'class' => 'for-hidden-request form_buy_sell',
-                    'value' => '<img src="/image/status-request.svg" alt="" class="status-request">',
-                    'data' => array('id' => $m['id'],
-                        'status' => 10,
-                        'categories_id' => $m['categories_id'],
-                        'value' => 3,
-                        'flag' => 'mybuy',
-                        'flag_offer_share' => true)
-                )
-            );
-            $form_buy_sell_hidden = $this->Input(array('type' => 'button',
-                    'class' => 'change-btn form_buy_sell_hidden',
-                    'value' => 'Свернуть',
-                    'data' => array('id' => $m['id'])
-                )
-            );
+            $form_buy_sell = $this->Input(array('type' 	=> 'button',
+											'id' 	=> 'button_form_buy_sell'.$m['id'],
+											'class' => 'for-hidden-request form_buy_sell',
+											'value' => '<img src="/image/status-request.svg" alt="" class="status-request">',
+											'data' 	=> array('id' 			=> $m['id'],
+															'status' 		=> 10,
+															'categories_id' => $m['categories_id'],
+															'value' 		=> 3,
+															'flag'			=> 'mybuy',
+															'flag_offer_share' => true)
+										)
+									);
+            $form_buy_sell_hidden = $this->Input(array(	'type' 	=> 'button',
+													'class' => 'change-btn form_buy_sell_hidden',
+													'value' => 'Свернуть',
+													'data'	=> array('id' => $m['id'])
+												)
+											);
 
             $button_edit = '<button class="modal_buy_sell" data-id="'.$m['id'].'" 
 																data-flag_buy_sell="'.$m['flag_buy_sell'].'" 
