@@ -14,12 +14,12 @@
 		if($row['flag_buy_sell']==2||$row['flag_buy_sell']==3){// Заявка или Предложение
 			$amount_unit = ' '.$row['amount'].' '.$row['unit'];
             // фасовка
-            if ($m['unit_group_id']) {
-                if ($m['unit_id2'] && $m['amount2']) {// выбрано ШТУКИ и другая ед.измерения
-                    $amount_unit = $this->nf($m['amount1']).' '.$m['unit1'];
-                } elseif ($m['unit_id1'] && !$m['unit_id2'] && ($m['unit_id'] <> $m['unit_id1'])) {// выбрано НЕ штуки, а другая ед.измерения отличная от "по умолчанию" у категории
-                    $t_amount = ($m['status_buy_sell_id'] == 11) ? $m['amount_buy'] : $m['amount1'];
-                    $amount_unit = $this->nf($t_amount).''.$m['unit1'];
+            if ($row['unit_group_id']) {
+                if ($row['unit_id2'] && $row['amount2']) {// выбрано ШТУКИ и другая ед.измерения
+                    $amount_unit = $this->nf($row['amount1']).' '.$row['unit1'];
+                } elseif ($row['unit_id1'] && !$row['unit_id2'] && ($row['unit_id'] <> $row['unit_id1'])) {// выбрано НЕ штуки, а другая ед.измерения отличная от "по умолчанию" у категории
+                    $t_amount = ($row['status_buy_sell_id'] == 11) ? $row['amount_buy'] : $row['amount1'];
+                    $amount_unit = $this->nf($t_amount).''.$row['unit1'];
                 }
             }
 		}
