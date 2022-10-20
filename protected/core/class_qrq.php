@@ -766,8 +766,6 @@ class ClassQrq extends HtmlServive
 					
 				}
 				
-				vecho($ra);
-				exit;
 
 				if($ra['accounts_id']){
 			
