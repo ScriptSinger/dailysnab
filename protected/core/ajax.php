@@ -1128,11 +1128,13 @@ elseif($_GET['route'] == 'save_buy_sell'){
             $url	= 'offer';
             $in['form_payment_id'] = (FLAG_ACCOUNT==1)? 3 : $in['form_payment_id']; // Для не компаний по умолчанию - наличные
             $company_id = ($in['company_id'])? $in['company_id'] : '';
-			$jsd['ok'] 			= false;
-			$jsd['code'] 		= 'Выберите Поставщика';
-			echo json_encode($jsd);
+			/*if(!$company_id){
+				$jsd['ok'] 			= false;
+				$jsd['code'] 		= 'Выберите Поставщика';
+				echo json_encode($jsd);
 
-			exit;
+				exit;
+			}*/
         }elseif($in['status']==12){
             $url	= 'buried';
             if($r_p['unit_group_id']){
