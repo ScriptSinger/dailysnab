@@ -30,12 +30,12 @@ $cn		= new ClassNotification();
 $qrq		= new ClassQrq();
 $api		= new ClassApi();
 
-$r = PreExecSQL_all('SELECT * FROM amo_log_json ORDER BY id DESC LIMIT 5');
-var_dump($r);
-
-$r = PreExecSQL_all('SELECT * FROM cron_amo_buy_sell_search_infopart');
-var_dump($r);
-die;
+//$r = PreExecSQL_all('SELECT * FROM amo_log_json ORDER BY id DESC LIMIT 5');
+//var_dump($r);
+//
+//$r = PreExecSQL_all('SELECT * FROM cron_amo_buy_sell_search_infopart');
+//var_dump($r);
+//die;
 
 /**
  * Крон - 	Возвращает предложение (товар) от сторонних ресурсов (AMO), страница IhfoPart
@@ -75,7 +75,7 @@ while (time() - $start < 60) {
 		$row = PreExecSQL_all($sql,array());
 
 		foreach($row as $k=>$m){
-            var_dump($m);
+            var_dump($k, $m);
 				// Получаем и сохраняем в buy_sell данные от сторонних ресурсов
 				$arr = $qrq->QrqInsertBuySell(array(	'where'			=> 'infopart',
 													'token'			=> $m['token'],
@@ -87,10 +87,11 @@ while (time() - $start < 60) {
 				
 				if(!$arr['finished']){				
 					$STH = PreExecSQL(" UPDATE cron_amo_buy_sell_search_infopart SET finished = NOW() WHERE id=?; " ,
-										array( $m['id'] ));										
+										array( $m['id'] ));		
+                    var_dump("Finish $m[id]");
 				}
 
-				//usleep(200000);
+				usleep(200000);
 		}
 
         //flock($lockFile, LOCK_UN);
