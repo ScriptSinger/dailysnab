@@ -1132,12 +1132,12 @@ elseif($_GET['route'] == 'save_buy_sell'){
             $url	= 'buried';
             if($r_p['unit_group_id']){
                 // пересчитываем, если надо, количество при фасовке или отличной от ед.изм заявки
-                $in['amount'] = $bs->BuyAmountByUnit(array(	'row_bs' => array(	'unit_group_id'	=> $r_p['unit_group_id'],
-                    'unit_id2'		=> $r_p['unit_id2'],
-                    'amount2'		=> $r_p['amount2'],
-                    'unit_id'		=> $r_p['unit_id'],
-                    'unit_id1'		=> $r_p['unit_id1'],	),
-                    'amount' => $in['amount1']));
+                $in['amount'] = $bs->BuyAmountByUnit(array(	'row_bs' 	=> array(	'unit_group_id'	=> $r_p['unit_group_id'],
+															'unit_id2'	=> $r_p['unit_id2'],
+															'amount2'	=> $r_p['amount2'],
+															'unit_id'	=> $r_p['unit_id'],
+															'unit_id1'	=> $r_p['unit_id1'],	),
+															'amount' 	=> $in['amount1']));
                 $in['amount2'] 	= $r_p['amount2'];
                 $in['unit_id2'] = $r_p['unit_id2'];
                 ///
@@ -2662,8 +2662,6 @@ elseif($_GET['route'] == 'get_sell_by_amo_accountsetp'){
 
         $STH = PreExecSQL($sql,array($m['buy_sell_id']));
     }
-    
-    PreExecSQL('DELETE FROM cron_amo_buy_sell_search_infopart WHERE cookie_session = ?', [COOKIE_SESSION]);
     ///
 
 
@@ -2712,7 +2710,7 @@ elseif($_GET['route'] == 'get_html_sell_by_infopart'){
     }
 	
 	$r = reqCronAmoBuySellSearchInfopart(array('cookie_session'=>COOKIE_SESSION));
-	if($r['finished']){
+	if(!$r['id']){
 		$noload = true;
 	}
 
