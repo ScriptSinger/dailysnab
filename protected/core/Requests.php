@@ -1661,7 +1661,7 @@
 		$sql = "	SELECT bs.id, bs.parent_id, bs.company_id, bs.company_id2, bs.name, bs.flag_buy_sell, bs.status_buy_sell_id,
 							bs.categories_id, bs.comments, bs.amount, bs.cost,
 							bs.url, bs.qrq_id,
-							bs.unit_id, bs.unit_id2, bs.amount2, bs.unit_id1, bs.amount1, bs.amount_buy,
+							sc.unit_id, bs.unit_id2, bs.amount2, bs.unit_id1, bs.amount1, bs.amount_buy,
 							su1.unit unit1, su2.unit unit2,
 							sc.url_categories, cities.url_cities,
 							sc.unit_group_id,
