@@ -1674,7 +1674,7 @@
 					LEFT JOIN slov_unit su2 ON su2.id=bs.unit_id2
 					WHERE cities.id=bs.cities_id AND bs.categories_id=sc.id AND sc.unit_id=sunit.id  
 							".$sql." ";
-vecho($row);
+
 		$row = PreExecSQL_one($sql,$arr);
 
 		return $row;
