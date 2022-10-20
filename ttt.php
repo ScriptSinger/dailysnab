@@ -35,6 +35,9 @@ var_dump($r);
 
 $r = PreExecSQL_all('SELECT * FROM cron_amo_buy_sell_search_infopart');
 var_dump($r);
+
+$r = PreExecSQL_all('SELECT * FROM buy_sell ORDER BY id DESC LIMIT 1');
+var_dump($r);
 die;
 
 /**
