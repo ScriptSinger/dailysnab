@@ -30,15 +30,15 @@ $cn		= new ClassNotification();
 $qrq		= new ClassQrq();
 $api		= new ClassApi();
 
-$r = PreExecSQL_all('SELECT * FROM amo_log_json ORDER BY id DESC LIMIT 20');
-var_dump($r);
-
-$r = PreExecSQL_all('SELECT * FROM cron_amo_buy_sell_search_infopart');
-var_dump($r);
-
-$r = PreExecSQL_all('SELECT * FROM buy_sell ORDER BY id DESC LIMIT 1');
-var_dump($r);
-die;
+//$r = PreExecSQL_all('SELECT * FROM amo_log_json ORDER BY id DESC LIMIT 20');
+//var_dump($r);
+//
+//$r = PreExecSQL_all('SELECT * FROM cron_amo_buy_sell_search_infopart');
+//var_dump($r);
+//
+//$r = PreExecSQL_all('SELECT * FROM buy_sell ORDER BY id DESC LIMIT 1');
+//var_dump($r);
+//die;
 
 /**
  * Крон - 	Возвращает предложение (товар) от сторонних ресурсов (AMO), страница IhfoPart
