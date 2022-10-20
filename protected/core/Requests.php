@@ -1661,12 +1661,17 @@
 		$sql = "	SELECT bs.id, bs.parent_id, bs.company_id, bs.company_id2, bs.name, bs.flag_buy_sell, bs.status_buy_sell_id,
 							bs.categories_id, bs.comments, bs.amount, bs.cost,
 							bs.url, bs.qrq_id,
+							bs.unit_id2, bs.amount2, bs.unit_id1, bs.amount1, bs.amount_buy,
+							su1.unit unit1, su2.unit unit2,
 							sc.url_categories, cities.url_cities,
+							sc.unit_group_id,
 							sunit.unit,
 							cities.name cities_name, 
 							c.company,
 							(SELECT t.id FROM subscriptions t WHERE t.company_id_in=".COMPANY_ID." AND t.company_id_out=bs.company_id) flag_subscriptions_company_in /* подписан на компанию чья заявка/объявление */ 
 					FROM company c, a_cities cities, slov_categories sc, slov_unit sunit, buy_sell bs
+					LEFT JOIN slov_unit su1 ON su1.id=bs.unit_id1
+					LEFT JOIN slov_unit su2 ON su2.id=bs.unit_id2
 					WHERE cities.id=bs.cities_id AND bs.categories_id=sc.id AND sc.unit_id=sunit.id  
 							".$sql." ";
 
