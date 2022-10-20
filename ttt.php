@@ -83,7 +83,8 @@ while (time() - $start < 60) {
 													'categories_id'	=> $m['categories_id'],
 													'company_id_out'=> $m['company_id_out'],
 													'cookie_session'=> $m['cookie_session']
-													));				
+													));	
+                var_dump($arr);
 				
 				if(!$arr['finished']){				
 					$STH = PreExecSQL(" UPDATE cron_amo_buy_sell_search_infopart SET finished = NOW() WHERE id=?; " ,
