@@ -7227,6 +7227,30 @@
 
 		return $row;
 	}
+	
+	
+	// получить accounts_id, Если пользователь авторизовался со своим логин/пароль
+	function reqAmoAccountsEtp_AccountsidByCompanyid3($p=array()) {
+		$sql = '';
+		$arr = array();
+		$one = false;
+		$in = fieldIn($p, array('company_id','qrq_id'));
+
+
+		$sql = "	SELECT (SELECT t.login_id FROM company t WHERE t.id=(SELECT t.company_id FROM slov_qrq t WHERE t.id=ae.qrq_id LIMIT 1) LIMIT 1) login_id,
+						(SELECT t.company_id FROM slov_qrq t WHERE t.id=ae.qrq_id LIMIT 1) company_id,
+						ae.qrq_id,
+						ae.accounts_id
+				FROM amo_accounts_etp ae
+				WHERE ae.flag_autorize=2 AND ae.company_id=".$in['company_id']." AND ae.qrq_id=".$in['qrq_id']." ";
+
+
+		$row = ($one)? PreExecSQL_one($sql,$arr) : PreExecSQL_all($sql,$arr);
+
+		return $row;
+	}
+	
+	
 
 
 	// Связь полученных данных с ЭТП с таблицей buy_sell
@@ -7403,7 +7427,7 @@
 			$one = true;
 		}
 
-		$sql = "	SELECT ci.id, ci.token, ci.searchid, ci.categories_id, ci.company_id_out, ci.cookie_session, ci.finished
+		$sql = "	SELECT ci.id, ci.token, ci.searchid, ci.categories_id, ci.company_id_out, ci.cookie_session
 				FROM cron_amo_buy_sell_search_infopart ci
 				WHERE 1=1 ".$sql." ";
 
