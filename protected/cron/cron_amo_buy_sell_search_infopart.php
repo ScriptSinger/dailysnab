@@ -22,6 +22,8 @@ $sql = "	SELECT c.id, c.token, c.searchid, c.categories_id, c.company_id_out, c.
 
 $row = PreExecSQL_all($sql, array());
 
+echo "Rows: ".count($row);
+
 foreach ($row as $k => $m) {
     echo ".";
 
