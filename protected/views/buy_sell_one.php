@@ -19,7 +19,7 @@
                     $amount_unit = $g->nf($row['amount1']).' '.$row['unit1'];
                 } elseif ($row['unit_id1'] && !$row['unit_id2'] && ($row['unit_id'] <> $row['unit_id1'])) {// выбрано НЕ штуки, а другая ед.измерения отличная от "по умолчанию" у категории
                     $t_amount = ($row['status_buy_sell_id'] == 11) ? $row['amount_buy'] : $row['amount1'];
-                    $amount_unit = $g->nf($t_amount).''.$row['unit1'];
+                    $amount_unit = $g->nf($t_amount).' '.$row['unit1'];
                 }
             }
 		}
