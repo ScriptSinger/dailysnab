@@ -759,7 +759,8 @@ class ClassQrq extends HtmlServive
 			
 			
 				$ra = reqAmoAccountsEtp_AccountsidByCompanyid(array('qrq_id'=>$row_bs['qrq_id'],'company_id'=>COMPANY_ID));// получаем accountid
-						
+				vecho($ra);
+				exit;
 			
 			// 1 - Добавление товара в корзину
 			
