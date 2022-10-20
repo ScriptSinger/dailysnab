@@ -30,12 +30,12 @@ $cn		= new ClassNotification();
 $qrq		= new ClassQrq();
 $api		= new ClassApi();
 
-$r = PreExecSQL_all('SELECT * FROM amo_log_json ORDER BY id DESC LIMIT 1');
-var_dump($r);
-
-$r = PreExecSQL_all('SELECT * FROM cron_amo_buy_sell_search_infopart');
-var_dump($r);
-die;
+//$r = PreExecSQL_all('SELECT * FROM amo_log_json ORDER BY id DESC LIMIT 1');
+//var_dump($r);
+//
+//$r = PreExecSQL_all('SELECT * FROM cron_amo_buy_sell_search_infopart');
+//var_dump($r);
+//die;
 
 /**
  * Крон - 	Возвращает предложение (товар) от сторонних ресурсов (AMO), страница IhfoPart
@@ -58,9 +58,9 @@ $start = time();
 $lockFile = false;
 $logFilePath = __FILE__ . '.log';
 
-//PreExecSQL(" DELETE FROM cron_amo_buy_sell_search_infopart WHERE finished < FROM_UNIXTIME(UNIX_TIMESTAMP() - 60); ", []);
+PreExecSQL(" DELETE FROM cron_amo_buy_sell_search_infopart WHERE finished < FROM_UNIXTIME(UNIX_TIMESTAMP() - 60); ", []);
 
-//while (time() - $start < 60) {
+while (time() - $start < 60) {
     //if (!$lockFile) {
         //$lockFile = fopen(__FILE__ . '.lock', 'w');
         //usleep(200000);
@@ -75,6 +75,7 @@ $logFilePath = __FILE__ . '.log';
 		$row = PreExecSQL_all($sql,array());
 
 		foreach($row as $k=>$m){
+            var_dump($m);
 				// Получаем и сохраняем в buy_sell данные от сторонних ресурсов
 				$arr = $qrq->QrqInsertBuySell(array(	'where'			=> 'infopart',
 													'token'			=> $m['token'],
@@ -83,8 +84,6 @@ $logFilePath = __FILE__ . '.log';
 													'company_id_out'=> $m['company_id_out'],
 													'cookie_session'=> $m['cookie_session']
 													));				
-
-                var_dump($arr);
 				
 				if(!$arr['finished']){				
 					$STH = PreExecSQL(" UPDATE cron_amo_buy_sell_search_infopart SET finished = NOW() WHERE id=?; " ,
@@ -98,4 +97,4 @@ $logFilePath = __FILE__ . '.log';
     //}
 //
     //usleep(200000);
-//}
+}
