@@ -590,9 +590,13 @@ class HtmlServive extends HtmlElement
 																				) AND t.company_id=0 " ,
 							array( $p['company_id'],$p['login_id'],COOKIE_SESSION ));
 			if($STH){// очищаем свои куки привязку
+			
 					$STH = PreExecSQL(" DELETE FROM buy_sell_cookie WHERE cookie_session=? " ,
 							array( COOKIE_SESSION ));
 			}
+			
+						
+			
 		}
 								
 		return $STH;
