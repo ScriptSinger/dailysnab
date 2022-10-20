@@ -30,7 +30,7 @@ $cn		= new ClassNotification();
 $qrq		= new ClassQrq();
 $api		= new ClassApi();
 
-$r = PreExecSQL_all('SELECT * FROM amo_log_json ORDER BY id DESC LIMIT 5');
+$r = PreExecSQL_all('SELECT * FROM amo_log_json WHERE url = "searchupdate" ORDER BY id DESC LIMIT 10');
 var_dump($r);
 
 $r = PreExecSQL_all('SELECT * FROM cron_amo_buy_sell_search_infopart');
