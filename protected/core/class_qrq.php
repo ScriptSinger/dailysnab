@@ -765,7 +765,8 @@ class ClassQrq extends HtmlServive
 					$ra = reqAmoAccountsEtp_AccountsidByCompanyid_Promo(array('qrq_id'=>$row_bs['qrq_id']));// получаем accountid
 					
 				}
-				
+				vecho($ra);
+				exit;
 
 				if($ra['accounts_id']){
 			
