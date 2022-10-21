@@ -809,10 +809,7 @@ class ClassQrq extends HtmlServive
 									*/
 									// 2 - Получение корзины (без получении корзины не оформить заказ), появиться форма
 
-									$url = DOMEN.'/qrq/amo/basket.php?token='.AMO_TOKEN.'&accountid='.$ra['accounts_id'].'&amount='.$p['amount'].'&buy_sell_id='.$row_bs['id'].'&where='.$in['where'];//.'&pparam='.$param
-									vecho($url);
-				exit;									
-									
+									$url = DOMEN.'/qrq/amo/basket.php?token='.AMO_TOKEN.'&accountid='.$ra['accounts_id'].'&amount='.$p['amount'].'&buy_sell_id='.$row_bs['id'].'&where='.$in['where'];//.'&pparam='.$param	
 									$code = file_get_contents($url);
 									//vecho($url);
 									//vecho($code);
