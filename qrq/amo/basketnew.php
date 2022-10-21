@@ -136,7 +136,8 @@ function fnCountMass($pJson, $pPapaId)
         
         if ($pCountFields>0)
         {
-            fnCountMass($pFields,$pValue);
+            print_r($pFields);
+            //fnCountMass($pFields,$pValue);
         }
         
      }
