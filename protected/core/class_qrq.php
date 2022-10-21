@@ -1108,4 +1108,200 @@ class ClassQrq extends HtmlServive
 																					array( $arr['buy_sell_id'],3,$key ));	
 											}else{
 													// Если нет добавляем в slov_attribute_value -> attribute_value и возвращаем attribute_value_id 
-													$arr_p = $this->Prover
+													$arr_p = $this->ProverkaAndInsertSlovAttributeValue(array('flag'				=> 'qrq',
+																											'categories_id'		=> $categories_id,
+																											'attribute_id'		=> 3,
+																											'attribute_value'	=> $brand ));
+													$attribute_value_id 		= $arr_p['attribute_value_id']; 
+													if($attribute_value_id){
+														$arr3[ $attribute_value_id ] = mb_strtolower($brand);// добавляем новое значение, чтобы повторно не добавлять
+														$STH = PreExecSQL(" INSERT INTO buy_sell_attribute (buy_sell_id, attribute_id, attribute_value_id) VALUES (?,?,?); " ,
+																						array( $arr['buy_sell_id'],3,$attribute_value_id ));	
+													}
+
+											}
+										///
+										// сохраняем Артикул
+											$STH = PreExecSQL(" INSERT INTO buy_sell_attribute (buy_sell_id, attribute_id, value) VALUES (?,?,?); " ,
+																				array( $arr['buy_sell_id'],33,$article ));
+									
+										// сохраняем Срок (дн)
+										if($delivery){
+											$STH = PreExecSQL(" INSERT INTO buy_sell_attribute (buy_sell_id, attribute_id, value) VALUES (?,?,?); " ,
+																				array( $arr['buy_sell_id'],7,$delivery ));
+										}
+								}
+																
+														
+																
+						}
+						
+						
+					}
+			}else{
+					$errors_message = $errors_message.' '.$warnings_message;
+					
+			}
+			
+		}
+						
+						
+		return array('error'=>$errors_message);
+	}
+	*/
+	
+	
+	// Получение текста ошибки из json возвращаемое Этп
+	function getErrorsMessageByJson( $p=array() ){	
+	
+		$json = $p['json'];
+		
+		$Response	= $json->Response;
+					
+		$errors = isset($Response->errors)? $Response->errors : '';
+		
+		$errors_message 	= isset($errors[0]->message)?	 	$errors[0]->message 		: '';
+		$errors_code 		= isset($errors[0]->code)?	 	$errors[0]->code 		: '';
+		
+		$errors_message1 	= isset($errors[1]->message)?	 	$errors[1]->message 		: '';
+		$errors_code1 	= isset($errors[1]->code)?	 	$errors[1]->code 		: '';
+
+		$warnings 		= isset($Response->warnings)?	 $Response->warnings : '';
+		$warnings_message = isset($warnings[0]->message)? 	$warnings[0]->message 	: '';
+		$warnings_code 	= isset($warnings[0]->code)? 		$warnings[0]->code 	: '';
+		
+		$errors_message = $errors_message.' '.$warnings_message;//по умолчанию
+		
+		if($errors_code==0 && $warnings_code>0){
+				$errors_code 		= $warnings_code;
+				$errors_message 	= $warnings_message;
+		}
+
+		if($errors_code1){
+				$errors_code 		= $errors_code1;
+				$errors_message 	= $errors_message1;
+		}
+		
+	
+		return $errors_message;
+	}
+	
+	
+	
+	function ProverkaErrorsMessageByAmoNameErrorEtp( $p=array() ){	
+	
+		$in = fieldIn($p, array('errors_message','buy_sell_id','amount','where'));
+	
+		$rez	= $next_etp = false;
+		$button_next_etp = $errors_message = '';
+	
+		$r = reqAmoNameErrorEtp();
+		
+		foreach($r as $i => $m){
+			
+				$pos = strpos($in['errors_message'], $m['name_error_etp']);
+				if ($pos === false) {
+					//
+				} else {
+					$rez				= true;
+					$next_etp			= $m['next_etp'];
+					$errors_message 	= $m['name_error_qrq'];
+					break;
+				}
+			
+		}
+
+
+		$button_next_etp = $this->Input(	array(	'type'			=> 'button',
+											'class'			=> 'change-btn form_buy_sell_hidden next_etp_stop_amo_basket',
+											'value'			=> 'Пропустить'
+										)
+								);
+
+		if($next_etp){
+			$button_next_etp = 
+						'<div style="margin-top:30px;">
+							'.$this->Input(	array(	'type'			=> 'button',
+													'class'			=> 'change-btn form_buy_sell_hidden next_etp_next_amo_basket',
+													'value'			=> 'Оформить',
+													'data'			=> array(	'buy_sell_id' 	=> $in['buy_sell_id'],
+																				'amount'		=> $in['amount'],
+																				'where'			=> $in['where'] )
+											)
+										).'
+							'.$button_next_etp.'
+						</div>';
+		}else{
+			$button_next_etp = 
+						'<div style="margin-top:30px;">
+							'.$button_next_etp.'
+						</div>';
+		}
+
+
+		$code = '<div style="padding:20px;">'.$errors_message.$button_next_etp.'</div>';
+		
+
+
+
+		return array( 'rez'=>$rez , 'next_etp'=>$next_etp , 'code'=>$code );
+	}
+
+
+	// посадить к нам в базу города из qwep
+	function InsertAmoCity( $p=array() ){
+		
+		
+		$url = 'https://questrequest.ru/qrq/amo/city.php';
+		
+		$parameters = [
+					'token' 		=> '73b7d210f74223b6cf3f35f63b8da6ed63fd45c8'
+					];
+
+		$json = self::getJsonCurl(array('url'=>$url,'parameters'=>$parameters));
+
+			
+		if($json){
+			
+
+			
+			$Response	= $json->Response;
+
+			$errors = $Response->errors;
+			$errors_message 	= isset($errors[0]->message)?	 	$errors[0]->message 		: '';
+
+			$warnings = $Response->warnings;//errors
+			$warnings_message = isset($warnings[0]->message)? 	$warnings[0]->message 	: '';
+			
+			if( !$errors_message && !$warnings_message ){
+					
+				
+				$STH = PreExecSQL(" DELETE FROM amo_cities; " ,
+														array());
+				
+				foreach ($Response->entity->cities as $item){
+						
+						$id 		= $item->id;
+						$rid 		= $item->rid;
+						$title 	= $item->title;
+						
+						// сохраняем
+						$STH = PreExecSQL(" INSERT INTO amo_cities (id, rid, title) VALUES (?,?,?); " ,
+														array( $id,$rid,$title ));
+									
+						
+				}
+					
+			}
+			
+		}
+		
+
+		return '';
+	}
+
+
+
+	
+}
+?>
