@@ -52,6 +52,10 @@ foreach ($pieces as $value)
 
 
 
+$filename = 'logs/'.$pAccountId.'_pay_prishlo.txt';
+$fh = fopen($filename, 'w');
+fwrite($fh, json_encode($pAccountId, JSON_UNESCAPED_UNICODE));
+fclose($fh);
 
 
 
