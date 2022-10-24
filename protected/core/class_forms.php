@@ -856,6 +856,7 @@ class HtmlForms extends HtmlTemplate
 
 		$code_categories_buy_sell = $code_cost = $code_categories = $file_list = $st_prava = $button23 = $comments_company = $responsible = $code_assets = '';
 		$st_dn = $save_button = $count_status_buysell = $availability = $select_categories = $span_clear_form = $st_span_select_categories = $required_name = $required_file = $code_company_id3 = '';
+		$code_1ctransport ='';
 
 		// скрываем по правам
 			if(PRAVA_4||PRAVA_5){
@@ -1476,6 +1477,8 @@ class HtmlForms extends HtmlTemplate
 					
 					'.$span_clear_form.'
 				</div>
+				
+				'.code_1ctransport.'
 				
 				'.$code_assets.'
 				
