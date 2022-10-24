@@ -856,7 +856,7 @@ class HtmlForms extends HtmlTemplate
 
 		$code_categories_buy_sell = $code_cost = $code_categories = $file_list = $st_prava = $button23 = $comments_company = $responsible = $code_assets = '';
 		$st_dn = $save_button = $count_status_buysell = $availability = $select_categories = $span_clear_form = $st_span_select_categories = $required_name = $required_file = $code_company_id3 = '';
-		$code_1ctransport ='';
+		$code_1ctransport = $_1ctransport = '';
 
 		// скрываем по правам
 			if(PRAVA_4||PRAVA_5){
@@ -895,7 +895,7 @@ class HtmlForms extends HtmlTemplate
 			$r 			= array('id'=>0,'name'=>'','categories_id'=>0,'comments'=>'','urgency_id'=>5,'form_payment_id'=>'',
 								'cost'=>'','cost1'=>'','status_buy_sell_id'=>1,'comments_company'=>'','responsible'=>'','responsible_id'=>0,
 								'currency_id'=>1,'availability'=>'','multiplicity'=>'','min_party'=>'','delivery_id'=>'',
-								'stock_id'=>'','company_id2'=>'','id_1c'=>'','nomenclature_id'=>'' /*,'unit'=>'','amount'=>''*/);
+								'stock_id'=>'','company_id2'=>'','id_1c'=>'','nomenclature_id'=>'','1c_transport_id'=>'' /*,'unit'=>'','amount'=>''*/);
 
 			if($in['flag_buy_sell']==2 || $in['flag_buy_sell']==1){
 				$rb 		= reqBuySell_LastId(array('flag_buy_sell'=>$in['flag_buy_sell']));
