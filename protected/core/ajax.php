@@ -6252,14 +6252,6 @@ elseif($_GET['route'] == 'out_of_theme'){
 	//$jsd['code'] = $code;
 
 
-    file_put_contents($_SERVER['DOCUMENT_ROOT'].'/logg1.txt',print_r($rcf,1));
-    file_put_contents($_SERVER['DOCUMENT_ROOT'].'/logg2.txt',print_r($companies_id,1));
-    file_put_contents($_SERVER['DOCUMENT_ROOT'].'/logg3.txt',print_r($upd_companies_json,1));
-    file_put_contents($_SERVER['DOCUMENT_ROOT'].'/logg4.txt',print_r($rcm,1));
-    file_put_contents($_SERVER['DOCUMENT_ROOT'].'/logg5.txt',print_r($folder_id,1));
-
-
-
 }
 //Загрузка медиафайлов для сообщений
 elseif($_GET['route'] == 'upload_files_message'){
@@ -6574,6 +6566,18 @@ elseif($_GET['route'] == 'autocomplete_1cnomenclature'){
 	foreach($r as $i => $m){
 		$jsd[] = array( 'id'=>$m['id'] , 	'name' 			=> $m['name_article'],
 			'value' 		=> $m['name_article'] );
+	}
+
+	if (empty($jsd)) $jsd[] = array('name' => '<span class="text-muted">не найдено</span>' , 'name2' =>'не найдено' );
+
+}
+// autocomplete Актив(транспорт) из 1С
+elseif($_GET['route'] == 'autocomplete_1ctransport'){
+	$r	= req1cTransport(array('value' => $in['value']));
+	foreach($r as $i => $m){
+		$jsd[] = array( 	'id'	=>$m['id'] , 	
+						'name' 	=> $m['name_article'],
+						'value' => $m['name_article'] );
 	}
 
 	if (empty($jsd)) $jsd[] = array('name' => '<span class="text-muted">не найдено</span>' , 'name2' =>'не найдено' );
