@@ -6576,8 +6576,8 @@ elseif($_GET['route'] == 'autocomplete_1ctransport'){
 	$r	= req1cTransport(array('value' => $in['value']));
 	foreach($r as $i => $m){
 		$jsd[] = array( 	'id'	=>$m['id'] , 	
-						'name' 	=> $m['name_article'],
-						'value' => $m['name_article'] );
+						'name' 	=> $m['modelname_regnumber'],
+						'value' => $m['modelname_regnumber'] );
 	}
 
 	if (empty($jsd)) $jsd[] = array('name' => '<span class="text-muted">не найдено</span>' , 'name2' =>'не найдено' );

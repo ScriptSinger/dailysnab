@@ -7481,7 +7481,8 @@
 			array_push($arr , '%'.$in['value'].'%');
 		}
 
-		$sql = "	SELECT t.id, t.id_1c, t.modelname, t.regnumber, t.lastdriver, t.data1c
+		$sql = "	SELECT t.id, t.id_1c, t.modelname, t.regnumber, t.lastdriver, t.data1c,
+						CONCAT(t.modelname,' ',t.regnumber) modelname_regnumber
 				FROM 1c_transport t
 				WHERE 1=1 ".$sql." ";
 
