@@ -1,7 +1,7 @@
 [
 	{
 		"DocID": "4da8fbdb-300b-11ed-80dc-000c292c2d55",
-		"data1c": "2022-10-16T00:00:00",
+		"data1c": "2022-10-24T00:00:00",
 		"Massiv": [
 			{
 				"DocID": "4da8fbdb-300b-11ed-80dc-000c292c2d55",
@@ -22,7 +22,7 @@
 	},
 	{
 		"DocID": "348598c7-302a-11ed-80dc-000c292c2d55",
-		"data1c": "2022-10-16T00:00:00",
+		"data1c": "2022-10-24T00:00:00",
 		"Massiv": [
 			{
 				"DocID": "348598c7-302a-11ed-80dc-000c292c2d55",
@@ -43,7 +43,7 @@
 	},
 	{
 		"DocID": "7c1f7686-302a-11ed-80dc-000c292c2d55",
-		"data1c": "2022-10-16T00:00:00",
+		"data1c": "2022-10-24T00:00:00",
 		"Massiv": [
 			{
 				"DocID": "7c1f7686-302a-11ed-80dc-000c292c2d55",
@@ -64,7 +64,7 @@
 	},
 	{
 		"DocID": "e0e0a698-31f1-11ed-80dc-000c292c2d55",
-		"data1c": "2022-10-16T00:00:00",
+		"data1c": "2022-10-24T00:00:00",
 		"Massiv": [
 			{
 				"DocID": "e0e0a698-31f1-11ed-80dc-000c292c2d55",
@@ -85,7 +85,7 @@
 	},
 	{
 		"DocID": "d845d645-31f3-11ed-80dc-000c292c2d55",
-		"data1c": "2022-10-16T00:00:00",
+		"data1c": "2022-10-24T00:00:00",
 		"Massiv": [
 			{
 				"DocID": "d845d645-31f3-11ed-80dc-000c292c2d55",
@@ -106,7 +106,7 @@
 	},
 	{
 		"DocID": "6be3d0a2-31f6-11ed-80dc-000c292c2d55",
-		"data1c": "2022-10-16T00:00:00",
+		"data1c": "2022-10-24T00:00:00",
 		"Massiv": [
 			{
 				"DocID": "6be3d0a2-31f6-11ed-80dc-000c292c2d55",
@@ -126,134 +126,8 @@
 		]
 	},
 	{
-		"DocID": "e9967a70-333a-11ed-80dc-000c292c2d55",
-		"data1c": "2022-10-16T00:00:00",
-		"Massiv": [
-			{
-				"DocID": "e9967a70-333a-11ed-80dc-000c292c2d55",
-				"StrID": 1,
-				"OrgID": "d46cc13b-995d-11e9-9415-000c29ba794a",
-				"ContractorID": "3ad912f4-6de4-11ec-80bf-000c292c2d55",
-				"Date": "2022-09-13T13:06:10",
-				"buy_sell_id": "7557237",
-				"NomDocID": "АМ220913/01",
-				"WhID": "584abb7e-6f8d-11ec-80c1-000c292c2d55",
-				"NomID": "9246f2ce-6cbc-11ec-80dd-000c2999d0eb",
-				"Price": 1200,
-				"NDS": 20,
-				"Quantity": 1,
-				"Brand": "Scania"
-			}
-		]
-	},
-	{
-		"DocID": "b093a4d7-333d-11ed-80dc-000c292c2d55",
-		"data1c": "2022-10-16T00:00:00",
-		"Massiv": [
-			{
-				"DocID": "b093a4d7-333d-11ed-80dc-000c292c2d55",
-				"StrID": 1,
-				"OrgID": "d46cc13b-995d-11e9-9415-000c29ba794a",
-				"ContractorID": "3ad912f4-6de4-11ec-80bf-000c292c2d55",
-				"Date": "2022-09-13T13:25:57",
-				"buy_sell_id": "7557251",
-				"NomDocID": "АМ220913/02",
-				"WhID": "584abb7e-6f8d-11ec-80c1-000c292c2d55",
-				"NomID": "9246f2ce-6cbc-11ec-80dd-000c2999d0eb",
-				"Price": 500,
-				"NDS": 20,
-				"Quantity": 2,
-				"Brand": "Scania"
-			}
-		]
-	},
-	{
-		"DocID": "c8b229f7-333d-11ed-80dc-000c292c2d55",
-		"data1c": "2022-10-16T00:00:00",
-		"Massiv": [
-			{
-				"DocID": "c8b229f7-333d-11ed-80dc-000c292c2d55",
-				"StrID": 1,
-				"OrgID": "d46cc13b-995d-11e9-9415-000c29ba794a",
-				"ContractorID": "3ad912f4-6de4-11ec-80bf-000c292c2d55",
-				"Date": "2022-09-13T13:26:42",
-				"buy_sell_id": "7557250",
-				"NomDocID": "АМ220913/03",
-				"WhID": "584abb7e-6f8d-11ec-80c1-000c292c2d55",
-				"NomID": "9246f2ce-6cbc-11ec-80dd-000c2999d0eb",
-				"Price": 500,
-				"NDS": 20,
-				"Quantity": 2,
-				"Brand": "Scania"
-			}
-		]
-	},
-	{
-		"DocID": "2320b570-33e7-11ed-80dc-000c292c2d55",
-		"data1c": "2022-10-16T00:00:00",
-		"Massiv": [
-			{
-				"DocID": "2320b570-33e7-11ed-80dc-000c292c2d55",
-				"StrID": 1,
-				"OrgID": "d46cc13b-995d-11e9-9415-000c29ba794a",
-				"ContractorID": "3ad912f4-6de4-11ec-80bf-000c292c2d55",
-				"Date": "2022-09-14T09:39:03",
-				"buy_sell_id": "7593694",
-				"NomDocID": "АМ220914/01",
-				"WhID": "584abb7e-6f8d-11ec-80c1-000c292c2d55",
-				"NomID": "9246f2ce-6cbc-11ec-80dd-000c2999d0eb",
-				"Price": 50,
-				"NDS": 20,
-				"Quantity": 1,
-				"Brand": "Scania"
-			}
-		]
-	},
-	{
-		"DocID": "3e8480c3-33e7-11ed-80dc-000c292c2d55",
-		"data1c": "2022-10-16T00:00:00",
-		"Massiv": [
-			{
-				"DocID": "3e8480c3-33e7-11ed-80dc-000c292c2d55",
-				"StrID": 1,
-				"OrgID": "d46cc13b-995d-11e9-9415-000c29ba794a",
-				"ContractorID": "3ad912f4-6de4-11ec-80bf-000c292c2d55",
-				"Date": "2022-09-14T09:39:46",
-				"buy_sell_id": "7593693",
-				"NomDocID": "АМ220914/02",
-				"WhID": "584abb7e-6f8d-11ec-80c1-000c292c2d55",
-				"NomID": "9246f2ce-6cbc-11ec-80dd-000c2999d0eb",
-				"Price": 50,
-				"NDS": 20,
-				"Quantity": 1,
-				"Brand": "Scania"
-			}
-		]
-	},
-	{
-		"DocID": "425c9d2d-33f0-11ed-80dc-000c292c2d55",
-		"data1c": "2022-10-16T00:00:00",
-		"Massiv": [
-			{
-				"DocID": "425c9d2d-33f0-11ed-80dc-000c292c2d55",
-				"StrID": 1,
-				"OrgID": "d46cc13b-995d-11e9-9415-000c29ba794a",
-				"ContractorID": "3ad912f4-6de4-11ec-80bf-000c292c2d55",
-				"Date": "2022-09-14T10:44:21",
-				"buy_sell_id": "7593716",
-				"NomDocID": "АМ220914/03",
-				"WhID": "584abb7e-6f8d-11ec-80c1-000c292c2d55",
-				"NomID": "2695ec1e-6cb9-11ec-80dd-000c2999d0eb",
-				"Price": 10,
-				"NDS": 20,
-				"Quantity": 4,
-				"Brand": "Кама"
-			}
-		]
-	},
-	{
 		"DocID": "d656a584-33fc-11ed-80dd-000c292c2d55",
-		"data1c": "2022-10-16T00:00:00",
+		"data1c": "2022-10-24T00:00:00",
 		"Massiv": [
 			{
 				"DocID": "d656a584-33fc-11ed-80dd-000c292c2d55",
@@ -274,7 +148,7 @@
 	},
 	{
 		"DocID": "95be1a09-3400-11ed-80dd-000c292c2d55",
-		"data1c": "2022-10-16T00:00:00",
+		"data1c": "2022-10-24T00:00:00",
 		"Massiv": [
 			{
 				"DocID": "95be1a09-3400-11ed-80dd-000c292c2d55",
@@ -295,7 +169,7 @@
 	},
 	{
 		"DocID": "54b8aa41-3459-11ed-80dd-000c292c2d55",
-		"data1c": "2022-10-16T00:00:00",
+		"data1c": "2022-10-24T00:00:00",
 		"Massiv": [
 			{
 				"DocID": "54b8aa41-3459-11ed-80dd-000c292c2d55",
@@ -316,7 +190,7 @@
 	},
 	{
 		"DocID": "a3fcdf33-3578-11ed-80dd-000c292c2d55",
-		"data1c": "2022-10-16T00:00:00",
+		"data1c": "2022-10-24T00:00:00",
 		"Massiv": [
 			{
 				"DocID": "a3fcdf33-3578-11ed-80dd-000c292c2d55",
@@ -337,7 +211,7 @@
 	},
 	{
 		"DocID": "6bd5c121-37fd-11ed-80dd-000c292c2d55",
-		"data1c": "2022-10-16T00:00:00",
+		"data1c": "2022-10-24T00:00:00",
 		"Massiv": [
 			{
 				"DocID": "6bd5c121-37fd-11ed-80dd-000c292c2d55",
@@ -358,7 +232,7 @@
 	},
 	{
 		"DocID": "6caf00ae-384b-11ed-80dd-000c292c2d55",
-		"data1c": "2022-10-16T00:00:00",
+		"data1c": "2022-10-24T00:00:00",
 		"Massiv": [
 			{
 				"DocID": "6caf00ae-384b-11ed-80dd-000c292c2d55",
@@ -379,7 +253,7 @@
 	},
 	{
 		"DocID": "b6091a7d-384f-11ed-80dd-000c292c2d55",
-		"data1c": "2022-10-16T00:00:00",
+		"data1c": "2022-10-24T00:00:00",
 		"Massiv": [
 			{
 				"DocID": "b6091a7d-384f-11ed-80dd-000c292c2d55",
@@ -400,7 +274,7 @@
 	},
 	{
 		"DocID": "ee884d6b-40a4-11ed-80df-000c292c2d55",
-		"data1c": "2022-10-16T00:00:00",
+		"data1c": "2022-10-24T00:00:00",
 		"Massiv": [
 			{
 				"DocID": "ee884d6b-40a4-11ed-80df-000c292c2d55",
@@ -421,7 +295,7 @@
 	},
 	{
 		"DocID": "85bb5915-40a5-11ed-80df-000c292c2d55",
-		"data1c": "2022-10-16T00:00:00",
+		"data1c": "2022-10-24T00:00:00",
 		"Massiv": [
 			{
 				"DocID": "85bb5915-40a5-11ed-80df-000c292c2d55",
