@@ -7505,7 +7505,7 @@
 		}
 
 		$sql = "	SELECT tbs.id, tbs.buy_sell_id, tbs.1c_transport_id,
-						t.modelname, t.regnumber
+						CONCAT(t.modelname,' (',t.regnumber,')') modelname_regnumber
 				FROM 1c_transport_buy_sell tbs, 1c_transport t
 				WHERE tbs.1c_transport_id=t.id ".$sql." ";
 
