@@ -11,7 +11,7 @@
 			
 		if ($_SERVER['REMOTE_ADDR'] == '178.214.251.82') {
 			echo "<pre>";
-			print_r($member['chat']['row']);
+			print_r($member['chat']);
 			echo "<pre>";
 		}
 			// echo '<pre>';
