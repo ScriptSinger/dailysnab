@@ -856,7 +856,7 @@ class HtmlForms extends HtmlTemplate
 
 		$code_categories_buy_sell = $code_cost = $code_categories = $file_list = $st_prava = $button23 = $comments_company = $responsible = $code_assets = '';
 		$st_dn = $save_button = $count_status_buysell = $availability = $select_categories = $span_clear_form = $st_span_select_categories = $required_name = $required_file = $code_company_id3 = '';
-		$code_1ctransport = $_1ctransport = '';
+		$code_1ctransport = $_1ctransport = $_1c_transport_id = '';
 
 		// скрываем по правам
 			if(PRAVA_4||PRAVA_5){
@@ -1022,7 +1022,6 @@ class HtmlForms extends HtmlTemplate
 			//$select_categories = '<span style="font-weight:bold;color: #1cb6ff !important;">'.$r['categories'].'</span>';
 			$select_categories 	= $r['categories'];
 
-
 		}
 
 
@@ -1116,6 +1115,10 @@ class HtmlForms extends HtmlTemplate
 						
 			// привязка актива из 1С к нашему активу
 			if($in['flag_buy_sell']==4){
+					// если актив , проверяем привязан ли к активу 1с
+					if($in['id']){
+						$_1c_transport_id = '';
+					}
 					$code_1ctransport = '	<div class="col-sm-12">
 											<div class="form-group">
 																'.$this->Input(array(	'type'			=> 'text',
@@ -1128,7 +1131,7 @@ class HtmlForms extends HtmlTemplate
 											</div>
 															'.$this->Input(	array(	'type'			=> 'hidden',
 																					'id'			=> '1c_transport_id',
-																					'value'			=> $r['1c_transport_id']
+																					'value'			=> $_1c_transport_id
 																				)
 															).'
 										</div>';
