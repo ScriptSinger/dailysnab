@@ -1400,7 +1400,7 @@ class ClassApi extends HtmlServive
 			
 				// сохраняем активы с 1с (для дальнейшей привязки с нашими активами)
 				echo '<br/>Посадить Активы (траспорт)';
-				$arr = self::Save1cTransport(array( 'id_1c' => $m['id_1c'] ));
+				$arr = self::Save1cTransport(array( 'id_1c' => $m['id_1c'] , 'company_id' => $m['id'] ));
 				sleep(2);
 				
 			}
