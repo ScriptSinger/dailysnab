@@ -2883,7 +2883,7 @@ var link_url = document.createElement("a");
 				if(data.ok){
 					console.log(data);	
 							//webix.message(data.code);
-							// onReload('/chat/messages/'+d.fid);
+							onReload('/chat/messages/'+d.fid);
 						}else{
 							console.log(data);
 							//webix.message({type:"error", text:data.code});
