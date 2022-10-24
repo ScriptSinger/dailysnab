@@ -1442,7 +1442,7 @@ class ClassApi extends HtmlServive
 		
 		$bs		= new HtmlBuySell();
 		
-		$in = fieldIn($p, array('id_1c'));
+		$in = fieldIn($p, array('id_1c','company_id'));
 		
 
 		$ok = false;
@@ -1476,8 +1476,8 @@ class ClassApi extends HtmlServive
 			
 					if(empty($r)){
 				
-						$STH = PreExecSQL(" INSERT INTO 1c_transport (id_1c, modelname, regnumber, lastdriver, data1c) VALUES (?,?,?,?,?); " ,
-																		array($AutoID,$ModelName,$RegNumber,$LastDriver,$data1c ));
+						$STH = PreExecSQL(" INSERT INTO 1c_transport (company_id, id_1c, modelname, regnumber, lastdriver, data1c) VALUES (?,?,?,?,?); " ,
+																		array($in['company_id'],$AutoID,$ModelName,$RegNumber,$LastDriver,$data1c ));
 						if($STH){
 								// 
 								echo 'посажена = '.$ModelName.'<br/>';
