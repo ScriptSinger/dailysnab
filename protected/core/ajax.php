@@ -29,7 +29,7 @@ $in = array('email', 'pass', 'pass_again', 'id'=>'integer', 'value', 'flag', 'pa
     'group','group_id','sort_12','sort_who','flag_search',
     'status_buy_sell_id','promo','vendorid','enter13',
     'errors_code','name_error','name_error_qrq','name_error_etp','next_etp','company_id3',
-    'amo_cities_id', 'text', 'type'
+    'amo_cities_id', 'text', 'type','1c_transport_id'
 );
 
 $in = fieldIn($_POST, $in);
@@ -1436,7 +1436,13 @@ elseif($_GET['route'] == 'save_buy_sell'){
 											'amount2'		=> $in['amount2'],
 											'unit_id2'		=> $in['unit_id2'] ));
         ///
-
+		
+		// если актив сохраняем привязку с 1С
+			if(){
+				
+			}
+			
+		///
 
 
         $bsa_id = array();
