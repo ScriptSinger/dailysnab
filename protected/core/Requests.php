@@ -7476,7 +7476,7 @@
 		}
 
 		$sql = "	SELECT t.id, t.id_1c, t.modelname, t.regnumber, t.lastdriver, t.data1c
-				FROM 1c_transport 
+				FROM 1c_transport t
 				WHERE 1=1 ".$sql." ";
 
 		$row = ($one)? PreExecSQL_one($sql,$arr) : PreExecSQL_all($sql,$arr);
