@@ -1442,12 +1442,11 @@ class ClassApi extends HtmlServive
 		
 		$bs		= new HtmlBuySell();
 		
-		$in = fieldIn($p, array('id_1c','company_id'));
+		$in = fieldIn($p, array('id_1c'));
 		
 
 		$ok = false;
 		$json = '';
-		$i = $z = 0;
 
 		$url = 'https://questrequest.ru/qrq/1C/'.$in['id_1c'].'/transport.json';
 		
@@ -1482,6 +1481,7 @@ class ClassApi extends HtmlServive
 						if($STH){
 								// 
 								echo 'посажена = '.$ModelName.'<br/>';
+								$ok = true;
 						}
 						
 					}
