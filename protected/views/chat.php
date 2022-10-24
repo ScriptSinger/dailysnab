@@ -35,7 +35,9 @@ $last_message = [];
 	}   
 
 	if(!empty($mid)){ //вывод самих сообщений	
-																				
+				echo "<pre>";
+				print_r($mid);
+				echo "<pre>";																
 			$row_f = reqAllChatMessagesCompany();			
 			//$row_f = reqChatMessagesCompany();
 			
