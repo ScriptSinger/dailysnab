@@ -1478,7 +1478,7 @@ class HtmlForms extends HtmlTemplate
 					'.$span_clear_form.'
 				</div>
 				
-				'.code_1ctransport.'
+				'.$code_1ctransport.'
 				
 				'.$code_assets.'
 				
