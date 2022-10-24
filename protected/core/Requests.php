@@ -7467,12 +7467,18 @@
 		$sql = '';
 		$arr = array();
 		$one = false;
-		$in = fieldIn($p, array('id_1c'));
+		$in = fieldIn($p, array('id_1c','value'));
 
 		if($in['id_1c']){
 			$sql = ' AND t.id_1c=? ';
 			$arr = array($in['id_1c']);
 			$one = true;
+		}
+		if($in['value']){//часть наименования
+			$sql .= " and ( LOWER(t.modelname) LIKE ? OR LOWER(t.regnumber) LIKE ? OR LOWER(t.lastdriver) LIKE ? ) ";
+			array_push($arr , '%'.$in['value'].'%');
+			array_push($arr , '%'.$in['value'].'%');
+			array_push($arr , '%'.$in['value'].'%');
 		}
 
 		$sql = "	SELECT t.id, t.id_1c, t.modelname, t.regnumber, t.lastdriver, t.data1c
