@@ -11,7 +11,7 @@
 			
 		if ($_SERVER['REMOTE_ADDR'] == '178.214.251.82' && $member['menu_left']['company_info']['id'] == '1440') {
 			echo "<pre>";
-			print_r($member);
+			print_r($mid);
 			echo "<pre>";
 		}
 			// echo '<pre>';
@@ -35,9 +35,7 @@ $last_message = [];
 	}   
 
 	if(!empty($mid)){ //вывод самих сообщений	
-				echo "<pre>";
-				print_r($mid);
-				echo "<pre>";																
+																
 			$row_f = reqAllChatMessagesCompany();			
 			//$row_f = reqChatMessagesCompany();
 			
