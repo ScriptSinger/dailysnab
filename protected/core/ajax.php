@@ -7562,10 +7562,6 @@ elseif($_GET['route'] == 'delete_admin_etp_accounts_id'){
 
 }
 
-if ($_POST['id']) {
-    file_put_contents($_SERVER['DOCUMENT_ROOT'].'/ids.txt',print_r($_POST['id'],1));
-}
-
 }
 /***
 *		END  -  АДМИНИСТРИРОВАНИЕ
