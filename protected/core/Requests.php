@@ -7462,6 +7462,29 @@
 	}
 	
 	
+	// активы с 1с (для дальнейшей привязки с нашими активами)
+	function req1cTransport($p=array()) {
+		$sql = '';
+		$arr = array();
+		$one = false;
+		$in = fieldIn($p, array('id_1c'));
+
+		if($in['id_1c']){
+			$sql = ' AND t.id_1c=? ';
+			$arr = array($in['id_1c']);
+			$one = true;
+		}
+
+		$sql = "	SELECT t.id, t.id_1c, t.modelname, t.regnumber, t.lastdriver, t.data1c
+				FROM 1c_transport 
+				WHERE 1=1 ".$sql." ";
+
+		$row = ($one)? PreExecSQL_one($sql,$arr) : PreExecSQL_all($sql,$arr);
+
+		return $row;
+	}
+
+
 
 
 	/*  VIEWS
