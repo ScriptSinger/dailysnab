@@ -7491,7 +7491,28 @@
 		return $row;
 	}
 
+	// активы с 1с связанные с нашими активами
+	function req1cTransportBuySell($p=array()) {
+		$sql = '';
+		$arr = array();
+		$one = false;
+		$in = fieldIn($p, array('buy_sell_id'));
 
+		if($in['buy_sell_id']){
+			$sql = ' AND tbs.buy_sell_id=? ';
+			$arr = array($in['buy_sell_id']);
+			$one = true;
+		}
+
+		$sql = "	SELECT tbs.id, tbs.buy_sell_id, tbs.1c_transport_id,
+						t.modelname, t.regnumber
+				FROM 1c_transport_buy_sell tbs, 1c_transport t
+				WHERE tbs.1c_transport_id=t.id ".$sql." ";
+
+		$row = ($one)? PreExecSQL_one($sql,$arr) : PreExecSQL_all($sql,$arr);
+
+		return $row;
+	}
 
 
 	/*  VIEWS
