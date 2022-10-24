@@ -1438,8 +1438,13 @@ elseif($_GET['route'] == 'save_buy_sell'){
         ///
 		
 		// если актив сохраняем привязку с 1С
-			if(){
-				
+			if($in['flag_buy_sell']==4){
+					// удаляем старую привязку
+					$STH = PreExecSQL(" DELETE FROM 1c_transport_buy_sell WHERE buy_sell_id=? " ,
+                                        array($buy_sell_id));
+					// сохраняем привязку
+					$STH = PreExecSQL(" INSERT INTO 1c_transport_buy_sell (buy_sell_id, 1c_transport_id) VALUES (?,?) " ,
+                                        array($buy_sell_id,$in['1c_transport_id']));
 			}
 			
 		///
