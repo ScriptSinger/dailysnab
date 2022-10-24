@@ -35758,5 +35758,56 @@
 				"Brand": ""
 			}
 		]
+	},
+	{
+		"DocID": "83264b42-535a-11ed-8dbb-0cc47a03c9dc",
+		"data1c": "2022-10-24T00:00:00",
+		"Massiv": [
+			{
+				"DocID": "83264b42-535a-11ed-8dbb-0cc47a03c9dc",
+				"StrID": 1,
+				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+				"ContractorID": "73eb8eaf-b94c-11ec-80e4-000c2999d0eb",
+				"Date": "2022-10-24T10:12:54",
+				"buy_sell_id": "8930244",
+				"NomID": "88495d1b-6cbd-11ec-80dd-000c2999d0eb",
+				"Price": 3019,
+				"NDS": 0,
+				"Quantity": 2,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"DocID": "aa502aa5-535f-11ed-8dbb-0cc47a03c9dc",
+		"data1c": "2022-10-24T00:00:00",
+		"Massiv": [
+			{
+				"DocID": "aa502aa5-535f-11ed-8dbb-0cc47a03c9dc",
+				"StrID": 1,
+				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+				"ContractorID": "3bbce0d7-1157-11ed-8db6-0cc47a03c9dc",
+				"Date": "2022-10-24T10:49:48",
+				"buy_sell_id": "8878305",
+				"NomID": "7b7e1818-6cbe-11ec-80dd-000c2999d0eb",
+				"Price": 893.08,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			},
+			{
+				"DocID": "aa502aa5-535f-11ed-8dbb-0cc47a03c9dc",
+				"StrID": 2,
+				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+				"ContractorID": "3bbce0d7-1157-11ed-8db6-0cc47a03c9dc",
+				"Date": "2022-10-24T10:49:48",
+				"buy_sell_id": "8877050",
+				"NomID": "c8599bb9-6cbc-11ec-80dd-000c2999d0eb",
+				"Price": 12173.47,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
+			}
+		]
 	}
 ]
