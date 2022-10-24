@@ -5124,6 +5124,47 @@ function Autocomplete1cnomenclature(flag){
 	});
 }
 
+// Активы из 1С
+function Autocomplete1ctransport(flag){
+	$(".autocomplete_1cnomenclature").each(function(indx, element) {
+		$(".autocomplete_1cnomenclature").autocomplete({
+			source: function( request, response ) {
+				$.ajax({
+					type: "POST",
+					url: "/autocomplete_1ctransport",
+					data: {
+						value:	request.term,
+						flag:	flag
+					},
+					dataType: "json",
+					success: function( data ) {
+						response( $.map( data, function( item ) {
+							return {
+								label: 			item.name2,
+								value: 			item.value,
+								id: 			item.id
+							}
+						}));
+					}
+				});
+			},
+			minLength: 2,
+			select: function( event, ui ) {
+				if(ui.item.id){
+					$(this).val(ui.item.value);
+					$('#buy_sell-form #1c_transport_id').val(ui.item.id);
+				}
+				return false;
+			}
+		}).focus(function() {
+			$(this).autocomplete('search', $(this).val())
+		}).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+			return $( "<li></li>" ).data( "item.autocomplete", item ).append( "<div>"+ item.label + "</div>" ).appendTo( ul );
+		};
+		
+	});
+}
+
 
 // Интересы - настройка пользователя
 function Select2InterestsCompanyParam(){

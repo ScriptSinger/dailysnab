@@ -1112,6 +1112,26 @@ class HtmlForms extends HtmlTemplate
 							</div>
 							'.$code_availability.'
 						</div>';
+						
+			// привязка актива из 1С к нашему активу
+			if($in['flag_buy_sell']==4){
+					$code_1ctransport = '	<div class="col-sm-12">
+											<div class="form-group">
+																'.$this->Input(array(	'type'			=> 'text',
+																					'id'			=> '1ctransport',
+																					'class'			=> 'form-control autocomplete_1ctransport',
+																					'value'			=> $_1ctransport,
+																					'placeholder'	=> 'Актив 1C',
+																					'dopol'			=> 'autocomplete="new_off"'
+																		)).'
+											</div>
+															'.$this->Input(	array(	'type'			=> 'hidden',
+																					'id'			=> '1c_transport_id',
+																					'value'			=> $r['1c_transport_id']
+																				)
+															).'
+										</div>';
+			}		
 
 		}
 
