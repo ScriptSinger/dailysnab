@@ -1117,7 +1117,10 @@ class HtmlForms extends HtmlTemplate
 			if($in['flag_buy_sell']==4){
 					// если актив , проверяем привязан ли к активу 1с
 					if($in['id']){
-						$_1c_transport_id = '';
+						$rt = req1cTransportBuySell(array('buy_sell_id'=>$in['id']));
+						$_1c_transport_id 	= $rt['1c_transport_id'];
+						$_1ctransport 		= $rt['modelname_regnumber'];
+						
 					}
 					$code_1ctransport = '	<div class="col-sm-12">
 											<div class="form-group">
