@@ -33,7 +33,9 @@ $last_message = [];
 			$tr .= $t->TrPageMessagesFolders(array('m' => $m, 'views' => $views));
 		}
 	}   
-
+echo "<pre>";
+print_r($tr);
+echo "<pre>";
 	if(!empty($mid)){ //вывод самих сообщений	
 																				
 			$row_f = reqAllChatMessagesCompany();			
