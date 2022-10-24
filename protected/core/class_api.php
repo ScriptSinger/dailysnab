@@ -1476,7 +1476,7 @@ class ClassApi extends HtmlServive
 			
 					if(empty($r)){
 				
-						$STH = PreExecSQL(" INSERT INTO 1c_transport (company_id, id_1c, modelname, regnumber, lastdriver, data1c) VALUES (?,?,?,?,?); " ,
+						$STH = PreExecSQL(" INSERT INTO 1c_transport (company_id, id_1c, modelname, regnumber, lastdriver, data1c) VALUES (?,?,?,?,?,?); " ,
 																		array($in['company_id'],$AutoID,$ModelName,$RegNumber,$LastDriver,$data1c ));
 						if($STH){
 								// 
