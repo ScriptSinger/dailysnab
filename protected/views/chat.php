@@ -9,7 +9,11 @@
  	$tr = $trM = $replyMessage = $headData = $need_link ='';
 	$comp = (int) COMPANY_ID;
 			
-		
+		if ($_SERVER['REMOTE_ADDR'] == '178.214.251.82') {
+			echo "<pre>";
+			print_r($member);
+			echo "<pre>";
+		}
 			// echo '<pre>';
 			// 	var_dump($member);
 			// echo '</pre>'; 
