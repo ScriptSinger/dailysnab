@@ -602,8 +602,11 @@ $(function(){
 										AutocompleteCommentsCompany();
 										AutocompleteResponsible('buy_sell');
 										AutocompleteАssets('buy_sell');
+										
 										if(d.flag_buy_sell==5){
 											AutocompleteFa('stock', d.flag_buy_sell);
+										}else if(d.flag_buy_sell==4){
+											Autocomplete1ctransport();
 										}else if(d.flag_buy_sell==2){
 											AutocompleteFa('company_id3', d.flag_buy_sell);
 										}
@@ -5125,16 +5128,16 @@ function Autocomplete1cnomenclature(flag){
 }
 
 // Активы из 1С
-function Autocomplete1ctransport(flag){
-	$(".autocomplete_1cnomenclature").each(function(indx, element) {
-		$(".autocomplete_1cnomenclature").autocomplete({
+function Autocomplete1ctransport(){
+	$(".autocomplete_1ctransport").each(function(indx, element) {
+		$(".autocomplete_1ctransport").autocomplete({
 			source: function( request, response ) {
 				$.ajax({
 					type: "POST",
 					url: "/autocomplete_1ctransport",
 					data: {
 						value:	request.term,
-						flag:	flag
+						//flag:	flag
 					},
 					dataType: "json",
 					success: function( data ) {
