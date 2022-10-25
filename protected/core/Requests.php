@@ -7487,7 +7487,7 @@
 						CONCAT(t.modelname,' (',t.regnumber,')') modelname_regnumber
 				FROM 1c_transport t
 				WHERE t.company_id=".$in['company_id']." ".$sql." ";
-
+vecho($sql);
 		$row = ($one)? PreExecSQL_one($sql,$arr) : PreExecSQL_all($sql,$arr);
 
 		return $row;
