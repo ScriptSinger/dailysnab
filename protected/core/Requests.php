@@ -7406,6 +7406,8 @@
 									ae.company_id, ae.qrq_id, ae.accounts_id
 							FROM slov_qrq sq, amo_accounts_etp ae
 							WHERE sq.company_id=ae.company_id AND ae.qrq_id=sq.id AND ae.accounts_id>0 AND sq.promo=1 
+									/*исключаем если подписан со своим логин/пароль*/
+									AND NOT ae.qrq_id IN (SELECT t.qrq_id FROM amo_accounts_etp t WHERE t.company_id=".$p['company_id']." AND flag_autorize=2)
 							UNION ALL 
 							SELECT (SELECT t.login_id FROM company t WHERE t.id=(SELECT t.company_id FROM slov_qrq t WHERE t.id=ae.qrq_id LIMIT 1) LIMIT 1) login_id,
 									(SELECT t.company_id FROM slov_qrq t WHERE t.id=ae.qrq_id LIMIT 1) company_id,
