@@ -7468,7 +7468,7 @@
 		$arr = array();
 		$one = false;
 		$in = fieldIn($p, array('id_1c','value','company_id'));
-		
+	
 		$in['company_id'] = isset($in['company_id'])? $in['company_id'] : COMPANY_ID;
 
 		if($in['id_1c']){
@@ -7483,11 +7483,11 @@
 			array_push($arr , '%'.$in['value'].'%');
 		}
 
-		$sql = "	SELECT t.id, t.id_1c, t.modelname, t.regnumber, t.lastdriver, t.data1c,
+		$sql = "	SELECT t.id, t.company_id, t.id_1c, t.modelname, t.regnumber, t.lastdriver, t.data1c,
 						CONCAT(t.modelname,' (',t.regnumber,')') modelname_regnumber
 				FROM 1c_transport t
 				WHERE t.company_id=".$in['company_id']." ".$sql." ";
-
+	vecho($in['value']);
 		$row = ($one)? PreExecSQL_one($sql,$arr) : PreExecSQL_all($sql,$arr);
 
 		return $row;
