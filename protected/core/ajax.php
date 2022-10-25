@@ -29,7 +29,7 @@ $in = array('email', 'pass', 'pass_again', 'id'=>'integer', 'value', 'flag', 'pa
     'group','group_id','sort_12','sort_who','flag_search',
     'status_buy_sell_id','promo','vendorid','enter13',
     'errors_code','name_error','name_error_qrq','name_error_etp','next_etp','company_id3',
-    'amo_cities_id', 'text', 'type','1c_transport_id'
+    'amo_cities_id', 'text', 'type'
 );
 
 $in = fieldIn($_POST, $in);
@@ -1436,18 +1436,7 @@ elseif($_GET['route'] == 'save_buy_sell'){
 											'amount2'		=> $in['amount2'],
 											'unit_id2'		=> $in['unit_id2'] ));
         ///
-		
-		// если актив сохраняем привязку с 1С
-			if($in['flag_buy_sell']==4){
-					// удаляем старую привязку
-					$STH = PreExecSQL(" DELETE FROM 1c_transport_buy_sell WHERE buy_sell_id=? " ,
-                                        array($buy_sell_id));
-					// сохраняем привязку
-					$STH = PreExecSQL(" INSERT INTO 1c_transport_buy_sell (buy_sell_id, 1c_transport_id) VALUES (?,?) " ,
-                                        array($buy_sell_id,$in['1c_transport_id']));
-			}
-			
-		///
+
 
 
         $bsa_id = array();
@@ -6262,7 +6251,6 @@ elseif($_GET['route'] == 'out_of_theme'){
 	$jsd['ok'] = $ok;
 	//$jsd['code'] = $code;
 
-
 }
 //Загрузка медиафайлов для сообщений
 elseif($_GET['route'] == 'upload_files_message'){
@@ -6577,18 +6565,6 @@ elseif($_GET['route'] == 'autocomplete_1cnomenclature'){
 	foreach($r as $i => $m){
 		$jsd[] = array( 'id'=>$m['id'] , 	'name' 			=> $m['name_article'],
 			'value' 		=> $m['name_article'] );
-	}
-
-	if (empty($jsd)) $jsd[] = array('name' => '<span class="text-muted">не найдено</span>' , 'name2' =>'не найдено' );
-
-}
-// autocomplete Актив(транспорт) из 1С
-elseif($_GET['route'] == 'autocomplete_1ctransport'){
-	$r	= req1cTransport(array('value' => $in['value']));
-	foreach($r as $i => $m){
-		$jsd[] = array( 	'id'	=>$m['id'] , 	
-						'name' 	=> $m['modelname_regnumber'],
-						'value' => $m['modelname_regnumber'] );
 	}
 
 	if (empty($jsd)) $jsd[] = array('name' => '<span class="text-muted">не найдено</span>' , 'name2' =>'не найдено' );
