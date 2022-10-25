@@ -11,11 +11,11 @@
 				
 				
 				
-				
+				/*
 				$api	= new ClassApi();
 				$api->Save1cTransport(array('id_1c'=>'d46cc13b-995d-11e9-9415-000c29ba794a','company_id'=>1087));
 				
-				
+				*/
 				
 				
 				/*
