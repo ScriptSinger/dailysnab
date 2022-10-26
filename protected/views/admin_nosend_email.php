@@ -24,7 +24,7 @@
 					
 					<div>
 						'.$e->Input(	array(	'type'			=> 'button',
-												'class'			=> 'profile-btn request-btn modal_nosend_email',
+												'class'			=> 'profile-btn request-btn modal_admin_nosend_email',
 												'value'			=> 'Добавить email'
 										)
 								).'
