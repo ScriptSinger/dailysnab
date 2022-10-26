@@ -25,11 +25,14 @@ $i = 0;
  */
 $i++;
 /* Authentication type */
-$cfg['Servers'][$i]['auth_type'] = 'cookie';
+$cfg['Servers'][$i]['auth_type'] = 'config';
 /* Server parameters */
-$cfg['Servers'][$i]['host'] = 'localhost';
+$cfg['Servers'][$i]['host'] = 'dailysnab.beget.tech';
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
+
+$cfg['Servers'][$i]['user'] = 'dailysnab_db';
+$cfg['Servers'][$i]['password'] = 'r*6bVbrm';
 
 /**
  * phpMyAdmin configuration storage settings.
