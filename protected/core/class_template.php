@@ -4875,18 +4875,21 @@ class HtmlTemplate extends HtmlServive
         $code = $active1 = $active2 = '';
         $in = fieldIn($p, array('flag'));
 
-        if ($in['flag'] == 'company') {
+        if ($in['flag'] == 'account') {
             $active1 = 'active';
-        } elseif ($in['flag'] == 'account') {
+        } elseif ($in['flag'] == 'company') {
             $active2 = 'active';
 		}
-vecho($in['flag']);
+
         $code = '	<ul class="nav nav-tabs">
 						<li class="nav-item">
 							<a href="/admin_users" class="nav-link '.$active1.'">Пользователи</a>
 						</li>
 						<li class="nav-item">
 							<a href="/admin_users/company" class="nav-link '.$active2.'">Компании</a>
+						</li>
+						<li class="nav-item">
+							<a href="/admin_users/company" class="nav-link '.$active3.'">Блокировка Email</a>
 						</li>
 					</ul>';
 
