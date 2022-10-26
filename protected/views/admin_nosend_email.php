@@ -21,6 +21,14 @@
 					</h3>
 					
 					'.$t->NavTabsAdminUsers(array('flag'=>$flag)).'
+					
+					<div>
+						'.$e->Input(	array(	'type'			=> 'button',
+												'class'			=> 'profile-btn request-btn modal_nosend_email',
+												'value'			=> 'Добавить email'
+										)
+								).'
+					</div>
 
 					
 		<table id="users" class="table table-striped table-bordered" style="width:100%">
