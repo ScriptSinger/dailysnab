@@ -30,7 +30,7 @@
 							$flag = 'account';
 						}
 					}
-				vecho($args1);
+				vecho($args1.'*'.$flag);
 					if($flag == 'nosend_email'){
 							$this->admin_nosend_email = array( 'row'			=> $row,
 															'flag'			=> $flag );
