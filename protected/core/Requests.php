@@ -111,10 +111,10 @@
 			$sql .= ' and email=?';
 			$arr = array($in['email']);
 		}
-		if($in['pass']){
-			$sql .= ' and pass=?';
-			array_push($arr , $in['pass']);
-		}
+//		if($in['pass']){
+//			$sql .= ' and pass=?';
+//			array_push($arr , $in['pass']);
+//		}
 		if($in['active_md5']){
 			$sql .= " and MD5(CONCAT('".MD5."',email,data_insert))=? ";
 			array_push($arr , $in['active_md5']);
