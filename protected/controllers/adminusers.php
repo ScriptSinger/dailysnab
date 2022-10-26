@@ -22,7 +22,7 @@
 						if($args1=='company'){
 							$row = reqCompanyAdmin(array('flag_account'=>2));// 	компании
 							$flag = 'company';
-						}if($args1=='nosend_email'){
+						}elseif($args1=='nosend_email'){
 							$row = reqNosendEmail(array('flag_account'=>2));// 	блокировка email от отправки
 							$flag = 'nosend_email';
 						}else{
@@ -30,7 +30,7 @@
 							$flag = 'account';
 						}
 					}
-				vecho($args1.'*'.$flag);
+					
 					if($flag == 'nosend_email'){
 							$this->admin_nosend_email = array( 'row'			=> $row,
 															'flag'			=> $flag );
