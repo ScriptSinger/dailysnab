@@ -23,7 +23,7 @@
 		$phone = (!empty($m['phone'])) ? $m['phone'] : 'Отсутсвует';
 		$email = (!empty($m['email'])) ? $m['email'] : 'Отсутсвует';
 		$contacts = "Номер телефона: $phone <br> Почта: $email";
-				if($flag=='account'){
+		if($flag=='account'){
 			$str = $g->format_by_count($m['count_company'], 'компания', 'компании', 'компаний');
 			$count_company = '<div>
 								<a href="/admin_users/'.$m['login_id'].'/'.$m['id'].'" class="badge badge-primary">'.$m['count_company'].' '.$str.'</a>
@@ -63,13 +63,16 @@
 						<div>'.$h3_small.'</div>
 					</h3>
 					
+					'.$t->NavTabsAdminUsers(array('flag'=>$flag)).'
+					
+					
 					<div >
 						<a href="/admin_users" class="btn '.$cl_btn1.' btn-sm">Пользователи</a>
 
 						<a href="/admin_users/company" class="btn '.$cl_btn2.' btn-sm">Компании</a>
 					</div>
 					
-					<table id="users" class="table table-striped table-bordered" style="width:100%">
+		<table id="users" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
                <th>Дата регистрации</th>
@@ -86,15 +89,17 @@
         <tfoot>
            <tr>
                 <th>Дата регистрации</th>
-							<th>Аватар</th>
-							<th>Наименование</th>
-							<th>Контакты</th>
-							<th>Pro режим</th>
+				<th>Аватар</th>
+				<th>Наименование</th>
+				<th>Контакты</th>
+				<th>Pro режим</th>
             </tr>
         </tfoot>
     </table>
 				
-				<script>$(document).ready(function () {
+<script>
+
+$(document).ready(function () {
     $("#users").DataTable( {
         "language": {
             "lengthMenu": "Отображать по _MENU_ элементов на странице",
@@ -111,12 +116,12 @@
 			 "search": "Поиск:"
         }
     });
-}); </script>
-				</div>
+});
 
-			';
+</script>
 
-			
-			
-			
+</div>
+
+';
+	
 ?>
