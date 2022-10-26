@@ -64,13 +64,7 @@
 					</h3>
 					
 					'.$t->NavTabsAdminUsers(array('flag'=>$flag)).'
-					
-					
-					<div >
-						<a href="/admin_users" class="btn '.$cl_btn1.' btn-sm">Пользователи</a>
 
-						<a href="/admin_users/company" class="btn '.$cl_btn2.' btn-sm">Компании</a>
-					</div>
 					
 		<table id="users" class="table table-striped table-bordered" style="width:100%">
         <thead>
