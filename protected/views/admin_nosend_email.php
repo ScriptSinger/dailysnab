@@ -31,24 +31,24 @@
 					</div>
 
 					
-		<table id="users" class="table table-striped table-bordered" style="width:100%">
-			<thead>
-				<tr>
-					<th>Email</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-			   '.$tr.'
-			   
-			</tbody>
-			<tfoot>
-			   <tr>
-					<th>Email</th>
-					<th></th>
-				</tr>
-			</tfoot>
-		</table>
+				<table id="users" class="table table-striped table-bordered" style="width:100%">
+					<thead>
+						<tr>
+							<th>Email</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+					   '.$tr.'
+					   
+					</tbody>
+					<tfoot>
+					   <tr>
+							<th>Email</th>
+							<th></th>
+						</tr>
+					</tfoot>
+				</table>
 				
 <script>
 
