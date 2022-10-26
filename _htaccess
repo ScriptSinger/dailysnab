@@ -1,0 +1,64 @@
+php_flag display_startup_errors off
+php_flag display_errors off
+php_flag html_errors off
+php_flag log_errors on
+php_flag ignore_repeated_errors off
+php_flag ignore_repeated_source off
+php_flag report_memleaks on
+php_flag track_errors on
+php_value docref_root 0
+php_value docref_ext 0
+php_value error_log /home/d/dailysnab/questrequest.ru/public_html/PHP_errors.log
+php_value error_reporting 2047
+php_value log_errors_max_len 0
+
+<Files PHP_errors.log>
+    Require all denied
+</Files>
+RewriteEngine On
+
+RewriteRule ^(phpmyadmin|PhpMyAdmin)($|/) - [L]
+
+RewriteCond %{HTTP_HOST} ^(www\.)?questrequest\.ru$ [NC]
+#RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteCond %{HTTPS} =off 
+RewriteRule ^(.*)$ https://questrequest.ru/$1 [R=301,L]
+
+
+<FilesMatch "\.(vdo)$"> 
+	Order allow,deny 
+	Deny from all
+	Satisfy All
+</FilesMatch>
+
+<FilesMatch ".(jpg|htpasswd|ini|phps|fla|psd|log|sh)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+
+
+ErrorDocument 401 /404/
+ErrorDocument 403 /404/
+ErrorDocument 404 /404/
+ErrorDocument 500 /500/
+DirectorySlash On
+
+RewriteEngine On
+RewriteBase /
+RewriteRule ^(.*)\/(\?.*)?$ $1 [R=301,L]
+RewriteRule ^([\w\/-]+)(\?.*)?$ index.php?route=$1 [L,QSA]
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . index.php [L]
+
+
+# https://questrequest.ru/buy?categories_id=849&cities_id=15598&value=ТЕСТ
+
+RewriteCond %{REQUEST_URI} ^/buy [NC]
+RewriteCond %{QUERY_STRING} categories_id=([0-9]+) [NC]
+RewriteRule .* /buy/%1? [R=301,L]
+
+
+AddDefaultCharset UTF-8
+
