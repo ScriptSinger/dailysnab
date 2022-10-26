@@ -4872,13 +4872,15 @@ class HtmlTemplate extends HtmlServive
     // меню в админке Пользователи
     function NavTabsAdminUsers($p = array())
     {
-        $code = $active1 = $active2 = '';
+        $code = $active1 = $active2 = $active3 = '';
         $in = fieldIn($p, array('flag'));
 
         if ($in['flag'] == 'account') {
             $active1 = 'active';
         } elseif ($in['flag'] == 'company') {
             $active2 = 'active';
+		} elseif ($in['flag'] == 'nosend_email') {
+            $active3 = 'active';
 		}
 
         $code = '	<ul class="nav nav-tabs">
@@ -4889,7 +4891,7 @@ class HtmlTemplate extends HtmlServive
 							<a href="/admin_users/company" class="nav-link '.$active2.'">Компании</a>
 						</li>
 						<li class="nav-item">
-							<a href="/admin_users/company" class="nav-link '.$active3.'">Блокировка Email</a>
+							<a href="/admin_users/nosend_email" class="nav-link '.$active3.'">Блокировка Email</a>
 						</li>
 					</ul>';
 
