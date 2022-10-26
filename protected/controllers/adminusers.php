@@ -24,7 +24,7 @@
 							$row = reqCompanyAdmin(array('flag_account'=>2));// 	компании
 							$flag = 'company';
 						}if($flag=='nosend_email'){
-							$row = reqCompanyAdmin(array('flag_account'=>2));// 	блокировка email от отправки
+							$row = reqNosendEmail(array('flag_account'=>2));// 	блокировка email от отправки
 							$flag = 'nosend_email';
 						}else{
 							$row = reqCompanyAdmin(array('flag_account'=>1));//	пользователи
@@ -32,9 +32,16 @@
 						}
 					}
 				
-					$this->admin_users = array( 	'row'			=> $row,
-												'flag'			=> $flag,
-												'row_account'	=> $row_account );
+					if($flag == 'nosend_email'){
+							$this->admin_nosend_email = array( 'row'			=> $row,
+															'flag'			=> $flag );
+					}else{
+							$this->admin_users = array( 	'row'			=> $row,
+														'flag'			=> $flag,
+														'row_account'	=> $row_account );
+					}
+
+
 					
 					$this->title = 'Администрирование - Пользователи';
 			}else{
