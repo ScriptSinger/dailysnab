@@ -9,10 +9,9 @@
 					$args1 = getArgs(1);
 					$args2 = getArgs(2);
 				
-					$flag = ($args1=='company')? true : false;
+					$flag = isset($args1)? $args1 : '';
 					$login_id = ($args1<>'company'&&v_int($args1))? $args1 : '';
 				
-					$flag = '';
 					$row = array();
 					$row_account = array('company'=>'');
 					if($login_id){
