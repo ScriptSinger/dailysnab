@@ -4880,7 +4880,7 @@ class HtmlTemplate extends HtmlServive
         } elseif ($in['flag'] == 'account') {
             $active2 = 'active';
 		}
-
+vecho($in['flag']);
         $code = '	<ul class="nav nav-tabs">
 						<li class="nav-item">
 							<a href="/admin_users" class="nav-link '.$active1.'">Пользователи</a>
