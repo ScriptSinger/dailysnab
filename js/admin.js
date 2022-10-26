@@ -900,6 +900,51 @@ $(function(){
 	});
 	
 	
+	// модальное окно "Email исключенный из отправки"
+	$("body").on("click", ".modal_admin_nosend_email", function(){
+		//$('#vmodal').removeData();
+		var d = $(this).data();
+			$.post("/modal_admin_nosend_email", { id:d.id }, 
+				function(data){
+					if(data.code){
+						modal.html(data.code);
+						modal.modal();
+						modal.on('shown.bs.modal',
+								function(e){
+										
+										getCheckbox();
+										
+										$('#admin_nosend_email-form').bootstrapValidator('destroy');
+										$('#admin_nosend_email-form').bootstrapValidator({
+											//
+										}).on('success.form.bv', function(e) {
+											e.preventDefault();
+											var $form = $(e.target);
+											var bv = $form.data('bootstrapValidator');
+												$.post("/save_admin_nosend_email", $form.serialize(),
+													function(data){
+															if(data.ok){
+																onReload('');
+															}else{
+																webix.message({type:"error", text:data.code});
+															}
+															
+															bv.disableSubmitButtons(false);
+															
+													}
+												);
+										});
+										
+								}
+						).on('hidden.bs.modal', function (e) {
+								modal.modal('dispose');
+						});
+					}
+				}
+			);
+	});
+	
+	
 	
 });//end $(function())
 
