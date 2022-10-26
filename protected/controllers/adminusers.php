@@ -9,7 +9,7 @@
 					$args1 = getArgs(1);
 					$args2 = getArgs(2);
 				
-					$company = ($args1=='company')? true : false;
+					$flag = ($args1=='company')? true : false;
 					$login_id = ($args1<>'company'&&v_int($args1))? $args1 : '';
 				
 					$flag = '';
@@ -20,9 +20,12 @@
 						$row_account = reqCompany(array('id'=>$args2));
 						$flag = 'login_id';
 					}else{
-						if($company){
+						if($flag=='company'){
 							$row = reqCompanyAdmin(array('flag_account'=>2));// 	компании
 							$flag = 'company';
+						}if($flag=='nosend_email'){
+							$row = reqCompanyAdmin(array('flag_account'=>2));// 	блокировка email от отправки
+							$flag = 'nosend_email';
 						}else{
 							$row = reqCompanyAdmin(array('flag_account'=>1));//	пользователи
 							$flag = 'account';
