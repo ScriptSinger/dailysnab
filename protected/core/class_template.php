@@ -4867,7 +4867,33 @@ class HtmlTemplate extends HtmlServive
 
         return $code;
     }
+	
+	
+    // меню в админке Пользователи
+    function NavTabsAdminUsers($p = array())
+    {
+        $code = $active1 = $active2 = '';
+        $in = fieldIn($p, array('flag'));
 
+        if ($in['flag'] == 'company') {
+            $active1 = 'active';
+        } elseif ($in['flag'] == 'account') {
+            $active2 = 'active';
+		}
+
+        $code = '	<ul class="nav nav-tabs">
+						<li class="nav-item">
+							<a href="/admin_users" class="nav-link '.$active1.'">Пользователи</a>
+						</li>
+						<li class="nav-item">
+							<a href="/admin_users/company" class="nav-link '.$active2.'">Компании</a>
+						</li>
+					</ul>';
+
+        return $code;
+    }
+	
+	
     // меню в админке Etp
     function NavTabsAdminEtp($p = array())
     {
