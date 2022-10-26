@@ -16,6 +16,9 @@ php_value log_errors_max_len 0
     Require all denied
 </Files>
 RewriteEngine On
+
+RewriteCond %{REQUEST_URI} !^/phpmyadmin/.*
+
 RewriteCond %{HTTP_HOST} ^(www\.)?questrequest\.ru$ [NC]
 #RewriteCond %{HTTP:X-Forwarded-Proto} !=https
 RewriteCond %{HTTPS} =off 
