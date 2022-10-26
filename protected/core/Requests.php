@@ -7523,7 +7523,33 @@
 		return $row;
 	}
 
+	// 
+	function reqNosendEmail($p=array()) {
+		$sql = '';
+		$arr = array();
+		$one = false;
+		$in = fieldIn($p, array('email'));
 
+		if($in['email']){
+			$sql = ' AND t.email=? ';
+			$arr = array($in['email']);
+			$one = true;
+		}
+
+		$sql = "	SELECT t.id, t.email
+				FROM nosend_email t
+				WHERE 1=1 ".$sql."
+				ORDER BY t.email ";
+
+		$row = ($one)? PreExecSQL_one($sql,$arr) : PreExecSQL_all($sql,$arr);
+
+		return $row;
+	}
+	
+	
+	
+	
+	
 	/*  VIEWS
 
 	***** view_grouping_id_kol_page_sell ******
