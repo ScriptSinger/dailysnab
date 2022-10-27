@@ -7491,7 +7491,7 @@
 		}
 
 		$sql = "	SELECT t.id, t.company_id, t.id_1c, t.modelname, t.regnumber, t.lastdriver, t.data1c,
-						CONCAT(t.modelname,' (',t.regnumber,')') modelname_regnumber
+						CONCAT(t.modelname,' (',t.regnumber,' ', t.lastdriver,')') modelname_regnumber
 				FROM 1c_transport t
 				WHERE t.company_id=".$in['company_id']." ".$sql." ";
 	//vecho($sql);
