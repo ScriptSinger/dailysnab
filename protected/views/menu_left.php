@@ -48,7 +48,7 @@
 				
 				$li .= '	<li class="item-request">
 							<a href="/'.$m['href'].'" class="nav-item">
-								<img src="'.$m['icon'].'" alt="nav-li-icon">
+								<img src="'.$m['icon'].'" alt="li">
 								<p>'.$m['menu'].'</p>
 								'.$kol_notification.'
 							</a>
