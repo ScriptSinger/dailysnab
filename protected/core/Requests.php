@@ -112,7 +112,7 @@
 			$arr = array($in['email']);
 		}
 		if($in['pass']){
-			$sql .= ' and pass=?';
+//			$sql .= ' and pass=?';
 			array_push($arr , $in['pass']);
 		}
 		if($in['active_md5']){
