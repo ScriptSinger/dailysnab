@@ -34811,7 +34811,7 @@
 				"Price": 1360,
 				"NDS": 0,
 				"Quantity": 1,
-				"Brand": "—"
+				"Brand": ""
 			}
 		]
 	},
@@ -35559,7 +35559,7 @@
 				"Price": 325,
 				"NDS": 0,
 				"Quantity": 50,
-				"Brand": "—"
+				"Brand": ""
 			}
 		]
 	},
@@ -37012,7 +37012,7 @@
 		"data1c": "2022-10-28T00:00:00",
 		"DocID": "fe3dbfd3-53f7-11ed-8dbb-0cc47a03c9dc",
 		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
-		"ContractorID": "1e8a99c6-739e-11ec-80df-000c2999d0eb",
+		"ContractorID": "b6f123f9-7fa2-11ec-80c5-000c292c2d55",
 		"Date": "2022-10-20T15:14:04",
 		"IncomeUPD": "9099903",
 		"Goods": [
@@ -37029,7 +37029,7 @@
 		"data1c": "2022-10-28T00:00:00",
 		"DocID": "04e6624f-53f8-11ed-8dbb-0cc47a03c9dc",
 		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
-		"ContractorID": "1e8a99c6-739e-11ec-80df-000c2999d0eb",
+		"ContractorID": "b6f123f9-7fa2-11ec-80c5-000c292c2d55",
 		"Date": "2022-10-20T15:14:13",
 		"IncomeUPD": "9099905",
 		"Goods": [
@@ -37165,7 +37165,7 @@
 		"data1c": "2022-10-28T00:00:00",
 		"DocID": "0c0fe3a3-53f8-11ed-8dbb-0cc47a03c9dc",
 		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
-		"ContractorID": "1e8a99c6-739e-11ec-80df-000c2999d0eb",
+		"ContractorID": "b6f123f9-7fa2-11ec-80c5-000c292c2d55",
 		"Date": "2022-10-24T10:54:49",
 		"IncomeUPD": "9307867",
 		"Goods": [
@@ -38007,7 +38007,7 @@
 				"Price": 716.57,
 				"NDS": 0,
 				"Quantity": 2,
-				"Brand": "Corteco"
+				"Brand": ""
 			}
 		]
 	},
@@ -38041,7 +38041,7 @@
 				"Price": 725,
 				"NDS": 0,
 				"Quantity": 2,
-				"Brand": "Hofer"
+				"Brand": ""
 			}
 		]
 	},
@@ -38058,7 +38058,7 @@
 				"Price": 2033.24,
 				"NDS": 0,
 				"Quantity": 1,
-				"Brand": "Kolbenschmidt"
+				"Brand": ""
 			}
 		]
 	},
@@ -38365,6 +38365,57 @@
 				"NDS": 0,
 				"Quantity": 1,
 				"Brand": "оригинал"
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-28T00:00:00",
+		"DocID": "5cd57819-56a2-11ed-8dbb-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "85a8f887-badb-11ec-80e4-000c2999d0eb",
+		"Date": "2022-10-27T09:10:55",
+		"IncomeUPD": "9424965",
+		"Goods": [
+			{
+				"NomID": "63427d1b-567e-11ed-8dbb-0cc47a03c9dc",
+				"Price": 1928.4,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": "Kolbenschmidt"
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-28T00:00:00",
+		"DocID": "5cd5783e-56a2-11ed-8dbb-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "3bbce0d7-1157-11ed-8db6-0cc47a03c9dc",
+		"Date": "2022-10-27T09:37:22",
+		"IncomeUPD": "9424967",
+		"Goods": [
+			{
+				"NomID": "c25ef7de-6cbc-11ec-80dd-000c2999d0eb",
+				"Price": 1179.89,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": "Kolbenschmidt"
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-28T00:00:00",
+		"DocID": "63a90447-56a2-11ed-8dbb-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "55d17d3e-742b-11ec-80e0-000c2999d0eb",
+		"Date": "2022-10-28T08:11:27",
+		"IncomeUPD": "9485875",
+		"Goods": [
+			{
+				"NomID": "a464ef1c-e297-11ec-8da2-000c295de724",
+				"Price": 8197.1,
+				"NDS": 0,
+				"Quantity": 3,
+				"Brand": ""
 			}
 		]
 	}
