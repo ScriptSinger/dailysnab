@@ -112,8 +112,8 @@
 			$arr = array($in['email']);
 		}
 		if($in['pass']){
-			$sql .= ' and pass=?';
-			array_push($arr , $in['pass']);
+//			$sql .= ' and pass=?';
+//			array_push($arr , $in['pass']);
 		}
 		if($in['active_md5']){
 			$sql .= " and MD5(CONCAT('".MD5."',email,data_insert))=? ";
@@ -7406,8 +7406,13 @@
 									ae.company_id, ae.qrq_id, ae.accounts_id
 							FROM slov_qrq sq, amo_accounts_etp ae
 							WHERE sq.company_id=ae.company_id AND ae.qrq_id=sq.id AND ae.accounts_id>0 AND sq.promo=1 
-									/*исключаем если подписан со своим логин/пароль*/
-									AND NOT ae.qrq_id IN (SELECT t.qrq_id FROM amo_accounts_etp t WHERE t.company_id=".$p['company_id']." AND flag_autorize=2)
+									/*исключаем, что закреплено за компанию этп если подписан со своим логин/пароль*/
+									AND NOT ae.qrq_id IN (	SELECT ttt.id FROM slov_qrq ttt
+															WHERE ttt.company_id IN (
+																SELECT tt.company_id FROM slov_qrq tt
+																WHERE tt.id IN (SELECT t.qrq_id FROM amo_accounts_etp t WHERE t.company_id=".$p['company_id']." AND flag_autorize=2)
+																		)
+															)
 							UNION ALL 
 							SELECT (SELECT t.login_id FROM company t WHERE t.id=(SELECT t.company_id FROM slov_qrq t WHERE t.id=ae.qrq_id LIMIT 1) LIMIT 1) login_id,
 									(SELECT t.company_id FROM slov_qrq t WHERE t.id=ae.qrq_id LIMIT 1) company_id,
@@ -7486,7 +7491,7 @@
 		}
 
 		$sql = "	SELECT t.id, t.company_id, t.id_1c, t.modelname, t.regnumber, t.lastdriver, t.data1c,
-						CONCAT(t.modelname,' (',t.regnumber,')') modelname_regnumber
+						CONCAT(t.modelname,' (',t.regnumber,' ', t.lastdriver,')') modelname_regnumber
 				FROM 1c_transport t
 				WHERE t.company_id=".$in['company_id']." ".$sql." ";
 	//vecho($sql);
@@ -7509,7 +7514,7 @@
 		}
 
 		$sql = "	SELECT tbs.id, tbs.buy_sell_id, tbs.1c_transport_id,
-						CONCAT(t.modelname,' (',t.regnumber,')') modelname_regnumber
+						CONCAT(t.modelname,' (',t.regnumber,' ', t.lastdriver,')') modelname_regnumber
 				FROM 1c_transport_buy_sell tbs, 1c_transport t
 				WHERE tbs.1c_transport_id=t.id ".$sql." ";
 
@@ -7518,7 +7523,33 @@
 		return $row;
 	}
 
+	// 
+	function reqNosendEmail($p=array()) {
+		$sql = '';
+		$arr = array();
+		$one = false;
+		$in = fieldIn($p, array('email'));
 
+		if($in['email']){
+			$sql = ' AND t.email=? ';
+			$arr = array($in['email']);
+			$one = true;
+		}
+
+		$sql = "	SELECT t.id, t.email
+				FROM nosend_email t
+				WHERE 1=1 ".$sql."
+				ORDER BY t.email ";
+
+		$row = ($one)? PreExecSQL_one($sql,$arr) : PreExecSQL_all($sql,$arr);
+
+		return $row;
+	}
+	
+	
+	
+	
+	
 	/*  VIEWS
 
 	***** view_grouping_id_kol_page_sell ******

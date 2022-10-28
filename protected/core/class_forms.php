@@ -4592,6 +4592,65 @@ $( document ).ready(function() {
 	}
 
 
+	// Форма Email исключенный из отправки
+	function FormAdminNosendEmail( $p=array() ){
+
+		$qrq		= new ClassQrq();
+
+		$in = fieldIn($p, array('id'));
+
+		if(!$in['id']){
+			$row = array('id'=>'','email'=>'');
+		}else{
+			$row = reqNosendEmail(array('id'=>$in['id']));
+		}
+
+		$content = '
+		
+				<div style="padding:10px 30px;">
+				
+					<h4>Email исключенный из отправки</h4>
+		
+		
+					<div class="form-group">
+						'.$this->Input(	array(	'type'			=> 'text',
+												'id'			=> 'email',
+												'class'			=> 'form-control',
+												'value'			=> $row['email'],
+												'placeholder'	=> 'Email'
+											)
+									).'
+					</div>
+					
+					<div class="">
+							'.$this->Input(	array(		'type'			=> 'hidden',
+														'id'			=> 'id',
+														'value'			=> $row['id']
+													)
+											).'
+							'.$this->Input(	array(		'type'			=> 'submit',
+														'class'			=> 'save btn-blue',
+														'value'			=> 'Сохранить'
+													)
+											).'
+					</div>
+					
+					
+				</div>
+									
+						
+					';
+
+
+
+		return array('content'=>$content);
+	}
+
+
+
+
+
+
 
 }
 ?>

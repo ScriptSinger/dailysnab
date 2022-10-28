@@ -7585,6 +7585,38 @@ elseif($_GET['route'] == 'delete_admin_etp_accounts_id'){
 	$jsd['code']			= $code;
 
 }
+// модальное окно админка Email исключенный из отправки
+elseif($_GET['route'] == 'modal_admin_nosend_email'){
+
+	$arr = $f->FormAdminNosendEmail(array('id'=>$in['id']));
+
+	$arr['content'] = '<div style="width:1200px;">'.$arr['content'].'</div>';
+
+	$code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog admin-modal-categories','top'=>'','content'=>$arr['content']),
+							array('id'=>'admin_nosend_email-form','class'=>'') );
+
+	$jsd['code'] = $code;
+}
+// сохранение Email исключенный из отправки
+elseif($_GET['route'] == 'save_admin_nosend_email'){
+
+	$ok = $STH = false;
+	$code = 'Нельзя сохранить';
+
+/*
+	$STH = PreExecSQL(" UPDATE company SET company=? , active=?  WHERE id=?; " ,
+		array( $in['company'],$in['active'],$in['id'] ));
+	if($STH){
+		$ok		= true;
+	}
+*/
+
+	$jsd['ok'] 			= $ok;
+	$jsd['code']			= $code;
+
+}
+
+
 
 }
 /***
