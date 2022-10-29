@@ -213,6 +213,7 @@ class HtmlBuySell extends HtmlServive
 		}
 		// Склад - На складе
 		elseif( $in['flag_buy_sell']==5 && $in['status_buy_sell_id']==31 ){
+			vecho($in);
 				if($in['kol_stock']==1){
 						// выбираем склады пользователя для "переместить"
 							$arr = array();
@@ -304,7 +305,7 @@ class HtmlBuySell extends HtmlServive
 			//$ok = false;
 			//unset($arr_status[3]);
 		}
-vecho($arr_status);
+//vecho($arr_status);
 		if( (!empty($arr_status)&&$ok) || ($r_min['flag_offer_min_cost'] || $r_min['flag_offer_min_cost2']) /*&& ( $r_min['flag_offer_min_cost'] || $r_min['flag_offer_min_cost2'] )*/ ){		
 				if(count($arr_status)>1||(!empty($arr_button))){// более одного действия
 
