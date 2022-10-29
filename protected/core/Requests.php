@@ -112,8 +112,8 @@
 			$arr = array($in['email']);
 		}
 		if($in['pass']){
-			$sql .= ' and pass=?';
-			array_push($arr , $in['pass']);
+//			$sql .= ' and pass=?';
+//			array_push($arr , $in['pass']);
 		}
 		if($in['active_md5']){
 			$sql .= " and MD5(CONCAT('".MD5."',email,data_insert))=? ";
@@ -5457,7 +5457,7 @@
 					ORDER BY 1 DESC LIMIT ".$start_limit." , 10	
 									";
 
-
+vecho($sql);
 		/*
 			$sql = "	SELECT bs.nomenclature_id, COUNT(bs.id) kol_stock,
 							bs.id, bs.login_id, bs.company_id, bs.company_id2, bs.flag_buy_sell, bs.name, bs.url,
