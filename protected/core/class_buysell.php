@@ -213,7 +213,6 @@ class HtmlBuySell extends HtmlServive
 		}
 		// Склад - На складе
 		elseif( $in['flag_buy_sell']==5 && $in['status_buy_sell_id']==31 ){
-			vecho($in);
 				if($in['kol_stock']==1){
 						// выбираем склады пользователя для "переместить"
 							$arr = array();
