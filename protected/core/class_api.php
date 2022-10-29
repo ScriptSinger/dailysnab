@@ -1558,6 +1558,7 @@ class ClassApi extends HtmlServive
 									$r = reqCompany(array('id'=>$in['company_id']));
 									$login_id = $r['login_id'];
 									
+									echo 'добавляем выдачу '.$DocID.' - '.$login_id.' - '.$categories_id.' - '.$nomenclature_id.'<br/>';
 									
 									if( $login_id && $categories_id && $nomenclature_id ){// есть привязка
 											
