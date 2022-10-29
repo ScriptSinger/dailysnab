@@ -1561,7 +1561,7 @@ class ClassApi extends HtmlServive
 									
 									if( $login_id && $categories_id && $nomenclature_id ){// есть привязка
 											
-											echo 'добавляем выдачу '.$DocID.' - '.$login_id.' - '.$categories_id.' - '.$nomenclature_id'<br/>';
+											echo 'добавляем выдачу '.$DocID.' - '.$login_id.' - '.$categories_id.' - '.$nomenclature_id.'<br/>';
 											
 											/*
 											$arr = reqInsertBuySell(array(	'login_id'			=> $login_id,
