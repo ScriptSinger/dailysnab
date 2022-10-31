@@ -2054,7 +2054,7 @@ elseif($_GET['route'] == 'search_buy_sell'){
         }elseif($rf['flag_search']==4){
             $flag_search 	= 'buy';
         }elseif($rf['flag_search']==3){
-            $flag_search = 'sell';
+            $flag_search = 'sell22';
         }elseif($rf['flag_search']==5){
             $flag_search = 'subscriptions/profile';
         }
