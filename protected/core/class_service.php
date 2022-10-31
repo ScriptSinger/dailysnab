@@ -54,6 +54,11 @@ class HtmlServive extends HtmlElement
 											array( $company_id ));
 		///
 		
+		// Очищаем старые полученные данные ЭТП
+			$this->ClearBuySellEtpSell();
+		///
+		
+		
 		return '';
 	}
 	
@@ -926,7 +931,7 @@ class HtmlServive extends HtmlElement
 				$STH = PreExecSQL($sql,array($m['buy_sell_id']));
 			}
 
-		return $href;
+		return '';
 	}
 	
 }
