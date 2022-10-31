@@ -955,10 +955,11 @@ class ClassQrq extends HtmlServive
 						
 		$r = reqAmoAccountsEtp_AccountsidByCompanyid2();
 		$accountid = $r['accounts_ids'];
-
+vecho($accountid);
+exit;
 		foreach($p['values'] as $k=>$m){
 			
-				$r = reqAmoAccountsEtp_AccountsidByCompanyid(array('company_id'=>COMPANY_ID));
+				//$r = reqAmoAccountsEtp_AccountsidByCompanyid(array('company_id'=>COMPANY_ID));
 				
 				//$r = reqAmoAccountsEtp_AccountsidByCompanyid2();
 				//$accountid = $r['accounts_ids'];
