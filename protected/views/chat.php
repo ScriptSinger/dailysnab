@@ -23,7 +23,7 @@ $last_message = [];
 
         $time = array_column($row, 'timeMessage');
         array_multisort($time, SORT_DESC, $row);
-    vecho($row);
+    //vecho($row);
 	foreach($row as $i => $m){
 		if(in_array($comp, json_decode($m['companies_id']))){ //проверка прав на отображение папок
 			$tr .= $t->TrPageMessagesFolders(array('m' => $m, 'views' => $views));
