@@ -38122,7 +38122,7 @@
 		"IncomeUPD": "9394459",
 		"Goods": [
 			{
-				"NomID": "95c783b8-5653-11ed-8dbb-0cc47a03c9dc",
+				"NomID": "0570e11f-6cbf-11ec-80dd-000c2999d0eb",
 				"Price": 3537.58,
 				"NDS": 0,
 				"Quantity": 2,
@@ -38603,6 +38603,91 @@
 				"NDS": 0,
 				"Quantity": 3,
 				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-31T00:00:00",
+		"DocID": "2fca02bd-58f9-11ed-8dbb-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "6695c1eb-99dc-11ec-80c9-000c292c2d55",
+		"Date": "2022-10-28T13:22:09",
+		"IncomeUPD": "9487643",
+		"Goods": [
+			{
+				"NomID": "88495cec-6cbd-11ec-80dd-000c2999d0eb",
+				"Price": 10725.36,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": "Scania"
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-31T00:00:00",
+		"DocID": "3666b966-58f9-11ed-8dbb-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "6695c1eb-99dc-11ec-80c9-000c292c2d55",
+		"Date": "2022-10-28T14:40:52",
+		"IncomeUPD": "9488656",
+		"Goods": [
+			{
+				"NomID": "c831245f-7d06-11ec-80c5-000c292c2d55",
+				"Price": 409.17,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": "Corteco"
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-31T00:00:00",
+		"DocID": "3666b9c1-58f9-11ed-8dbb-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "596bda1c-783b-11ec-80c5-000c292c2d55",
+		"Date": "2022-10-28T15:16:30",
+		"IncomeUPD": "9488669",
+		"Goods": [
+			{
+				"NomID": "f57506b0-6cbd-11ec-80dd-000c2999d0eb",
+				"Price": 137.5,
+				"NDS": 0,
+				"Quantity": 10,
+				"Brand": "—"
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-31T00:00:00",
+		"DocID": "3666b9e6-58f9-11ed-8dbb-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "4a642055-b4a3-11ec-80cd-000c292c2d55",
+		"Date": "2022-10-28T15:27:13",
+		"IncomeUPD": "9488684",
+		"Goods": [
+			{
+				"NomID": "0570e117-6cbf-11ec-80dd-000c2999d0eb",
+				"Price": 272,
+				"NDS": 0,
+				"Quantity": 30,
+				"Brand": "stal"
+			}
+		]
+	},
+	{
+		"data1c": "2022-10-31T00:00:00",
+		"DocID": "3666b9f9-58f9-11ed-8dbb-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "3ad912f4-6de4-11ec-80bf-000c292c2d55",
+		"Date": "2022-10-31T11:50:11",
+		"IncomeUPD": "9495360",
+		"Goods": [
+			{
+				"NomID": "996a7504-6cbe-11ec-80dd-000c2999d0eb",
+				"Price": 521,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": "RUBENA"
 			}
 		]
 	}
