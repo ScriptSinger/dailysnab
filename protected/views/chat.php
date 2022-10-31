@@ -70,7 +70,6 @@ $last_message = [];
 
 			$companies_id = implode(",", $rown_name);
 			$companyName = '';
-            vecho($rown_name); //
 			foreach($rown_name as $k){
 				if($k != COMPANY_ID) {
 					$companyName = PreExecSQL_one('SELECT c.*, s.legal_entity FROM company c 
@@ -228,6 +227,7 @@ $last_message = [];
 			} 
 		
 		} else { //вывод папок
+            vecho($views); //
 		
 			$code .= '
 
