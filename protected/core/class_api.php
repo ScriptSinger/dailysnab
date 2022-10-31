@@ -1569,7 +1569,7 @@ class ClassApi extends HtmlServive
 									if( $login_id && $categories_id && $nomenclature_id ){// есть привязка
 											
 											
-											
+											/*
 											$arr = reqInsertBuySell(array(	'login_id'			=> $login_id,
 																			'company_id'		=> $in['company_id'],
 																			'company_id2'		=> 0,
@@ -1648,7 +1648,7 @@ class ClassApi extends HtmlServive
 													}
 													
 											}
-											
+											*/
 									}
 								
 						}else{
