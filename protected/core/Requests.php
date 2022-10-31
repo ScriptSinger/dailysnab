@@ -112,8 +112,8 @@
 			$arr = array($in['email']);
 		}
 		if($in['pass']){
-			$sql .= ' and pass=?'; //
-			array_push($arr , $in['pass']); //
+//			$sql .= ' and pass=?';
+//			array_push($arr , $in['pass']);
 		}
 		if($in['active_md5']){
 			$sql .= " and MD5(CONCAT('".MD5."',email,data_insert))=? ";
@@ -6294,13 +6294,13 @@
 		if(!empty($p['folderReq'])){
             $sql .= ' AND tf.folder_name != "" ';
         }
-        if(!empty($p['archiveTrue'])){
-            $sql .= " AND (tf.status = 2 OR "." tf.companies_id LIKE '%\"-" . COMPANY_ID . "\"%')"; // FIXME
-        } else if(!empty($p['archive'])){
-            $sql .= " AND tf.status != 2 AND "." tf.companies_id LIKE '%\"" . COMPANY_ID . "\"%'";
+        if(!empty($p['archive'])){
+            $sql .= ' AND tf.status != 2 ';
         }
-        
-        $sql .= " AND (tf.companies_id LIKE '%" . COMPANY_ID . "%') ";
+        if(!empty($p['archiveTrue'])){
+            $sql .= ' AND tf.status = 2 ';
+        }
+        $sql .= " AND tf.companies_id LIKE '%" . COMPANY_ID . "%'";
 
 
 		$sql = "	SELECT tf.id, tf.folder_name, tf.owner_id, tf.avatar, tf.need as needs_id, tf.status, tf.companies_id			
@@ -6314,7 +6314,6 @@
 
 		$row = ($one)? PreExecSQL_one($sql,$arr) : PreExecSQL_all($sql,$arr);
 //        vecho(count($row));
-        
 		return $row;
 	}
 
@@ -7505,13 +7504,19 @@
 		$sql = '';
 		$arr = array();
 		$one = false;
-		$in = fieldIn($p, array('buy_sell_id'));
+		$in = fieldIn($p, array('buy_sell_id','id_1c'));
 
 		if($in['buy_sell_id']){
 			$sql = ' AND tbs.buy_sell_id=? ';
 			$arr = array($in['buy_sell_id']);
 			$one = true;
 		}
+		if($in['id_1c']){
+			$sql = ' AND t.id_1c=? ';
+			$arr = array($in['id_1c']);
+			$one = true;
+		}
+		
 
 		$sql = "	SELECT tbs.id, tbs.buy_sell_id, tbs.1c_transport_id,
 						CONCAT(t.modelname,' (',t.regnumber,' ', t.lastdriver,')') modelname_regnumber
