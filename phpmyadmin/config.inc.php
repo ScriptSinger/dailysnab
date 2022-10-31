@@ -27,6 +27,7 @@ $i++;
 /* Authentication type */
 $cfg['Servers'][$i]['auth_type'] = 'config';
 /* Server parameters */
+$cfg['Servers'][$i]['port'] = '3310';
 $cfg['Servers'][$i]['host'] = '37.9.13.206';
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
