@@ -788,7 +788,7 @@ class ClassQrq extends HtmlServive
 							// пишем лог
 							$ins_id = reqInsertAmoLogJson(array('url'=>'cartadd','parameters'=>$parameters,'json'=>$json,'token'=>AMO_TOKEN));
 							
-							vecho($parameters);
+							//vecho($parameters);
 							//vecho($json);
 							
 							$Response	= isset($json->Response)? $json->Response : '';

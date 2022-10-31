@@ -227,7 +227,6 @@ $last_message = [];
 			} 
 		
 		} else { //вывод папок
-            vecho($views); //
 		
 			$code .= '
 
