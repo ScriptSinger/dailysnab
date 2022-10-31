@@ -13,7 +13,10 @@
 			// echo '<pre>';
 			// 	var_dump($member);
 			// echo '</pre>'; 
-			
+
+
+
+    //vecho($row);			
 		
 $last_message = [];
         foreach ($row as $i => $m){
@@ -23,9 +26,16 @@ $last_message = [];
 
         $time = array_column($row, 'timeMessage');
         array_multisort($time, SORT_DESC, $row);
+    
 
 	foreach($row as $i => $m){
-		if(in_array($comp, json_decode($m['companies_id']))){ //проверка прав на отображение папок
+        $companies_id_old = json_decode($m['companies_id']);
+        $companies_id_new = array();
+        foreach ($companies_id_old as $j => $n) {
+            $companies_id_new[$j] = ''.(abs(intval($companies_id_old[$j])));
+        }
+        $row[$i]['companies_id'] = json_encode($companies_id_new);
+		if(in_array($comp, $companies_id_new)){ //проверка прав на отображение папок
 			$tr .= $t->TrPageMessagesFolders(array('m' => $m, 'views' => $views));
 		}
 	}   
