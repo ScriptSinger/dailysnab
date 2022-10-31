@@ -1553,39 +1553,45 @@ class ClassApi extends HtmlServive
 									$categories_id = $rn['categories_id'];
 									$nomenclature_id = $rn['nomenclature_id'];
 									
-									
 									// получаем login_id
 									$r = reqCompany(array('id'=>$in['company_id']));
 									$login_id = $r['login_id'];
+									
+									// актив привязка
+									$r = reqCompany(array('id_1c'=>$AutoID));
+									$assets_id = $r['buy_sell_id'];
+									
+									// склад на котором выдача
+									$stock_id = 11;
 									
 									echo 'добавляем выдачу '.$DocID.' - '.$login_id.' - '.$categories_id.' - '.$nomenclature_id.'<br/>';
 									
 									if( $login_id && $categories_id && $nomenclature_id ){// есть привязка
 											
 											
-											/*
+											
 											$arr = reqInsertBuySell(array(	'login_id'			=> $login_id,
-																			'company_id'		=> $company_id2,
-																			'company_id2'		=> $in['company_id'],
+																			'company_id'		=> $in['company_id'],
+																			'company_id2'		=> 0,
 																			'parent_id'			=> 0,
 																			'copy_id'			=> 0,
-																			'flag_buy_sell'		=> 2,
-																			'status'			=> 11,
+																			'flag_buy_sell'		=> 5,
+																			'status'			=> 33,
 																			'name'				=> '-',
-																			'url'				=> 'buy1c',
+																			'url'				=> 'stock1c',
 																			'cities_id'			=> 1,
 																			'categories_id'		=> $categories_id,
 																			'urgency_id'		=> 5,
 																			'currency_id'		=> 1,
-																			'cost'				=> $Price,
+																			'cost'				=> 0,
 																			'cost1'				=> 0,
-																			'form_payment_id'	=> $form_payment_id,
+																			'form_payment_id'	=> 2,
 																			'amount'			=> $Quantity,
 																			'amount1'			=> 0,
 																			'unit_id1'			=> 0,
 																			'amount2'			=> 0,
 																			'unit_id2'			=> 0,
-																			'comments'			=> '',
+																			'comments'			=> 'Выдача из 1С',
 																			'comments_company'	=> '',
 																			'responsible_id'	=> '',
 																			'availability'		=> '',
@@ -1593,8 +1599,8 @@ class ClassApi extends HtmlServive
 																			'multiplicity'		=> '',
 																			'min_party'			=> '',
 																			'delivery_id'		=> '',
-																			'stock_id'			=> '',
-																			'assets_id'			=> ''
+																			'stock_id'			=> $stock_id,
+																			'assets_id'			=> $assets_id
 																			
 																			));
 											
@@ -1642,7 +1648,7 @@ class ClassApi extends HtmlServive
 													}
 													
 											}
-											*/
+											
 									}
 								
 						}else{
