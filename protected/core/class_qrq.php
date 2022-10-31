@@ -788,7 +788,8 @@ class ClassQrq extends HtmlServive
 							// пишем лог
 							$ins_id = reqInsertAmoLogJson(array('url'=>'cartadd','parameters'=>$parameters,'json'=>$json,'token'=>AMO_TOKEN));
 							
-							//vecho($parameters);
+							vecho($parameters);
+							exit;
 							//vecho($json);
 							
 							$Response	= isset($json->Response)? $json->Response : '';
@@ -955,8 +956,8 @@ class ClassQrq extends HtmlServive
 						
 		$r = reqAmoAccountsEtp_AccountsidByCompanyid2();
 		$accountid = $r['accounts_ids'];
-vecho($accountid);
-exit;
+
+
 		foreach($p['values'] as $k=>$m){
 			
 				//$r = reqAmoAccountsEtp_AccountsidByCompanyid(array('company_id'=>COMPANY_ID));
