@@ -925,7 +925,7 @@ class HtmlServive extends HtmlElement
 	function ClearBuySellEtpSell( $p=array() ){
 
 			$row = reqBuySellEtpSell(array( 'cookie_session'=>COOKIE_SESSION ));
-			vecho(COOKIE_SESSION);
+
 			foreach($row as $i => $m){
 				$sql = "	DELETE FROM buy_sell WHERE id=? ";
 
