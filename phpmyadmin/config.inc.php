@@ -27,12 +27,12 @@ $i++;
 /* Authentication type */
 $cfg['Servers'][$i]['auth_type'] = 'config';
 /* Server parameters */
-$cfg['Servers'][$i]['host'] = 'dailysnab.beget.tech';
+$cfg['Servers'][$i]['host'] = '37.9.13.206';
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
 
-$cfg['Servers'][$i]['user'] = 'dailysnab_db';
-$cfg['Servers'][$i]['password'] = 'r*6bVbrm';
+$cfg['Servers'][$i]['user'] = 'prof9104_db2';
+$cfg['Servers'][$i]['password'] = 'gyjnkbF%YBv5yjdf6V%YJdfb6uKYS$m';
 
 /**
  * phpMyAdmin configuration storage settings.
