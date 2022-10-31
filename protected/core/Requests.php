@@ -6300,7 +6300,7 @@
         if(!empty($p['archiveTrue'])){
             $sql .= ' AND tf.status = 2 ';
         }
-        $sql .= " AND tf.companies_id LIKE '%" . COMPANY_ID . "%'";
+        $sql .= " AND (tf.companies_id LIKE '%" . COMPANY_ID . "%' OR "." tf.companies_id LIKE '%-" . COMPANY_ID . "%') ";
 
 
 		$sql = "	SELECT tf.id, tf.folder_name, tf.owner_id, tf.avatar, tf.need as needs_id, tf.status, tf.companies_id			
