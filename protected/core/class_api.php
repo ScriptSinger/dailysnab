@@ -1564,7 +1564,7 @@ class ClassApi extends HtmlServive
 									// склад на котором выдача
 									$stock_id = 11;
 									
-									echo 'добавляем выдачу '.$DocID.' - '.$login_id.' - '.$categories_id.' - '.$nomenclature_id.'<br/>';
+									echo 'добавляем выдачу '.$DocID.' - '.$login_id.' - '.$categories_id.' - '.$nomenclature_id.' - '.$assets_id.'<br/>';
 									
 									if( $login_id && $categories_id && $nomenclature_id ){// есть привязка
 											
