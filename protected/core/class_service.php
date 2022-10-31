@@ -913,7 +913,21 @@ class HtmlServive extends HtmlElement
                 // vecho($row);
 		}	
 		return $row;
-	}		
+	}
+	
+	
+	// Очищаем старые полученные данные ЭТП
+	function ClearBuySellEtpSell( $p=array() ){
+
+			$row = reqBuySellEtpSell(array( 'cookie_session'=>COOKIE_SESSION ));
+			foreach($row as $i => $m){
+				$sql = "	DELETE FROM buy_sell WHERE id=? ";
+
+				$STH = PreExecSQL($sql,array($m['buy_sell_id']));
+			}
+
+		return $href;
+	}
 	
 }
 ?>
