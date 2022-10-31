@@ -6294,13 +6294,13 @@
 		if(!empty($p['folderReq'])){
             $sql .= ' AND tf.folder_name != "" ';
         }
-        if(!empty($p['archive'])){
-            $sql .= ' AND tf.status != 2 ';
-        }
         if(!empty($p['archiveTrue'])){
-            $sql .= ' AND tf.status = 2 ';
+            $sql .= " AND (tf.status = 2 OR "." tf.companies_id LIKE '%\"-" . COMPANY_ID . "\"%')"; // FIXME
+        } else if(!empty($p['archive'])){
+            $sql .= " AND tf.status != 2 AND "." tf.companies_id LIKE '%\"" . COMPANY_ID . "\"%'";
         }
-        $sql .= " AND (tf.companies_id LIKE '%" . COMPANY_ID . "%' OR "." tf.companies_id LIKE '%-" . COMPANY_ID . "%') ";
+        
+        $sql .= " AND (tf.companies_id LIKE '%" . COMPANY_ID . "%') ";
 
 
 		$sql = "	SELECT tf.id, tf.folder_name, tf.owner_id, tf.avatar, tf.need as needs_id, tf.status, tf.companies_id			
