@@ -44,7 +44,7 @@ class HtmlServive extends HtmlElement
 		///
 		
 		
-		// Очищаем старые полученные данные ЭТП
+		// Очищаем старые полученные данные ЭТП (запустить перед self::FixBuySellCompanyByCookieSession)
 			self::ClearBuySellEtpSell();
 		///
 		
