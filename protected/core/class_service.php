@@ -43,6 +43,12 @@ class HtmlServive extends HtmlElement
 			$_SESSION['AMO_TOKEN'] 	= 'bd219dd9eb0f64d6e152d179dae9ba3dda6b4619';
 		///
 		
+		
+		// Очищаем старые полученные данные ЭТП
+			self::ClearBuySellEtpSell();
+		///
+		
+		
 		// закрепление заявок/объявл за пользователем после авторизации/регистрации
 		self::FixBuySellCompanyByCookieSession(array('company_id'=>$company_id,'login_id'=>$p['login_id']));
 		
@@ -52,10 +58,6 @@ class HtmlServive extends HtmlElement
 		// очищаем дату последней отправки (чтобы приходили письма)
 			$STH = PreExecSQL(" UPDATE company_page_visited_send SET data_last_send_email=NULL WHERE company_id=?; " ,
 											array( $company_id ));
-		///
-		
-		// Очищаем старые полученные данные ЭТП
-			self::ClearBuySellEtpSell();
 		///
 		
 		
