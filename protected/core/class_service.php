@@ -55,7 +55,7 @@ class HtmlServive extends HtmlElement
 		///
 		
 		// Очищаем старые полученные данные ЭТП
-			$this->ClearBuySellEtpSell();
+			self::ClearBuySellEtpSell();
 		///
 		
 		
