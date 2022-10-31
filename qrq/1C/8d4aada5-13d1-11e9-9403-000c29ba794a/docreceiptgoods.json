@@ -37821,6 +37821,89 @@
 				"NDS": 0,
 				"Quantity": 2,
 				"Brand": "Varta"
+			},
+			{
+				"DocID": "1d101a06-5763-11ed-8dbb-0cc47a03c9dc",
+				"StrID": 2,
+				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+				"ContractorID": "335fdb9c-dbf2-11ec-80e6-000c2999d0eb",
+				"Date": "2022-10-29T13:24:41",
+				"buy_sell_id": "9394459",
+				"NomID": "0570e11f-6cbf-11ec-80dd-000c2999d0eb",
+				"Price": 3537.58,
+				"NDS": 0,
+				"Quantity": 2,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"DocID": "e3c16ffd-58e5-11ed-8dbb-0cc47a03c9dc",
+		"data1c": "2022-10-31T00:00:00",
+		"Massiv": [
+			{
+				"DocID": "e3c16ffd-58e5-11ed-8dbb-0cc47a03c9dc",
+				"StrID": 1,
+				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+				"ContractorID": "6354bc06-71f3-11ec-80c1-000c292c2d55",
+				"Date": "2022-10-31T11:33:13",
+				"buy_sell_id": "7906373",
+				"NomID": "b8d66c5a-6cbd-11ec-80dd-000c2999d0eb",
+				"Price": 4718.97,
+				"NDS": 0,
+				"Quantity": 2,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"DocID": "3fb3f130-58ef-11ed-8dbb-0cc47a03c9dc",
+		"data1c": "2022-10-31T00:00:00",
+		"Massiv": [
+			{
+				"DocID": "3fb3f130-58ef-11ed-8dbb-0cc47a03c9dc",
+				"StrID": 1,
+				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+				"ContractorID": "3bbce0d7-1157-11ed-8db6-0cc47a03c9dc",
+				"Date": "2022-10-31T12:40:18",
+				"buy_sell_id": "9318809",
+				"NomID": "06728fe8-541c-11ed-8dbb-0cc47a03c9dc",
+				"Price": 4119.63,
+				"NDS": 0,
+				"Quantity": 8,
+				"Brand": ""
+			},
+			{
+				"DocID": "3fb3f130-58ef-11ed-8dbb-0cc47a03c9dc",
+				"StrID": 2,
+				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+				"ContractorID": "3bbce0d7-1157-11ed-8db6-0cc47a03c9dc",
+				"Date": "2022-10-31T12:40:18",
+				"buy_sell_id": "9360895",
+				"NomID": "3979a513-54c1-11ed-8dbb-0cc47a03c9dc",
+				"Price": 992.79,
+				"NDS": 0,
+				"Quantity": 2,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"DocID": "c012cfee-58ef-11ed-8dbb-0cc47a03c9dc",
+		"data1c": "2022-10-31T00:00:00",
+		"Massiv": [
+			{
+				"DocID": "c012cfee-58ef-11ed-8dbb-0cc47a03c9dc",
+				"StrID": 1,
+				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+				"ContractorID": "34860283-e2fe-11ec-8da2-000c295de724",
+				"Date": "2022-10-31T12:43:47",
+				"buy_sell_id": "9425355",
+				"NomID": "95c78392-5653-11ed-8dbb-0cc47a03c9dc",
+				"Price": 684.1,
+				"NDS": 0,
+				"Quantity": 1,
+				"Brand": ""
 			}
 		]
 	}
