@@ -5363,7 +5363,7 @@ class HtmlTemplate extends HtmlServive
 
 
         $comp_count = count(json_decode($m['companies_id'], true));
-        vecho($comp_count);
+        //vecho($comp_count);
         if ($comp_count == 2) {
             $arr_companies = json_decode($m['companies_id'], true);
 
