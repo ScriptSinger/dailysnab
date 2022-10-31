@@ -2671,17 +2671,9 @@ elseif($_GET['route'] == 'get_sell_by_amo_accountsetp'){
 
     $_POST['values'] = isset($_POST['values'])? $_POST['values'] : array();
 
-
-
-    // Очищаем старые полученные данные
-    $row = reqBuySellEtpSell(array( 'cookie_session'=>COOKIE_SESSION /*,'company_id'=>COMPANY_ID*/ ));
-    foreach($row as $i => $m){
-        $sql = "	DELETE FROM buy_sell WHERE id=? ";
-
-        $STH = PreExecSQL($sql,array($m['buy_sell_id']));
-    }
+    // Очищаем старые полученные данные ЭТП
+		$g->ClearBuySellEtpSell();
     ///
-
 
     $arr = $qrq->InsertcronAmoBuySellSearchInfopart(array('values'=>$_POST['values'],'searchtext'=>$in['value'],'categories_id'=>$in['categories_id']));
 
