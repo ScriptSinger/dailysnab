@@ -5957,10 +5957,10 @@ class HtmlTemplate extends HtmlServive
     function NextTrPageStock($p = array())
     {
 
-        $row = reqMyStockBuySell(array('start_limit' => $p['start_limit'],
-            'stock_id' => $p['stock_id'],
-            'status_buy_sell_id' => $p['status_buy_sell_id'],
-            'value' => $p['value']));
+        $row = reqMyStockBuySell(array(	'start_limit' 	=> $p['start_limit'],
+										'stock_id' 		=> $p['stock_id'],
+										'status_buy_sell_id' => $p['status_buy_sell_id'],
+										'value' 		=> $p['value']));
 
 
         $tr = '';

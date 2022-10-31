@@ -9,10 +9,9 @@
 					$args1 = getArgs(1);
 					$args2 = getArgs(2);
 				
-					$company = ($args1=='company')? true : false;
+					$args1 = isset($args1)? $args1 : '';
 					$login_id = ($args1<>'company'&&v_int($args1))? $args1 : '';
 				
-					$flag = '';
 					$row = array();
 					$row_account = array('company'=>'');
 					if($login_id){
@@ -20,18 +19,28 @@
 						$row_account = reqCompany(array('id'=>$args2));
 						$flag = 'login_id';
 					}else{
-						if($company){
+						if($args1=='company'){
 							$row = reqCompanyAdmin(array('flag_account'=>2));// 	компании
 							$flag = 'company';
+						}elseif($args1=='nosend_email'){
+							$row = reqNosendEmail(array('flag_account'=>2));// 	блокировка email от отправки
+							$flag = 'nosend_email';
 						}else{
 							$row = reqCompanyAdmin(array('flag_account'=>1));//	пользователи
 							$flag = 'account';
 						}
 					}
-				
-					$this->admin_users = array( 	'row'			=> $row,
-												'flag'			=> $flag,
-												'row_account'	=> $row_account );
+					
+					if($flag == 'nosend_email'){
+							$this->admin_nosend_email = array( 'row'			=> $row,
+															'flag'			=> $flag );
+					}else{
+							$this->admin_users = array( 	'row'			=> $row,
+														'flag'			=> $flag,
+														'row_account'	=> $row_account );
+					}
+
+
 					
 					$this->title = 'Администрирование - Пользователи';
 			}else{

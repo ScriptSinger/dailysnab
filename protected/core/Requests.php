@@ -112,8 +112,8 @@
 			$arr = array($in['email']);
 		}
 		if($in['pass']){
-			$sql .= ' and pass=?';
-			array_push($arr , $in['pass']);
+//			$sql .= ' and pass=?';
+//			array_push($arr , $in['pass']);
 		}
 		if($in['active_md5']){
 			$sql .= " and MD5(CONCAT('".MD5."',email,data_insert))=? ";
@@ -5432,7 +5432,7 @@
 							".$sql_stock_id1."
 							".$sql."
 					GROUP BY n.id
-					
+					/*
 					UNION ALL
 					SELECT n.id, n.id nomenclature_id, n.name, n.categories_id, n.company_id, n.data_insert,
 						5 flag_buy_sell, 31 status_buy_sell_id,
@@ -5454,9 +5454,8 @@
 							".$sql_company_id2." 
 							".$sql_stock_id2."
 					GROUP BY n.id
-					ORDER BY 1 DESC LIMIT ".$start_limit." , 10	
+					ORDER BY 1 DESC LIMIT ".$start_limit." , 10	*/
 									";
-
 
 		/*
 			$sql = "	SELECT bs.nomenclature_id, COUNT(bs.id) kol_stock,
