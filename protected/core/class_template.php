@@ -1910,7 +1910,11 @@ class HtmlTemplate extends HtmlServive
         if ($arr['ok']) {
             $company1 = reqCompany(array('id' => $row['company_id']));
             $company = reqCompany(array('login_id' => $company1['login_id'], 'flag_account' => 1, 'one' => true));
-            $phone = '<span>'.self::phone_number($company['phone']).'</span>';
+			$phone = $company['phone'];
+			if($row['qrq_id']){// если этп берем телефон компании
+				$phone = $company1['phone'];
+			}
+            $phone = '<span>'.self::phone_number($phone).'</span>';
 
             if (COMPANY_ID && COMPANY_ID <> $row['company_id']) {
 
@@ -1921,31 +1925,31 @@ class HtmlTemplate extends HtmlServive
                     $code_buy_offer = ($row['status_buy_sell_id'] == 10 || $row['flag_buy_sell'] == 1) ? '
 								<form id="form_buy-form" class="" role="form" style="display:none;">
 									<div class="form-group product-quant" style="max-height:70px;">
-											'.$this->Input(array('type' => 'text',
-                                'name' => 'amount',
-                                'class' => 'product-input vmask',
-                                'value' => '',
-                                'placeholder' => ($row['unit_id1'] ? $row['unit1'] : $row['unit']),
-                                'dopol' => 'list="amount" autocomplete="off" ',
-                                'data' => array('unit_id' => ($row['unit_id1'] ? $row['unit_id1'] : $row['unit_id']))
-                            )
-                        ).'
+											'.$this->Input(array(	'type'			=> 'text',
+																'name' 			=> 'amount',
+																'class' 		=> 'product-input vmask',
+																'value' 		=> '',
+																'placeholder' 	=> ($row['unit_id1'] ? $row['unit1'] : $row['unit']),
+																'dopol' 		=> 'list="amount" autocomplete="off" ',
+																'data' 			=> array('unit_id' => ($row['unit_id1'] ? $row['unit_id1'] : $row['unit_id']))
+															)
+														).'
 											<datalist id="amount">
 												<option value="'.$in['amount'].'" />
 											</datalist>
 									</div>
 									<div class="form-group">
-											'.$this->Input(array('type' => 'submit',
-                                'class' => 'product-button request-btn product-submit',
-                                'value' => 'Купить'
-                            )
-                        ).'
+											'.$this->Input(array(	'type' 	=> 'submit',
+																'class' => 'product-button request-btn product-submit',
+																'value' => 'Купить'
+															)
+														).'
 									</div>
-									'.$this->Input(array('type' => 'hidden',
-                                'id' => 'buy_sell_id',
-                                'value' => $in['buy_sell_id']
-                            )
-                        ).'				
+									'.$this->Input(array(	'type' 	=> 'hidden',
+														'id' 	=> 'buy_sell_id',
+														'value' => $in['buy_sell_id']
+													)
+												).'				
 								</form>
 								<script>
 										$("#form_buy-form").bootstrapValidator({
@@ -5363,7 +5367,6 @@ class HtmlTemplate extends HtmlServive
 
 
         $comp_count = count(json_decode($m['companies_id'], true));
-        //vecho($comp_count);
         if ($comp_count == 2) {
             $arr_companies = json_decode($m['companies_id'], true);
 
