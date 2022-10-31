@@ -27,13 +27,13 @@ $i++;
 /* Authentication type */
 $cfg['Servers'][$i]['auth_type'] = 'config';
 /* Server parameters */
-$cfg['Servers'][$i]['port'] = '3310';
+$cfg['Servers'][$i]['port'] = '3306';
 $cfg['Servers'][$i]['host'] = '37.9.13.206';
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
 
-$cfg['Servers'][$i]['user'] = 'prof9104_db2';
-$cfg['Servers'][$i]['password'] = 'gyjnkbF%YBv5yjdf6V%YJdfb6uKYS$m';
+$cfg['Servers'][$i]['user'] = 'prof9104_udb3';
+$cfg['Servers'][$i]['password'] = 'rhger68gjfw2erg37wch7n';
 
 /**
  * phpMyAdmin configuration storage settings.
