@@ -6314,7 +6314,7 @@
 
 		$row = ($one)? PreExecSQL_one($sql,$arr) : PreExecSQL_all($sql,$arr);
 //        vecho(count($row));
-        vecho($sql);
+        
 		return $row;
 	}
 
