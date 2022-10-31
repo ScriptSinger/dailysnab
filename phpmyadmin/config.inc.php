@@ -27,13 +27,12 @@ $i++;
 /* Authentication type */
 $cfg['Servers'][$i]['auth_type'] = 'config';
 /* Server parameters */
-$cfg['Servers'][$i]['port'] = '3306';
-$cfg['Servers'][$i]['host'] = 'theylied.info';
+$cfg['Servers'][$i]['host'] = 'dailysnab.beget.tech';
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
 
-$cfg['Servers'][$i]['user'] = 'udb3';
-$cfg['Servers'][$i]['password'] = 'rhger68gjfw2erg37wch7n';
+$cfg['Servers'][$i]['user'] = 'dailysnab_db';
+$cfg['Servers'][$i]['password'] = 'r*6bVbrm';
 
 /**
  * phpMyAdmin configuration storage settings.
