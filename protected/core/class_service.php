@@ -902,7 +902,7 @@ class HtmlServive extends HtmlElement
 				$row = reqChatFolders(array(	'start_limit' 	=> $in['start_limit'],
 												'status'		=> 2,
                                                 'archiveTrue'   => 'true'));
-                vecho($row);
+                // vecho($row);
 		}
 		// страница - Без темы
 		elseif($in['views']=='wt-chats'){
