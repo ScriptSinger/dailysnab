@@ -18,7 +18,7 @@
 	foreach($row as $k=>$m){
 
 			$bs->SaveCacheBuySell(array('buy_sell_id'=>$m['id'],'flag_buy_sell'=>$m['flag_buy_sell']));
-			//echo $m['id'].'<br/>';
+			//echo $m['id'].'<br/>';// не включать вызвываем в class_service и дает ошибку
 
 	}
 
