@@ -61,7 +61,4 @@ if(getArgs(0)=='cron'){// задания крон
 
 disConnect();
 
-
-vecho(COMPANY_ID);
-
 ?>
