@@ -1562,7 +1562,6 @@ class ClassApi extends HtmlServive
 									
 									if( $login_id && $categories_id && $nomenclature_id ){// есть привязка
 											
-											echo 'добавляем выдачу '.$DocID.' - '.$login_id.' - '.$categories_id.' - '.$nomenclature_id.'<br/>';
 											
 											/*
 											$arr = reqInsertBuySell(array(	'login_id'			=> $login_id,
@@ -1649,10 +1648,8 @@ class ClassApi extends HtmlServive
 						}else{
 							
 							$z++;
-							
-							$dop = ($parent_id>0)? 'ОТМЕТКА' : 'ДОБАВЛЕН';
-							
-							echo 'По данному идентификатору есть '.$dop.' в купленных '.$DocID.'<br/>';
+						
+							echo 'По данному идентификатору есть '.$dop.'<br/>';
 						}
 
 					}
