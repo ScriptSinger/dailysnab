@@ -6,3 +6,5 @@
 "tf.companies_id LIKE
 "AND (tf.companies_id LIKE
 "tf.companies_id LIKE
+"out_if_th
+"of_th
