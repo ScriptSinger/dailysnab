@@ -2,3 +2,5 @@
 .search
 "compaties_id
 "LIKE
+"AND (tf.companies_id LIKE
+"tf.companies_id LIKE
