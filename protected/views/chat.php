@@ -16,7 +16,7 @@
 
 
 
-    //vecho($row);			
+    //vecho($row);
 		
 $last_message = [];
         foreach ($row as $i => $m){
@@ -26,7 +26,7 @@ $last_message = [];
 
         $time = array_column($row, 'timeMessage');
         array_multisort($time, SORT_DESC, $row);
-    
+
 
 	foreach($row as $i => $m){
         $companies_id_old = json_decode($m['companies_id']);
