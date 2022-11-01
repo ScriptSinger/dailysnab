@@ -27,3 +27,18 @@ git log
 git log
 less protected/core/Requests.php 
 exit
+git log
+git diff
+git log
+git diff -w ac404b824b4eee1fe0b9b3a041fcc6d93a2ddcd6 HEAD
+git diff -w ac404b824b4eee1fe0b9b3a041fcc6d93a2ddcd6 HEAD *.html
+git diff -w ac404b824b4eee1fe0b9b3a041fcc6d93a2ddcd6 HEAD *.php
+git diff -w ac404b824b4eee1fe0b9b3a041fcc6d93a2ddcd6 HEAD
+git diff -w ac404b824b4eee1fe0b9b3a041fcc6d93a2ddcd6 
+git diff -w ac404b824b4eee1fe0b9b3a041fcc6d93a2ddcd6 *.php
+git diff -w ac404b824b4eee1fe0b9b3a041fcc6d93a2ddcd6 *.json
+git diff -w ac404b824b4eee1fe0b9b3a041fcc6d93a2ddcd6 *.json
+git diff -w ac404b824b4eee1fe0b9b3a041fcc6d93a2ddcd6 *.php
+less protected/core/ajax.php 
+less protected/core/ajax.php 
+exit
