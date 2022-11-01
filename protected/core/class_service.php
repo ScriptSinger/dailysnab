@@ -43,12 +43,12 @@ class HtmlServive extends HtmlElement
 			$_SESSION['AMO_TOKEN'] 	= 'bd219dd9eb0f64d6e152d179dae9ba3dda6b4619';
 		///
 		
-
+		
 		// Очищаем старые полученные данные ЭТП (запустить перед self::FixBuySellCompanyByCookieSession)
 			self::ClearBuySellEtpSell();
 		///
-
-
+		
+		
 		// закрепление заявок/объявл за пользователем после авторизации/регистрации
 		self::FixBuySellCompanyByCookieSession(array('company_id'=>$company_id,'login_id'=>$p['login_id']));
 		
@@ -60,7 +60,7 @@ class HtmlServive extends HtmlElement
 											array( $company_id ));
 		///
 		
-
+		
 		return '';
 	}
 	
@@ -922,7 +922,7 @@ class HtmlServive extends HtmlElement
 		return $row;
 	}
 	
-
+	
 	// Очищаем старые полученные данные ЭТП
 	function ClearBuySellEtpSell( $p=array() ){
 
@@ -936,6 +936,6 @@ class HtmlServive extends HtmlElement
 
 		return '';
 	}
-
+	
 }
 ?>
