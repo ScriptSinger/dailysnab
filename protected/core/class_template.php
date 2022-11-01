@@ -544,10 +544,11 @@ class HtmlTemplate extends HtmlServive
         $code = $li = '';
         $kol = 0;
         $in = fieldIn($p, array('stock_id', 'status_buy_sell_id'));
-
+vecho($in);
         $row = reqNavTabsStock();
         foreach ($row as $i => $m) {
             if ($m['kol'] > 0) {
+				vecho($m);
                 $active = (($m['stock_id'] == $in['stock_id']) && ($m['sbs_id'] == $in['status_buy_sell_id'])) ? 'active' : '';
 
                 $li .= ' 	<li class="request-menu-item">
@@ -1949,7 +1950,7 @@ class HtmlTemplate extends HtmlServive
 														'id' 	=> 'buy_sell_id',
 														'value' => $in['buy_sell_id']
 													)
-												).'
+												).'				
 								</form>
 								<script>
 										$("#form_buy-form").bootstrapValidator({
@@ -4871,8 +4872,8 @@ class HtmlTemplate extends HtmlServive
 
         return $code;
     }
-
-
+	
+	
     // меню в админке Пользователи
     function NavTabsAdminUsers($p = array())
     {
@@ -4901,7 +4902,8 @@ class HtmlTemplate extends HtmlServive
 
         return $code;
     }
-
+	
+	
     // меню в админке Etp
     function NavTabsAdminEtp($p = array())
     {
@@ -5366,7 +5368,6 @@ class HtmlTemplate extends HtmlServive
 
 
         $comp_count = count(json_decode($m['companies_id'], true));
-        //vecho($comp_count);
         if ($comp_count == 2) {
             $arr_companies = json_decode($m['companies_id'], true);
 
