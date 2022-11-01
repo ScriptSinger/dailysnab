@@ -6134,6 +6134,7 @@ elseif($_GET['route'] == 'close_theme'){
 
 
 }
+/*
 //Выход из темы, не владельцу чата
 elseif($_GET['route'] == 'out_of_theme'){
 
@@ -6174,7 +6175,47 @@ elseif($_GET['route'] == 'out_of_theme'){
 
 
 }
+*/
+//Выход из темы, не владельцу чата
+elseif($_GET['route'] == 'out_of_theme'){
 
+	$ok = false;
+	//$code = '';
+
+	$folder_id = $in['id'];
+
+	$rcf = reqChatFolders(array('id'=>$folder_id));
+	$companies_id 	= $rcf[0]["companies_id"];
+
+	$upd_comp = json_decode($companies_id);
+
+	if(($key = array_search(COMPANY_ID, $upd_comp)) !== false){ //удаление элемента по значению
+		unset($upd_comp[$key]);
+	}
+
+	$upd_companies_json = json_encode(explode(',',implode(",",$upd_comp))); //обновленный массив, передеанный в нужный формат
+
+
+	$rcm = reqChatMessages(array('company_id' => COMPANY_ID));
+	$company_name = $rcm[0]["name_rcmc"];
+
+	$messagetext 	= $company_name. ' вышел из темы.';
+
+	$STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+		array($folder_id,COMPANY_ID,$upd_companies_json,$messagetext,1));
+	//Обновление папки для сообщений
+	$STH = PreExecSQL(" UPDATE tickets_folder SET companies_id=? WHERE id=?" ,
+		array($upd_companies_json,$folder_id));
+
+	if($STH){
+		$ok = true;
+	}
+
+	$jsd['ok'] = $ok;
+	//$jsd['code'] = $code;
+
+
+}
 //Закрыть чат
     elseif($_GET['route'] == 'close_chat'){
 
