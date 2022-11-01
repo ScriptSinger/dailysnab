@@ -42,3 +42,7 @@ git diff -w ac404b824b4eee1fe0b9b3a041fcc6d93a2ddcd6 *.php
 less protected/core/ajax.php 
 less protected/core/ajax.php 
 exit
+git log
+git diff -w HEAD~1 HEAD
+less protected/core/ajax.php 
+exit
