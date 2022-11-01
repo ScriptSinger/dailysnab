@@ -544,7 +544,7 @@ class HtmlTemplate extends HtmlServive
         $code = $li = '';
         $kol = 0;
         $in = fieldIn($p, array('stock_id', 'status_buy_sell_id'));
-vecho($in);
+
         $row = reqNavTabsStock();
         foreach ($row as $i => $m) {
             if ($m['kol'] > 0) {
