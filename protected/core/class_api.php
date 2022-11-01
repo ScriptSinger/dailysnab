@@ -1661,7 +1661,7 @@ class ClassApi extends HtmlServive
 					}
 					
 				// все заказы посажен к нам и можно занести DocID для дальнейшего снятия с реестра в 1с из выгрузки 
-					/*if($i==$z){
+					if($i==$z){
 						
 						echo 'все элементы посажены = '.$DocID0.'<br/><br/><br/>';
 						
@@ -1672,7 +1672,7 @@ class ClassApi extends HtmlServive
 																		array(4,$in['company_id'],0,$DocID0,$data1c0 ));
 						}
 						
-					}*/
+					}
 				///
 		
 			}
