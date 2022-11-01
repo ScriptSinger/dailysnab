@@ -112,8 +112,8 @@
 			$arr = array($in['email']);
 		}
 		if($in['pass']){
-//			$sql .= ' and pass=?';
-//			array_push($arr , $in['pass']);
+			$sql .= ' and pass=?';
+			array_push($arr , $in['pass']);
 		}
 		if($in['active_md5']){
 			$sql .= " and MD5(CONCAT('".MD5."',email,data_insert))=? ";
@@ -6294,11 +6294,14 @@
 		if(!empty($p['folderReq'])){
             $sql .= ' AND tf.folder_name != "" ';
         }
-        if(!empty($p['archive'])){
+        /*if(!empty($p['archive'])){
             $sql .= ' AND tf.status != 2 ';
-        }
+        }*/
         if(!empty($p['archiveTrue'])){
-            $sql .= ' AND tf.status = 2 ';
+            //$sql .= ' AND tf.status = 2 ';
+			$sql .= " AND (tf.status = 2 OR "." tf.companies_id LIKE '%\"-" . COMPANY_ID . "\"%')"; // FIXME
+        } else if(!empty($p['archive'])){
+            $sql .= " AND tf.status != 2 AND "." tf.companies_id LIKE '%\"" . COMPANY_ID . "\"%'";			
         }
         $sql .= " AND tf.companies_id LIKE '%" . COMPANY_ID . "%'";
 
