@@ -6101,6 +6101,7 @@ elseif($_GET['route'] == 'close_theme'){
 
 	$upd_companies_json = json_encode(explode(',',implode(",",$upd_comp))); //обновленный массив, передеанный в нужный формат
 
+
     $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
     $company_name = $rcm[0]["name_rcmc"];
 
@@ -6133,12 +6134,11 @@ elseif($_GET['route'] == 'out_of_theme'){
 	$rcf = reqChatFolders(array('id'=>$folder_id));
 	$companies_id 	= $rcf[0]["companies_id"];
 
-
 	$upd_comp = json_decode($companies_id);
 
-	if(($key = array_search(''.(-intval(COMPANY_ID)), $upd_comp)) !== false){ //удаление элемента по значению
-            $upd_comp[$key] = ''.(abs(intval($upd_comp[$key])));
-    }
+	if(($key = array_search(COMPANY_ID, $upd_comp)) !== false){ //удаление элемента по значению
+        $upd_comp[$key] = ''.(-abs(intval($upd_comp[$key])));
+	}
 
 	$upd_companies_json = json_encode(explode(',',implode(",",$upd_comp))); //обновленный массив, передеанный в нужный формат
 
@@ -6149,12 +6149,13 @@ elseif($_GET['route'] == 'out_of_theme'){
 	$messagetext 	= $company_name. ' вышел из темы.';
 
 	$STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-            array($folder_id,COMPANY_ID,/*$companies_id*/$upd_companies_json,$messagetext,1));
-    $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=?, companies_id=? WHERE id=?" ,
-            array(0,$upd_companies_json,$folder_id));
-	if($STH && $STH2){
+		array($folder_id,COMPANY_ID,$upd_companies_json,$messagetext,1));
+	//Обновление папки для сообщений
+	$STH = PreExecSQL(" UPDATE tickets_folder SET companies_id=? WHERE id=?" ,
+		array($upd_companies_json,$folder_id));
+
+	if($STH){
 		$ok = true;
-		$code = 'Тема открыта';
 	}
 
 	$jsd['ok'] = $ok;
@@ -6162,6 +6163,7 @@ elseif($_GET['route'] == 'out_of_theme'){
 
 
 }
+
 //Закрыть чат
     elseif($_GET['route'] == 'close_chat'){
 
@@ -6182,9 +6184,7 @@ elseif($_GET['route'] == 'out_of_theme'){
             array($folder_id,COMPANY_ID,$companies_id,$messagetext,1));
         $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=? WHERE id=?" ,
             array(2,$folder_id));
-		$STH3 = PreExecSQL(" UPDATE tickets_folder SET companies_id=? WHERE id=?" ,
-			array($upd_companies_json,$folder_id)); //
-		if($STH && $STH2 && $STH3){
+        if($STH && $STH2){
             $ok = true;
             $code = 'Чат закрыт';
         }
@@ -6220,7 +6220,6 @@ elseif($_GET['route'] == 'out_of_theme'){
         $upd_companies_json = json_encode(explode(',',implode(",",$upd_comp))); //обновленный массив, передеанный в нужный формат
 
 
-
         $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
             array($folder_id,COMPANY_ID,/*$companies_id*/$upd_companies_json,$messagetext,1));
         $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=?, companies_id=? WHERE id=?" ,
@@ -6254,7 +6253,7 @@ elseif($_GET['route'] == 'out_of_theme'){
         $messagetext    = $company_name. ' открыл чат.';
 
         $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-			array($folder_id,COMPANY_ID,/*$companies_id*/$upd_companies_json,$messagetext,1));
+            array($folder_id,COMPANY_ID,$companies_id,$messagetext,1));
         $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=? WHERE id=?" ,
             array(0,$folder_id));
         if($STH && $STH2){
