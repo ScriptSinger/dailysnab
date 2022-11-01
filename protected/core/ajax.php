@@ -6102,6 +6102,17 @@ elseif($_GET['route'] == 'close_theme'){
 	$upd_companies_json = json_encode(explode(',',implode(",",$upd_comp))); //обновленный массив, передеанный в нужный формат
 
 
+/* 02-11-22
+	$upd_comp = json_decode($companies_id);
+
+	if(($key = array_search(COMPANY_ID, $upd_comp)) !== false){ //удаление элемента по значению
+		///unset($upd_comp[$key]);
+        $upd_comp[$key] = ''.(-abs(intval($upd_comp[$key])));
+	}
+
+	$upd_companies_json = json_encode(explode(',',implode(",",$upd_comp))); //обновленный массив, передеанный в нужный формат
+*/
+
     $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
     $company_name = $rcm[0]["name_rcmc"];
 
