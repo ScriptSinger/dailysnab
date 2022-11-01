@@ -6119,12 +6119,10 @@ elseif($_GET['route'] == 'close_theme'){
     $messagetext    = $company_name. ' закрыл тему.';
 
     $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-        array($folder_id,COMPANY_ID,/*$companies_id*/$upd_companies_json,$messagetext,1));
-    $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=? WHERE id=?" ,
-        array(2,$folder_id));
-    $STH3 = PreExecSQL(" UPDATE tickets_folder SET companies_id=? WHERE id=?" ,
-		array($upd_companies_json,$folder_id)); //
-    if($STH && $STH2 && $STH3){
+            array($folder_id,COMPANY_ID,/*$companies_id*/$upd_companies_json,$messagetext,1));
+        $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=?, companies_id=? WHERE id=?" ,
+            array(0,$upd_companies_json,$folder_id));
+        if($STH && $STH2){
         $ok = true;
         $code = 'Тема закрыта';
     }
