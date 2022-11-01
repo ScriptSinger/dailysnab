@@ -1403,6 +1403,12 @@ class ClassApi extends HtmlServive
 				$arr = self::Save1cTransport(array( 'id_1c' => $m['id_1c'] , 'company_id' => $m['id'] ));
 				sleep(2);
 				
+				// сохраняем выдачу на складе из 1C
+				echo '<br/>Выдача со склада';
+				$arr = self::Save1cDocmoving(array( 'id_1c' => $m['id_1c'] , 'company_id' => $m['id'] ));
+				sleep(2);				
+				
+				
 			}
 			
 		return '';
