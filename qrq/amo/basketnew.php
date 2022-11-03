@@ -87,8 +87,8 @@ $context = stream_context_create(array(
 
 
 $response = file_get_contents('https://userapi.qwep.ru/basket', false, $context);
-//$Resp = json_decode($response, JSON_UNESCAPED_UNICODE);
-$Resp = json_decode($response,true);
+$Resp = json_decode($response, JSON_UNESCAPED_UNICODE);
+//$Resp = json_decode($response,true);
 
 
 
@@ -294,7 +294,7 @@ function fnCountMass($pJson, $pPapaId)
   
   echo "<br><br>";
   echo "<pre>";
-  print_r($Resp);
+  print_r($response);
 
 
 echo "</pre>";
