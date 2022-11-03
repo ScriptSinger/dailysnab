@@ -5473,7 +5473,7 @@ elseif($_GET['route'] == 'create_new_message'){
                 foreach ($result as $row) {
                     if (($key = array_search($row['the_company_id'], $cs)) !== false) {
                         //echo $row['the_company_id'];
-                        unset($cs['key']);
+                        unset($cs[$key]);
                     }                
                 }
             }
@@ -5735,7 +5735,7 @@ elseif($_GET['route'] == 'create_new_message_potrb'){
                 foreach ($result as $row) {
                     if (($key = array_search($row['the_company_id'], $cs)) !== false) {
                         //echo $row['the_company_id'];
-                        unset($cs['key']);
+                        unset($cs[$key]);
                     }                
                 }
             }
