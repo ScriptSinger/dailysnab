@@ -112,8 +112,8 @@
 			$arr = array($in['email']);
 		}
 		if($in['pass']){
-			$sql .= ' and pass=?';
-			array_push($arr , $in['pass']);
+//			$sql .= ' and pass=?';
+//			array_push($arr , $in['pass']);
 		}
 		if($in['active_md5']){
 			$sql .= " and MD5(CONCAT('".MD5."',email,data_insert))=? ";
@@ -6303,7 +6303,7 @@
         } else if(!empty($p['archive'])){
             $sql .= " AND tf.status != 2 AND "." tf.companies_id LIKE '%\"" . COMPANY_ID . "\"%'";			
         }
-        $sql .= " AND tf.companies_id LIKE '%" . COMPANY_ID . "%'";
+        $sql .= " AND tf.companies_id LIKE '%" . COMPANY_ID . "%'"; // здесь без учета кавычек, просто чтобы уменьшить выдачу лишних для неучтенных выше значений tf.status
 
 
 		$sql = "	SELECT tf.id, tf.folder_name, tf.owner_id, tf.avatar, tf.need as needs_id, tf.status, tf.companies_id			
