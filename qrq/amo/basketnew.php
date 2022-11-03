@@ -293,11 +293,11 @@ function fnCountMass($pJson, $pPapaId)
 
   
   echo "<br><br>";
-  echo "<pre>";
-  print_r($Resp);
+//  echo "<pre>";
+  var_dump($Resp);
 
 
-echo "</pre>";
+//  echo "</pre>";
   echo "<br><br>";
   
   
