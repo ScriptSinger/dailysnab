@@ -5462,6 +5462,28 @@ elseif($_GET['route'] == 'create_new_message'){
 	$messagetext = $in['messagetext'];
 	$ticket_status = 0; //0 - стардартное сообщение, 1 - техничесая информация
 	$attachments = '';
+    
+    if (!empty($companies_id)) {
+        $cs = json_decode($companies_json);
+        $placeholders = str_repeat('?,', count($cs) - 1) . '?';
+        $STH0 = PreExecSQL("SELECT the_company_id FROM tickets_company_bans WHERE blocked_company_id = ? AND the_company_id IN ?;", $cs);
+        if ($STH0) {
+            $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+            if (count($result) >= 1) {
+                foreach ($result as $row) {
+                    if (($key = array_search($row['the_company_id'], $cs)) !== false) {
+                        //echo $row['the_company_id'];
+                        unset($cs['key']);
+                    }                
+                }
+            }
+        }
+        unset($cs[COMPANY_ID]);
+        $companies_id = implode(',', $cs);
+        $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
+        $cs = json_decode($companies_json);
+    }
+    
 
 	$croped_image = $_POST['avatar'];
 
@@ -5702,6 +5724,27 @@ elseif($_GET['route'] == 'create_new_message_potrb'){
 	$messagetext = $in['messagetext'];
 	$ticket_status = 0; //0 - стардартное сообщение, 1 - техничесая информация
 	$attachments = '';
+    
+    if (!empty($companies_id)) {
+        $cs = json_decode($companies_json);
+        $placeholders = str_repeat('?,', count($cs) - 1) . '?';
+        $STH0 = PreExecSQL("SELECT the_company_id FROM tickets_company_bans WHERE blocked_company_id = ? AND the_company_id IN ?;", $cs);
+        if ($STH0) {
+            $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+            if (count($result) >= 1) {
+                foreach ($result as $row) {
+                    if (($key = array_search($row['the_company_id'], $cs)) !== false) {
+                        //echo $row['the_company_id'];
+                        unset($cs['key']);
+                    }                
+                }
+            }
+        }
+        unset($cs[COMPANY_ID]);
+        $companies_id = implode(',', $cs);
+        $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
+        $cs = json_decode($companies_json);
+    }
 
 	$croped_image = $_POST['avatar'];
 
