@@ -5875,6 +5875,32 @@ elseif($_GET['route'] == 'reply_message'){
 		$rcf = reqChatFolders(array('id'=>$in['mid']));
 		$companies_id 	= $rcf[0]["companies_id"];
 
+        $companies_json = $companies_id;
+        if (!empty($companies_json)) {
+            $cs = json_decode($companies_json);
+            $cs = array_merge(array(COMPANY_ID), $cs); //
+            $placeholders = str_repeat('?,', count($cs) - 2) . '?';
+            $STH0 = PreExecSQL("SELECT the_company_id FROM tickets_company_bans WHERE blocked_company_id = ? AND the_company_id IN ($placeholders);", $cs);
+            if ($STH0) {
+                $result = $STH0->fetchAll(PDO::FETCH_ASSOC);
+                if (count($result) >= 1) {
+                    foreach ($result as $row) {
+                        if (($key = array_search($row['the_company_id'], $cs)) !== false) {
+                            //echo $row['the_company_id'];
+                            unset($cs[$key]);
+                        }                
+                    }
+                }
+            }
+            unset($cs[COMPANY_ID]);
+            $companies_id = implode(',', $cs);
+            $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
+            $cs = json_decode($companies_json);
+        }
+        $companies_id = $companies_json;
+        
+
+
 		$companies = implode(',',json_decode($companies_id,true));  // формирвем список компаний
 
 
