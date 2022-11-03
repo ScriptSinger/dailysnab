@@ -5471,7 +5471,7 @@ elseif($_GET['route'] == 'create_new_message'){
             $result = $STH0->fetchAll(PDO::FETCH_ASSOC);
             if (count($result) >= 1) {
                 foreach ($result as $row) {
-                    if (($key = array_search($row['the_company_id'], $cs)) !== false) {
+                    if (($key = array_search($row['the_company_id'], $cs)) !== false || ($key = array_search(''.(-intval($row['the_company_id'])), $cs)) !== false) {
                         //echo $row['the_company_id'];
                         unset($cs[$key]);
                     }                
@@ -5733,7 +5733,7 @@ elseif($_GET['route'] == 'create_new_message_potrb'){
             $result = $STH0->fetchAll(PDO::FETCH_ASSOC);
             if (count($result) >= 1) {
                 foreach ($result as $row) {
-                    if (($key = array_search($row['the_company_id'], $cs)) !== false) {
+                    if (($key = array_search($row['the_company_id'], $cs)) !== false || ($key = array_search(''.(-intval($row['the_company_id'])), $cs)) !== false) {
                         //echo $row['the_company_id'];
                         unset($cs[$key]);
                     }                
@@ -5885,7 +5885,7 @@ elseif($_GET['route'] == 'reply_message'){
                 $result = $STH0->fetchAll(PDO::FETCH_ASSOC);
                 if (count($result) >= 1) {
                     foreach ($result as $row) {
-                        if (($key = array_search($row['the_company_id'], $cs)) !== false) {
+                        if (($key = array_search($row['the_company_id'], $cs)) !== false || ($key = array_search(''.(-intval($row['the_company_id'])), $cs)) !== false) {
                             //echo $row['the_company_id'];
                             unset($cs[$key]);
                         }                
@@ -6167,7 +6167,7 @@ elseif($_GET['route'] == 'close_theme'){
 
 	$upd_comp = json_decode($companies_id);
 
-	if(($key = array_search(COMPANY_ID, $upd_comp)) !== false){ //удаление элемента по значению
+	if(($key = array_search(COMPANY_ID, $upd_comp)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $upd_comp)) !== false){ //удаление элемента по значению
 		///unset($upd_comp[$key]);
         $upd_comp[$key] = ''.(-abs(intval($upd_comp[$key])));
 	}
@@ -6209,7 +6209,7 @@ elseif($_GET['route'] == 'out_of_theme'){
 
 	$upd_comp = json_decode($companies_id);
 
-	if(($key = array_search(COMPANY_ID, $upd_comp)) !== false){ //удаление элемента по значению
+	if(($key = array_search(COMPANY_ID, $upd_comp)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $upd_comp)) !== false){ //удаление элемента по значению
         $upd_comp[$key] = ''.(-abs(intval($upd_comp[$key])));
 	}
 
