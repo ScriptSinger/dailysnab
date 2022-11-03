@@ -5444,6 +5444,8 @@ elseif($_GET['route'] == 'create_new_message'){
 
 	$ok = false;
 	$code = '';
+    
+    PreExecSQL("CREATE TABLE IF NOT EXISTS tickets_company_bans (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, the_company_id int(11) NOT NULL, blocked_company_id int(11) NOT NULL, unblock_after_2000 date NOT NULL DEFAULT '1999-01-01', blocked_status tinyint(3) NOT NULL DEFAULT '1', reason varchar(125) NOT NULL DEFAULT 'offtopic') ENGINE=InnoDB DEFAULT CHARSET=utf8; " , array());
 
 	//входящие данные по папке
 	$folder_name = $in['subject'];
@@ -5682,6 +5684,8 @@ elseif($_GET['route'] == 'create_new_message_potrb'){
 
 	$ok = false;
 	$code = '';
+    
+    PreExecSQL("CREATE TABLE IF NOT EXISTS tickets_company_bans (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, the_company_id int(11) NOT NULL, blocked_company_id int(11) NOT NULL, unblock_after_2000 date NOT NULL DEFAULT '1999-01-01', blocked_status tinyint(3) NOT NULL DEFAULT '1', reason varchar(125) NOT NULL DEFAULT 'offtopic') ENGINE=InnoDB DEFAULT CHARSET=utf8; " , array());
 
 	//входящие данные по папке
 	$folder_name = $in['subject'];
@@ -6163,7 +6167,24 @@ elseif($_GET['route'] == 'out_of_theme'){
 
 
 }
+//Заблокировать пользователя, который создавал тему
+elseif ($_GET['route'] == 'block_of_theme') {
+    // TODO
+    $ok = false;
+    $code = '';
 
+    $folder_id = $in['id'];
+
+    $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
+    $company_name = $rcm[0]["name_rcmc"];
+
+    $messagetext    = $company_name. ' закрыл тему.';
+
+    $STH = PreExecSQL(" BLOCK INTO tickets (folder_id,company_id) VALUES (?,?) WHERE folder_id=?; " ,
+        array($folder_id,COMPANY_ID,$folder_id));
+        
+        
+}
 //Закрыть чат
     elseif($_GET['route'] == 'close_chat'){
 
