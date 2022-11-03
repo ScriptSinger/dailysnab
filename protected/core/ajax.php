@@ -5465,8 +5465,8 @@ elseif($_GET['route'] == 'create_new_message'){
     
     if (!empty($companies_id)) {
         $cs = json_decode($companies_json);
-        $placeholders = str_repeat('?,', count($cs) - 1) . '?';
-        $STH0 = PreExecSQL("SELECT the_company_id FROM tickets_company_bans WHERE blocked_company_id = ? AND the_company_id IN ?;", $cs);
+        $placeholders = str_repeat('?,', count($cs) - 2) . '?';
+        $STH0 = PreExecSQL("SELECT the_company_id FROM tickets_company_bans WHERE blocked_company_id = ? AND the_company_id IN ($placeholders);", $cs);
         if ($STH0) {
             $result = $STH0->fetchAll(PDO::FETCH_ASSOC);
             if (count($result) >= 1) {
@@ -5727,8 +5727,8 @@ elseif($_GET['route'] == 'create_new_message_potrb'){
     
     if (!empty($companies_id)) {
         $cs = json_decode($companies_json);
-        $placeholders = str_repeat('?,', count($cs) - 1) . '?';
-        $STH0 = PreExecSQL("SELECT the_company_id FROM tickets_company_bans WHERE blocked_company_id = ? AND the_company_id IN ?;", $cs);
+        $placeholders = str_repeat('?,', count($cs) - 2) . '?';
+        $STH0 = PreExecSQL("SELECT the_company_id FROM tickets_company_bans WHERE blocked_company_id = ? AND the_company_id IN ($placeholders);", $cs);
         if ($STH0) {
             $result = $STH0->fetchAll(PDO::FETCH_ASSOC);
             if (count($result) >= 1) {
