@@ -2951,6 +2951,22 @@ var link_url = document.createElement("a");
 			}
 		);
 	});
+    
+    $("body").on("click", ".block_of_theme", function () {
+       var d =  $(this).data();
+
+		$.post("/block_of_theme", {id:d.fid},
+			function(data){
+				if(data.ok){
+					console.log(data);
+					webix.message(data.code);
+					onReload('/chat/messages/');
+				}else{
+					console.log(data);
+				}
+			}
+		);
+    });
 
 	// Открыть тему
 	$("body").on("click", ".open_theme", function(){
