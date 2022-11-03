@@ -6179,7 +6179,7 @@ elseif ($_GET['route'] == 'block_of_theme') {
 
     $messagetext    = $company_name. ' сделал блорировку.';
 
-    $STH = PreExecSQL(" INSERT INTO tickets_company_bans (the_company_id, blocked_company_id, blocked_status) SELECT ?, company_id, '1' FROM tickets WHERE folder_id=? ", array(COMPANY_ID, $folder_id));
+    $STH = PreExecSQL(" INSERT INTO tickets_company_bans (the_company_id, blocked_company_id, blocked_status) SELECT ?, owner_id, '1' FROM tickets_folder WHERE id=? ", array(COMPANY_ID, $folder_id));
         
     if ($STH) {
         $ok = true;
