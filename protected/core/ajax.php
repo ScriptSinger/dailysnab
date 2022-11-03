@@ -6169,7 +6169,6 @@ elseif($_GET['route'] == 'out_of_theme'){
 }
 //Заблокировать пользователя, который создавал тему
 elseif ($_GET['route'] == 'block_of_theme') {
-    // TODO
     $ok = false;
     $code = '';
 
@@ -6178,12 +6177,17 @@ elseif ($_GET['route'] == 'block_of_theme') {
     $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
     $company_name = $rcm[0]["name_rcmc"];
 
-    $messagetext    = $company_name. ' закрыл тему.';
+    $messagetext    = $company_name. ' сделал блорировку.';
 
-    $STH = PreExecSQL(" BLOCK INTO tickets (folder_id,company_id) VALUES (?,?) WHERE folder_id=?; " ,
-        array($folder_id,COMPANY_ID,$folder_id));
+    $STH = PreExecSQL(" INSERT INTO tickets_company_bans (the_company_id, blocked_company_id, blocked_status) SELECT ?, company_id, '1' FROM tickets WHERE folder_id=? ", array(COMPANY_ID, $folder_id));
         
-        
+    if ($STH) {
+        $ok = true;
+        $code = 'Пользователь выполнил блокировку';
+    }
+
+    $jsd['ok'] = $ok;
+    $jsd['code'] = $code;
 }
 //Закрыть чат
     elseif($_GET['route'] == 'close_chat'){
