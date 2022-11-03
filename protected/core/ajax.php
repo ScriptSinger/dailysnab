@@ -5465,6 +5465,7 @@ elseif($_GET['route'] == 'create_new_message'){
     
     if (!empty($companies_id)) {
         $cs = json_decode($companies_json);
+        $cs = array_map("abs", $cs);
         $placeholders = str_repeat('?,', count($cs) - 2) . '?';
         $STH0 = PreExecSQL("SELECT the_company_id FROM tickets_company_bans WHERE blocked_company_id = ? AND the_company_id IN ($placeholders);", $cs);
         if ($STH0) {
@@ -5727,6 +5728,7 @@ elseif($_GET['route'] == 'create_new_message_potrb'){
     
     if (!empty($companies_id)) {
         $cs = json_decode($companies_json);
+        $cs = array_map("abs", $cs);
         $placeholders = str_repeat('?,', count($cs) - 2) . '?';
         $STH0 = PreExecSQL("SELECT the_company_id FROM tickets_company_bans WHERE blocked_company_id = ? AND the_company_id IN ($placeholders);", $cs);
         if ($STH0) {
@@ -5878,7 +5880,7 @@ elseif($_GET['route'] == 'reply_message'){
         $companies_json = $companies_id;
         if (!empty($companies_json)) {
             $cs = json_decode($companies_json);
-            $cs = array_merge(array(COMPANY_ID), $cs); //
+            $cs = array_map("abs", array_merge(array(COMPANY_ID), $cs)); //
             $placeholders = str_repeat('?,', count($cs) - 2) . '?';
             $STH0 = PreExecSQL("SELECT the_company_id FROM tickets_company_bans WHERE blocked_company_id = ? AND the_company_id IN ($placeholders);", $cs);
             if ($STH0) {
