@@ -93,7 +93,7 @@ $Resp = json_decode($response, JSON_UNESCAPED_UNICODE);
 
 $filename = 'logs/serg.txt';
 $fh = fopen($filename, 'w');
-fwrite($fh, json_encode($response, JSON_UNESCAPED_UNICODE));
+fwrite($fh, json_encode($Resp, JSON_UNESCAPED_UNICODE));
 fclose($fh);
 
 
