@@ -2245,7 +2245,7 @@ var regCtx = {
             var data = JSON.parse(response);
             console.log(data);
 
-            if (data.code) {
+            if (data.ok) {
               _config.config.closeModal();
 
               location.href = '/profile';
