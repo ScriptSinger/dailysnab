@@ -2237,7 +2237,7 @@ var regCtx = {
           rule: 'required',
           errorMessage: 'Введите пароль'
         }, {
-          rule: 'password',
+          rule: 'required',
           errorMessage: 'Слабый пароль'
         }]).onSuccess(function (e) {
           var sentData = form.serialize() + '&new_pass_again=' + $('.reg-new-pass-form__pass').val();
