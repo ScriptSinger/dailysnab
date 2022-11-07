@@ -15,9 +15,9 @@ fclose($fd);
   echo "<br><br>";
   echo "<pre>";
   echo '111';
-  $Resp = json_decode($str,true);  
+  $Resp = json_decode($str);  
   print_r($Resp);
-  echo '222';
+  echo '333';
   echo "</pre>";
   echo "<br><br>";
 
