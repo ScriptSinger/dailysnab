@@ -9,7 +9,7 @@ while (!feof($fh)) {
 }
 fclose($fh);
  
-echo $text;
+
 
  
  // $serg = '';
@@ -17,9 +17,9 @@ echo $text;
 
   echo "<br><br>";
   echo "<pre>";
-  echo '111';
+  //echo '111';
     print_r( json_decode($text) );
-  echo '333';
+  //echo '333';
   echo "</pre>";
   echo "<br><br>";
 
