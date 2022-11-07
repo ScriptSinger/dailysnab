@@ -7,7 +7,7 @@ while(!feof($fd))
 {
     $str = htmlentities(fgets($fd));
 //  $str = fgets($fd);
-   // echo $str;
+    echo $str;
 }
 fclose($fd);
 
@@ -15,8 +15,9 @@ fclose($fd);
   echo "<br><br>";
   echo "<pre>";
   echo '111';
-  $Resp = json_decode($str, JSON_UNESCAPED_UNICODE);  
-  print_r($str);
+  $Resp = json_encode($str, JSON_UNESCAPED_UNICODE);  
+  echo $Resp;
+  echo '222';
   echo "</pre>";
   echo "<br><br>";
 
