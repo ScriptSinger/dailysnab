@@ -13,7 +13,9 @@ fclose($fd);
 
   echo "<br><br>";
   echo "<pre>";
-  print_r($str);
+  echo '111';
+  $Resp = json_decode($str, JSON_UNESCAPED_UNICODE);  
+  print_r($Resp);
   echo "</pre>";
   echo "<br><br>";
 
