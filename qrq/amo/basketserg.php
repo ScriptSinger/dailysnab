@@ -1,6 +1,6 @@
 <?
 
-$fuck = '';
+$text = '';
 $fd = fopen("basket.json", 'r') or die("не удалось открыть файл");
 while(!feof($fd))
 {
@@ -8,7 +8,9 @@ while(!feof($fd))
   //$str = fgets($fd);
   
   echo $str;
-$fuck = $fuck+$str;
+
+
+$text .= $line . PHP_EOL;
   
 }
 fclose($fd);
@@ -21,7 +23,7 @@ fclose($fd);
   echo "<br><br>";
   echo "<pre>";
   echo '111';
-    var_dump( $fuck );
+    echo $text ;
   echo '333';
   echo "</pre>";
   echo "<br><br>";
