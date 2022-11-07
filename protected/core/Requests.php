@@ -6151,6 +6151,9 @@
 		$arr = array();
 		$one = false;
 		$in = fieldIn($p, array('need','ticket_exp','folder_id','t_date','t_time','t_date_full','data_insert','companies_id','status','company_id','attachments','value'));
+        
+        
+
 
 		$start_limit 	= (isset($p['start_limit'])&&v_int($p['start_limit']))? 	$p['start_limit'] : 0;
 		/*
@@ -6187,6 +6190,9 @@
 			$sql .= ' AND t.folder_id=? ';
 			array_push($arr , $in['folder_id']);
 		}
+        if ($in['company_id'] != COMPANY_ID) {
+            $sql .= " AND tf.companies_id LIKE '%" . COMPANY_ID . "%'" . " AND (t.companies LIKE '%\"-" . COMPANY_ID . "\"%'" . " OR t.companies LIKE '%\"" . COMPANY_ID . "\"%')";
+        }
 		/* 				if($in['companies']){
 							$sql .= " AND LOWER(t.companies) LIKE ?";
 							$companies =  "'%".$in['companies']."%'";
