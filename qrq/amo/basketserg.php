@@ -5,18 +5,21 @@ while(!feof($fd))
 {
     $str = htmlentities(fgets($fd));
   //$str = fgets($fd);
-    echo $str;
   
 
 }
 fclose($fd);
 
-  echo $str;
+
+   echo $str;
+ 
+  $serg = '';
+  $serg = $str;
 
   echo "<br><br>";
   echo "<pre>";
   echo '111';
-    var_dump( $str[0] );
+    var_dump( $serg );
 
   echo '333';
   echo "</pre>";
