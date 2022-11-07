@@ -7,14 +7,13 @@ while(!feof($fd))
     $str = htmlentities(fgets($fd));
   //$str = fgets($fd);
   
-  $fuck = $fuck+$str;
   echo $str;
-
+$fuck = $fuck+$str;
+  
 }
 fclose($fd);
 
 
-   echo $fuck;
  
  // $serg = '';
  // $serg = $str;
@@ -22,8 +21,7 @@ fclose($fd);
   echo "<br><br>";
   echo "<pre>";
   echo '111';
-//    var_dump( $serg );
-
+    var_dump( $fuck );
   echo '333';
   echo "</pre>";
   echo "<br><br>";
