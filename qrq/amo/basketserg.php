@@ -1,19 +1,20 @@
 <?
 
+$fuck = '';
 $fd = fopen("basket.json", 'r') or die("не удалось открыть файл");
 while(!feof($fd))
 {
-    $str = '111';
-    $str = $str+htmlentities(fgets($fd));
+    $str = htmlentities(fgets($fd));
   //$str = fgets($fd);
   
-  
+  $fuck = $fuck+$str;
+  echo $str;
 
 }
 fclose($fd);
 
 
-   echo $str;
+   echo $fuck;
  
  // $serg = '';
  // $serg = $str;
