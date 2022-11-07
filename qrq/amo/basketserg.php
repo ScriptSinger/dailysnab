@@ -1,20 +1,15 @@
 <?
+$filename = 'basket.json';
 
 $text = '';
-$fd = fopen("basket.json", 'r') or die("не удалось открыть файл");
-while(!feof($fd))
-{
-    $str = htmlentities(fgets($fd));
-  //$str = fgets($fd);
-  
-  echo $str;
-
-
-$text .= $line . PHP_EOL;
-  
+$fh = fopen($filename, 'r');
+while (!feof($fh)) {
+	$line = fgets($fh);
+	$text .= $line . PHP_EOL;
 }
-fclose($fd);
-
+fclose($fh);
+ 
+echo $text;
 
  
  // $serg = '';
