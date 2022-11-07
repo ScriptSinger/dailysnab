@@ -18,7 +18,7 @@ echo $text;
   echo "<br><br>";
   echo "<pre>";
   echo '111';
-    echo $text ;
+    print_r( json_deсode($text) );
   echo '333';
   echo "</pre>";
   echo "<br><br>";
