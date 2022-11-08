@@ -5463,7 +5463,7 @@ elseif($_GET['route'] == 'create_new_message'){
 	$ticket_status = 0; //0 - стардартное сообщение, 1 - техничесая информация
 	$attachments = '';
     
-    if (!empty($companies_id)) {
+    if (!empty($companies_id)) { vecho($companies_id);
         $cs = json_decode($companies_json);
         $cs = array_map("abs", $cs);
         $placeholders = str_repeat('?,', count($cs) - 2) . '?';
@@ -5483,7 +5483,7 @@ elseif($_GET['route'] == 'create_new_message'){
         if (array_search(COMPANY_ID, $cs) !== false) {
             unset($cs[array_search(COMPANY_ID, $cs)]);
         }
-        vecho($cs);
+        
         $companies_id = implode(',', $cs);
         $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
         $cs = json_decode($companies_json);
