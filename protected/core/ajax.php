@@ -3213,7 +3213,9 @@ if(LOGIN_ID){
 
             }
 
-        }
+        }else{
+			$code = 'json пришел пустота';
+		}
 
         $jsd['ok'] 					= $ok;
         $jsd['code']					= $code;
