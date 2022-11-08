@@ -5481,7 +5481,6 @@ elseif($_GET['route'] == 'create_new_message'){
         }
         $cs = array_unique($cs, SORT_REGULAR); //удаление дубилкатов
         unset($cs[array_search(COMPANY_ID, $cs)]);
-        vecho($cs); //
         $companies_id = implode(',', $cs);
         $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
         $cs = json_decode($companies_json);
@@ -5744,9 +5743,9 @@ elseif($_GET['route'] == 'create_new_message_potrb'){
                 }
             }
         }
-        unset($cs[COMPANY_ID]);
+        $cs = array_unique($cs, SORT_REGULAR); //удаление дубилкатов
+        unset($cs[array_search(COMPANY_ID, $cs)]);
         $companies_id = implode(',', $cs);
-        array_unique($cs, SORT_REGULAR); //удаление дубилкатов
         $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
         $cs = json_decode($companies_json);
     }
@@ -5897,8 +5896,8 @@ elseif($_GET['route'] == 'reply_message'){
                     }
                 }
             }
-            unset($cs[COMPANY_ID]);
-            array_unique($cs, SORT_REGULAR); //удаление дубилкатов
+            $cs = array_unique($cs, SORT_REGULAR); //удаление дубилкатов
+            unset($cs[array_search(COMPANY_ID, $cs)]);
             $companies_id = implode(',', $cs);
             $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
             $cs = json_decode($companies_json);
