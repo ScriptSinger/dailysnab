@@ -5494,13 +5494,13 @@ elseif($_GET['route'] == 'create_new_message'){
 	$croped_image = $_POST['avatar'];
 
 	$rce = reqCompanyEmails(array('ids'=>$companies_id));
-    vecho($companies_id); //
+    
 	foreach($rce as $i => $c){ //сбор ящиков для отправки оповещений
 		if(!empty($c['email'])){ //только у тех у кого указаны ящики
 			$rce_email[] = $c['email'];
 		}
 	}
-
+vecho($companies_id); //
 
 	$rm = reqMenu(array('need'=>1));
 
