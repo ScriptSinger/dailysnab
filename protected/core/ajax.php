@@ -5520,7 +5520,7 @@ elseif($_GET['route'] == 'create_new_message'){
 		}
 	}
 
-vecho($companies_id); //
+
 	if(!empty($companies_id)){ //проврека на наличие собеседников, хотя один собеседник должен быть
 
 
@@ -5528,7 +5528,7 @@ vecho($companies_id); //
 		if(count(explode(',',$companies_id))>1 && empty($in['subject'])){
 			$ok = false;
 			$code = 'Название темы обязательно для заполнения';
-            //vecho($code.'5527');
+            vecho($code.'5527');
 		} else {
 
 			if (count(explode(',',$companies_id))==1){ //если один собеседник, то тема не обязательна
