@@ -5483,6 +5483,7 @@ elseif($_GET['route'] == 'create_new_message'){
         if (array_search(COMPANY_ID, $cs) !== false) {
             unset($cs[array_search(COMPANY_ID, $cs)]);
         }
+        vecho($cs);
         $companies_id = implode(',', $cs);
         $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
         $cs = json_decode($companies_json);
