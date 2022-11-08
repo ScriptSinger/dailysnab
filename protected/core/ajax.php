@@ -5689,7 +5689,12 @@ elseif($_GET['route'] == 'create_new_message'){
                     $last_chat = PreExecSQL_one($sql,array($cId));
 
                     $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-                    $company_name = $rcm[0]["name_rcmc"];
+                    try {
+                        $company_name = $rcm[0]["name_rcmc"];
+                    } catch ($e) {
+                        $company_name = "собеседник № ".COMPANY_ID;
+                    }
+
                     $messagetext    = $company_name. ' открыл новую тему: <a href="/chat/messages/' .$last_chat['id'] . '">' . $last_chat['folder_name'] . '</a>'  ;
 
                     $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status, chatId) VALUES (?,?,?,?,?, ?); " ,
@@ -6156,7 +6161,11 @@ elseif($_GET['route'] == 'close_theme_pr'){
 	$companies_id 	= $rcf[0]["companies_id"];
 
 	$rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-	$company_name = $rcm[0]["name_rcmc"];
+    try {
+        $company_name = $rcm[0]["name_rcmc"];
+    } catch ($e) {
+        $company_name = "собеседник № ".COMPANY_ID;
+    }
 
 	$messagetext 	= $company_name. ' предложил закрыть тему.';
 
@@ -6194,7 +6203,11 @@ elseif($_GET['route'] == 'close_theme'){
 
 
     $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-    $company_name = $rcm[0]["name_rcmc"];
+    try {
+        $company_name = $rcm[0]["name_rcmc"];
+    } catch ($e) {
+        $company_name = "собеседник № ".COMPANY_ID;
+    }
 
     $messagetext    = $company_name. ' закрыл тему.';
 
@@ -6235,7 +6248,11 @@ elseif($_GET['route'] == 'out_of_theme'){
 
 
 	$rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-	$company_name = $rcm[0]["name_rcmc"];
+    try {
+        $company_name = $rcm[0]["name_rcmc"];
+    } catch ($e) {
+        $company_name = "собеседник № ".COMPANY_ID;
+    }
 
 	$messagetext 	= $company_name. ' вышел из темы.';
 
@@ -6262,7 +6279,11 @@ elseif ($_GET['route'] == 'block_of_theme') {
     $folder_id = $in['id'];
 
     $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-    $company_name = $rcm[0]["name_rcmc"];
+    try {
+        $company_name = $rcm[0]["name_rcmc"];
+    } catch ($e) {
+        $company_name = "собеседник № ".COMPANY_ID;
+    }
 
     $messagetext    = $company_name. ' сделал блорировку.';
 
@@ -6288,7 +6309,11 @@ elseif ($_GET['route'] == 'block_of_theme') {
         $companies_id   = $rcf[0]["companies_id"];
 
         $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-        $company_name = $rcm[0]["name_rcmc"];
+        try {
+            $company_name = $rcm[0]["name_rcmc"];
+        } catch ($e) {
+            $company_name = "собеседник № ".COMPANY_ID;
+        }
 
         $messagetext    = $company_name. ' закрыл чат.';
 
@@ -6319,7 +6344,11 @@ elseif ($_GET['route'] == 'block_of_theme') {
         $companies_id   = $rcf[0]["companies_id"];
 
         $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-        $company_name = $rcm[0]["name_rcmc"];
+        try {
+            $company_name = $rcm[0]["name_rcmc"];
+        } catch ($e) {
+            $company_name = "собеседник № ".COMPANY_ID;
+        }
 
         $messagetext    = $company_name. ' открыл тему.';
 
@@ -6360,7 +6389,11 @@ elseif ($_GET['route'] == 'block_of_theme') {
         $companies_id   = $rcf[0]["companies_id"];
 
         $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-        $company_name = $rcm[0]["name_rcmc"];
+        try {
+            $company_name = $rcm[0]["name_rcmc"];
+        } catch ($e) {
+            $company_name = "собеседник № ".COMPANY_ID;
+        }
 
         $messagetext    = $company_name. ' открыл чат.';
 
