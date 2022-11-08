@@ -5500,7 +5500,7 @@ elseif($_GET['route'] == 'create_new_message'){
 			$rce_email[] = $c['email'];
 		}
 	}
-vecho($companies_id); //
+
 
 	$rm = reqMenu(array('need'=>1));
 
@@ -5520,7 +5520,7 @@ vecho($companies_id); //
 		}
 	}
 
-
+vecho($companies_id); //
 	if(!empty($companies_id)){ //проврека на наличие собеседников, хотя один собеседник должен быть
 
 
