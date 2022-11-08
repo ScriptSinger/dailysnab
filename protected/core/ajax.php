@@ -5528,9 +5528,8 @@ elseif($_GET['route'] == 'create_new_message'){
 		if(count(explode(',',$companies_id))>1 && empty($in['subject'])){
 			$ok = false;
 			$code = 'Название темы обязательно для заполнения';
-            vecho($code.'5527');
 		} else {
-
+vecho($code.'5532');
 			if (count(explode(',',$companies_id))==1){ //если один собеседник, то тема не обязательна
 				$folder_name = !empty($in['subject'])?$in['subject']:'';
 				$folder_status = 3;
