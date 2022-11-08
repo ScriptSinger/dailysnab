@@ -5691,7 +5691,7 @@ elseif($_GET['route'] == 'create_new_message'){
                     $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
                     try {
                         $company_name = $rcm[0]["name_rcmc"];
-                    } catch ($e) {
+                    } catch (Exception $e) {
                         $company_name = "собеседник № ".COMPANY_ID;
                     }
 
@@ -6163,7 +6163,7 @@ elseif($_GET['route'] == 'close_theme_pr'){
 	$rcm = reqChatMessages(array('company_id' => COMPANY_ID));
     try {
         $company_name = $rcm[0]["name_rcmc"];
-    } catch ($e) {
+    } catch (Exception $e) {
         $company_name = "собеседник № ".COMPANY_ID;
     }
 
@@ -6205,7 +6205,7 @@ elseif($_GET['route'] == 'close_theme'){
     $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
     try {
         $company_name = $rcm[0]["name_rcmc"];
-    } catch ($e) {
+    } catch (Exception $e) {
         $company_name = "собеседник № ".COMPANY_ID;
     }
 
@@ -6250,7 +6250,7 @@ elseif($_GET['route'] == 'out_of_theme'){
 	$rcm = reqChatMessages(array('company_id' => COMPANY_ID));
     try {
         $company_name = $rcm[0]["name_rcmc"];
-    } catch ($e) {
+    } catch (Exception $e) {
         $company_name = "собеседник № ".COMPANY_ID;
     }
 
@@ -6281,7 +6281,7 @@ elseif ($_GET['route'] == 'block_of_theme') {
     $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
     try {
         $company_name = $rcm[0]["name_rcmc"];
-    } catch ($e) {
+    } catch (Exception $e) {
         $company_name = "собеседник № ".COMPANY_ID;
     }
 
@@ -6311,7 +6311,7 @@ elseif ($_GET['route'] == 'block_of_theme') {
         $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
         try {
             $company_name = $rcm[0]["name_rcmc"];
-        } catch ($e) {
+        } catch (Exception $e) {
             $company_name = "собеседник № ".COMPANY_ID;
         }
 
@@ -6346,7 +6346,7 @@ elseif ($_GET['route'] == 'block_of_theme') {
         $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
         try {
             $company_name = $rcm[0]["name_rcmc"];
-        } catch ($e) {
+        } catch (Exception $e) {
             $company_name = "собеседник № ".COMPANY_ID;
         }
 
@@ -6391,7 +6391,7 @@ elseif ($_GET['route'] == 'block_of_theme') {
         $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
         try {
             $company_name = $rcm[0]["name_rcmc"];
-        } catch ($e) {
+        } catch (Exception $e) {
             $company_name = "собеседник № ".COMPANY_ID;
         }
 
