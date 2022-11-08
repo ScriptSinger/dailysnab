@@ -5487,6 +5487,9 @@ elseif($_GET['route'] == 'create_new_message'){
         $companies_id = implode(',', $cs);
         $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
         $cs = json_decode($companies_json);
+        
+        $cc = COMPANY_ID.','.$companies_id; //
+        $companies_json = json_encode(explode(',',$cc)); //
     }
     
     
@@ -5529,7 +5532,7 @@ elseif($_GET['route'] == 'create_new_message'){
 			$ok = false;
 			$code = 'Название темы обязательно для заполнения';
 		} else {
-vecho($code.'5532');
+
 			if (count(explode(',',$companies_id))==1){ //если один собеседник, то тема не обязательна
 				$folder_name = !empty($in['subject'])?$in['subject']:'';
 				$folder_status = 3;
@@ -5753,6 +5756,9 @@ elseif($_GET['route'] == 'create_new_message_potrb'){
         $companies_id = implode(',', $cs);
         $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
         $cs = json_decode($companies_json);
+        
+        $cc = COMPANY_ID.','.$companies_id; //
+        $companies_json = json_encode(explode(',',$cc)); //
     }
 
 	$croped_image = $_POST['avatar'];
