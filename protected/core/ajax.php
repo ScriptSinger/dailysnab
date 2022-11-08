@@ -5488,7 +5488,7 @@ elseif($_GET['route'] == 'create_new_message'){
         $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
         $cs = json_decode($companies_json);
     }
-    vecho($companies_id);
+    
     
 
 	$croped_image = $_POST['avatar'];
@@ -5528,7 +5528,7 @@ elseif($_GET['route'] == 'create_new_message'){
 		if(count(explode(',',$companies_id))>1 && empty($in['subject'])){
 			$ok = false;
 			$code = 'Название темы обязательно для заполнения';
-            //vecho($code.'5527');
+            vecho($code.'5527');
 		} else {
 
 			if (count(explode(',',$companies_id))==1){ //если один собеседник, то тема не обязательна
