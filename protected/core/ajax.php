@@ -5479,9 +5479,9 @@ elseif($_GET['route'] == 'create_new_message'){
                 }
             }
         }
-        vecho($cs);
-        unset($cs[COMPANY_ID]);
         $cs = array_unique($cs, SORT_REGULAR); //удаление дубилкатов
+        unset($cs[array_search(COMPANY_ID, $cs)]);
+        vecho($cs); //
         $companies_id = implode(',', $cs);
         $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
         $cs = json_decode($companies_json);
