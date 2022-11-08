@@ -5479,7 +5479,7 @@ elseif($_GET['route'] == 'create_new_message'){
                 }
             }
         }
-        vecho($cs[COMPANY_ID]);
+        vecho($cs);
         unset($cs[COMPANY_ID]);
         $cs = array_unique($cs, SORT_REGULAR); //удаление дубилкатов
         $companies_id = implode(',', $cs);
