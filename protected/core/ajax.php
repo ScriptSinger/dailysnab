@@ -5494,7 +5494,7 @@ elseif($_GET['route'] == 'create_new_message'){
 	$croped_image = $_POST['avatar'];
 
 	$rce = reqCompanyEmails(array('ids'=>$companies_id));
-
+    vecho($companies_id); //
 	foreach($rce as $i => $c){ //сбор ящиков для отправки оповещений
 		if(!empty($c['email'])){ //только у тех у кого указаны ящики
 			$rce_email[] = $c['email'];
@@ -5528,7 +5528,7 @@ elseif($_GET['route'] == 'create_new_message'){
 		if(count(explode(',',$companies_id))>1 && empty($in['subject'])){
 			$ok = false;
 			$code = 'Название темы обязательно для заполнения';
-            vecho($code.'5527');
+            //vecho($code.'5527');
 		} else {
 
 			if (count(explode(',',$companies_id))==1){ //если один собеседник, то тема не обязательна
