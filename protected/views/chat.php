@@ -35,6 +35,7 @@ $last_message = [];
             $companies_id_new[$j] = ''.(abs(intval($companies_id_old[$j])));
         }
         $row[$i]['companies_id'] = json_encode($companies_id_new);
+        $m['companies_id'] = json_encode($companies_id_new);
 		if(in_array($comp, $companies_id_new)){ //проверка прав на отображение папок
 			$tr .= $t->TrPageMessagesFolders(array('m' => $m, 'views' => $views));
 		}
