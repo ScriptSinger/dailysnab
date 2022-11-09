@@ -5690,12 +5690,7 @@ elseif($_GET['route'] == 'create_new_message'){
                     $sql = "SELECT id, folder_name FROM tickets_folder WHERE companies_id=? AND folder_name = '' ORDER by id DESC";
                     $last_chat = PreExecSQL_one($sql,array($cId));
 
-                    $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-                    try {
-                        $company_name = $rcm[0]["name_rcmc"];
-                    } catch (Exception $e) {
-                        $company_name = "собеседник № ".COMPANY_ID;
-                    }
+                    $company_name = reqChatCompanyName(COMPANY_ID);
 
                     $messagetext    = $company_name. ' открыл новую тему: <a href="/chat/messages/' .$last_chat['id'] . '">' . $last_chat['folder_name'] . '</a>'  ;
 
@@ -6162,12 +6157,7 @@ elseif($_GET['route'] == 'close_theme_pr'){
 	$rcf = reqChatFolders(array('id'=>$folder_id));
 	$companies_id 	= $rcf[0]["companies_id"];
 
-	$rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-    try {
-        $company_name = $rcm[0]["name_rcmc"];
-    } catch (Exception $e) {
-        $company_name = "собеседник № ".COMPANY_ID;
-    }
+	$company_name = reqChatCompanyName(COMPANY_ID);
 
 	$messagetext 	= $company_name. ' предложил закрыть тему.';
 
@@ -6204,12 +6194,7 @@ elseif($_GET['route'] == 'close_theme'){
 	$upd_companies_json = json_encode(explode(',',implode(",",$upd_comp))); //обновленный массив, передеанный в нужный формат
 
 
-    $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-    try {
-        $company_name = $rcm[0]["name_rcmc"];
-    } catch (Exception $e) {
-        $company_name = "собеседник № ".COMPANY_ID;
-    }
+    $company_name = reqChatCompanyName(COMPANY_ID);
 
     $messagetext    = $company_name. ' закрыл тему.';
 
@@ -6249,12 +6234,7 @@ elseif($_GET['route'] == 'out_of_theme'){
 	$upd_companies_json = json_encode(explode(',',implode(",",$upd_comp))); //обновленный массив, передеанный в нужный формат
 
 
-	$rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-    try {
-        $company_name = $rcm[0]["name_rcmc"];
-    } catch (Exception $e) {
-        $company_name = "собеседник № ".COMPANY_ID;
-    }
+	$company_name = reqChatCompanyName(COMPANY_ID);
 
 	$messagetext 	= $company_name. ' вышел из темы.';
 
@@ -6280,12 +6260,7 @@ elseif ($_GET['route'] == 'block_of_theme') {
 
     $folder_id = $in['id'];
 
-    $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-    try {
-        $company_name = $rcm[0]["name_rcmc"];
-    } catch (Exception $e) {
-        $company_name = "собеседник № ".COMPANY_ID;
-    }
+    $company_name = reqChatCompanyName(COMPANY_ID);
 
     $messagetext    = $company_name. ' сделал блорировку.';
 
@@ -6310,12 +6285,7 @@ elseif ($_GET['route'] == 'block_of_theme') {
         $rcf = reqChatFolders(array('id'=>$folder_id));
         $companies_id   = $rcf[0]["companies_id"];
 
-        $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-        try {
-            $company_name = $rcm[0]["name_rcmc"];
-        } catch (Exception $e) {
-            $company_name = "собеседник № ".COMPANY_ID;
-        }
+        $company_name = reqChatCompanyName(COMPANY_ID);
 
         $messagetext    = $company_name. ' закрыл чат.';
 
@@ -6345,12 +6315,7 @@ elseif ($_GET['route'] == 'block_of_theme') {
         $rcf = reqChatFolders(array('id'=>$folder_id));
         $companies_id   = $rcf[0]["companies_id"];
 
-        $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-        try {
-            $company_name = $rcm[0]["name_rcmc"];
-        } catch (Exception $e) {
-            $company_name = "собеседник № ".COMPANY_ID;
-        }
+        $company_name = reqChatCompanyName(COMPANY_ID);
 
         $messagetext    = $company_name. ' открыл тему.';
 
@@ -6390,12 +6355,7 @@ elseif ($_GET['route'] == 'block_of_theme') {
         $rcf = reqChatFolders(array('id'=>$folder_id));
         $companies_id   = $rcf[0]["companies_id"];
 
-        $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-        try {
-            $company_name = $rcm[0]["name_rcmc"];
-        } catch (Exception $e) {
-            $company_name = "собеседник № ".COMPANY_ID;
-        }
+        $company_name = reqChatCompanyName(COMPANY_ID);
 
         $messagetext    = $company_name. ' открыл чат.';
 

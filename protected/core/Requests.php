@@ -6144,6 +6144,11 @@
 
 		return $row;
 	}
+    
+    function reqChatCompanyName ($company_id) {
+        $rcm = reqChatMessages(array('company_id' => $company_id));
+        return (!empty($rcm) && count($rcm) >= 1 && !empty($rcm[0]["name_rcmc"])) ? $rcm[0]["name_rcmc"] : "собеседник № ".$company_id;
+    }
 
 	// вывод данных о сообщениях
 	function reqChatMessages($p=array()) {
