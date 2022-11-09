@@ -6263,7 +6263,7 @@ elseif($_GET['route'] == 'open_theme'){
 
 	$cs = json_decode($companies_id);
     $company_name = reqChatCompanyName(COMPANY_ID);
-	$messagetext 	= $company_name. ' вышел из темы.';
+	$messagetext 	= $company_name. ' переоткрыл тему.';
 
 	if(($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
         $cs[$key] = ''.(abs(intval($cs[$key])));
