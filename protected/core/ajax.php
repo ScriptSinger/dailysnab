@@ -6251,43 +6251,40 @@ elseif ($_GET['route'] == 'block_of_theme') {
     }
 
 //Открыть тему
-    elseif($_GET['route'] == 'open_theme'){
+elseif($_GET['route'] == 'open_theme'){
 
-        $ok = false;
-        $code = '';
+    $ok = false;
+    $code = '';
 
-        $folder_id = $in['id'];
+    $folder_id = $in['id'];
 
-        $rcf = reqChatFolders(array('id'=>$folder_id));
-        $companies_id   = $rcf[0]["companies_id"];
+    $rcf = reqChatFolders(array('id'=>$folder_id));
+    $companies_id   = $rcf[0]["companies_id"];
 
-        $company_name = reqChatCompanyName(COMPANY_ID);
+	$cs = json_decode($companies_id);
+    $company_name = reqChatCompanyName(COMPANY_ID);
+	$messagetext 	= $company_name. ' вышел из темы.';
 
-        $messagetext    = $company_name. ' открыл тему.';
-
-        $upd_comp = json_decode($companies_id);
-
-        if(($key = array_search(''.(-intval(COMPANY_ID)), $upd_comp)) !== false){ //удаление элемента по значению
-            $upd_comp[$key] = ''.(abs(intval($upd_comp[$key])));
-        }
-
-        $upd_companies_json = json_encode(explode(',',implode(",",$upd_comp))); //обновленный массив, передеанный в нужный формат
-
-
-        $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-            array($folder_id,COMPANY_ID,/*$companies_id*/$upd_companies_json,$messagetext,1));
-        $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=?, companies_id=? WHERE id=?" ,
-            array(0,$upd_companies_json,$folder_id));
-        if($STH && $STH2){
-            $ok = true;
-            $code = 'Тема открыта';
-        }
-
-        $jsd['ok'] = $ok;
-        $jsd['code'] = $code;
-
-
+	if(($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
+        $cs[$key] = ''.(abs(intval($cs[$key])));
     }
+    $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=?, companies_id=? WHERE id=?" , 
+        array(0,json_encode($cs),$folder_id));
+    $cs = removeCompanyFromListIfBanned($cs);
+	if(($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
+        $cs[$key] = ''.(abs(intval($cs[$key])));
+    }    
+    $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+        array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1));   
+
+    if($STH && $STH2){
+        $ok = true;
+        $code = 'Тема открыта';
+    }
+
+    $jsd['ok'] = $ok;
+    $jsd['code'] = $code;
+}
 
 
     //Открыть чат
