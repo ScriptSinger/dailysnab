@@ -49,7 +49,7 @@ $last_message = [];
 			
 			foreach($row_f as $i => $f){   //выделяем отдельно folder_id и companies_id
 				$rowf_id[] 	 = $f['folder_id'];	 
-				$rowf_comp[$f['folder_id']] = json_decode($f['companies_id']);								
+				$rowf_comp[$f['folder_id']] = array_map('abs', json_decode($f['companies_id']));								
 			}	
 /*				
  			echo '<pre>';
@@ -63,7 +63,7 @@ $last_message = [];
 				foreach($rown as $i => $m){
 					//vecho(json_decode($m['companies']));
 					
-					if(in_array($comp, json_decode($m['companies']))){ //проверка прав на чтение сообщения
+					if(in_array($comp, array_map('abs', json_decode($m['companies'])))){ //проверка прав на чтение сообщения
 						$trM .= $t->TrPageMessages(array('m' => $m, 'views' => $views));
 					}
 				} 				
