@@ -5467,33 +5467,18 @@ elseif($_GET['route'] == 'create_new_message'){
     
     if (!empty($companies_id)) {
         $cs = json_decode($companies_json);
+        
+        $cs = removeCompanyFromListIfBanned($cs);
         $cs = array_map("abs", $cs);
-        if (count($cs) >= 2) {
-            $placeholders = str_repeat('?,', count($cs) - 2) . '?';
-            $STH0 = PreExecSQL("SELECT the_company_id FROM tickets_company_bans WHERE blocked_company_id = ? AND the_company_id IN ($placeholders);", $cs);
-            if ($STH0) {
-                $result = $STH0->fetchAll(PDO::FETCH_ASSOC);
-                if (count($result) >= 1) {
-                    foreach ($result as $row) {
-                        if (($key = array_search($row['the_company_id'], $cs)) !== false || ($key = array_search(''.(-intval($row['the_company_id'])), $cs)) !== false) {
-                            //echo $row['the_company_id'];
-                            unset($cs[$key]);
-                        }                
-                    }
-                }
-            }
-            $cs = array_unique($cs, SORT_REGULAR); //удаление дубилкатов
-            if (array_search(COMPANY_ID, $cs) !== false) {
-                unset($cs[array_search(COMPANY_ID, $cs)]); //
-            }
-            
-            $companies_id = implode(',', $cs);
-            $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
-            $cs = json_decode($companies_json);
-            
-            $cc = COMPANY_ID.','.$companies_id; //
-            $companies_json = json_encode(explode(',',$cc)); //
+        if (array_search(COMPANY_ID, $cs) !== false) {
+            unset($cs[array_search(COMPANY_ID, $cs)]); //
         }
+        $companies_id = implode(',', $cs);
+        $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
+        $cs = json_decode($companies_json);
+            
+        $cc = COMPANY_ID.','.$companies_id; //
+        $companies_json = json_encode(explode(',',$cc)); //
     }
     
     
@@ -5739,32 +5724,17 @@ elseif($_GET['route'] == 'create_new_message_potrb'){
     
     if (!empty($companies_id)) {
         $cs = json_decode($companies_json);
+        $cs = removeCompanyFromListIfBanned($cs);
         $cs = array_map("abs", $cs);
-        if (count($cs) >= 2) {
-            $placeholders = str_repeat('?,', count($cs) - 2) . '?';
-            $STH0 = PreExecSQL("SELECT the_company_id FROM tickets_company_bans WHERE blocked_company_id = ? AND the_company_id IN ($placeholders);", $cs);
-            if ($STH0) {
-                $result = $STH0->fetchAll(PDO::FETCH_ASSOC);
-                if (count($result) >= 1) {
-                    foreach ($result as $row) {
-                        if (($key = array_search($row['the_company_id'], $cs)) !== false || ($key = array_search(''.(-intval($row['the_company_id'])), $cs)) !== false) {
-                            //echo $row['the_company_id'];
-                            unset($cs[$key]);
-                        }                
-                    }
-                }
-            }
-            $cs = array_unique($cs, SORT_REGULAR); //удаление дубилкатов
-            if (array_search(COMPANY_ID, $cs) !== false) {
-                unset($cs[array_search(COMPANY_ID, $cs)]); //
-            }
-            $companies_id = implode(',', $cs);
-            $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
-            $cs = json_decode($companies_json);
-            
-            $cc = COMPANY_ID.','.$companies_id; //
-            $companies_json = json_encode(explode(',',$cc)); //
+        if (array_search(COMPANY_ID, $cs) !== false) {
+            unset($cs[array_search(COMPANY_ID, $cs)]); //
         }
+        $companies_id = implode(',', $cs);
+        $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
+        $cs = json_decode($companies_json);
+            
+        $cc = COMPANY_ID.','.$companies_id; //
+        $companies_json = json_encode(explode(',',$cc)); //
     }
 
 	$croped_image = $_POST['avatar'];
@@ -5899,29 +5869,11 @@ elseif($_GET['route'] == 'reply_message'){
         $companies_json = $companies_id;
         if (!empty($companies_json)) {
             $cs = json_decode($companies_json);
-            $cs = array_map("abs", array_merge(array(COMPANY_ID), $cs)); //
-            if (count($cs) >= 2) {
-                $placeholders = str_repeat('?,', count($cs) - 2) . '?';
-                $STH0 = PreExecSQL("SELECT the_company_id FROM tickets_company_bans WHERE blocked_company_id = ? AND the_company_id IN ($placeholders);", $cs);
-                if ($STH0) {
-                    $result = $STH0->fetchAll(PDO::FETCH_ASSOC);
-                    if (count($result) >= 1) {
-                        foreach ($result as $row) {
-                            if (($key = array_search($row['the_company_id'], $cs)) !== false || ($key = array_search(''.(-intval($row['the_company_id'])), $cs)) !== false) {
-                                //echo $row['the_company_id'];
-                                unset($cs[$key]);
-                            }                
-                        }
-                    }
-                }
-                $cs = array_unique($cs, SORT_REGULAR); //удаление дубилкатов
-                if (array_search(COMPANY_ID, $cs) !== false) {
-//                unset($cs[array_search(COMPANY_ID, $cs)]);
-                }
-                $companies_id = implode(',', $cs);
-                $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
-                $cs = json_decode($companies_json);
-            }
+            $cs = array_merge(array(COMPANY_ID), $cs); //
+            $cs = removeCompanyFromListIfBanned($cs);
+            $companies_id = implode(',', $cs);
+            $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
+            $cs = json_decode($companies_json);
         }
         $companies_id = $companies_json;
         
@@ -6190,27 +6142,28 @@ elseif($_GET['route'] == 'close_theme'){
     $companies_id   = $rcf[0]["companies_id"];
 
 
-	$upd_comp = json_decode($companies_id);
+	$cs = json_decode($companies_id);
 
-	if(($key = array_search(COMPANY_ID, $upd_comp)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $upd_comp)) !== false){ //удаление элемента по значению
-		///unset($upd_comp[$key]);
-        $upd_comp[$key] = ''.(-abs(intval($upd_comp[$key])));
+	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs) !== false){ //удаление элемента по значению
+		///unset($cs[$key]);
+        $cs[$key] = ''.(-abs(intval($cs[$key])));
 	}
-
-	$upd_companies_json = json_encode(explode(',',implode(",",$upd_comp))); //обновленный массив, передеанный в нужный формат
-
+    
+    $cs = removeCompanyFromListIfBanned($cs);
+    
+    $companies_id = implode(',', $cs);
+    $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
+    $cs = json_decode($companies_json);
 
     $company_name = reqChatCompanyName(COMPANY_ID);
 
     $messagetext    = $company_name. ' закрыл тему.';
 
     $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-        array($folder_id,COMPANY_ID,/*$companies_id*/$upd_companies_json,$messagetext,1));
-    $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=? WHERE id=?" ,
-        array(2,$folder_id));
-    $STH3 = PreExecSQL(" UPDATE tickets_folder SET companies_id=? WHERE id=?" ,
-		array($upd_companies_json,$folder_id)); //
-    if($STH && $STH2 && $STH3){
+        array($folder_id,COMPANY_ID,$companies_json,$messagetext,1));
+    $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=?, companies_id=? WHERE id=?" , 
+        array(2,$companies_json,$folder_id));
+    if($STH && $STH2){
         $ok = true;
         $code = 'Тема закрыта';
     }
