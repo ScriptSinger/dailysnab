@@ -5274,7 +5274,6 @@ class HtmlTemplate extends HtmlServive
 
         $status_on_off = '';//($m["status"] != 2) ? '<button>В архив</button>' : '<button>Открыть тему</button>';
         $status_badge = ($m["status"] != 2) ? 'badge-warning' : 'badge-secondary';
-        $m['companies_id'] = array_map('abs', $m['companies_id']);
 
         //vecho($m);
         //vecho($rcm);
@@ -5366,7 +5365,6 @@ class HtmlTemplate extends HtmlServive
 
         $status_on_off = '';//($m["status"] != 2) ? '<button>В архив</button>' : '<button>Открыть тему</button>';
         $status_badge = ($m["status"] != 2) ? 'badge-warning' : 'badge-secondary';
-        $m['companies_id'] = array_map('abs', $m['companies_id']);
 
 
         $comp_count = count(json_decode($m['companies_id'], true));
