@@ -5483,7 +5483,7 @@ elseif($_GET['route'] == 'create_new_message'){
         }
         $cs = array_unique($cs, SORT_REGULAR); //удаление дубилкатов
         if (array_search(COMPANY_ID, $cs) !== false) {
-            unset($cs[array_search(COMPANY_ID, $cs)]);
+            unset($cs[array_search(COMPANY_ID, $cs)]); //
         }
         
         $companies_id = implode(',', $cs);
@@ -5753,7 +5753,7 @@ elseif($_GET['route'] == 'create_new_message_potrb'){
         }
         $cs = array_unique($cs, SORT_REGULAR); //удаление дубилкатов
         if (array_search(COMPANY_ID, $cs) !== false) {
-            unset($cs[array_search(COMPANY_ID, $cs)]);
+            unset($cs[array_search(COMPANY_ID, $cs)]); //
         }
         $companies_id = implode(',', $cs);
         $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
@@ -5895,7 +5895,7 @@ elseif($_GET['route'] == 'reply_message'){
         $companies_json = $companies_id;
         if (!empty($companies_json)) {
             $cs = json_decode($companies_json);
-            $cs = array_map("abs", array_merge(array(COMPANY_ID), $cs)); //
+            $cs = array_map("abs", array_unique(array_merge(array(COMPANY_ID), $cs), SORT_REGULAR)); //
             $placeholders = str_repeat('?,', count($cs) - 2) . '?';
             $STH0 = PreExecSQL("SELECT the_company_id FROM tickets_company_bans WHERE blocked_company_id = ? AND the_company_id IN ($placeholders);", $cs);
             if ($STH0) {
@@ -5911,7 +5911,7 @@ elseif($_GET['route'] == 'reply_message'){
             }
             $cs = array_unique($cs, SORT_REGULAR); //удаление дубилкатов
             if (array_search(COMPANY_ID, $cs) !== false) {
-                unset($cs[array_search(COMPANY_ID, $cs)]);
+//                unset($cs[array_search(COMPANY_ID, $cs)]);
             }
             $companies_id = implode(',', $cs);
             $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
