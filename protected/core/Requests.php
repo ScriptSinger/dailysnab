@@ -488,6 +488,40 @@
 
 		return $row;
 	}
+    
+    function removeCompanyFromListIfBanned ($cs) { // $cs объект-список компаний
+        if (count($cs) >= 2) {
+            $companies_id_old = $cs;
+            $cs = array_map("abs", $cs);
+            $placeholders = str_repeat('?,', count($cs) - 2) . '?';
+            $was = false;
+            $STH0 = PreExecSQL("SELECT the_company_id FROM tickets_company_bans WHERE blocked_company_id = ? AND the_company_id IN ($placeholders);", $cs);
+            if ($STH0) {
+                $result = $STH0->fetchAll(PDO::FETCH_ASSOC);
+                if (count($result) >= 1) {
+                    foreach ($result as $row) {
+                        if (($key = array_search($row['the_company_id'], $cs)) !== false || ($key = array_search(''.(-intval($row['the_company_id'])), $cs)) !== false) {
+                            //echo $row['the_company_id'];
+                            unset($cs[$key]);
+                            $was = true;
+                        }                
+                    }
+                }
+            }
+            if ($was) {
+                $cs = array_unique($cs, SORT_REGULAR); //удаление дубилкатов
+                if (array_search(COMPANY_ID, $cs) !== false) {
+//                    unset($cs[array_search(COMPANY_ID, $cs)]);
+                }
+                $companies_id = implode(',', $cs);
+                $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
+                $cs = json_decode($companies_json);
+            } else {
+                $cs = $companies_id_old;
+            }
+        }
+        return $cs;
+    }
 
 	// Словарь Единица Измерения
 	function reqSlovUnit($p=array()) {
@@ -881,6 +915,7 @@
 		$one = false;
 		$in = fieldIn($p, array('id','login_id','phone','one','not_login_id','who1','who2','not_id',
 			'kol','flag','ipage','count_page','flag_account','value','company_id_md5','id_1c', 'skip'));
+        $in['id'] = abs($in['id']);
 
 		//$flag_account 	= (isset($p['flag_account']))? 	$p['flag_account'] 		: '';
 		//if(($flag_account)||($flag_account===0)){
@@ -6144,6 +6179,11 @@
 
 		return $row;
 	}
+    
+    function reqChatCompanyName ($company_id) {
+        $rcm = reqChatMessages(array('company_id' => $company_id));
+        return (!empty($rcm) && count($rcm) >= 1 && !empty($rcm[0]["name_rcmc"])) ? $rcm[0]["name_rcmc"] : "собеседник № ".$company_id;
+    }
 
 	// вывод данных о сообщениях
 	function reqChatMessages($p=array()) {
@@ -6305,7 +6345,7 @@
         }*/
         if(!empty($p['archiveTrue'])){
             //$sql .= ' AND tf.status = 2 ';
-			$sql .= " AND (tf.status = 2 OR "." tf.companies_id LIKE '%\"-" . COMPANY_ID . "\"%')"; // FIXME
+			$sql .= " AND ((tf.status = 2 OR "." tf.companies_id LIKE '%\"-" . COMPANY_ID . "\"%') OR "." (tf.status = 2 AND tf.companies_id LIKE '%\"" . COMPANY_ID . "\"%'))"; // FIXME
         } else if(!empty($p['archive'])){
             $sql .= " AND tf.status != 2 AND "." tf.companies_id LIKE '%\"" . COMPANY_ID . "\"%'";			
         }

@@ -5467,29 +5467,16 @@ elseif($_GET['route'] == 'create_new_message'){
     
     if (!empty($companies_id)) {
         $cs = json_decode($companies_json);
-        $cs = array_map("abs", $cs);
-        $placeholders = str_repeat('?,', count($cs) - 2) . '?';
-        $STH0 = PreExecSQL("SELECT the_company_id FROM tickets_company_bans WHERE blocked_company_id = ? AND the_company_id IN ($placeholders);", $cs);
-        if ($STH0) {
-            $result = $STH0->fetchAll(PDO::FETCH_ASSOC);
-            if (count($result) >= 1) {
-                foreach ($result as $row) {
-                    if (($key = array_search($row['the_company_id'], $cs)) !== false || ($key = array_search(''.(-intval($row['the_company_id'])), $cs)) !== false) {
-                        //echo $row['the_company_id'];
-                        unset($cs[$key]);
-                    }                
-                }
-            }
-        }
-        $cs = array_unique($cs, SORT_REGULAR); //удаление дубилкатов
-        if (array_search(COMPANY_ID, $cs) !== false) {
-            unset($cs[array_search(COMPANY_ID, $cs)]);
-        }
         
+        $cs = removeCompanyFromListIfBanned($cs);
+        $cs = array_map("abs", $cs);
+        if (array_search(COMPANY_ID, $cs) !== false) {
+            unset($cs[array_search(COMPANY_ID, $cs)]); //
+        }
         $companies_id = implode(',', $cs);
         $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
         $cs = json_decode($companies_json);
-        
+            
         $cc = COMPANY_ID.','.$companies_id; //
         $companies_json = json_encode(explode(',',$cc)); //
     }
@@ -5690,12 +5677,7 @@ elseif($_GET['route'] == 'create_new_message'){
                     $sql = "SELECT id, folder_name FROM tickets_folder WHERE companies_id=? AND folder_name = '' ORDER by id DESC";
                     $last_chat = PreExecSQL_one($sql,array($cId));
 
-                    $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-                    try {
-                        $company_name = $rcm[0]["name_rcmc"];
-                    } catch (Exception $e) {
-                        $company_name = "собеседник № ".COMPANY_ID;
-                    }
+                    $company_name = reqChatCompanyName(COMPANY_ID);
 
                     $messagetext    = $company_name. ' открыл новую тему: <a href="/chat/messages/' .$last_chat['id'] . '">' . $last_chat['folder_name'] . '</a>'  ;
 
@@ -5742,28 +5724,15 @@ elseif($_GET['route'] == 'create_new_message_potrb'){
     
     if (!empty($companies_id)) {
         $cs = json_decode($companies_json);
+        $cs = removeCompanyFromListIfBanned($cs);
         $cs = array_map("abs", $cs);
-        $placeholders = str_repeat('?,', count($cs) - 2) . '?';
-        $STH0 = PreExecSQL("SELECT the_company_id FROM tickets_company_bans WHERE blocked_company_id = ? AND the_company_id IN ($placeholders);", $cs);
-        if ($STH0) {
-            $result = $STH0->fetchAll(PDO::FETCH_ASSOC);
-            if (count($result) >= 1) {
-                foreach ($result as $row) {
-                    if (($key = array_search($row['the_company_id'], $cs)) !== false || ($key = array_search(''.(-intval($row['the_company_id'])), $cs)) !== false) {
-                        //echo $row['the_company_id'];
-                        unset($cs[$key]);
-                    }                
-                }
-            }
-        }
-        $cs = array_unique($cs, SORT_REGULAR); //удаление дубилкатов
         if (array_search(COMPANY_ID, $cs) !== false) {
-            unset($cs[array_search(COMPANY_ID, $cs)]);
+            unset($cs[array_search(COMPANY_ID, $cs)]); //
         }
         $companies_id = implode(',', $cs);
         $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
         $cs = json_decode($companies_json);
-        
+            
         $cc = COMPANY_ID.','.$companies_id; //
         $companies_json = json_encode(explode(',',$cc)); //
     }
@@ -5900,24 +5869,8 @@ elseif($_GET['route'] == 'reply_message'){
         $companies_json = $companies_id;
         if (!empty($companies_json)) {
             $cs = json_decode($companies_json);
-            $cs = array_map("abs", array_merge(array(COMPANY_ID), $cs)); //
-            $placeholders = str_repeat('?,', count($cs) - 2) . '?';
-            $STH0 = PreExecSQL("SELECT the_company_id FROM tickets_company_bans WHERE blocked_company_id = ? AND the_company_id IN ($placeholders);", $cs);
-            if ($STH0) {
-                $result = $STH0->fetchAll(PDO::FETCH_ASSOC);
-                if (count($result) >= 1) {
-                    foreach ($result as $row) {
-                        if (($key = array_search($row['the_company_id'], $cs)) !== false || ($key = array_search(''.(-intval($row['the_company_id'])), $cs)) !== false) {
-                            //echo $row['the_company_id'];
-                            unset($cs[$key]);
-                        }                
-                    }
-                }
-            }
-            $cs = array_unique($cs, SORT_REGULAR); //удаление дубилкатов
-            if (array_search(COMPANY_ID, $cs) !== false) {
-                unset($cs[array_search(COMPANY_ID, $cs)]);
-            }
+            $cs = array_merge(array(COMPANY_ID), $cs); //
+            $cs = removeCompanyFromListIfBanned($cs);
             $companies_id = implode(',', $cs);
             $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
             $cs = json_decode($companies_json);
@@ -6162,12 +6115,7 @@ elseif($_GET['route'] == 'close_theme_pr'){
 	$rcf = reqChatFolders(array('id'=>$folder_id));
 	$companies_id 	= $rcf[0]["companies_id"];
 
-	$rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-    try {
-        $company_name = $rcm[0]["name_rcmc"];
-    } catch (Exception $e) {
-        $company_name = "собеседник № ".COMPANY_ID;
-    }
+	$company_name = reqChatCompanyName(COMPANY_ID);
 
 	$messagetext 	= $company_name. ' предложил закрыть тему.';
 
@@ -6187,39 +6135,27 @@ elseif($_GET['route'] == 'close_theme'){
 
     $ok = false;
     $code = '';
-
     $folder_id = $in['id'];
-
     $rcf = reqChatFolders(array('id'=>$folder_id));
     $companies_id   = $rcf[0]["companies_id"];
 
-
-	$upd_comp = json_decode($companies_id);
-
-	if(($key = array_search(COMPANY_ID, $upd_comp)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $upd_comp)) !== false){ //удаление элемента по значению
-		///unset($upd_comp[$key]);
-        $upd_comp[$key] = ''.(-abs(intval($upd_comp[$key])));
-	}
-
-	$upd_companies_json = json_encode(explode(',',implode(",",$upd_comp))); //обновленный массив, передеанный в нужный формат
-
-
-    $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-    try {
-        $company_name = $rcm[0]["name_rcmc"];
-    } catch (Exception $e) {
-        $company_name = "собеседник № ".COMPANY_ID;
-    }
-
+	$cs = json_decode($companies_id);
+    $company_name = reqChatCompanyName(COMPANY_ID);
     $messagetext    = $company_name. ' закрыл тему.';
 
+	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
+        $cs[$key] = ''.(-abs(intval($cs[$key])));
+	}
+    $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=?, companies_id=? WHERE id=?" , 
+        array(2,json_encode($cs),$folder_id));
+    $cs = removeCompanyFromListIfBanned($cs);
+	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
+        $cs[$key] = ''.(-abs(intval($cs[$key])));
+	}    
     $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-        array($folder_id,COMPANY_ID,/*$companies_id*/$upd_companies_json,$messagetext,1));
-    $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=? WHERE id=?" ,
-        array(2,$folder_id));
-    $STH3 = PreExecSQL(" UPDATE tickets_folder SET companies_id=? WHERE id=?" ,
-		array($upd_companies_json,$folder_id)); //
-    if($STH && $STH2 && $STH3){
+        array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1));
+    
+    if($STH && $STH2){
         $ok = true;
         $code = 'Тема закрыта';
     }
@@ -6234,37 +6170,27 @@ elseif($_GET['route'] == 'out_of_theme'){
 
 	$ok = false;
 	//$code = '';
-
 	$folder_id = $in['id'];
-
 	$rcf = reqChatFolders(array('id'=>$folder_id));
 	$companies_id 	= $rcf[0]["companies_id"];
 
-	$upd_comp = json_decode($companies_id);
-
-	if(($key = array_search(COMPANY_ID, $upd_comp)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $upd_comp)) !== false){ //удаление элемента по значению
-        $upd_comp[$key] = ''.(-abs(intval($upd_comp[$key])));
-	}
-
-	$upd_companies_json = json_encode(explode(',',implode(",",$upd_comp))); //обновленный массив, передеанный в нужный формат
-
-
-	$rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-    try {
-        $company_name = $rcm[0]["name_rcmc"];
-    } catch (Exception $e) {
-        $company_name = "собеседник № ".COMPANY_ID;
-    }
-
+	$cs = json_decode($companies_id);
+    $company_name = reqChatCompanyName(COMPANY_ID);
 	$messagetext 	= $company_name. ' вышел из темы.';
 
-	$STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-		array($folder_id,COMPANY_ID,$upd_companies_json,$messagetext,1));
-	//Обновление папки для сообщений
-	$STH = PreExecSQL(" UPDATE tickets_folder SET companies_id=? WHERE id=?" ,
-		array($upd_companies_json,$folder_id));
+	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
+        $cs[$key] = ''.(-abs(intval($cs[$key])));
+	}
+    $STH2 = PreExecSQL(" UPDATE tickets_folder SET companies_id=? WHERE id=?" , 
+        array(json_encode($cs),$folder_id));
+    $cs = removeCompanyFromListIfBanned($cs);
+	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
+        $cs[$key] = ''.(-abs(intval($cs[$key])));
+	}    
+    $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+        array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1));
 
-	if($STH){
+    if($STH && $STH2){
 		$ok = true;
 	}
 
@@ -6280,16 +6206,11 @@ elseif ($_GET['route'] == 'block_of_theme') {
 
     $folder_id = $in['id'];
 
-    $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-    try {
-        $company_name = $rcm[0]["name_rcmc"];
-    } catch (Exception $e) {
-        $company_name = "собеседник № ".COMPANY_ID;
-    }
+    $company_name = reqChatCompanyName(COMPANY_ID);
 
     $messagetext    = $company_name. ' сделал блорировку.';
 
-    $STH = PreExecSQL(" INSERT INTO tickets_company_bans (the_company_id, blocked_company_id, blocked_status) SELECT ?, owner_id, '1' FROM tickets_folder WHERE id=? ", array(COMPANY_ID, $folder_id));
+    $STH = PreExecSQL(" INSERT INTO tickets_company_bans (the_company_id, blocked_company_id, blocked_status) SELECT ?, owner_id, '1' FROM tickets_folder WHERE id=? && owner_id!=? ", array(COMPANY_ID, $folder_id, COMPANY_ID));
         
     if ($STH) {
         $ok = true;
@@ -6310,12 +6231,7 @@ elseif ($_GET['route'] == 'block_of_theme') {
         $rcf = reqChatFolders(array('id'=>$folder_id));
         $companies_id   = $rcf[0]["companies_id"];
 
-        $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-        try {
-            $company_name = $rcm[0]["name_rcmc"];
-        } catch (Exception $e) {
-            $company_name = "собеседник № ".COMPANY_ID;
-        }
+        $company_name = reqChatCompanyName(COMPANY_ID);
 
         $messagetext    = $company_name. ' закрыл чат.';
 
@@ -6335,48 +6251,40 @@ elseif ($_GET['route'] == 'block_of_theme') {
     }
 
 //Открыть тему
-    elseif($_GET['route'] == 'open_theme'){
+elseif($_GET['route'] == 'open_theme'){
 
-        $ok = false;
-        $code = '';
+    $ok = false;
+    $code = '';
 
-        $folder_id = $in['id'];
+    $folder_id = $in['id'];
 
-        $rcf = reqChatFolders(array('id'=>$folder_id));
-        $companies_id   = $rcf[0]["companies_id"];
+    $rcf = reqChatFolders(array('id'=>$folder_id));
+    $companies_id   = $rcf[0]["companies_id"];
 
-        $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-        try {
-            $company_name = $rcm[0]["name_rcmc"];
-        } catch (Exception $e) {
-            $company_name = "собеседник № ".COMPANY_ID;
-        }
+	$cs = json_decode($companies_id);
+    $company_name = reqChatCompanyName(COMPANY_ID);
+	$messagetext 	= $company_name. ' переоткрыл тему.';
 
-        $messagetext    = $company_name. ' открыл тему.';
-
-        $upd_comp = json_decode($companies_id);
-
-        if(($key = array_search(''.(-intval(COMPANY_ID)), $upd_comp)) !== false){ //удаление элемента по значению
-            $upd_comp[$key] = ''.(abs(intval($upd_comp[$key])));
-        }
-
-        $upd_companies_json = json_encode(explode(',',implode(",",$upd_comp))); //обновленный массив, передеанный в нужный формат
-
-
-        $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-            array($folder_id,COMPANY_ID,/*$companies_id*/$upd_companies_json,$messagetext,1));
-        $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=?, companies_id=? WHERE id=?" ,
-            array(0,$upd_companies_json,$folder_id));
-        if($STH && $STH2){
-            $ok = true;
-            $code = 'Тема открыта';
-        }
-
-        $jsd['ok'] = $ok;
-        $jsd['code'] = $code;
-
-
+	if(($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
+        $cs[$key] = ''.(abs(intval($cs[$key])));
     }
+    $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=?, companies_id=? WHERE id=?" , 
+        array(0,json_encode($cs),$folder_id));
+    $cs = removeCompanyFromListIfBanned($cs);
+	if(($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
+        $cs[$key] = ''.(abs(intval($cs[$key])));
+    }    
+    $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+        array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1));   
+
+    if($STH && $STH2){
+        $ok = true;
+        $code = 'Тема открыта';
+    }
+
+    $jsd['ok'] = $ok;
+    $jsd['code'] = $code;
+}
 
 
     //Открыть чат
@@ -6390,12 +6298,7 @@ elseif ($_GET['route'] == 'block_of_theme') {
         $rcf = reqChatFolders(array('id'=>$folder_id));
         $companies_id   = $rcf[0]["companies_id"];
 
-        $rcm = reqChatMessages(array('company_id' => COMPANY_ID));
-        try {
-            $company_name = $rcm[0]["name_rcmc"];
-        } catch (Exception $e) {
-            $company_name = "собеседник № ".COMPANY_ID;
-        }
+        $company_name = reqChatCompanyName(COMPANY_ID);
 
         $messagetext    = $company_name. ' открыл чат.';
 

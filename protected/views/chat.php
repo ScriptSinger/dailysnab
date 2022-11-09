@@ -35,6 +35,7 @@ $last_message = [];
             $companies_id_new[$j] = ''.(abs(intval($companies_id_old[$j])));
         }
         $row[$i]['companies_id'] = json_encode($companies_id_new);
+        $m['companies_id'] = json_encode($companies_id_new);
 		if(in_array($comp, $companies_id_new)){ //проверка прав на отображение папок
 			$tr .= $t->TrPageMessagesFolders(array('m' => $m, 'views' => $views));
 		}
@@ -48,7 +49,7 @@ $last_message = [];
 			
 			foreach($row_f as $i => $f){   //выделяем отдельно folder_id и companies_id
 				$rowf_id[] 	 = $f['folder_id'];	 
-				$rowf_comp[$f['folder_id']] = json_decode($f['companies_id']);								
+				$rowf_comp[$f['folder_id']] = json_decode($f['companies_id']); /// array_map('abs', json_decode($f['companies_id']));	!!!
 			}	
 /*				
  			echo '<pre>';
@@ -62,7 +63,7 @@ $last_message = [];
 				foreach($rown as $i => $m){
 					//vecho(json_decode($m['companies']));
 					
-					if(in_array($comp, json_decode($m['companies']))){ //проверка прав на чтение сообщения
+					if(in_array($comp, array_map('abs', json_decode($m['companies'])))){ //проверка прав на чтение сообщения
 						$trM .= $t->TrPageMessages(array('m' => $m, 'views' => $views));
 					}
 				} 				
@@ -106,12 +107,16 @@ $last_message = [];
 				</pre> -->
 				<?php
 				//надо будет условие поставить еще на проверку ранних сообщеницй и на заблокировать пользователя	
+                //vecho($comp);
+                //vecho(end($rowf_comp));
+                //vecho(array_map('abs', end($rowf_comp)));
+                
 				$out_of_theme = '';
 				if ($rown[0]['company_id'] == COMPANY_ID && $theme != '') //вывод выхода из темы для клиентов
 					{
 						$out_of_theme = '<button type="button" class="button-blue pull-right close_theme" data-fid="'.$fid.'">Закрыть тему</button>'; //организаторов чатов
 					} 
- 				else if(in_array_r( $comp, $rowf_comp ) && !in_array( $comp, end($rowf_comp) )) //кнопка для тех кто уже вышел из чата
+ 				else if(in_array_r( abs($comp), $rowf_comp ) && !in_array( abs($comp), end($rowf_comp) )) //кнопка для тех кто уже вышел из чата
 					{
 						// if () 
 						$out_of_theme = '<button type="button" class="button-blue pull-right block_of_theme" data-fid="'.$fid.'">Заблокировать пользователя</button>'; // уже после выхода из чата
