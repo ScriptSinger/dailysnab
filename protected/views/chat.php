@@ -107,9 +107,9 @@ $last_message = [];
 				</pre> -->
 				<?php
 				//надо будет условие поставить еще на проверку ранних сообщеницй и на заблокировать пользователя	
-                vecho($comp);
-                vecho(end($rowf_comp));
-                vecho(array_map('abs', end($rowf_comp)));
+                //vecho($comp);
+                //vecho(end($rowf_comp));
+                //vecho(array_map('abs', end($rowf_comp)));
                 
 				$out_of_theme = '';
 				if ($rown[0]['company_id'] == COMPANY_ID && $theme != '') //вывод выхода из темы для клиентов
