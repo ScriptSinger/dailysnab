@@ -2460,6 +2460,7 @@
 							bs.company_id, bs.company_id2, bs.comments_company, bs.assets_id,
 							DATE_FORMAT( bs.data_status_buy_sell_23, '%d %M' ) data_status_buy_sell_23,
 							(SELECT DATEDIFF(DATE_ADD(bs.data_status_buy_sell_23, INTERVAL 30 DAY), NOW())) day_noactive,
+							bs.nomenclature_id,
 							c2.company company2,
 							(SELECT cr.company FROM company cr WHERE cr.id=bs.responsible_id) responsible,
 							(SELECT vcb.kol FROM view_counter_buysellone vcb WHERE vcb.buy_sell_id=bs.id) kol_views, /* кол-во просмотров */
@@ -5269,7 +5270,7 @@
 										AND bs.nomenclature_id=? 
 						WHERE sbs.id IN (2,3,11,12,14,15,31)
 						GROUP BY sbs.id ";
-			//vecho($sql.$p['nomenclature_id']);
+						
 			$row = PreExecSQL_all($sql,array($p['nomenclature_id'],$p['nomenclature_id'],$p['nomenclature_id']));
 
 		}

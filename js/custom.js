@@ -611,7 +611,10 @@ $(function(){
 										}else if(d.flag_buy_sell==2){
 											AutocompleteFa('company_id3', d.flag_buy_sell);
 										}
-										CountStatusBuysellByNomenclature(d.nomenclature_id);
+										
+										if(d.nomenclature_id){
+											CountStatusBuysellByNomenclature(d.nomenclature_id);
+										}
 
 										SaveBuySell(modal,flag_offer_share);
 										

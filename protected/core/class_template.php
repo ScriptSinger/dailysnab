@@ -3306,9 +3306,9 @@ class HtmlTemplate extends HtmlServive
 											);
 
             $button_edit = '<button class="modal_buy_sell" data-id="'.$m['id'].'" 
-																data-flag_buy_sell="'.$m['flag_buy_sell'].'" 
-																data-status="'.$m['status_buy_sell_id'].'" 
-																data-nomenclature_id="'.$m['nomenclature_id'].'">
+															data-flag_buy_sell="'.$m['flag_buy_sell'].'" 
+															data-status="'.$m['status_buy_sell_id'].'" 
+															data-nomenclature_id="{NOMENCLATURE_ID}">
 									<img src="/image/status-edit.svg" alt="" class="status-request">
 								</button>';
             $qrq_update = '	<button class="qrq_update_in_buy_sell" data-id="'.$m['id'].'">
@@ -3812,6 +3812,7 @@ class HtmlTemplate extends HtmlServive
         $m['cache_2'] = str_replace('{KOL_STATUS}', $kol_status, $m['cache_2']);
         $m['cache_2'] = str_replace('{DAY_NOACTIVE}', $day_noactive, $m['cache_2']);
         $m['cache_2'] = str_replace('{ASSETS}', $assets, $m['cache_2']);
+		$m['cache_2'] = str_replace('{NOMENCLATURE_ID}', $m['nomenclature_id'], $m['cache_2']);
 
 
         if ($p['flag'] == 'refresh') {

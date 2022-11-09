@@ -3906,10 +3906,11 @@ elseif($_GET['route'] == 'save_nomenclature'){
 
 
 	$arr = $bs->NomenclatureInsertUpdate(array( 	'id'				=> $nomenclature_id,
-		'name'				=> $in['name'],
-		'categories_id'		=> $in['categories_id'],
-		'1c_nomenclature_id'=> $in['1c_nomenclature_id'],
-		'post'				=> $_POST	));
+												'buy_sell_id'		=> $in['buy_sell_id'],
+												'name'				=> $in['name'],
+												'categories_id'		=> $in['categories_id'],
+												'1c_nomenclature_id'=> $in['1c_nomenclature_id'],
+												'post'				=> $_POST	));
 
 	$jsd['ok'] 			= $arr['ok'];
 	$jsd['code'] 		= $arr['code'];
