@@ -6140,17 +6140,18 @@ elseif($_GET['route'] == 'close_theme'){
     $companies_id   = $rcf[0]["companies_id"];
 
 	$cs = json_decode($companies_id);
+    $company_name = reqChatCompanyName(COMPANY_ID);
+    $messagetext    = $company_name. ' закрыл тему.';
 
 	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
         $cs[$key] = ''.(-abs(intval($cs[$key])));
 	}
-    
-    $company_name = reqChatCompanyName(COMPANY_ID);
-    $messagetext    = $company_name. ' закрыл тему.';
-
     $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=?, companies_id=? WHERE id=?" , 
         array(2,json_encode($cs),$folder_id));
     $cs = removeCompanyFromListIfBanned($cs);
+	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
+        $cs[$key] = ''.(-abs(intval($cs[$key])));
+	}    
     $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
         array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1));
     
@@ -6174,19 +6175,18 @@ elseif($_GET['route'] == 'out_of_theme'){
 	$companies_id 	= $rcf[0]["companies_id"];
 
 	$cs = json_decode($companies_id);
+    $company_name = reqChatCompanyName(COMPANY_ID);
+	$messagetext 	= $company_name. ' вышел из темы.';
 
 	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
         $cs[$key] = ''.(-abs(intval($cs[$key])));
 	}
-    
-    $cs = removeCompanyFromListIfBanned($cs);
-    
-    $company_name = reqChatCompanyName(COMPANY_ID);
-	$messagetext 	= $company_name. ' вышел из темы.';
-
     $STH2 = PreExecSQL(" UPDATE tickets_folder SET companies_id=? WHERE id=?" , 
         array(json_encode($cs),$folder_id));
     $cs = removeCompanyFromListIfBanned($cs);
+	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
+        $cs[$key] = ''.(-abs(intval($cs[$key])));
+	}    
     $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
         array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1));
 
