@@ -109,7 +109,7 @@ $last_message = [];
 				//надо будет условие поставить еще на проверку ранних сообщеницй и на заблокировать пользователя	
                 //vecho(end($rowf_comp));
                 //vecho(array_map('abs', end($rowf_comp)));
-                vecho(in_array_r( abs($comp), $rowf_comp ) === false);
+                vecho(in_array_r( abs($comp), $rowf_comp ) == true);
 				$out_of_theme = '';
 				if ($rown[0]['company_id'] == COMPANY_ID && $theme != '') //вывод выхода из темы для клиентов
 					{
