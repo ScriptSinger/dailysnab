@@ -13,7 +13,7 @@ $in = array('email', 'pass', 'pass_again', 'id'=>'integer', 'value', 'flag', 'pa
     'attribute', 'active',
     'mclass', 'views',
     'categories_id', 'unit_id', 'unit_group_id', 'attribute_id', 'table' , 'limit_sell' , 'limit_buy', 'desc_sell', 'desc_buy', 'keywords_buy', 'keywords_sell','description_buy','description_sell',
-    'no_empty_name','no_empty_file','assets',
+    'no_empty_name','no_empty_file','assets','flag_offer_share',
     'who1', 'who2', 'name', 'phone', 'phone2', 'legal_entity_id', 'company', 'position', 'tax_system_id', 'cities_id',
     'flag_buy_sell', 'status', 'urgency_id', 'delivery_id', 'currency_id', 'comments', 'cost', 'form_payment_id', 'amount' ,
     'note' , 'buy_sell_id' , 'articul', 'comments_company', 'responsible', 'responsible_id', 'availability',
@@ -1013,7 +1013,7 @@ elseif($_GET['route'] == 'modal_search'){
 elseif($_GET['route'] == 'modal_buy_sell'){
 
     $arr = $f->FormBuySell(array('id'=>$in['id'],'flag_buy_sell'=>$in['flag_buy_sell'],'share_url'=>$in['share_url'],
-								'status'=>$in['status'],'flag'=>$in['flag'] ));
+								'status'=>$in['status'],'flag'=>$in['flag'],'flag_offer_share'=>$in['flag_offer_share'] ));
 
     $code = $t->getModal(	array('class_dialog'=>'search-dialog needs-dialog','content'=>$arr['content']),
 							array('id'=>'buy_sell-form','class'=>'') );
@@ -1338,7 +1338,7 @@ elseif($_GET['route'] == 'save_buy_sell'){
 
         $old_elem_33 	= isset($ra['value'])?	$ra['value']	: '';
         $old_name 	= isset($r['name'])? 	$r['name'] 	: '';
-
+		/* от 08-11-2022
         if( ($r['company_id']==COMPANY_ID) || ($r['login_id']<>LOGIN_ID) ){// должна принадлежать пользователю или компании
             //
         }else{
@@ -1348,7 +1348,7 @@ elseif($_GET['route'] == 'save_buy_sell'){
 
             exit;
         }
-
+		*/
         $categories_id	= ($in['categories_id'])? $in['categories_id'] : $r['categories_id'];
         $flag_buy_sell	= $r['flag_buy_sell'];
         $parent_id	= $r['parent_id'];

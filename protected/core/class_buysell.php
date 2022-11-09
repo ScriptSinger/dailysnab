@@ -875,6 +875,7 @@ class HtmlBuySell extends HtmlServive
 													array( $nomenclature_id,$in['buy_sell_id'] ));
 							}
 					}
+					vecho(array( $nomenclature_id,$in['buy_sell_id'] ));
 					
 		}else{// РЕДАКТИРОВАНИЕ
 				

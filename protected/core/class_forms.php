@@ -852,7 +852,7 @@ class HtmlForms extends HtmlTemplate
 
 	// Заявка/Объявление
 	function FormBuySell( $p=array() ){
-		$in = fieldIn($p, array('id','flag_buy_sell','share_url','status','flag'));
+		$in = fieldIn($p, array('id','flag_buy_sell','share_url','status','flag','flag_offer_share'));
 
 		$code_categories_buy_sell = $code_cost = $code_categories = $file_list = $st_prava = $button23 = $comments_company = $responsible = $code_assets = '';
 		$st_dn = $save_button = $count_status_buysell = $availability = $select_categories = $span_clear_form = $st_span_select_categories = $required_name = $required_file = $code_company_id3 = '';
@@ -1263,7 +1263,7 @@ class HtmlForms extends HtmlTemplate
 				}
 				$save_button = '<button type="submit" data-status="'.$status.'" class="request-btn request-hidden-btn">'.$nstatus.'</button>';
 			}else{
-				$save_button = '<button  type="button" id="save_buy_sell_formnovalidate" data-status="1" class="request-btn request-hidden-btn">Сохранить</button>';
+				$save_button = '<button  type="button" id="save_buy_sell_formnovalidate" data-status="1" data-flag_offer_share="'.$in['flag_offer_share'].'" class="request-btn request-hidden-btn">Сохранить</button>';
 			}
 		}
 		///

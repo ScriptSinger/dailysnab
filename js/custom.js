@@ -510,7 +510,8 @@ $(function(){
 		var id = d.id;
 		
 		var flag_offer_share = d.flag_offer_share;
-		$.post("/modal_buy_sell", { id:d.id , flag_buy_sell:d.flag_buy_sell , share_url:d.share_url, status:d.status , flag:d.flag }, 
+		$.post("/modal_buy_sell", { id:d.id , flag_buy_sell:d.flag_buy_sell , share_url:d.share_url, status:d.status , flag:d.flag,
+									flag_offer_share : flag_offer_share }, 
 			function(data){
 				if(data.code){
 					modal.html(data.code);
@@ -611,6 +612,7 @@ $(function(){
 											AutocompleteFa('company_id3', d.flag_buy_sell);
 										}
 										CountStatusBuysellByNomenclature(d.nomenclature_id);
+
 										SaveBuySell(modal,flag_offer_share);
 										
 									}
@@ -747,8 +749,11 @@ $(function(){
 
 
 	$("body").on("click", "#save_buy_sell_formnovalidate", function(){
-
-		SaveBuySellAfter( modal , $('#buy_sell-form').serialize() , 1 , '' );
+		
+		var d = $(this).data();
+		var flag_offer_share = d.flag_offer_share;
+		
+		SaveBuySellAfter( modal , $('#buy_sell-form').serialize() , 1 , flag_offer_share );
 
 	});
 
@@ -4159,7 +4164,6 @@ function ChangePass() {
 // сохранение Заявка/Объявление
 function SaveBuySell(modal,flag_offer_share) {
 	
-
 		//$('#buy_sell-form').bootstrapValidator('destroy');
 		$('#buy_sell-form').bootstrapValidator({
 
@@ -4251,6 +4255,7 @@ function SaveBuySell(modal,flag_offer_share) {
 
 			bv.disableSubmitButtons(false);
 			
+
 			
 			if( /*flag_categories &&*/ d.status==1 || (flag_amount && flag_amount1 && flag_amount2 && flag_name && flag_uploader) ){
 				
@@ -4396,6 +4401,7 @@ return false;
 
 
 function SaveBuySellAfter(modal,form_serialize,status_id,flag_offer_share){
+	
 
 	webix.ajax().post( "/save_buy_sell", form_serialize+"&status="+status_id, 
 		function(text, data, xhr){
@@ -4403,129 +4409,134 @@ function SaveBuySellAfter(modal,form_serialize,status_id,flag_offer_share){
 
 			if(data.ok){
 
-											//var tr = data.tr;
-											var id = data.id;
-											
-											//$('#loading').show();
-											$$("upload_files_buy_sell").files.data.each(function(obj){
-												obj.formData = { id:data.id };
-											});
-											
-											$$("upload_files_buy_sell").send(function(response){
-												
-												$$("upload_files_buy_sell").files.data.each(function(obj){
+				//var tr = data.tr;
+				var id = data.id;
+				
+				//$('#loading').show();
+				$$("upload_files_buy_sell").files.data.each(function(obj){
+					obj.formData = { id:data.id };
+				});
+				
+				$$("upload_files_buy_sell").send(function(response){
+					
+					$$("upload_files_buy_sell").files.data.each(function(obj){
 
-													var status = obj.status;
-													var name = obj.name;
-													if(status=="server"){
-														webix.message("Файл: "+name+" загружен");
-													}
-													else{
-														webix.message({type:"error", text:"Нельзя загрузить: "+name});
-													}
-												});
-
-
+						var status = obj.status;
+						var name = obj.name;
+						if(status=="server"){
+							webix.message("Файл: "+name+" загружен");
+						}
+						else{
+							webix.message({type:"error", text:"Нельзя загрузить: "+name});
+						}
+					});
 
 
-												var tr = '';
-												webix.ajax().post( "/get_cache_buy_sell", { buy_sell_id:id , status:status_id , flag_buy_sell:data.flag_buy_sell }, 
-													function(text, data2, xhr){
 
-														data2 = data2.json();
-														var tr = data2.tr;
 
-														if(data.noautorize && !flag_offer_share ){
-															modal.modal('hide');
-															$('.enter-btn').click();
+					var tr = '';
+					webix.ajax().post( "/get_cache_buy_sell", { buy_sell_id:id , status:status_id , flag_buy_sell:data.flag_buy_sell }, 
+						function(text, data2, xhr){
+
+							data2 = data2.json();
+							var tr = data2.tr;
+
+							if(data.noautorize && !flag_offer_share ){
+								modal.modal('hide');
+								$('.enter-btn').click();
+							}else{
+										if(flag_offer_share){// изменить данное предложение
+											$("#button_form_buy_sell"+data.parent_id+"").click();
+											modal.modal('hide');
+										}else{
+											if(flag_offer_share){// изменить данное предложение
+												$("#button_form_buy_sell"+data.parent_id+"").click();
+												modal.modal('hide');
+											}else{
+												if(!data.flag_nomenclature && (data.flag_buy_sell==2) ){
+													// создание/обновление номенклатуры от заявки
+													webix.confirm({
+														ok: "Создать", cancel:"Обновить",
+														text: "Номенклатуру?",
+														callback:function(result){
+															if(result){
+																$.post( "/save_nomenclature", form_serialize+"&buy_sell_id="+data.id+"&flag=insert" , 
+																	function(data){
+																			//
+																			if(data.ok){
+																				if(data.flag_reload){
+																					onReload('');
+																				}else{
+																					$('#div_mybs'+id+'').html(tr);
+																					modal.modal('hide');
+																					webix.message("Сохранено");
+																				}
+																			}else{
+																				webix.message({type:"error", text:"Нельзя сохранить"});
+																			}
+																		}
+																		);
+															}else{
+																$.post( "/save_nomenclature", form_serialize+"&buy_sell_id="+data.id+"&flag=update" , 
+																	function(data){
+																			//onReload('');
+																			if(data.ok){
+																				if(data.flag_reload){
+																					onReload('');
+																				}else{
+																					$('#div_mybs'+id+'').html(tr);
+																					modal.modal('hide');
+																					webix.message("Сохранено");
+																				}
+																			}else{
+																				webix.message({type:"error", text:"Нельзя сохранить"});
+																			}
+																		}
+																		);
+															}
+														}
+													});
+												}else{
+													//onReload('');
+													if(data.ok){
+														if(data.flag_reload){
+															onReload('');
 														}else{
-																					if(flag_offer_share){// изменить данное предложение
-																						$("#button_form_buy_sell"+data.parent_id+"").click();
-																						modal.modal('hide');
-																					}else{
-																						if(!data.flag_nomenclature && (data.flag_buy_sell==2) ){
-																								// создание/обновление номенклатуры от заявки
-																								webix.confirm({
-																									ok: "Создать", cancel:"Обновить",
-																									text: "Номенклатуру?",
-																									callback:function(result){
-																										if(result){
-																											$.post( "/save_nomenclature", form_serialize+"&buy_sell_id="+data.id+"&flag=insert" , 
-																												function(data){
-																														//
-																														if(data.ok){
-																															if(data.flag_reload){
-																																onReload('');
-																															}else{
-																																$('#div_mybs'+id+'').html(tr);
-																																modal.modal('hide');
-																																webix.message("Сохранено");
-																															}
-																														}else{
-																															webix.message({type:"error", text:"Нельзя сохранить"});
-																														}
-																													}
-																													);
-																										}else{
-																											$.post( "/save_nomenclature", form_serialize+"&buy_sell_id="+data.id+"&flag=update" , 
-																												function(data){
-																														//onReload('');
-																														if(data.ok){
-																															if(data.flag_reload){
-																																onReload('');
-																															}else{
-																																$('#div_mybs'+id+'').html(tr);
-																																modal.modal('hide');
-																																webix.message("Сохранено");
-																															}
-																														}else{
-																															webix.message({type:"error", text:"Нельзя сохранить"});
-																														}
-																													}
-																													);
-																										}
-																									}
-																								});
-																							}else{
-																									//onReload('');
-																									if(data.ok){
-																										if(data.flag_reload){
-																											onReload('');
-																										}else{
-																											$('#div_mybs'+id+'').html(tr);
-																											modal.modal('hide');
-																											webix.message("Сохранено");
-																										}
-																									}else{
-																										webix.message({type:"error", text:"Нельзя сохранить"});
-																									}
-																								}
-																							}
-																						}
+															$('#div_mybs'+id+'').html(tr);
+															modal.modal('hide');
+															webix.message("Сохранено");
+														}
+													}else{
+														webix.message({type:"error", text:"Нельзя сохранить"});
+													}
+												}
+											}
+										}
+									}
 
 
-																					}
-																					);
+						}
+					);
 
-													//webix.message(tr);
-													//webix.message("2");
-													
+							//webix.message(tr);
+							//webix.message("2");
+							
 
-												});
+				});
 
 
-}else{
-	webix.message({type:"error", text:data.code});
-	bv.disableSubmitButtons(false);
-}
+			}else{
+				webix.message({type:"error", text:data.code});
+				bv.disableSubmitButtons(false);
+			}
 
-if (bv.getInvalidFields().length > 0) {
-	bv.disableSubmitButtons(false);
-}
-}
-);
+			if (bv.getInvalidFields().length > 0) {
+				bv.disableSubmitButtons(false);
+			}
+		}
+	);
 
-return false;
+	return false;
 };
 
 
