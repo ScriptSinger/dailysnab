@@ -915,6 +915,7 @@
 		$one = false;
 		$in = fieldIn($p, array('id','login_id','phone','one','not_login_id','who1','who2','not_id',
 			'kol','flag','ipage','count_page','flag_account','value','company_id_md5','id_1c', 'skip'));
+        $in['id'] = abs($in['id']);
 
 		//$flag_account 	= (isset($p['flag_account']))? 	$p['flag_account'] 		: '';
 		//if(($flag_account)||($flag_account===0)){
