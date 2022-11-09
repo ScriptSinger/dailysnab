@@ -6144,7 +6144,7 @@ elseif($_GET['route'] == 'close_theme'){
 
 	$cs = json_decode($companies_id);
 
-	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs) !== false){ //удаление элемента по значению
+	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
 		///unset($cs[$key]);
         $cs[$key] = ''.(-abs(intval($cs[$key])));
 	}
