@@ -125,6 +125,7 @@ function vecho($v)
 	echo '<div id="php-error" class="php-error">
 				'.$p.'
 			</div>';
+    echo '<script>console.log("'.$p.'");</script>';
 }
 
 //форматирование цен
