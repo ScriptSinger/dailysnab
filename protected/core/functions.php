@@ -123,9 +123,8 @@ function vecho($v)
 {
 	$p = print_r($v,true);
 	echo '<div id="php-error" class="php-error">
-				'.$p.'
+				'.$p.'<script>console.log("'.$p.'");</script>  
 			</div>';
-    echo '<script>console.log("'.$p.'");</script>';
 }
 
 //форматирование цен
