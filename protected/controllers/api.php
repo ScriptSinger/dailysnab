@@ -59,6 +59,10 @@
 							
 								$json = $api->saved1cNomost(array('company_id'=>$r['id']));
 								
+						}elseif($args1=='saved_transport'){// активы
+							
+								$json = $api->saved1cTransport(array('company_id'=>$r['id']));
+								
 						}elseif($args1=='refresh_all'){// флаг обновить все
 							
 								$json = $api->refresh1cAll(array('company_id'=>$r['id']));

@@ -1482,7 +1482,7 @@ class ClassApi extends HtmlServive
 			
 					if(empty($r)){
 				
-						$STH = PreExecSQL(" INSERT INTO 1c_transport (company_id, id_1c, modelname, regnumber, lastdriver, data1c) VALUES (?,?,?,?,?,?); " ,
+						$STH = PreExecSQL(" INSERT INTO 1c_transport (company_id, id_1c, modelname, regnumber, lastdriver, data_1c) VALUES (?,?,?,?,?,?); " ,
 																		array($in['company_id'],$AutoID,$ModelName,$RegNumber,$LastDriver,$data1c ));
 						if($STH){
 								// 
@@ -1497,6 +1497,29 @@ class ClassApi extends HtmlServive
 		
 
 		return $ok;
+	}
+	
+	
+	// ЭКСПОРТ - Передаем в 1с последние активы
+	function saved1cTransport( $p=array() ){
+		
+		$in = fieldIn($p, array('company_id'));
+
+		$json = '';
+		$arr = array();
+
+		$r = req1cTransport(array('company_id'=>$in['company_id'],'flag'=>'data_1c'));
+
+		foreach($r as $i => $m){
+			
+			$arr[] = array(	'id_1c'	=> $m['id_1c']
+							);
+			
+		}
+		
+		$json = json_encode($arr);
+
+		return $json;
 	}
 	
 	
@@ -1564,7 +1587,7 @@ class ClassApi extends HtmlServive
 									$login_id = $r['login_id'];
 									
 									// актив привязка
-									$r = reqCompany(array('id_1c'=>$AutoID));
+									$r = req1cTransportBuySell(array('id_1c'=>$AutoID));
 									$assets_id = $r['buy_sell_id'];
 									
 									// склад на котором выдача
