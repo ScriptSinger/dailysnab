@@ -542,7 +542,7 @@
                 $cs = array_unique($companies_id_old, SORT_REGULAR);
             }
         }
-        return $cs;
+        return array_values($cs);
     }
     
     function removeCompaniesFromList ($cs, $the_company_id, $companies_to_remove) { // $cs объект-список компаний
