@@ -545,10 +545,11 @@ class HtmlTemplate extends HtmlServive
         $kol = 0;
         $in = fieldIn($p, array('stock_id', 'status_buy_sell_id'));
 
+		$in['stock_id'] = ($in['stock_id'])? $in['stock_id'] : 0;
+
         $row = reqNavTabsStock();
         foreach ($row as $i => $m) {
             if ($m['kol'] > 0) {
-				vecho($m);
                 $active = (($m['stock_id'] == $in['stock_id']) && ($m['sbs_id'] == $in['status_buy_sell_id'])) ? 'active' : '';
 
                 $li .= ' 	<li class="request-menu-item">
@@ -562,7 +563,7 @@ class HtmlTemplate extends HtmlServive
             }
 
         }
-        $active0 = ($in['stock_id']) ? '' : 'active';
+        $active0 = ($in['stock_id']==0&&$in['status_buy_sell_id']=='') ? 'active' : '';
 
         $code = '<div class="request-head">
 						<ul class="request-menu">
