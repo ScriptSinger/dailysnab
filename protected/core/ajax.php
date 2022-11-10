@@ -6144,19 +6144,17 @@ elseif($_GET['route'] == 'close_theme'){
     $company_name = reqChatCompanyName(COMPANY_ID);
     $messagetext    = $company_name. ' закрыл тему.';
 
-	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
+    $cs = removeCompaniesFromListIfBanned(array_merge(array(''.(-intval(COMPANY_ID))), $cs), COMPANY_ID, array()); // фильтр блокировок
+	foreach ($cs as $key => $value) { //скрытие всех элементов по значению
         $cs[$key] = ''.(-abs(intval($cs[$key])));
 	}
+    $STH1 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+        array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1)); // в сообщении компания отрицательная, значит уходит в архив
+//    $cs = removeCompaniesFromList($cs, COMPANY_ID, array(COMPANY_ID));
     $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=?, companies_id=? WHERE id=?" , 
         array(2,json_encode($cs),$folder_id));
-    $cs = removeCompaniesFromListIfBanned($cs, COMPANY_ID, array());
-	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
-        $cs[$key] = ''.(-abs(intval($cs[$key])));
-	}    
-    $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-        array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1));
     
-    if($STH && $STH2){
+    if($STH1 && $STH2){
         $ok = true;
         $code = 'Тема закрыта';
     }
@@ -6179,10 +6177,10 @@ elseif($_GET['route'] == 'out_of_theme'){
     $company_name = reqChatCompanyName(COMPANY_ID);
 	$messagetext 	= $company_name. ' вышел из темы.';
     
-	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
+    $cs = removeCompaniesFromListIfBanned(array_merge(array(''.(-intval(COMPANY_ID))), $cs), COMPANY_ID, array()); // фильтр блокировок
+	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //скрытие элемента по значению
         $cs[$key] = ''.(-abs(intval($cs[$key])));
 	}
-    $cs = removeCompaniesFromListIfBanned(array_merge(array(''.(-intval(COMPANY_ID))), $cs), COMPANY_ID, array());
     $STH1 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
         array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1)); // в сообщении компания отрицательная, значит уходит в архив
     $cs = removeCompaniesFromList($cs, COMPANY_ID, array(COMPANY_ID));
@@ -6264,15 +6262,12 @@ elseif($_GET['route'] == 'open_theme'){
     $company_name = reqChatCompanyName(COMPANY_ID);
 	$messagetext 	= $company_name. ' переоткрыл тему.';
 
-	if(($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
+	if(($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //показ элемента по значению
         $cs[$key] = ''.(abs(intval($cs[$key])));
     }
+    $cs = removeCompaniesFromListIfBanned(array_merge(array(''.(abs(intval(COMPANY_ID)))), $cs), COMPANY_ID, array());
     $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=?, companies_id=? WHERE id=?" , 
         array(0,json_encode($cs),$folder_id));
-    $cs = removeCompaniesFromListIfBanned($cs, COMPANY_ID, array());
-	if(($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
-        $cs[$key] = ''.(abs(intval($cs[$key])));
-    }    
     $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
         array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1));   
 
