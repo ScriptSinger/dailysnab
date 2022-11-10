@@ -6178,20 +6178,18 @@ elseif($_GET['route'] == 'out_of_theme'){
 	$cs = json_decode($companies_id);
     $company_name = reqChatCompanyName(COMPANY_ID);
 	$messagetext 	= $company_name. ' вышел из темы.';
-
+    
 	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
         $cs[$key] = ''.(-abs(intval($cs[$key])));
 	}
+    $cs = removeCompaniesFromListIfBanned($cs, COMPANY_ID, array());
+    $STH1 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+        array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1)); // в сообщении компания отрицательная, значит уходит в архив
+    $cs = removeCompaniesFromList($cs, COMPANY_ID, array(COMPANY_ID));
     $STH2 = PreExecSQL(" UPDATE tickets_folder SET companies_id=? WHERE id=?" , 
-        array(json_encode($cs),$folder_id));
-    $cs = removeCompanyFromListIfBanned($cs);
-	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
-        $cs[$key] = ''.(-abs(intval($cs[$key])));
-	}    
-    $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-        array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1));
+        array(json_encode($cs),$folder_id)); // 
 
-    if($STH && $STH2){
+    if($STH1 && $STH2){
 		$ok = true;
 	}
 
