@@ -539,7 +539,7 @@
                 $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
                 $cs = json_decode($companies_json);
             } else {
-                $cs = $companies_id_old;
+                $cs = array_unique($companies_id_old, SORT_REGULAR);
             }
         }
         return $cs;
@@ -549,7 +549,7 @@
         if (count($cs) >= 1 && count($companies_to_remove) >= 1) {
             foreach ($cs as $i => $x) {
                 foreach ($companies_to_remove as $j => $y) {
-                    if ($x == $y) {
+                    if (abs($x) == abs($y)) {
                         unset($cs[$i]);
                     }
                 }
