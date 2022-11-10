@@ -41050,7 +41050,7 @@
 				"Price": 10,
 				"NDS": 0,
 				"Quantity": 30,
-				"Brand": "Россия"
+				"Brand": ""
 			}
 		]
 	},
@@ -41509,7 +41509,7 @@
 				"Price": 151,
 				"NDS": 0,
 				"Quantity": 40,
-				"Brand": "Россия"
+				"Brand": ""
 			}
 		]
 	},
@@ -42529,7 +42529,7 @@
 				"Price": 9196,
 				"NDS": 0,
 				"Quantity": 8,
-				"Brand": "Без бренда (Другое, Прочее, No Brand)"
+				"Brand": "SPARK"
 			}
 		]
 	},
@@ -42597,7 +42597,75 @@
 				"Price": 20800,
 				"NDS": 0,
 				"Quantity": 2,
-				"Brand": "—"
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"DocID": "10442ba9-60ed-11ed-8dbb-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "596bda1c-783b-11ec-80c5-000c292c2d55",
+		"Date": "2022-11-09T00:00:00",
+		"IncomeUPD": "",
+		"Goods": [
+			{
+				"NomID": "64540f56-6cbd-11ec-80dd-000c2999d0eb",
+				"Price": 20800,
+				"NDS": 0,
+				"Quantity": 2,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"DocID": "648d9f41-60ef-11ed-8dbb-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "335fdb9c-dbf2-11ec-80e6-000c2999d0eb",
+		"Date": "2022-11-08T15:48:20",
+		"IncomeUPD": "10047264",
+		"Goods": [
+			{
+				"NomID": "dfe0b8cf-608a-11ed-8dbb-0cc47a03c9dc",
+				"Price": 49.69,
+				"NDS": 0,
+				"Quantity": 2,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"DocID": "648d9f54-60ef-11ed-8dbb-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "335fdb9c-dbf2-11ec-80e6-000c2999d0eb",
+		"Date": "2022-11-08T15:48:44",
+		"IncomeUPD": "10047266",
+		"Goods": [
+			{
+				"NomID": "dfe0b8cf-608a-11ed-8dbb-0cc47a03c9dc",
+				"Price": 86.94,
+				"NDS": 0,
+				"Quantity": 7,
+				"Brand": ""
+			}
+		]
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"DocID": "648d9fd5-60ef-11ed-8dbb-0cc47a03c9dc",
+		"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
+		"ContractorID": "335fdb9c-dbf2-11ec-80e6-000c2999d0eb",
+		"Date": "2022-11-08T15:48:57",
+		"IncomeUPD": "10047268",
+		"Goods": [
+			{
+				"NomID": "dfe0b8cf-608a-11ed-8dbb-0cc47a03c9dc",
+				"Price": 49.69,
+				"NDS": 0,
+				"Quantity": 11,
+				"Brand": ""
 			}
 		]
 	}

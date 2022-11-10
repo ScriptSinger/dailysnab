@@ -9,7 +9,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "2e43a656-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 19
+		"Quantity": 20
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -97,6 +97,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "dce391ad-6cbd-11ec-80dd-000c2999d0eb",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 15
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "a7bd8813-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 6
@@ -129,7 +135,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "1437f5e5-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 3
+		"Quantity": 2
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -1219,6 +1225,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "c5b2abac-5460-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "a9fce965-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "aa57cab4-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 1
@@ -1288,6 +1300,12 @@
 		"NomID": "1d5dd419-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 49
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "9ac1888b-6cbd-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -2077,6 +2095,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "040862ff-60c6-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 5
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "a57e9239-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 2
@@ -2271,7 +2295,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "7e7a23e4-6934-11ec-80dd-000c2999d0eb",
 		"WhID": "6a463980-6f8e-11ec-80c1-000c292c2d55",
-		"Quantity": 291.07
+		"Quantity": 248.65
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -2349,7 +2373,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "9ac18853-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 38
+		"Quantity": 39
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -2631,7 +2655,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "a56e0a28-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 1
+		"Quantity": 4
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -3051,7 +3075,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "d35f8843-aea2-11ec-80cc-000c292c2d55",
 		"WhID": "a9fce947-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 3
+		"Quantity": 5
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -3219,7 +3243,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "1fc2694c-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 74.5
+		"Quantity": 83.5
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -3447,7 +3471,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "adb5c9ab-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 6
+		"Quantity": 7
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -3622,6 +3646,12 @@
 		"NomID": "9377d1a1-3efc-11ed-8db7-0cc47a03c9dc",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 2
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "b4b48de9-60d4-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -3945,13 +3975,13 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "4fc739ae-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 4.7
+		"Quantity": 5.2
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "4cfb0352-8104-11ec-80c5-000c292c2d55",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 13
+		"Quantity": 14
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -3987,7 +4017,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "c5b2abac-5460-11ed-8dbb-0cc47a03c9dc",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 10
+		"Quantity": 9
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -4179,7 +4209,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "97bb5f7d-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce973-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 4703.95
+		"Quantity": 4603.3
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -4197,7 +4227,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "9246f2a3-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce965-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 125
+		"Quantity": 165
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -4707,7 +4737,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "fae67f9f-4aec-11ed-8db7-0cc47a03c9dc",
 		"WhID": "6a46396e-6f8e-11ec-80c1-000c292c2d55",
-		"Quantity": 9
+		"Quantity": 10
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -5125,6 +5155,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "122274b5-60c7-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "5f95b1a4-2536-11ed-8db7-0cc47a03c9dc",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "277e2e50-9fa0-11ec-80c9-000c292c2d55",
 		"WhID": "e66dc0d9-9632-11ec-80c9-000c292c2d55",
 		"Quantity": 2
@@ -5257,6 +5293,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "0570e154-6cbf-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce949-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 2
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "1711bbcf-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce94d-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 10
@@ -5347,6 +5389,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "9f7f295a-6cbf-11ec-80dd-000c2999d0eb",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "a57e9211-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 3
@@ -5392,6 +5440,12 @@
 		"NomID": "e4d5f164-2ce0-11ed-8db7-0cc47a03c9dc",
 		"WhID": "a9fce987-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 3
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "0c7c5456-60ba-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "5f95b1a4-2536-11ed-8db7-0cc47a03c9dc",
+		"Quantity": 37
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -5445,7 +5499,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "0570e133-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce947-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 4
+		"Quantity": 5
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -5691,7 +5745,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "43f489be-4dd8-11ed-8dba-0cc47a03c9dc",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 461
+		"Quantity": 486
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -5721,7 +5775,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "1112534f-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 941.84
+		"Quantity": 945.84
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -5835,7 +5889,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "31b4b871-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "7044482b-6f8e-11ec-80c1-000c292c2d55",
-		"Quantity": 8
+		"Quantity": 12
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -5865,6 +5919,12 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "d23fb930-284b-11ed-8db7-0cc47a03c9dc",
 		"WhID": "a9fce991-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "940cdb6b-60d1-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 1
 	},
 	{
@@ -6483,7 +6543,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "1112534f-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce949-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 63
+		"Quantity": 69
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -6907,6 +6967,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "f040c8bf-60d8-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "5f95b1a4-2536-11ed-8db7-0cc47a03c9dc",
+		"Quantity": 4
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "87710148-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce97b-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 2
@@ -6933,7 +6999,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "837729fc-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 6
+		"Quantity": 9
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -7017,6 +7083,12 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "9f6c4152-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "0570e150-6cbf-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce949-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
 	},
 	{
@@ -7167,6 +7239,12 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "359154e3-2ab9-11ed-8db7-0cc47a03c9dc",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "27e0bc3e-60b3-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
 		"Quantity": 1
 	},
 	{
@@ -7441,6 +7519,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "f96ae872-6cbe-11ec-80dd-000c2999d0eb",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "3b096c95-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 2
@@ -7552,6 +7636,12 @@
 		"NomID": "e9b70b8b-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "cdd10b9b-60d9-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "a9fce965-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 10
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -7933,6 +8023,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "e2ba5c02-60bd-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "d45d31fa-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 2
@@ -8013,6 +8109,12 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "0570e13b-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "9bb9f160-6cc8-11ec-80dd-000c2999d0eb",
+		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
 		"Quantity": 1
 	},
 	{
@@ -8331,7 +8433,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "e7763740-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 12
+		"Quantity": 13
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -9799,6 +9901,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "5b7d01f4-6022-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
+		"Quantity": 2
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "d50c0f0e-9fa1-11ec-80c9-000c292c2d55",
 		"WhID": "e66dc0d9-9632-11ec-80c9-000c292c2d55",
 		"Quantity": 58
@@ -9969,6 +10077,12 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "06b925f1-309c-11ed-8db7-0cc47a03c9dc",
 		"WhID": "a9fce949-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "1c1ac2ac-60c5-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
 	},
 	{
@@ -10629,7 +10743,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "3304a42b-5383-11ed-8dbb-0cc47a03c9dc",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 2734
+		"Quantity": 2714
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -10795,6 +10909,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "5269bfb5-60c3-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "3a42787f-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 25
@@ -10899,7 +11019,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "94e85090-a8e2-11ec-80cc-000c292c2d55",
 		"WhID": "a9fce965-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 48
+		"Quantity": 53
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -11413,6 +11533,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "d8910b29-60b9-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "5f95b1a4-2536-11ed-8db7-0cc47a03c9dc",
+		"Quantity": 37
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "9246f2e3-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 3
@@ -11475,7 +11601,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "175e6e2b-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce977-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 4
+		"Quantity": 14
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -11715,7 +11841,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "da5c9ac2-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 17
+		"Quantity": 13
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -11901,7 +12027,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "ef59019e-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce965-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 1
+		"Quantity": 3
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -11955,7 +12081,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "d35f8843-aea2-11ec-80cc-000c292c2d55",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 293
+		"Quantity": 291
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -12657,7 +12783,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "c5b10ab4-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 42.5
+		"Quantity": 62.5
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -12843,7 +12969,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "4f37da26-b9bc-11ec-80e4-000c2999d0eb",
 		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
-		"Quantity": 10
+		"Quantity": 16
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -13695,7 +13821,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "7727a435-4b53-11ed-8db7-0cc47a03c9dc",
 		"WhID": "a9fce947-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 1
+		"Quantity": 2
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -14067,7 +14193,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "0570e141-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 14
+		"Quantity": 13
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -14199,7 +14325,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "4cfb0352-8104-11ec-80c5-000c292c2d55",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 26
+		"Quantity": 25
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -14361,7 +14487,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "f36b7fbe-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 39
+		"Quantity": 41
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -14985,7 +15111,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "0c1d7ed7-600f-11ed-8dbb-0cc47a03c9dc",
 		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 3
+		"Quantity": 4
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -15063,7 +15189,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "7e7a23e4-6934-11ec-80dd-000c2999d0eb",
 		"WhID": "08dea779-8655-11ec-80c6-000c292c2d55",
-		"Quantity": 145.62
+		"Quantity": 110.55
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -15147,7 +15273,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "9ac1888b-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 5
+		"Quantity": 4
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -15363,7 +15489,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "6e450cdf-6021-11ed-8dbb-0cc47a03c9dc",
 		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
-		"Quantity": 4
+		"Quantity": 10
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -15547,6 +15673,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "a48550f7-5fc1-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "28443de3-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 2
@@ -15567,7 +15699,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "f96ae86c-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 4
+		"Quantity": 5
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -15643,6 +15775,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "2c97b792-6cb9-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce943-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 6
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "c8599be3-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 1
@@ -15657,7 +15795,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "a6cea85c-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 5
+		"Quantity": 6
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -15927,7 +16065,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "9ac18853-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 57
+		"Quantity": 55
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -16089,6 +16227,12 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "c9012573-edd0-11ec-8da3-000c295de724",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "563e3912-4aeb-11ed-8db7-0cc47a03c9dc",
+		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
 	},
 	{
@@ -16473,6 +16617,12 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "7396e0ad-1b9a-11ed-8db6-0cc47a03c9dc",
 		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 2
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "e028b882-60b2-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
 		"Quantity": 2
 	},
 	{
@@ -17317,6 +17467,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "c671d88f-60d5-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "5f95b1a4-2536-11ed-8db7-0cc47a03c9dc",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "9246f2a3-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 20
@@ -17487,7 +17643,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "b7736c12-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 110
+		"Quantity": 108
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -17553,7 +17709,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "da5c9adc-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 4
+		"Quantity": 14
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -17649,7 +17805,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "344a3696-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 1
+		"Quantity": 3
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -18081,7 +18237,13 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "8ebb369d-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 43
+		"Quantity": 41
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "572244b4-6cbe-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -18130,6 +18292,12 @@
 		"NomID": "f96ae893-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "1d0ec356-6cc8-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce973-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": -47.3
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -18535,6 +18703,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "f96ae86c-6cbe-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce949-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 2
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "ff6cb39a-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 1
@@ -18873,7 +19047,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "dce391ce-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 42
+		"Quantity": 43
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -18975,7 +19149,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "f36b7f8e-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 50
+		"Quantity": 51
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -19161,7 +19335,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "0570e154-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 5
+		"Quantity": 6
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -19180,6 +19354,12 @@
 		"NomID": "a1b6f8bf-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce985-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": -2
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "ddb1104b-6cc8-11ec-80dd-000c2999d0eb",
+		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
+		"Quantity": 8
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -19258,6 +19438,12 @@
 		"NomID": "585078c9-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 2
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "cae094db-6cbd-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -19425,7 +19611,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "49c30c6a-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce973-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 20579.75
+		"Quantity": 21324.3
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -19725,7 +19911,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "87710130-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 33
+		"Quantity": 31
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -19839,7 +20025,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "dce391ce-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 21
+		"Quantity": 20
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -19971,7 +20157,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "1d5dd41f-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 3487
+		"Quantity": 3477
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -20007,7 +20193,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "1711bc06-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 14
+		"Quantity": 13
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -20659,6 +20845,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "087775a7-60d9-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "5f95b1a4-2536-11ed-8db7-0cc47a03c9dc",
+		"Quantity": 30
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "a672491e-a9f3-11ec-80cc-000c292c2d55",
 		"WhID": "a9fce94f-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
@@ -20823,7 +21015,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "fae67f9f-4aec-11ed-8db7-0cc47a03c9dc",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 3410
+		"Quantity": 3399
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -21183,7 +21375,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "2695ebfd-6cb9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce943-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 9
+		"Quantity": 15
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -21369,7 +21561,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "b171a0a8-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 23
+		"Quantity": 21
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -21397,6 +21589,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "b699353b-14be-11ed-8db6-0cc47a03c9dc",
+		"WhID": "a9fce977-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 10
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "f36b7fa4-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 2
@@ -21418,6 +21616,12 @@
 		"NomID": "73b56089-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce969-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 22
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "3304a42b-5383-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "a9fce949-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 20
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -22119,7 +22323,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "c3749fec-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 29
+		"Quantity": 28
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -22179,6 +22383,12 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "c2bcc6e7-49e4-11ed-8db7-0cc47a03c9dc",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "b6087d0c-60c3-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
 	},
 	{
@@ -22449,7 +22659,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "da5c9adc-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 124
+		"Quantity": 114
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -22701,13 +22911,19 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "563e3912-4aeb-11ed-8db7-0cc47a03c9dc",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 22
+		"Quantity": 21
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "098ae215-4f64-11ed-8dba-0cc47a03c9dc",
 		"WhID": "a9fce991-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 8
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "6ed58cee-60d9-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 1
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -23013,7 +23229,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "4d0c6bb9-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "7044482b-6f8e-11ec-80c1-000c292c2d55",
-		"Quantity": 2
+		"Quantity": 3
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -23175,7 +23391,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "b171a08a-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 2
+		"Quantity": 1
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -23289,7 +23505,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "a6cea82a-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 31
+		"Quantity": 32
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -24591,7 +24807,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "1163c736-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 28
+		"Quantity": 27
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -24795,7 +25011,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "0570e15a-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 36
+		"Quantity": 37
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -24909,7 +25125,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "97bb5f79-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce973-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 3945.41
+		"Quantity": 3642.71
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -24928,6 +25144,12 @@
 		"NomID": "7fb6967b-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "d55c2bdb-60d9-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "7044482b-6f8e-11ec-80c1-000c292c2d55",
+		"Quantity": 2
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -25077,7 +25299,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "4fc739ae-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 32.3
+		"Quantity": 31.8
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -25233,7 +25455,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "3195e466-5b5c-11ed-8dbb-0cc47a03c9dc",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 2
+		"Quantity": 10
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -25407,7 +25629,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "0570e113-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 16
+		"Quantity": 14
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -25611,7 +25833,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "83772a00-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 4
+		"Quantity": 6
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -25695,7 +25917,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "f2616590-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 48
+		"Quantity": 49
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -25807,6 +26029,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "2e2ccd4d-60ae-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
+		"Quantity": 8
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "e544ddca-723c-11ec-80c1-000c292c2d55",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 1
@@ -25821,7 +26049,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "87710130-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 25
+		"Quantity": 27
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -25893,7 +26121,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "df28ac10-b98c-11ec-80e4-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 1
+		"Quantity": 2
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -26109,7 +26337,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "f96ae883-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce947-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 4
+		"Quantity": 5
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -26139,7 +26367,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "49c30c49-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 40
+		"Quantity": 38
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -26581,6 +26809,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "b8d66c22-6cbd-11ec-80dd-000c2999d0eb",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 5
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "757c4c97-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 19
@@ -26961,7 +27195,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "2e43a656-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 54
+		"Quantity": 53
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -27825,7 +28059,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "dce391dd-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 19
+		"Quantity": 15
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -28173,7 +28407,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "2695ec32-6cb9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 34
+		"Quantity": 35
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -28425,7 +28659,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "0570e150-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 144
+		"Quantity": 143
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -28639,6 +28873,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "31b4b898-6cc9-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 3
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "67c27aca-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
 		"Quantity": 4
@@ -28671,7 +28911,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "a6cea85c-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 8
+		"Quantity": 7
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -28809,7 +29049,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "49c30c49-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce977-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 6
+		"Quantity": 8
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -28929,7 +29169,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "f1577533-f615-11ec-8da8-000c295de724",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 1
+		"Quantity": 2
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -29563,6 +29803,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "b3b5329c-6cc8-11ec-80dd-000c2999d0eb",
+		"WhID": "7044482b-6f8e-11ec-80c1-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "54c7fa66-ccfa-11ec-80e4-000c2999d0eb",
 		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
@@ -30091,6 +30337,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "b171a08a-6cbe-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "2bb7b2b5-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce987-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 4
@@ -30429,7 +30681,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "1d5dd423-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce947-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 30
+		"Quantity": 40
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -30835,12 +31087,6 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
-		"NomID": "b699353b-14be-11ed-8db6-0cc47a03c9dc",
-		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 10
-	},
-	{
-		"data1c": "2022-11-10T00:00:00",
 		"NomID": "eb219ce5-2ce6-11ed-8db7-0cc47a03c9dc",
 		"WhID": "a9fce987-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 2
@@ -30867,7 +31113,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "b7736c12-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 36
+		"Quantity": 38
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -31065,7 +31311,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "f96ae885-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 85
+		"Quantity": 87
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -31143,7 +31389,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "2695ec32-6cb9-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 111
+		"Quantity": 110
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -31363,6 +31609,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "91be58b1-6cc9-11ec-80dd-000c2999d0eb",
+		"WhID": "7044482b-6f8e-11ec-80c1-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "86e5dcfc-dd9b-11ec-80e6-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 3
@@ -31401,7 +31653,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "2c97b798-6cb9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce943-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 74
+		"Quantity": 78
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -31797,7 +32049,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "9246f2a2-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 388
+		"Quantity": 378
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -32137,6 +32389,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "0cc2af24-60b4-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
+		"Quantity": 2
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "a0ccdd6a-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 14
@@ -32355,6 +32613,12 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "d49fc4ea-17c5-11ed-8db6-0cc47a03c9dc",
 		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "cd04c044-3a35-11ed-8db7-0cc47a03c9dc",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 1
 	},
 	{
@@ -32617,12 +32881,6 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
-		"NomID": "a6cea82a-6cbd-11ec-80dd-000c2999d0eb",
-		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 1
-	},
-	{
-		"data1c": "2022-11-10T00:00:00",
 		"NomID": "350c65d7-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
 		"Quantity": 2
@@ -32877,7 +33135,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "c3749fec-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 46
+		"Quantity": 47
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -33063,7 +33321,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "11125353-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 235
+		"Quantity": 238
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -33093,7 +33351,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "175e6e2b-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 750
+		"Quantity": 721
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -33333,7 +33591,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "d7b8ce7c-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce965-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 18
+		"Quantity": 19
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -33399,7 +33657,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "ed734055-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 41
+		"Quantity": 39
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -33807,12 +34065,6 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "7d755e72-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce987-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 1
-	},
-	{
-		"data1c": "2022-11-10T00:00:00",
-		"NomID": "d7b8ce7c-6cc8-11ec-80dd-000c2999d0eb",
-		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 1
 	},
 	{
@@ -34347,12 +34599,6 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "a7bd87ef-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "7841dd07-8f22-11ec-80c9-000c292c2d55",
-		"Quantity": 1
-	},
-	{
-		"data1c": "2022-11-10T00:00:00",
-		"NomID": "adb5c9c7-6cc8-11ec-80dd-000c2999d0eb",
-		"WhID": "6a46396a-6f8e-11ec-80c1-000c292c2d55",
 		"Quantity": 1
 	},
 	{
@@ -35481,7 +35727,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "b171a0a6-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 29
+		"Quantity": 28
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -35649,7 +35895,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "1163c736-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 5
+		"Quantity": 6
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -35824,6 +36070,12 @@
 		"NomID": "203b8c68-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 2
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "572244b6-6cbe-11ec-80dd-000c2999d0eb",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 20
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -36427,6 +36679,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "b05bf8dd-6cbc-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce947-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "404445ab-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 2
@@ -36453,7 +36711,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "0570e154-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 390
+		"Quantity": 387
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -36565,6 +36823,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "d1072bae-60c6-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "5f95b1a4-2536-11ed-8db7-0cc47a03c9dc",
+		"Quantity": 2
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "9a75ddd1-a9f3-11ec-80cc-000c292c2d55",
 		"WhID": "a9fce94f-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
@@ -36585,7 +36849,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "49c30c51-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce947-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 26
+		"Quantity": 29
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -36895,6 +37159,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "64540f56-6cbd-11ec-80dd-000c2999d0eb",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 2
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "88495d30-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 2
@@ -36963,7 +37233,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "e7763740-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 26
+		"Quantity": 25
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -37627,6 +37897,18 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "1d0ec34b-6cc8-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce973-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1.5
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "d8e144c8-5f4a-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "a9fce991-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "b3b532bd-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "70444823-6f8e-11ec-80c1-000c292c2d55",
 		"Quantity": 7
@@ -37660,12 +37942,6 @@
 		"NomID": "c7fa202a-22d0-11ed-8db6-0cc47a03c9dc",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 2
-	},
-	{
-		"data1c": "2022-11-10T00:00:00",
-		"NomID": "d8e144c8-5f4a-11ed-8dbb-0cc47a03c9dc",
-		"WhID": "a9fce991-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 1
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -38001,7 +38277,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "3b66cbf1-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce965-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 6
+		"Quantity": 10
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -38037,7 +38313,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "dce391dd-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 9
+		"Quantity": 13
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -38323,6 +38599,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "9f7f2951-6cbf-11ec-80dd-000c2999d0eb",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 8
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "652dd280-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
@@ -38511,7 +38793,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "f96ae86c-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 18
+		"Quantity": 15
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -38607,7 +38889,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "c3749fe6-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 9
+		"Quantity": 8
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -38662,6 +38944,12 @@
 		"NomID": "8d6721b5-590b-11ed-8dbb-0cc47a03c9dc",
 		"WhID": "5f95b1a4-2536-11ed-8db7-0cc47a03c9dc",
 		"Quantity": 12.48
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "cccbca47-60da-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 16
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -39021,7 +39309,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "da5c9ac2-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 29
+		"Quantity": 33
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -39052,6 +39340,12 @@
 		"NomID": "fbc28c15-2dd4-11ed-8db7-0cc47a03c9dc",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 50
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "4a7c0c50-60c6-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -39187,6 +39481,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "480b4b9b-60ad-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
+		"Quantity": 3
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "43af70a8-a691-11ec-80cc-000c292c2d55",
 		"WhID": "a9fce985-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 5
@@ -39201,7 +39501,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "f860cf3b-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce947-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 3
+		"Quantity": 5
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -39321,7 +39621,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "7cf04fc9-600d-11ed-8dbb-0cc47a03c9dc",
 		"WhID": "7044482b-6f8e-11ec-80c1-000c292c2d55",
-		"Quantity": 5
+		"Quantity": 11
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -39435,7 +39735,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "8ebb369d-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 29
+		"Quantity": 31
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -39723,7 +40023,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "bd72d4a0-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 80
+		"Quantity": 78
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -39981,7 +40281,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "b05bf8dd-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 35
+		"Quantity": 34
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -40473,7 +40773,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "49c30c51-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 203
+		"Quantity": 171
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -40761,12 +41061,18 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "f860cf3b-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 291
+		"Quantity": 289
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "88495d29-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce985-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "0570e13d-6cbf-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce949-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
 	},
 	{
@@ -41115,7 +41421,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "585078c1-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 5
+		"Quantity": 4
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -41200,6 +41506,12 @@
 		"NomID": "2bb7b2bd-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce973-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 22
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "fb8f2154-60be-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
+		"Quantity": 1
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -41398,6 +41710,12 @@
 		"NomID": "7c2537cc-6015-11ed-8dbb-0cc47a03c9dc",
 		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "9cb40284-60d0-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "5f95b1a4-2536-11ed-8db7-0cc47a03c9dc",
+		"Quantity": 60
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -42261,7 +42579,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "ff6cb3ad-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 172
+		"Quantity": 174
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -42595,6 +42913,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "5c0e1d1c-60ba-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "5f95b1a4-2536-11ed-8db7-0cc47a03c9dc",
+		"Quantity": 20
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "8771014a-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 3
@@ -42651,7 +42975,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "175e6e2b-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce965-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 2
+		"Quantity": 12
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -42664,6 +42988,12 @@
 		"NomID": "7d755e8c-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "70444829-6f8e-11ec-80c1-000c292c2d55",
 		"Quantity": 42
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "d7b8ce75-6cc8-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 2
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -43035,7 +43365,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "97bb5f7b-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce973-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 19238.785
+		"Quantity": 19460.285
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -43215,7 +43545,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "4e565507-6934-11ec-80dd-000c2999d0eb",
 		"WhID": "6a4639c2-6f8e-11ec-80c1-000c292c2d55",
-		"Quantity": 2666.47
+		"Quantity": 1173.82
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -43402,6 +43732,12 @@
 		"NomID": "d45d3220-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 21
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "ed73408f-6cbe-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -44493,7 +44829,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "572244b2-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 8
+		"Quantity": 27
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -44566,6 +44902,12 @@
 		"NomID": "e5e467da-4b9d-11ed-8db8-0cc47a03c9dc",
 		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 2
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "e7d42028-60d0-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -44673,6 +45015,12 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "85b85fad-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 2
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "cb11b3d8-60b1-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "7044482b-6f8e-11ec-80c1-000c292c2d55",
 		"Quantity": 2
 	},
 	{
@@ -44830,6 +45178,12 @@
 		"NomID": "7c8f16a3-55b7-11ed-8dbb-0cc47a03c9dc",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "a3a2f87a-5fc1-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 6
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -45015,7 +45369,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "bb82cfe7-6021-11ed-8dbb-0cc47a03c9dc",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 9
+		"Quantity": 20
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -45253,6 +45607,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "290ff6a4-6cc8-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "2f13a418-a854-11ec-80cc-000c292c2d55",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 5
@@ -45435,7 +45795,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "074bd0f5-a788-11ec-80cc-000c292c2d55",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 2
+		"Quantity": 1
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -45693,7 +46053,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "b522c85e-e581-11ec-8da2-000c295de724",
 		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 2
+		"Quantity": 4
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -45741,6 +46101,12 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "bdadffcd-f436-11ec-8da8-000c295de724",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "5616d8c1-60d5-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "7044482b-6f8e-11ec-80c1-000c292c2d55",
 		"Quantity": 1
 	},
 	{
@@ -45844,6 +46210,12 @@
 		"NomID": "c5b10ad9-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 9
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "07c72847-6cc9-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 20
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -46311,7 +46683,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "705a0831-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 199
+		"Quantity": 203
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -46324,6 +46696,12 @@
 		"NomID": "2317b509-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "8f38364b-72a7-11ec-80c3-000c292c2d55",
 		"Quantity": 7
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "07c72842-6cc9-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 25
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -46342,6 +46720,12 @@
 		"NomID": "6dbd1ee0-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
 		"Quantity": 6
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "cd04c00c-3a35-11ed-8db7-0cc47a03c9dc",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 1
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -46821,7 +47205,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "b3b53291-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
-		"Quantity": 3
+		"Quantity": 4
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -47673,7 +48057,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "dce391dc-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 67
+		"Quantity": 63
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -48205,6 +48589,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "4c4358fa-6cbd-11ec-80dd-000c2999d0eb",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 7
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "9bb9f157-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "6a463968-6f8e-11ec-80c1-000c292c2d55",
 		"Quantity": 1
@@ -48226,6 +48616,12 @@
 		"NomID": "19c7c527-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 0.024
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "91be588c-6cc9-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce977-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -48333,7 +48729,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "91be588c-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 8
+		"Quantity": 7
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -48681,7 +49077,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "7e7a23e4-6934-11ec-80dd-000c2999d0eb",
 		"WhID": "6a463976-6f8e-11ec-80c1-000c292c2d55",
-		"Quantity": 9763.29
+		"Quantity": 9071.96
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -48975,7 +49371,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "0570e133-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 43
+		"Quantity": 40
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -49317,7 +49713,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "0570e117-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 49
+		"Quantity": 47
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -49437,7 +49833,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "81765a7e-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 3
+		"Quantity": 4
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -49711,6 +50107,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "cd04bfe6-3a35-11ed-8db7-0cc47a03c9dc",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "1775e930-53f8-11ed-8dbb-0cc47a03c9dc",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 7
@@ -49791,7 +50193,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "f36b7fbe-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce947-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 5
+		"Quantity": 6
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -49864,6 +50266,12 @@
 		"NomID": "996a7508-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 5
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "f96ae851-6cbe-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce949-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -50043,7 +50451,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "94e85090-a8e2-11ec-80cc-000c292c2d55",
 		"WhID": "a9fce947-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 129
+		"Quantity": 172
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -50847,7 +51255,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "705a0831-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 182
+		"Quantity": 178
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -51007,6 +51415,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "ca08acc5-60b3-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
+		"Quantity": 2
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "277e2e5b-9fa0-11ec-80c9-000c292c2d55",
 		"WhID": "e66dc0d9-9632-11ec-80c9-000c292c2d55",
 		"Quantity": 1
@@ -51124,6 +51538,12 @@
 		"NomID": "40444583-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 2
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "652dd261-6cc8-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 50
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -51261,7 +51681,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "01af731b-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 10
+		"Quantity": 12
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -51375,7 +51795,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "11125353-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "4dc08b56-6d51-11ec-80bf-000c292c2d55",
-		"Quantity": 1266.34
+		"Quantity": 1263.34
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -51429,7 +51849,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "ed734055-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce947-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 6
+		"Quantity": 8
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -51771,7 +52191,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "a6cea826-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 3
+		"Quantity": 4
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -51945,7 +52365,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "3dc1d823-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "6a46396a-6f8e-11ec-80c1-000c292c2d55",
-		"Quantity": 3
+		"Quantity": 2
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -52027,12 +52447,6 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
-		"NomID": "20f3041d-1215-11ed-8db6-0cc47a03c9dc",
-		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 1
-	},
-	{
-		"data1c": "2022-11-10T00:00:00",
 		"NomID": "2695ec04-6cb9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce943-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 8
@@ -52053,7 +52467,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "ed734091-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 22
+		"Quantity": 21
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -52579,6 +52993,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "6c344a36-60c5-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 3
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "e4bbf3af-7231-11ec-80c1-000c292c2d55",
 		"WhID": "a9fce97b-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 200
@@ -52815,7 +53235,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "0570e13d-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 2
+		"Quantity": 3
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -53247,7 +53667,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "da5c9aef-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 7
+		"Quantity": 1
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -53409,7 +53829,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "175e6e2b-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 246
+		"Quantity": 255
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -53481,7 +53901,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "1d5dd423-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 184
+		"Quantity": 174
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -53794,6 +54214,12 @@
 		"NomID": "4a07a667-fd02-11ec-8db2-0cc47a03c9dc",
 		"WhID": "a9fce987-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 5
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "f511d358-60bb-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
+		"Quantity": 10
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -54205,6 +54631,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "cd04bfc0-3a35-11ed-8db7-0cc47a03c9dc",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "1646f850-7239-11ec-80c1-000c292c2d55",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 1
@@ -54285,7 +54717,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "ef59019e-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 2
+		"Quantity": 18
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -55183,6 +55615,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "18926f3f-60d2-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 2
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "28443dc1-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 14
@@ -55288,6 +55726,12 @@
 		"NomID": "51af9f66-accd-11ec-80cc-000c292c2d55",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 2
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "2f6cbf93-6cbf-11ec-80dd-000c2999d0eb",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 30
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -55809,7 +56253,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "a6cea86b-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 5
+		"Quantity": 12
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -56577,7 +57021,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "c3749fc1-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 16
+		"Quantity": 56
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -56602,6 +57046,12 @@
 		"NomID": "30dba9a4-2dd5-11ed-8db7-0cc47a03c9dc",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 90
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "cd04c01f-3a35-11ed-8db7-0cc47a03c9dc",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 1
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -56668,6 +57118,12 @@
 		"NomID": "43f489be-4dd8-11ed-8dba-0cc47a03c9dc",
 		"WhID": "a9fce947-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 260
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "04e4fe5f-60bd-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
+		"Quantity": 1
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -56893,6 +57349,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "cd04bff9-3a35-11ed-8db7-0cc47a03c9dc",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "56d12c7d-907e-11ec-80c9-000c292c2d55",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 10
@@ -56980,6 +57442,12 @@
 		"NomID": "b9bbc2ba-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "70444823-6f8e-11ec-80c1-000c292c2d55",
 		"Quantity": 2
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "39ed27d0-60db-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 16
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -57117,7 +57585,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "1112534f-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce961-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 53.67
+		"Quantity": 61.73
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -57159,7 +57627,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "8249f470-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 33
+		"Quantity": 32
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -57194,6 +57662,12 @@
 	{
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "bdadffcd-f436-11ec-8da8-000c295de724",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 4
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "cd04bfad-3a35-11ed-8db7-0cc47a03c9dc",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 1
 	},
@@ -57351,7 +57825,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "dce391d0-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 67
+		"Quantity": 63
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -57440,12 +57914,6 @@
 	{
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "d6e42918-6cbd-11ec-80dd-000c2999d0eb",
-		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 1
-	},
-	{
-		"data1c": "2022-11-10T00:00:00",
-		"NomID": "572244b4-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 1
 	},
@@ -57603,7 +58071,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "1fc2694c-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 93.5
+		"Quantity": 84.5
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -57681,7 +58149,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "81765a7e-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 15
+		"Quantity": 14
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -57843,7 +58311,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "dce391dc-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 9
+		"Quantity": 13
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -58197,7 +58665,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "9246f2a2-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce965-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 20
+		"Quantity": 30
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -58347,7 +58815,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "8669b6b6-0bf8-11ed-8db5-0cc47a03c9dc",
 		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
-		"Quantity": 4
+		"Quantity": 6
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -58376,6 +58844,12 @@
 	{
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "f96ae884-6cbe-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "0570e156-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
 	},
@@ -58683,7 +59157,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "dce391d0-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 46
+		"Quantity": 50
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -58797,7 +59271,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "b171a09f-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 13
+		"Quantity": 12
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -58905,7 +59379,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "c3749fe6-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 6
+		"Quantity": 7
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -59523,7 +59997,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "203b8c6e-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 2
+		"Quantity": 1
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -59595,7 +60069,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "07c72854-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce973-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": -4938.37
+		"Quantity": -4998.1
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -59823,7 +60297,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "bd72d4a0-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 9
+		"Quantity": 11
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -60639,7 +61113,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "9e48297b-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 20
+		"Quantity": 19
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -60663,6 +61137,12 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "69e78c84-6019-11ed-8dbb-0cc47a03c9dc",
 		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "6b210bf9-60bc-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
 		"Quantity": 1
 	},
 	{
@@ -61239,7 +61719,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "94e85090-a8e2-11ec-80cc-000c292c2d55",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 293
+		"Quantity": 336
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -61263,6 +61743,12 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "25bf6fcf-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "70444823-6f8e-11ec-80c1-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "a840c2bc-60ed-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
 	},
 	{
@@ -61395,7 +61881,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "43f489be-4dd8-11ed-8dba-0cc47a03c9dc",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 829
+		"Quantity": 709
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -61611,7 +62097,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "4e565507-6934-11ec-80dd-000c2999d0eb",
 		"WhID": "6a463992-6f8e-11ec-80c1-000c292c2d55",
-		"Quantity": 793663.25
+		"Quantity": 795155.9
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -61737,7 +62223,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "7e7a23e4-6934-11ec-80dd-000c2999d0eb",
 		"WhID": "6a463978-6f8e-11ec-80c1-000c292c2d55",
-		"Quantity": 971.26
+		"Quantity": 583.43
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -62247,7 +62733,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "0570e13d-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 51
+		"Quantity": 49
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -62581,6 +63067,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "1d5dd41f-6cbf-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce977-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 10
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "35676335-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce979-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 12
@@ -62764,6 +63256,12 @@
 		"NomID": "464ad33e-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 3
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "c4e5ee31-6cbd-11ec-80dd-000c2999d0eb",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 2
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -63082,6 +63580,12 @@
 		"NomID": "9db865eb-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "9b971941-60b3-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
+		"Quantity": 10
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -63687,7 +64191,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "7727a435-4b53-11ed-8db7-0cc47a03c9dc",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 4
+		"Quantity": 3
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -63711,7 +64215,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "20f3041d-1215-11ed-8db6-0cc47a03c9dc",
 		"WhID": "645f5102-2a7d-11ed-8db7-0cc47a03c9dc",
-		"Quantity": 1
+		"Quantity": 2
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -63735,7 +64239,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "0570e15a-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce947-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 4
+		"Quantity": 5
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -63789,6 +64293,12 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "290ff69f-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "2f11c1cf-6cc8-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
 	},
 	{
@@ -64093,6 +64603,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "9f7f2950-6cbf-11ec-80dd-000c2999d0eb",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 8
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "a7bd87f9-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "70444823-6f8e-11ec-80c1-000c292c2d55",
 		"Quantity": 1
@@ -64173,7 +64689,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "9e48297b-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 17
+		"Quantity": 18
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -64222,6 +64738,12 @@
 		"NomID": "31b4b89f-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "70444823-6f8e-11ec-80c1-000c292c2d55",
 		"Quantity": 6
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "49c30c51-6cc9-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce949-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 17
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -64449,6 +64971,12 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "572244b2-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 2
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "ed734091-6cbe-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce949-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
 	},
 	{
@@ -64689,7 +65217,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "e171ac2c-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 4
+		"Quantity": 12
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -65655,7 +66183,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "585078c1-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 2
+		"Quantity": 3
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -66007,12 +66535,6 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
-		"NomID": "0570e156-6cbf-11ec-80dd-000c2999d0eb",
-		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 1
-	},
-	{
-		"data1c": "2022-11-10T00:00:00",
 		"NomID": "1d5dd3f8-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 5
@@ -66351,7 +66873,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "01af731b-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 21
+		"Quantity": 19
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -66541,6 +67063,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "ff6cb370-6cbe-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce949-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "6dbd1ee2-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce945-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 8
@@ -66573,7 +67101,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "f96ae883-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 41
+		"Quantity": 42
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -66603,7 +67131,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "a6cea826-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 46
+		"Quantity": 45
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -67245,7 +67773,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "f2616590-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 136
+		"Quantity": 135
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -67545,7 +68073,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "c5b10ab4-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 228.5
+		"Quantity": 208.5
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -67807,6 +68335,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "0570e117-6cbf-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce949-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 2
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "837729f8-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce97b-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
@@ -67875,6 +68409,12 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "40444576-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "d0dd98ef-6cbd-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce947-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
 	},
 	{
@@ -68073,6 +68613,12 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "9df6f72a-6cd3-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "3fe70c92-60cd-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
 	},
 	{
@@ -68755,12 +69301,6 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
-		"NomID": "652dd257-6cc8-11ec-80dd-000c2999d0eb",
-		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
-		"Quantity": 4
-	},
-	{
-		"data1c": "2022-11-10T00:00:00",
 		"NomID": "b3b532b5-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce987-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
@@ -68775,7 +69315,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "fae67f9f-4aec-11ed-8db7-0cc47a03c9dc",
 		"WhID": "a9fce965-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 68
+		"Quantity": 78
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -70375,6 +70915,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "04d2cc88-60bb-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "5f95b1a4-2536-11ed-8db7-0cc47a03c9dc",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "c25ef78c-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 15
@@ -70407,7 +70953,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "6b55c325-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 8
+		"Quantity": 11
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -70677,7 +71223,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "df28ac10-b98c-11ec-80e4-000c2999d0eb",
 		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 8
+		"Quantity": 7
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -70921,6 +71467,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "b171a09f-6cbe-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce965-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "c8f0e0f1-6cc7-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce94f-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
@@ -71031,7 +71583,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "f96ae883-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 53
+		"Quantity": 51
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -71085,7 +71637,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "cae094db-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 44
+		"Quantity": 43
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -71229,7 +71781,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "9ac18853-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce947-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 4
+		"Quantity": 5
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -71317,6 +71869,18 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "e61b9d68-60af-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
+		"Quantity": 8
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "6281adba-60c4-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "4c4358e1-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 2
@@ -71343,7 +71907,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "ed73408f-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 2
+		"Quantity": 1
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -71517,7 +72081,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "2c97b76c-6cb9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 12
+		"Quantity": 14
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -72147,7 +72711,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "290ff68e-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce995-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 114
+		"Quantity": 174
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -72445,6 +73009,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "8395bd37-60c3-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "a07a092d-a9f3-11ec-80cc-000c292c2d55",
 		"WhID": "a9fce94f-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
@@ -72591,7 +73161,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "49c30c51-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 226
+		"Quantity": 238
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -72789,13 +73359,19 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "f96ae851-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 26
+		"Quantity": 25
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "0570e15a-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 39
+		"Quantity": 67
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "3b66cc1b-6cbf-11ec-80dd-000c2999d0eb",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 5
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -73527,7 +74103,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "49c30c6c-6cc9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce973-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 3371.53
+		"Quantity": 2341.93
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -73725,6 +74301,12 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "f5ba9fed-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "ab45442e-c6e3-11ec-80e4-000c2999d0eb",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "3dc1d815-6cc9-11ec-80dd-000c2999d0eb",
+		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
 		"Quantity": 1
 	},
 	{
@@ -74104,6 +74686,12 @@
 		"NomID": "e9b70bac-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 4
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "43f489be-4dd8-11ed-8dba-0cc47a03c9dc",
+		"WhID": "a9fce949-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 95
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -74769,7 +75357,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "3b66cbf1-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 51
+		"Quantity": 47
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -74812,6 +75400,12 @@
 		"NomID": "0b21a6b7-1328-11ed-8db6-0cc47a03c9dc",
 		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 2
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "45b9dbb2-60b1-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "7044482b-6f8e-11ec-80c1-000c292c2d55",
+		"Quantity": 3
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -75051,7 +75645,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "8249f470-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 15
+		"Quantity": 16
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -75375,7 +75969,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "1112534f-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "4dc08b56-6d51-11ec-80bf-000c292c2d55",
-		"Quantity": 1688.06
+		"Quantity": 1660
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -75553,6 +76147,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "7cbd6008-60d5-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "7044482b-6f8e-11ec-80c1-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "64540f25-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 2
@@ -75567,7 +76167,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "0570e133-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 35
+		"Quantity": 37
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -75915,7 +76515,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "9246f2a3-6cbc-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 45
+		"Quantity": 5
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -76204,6 +76804,12 @@
 		"NomID": "ac76eb73-7db9-11ec-80c5-000c292c2d55",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 12
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "da5c9aef-6cbc-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 6
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -76587,7 +77193,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "f36b7fbe-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 52
+		"Quantity": 49
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -76743,7 +77349,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "074bd0f5-a788-11ec-80cc-000c292c2d55",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 8
+		"Quantity": 9
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -76773,7 +77379,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "2c97b76c-6cb9-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 20
+		"Quantity": 18
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -77683,6 +78289,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "572244b7-6cbe-11ec-80dd-000c2999d0eb",
+		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
+		"Quantity": 20
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "1d0ec337-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce98f-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
@@ -77739,7 +78351,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "9f6c413a-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 65
+		"Quantity": 61
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -78151,12 +78763,6 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
-		"NomID": "4e565507-6934-11ec-80dd-000c2999d0eb",
-		"WhID": "6a463978-6f8e-11ec-80c1-000c292c2d55",
-		"Quantity": 50.01
-	},
-	{
-		"data1c": "2022-11-10T00:00:00",
 		"NomID": "2695ec1a-6cb9-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce943-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 3
@@ -78190,6 +78796,12 @@
 		"NomID": "a0ccdd75-6cbd-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
 		"Quantity": 6
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "ddb1104c-6cc8-11ec-80dd-000c2999d0eb",
+		"WhID": "70444827-6f8e-11ec-80c1-000c292c2d55",
+		"Quantity": 2
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -78361,6 +78973,12 @@
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
+		"NomID": "a56e0a1b-6cbe-11ec-80dd-000c2999d0eb",
+		"WhID": "a9fce965-6dec-11ec-80bf-000c292c2d55",
+		"Quantity": 1
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
 		"NomID": "9f7f2991-6cbf-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce959-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 1
@@ -78441,7 +79059,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "94e85090-a8e2-11ec-80cc-000c292c2d55",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 1268
+		"Quantity": 1177
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -78789,13 +79407,13 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "a56e0a1b-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 4
+		"Quantity": 3
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "652dd261-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 70
+		"Quantity": 20
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -78819,7 +79437,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "5f24e041-6cc8-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 5
+		"Quantity": 4
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -79023,7 +79641,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "9f6c413a-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "a9fce957-6dec-11ec-80bf-000c292c2d55",
-		"Quantity": 58
+		"Quantity": 62
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -79269,7 +79887,7 @@
 		"data1c": "2022-11-10T00:00:00",
 		"NomID": "ff6cb370-6cbe-11ec-80dd-000c2999d0eb",
 		"WhID": "c39b84aa-6cb0-11ec-80dd-000c2999d0eb",
-		"Quantity": 11
+		"Quantity": 10
 	},
 	{
 		"data1c": "2022-11-10T00:00:00",
@@ -79684,5 +80302,11 @@
 		"NomID": "e4ed1fab-5503-11ed-8dbb-0cc47a03c9dc",
 		"WhID": "a9fce95b-6dec-11ec-80bf-000c292c2d55",
 		"Quantity": 10
+	},
+	{
+		"data1c": "2022-11-10T00:00:00",
+		"NomID": "3df0fecc-60d9-11ed-8dbb-0cc47a03c9dc",
+		"WhID": "5f95b1a4-2536-11ed-8db7-0cc47a03c9dc",
+		"Quantity": 1
 	}
 ]
