@@ -531,6 +531,7 @@
                 if (array_search($the_company_id, $cs) !== false) {
 //                    unset($cs[array_search($the_company_id, $cs)]);
                 }
+                $cs = array_values($cs);
                 if ($cs[0] !== $the_company_id) {
                     vecho('Warn: can not process with array_unique '.$the_company_id);
                 }
@@ -553,8 +554,10 @@
                     }
                 }
             }
+            return array_values($cs);
+        } else {
+            return $cs;
         }
-        return $cs;
     }
 
 	// Словарь Единица Измерения
