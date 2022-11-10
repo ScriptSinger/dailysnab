@@ -5855,7 +5855,7 @@ elseif($_GET['route'] == 'reply_message'){
 
 	$ok = false;
 	$code = '';
-
+vecho(5);
 	if(!empty($in['messagetext']) || !empty($in['media'])) {
 
 		$messagetext  	= $in['messagetext']; //текст сообщения
