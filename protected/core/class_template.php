@@ -548,8 +548,7 @@ class HtmlTemplate extends HtmlServive
         $row = reqNavTabsStock();
         foreach ($row as $i => $m) {
             if ($m['kol'] > 0) {
-				vecho($m.$in);
-				vecho($in);
+				vecho($m);
                 $active = (($m['stock_id'] == $in['stock_id']) && ($m['sbs_id'] == $in['status_buy_sell_id'])) ? 'active' : '';
 
                 $li .= ' 	<li class="request-menu-item">
