@@ -5469,7 +5469,7 @@ elseif($_GET['route'] == 'create_new_message'){
     if (!empty($companies_id)) {
         $cs = json_decode($companies_json);
         
-        $cs = removeCompanyFromListIfBanned($cs);
+        $cs = removeCompaniesFromListIfBanned($cs, COMPANY_ID, array());
         $cs = array_map("abs", $cs);
         if (array_search(COMPANY_ID, $cs) !== false) {
             unset($cs[array_search(COMPANY_ID, $cs)]); //
@@ -5725,7 +5725,7 @@ elseif($_GET['route'] == 'create_new_message_potrb'){
     
     if (!empty($companies_id)) {
         $cs = json_decode($companies_json);
-        $cs = removeCompanyFromListIfBanned($cs);
+        $cs = removeCompaniesFromListIfBanned($cs, COMPANY_ID, array());
         $cs = array_map("abs", $cs);
         if (array_search(COMPANY_ID, $cs) !== false) {
             unset($cs[array_search(COMPANY_ID, $cs)]); //
@@ -5871,7 +5871,7 @@ elseif($_GET['route'] == 'reply_message'){
         if (!empty($companies_json)) {
             $cs = json_decode($companies_json);
             $cs = array_merge(array(COMPANY_ID), $cs); //
-            $cs = removeCompanyFromListIfBanned($cs);
+            $cs = removeCompaniesFromListIfBanned($cs, COMPANY_ID, array());
             $companies_id = implode(',', $cs);
             $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
             $cs = json_decode($companies_json);
@@ -6149,7 +6149,7 @@ elseif($_GET['route'] == 'close_theme'){
 	}
     $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=?, companies_id=? WHERE id=?" , 
         array(2,json_encode($cs),$folder_id));
-    $cs = removeCompanyFromListIfBanned($cs);
+    $cs = removeCompaniesFromListIfBanned($cs, COMPANY_ID, array());
 	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
         $cs[$key] = ''.(-abs(intval($cs[$key])));
 	}    
@@ -6178,20 +6178,18 @@ elseif($_GET['route'] == 'out_of_theme'){
 	$cs = json_decode($companies_id);
     $company_name = reqChatCompanyName(COMPANY_ID);
 	$messagetext 	= $company_name. ' вышел из темы.';
-
+    
 	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
         $cs[$key] = ''.(-abs(intval($cs[$key])));
 	}
+    $cs = removeCompaniesFromListIfBanned($cs, COMPANY_ID, array());
+    $STH1 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+        array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1)); // в сообщении компания отрицательная, значит уходит в архив
+    $cs = removeCompaniesFromList($cs, COMPANY_ID, array(COMPANY_ID));
     $STH2 = PreExecSQL(" UPDATE tickets_folder SET companies_id=? WHERE id=?" , 
-        array(json_encode($cs),$folder_id));
-    $cs = removeCompanyFromListIfBanned($cs);
-	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
-        $cs[$key] = ''.(-abs(intval($cs[$key])));
-	}    
-    $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-        array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1));
+        array(json_encode($cs),$folder_id)); // 
 
-    if($STH && $STH2){
+    if($STH1 && $STH2){
 		$ok = true;
 	}
 
@@ -6271,7 +6269,7 @@ elseif($_GET['route'] == 'open_theme'){
     }
     $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=?, companies_id=? WHERE id=?" , 
         array(0,json_encode($cs),$folder_id));
-    $cs = removeCompanyFromListIfBanned($cs);
+    $cs = removeCompaniesFromListIfBanned($cs, COMPANY_ID, array());
 	if(($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //удаление элемента по значению
         $cs[$key] = ''.(abs(intval($cs[$key])));
     }    

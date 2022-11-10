@@ -489,18 +489,36 @@
 		return $row;
 	}
     
-    function removeCompanyFromListIfBanned ($cs) { // $cs объект-список компаний
-        if (count($cs) >= 2) {
+    /**
+     * $cs объект-список компаний
+     * $the_company_id текущая компания, для которой проверяется заблокированность другими из $cs
+     * $companies_to_remove_limit есть не пусто, то ограничивает применение блокировки
+     */
+    function removeCompaniesFromListIfBanned ($cs, $the_company_id, $companies_to_remove_limit) {
+        if (count($cs) >= 2 && !empty($the_company_id)) {
             $companies_id_old = $cs;
             $cs = array_map("abs", $cs);
+            $the_company_id = abs($the_company_id);
+            if (count($companies_to_remove_limit) >= 1) {
+                $companies_to_remove_limit = array_map("abs", $companies_to_remove_limit);
+            } else {
+                $companies_to_remove_limit = array_map("abs", $cs);
+            }
+            foreach (array_keys($companies_to_remove_limit, $the_company_id, true) as $key) { // удаление по значению
+                unset($companies_to_remove_limit[$key]);
+            }
+            if ($cs[0] !== $the_company_id) {
+                vecho('Error: can not process bas for '.$the_company_id);
+                return $companies_id_old;
+            }
             $placeholders = str_repeat('?,', count($cs) - 2) . '?';
             $was = false;
-            $STH0 = PreExecSQL("SELECT the_company_id FROM tickets_company_bans WHERE blocked_company_id = ? AND the_company_id IN ($placeholders);", $cs);
+            $STH0 = PreExecSQL("SELECT the_company_id FROM tickets_company_bans WHERE blocked_company_id = ? AND the_company_id IN ($placeholders);", $cs); // блокировки всегда применяются в обратную сторону своим определениям
             if ($STH0) {
                 $result = $STH0->fetchAll(PDO::FETCH_ASSOC);
                 if (count($result) >= 1) {
                     foreach ($result as $row) {
-                        if (($key = array_search($row['the_company_id'], $cs)) !== false || ($key = array_search(''.(-intval($row['the_company_id'])), $cs)) !== false) {
+                        if ((array_search($row['the_company_id'], $companies_to_remove_limit)) !== false && ($key = array_search($row['the_company_id'], $cs)) !== false) {
                             //echo $row['the_company_id'];
                             unset($cs[$key]);
                             $was = true;
@@ -510,14 +528,30 @@
             }
             if ($was) {
                 $cs = array_unique($cs, SORT_REGULAR); //удаление дубилкатов
-                if (array_search(COMPANY_ID, $cs) !== false) {
-//                    unset($cs[array_search(COMPANY_ID, $cs)]);
+                if (array_search($the_company_id, $cs) !== false) {
+//                    unset($cs[array_search($the_company_id, $cs)]);
+                }
+                if ($cs[0] !== $the_company_id) {
+                    vecho('Warn: can not process with array_unique '.$the_company_id);
                 }
                 $companies_id = implode(',', $cs);
                 $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
                 $cs = json_decode($companies_json);
             } else {
                 $cs = $companies_id_old;
+            }
+        }
+        return $cs;
+    }
+    
+    function removeCompaniesFromList ($cs, $the_company_id, $companies_to_remove) { // $cs объект-список компаний
+        if (count($cs) >= 1 && count($companies_to_remove) >= 1) {
+            foreach ($cs as $i => $x) {
+                foreach ($companies_to_remove as $j => $y) {
+                    if ($x == $y) {
+                        unset($cs[$i]);
+                    }
+                }
             }
         }
         return $cs;
