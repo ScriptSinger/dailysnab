@@ -508,7 +508,7 @@
                 unset($companies_to_remove_limit[$key]);
             }
             if ($cs[0] !== $the_company_id) {
-                vecho('Error: can not process bas for '.$the_company_id);
+                vecho('Error: can not process bans for '.$the_company_id);
                 return $companies_id_old;
             }
             $placeholders = str_repeat('?,', count($cs) - 2) . '?';
