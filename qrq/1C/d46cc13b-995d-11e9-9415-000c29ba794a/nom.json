@@ -5413,4 +5413,440 @@
 		"data1c": "2022-11-11T00:00:00",
 		"NomID": "71774acc-badd-11ec-80e4-000c2999d0eb",
 		"Article": "инв1462",
-		"Name": "(моторн.уч)Шкаф для оде�
+		"Name": "(моторн.уч)Шкаф для одежды",
+		"Code": "00-00021563",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "97cf022d-badd-11ec-80e4-000c2999d0eb",
+		"Article": "инв1463",
+		"Name": "(моторн.уч)Шкаф для одежды",
+		"Code": "00-00021564",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "b1292553-badd-11ec-80e4-000c2999d0eb",
+		"Article": "инв1464",
+		"Name": "(моторн.уч)Шкаф для одежды",
+		"Code": "00-00021565",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "c570afb7-badd-11ec-80e4-000c2999d0eb",
+		"Article": "инв1465",
+		"Name": "(моторн.уч)Шкаф для одежды",
+		"Code": "00-00021566",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "e3a23c4e-badd-11ec-80e4-000c2999d0eb",
+		"Article": "инв1466",
+		"Name": "(хоз.служба)Шкаф для одежды",
+		"Code": "00-00021567",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "1138d9ca-bade-11ec-80e4-000c2999d0eb",
+		"Article": "инв1467",
+		"Name": "(хоз.служба)Шкаф для одежды",
+		"Code": "00-00021568",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "26e9a267-bade-11ec-80e4-000c2999d0eb",
+		"Article": "инв1468",
+		"Name": "(хоз.служба)Шкаф для одежды",
+		"Code": "00-00021569",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "38d4d17e-bade-11ec-80e4-000c2999d0eb",
+		"Article": "инв1469",
+		"Name": "(хоз.служба)Шкаф для одежды",
+		"Code": "00-00021570",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "482bbce9-bade-11ec-80e4-000c2999d0eb",
+		"Article": "инв1470",
+		"Name": "(хоз.служба)Шкаф для одежды",
+		"Code": "00-00021571",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "62905327-bade-11ec-80e4-000c2999d0eb",
+		"Article": "инв1471",
+		"Name": "(хоз.служба)Шкаф для одежды",
+		"Code": "00-00021572",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "1f4db5cb-baf2-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Сжим ответвительный",
+		"Code": "00-00021573",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "7aade735-baf6-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Ролик для плиткореза",
+		"Code": "00-00021574",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "bc2debaf-baf6-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Цепь длиннозвенная ",
+		"Code": "00-00021575",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "7621fd44-baff-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Кольцо  резиновое 420-430-58",
+		"Code": "00-00021576",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "960eb74a-bb00-11ec-80e4-000c2999d0eb",
+		"Article": "A6462030282",
+		"Name": "Патрубок водянного насоса MERCEDES Sprinter ",
+		"Code": "00-00021577",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "02a5bcc7-bb01-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Тавр 18*10 мм 2,7 м",
+		"Code": "00-00021578",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "7e183167-bb01-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Краска акриловая",
+		"Code": "00-00021579",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "0750de00-bb02-11ec-80e4-000c2999d0eb",
+		"Article": "А0000160169",
+		"Name": "Болт ГБЦ MB Sprinter Classic",
+		"Code": "00-00021580",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "1f7a5caf-bb03-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Рейка нивелирная",
+		"Code": "00-00021581",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "8831723a-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "37964689-bb04-11ec-80e4-000c2999d0eb",
+		"Article": "1480665",
+		"Name": "Стойка кабины передняя Scania",
+		"Code": "00-00021582",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "553b292f-bb04-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Консоль жестяная",
+		"Code": "00-00021583",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "055b96de-bb06-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Ревизия 50 мм",
+		"Code": "00-00021584",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "38e3d156-bb07-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Переход эксцентрический 32/50",
+		"Code": "00-00021585",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "978333ea-bb07-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Кронштейн усиленный ",
+		"Code": "00-00021586",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "b813b62c-bb08-11ec-80e4-000c2999d0eb",
+		"Article": "4642308332/4110000076069/7200001651",
+		"Name": "Диск фрикционный ZF",
+		"Code": "00-00021587",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "12843321-bb0b-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Автомат 25А",
+		"Code": "00-00021588",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "99c97735-bb0c-11ec-80e4-000c2999d0eb",
+		"Article": "A6110980380",
+		"Name": "Прокладка впускного коллектора MERCEDES Sprinter ",
+		"Code": "00-00021589",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "f14e18bf-bb0e-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Генератор 24V Scania 6 серии БУ",
+		"Code": "00-00021590",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "e440784e-bb0f-11ec-80e4-000c2999d0eb",
+		"Article": "6111840280",
+		"Name": "Прокладка радиатора масляного MERCEDES",
+		"Code": "00-00021591",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "07527958-bb12-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Клапан контроль выхода М16*22",
+		"Code": "00-00021592",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "d2f55800-bb12-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Сапоги Норды муж. (черный лес) р.43",
+		"Code": "00-00021593",
+		"MeasureID": 715,
+		"nomenclature_id": "",
+		"TypeNomID": "5a0e2416-6a24-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "18daf0fd-bb13-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Насос гидравлический Hidromek ",
+		"Code": "00-00021594",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "5ba7094a-bb14-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Угол пристеночный для потолка",
+		"Code": "00-00021595",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "9091fc10-bb14-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "(24каб) Рулонная штора 50*160 см",
+		"Code": "00-00021596",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "27f3a505-bb15-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Подсветка светодиодная",
+		"Code": "00-00021597",
+		"MeasureID": 839,
+		"nomenclature_id": "",
+		"TypeNomID": "303b9327-6a21-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "6a98e07e-bb15-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Чашка алмазная зачистная",
+		"Code": "00-00021598",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "e93c05ff-bb17-11ec-80e4-000c2999d0eb",
+		"Article": "612600090705",
+		"Name": "Генератор SHANTUI SD16 Weichai БУ",
+		"Code": "00-00021599",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "1a63c8b8-bb18-11ec-80e4-000c2999d0eb",
+		"Article": "03L903024H",
+		"Name": "Генератор VOLKSWAGEN 2EKZ CRAFTER БУ",
+		"Code": "00-00021600",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "0400d680-bb19-11ec-80e4-000c2999d0eb",
+		"Article": "",
+		"Name": "Выпуск 3 1/2 с нерж. сеткой М2",
+		"Code": "00-00021601",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "f4d10ef3-bb1d-11ec-80e4-000c2999d0eb",
+		"Article": "3738601",
+		"Name": "Рычаг подвески задний верхний BMW ",
+		"Code": "00-00021602",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "e269d505-6a23-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "01003b76-bb23-11ec-80e4-000c2999d0eb",
+		"Article": "3302-1101010-20",
+		"Name": "Бак топливный Г-3302 70л.",
+		"Code": "00-00021603",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "ed83bd81-bb23-11ec-80e4-000c2999d0eb",
+		"Article": "647451",
+		"Name": "Крестовина /Г-3302 Бизнес NEXT",
+		"Code": "00-00021604",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "5661b74d-bb24-11ec-80e4-000c2999d0eb",
+		"Article": "CB035170599/ECS3516817",
+		"Name": "Опора карданного вала Газель Бизнес",
+		"Code": "00-00021605",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	},
+	{
+		"data1c": "2022-11-11T00:00:00",
+		"NomID": "a88001bf-bb29-11ec-80e4-000c2999d0eb",
+		"Article": "16.130.870",
+		"Name": "РВД 16.130.870 DKOL М26х1.5 кондиционера SCANIA",
+		"Code": "00-00021606",
+		"MeasureID": 796,
+		"nomenclature_id": "",
+		"TypeNomID": "d0cf57a3-6a20-11ec-80dd-000c2999d0eb"
+	}
+]
