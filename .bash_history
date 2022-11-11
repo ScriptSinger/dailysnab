@@ -59,3 +59,6 @@ gnome open .
 gnome-open .
 ls
 xdg-openxdg-open x.php
+lsb_release -a
+lsb_release -a
+sudo lsb_release -a
