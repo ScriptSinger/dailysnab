@@ -880,16 +880,16 @@ elseif($_GET['route'] == 'registration'){
                     if($STH){
                         // Права и Роль пользователя на компанию(аккаунт)
                         $STH = reqInsertLoginCompanyPrava(array(	'login_id'		=> $login_id,
-                            'company_id'	=> $company_id,
-                            'prava_id'		=> 2 ));
+																	'company_id'	=> $company_id,
+																	'prava_id'		=> 2 ));
                         // Проверяем не добавлен ли как сотрудника
                         $row_iw = reqInviteWorkers(array('email'	=> $in['email']));
                         if(!empty($row_iw)){
                             foreach($row_iw as $i => $m){
                                 $STH = reqInsertLoginCompanyPrava(array(	'login_id'		=> $login_id,
-                                    'company_id'	=> $m['company_id'],
-                                    'prava_id'		=> $m['prava_id'],
-                                    'position' 		=> $m['position'] ));
+																			'company_id'	=> $m['company_id'],
+																			'prava_id'		=> $m['prava_id'],
+																			'position' 		=> $m['position'] ));
                                 if($STH){
                                     // удаляем
                                     $STH = PreExecSQL(" DELETE FROM invite_workers WHERE id=? " ,
@@ -907,8 +907,8 @@ elseif($_GET['route'] == 'registration'){
 
                         // отправляем письмо на почту
                         $rez = $tes->LetterSendRegistration(array('email'	=> $in['email'],
-                            'name'	=> $in['name'],
-                            'pass'	=> $arr_pass['pass'] ));
+																'name'	=> $in['name'],
+																'pass'	=> $arr_pass['pass'] ));
                         $ok = $rez;
                         if($ok){
                             $code = '<h4 class="register_data-send">Данные для входа в аккаунт отправлены к Вам на E-mail.</h4>
@@ -2852,9 +2852,11 @@ if(LOGIN_ID){
                 $company_id = $db->lastInsertId();
                 // Права и Роль пользователя на компанию
                 $STH = reqInsertLoginCompanyPrava(array(	'login_id'		=> LOGIN_ID,
-                    'company_id'	=> $company_id,
-                    'prava_id'		=> 2
-                ));
+															'company_id'	=> $company_id,
+															'prava_id'		=> 2
+														));
+				// отправляем уведомление администратору на почту
+				
             }else{
                 $code = 'Нельзя добавить более одной компании';
             }
