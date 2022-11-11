@@ -6219,7 +6219,7 @@
 	}
     
     function reqChatCompanyName ($company_id) {
-        $rcm = reqChatMessages(array('company_id' => $company_id));
+        $rcm = reqChatMessagesSimple(array('company_id' => $company_id));
         return (!empty($rcm) && count($rcm) >= 1 && !empty($rcm[0]["name_rcmc"])) ? $rcm[0]["name_rcmc"] : "собеседник № ".$company_id;
     }
 
@@ -6356,6 +6356,42 @@
 
 		return $row;
 	}
+    
+    function reqChatMessagesSimple ($p=array()) {
+		$sql = $sql_fa = $sql_inner_join = '';
+		$arr = array();
+		$one = false;
+        $in = fieldIn($p, array('need','ticket_exp','folder_id','t_date','t_time','t_date_full','data_insert','companies_id','status','company_id','attachments','value'));
+
+		$start_limit 	= (isset($p['start_limit'])&&v_int($p['start_limit']))? 	$p['start_limit'] : 0;
+
+		if($in['status']){
+			$sql .= ' AND tf.status=? ';
+			array_push($arr , $in['status']);
+		}
+		if($in['company_id']){
+			$sql .= ' AND t.company_id=? ';
+			array_push($arr , $in['company_id']);
+		}
+		if($in['folder_id']){
+			$sql .= ' AND t.folder_id=? ';
+			array_push($arr , $in['folder_id']);
+		}
+
+        $sql = "SELECT t.id, t.folder_id, t.company_id, t.companies, t.ticket_exp, t.ticket_status, t.attachments,
+             t.data_insert, DATE_FORMAT(t.data_insert, '%d.%m.%Y %H:%i') as t_date_full, DATE_FORMAT(t.data_insert, '%H:%i') as t_time,
+             c.company, c.avatar as ava_company, c.legal_entity_id,
+             CONCAT(sle.legal_entity,' ',c.company) as name_rcmc,
+             t.chatId            
+           FROM tickets t, company c, slov_legal_entity sle
+           ".$sql_inner_join."
+           WHERE c.id=t.company_id AND sle.id=c.legal_entity_id ".$sql."
+           ORDER BY t.id ASC, t_date_full, t_time DESC LIMIT ".$start_limit." , 25
+        ";
+        //vecho($sql);
+		$row = ($one)? PreExecSQL_one($sql,$arr) : PreExecSQL_all($sql,$arr);
+		return $row;
+	}        
 
 	// вывод данных о папках сообщений
 	function reqChatFolders($p=array()) {
