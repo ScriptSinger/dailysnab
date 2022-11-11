@@ -6183,7 +6183,7 @@ elseif($_GET['route'] == 'out_of_theme'){
 	}
     $STH1 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
         array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1)); // в сообщении компания отрицательная, значит уходит в архив
-    $cs = removeCompaniesFromList($cs, COMPANY_ID, array(COMPANY_ID));
+/////    $cs = removeCompaniesFromList($cs, COMPANY_ID, array(COMPANY_ID)); // TODO
     $STH2 = PreExecSQL(" UPDATE tickets_folder SET companies_id=? WHERE id=?" , 
         array(json_encode($cs),$folder_id)); // 
 
