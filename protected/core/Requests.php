@@ -6299,7 +6299,7 @@
 						ORDER BY t.id ASC, t_date_full, t_time DESC LIMIT ".$start_limit." , 25
 					";
 
-	vecho($sql);
+	//vecho($sql);
 		$row = ($one)? PreExecSQL_one($sql,$arr) : PreExecSQL_all($sql,$arr);
 
 		return $row;
