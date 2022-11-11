@@ -334,5 +334,26 @@
 				"Brand": ""
 			}
 		]
+	},
+	{
+		"DocID": "b4535e84-61a0-11ed-80e3-000c292c2d55",
+		"data1c": "2022-11-11T00:00:00",
+		"Massiv": [
+			{
+				"DocID": "b4535e84-61a0-11ed-80e3-000c292c2d55",
+				"StrID": 1,
+				"OrgID": "d46cc13b-995d-11e9-9415-000c29ba794a",
+				"ContractorID": "3ad912f4-6de4-11ec-80bf-000c292c2d55",
+				"Date": "2022-11-11T14:10:37",
+				"buy_sell_id": "",
+				"NomDocID": "АМ221111/02",
+				"WhID": "584abb7e-6f8d-11ec-80c1-000c292c2d55",
+				"NomID": "8253c21d-8a6c-11ec-80c9-000c292c2d55",
+				"Price": 60,
+				"NDS": 0,
+				"Quantity": 2,
+				"Brand": ""
+			}
+		]
 	}
 ]
