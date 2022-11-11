@@ -46,3 +46,14 @@ git log
 git diff -w HEAD~1 HEAD
 less protected/core/ajax.php 
 exit
+ls
+open .
+open protected
+cd protected
+ls
+open .
+cd views
+ls
+open index.php
+gnome open .
+gnome-open .
