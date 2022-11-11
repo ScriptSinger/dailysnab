@@ -62,3 +62,24 @@ xdg-openxdg-open x.php
 lsb_release -a
 lsb_release -a
 sudo lsb_release -a
+git --version
+git status
+git branch
+ls
+git branch
+git hist
+git history
+git log
+clear
+git log --pretty=online
+clear
+git log --pretty=oneline
+git log --pretty=format:"%h - %an, %ar : %s"
+ls
+find /user -name ".ssh" -type d
+find / -name ".ssh" -type d
+sudo find / -name ".ssh" type d
+find ./ -name ".ssh" -type d
+find ~ -name ".ssh" -type d
+ls -a
+git remote -v
