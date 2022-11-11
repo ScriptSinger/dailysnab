@@ -40307,19 +40307,6 @@
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-11-10T16:01:37",
-				"buy_sell_id": "9899038",
-				"NomID": "c4e5ee31-6cbd-11ec-80dd-000c2999d0eb",
-				"Price": 347,
-				"NDS": 0,
-				"Quantity": 2,
-				"Brand": ""
-			},
-			{
-				"DocID": "09cdf260-60e7-11ed-8dbb-0cc47a03c9dc",
-				"StrID": 3,
-				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
-				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
-				"Date": "2022-11-10T16:01:37",
 				"buy_sell_id": "9899030",
 				"NomID": "c3749fc1-6cbe-11ec-80dd-000c2999d0eb",
 				"Price": 151,
@@ -40329,7 +40316,7 @@
 			},
 			{
 				"DocID": "09cdf260-60e7-11ed-8dbb-0cc47a03c9dc",
-				"StrID": 4,
+				"StrID": 3,
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-11-10T16:01:37",
@@ -40342,7 +40329,7 @@
 			},
 			{
 				"DocID": "09cdf260-60e7-11ed-8dbb-0cc47a03c9dc",
-				"StrID": 5,
+				"StrID": 4,
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-11-10T16:01:37",
@@ -40355,7 +40342,7 @@
 			},
 			{
 				"DocID": "09cdf260-60e7-11ed-8dbb-0cc47a03c9dc",
-				"StrID": 6,
+				"StrID": 5,
 				"OrgID": "8d4aada5-13d1-11e9-9403-000c29ba794a",
 				"ContractorID": "5f1cebdd-742b-11ec-80e0-000c2999d0eb",
 				"Date": "2022-11-10T16:01:37",
