@@ -57,3 +57,5 @@ ls
 open index.php
 gnome open .
 gnome-open .
+ls
+xdg-openxdg-open x.php
