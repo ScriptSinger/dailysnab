@@ -71,8 +71,8 @@ $last_message = [];
 			}
 	
 vecho($f['companies_id']);
-//vecho(in_array_r( abs($comp), $rowf_comp ));
-vecho(end($rowf_comp));
+vecho(abs($comp));
+//vecho(end($rowf_comp));
 			
 			$fid = $rown[0]['folder_id'];
 			$theme = $rown[0]['folder_name'];			
