@@ -6194,8 +6194,8 @@ vecho ($cs);
 	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //скрытие элемента по значению
         $cs[$key] = ''.(abs(intval($cs[$key])));
 	}
-vecho ($cs);
     $cs = removeCompaniesFromList($cs, COMPANY_ID, array());
+vecho ($cs);
     $STH1 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
         array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1));
 
