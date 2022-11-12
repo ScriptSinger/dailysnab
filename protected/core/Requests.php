@@ -5880,7 +5880,7 @@
 		$company_id = isset($in['company_id'])? $in['company_id'] : COMPANY_ID;
 
 
-		$sql = "	SELECT n.categories_id, n.id nomenclature_id
+		$sql = "	SELECT n.categories_id, n.id nomenclature_id, n.name
 				FROM nomenclature n, 1c_nomenclature nc
 				WHERE n.1c_nomenclature_id=nc.id AND nc.id_1c=? AND n.company_id=? ";
 

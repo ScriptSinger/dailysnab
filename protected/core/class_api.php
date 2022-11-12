@@ -1178,8 +1178,9 @@ class ClassApi extends HtmlServive
 									$company_id2 = $rc['company_id_to'];
 									
 									$rn = reqNomenclatureById1c(array('id_1c'=>$NomID,'company_id'=>$in['company_id']));
-									$categories_id = $rn['categories_id'];
-									$nomenclature_id = $rn['nomenclature_id'];
+									$categories_id 	= $rn['categories_id'];
+									$nomenclature_id 	= $rn['nomenclature_id'];
+									$name			= $rn['name'];
 									
 									
 									// получаем login_id
@@ -1199,7 +1200,7 @@ class ClassApi extends HtmlServive
 																			'copy_id'			=> 0,
 																			'flag_buy_sell'		=> 2,
 																			'status'			=> 11,
-																			'name'				=> '-',
+																			'name'				=> $name,
 																			'url'				=> 'buy1c',
 																			'cities_id'			=> 1,
 																			'categories_id'		=> $categories_id,
