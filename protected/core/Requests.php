@@ -546,6 +546,19 @@
     }
     
     function removeCompaniesFromList ($cs, $the_company_id, $companies_to_remove) { // $cs объект-список компаний
+        if (count($cs) >= 1) {
+            if (count($companies_to_remove) == 0) { // если не сказано, что именно удалять, то  будем удалять отрицательные
+                $companies_to_remove = array();
+                foreach ($cs as $z) {
+                    if (intval($z) < 0) {
+                        $companies_to_remove[] = $z;
+                    }
+                }
+                if (count($companies_to_remove) == 0 || count($companies_to_remove) == count($cs)) { // если отрицательных нет или все, то оставляем одну компанию
+                    return array($the_company_id);
+                }
+            }
+        }
         if (count($cs) >= 1 && count($companies_to_remove) >= 1) {
             foreach ($cs as $i => $x) {
                 foreach ($companies_to_remove as $j => $y) {

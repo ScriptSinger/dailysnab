@@ -5873,7 +5873,8 @@ elseif($_GET['route'] == 'reply_message'){
         if (!empty($companies_json)) {
             $cs = json_decode($companies_json);
             $cs = array_merge(array(COMPANY_ID), $cs); //
-            $cs = removeCompaniesFromListIfBanned($cs, COMPANY_ID, array());
+            $cs = removeCompaniesFromListIfBanned($cs, COMPANY_ID, array()); // ответ не доходит тем, кто нас заблокировал
+            $cs = removeCompaniesFromList($cs, COMPANY_ID, array()); // ответ не доходит тем, кто в теме нас заархивировал (отрицательным)
             $companies_id = implode(',', $cs);
             $companies_json = json_encode(explode(',',$companies_id)); //обновленный массив, передеанный в нужный формат
             $cs = json_decode($companies_json);
@@ -6150,11 +6151,11 @@ elseif($_GET['route'] == 'close_theme'){
 	foreach ($cs as $key => $value) { //скрытие всех элементов по значению
         $cs[$key] = ''.(-abs(intval($cs[$key])));
 	}
-    $STH1 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-        array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1)); // в сообщении компания отрицательная, значит уходит в архив
-//    $cs = removeCompaniesFromList($cs, COMPANY_ID, array(COMPANY_ID));
     $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=?, companies_id=? WHERE id=?" , 
-        array(2,json_encode($cs),$folder_id));
+        array(2,json_encode($cs),$folder_id)); // в папке сообщений компания отрицательная, либо статус 2, значит уходит в архив
+//    $cs = removeCompaniesFromList($cs, COMPANY_ID, array(COMPANY_ID)); // при закрытии темы удалять не надо
+    $STH1 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+        array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1));
     
     if($STH1 && $STH2){
         $ok = true;
@@ -6183,11 +6184,11 @@ elseif($_GET['route'] == 'out_of_theme'){
 	if(($key = array_search(COMPANY_ID, $cs)) !== false || ($key = array_search(''.(-intval(COMPANY_ID)), $cs)) !== false){ //скрытие элемента по значению
         $cs[$key] = ''.(-abs(intval($cs[$key])));
 	}
-    $STH1 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-        array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1)); // в сообщении компания отрицательная, значит уходит в архив
-/////    $cs = removeCompaniesFromList($cs, COMPANY_ID, array(COMPANY_ID)); // TODO
     $STH2 = PreExecSQL(" UPDATE tickets_folder SET companies_id=? WHERE id=?" , 
-        array(json_encode($cs),$folder_id)); // 
+        array(json_encode($cs),$folder_id)); // в папке сообщений компания отрицательная, либо статус 2, значит уходит в архив
+    $cs = removeCompaniesFromList($cs, COMPANY_ID, array(COMPANY_ID)); // TODO
+    $STH1 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+        array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1));
 
     if($STH1 && $STH2){
 		$ok = true;
