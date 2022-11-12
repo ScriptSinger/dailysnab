@@ -446,8 +446,8 @@ class HtmlServive extends HtmlElement
 		
 		$rez = false;
 		
-		$arr = array('admin@qw.qw','armtek_SAM@armtek.ru','autopiter_SAM@autopiter.ru'); // не отправлять на email
-		if (!in_array($p['email'], $arr)) {	
+		$r = reqNosendEmail(array('email'=>$p['email']));
+		if(empty($r)){
 
 				$username = 'info@qrq.ru';
 				$password = 'E0e%OpuJ';
