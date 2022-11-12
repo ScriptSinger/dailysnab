@@ -70,10 +70,6 @@ $last_message = [];
 	
 			}
 	
-vecho($f['companies_id']);
-//vecho(abs($comp));
-//vecho(end($rowf_comp));
-vecho(in_array( abs($comp), end($rowf_comp) ));
 			
 			$fid = $rown[0]['folder_id'];
 			$theme = $rown[0]['folder_name'];			
@@ -119,7 +115,7 @@ vecho(in_array( abs($comp), end($rowf_comp) ));
 					{
 						$out_of_theme = '<button type="button" class="button-blue pull-right close_theme" data-fid="'.$fid.'">Закрыть тему</button>'; //организаторов чатов
 					} 
- 				else if(in_array_r( abs($comp), $rowf_comp ) && !in_array( abs($comp), end($rowf_comp) )) //кнопка для тех кто уже вышел из чата
+ 				else if(in_array_r( abs($comp), $rowf_comp ) && in_array( -abs($comp), end($rowf_comp) )) //кнопка для тех кто уже вышел из чата
 					{
 						// if () 
 						$out_of_theme = '<button type="button" class="button-blue pull-right block_of_theme" data-fid="'.$fid.'">Заблокировать пользователя</button>'; // уже после выхода из чата
