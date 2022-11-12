@@ -121,7 +121,7 @@ $last_message = [];
 						$out_of_theme = '<button type="button" class="button-blue pull-right block_of_theme" data-fid="'.$fid.'">Заблокировать пользователя</button>'; // уже после выхода из чата
 					} 				
 				elseif($theme != '')
-					{ vecho($comp);
+					{ vecho(in_array( -abs(intval($comp)), end($rowf_comp) ));
                       //vecho(($rowf_comp) );
 						$out_of_theme = '<button type="button" class="button-blue out_of_theme" data-fid="'.$fid.'">Выйти из темы</button>
 							<button type="button" class="button-blue close_theme_pr" data-fid="'.$fid.'">Предложить закрыть тему</button>'; //собеседников
