@@ -111,17 +111,16 @@ $last_message = [];
                 //vecho(array_map('abs', end($rowf_comp)));
                 
 				$out_of_theme = '';
-				if ($rown[0]['company_id'] == COMPANY_ID && $theme != '') //вывод выхода из темы для клиентов
-					{
+				if ($rown[0]['company_id'] == COMPANY_ID && $theme != '') { //вывод выхода из темы для клиентов
 						$out_of_theme = '<button type="button" class="button-blue pull-right close_theme" data-fid="'.$fid.'">Закрыть тему</button>'; //организаторов чатов
-					} 
-				elseif($theme != '')
-					{
+					} else {
+				if($theme != '') {
 						$out_of_theme = '<button type="button" class="button-blue out_of_theme" data-fid="'.$fid.'">Выйти из темы</button>
 							<button type="button" class="button-blue close_theme_pr" data-fid="'.$fid.'">Предложить закрыть тему</button>'; //собеседников
 					}
                 if (in_array_r( -abs($comp), $rowf_comp ) && in_array( abs($comp), array_map('abs', end($rowf_comp)))) {
                     $out_of_theme .= '<button type="button" class="button-blue pull-right block_of_theme" data-fid="'.$fid.'">Заблокировать пользователя</button>'; // уже после выхода из чата
+                }
                 }
 					
 
