@@ -115,16 +115,14 @@ $last_message = [];
 					{
 						$out_of_theme = '<button type="button" class="button-blue pull-right close_theme" data-fid="'.$fid.'">Закрыть тему</button>'; //организаторов чатов
 					} 
- 				else if(in_array_r( -abs($comp), $rowf_comp ) && in_array( abs($comp), array_map('abs', end($rowf_comp)))) //кнопка для тех кто уже вышел из чата
-					{
-						// if () 
-						$out_of_theme = '<button type="button" class="button-blue pull-right block_of_theme" data-fid="'.$fid.'">Заблокировать пользователя</button>'; // уже после выхода из чата
-					} 				
 				elseif($theme != '')
 					{
 						$out_of_theme = '<button type="button" class="button-blue out_of_theme" data-fid="'.$fid.'">Выйти из темы</button>
 							<button type="button" class="button-blue close_theme_pr" data-fid="'.$fid.'">Предложить закрыть тему</button>'; //собеседников
 					}
+                if (in_array_r( -abs($comp), $rowf_comp ) && in_array( abs($comp), array_map('abs', end($rowf_comp)))) {
+                    $out_of_theme .= '<button type="button" class="button-blue pull-right block_of_theme" data-fid="'.$fid.'">Заблокировать пользователя</button>'; // уже после выхода из чата
+                }
 					
 
 				$out_of_theme = ($rown[0]['status'] != 2) ? $out_of_theme : ''; // проверка, не в архиве ли чат
