@@ -70,7 +70,7 @@ $last_message = [];
 	
 			}
 	
-
+vecho($f['companies_id']);
 			
 			$fid = $rown[0]['folder_id'];
 			$theme = $rown[0]['folder_name'];			
