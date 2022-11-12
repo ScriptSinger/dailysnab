@@ -6119,12 +6119,15 @@ elseif($_GET['route'] == 'close_theme_pr'){
 	$rcf = reqChatFolders(array('id'=>$folder_id));
 	$companies_id 	= $rcf[0]["companies_id"];
 
-	$company_name = reqChatCompanyName(COMPANY_ID);
-
+	$cs = json_decode($companies_id);
+    $company_name = reqChatCompanyName(COMPANY_ID);
 	$messagetext 	= $company_name. ' предложил закрыть тему.';
 
+    $cs = removeCompaniesFromListIfBanned(array_merge(array(COMPANY_ID), $cs), COMPANY_ID, array()); // фильтр блокировок
+    $cs = removeCompaniesFromList($cs, COMPANY_ID, array()); //
+
 	$STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
-		array($folder_id,COMPANY_ID,$companies_id,$messagetext,1));
+		array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1));
 	if($STH){
 		$ok = true;
 	}
@@ -6147,13 +6150,14 @@ elseif($_GET['route'] == 'close_theme'){
     $company_name = reqChatCompanyName(COMPANY_ID);
     $messagetext    = $company_name. ' закрыл тему.';
 
+    $cs = removeCompaniesFromList($cs, COMPANY_ID, array());
     $cs = removeCompaniesFromListIfBanned(array_merge(array(''.(-intval(COMPANY_ID))), $cs), COMPANY_ID, array()); // фильтр блокировок
 	foreach ($cs as $key => $value) { //скрытие всех элементов по значению
         $cs[$key] = ''.(-abs(intval($cs[$key])));
 	}
     $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=?, companies_id=? WHERE id=?" , 
         array(2,json_encode($cs),$folder_id)); // в папке сообщений компания отрицательная, либо статус 2, значит уходит в архив
-//    $cs = removeCompaniesFromList($cs, COMPANY_ID, array(COMPANY_ID)); // при закрытии темы удалять не надо
+//    $cs = removeCompaniesFromList($cs, COMPANY_ID, array(COMPANY_ID)); // при закрытии темы удалять закрывающего не надо
     $STH1 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
         array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1));
     
@@ -6186,7 +6190,7 @@ elseif($_GET['route'] == 'out_of_theme'){
 	}
     $STH2 = PreExecSQL(" UPDATE tickets_folder SET companies_id=? WHERE id=?" , 
         array(json_encode($cs),$folder_id)); // в папке сообщений компания отрицательная, либо статус 2, значит уходит в архив
-    $cs = removeCompaniesFromList($cs, COMPANY_ID, array(COMPANY_ID)); // TODO
+    $cs = removeCompaniesFromList($cs, COMPANY_ID, array());
     $STH1 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
         array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1));
 
@@ -6205,14 +6209,20 @@ elseif ($_GET['route'] == 'block_of_theme') {
     $code = '';
 
     $folder_id = $in['id'];
+  	$rcf = reqChatFolders(array('id'=>$folder_id));
+	$companies_id 	= $rcf[0]["companies_id"];
 
+    $cs = json_decode($companies_id);
     $company_name = reqChatCompanyName(COMPANY_ID);
-
-    $messagetext    = $company_name. ' сделал блорировку.';
+    $messagetext    = $company_name. ' сделал блорировку '.'автора этой темы'; //.reqChatCompanyName(owner_id);
+    
+    $cs = removeCompaniesFromListIfBanned(array_merge(array(''.(-intval(COMPANY_ID))), $cs), COMPANY_ID, array()); // фильтр блокировок
 
     $STH = PreExecSQL(" INSERT INTO tickets_company_bans (the_company_id, blocked_company_id, blocked_status) SELECT ?, owner_id, '1' FROM tickets_folder WHERE id=? && owner_id!=? ", array(COMPANY_ID, $folder_id, COMPANY_ID));
+    $STH1 = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
+        array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1));
         
-    if ($STH) {
+    if ($STH && $STH1) {
         $ok = true;
         $code = 'Пользователь выполнил блокировку';
     }
@@ -6271,6 +6281,7 @@ elseif($_GET['route'] == 'open_theme'){
     $cs = removeCompaniesFromListIfBanned(array_merge(array(''.(abs(intval(COMPANY_ID)))), $cs), COMPANY_ID, array());
     $STH2 = PreExecSQL(" UPDATE tickets_folder SET status=?, companies_id=? WHERE id=?" , 
         array(0,json_encode($cs),$folder_id));
+    $cs = removeCompaniesFromList($cs, COMPANY_ID, array());
     $STH = PreExecSQL(" INSERT INTO tickets (folder_id,company_id,companies,ticket_exp,ticket_status) VALUES (?,?,?,?,?); " ,
         array($folder_id,COMPANY_ID,json_encode($cs),$messagetext,1));   
 
