@@ -22,7 +22,7 @@
 					
 					'.$t->NavTabsAdminUsers(array('flag'=>$flag)).'
 					
-					<div>
+					<div style="margin:10px;">
 						'.$e->Input(	array(	'type'			=> 'button',
 												'class'			=> 'profile-btn request-btn modal_admin_nosend_email',
 												'value'			=> 'Добавить email'

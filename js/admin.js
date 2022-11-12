@@ -944,6 +944,28 @@ $(function(){
 			);
 	});
 	
+	// удалить "Email исключенный из отправки"
+	$("body").on("click", ".delete_admin_nosend_email", function(){
+		var d = $(this).data();
+		webix.confirm({
+			ok: "Удалить", cancel:"Отмена",
+			text: "Удалить "+d.name+" ?",
+			callback:function(result){
+				if(result){
+						$.post( "/delete_admin_nosend_email", { id:d.id }, 
+							function(data){
+									if(data.ok){
+										webix.message(data.code);
+										onReload('');
+									}else{
+										webix.message({type:"error", text:data.code});
+									}
+							}
+						);
+				}
+			}
+		});
+	});
 	
 	
 });//end $(function())

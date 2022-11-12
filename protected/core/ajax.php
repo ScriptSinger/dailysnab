@@ -7680,20 +7680,41 @@ elseif($_GET['route'] == 'save_admin_nosend_email'){
 
 	$ok = $STH = false;
 	$code = 'Нельзя сохранить';
-
-/*
-	$STH = PreExecSQL(" UPDATE company SET company=? , active=?  WHERE id=?; " ,
-		array( $in['company'],$in['active'],$in['id'] ));
-	if($STH){
-		$ok		= true;
+	
+	$r = reqNosendEmail(array('email'=>$in['email']));
+	if(empty($r)){
+		$STH = PreExecSQL(" INSERT INTO nosend_email (email) VALUES (?); " ,
+			array( $in['email'] ));
+		if($STH){
+			$ok		= true;
+		}
+	}else{
+		$code = 'Email уже добавлен';
 	}
-*/
 
 	$jsd['ok'] 			= $ok;
 	$jsd['code']			= $code;
 
 }
+// удалить Email исключенный из отправки
+elseif($_GET['route'] == 'delete_admin_nosend_email'){
 
+	$ok = $STH = false;
+	$code = 'Нельзя Удалить';
+
+
+	$STH = PreExecSQL(" DELETE FROM nosend_email WHERE id=?; " ,
+		array( $in['id'] ));
+	if($STH){
+		$ok		= true;
+		$code	= 'Удалено';
+	}
+	
+
+	$jsd['ok'] 			= $ok;
+	$jsd['code']			= $code;
+
+}
 
 
 }
