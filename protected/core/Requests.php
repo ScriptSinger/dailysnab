@@ -554,7 +554,7 @@
                         $companies_to_remove[] = $z;
                     }
                 }
-                if (count($companies_to_remove) == 0 || count($companies_to_remove) == count($cs)) { // если отрицательных нет или все, то оставляем одну компанию
+                if (count($companies_to_remove) == count($cs)) { // если отрицательные все, то оставляем одну компанию
                     return array($the_company_id);
                 }
             }
