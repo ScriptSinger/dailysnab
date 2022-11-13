@@ -27,14 +27,38 @@ class HtmlTemplateEmailSms extends HtmlServive
 		
 		$rez = $this->sendMail(array(	'email'		=>$p['email'] , 	'name'=>$p['name'] , 
 									'subject'	=>$subject , 			'body'=>$body ));
-									
-		// отправляем администратору письмо уведомление
-		$body_d  = 'Зарегистрировался новый аккаунт <span style="color:#428bca;font-size:18px;font-weight:bold;">'.$p['email'].'</span>';
-		$rez = $this->sendMail(array(	'email'		=>'d7758987@gmail.com' , 						'name'=>'новый аккаунт' , 
-									'subject'	=>'Зарегистрировался новый аккаунт на QRQ' , 	'body'=>$body_d ));
+		
+		// отправляем администратору письмо уведомление - Регистрация нового аккаунта
+		self::LetterSendAdminNewAccount(array('email'=>$in['email']));
 		
 		return array('rez'=>$rez);
 	}
+	
+	// отправляем администратору письмо уведомление - Регистрация нового аккаунта
+	function LetterSendAdminNewAccount( $p=array() ){
+		
+		$in = fieldIn($p, array('email','company'));
+		
+		$body_d  = '';
+		
+		if($in['email']){
+			$body_d  = 'Зарегистрировался новый аккаунт <span style="color:#428bca;font-size:18px;font-weight:bold;">'.$in['email'].'</span>';
+		}
+		if($in['company']){
+			$body_d  .= '<br/>Зарегистрировалась компания <span style="color:#428bca;font-size:18px;font-weight:bold;">'.$in['company'].'</span>';
+		}
+		
+		
+		//
+		$rez = $this->sendMail(array(	'email'		=>'d7758987@gmail.com' , 						'name'=>'новый аккаунт' , 
+									'subject'	=>'Зарегистрировался новый аккаунт на QRQ' , 	'body'=>$body_d ));
+									
+		
+		return array('rez'=>$rez);
+	}	
+	
+	
+	
 	// Письмо на почту - Восстановления пароля
 	function LetterSendRestorePassword( $p=array() ){
 		//тема письма

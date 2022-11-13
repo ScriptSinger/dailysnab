@@ -15,11 +15,9 @@
 				//$api	= new ClassApi();
 				//$api->Save1cTransport(array('id_1c'=>'d46cc13b-995d-11e9-9415-000c29ba794a','company_id'=>1087));
 				//$api->Save1cDocmoving(array('id_1c'=>'d46cc13b-995d-11e9-9415-000c29ba794a','company_id'=>1087));
-/*				
-				$body_d  = 'Зарегистрировался новый аккаунт <span style="color:#428bca;font-size:18px;font-weight:bold;">qqqq@qw.qw</span>';
-				$rez = $this->sendMail(array(	'email'		=>'vdo81@yandex.ru' , 							'name'=>'новый аккаунт' , 
-											'subject'	=>'Зарегистрировался новый аккаунт на QRQ' , 	'body'=>$body_d ));
-*/				
+
+				$tes		= new HtmlTemplateEmailSms();
+				$tes->LetterSendAdminNewAccount(array('company'=>'rjrjrjjrjr','email'=>'@@dfgh@@'));
 				
 				/*
 				$url = 'https://questrequest.ru/qrq/amo/cartadd.php';

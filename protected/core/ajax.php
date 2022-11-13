@@ -328,16 +328,16 @@ elseif($_GET['route'] == 'get_sms_email'){
                         if($STH){
                             // Права и Роль пользователя на компанию(аккаунт)
                             $STH = reqInsertLoginCompanyPrava(array(	'login_id'		=> $login_id,
-                                'company_id'	=> $company_id,
-                                'prava_id'		=> 2 ));
+																		'company_id'	=> $company_id,
+																		'prava_id'		=> 2 ));
                             // Проверяем не добавлен ли как сотрудника
                             $row_iw = reqInviteWorkers(array('email'	=> $email));
                             if(!empty($row_iw)){
                                 foreach($row_iw as $i => $m){
                                     $STH = reqInsertLoginCompanyPrava(array(	'login_id'		=> $login_id,
-                                        'company_id'	=> $m['company_id'],
-                                        'prava_id'		=> $m['prava_id'],
-                                        'position' 		=> $m['position'] ));
+																				'company_id'	=> $m['company_id'],
+																				'prava_id'		=> $m['prava_id'],
+																				'position' 		=> $m['position'] ));
                                     if($STH){
                                         // удаляем
                                         $STH = PreExecSQL(" DELETE FROM invite_workers WHERE id=? " ,
@@ -353,6 +353,9 @@ elseif($_GET['route'] == 'get_sms_email'){
                             }
                             //$loginID = $login_id;
                             $ok = true;
+							
+							// отправляем администратору письмо уведомление
+							$tes->LetterSendAdminNewAccount(array('company'=>$in['company'],'email'=>$email));
                         }
                     }
                 }
@@ -368,8 +371,8 @@ elseif($_GET['route'] == 'get_sms_email'){
 
 
             // отправляем письмо на почту
-            $rez = $tes->LetterSendCode(array('email'			 => $email,
-                'phone_email_code' => $rand4 ));
+            $rez = $tes->LetterSendCode(array('email'			 	=> $email,
+											'phone_email_code'	=> $rand4 ));
             //вызываем новое окошко с кодом подтверждени
             if($rez){
                 $_SESSION['tmp_login'] = $login_id;// используется в следующем шаге ajax->save_password
@@ -458,9 +461,11 @@ elseif($_GET['route'] == 'get_sms_email'){
                         if($STH){
                             // Права и Роль пользователя на компанию(аккаунт)
                             $STH = reqInsertLoginCompanyPrava(array(	'login_id'		=> $login_id,
-                                'company_id'	=> $company_id,
-                                'prava_id'		=> 2 ));
-                            // Проверка на не добавлен ли как сотрудник не выполнти при регистрации с телефона
+																		'company_id'	=> $company_id,
+																		'prava_id'		=> 2 ));
+                            
+							// отправляем администратору письмо уведомление
+							$tes->LetterSendAdminNewAccount(array('company'=>$in['company'],'email'=>$valid_number));
 
 
                             $ok = true;
@@ -2855,8 +2860,8 @@ if(LOGIN_ID){
 															'company_id'	=> $company_id,
 															'prava_id'		=> 2
 														));
-				// отправляем уведомление администратору на почту
-				
+				// отправляем администратору письмо уведомление
+				$tes->LetterSendAdminNewAccount(array('company'=>$in['company']));
             }else{
                 $code = 'Нельзя добавить более одной компании';
             }
