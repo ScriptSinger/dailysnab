@@ -7853,6 +7853,20 @@
 		"Massiv": [
 			{
 				"DocID": "3345664c-ddb7-11ec-80e6-000c2999d0eb",
+				"StrID": 1,
+				"OrgID": "d46cc13b-995d-11e9-9415-000c29ba794a",
+				"WhIDOut": "6a46396a-6f8e-11ec-80c1-000c292c2d55",
+				"OrgID": "d46cc13b-995d-11e9-9415-000c29ba794a",
+				"AutoID": "c2c9a3fd-5e13-11ec-80db-000c2999d0eb",
+				"Date": "2022-05-27T17:19:05",
+				"NomDocID": "АМ00-000231",
+				"WhIDIn": "6a46396e-6f8e-11ec-80c1-000c292c2d55",
+				"NomID": "2695ebf7-6cb9-11ec-80dd-000c2999d0eb",
+				"Quantity": 1,
+				"Brand": "Кама"
+			},
+			{
+				"DocID": "3345664c-ddb7-11ec-80e6-000c2999d0eb",
 				"StrID": 4,
 				"OrgID": "d46cc13b-995d-11e9-9415-000c29ba794a",
 				"WhIDOut": "6a46396a-6f8e-11ec-80c1-000c292c2d55",
@@ -7910,20 +7924,6 @@
 			{
 				"DocID": "3345664c-ddb7-11ec-80e6-000c2999d0eb",
 				"StrID": 8,
-				"OrgID": "d46cc13b-995d-11e9-9415-000c29ba794a",
-				"WhIDOut": "6a46396a-6f8e-11ec-80c1-000c292c2d55",
-				"OrgID": "d46cc13b-995d-11e9-9415-000c29ba794a",
-				"AutoID": "c2c9a3fd-5e13-11ec-80db-000c2999d0eb",
-				"Date": "2022-05-27T17:19:05",
-				"NomDocID": "АМ00-000231",
-				"WhIDIn": "6a46396e-6f8e-11ec-80c1-000c292c2d55",
-				"NomID": "2695ebf7-6cb9-11ec-80dd-000c2999d0eb",
-				"Quantity": 1,
-				"Brand": "Кама"
-			},
-			{
-				"DocID": "3345664c-ddb7-11ec-80e6-000c2999d0eb",
-				"StrID": 1,
 				"OrgID": "d46cc13b-995d-11e9-9415-000c29ba794a",
 				"WhIDOut": "6a46396a-6f8e-11ec-80c1-000c292c2d55",
 				"OrgID": "d46cc13b-995d-11e9-9415-000c29ba794a",
