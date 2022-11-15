@@ -115,3 +115,11 @@ cat ~/.ssh/id_rsa.pub | ssh sumo@dailysnab.beget.tech 'cat >> ~/.ssh/authorized_
 cat ~/.ssh/id_rsa.pub | ssh dailysnab_gainula@dailysnab.beget.tech 'cat >> ~/.ssh/authorized_keys'
 close
 exit
+ls -la
+cat .bash_history
+gnome open .
+gnome-open .
+gvfs-open
+gnome-open 12ttest.php
+gnome-open .
+exit
