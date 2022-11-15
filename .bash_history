@@ -83,3 +83,25 @@ find ./ -name ".ssh" -type d
 find ~ -name ".ssh" -type d
 ls -a
 git remote -v
+ls la
+ls -la
+git status
+git log
+tree -a
+clear
+ls -la
+cd .git
+tree -a
+clear
+../
+cd ../
+cat .git/config
+git config --list
+git config --list --global
+git config -h
+git help config
+clear
+git status
+git branch --list
+git show
+ls -la
